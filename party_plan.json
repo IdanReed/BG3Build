@@ -1,0 +1,2925 @@
+{
+  "meta": {
+    "title": "BG3 Party Plan — Booms, Loot, Shock & Command",
+    "mode": "non-Honour",
+    "mode_note": "Everything (builds, item interactions, damage numbers) assumes non-Honour. Several novas depend on non-Honour rules (Deepened Pact Extra-Attack stacking; Savage Attacker rerolling smite/rider dice); in Honour mode they shrink substantially.",
+    "stat_assumption": "Every party member is assumed to get a Hag's Hair (+1) and a Mirror of Loss (+2) on their primary ability, reaching the 20 cap (17 → 18 → 20) without a feat. Hag's Hair is normally one per playthrough; this assumes a per-character source.",
+    "patch": "Patch 8 (2025-04-15) + hotfixes #30–#36; Patch 8 was the final major patch.",
+    "data_model": "party_plan.json is the SINGLE SOURCE OF TRUTH. index.html renders it (fetches the JSON, with an embedded copy in a <script id=\"party-data\"> block as a file:// fallback). After editing this file run `npm run build` (node build.mjs) to re-embed it into index.html — never hand-edit the embedded block. The former party-plan.md mirror was removed; index.min.html is a stale export the build does not maintain.",
+    "companion_docs": [
+      "party-review.md",
+      "research/research.md"
+    ]
+  },
+  "party": {
+    "roster": [
+      {
+        "slot": 1,
+        "nickname": "Durc",
+        "class": "Oathbreaker Paladin 7 / Hexblade Warlock 5",
+        "role": "Melee crit-smite nova",
+        "character": "Dark Urge (Half-Orc)",
+        "played_by": "Idan"
+      },
+      {
+        "slot": 2,
+        "nickname": "Batman",
+        "class": "Arcane Trickster 11 / 1-dip (War Cleric or Fighter)",
+        "role": "Stealth assassin — melee Shadow-Blade or ranged sniper",
+        "character": "Astarion",
+        "played_by": "Idan"
+      },
+      {
+        "slot": 3,
+        "nickname": "Toaster",
+        "class": "Draconic-Blue Sorcerer 10 / Tempest Cleric 2",
+        "role": "Wet+Lightning nuke + Haste engine",
+        "character": "Gale",
+        "played_by": "Alondra"
+      },
+      {
+        "slot": 4,
+        "nickname": "SimonSays",
+        "class": "Swords Bard 10 / Fighter 1 / Wizard 1",
+        "role": "Control + damage + face",
+        "character": "Bard",
+        "played_by": "Alondra"
+      }
+    ],
+    "synergies": [
+      {
+        "name": "Haste engine",
+        "how": "Sorcerer Twinned-Hastes the Paladin (Haste is single-target, so Twinnable) → a 4th attack."
+      },
+      {
+        "name": "Wet → doubled",
+        "how": "Sorcerer's Create Water (+ Trickster Mage-Hand water bottles) makes lightning/cold hit double."
+      },
+      {
+        "name": "Control → auto-crit",
+        "how": "Bard's Hold Monster paralyzes a target → melee auto-crits → doubled crit-smites for the Paladin."
+      },
+      {
+        "name": "Shared psychic",
+        "how": "Trickster carries the Resonance Stone up front — doubling both its own and the Paladin's psychic Shadow Blade strikes (melee config)."
+      },
+      {
+        "name": "Auras",
+        "how": "Paladin's Aura of Protection (+CHA saves) + Aura of Hate (+CHA melee damage) buff the melee cluster."
+      }
+    ],
+    "combat_gameplan": {
+      "note": "Run TWO kill zones. Zone 1 (frontline) = the Bard-Held priority/boss target that Durc and Batman auto-crit into oblivion (psychic/piercing — keep water OUT of it). Zone 2 (backline adds) = the cluster Toaster Wets and detonates with maximized, doubled lightning/cold plus Batman's disadvantaged cold scrolls — physically separated so Electrified Water never touches the melee. Two sequencing linchpins: (1) initiative — the R1 chain assumes Bard acts before Sorcerer before Durc, and BG3 has NO delay-turn, so on bad rolls the nova simply slips to R2; (2) Durc's R1 bonus-action conflict (Hexblade's Curse vs GWM attack) forces the true 7-swing turn to R2. In Act 3 treat the Resonance-Stone psychic-×2 as unreliable (known post-Act-2 bug) and default Durc to the self-contained Pike + Bhaalist set.",
+      "per_character": [
+        {
+          "character": "SimonSays (Bard) — the initiator",
+          "role": "Arcane-Acuity control engine: locks the priority target with Hold Monster so the melee auto-crits, then escalates to mass Command.",
+          "priority_actions": "Wants to act FIRST (Hellrider's Longbow initiative). R1: ranged Slashing Flourish (2 hits) on the priority target → ~+4 Arcane Acuity (raises spell save DC THAT turn) and arms the Band of the Mystic Scoundrel → bonus-action Hold Monster at the boosted DC → Paralyzed (hold concentration). R2: Flourish again (Acuity climbs) → Hold Monster/Command on the next target. R3: Acuity near +10 → Command 'Drop'/'Prone' on up to 6 via the Wizard L6 slot, or Fear/Confusion; Counterspell the enemy caster; hand out Bardic Inspiration.",
+          "avoid": "Never fire the control spell BEFORE a weapon hit lands that turn (both the Band bonus-cast AND the fresh Acuity need the Flourish to resolve first). Stay ranged/unhit: Acuity decays −2 per hit taken, and losing Bard concentration (or letting the Held target die early) drops the melee's auto-crit."
+        },
+        {
+          "character": "Toaster (Sorcerer) — the engine + AoE",
+          "role": "Party Haste engine plus a Wet + maximized-Lightning AoE aimed at the SECONDARY cluster (kept off the frontline).",
+          "priority_actions": "R1: action = Twinned Haste on Durc + Batman (the extra Action fuels Durc's 6–7 swings, plus +2 AC and DEX-save advantage on both); bonus = Quickened Create Water on a separate add cluster (or let Batman's Mage Hand do the Wet). Now locked concentrating on Haste. R2+: Haste persists for free → detonate: Destructive Wrath (maximize) + Markoheshkir-empowered Lightning Bolt/Chain Lightning (or Cone of Cold) on the Wet cluster — Wet doubles it, Elemental Adept ignores lightning resistance, lightning-on-water Shocks them. Save the 2nd Destructive Wrath (Amulet of the Devout) for a second cluster; hold Counterspell.",
+          "avoid": "Electrified-water friendly fire — never Wet the ground Durc/Batman stand on and never arc lightning into the melee's water (recurring lightning + prone; a Wet ally takes DOUBLE enemy lightning/cold). Keep the water/lightning cluster physically separate, and guard Haste concentration (War Caster) — if it breaks, Durc and Batman go Lethargic and lose their next turn."
+        },
+        {
+          "character": "Durc (Paladin) — the finisher",
+          "role": "Melee crit-smite nova — the single-target finisher that deletes the Bard-Held priority target.",
+          "priority_actions": "Pre-fight: bind Shadow Blade/Pike and short-rest to refund the pact slot; position so Aura of Protection (+CHA saves) and Aura of Hate (+CHA melee damage) blanket the melee cluster and the Resonance-Stone carrier. R1: bonus = Hexblade's Curse on the Paralyzed target; action (3) + Haste action (3) = 6 auto-crit strikes, Divine Smite the biggest slots first (doubled on the crit; psychic doubled again by the stone), Half-Orc extra die, Savage Attacker rerolls → ~800–1000 on a Held target. R2+ (Curse up, bonus free): full 7 swings incl. the GWM bonus-attack-on-crit; use Killer's Sweetheart's guaranteed crit after a kill; when smites dry up, plain Hasted swings.",
+          "avoid": "Do not stand in the Sorcerer's water (electrify + Wet doubles enemy lightning/cold on you). On R1 do NOT spend the bonus action on the GWM attack instead of Hexblade's Curse — Curse can't be pre-cast before initiative, and its +damage rider is what the doubled-nova math depends on (the GWM swing only comes online R2 once Curse is already up)."
+        },
+        {
+          "character": "Batman (Rogue, Config A) — the assassin",
+          "role": "Stealth assassin / DEX-save nuker: one massive ambush strike on the Held target, plus ownership of the Wet-and-cold AoE lane and the free water-bottle setup.",
+          "priority_actions": "Pre-fight: pre-cast 3d8 Shadow Blade (Superior Elixir, no concentration); place the Resonance Stone by the melee cluster inside Durc's Aura; start Hidden; invisible Mage Hand throws water bottles to pre-Wet the enemy cluster. Each turn: bonus = Hide (Reliable Talent → near-automatic; arms Magical Ambush AND Sneak-Attack advantage), action = Booming Blade + Shadow Blade + Sneak Attack 6d6 as ONE strike — auto-crit on the Held target, whole strike doubled psychic by the stone. On a kill, Deathstalker Mantle turns him Invisible → reposition + re-ambush. When Durc already covers the melee target, crouch-cast a stolen cold scroll (Ice Storm / Cone of Cold) into the Wet cluster at disadvantage (Magical Ambush).",
+          "avoid": "Don't linger in melee after the alpha strike — he's squishy (lean on Cunning Action Disengage/Hide, Misty Step, Uncanny Dodge + Evasion + Shield). He sits INSIDE his own Resonance Stone aura with no Gnome Cunning: vs psychic/mind enemies the stone gives HIM psychic vulnerability + disadvantage on mental saves, so keep him in Durc's Aura of Protection — or don't deploy the stone that fight."
+        }
+      ],
+      "opening_rotation": [
+        { "step": 1, "who": "All — pre-combat setup", "action": "Long-rest buffs: Durc and Batman each pre-cast 3d8 Shadow Blade via a Superior Elixir of Arcane Cultivation (no concentration); Durc binds his Pact weapon and short-rests to refund the slot. Batman goes Hidden and places the Resonance Stone where the melee will cluster (inside Durc's planned Aura, away from psychic-save-fragile allies); his invisible Mage Hand throws water bottles to pre-Wet the add cluster. Open from stealth for a surprise round." },
+        { "step": 2, "who": "SimonSays (Bard) — R1, first", "action": "Ranged Slashing Flourish (2 hits) on the boss → ~+4 Arcane Acuity (raises spell save DC this turn) and arms the Band of the Mystic Scoundrel → bonus-action Hold Monster → boss fails its WIS save → Paralyzed. Hold concentration on the lock." },
+        { "step": 3, "who": "Toaster (Sorcerer) — R1", "action": "Action = Twinned Haste on Durc + Batman (extra Action + +2 AC / DEX-save advantage). Bonus = Quickened Create Water on a SEPARATE add cluster, not under the melee. Sorcerer now locked concentrating on Haste; boss Held, adds Wet for next round." },
+        { "step": 4, "who": "Durc (Paladin) — R1", "action": "Bonus = Hexblade's Curse on the Paralyzed boss. Action (3) + Haste action (3) = 6 auto-crit Shadow Blade strikes; Divine Smite the top slots first (doubled on the crit, psychic doubled again by the stone), Half-Orc die, Savage Attacker rerolls. Boss deleted or near-dead (~800–1000). No GWM bonus attack this round — the bonus was spent on Curse." },
+        { "step": 5, "who": "Batman (Rogue) — R1", "action": "Bonus = Hide (near-automatic). Action = Booming Blade + Shadow Blade + Sneak Attack 6d6 as one strike on the boss (auto-crit while Held, doubled psychic by the stone) → finishes it. The kill triggers the Deathstalker Mantle → Batman turns Invisible." },
+        { "step": 6, "who": "Enemies — R1", "action": "If you surprised them, they skip this round. Otherwise they act with the alpha target already dead/locked: Batman is Invisible, Durc soaks behind +2 AC from Haste, everyone in the aura has +CHA to saves." },
+        { "step": 7, "who": "SimonSays (Bard) — R2", "action": "Slashing Flourish on the next priority target (Acuity now ~+6 to +8, control near-unresistable) → bonus-action Hold Monster on it; drop concentration on the dead boss. New target Paralyzed." },
+        { "step": 8, "who": "Toaster (Sorcerer) — R2", "action": "Haste persists for free → action open to nuke: Destructive Wrath (maximize) + Markoheshkir Lightning Bolt/Chain Lightning (or Cone of Cold) on the Wet add cluster — doubled by Wet, Elemental Adept ignores lightning resist, lightning-on-water Shocks them. Keep the blast clear of the melee." },
+        { "step": 9, "who": "Durc (Paladin) — R2", "action": "Move to the new Held target. Full 7 swings now — Curse already up, so the bonus is free for the GWM bonus-attack-on-crit. Smite with remaining slots; once dry, plain Hasted swings. Killer's Sweetheart guarantees a crit on the first hit after a kill." },
+        { "step": 10, "who": "Batman (Rogue) — R2", "action": "Still Invisible from the R1 kill → open with the big Booming-Blade/Shadow-Blade/Sneak strike on the new Held target (auto-crit), OR crouch-cast a stolen Ice Storm/Cone of Cold into the Wet cluster at disadvantage (Magical Ambush). Mage Hand re-Wets a fresh target or flanks to guarantee Sneak Attack. Then Hide/Disengage out." },
+        { "step": 11, "who": "SimonSays (Bard) — R3", "action": "Acuity at/near +10 → Command ('Drop'/'Prone') on up to 6 enemies via the Wizard L6 slot, or Fear/Confusion to mass-lock the rest. Counterspell the enemy caster; hand out Bardic Inspiration." },
+        { "step": 12, "who": "Toaster (Sorcerer) — R3", "action": "Second Destructive Wrath (Amulet of the Devout) on the next Wet cluster, or Counterspell / Quickened Lightning Bolt on stragglers. Haste stays concentrated on the melee pair." },
+        { "step": 13, "who": "Durc + Batman — R3", "action": "Clean up the controlled/prone enemies (advantage everywhere, guaranteed crits on any still Held). Durc falls back to plain swings / Lay on Hands once out of smites; Batman hit-and-runs — kill a low target to re-proc Deathstalker invisibility, reposition, ambush again. Short-rest after the fight to refuel Durc's spell + pact slots." }
+      ]
+    },
+    "item_allocation": [
+      {
+        "item": "Risky Ring (always-advantage)",
+        "to": "Paladin",
+        "why": "Oathbreaker has no advantage source; crit-fishing needs it."
+      },
+      {
+        "item": "Shadow Blade Ring",
+        "to": "Paladin",
+        "why": "Backup blade (the Trickster self-casts its own 3d8)."
+      },
+      {
+        "item": "Resonance Stone (AoE psychic ×2)",
+        "to": "Trickster (melee config) or Paladin (if Trickster goes ranged)",
+        "why": "Doubles psychic for the carrier and nearby psychic Shadow Blades; a backline ranged Trickster can't keep the aura on the frontline, so hand it off."
+      },
+      {
+        "item": "Amulet of Greater Health",
+        "to": "Bard (SimonSays)",
+        "why": "REALLOCATED from the Trickster to the Bard: CON 23 + CON-save advantage armours Hold Monster concentration (the melee auto-crit engine) with NO neck conflict (the Bard's neck was free), while Toaster keeps the Amulet of the Devout for the 2nd Destructive Wrath. Stacks with the Bard's new War Caster feat. Batman keeps Uncanny Dodge + Evasion + Shield, so CON isn't his bottleneck."
+      },
+      {
+        "item": "Knife of the Undermountain King",
+        "to": "Trickster",
+        "why": "Crit 19–20; early main-hand until Shadow Blade."
+      },
+      {
+        "item": "Deathstalker Mantle",
+        "to": "Trickster",
+        "why": "Invisible on kill — the assassin's reposition/re-ambush cloak; stands in for a Duergar/Deep-Gnome innate invisibility since the char is Astarion."
+      },
+      {
+        "item": "Helmet of Arcane Acuity",
+        "to": "Bard",
+        "why": "Its whole control engine."
+      },
+      {
+        "item": "Hellrider's Longbow",
+        "to": "Bard",
+        "why": "Initiative for the controller."
+      },
+      {
+        "item": "Markoheshkir",
+        "to": "Sorcerer",
+        "why": "Lightning empower (Kereska's Favour)."
+      },
+      {
+        "item": "Amulet of the Devout",
+        "to": "Sorcerer",
+        "why": "Spell DC + extra Destructive Wrath charge."
+      }
+    ],
+    "progression": [
+      {
+        "act": 1,
+        "paladin": "Smites (char 3) → self-cast Shadow Blade (char 5)",
+        "trickster": "Expertise, Mage Hand, Shield, Disguise; Knife main-hand; steals",
+        "sorcerer": "Straight Draconic",
+        "bard": "Face + Song of Rest + inspiration"
+      },
+      {
+        "act": 2,
+        "paladin": "W5 → 2 attacks + 3d8 blade; Risky Ring",
+        "trickster": "Shadow Blade + Magical Ambush + Evasion; Deathstalker Mantle; Eversight 'Batman' combo",
+        "sorcerer": "Tempest dip: Wet + maximize",
+        "bard": "Helmet of Arcane Acuity → control online"
+      },
+      {
+        "act": 3,
+        "paladin": "Bhaalist → piercing Pike + crit gear; 3 attacks (7 on a nova)",
+        "trickster": "Reliable Talent; carries Resonance Stone; scroll arsenal + Ne'er Misser backup",
+        "sorcerer": "Markoheshkir",
+        "bard": "Band of the Mystic Scoundrel → full control loop"
+      }
+    ],
+    "watch_outs": [
+      {
+        "watch_out": "Charisma overload",
+        "detail": "Paladin/Warlock/Sorc/Bard are all CHA; lean on the Trickster (Expertise + Perception/Investigation) for the DEX/INT/WIS skills."
+      },
+      {
+        "watch_out": "Resonance Stone debuff",
+        "detail": "Its aura makes the whole party (incl. its Astarion carrier — no Gnome Cunning) psychic-vulnerable + disadvantage on mental saves; cluster it near the Paladin's Aura of Protection and keep it off save-fragile allies vs psychic/mind enemies."
+      },
+      {
+        "watch_out": "Deepened Pact (non-Honour)",
+        "detail": "The 3-attack stack works only outside Honour mode; don't drop Warlock below 5."
+      },
+      {
+        "watch_out": "Undead / crit-immune bosses break the nova (no respec needed)",
+        "detail": "Hold Monster & Command have NO effect on undead, the Resonance Stone excludes undead + constructs, and crit-immunity gear cancels auto-crits — so BOTH melee multipliers die vs Ketheric (Act 2), Cazador, the Steel Watchers, and the Netherbrain. Fallback (all tactical, no respec): (1) SimonSays swaps to Hypnotic Pattern / Slow (work on undead) instead of Hold Monster, and keeps Healing Word for emergencies; (2) Durc drops the Resonance Stone and leans on Risky-Ring advantage + Spiteful Suffering for crit-fishing — his Divine Smite already deals +1d8 vs Undead/Fiends, so radiant smites are actually STRONG here; (3) Toaster/Batman are unaffected (lightning/force work on undead). Treat the Hold→auto-crit→Stone nova as an anti-LIVING-boss package."
+      }
+    ],
+    "skills_face": [
+      {
+        "duty": "Face (Persuasion / Deception / Intimidation)",
+        "who": "Bard (Expertise + Friends)"
+      },
+      {
+        "duty": "Sleight of Hand / Stealth",
+        "who": "Trickster (Expertise)"
+      },
+      {
+        "duty": "Investigation / Arcana",
+        "who": "Trickster (Expertise + Perception)"
+      },
+      {
+        "duty": "Athletics (chasm throws)",
+        "who": "Trickster (Expertise)"
+      },
+      {
+        "duty": "Perception / Medicine",
+        "who": "Split across the party"
+      }
+    ]
+  },
+  "proficiencies": {
+    "note": "Who actually covers each skill (★ Expertise = doubled bonus · ● Proficient · ½ Jack of All Trades = half proficiency on non-proficient checks). Save/background/racial proficiencies are fixed; class skill picks are the plan's recommended loadout. The party is CHA-heavy, so Batman carries the DEX/INT/WIS skills while three characters can face.",
+    "legend": {
+      "expertise": "★ Expertise (double proficiency bonus)",
+      "proficient": "● Proficient",
+      "jack": "½ Jack of All Trades (half proficiency on non-proficient ability checks)"
+    },
+    "skills": [
+      { "skill": "Athletics", "ability": "STR" },
+      { "skill": "Acrobatics", "ability": "DEX" },
+      { "skill": "Sleight of Hand", "ability": "DEX" },
+      { "skill": "Stealth", "ability": "DEX" },
+      { "skill": "Arcana", "ability": "INT" },
+      { "skill": "History", "ability": "INT" },
+      { "skill": "Investigation", "ability": "INT" },
+      { "skill": "Nature", "ability": "INT" },
+      { "skill": "Religion", "ability": "INT" },
+      { "skill": "Animal Handling", "ability": "WIS" },
+      { "skill": "Insight", "ability": "WIS" },
+      { "skill": "Medicine", "ability": "WIS" },
+      { "skill": "Perception", "ability": "WIS" },
+      { "skill": "Survival", "ability": "WIS" },
+      { "skill": "Deception", "ability": "CHA" },
+      { "skill": "Intimidation", "ability": "CHA" },
+      { "skill": "Performance", "ability": "CHA" },
+      { "skill": "Persuasion", "ability": "CHA" }
+    ],
+    "characters": {
+      "Durc": {
+        "saves": ["WIS", "CHA"],
+        "expertise": [],
+        "proficient": ["Intimidation", "Medicine", "Deception", "Religion"],
+        "source": "Half-Orc (Intimidation) + Haunted One background (Intimidation, Medicine) + Warlock's 2 picks (Deception, Religion). No Expertise, but CHA 20 makes Intimidation/Deception a genuine secondary face."
+      },
+      "Batman": {
+        "saves": ["DEX", "INT"],
+        "expertise": ["Sleight of Hand", "Stealth", "Perception", "Investigation"],
+        "proficient": ["Deception", "Acrobatics", "Insight"],
+        "source": "Charlatan background (Deception, Sleight of Hand) + High Elf (Perception) + Rogue's 4 picks (Stealth, Investigation, Acrobatics, Insight). Expertise: SoH + Stealth (Rogue 1), Perception + Investigation (Rogue 6). Reliable Talent floors all proficient checks at 10 from level 12 — the party's skill monkey."
+      },
+      "Toaster": {
+        "saves": ["CON", "CHA"],
+        "expertise": [],
+        "proficient": ["Arcana", "History", "Persuasion", "Insight", "Perception"],
+        "source": "Sage background (Arcana, History) + Sorcerer's 2 picks (Persuasion, Insight) + Human free skill (Perception). CHA 20 → a decent Persuasion backup."
+      },
+      "SimonSays": {
+        "saves": ["STR", "CON"],
+        "expertise": ["Persuasion", "Deception", "Performance", "Intimidation"],
+        "proficient": ["Insight", "Perception", "Athletics"],
+        "jack_of_all_trades": true,
+        "source": "Guild Artisan background (Insight, Persuasion) + Human free skill (Deception) + Fighter's 2 picks (Perception, Athletics) + Bard's picks (Performance, Intimidation). Expertise ×4 (Bard 3 + Bard 10). Jack of All Trades adds half proficiency to every OTHER check — the primary face + skill generalist."
+      }
+    }
+  },
+  "characters": {
+    "Durc": [
+      {
+        "name": "The Three Booms",
+        "is_primary": true,
+        "role": "Melee crit-smite nova frontline",
+        "class": "Oathbreaker Paladin 7 / Hexblade Warlock 5",
+        "race": "Half-Orc (Dark Urge origin)",
+        "race_notes": "Savage Attacks (extra weapon die on melee crits); Relentless Endurance; origin char → Hag's Hair priority.",
+        "background": "Haunted One (Medicine, Intimidation) — the fixed Dark Urge background",
+        "starting_stats": {
+          "STR": 8,
+          "DEX": 14,
+          "CON": 16,
+          "INT": 8,
+          "WIS": 10,
+          "CHA": 17
+        },
+        "ability_targets": "CHA 17 → 18 (Hag's Hair) → 20 (Mirror of Loss); CON stays 16.",
+        "feats": [
+          {
+            "at": "char 6 (Warlock 4)",
+            "feat": "Savage Attacker",
+            "note": "Rerolls every damage die incl. Divine Smite; ~+16%."
+          },
+          {
+            "at": "char 9 (Paladin 4)",
+            "feat": "Great Weapon Master",
+            "note": "Bonus-attack-on-crit works with any melee weapon incl. Shadow Blade — the 7th swing. The +2 CHA feat was redundant (Hag+Mirror reach 20)."
+          }
+        ],
+        "invocations": [
+          "Thirsting Blade (the 3rd attack)",
+          "Improved Pact Weapon",
+          "Devil's Sight"
+        ],
+        "weapon_plan": "Self-cast Shadow Blade (3d8 at W5) early/mid → Heavy piercing Pike once Bhaalist Armour drops.",
+        "creation": {
+          "level1_class": "Warlock 1 (Hexblade patron)",
+          "level1_gains": "Pact Magic (1 × L1 short-rest slot), Hexblade's Curse (bonus action), Bind Hexed Weapon (attack with CHA). Pact Boon (Pact of the Blade) is not until Warlock 3.",
+          "subclass_choice": "Patron (Hexblade) is chosen at Warlock 1 — Warlock picks its subclass at level 1, not level 3.",
+          "proficiencies": {
+            "armor_weapons": "Base Warlock: Light armour + Simple weapons. Hexblade's Hex Warrior adds Medium armour, Shields, and Martial weapons at Warlock 1. (Paladin levels later add Heavy armour + all Martial.)",
+            "saving_throws": "Wisdom + Charisma (granted by Warlock, the character-creation class). Multiclassing into Paladin grants NO additional save proficiencies.",
+            "skills": "Choose 2 from the Warlock list (Arcana, Deception, History, Intimidation, Investigation, Nature, Religion). Dark Urge's fixed Haunted One background adds Medicine + Intimidation."
+          },
+          "starting_cantrips": "2 known at Warlock 1 — recommend Eldritch Blast + one filler.",
+          "starting_spells": "2 known from the Warlock list plus the Hexblade L1 expanded adds (Shield, Wrathful Smite).",
+          "notes": "Durc's character-creation class is Warlock 1 (Half-Orc Dark Urge); Paladin is multiclassed in from character level 2. Divine Smite (Paladin 2), Oathbreaker, and the auras all arrive later."
+        },
+        "spells": {
+          "note": "Durc is a smite platform, not a spell-slinger — most slots are spent as Divine Smite. Concentration is the bottleneck: hold only ONE of Wrathful Smite / Bless / Divine Favour / Shield of Faith at a time. Mandatory = the nova depends on it; Recommended = strong flex / buffs.",
+          "mandatory": [
+            {
+              "spell": "Divine Smite",
+              "level": "Feature (Paladin 2)",
+              "school": "Class feature — Radiant",
+              "save": "None (melee weapon attack roll)",
+              "when": "char 3",
+              "why": "The build's core. Expend any slot on a melee hit: 2d8 Radiant at L1, +1d8 per slot level above 1st (cap 5d8 at an L4 slot), +1d8 vs Fiends/Undead; dice DOUBLE on a crit. Not a prepared spell and not stopped by Counterspell — set the Critical-Hit Divine Smite reactions to auto-confirm."
+            },
+            {
+              "spell": "Shadow Blade",
+              "level": "2",
+              "school": "Illusion",
+              "save": "None (bonus action to summon)",
+              "when": "char 5 (Warlock 3)",
+              "why": "Core early/mid weapon: bonus action, NOT concentration, lasts until long rest; 2d8 psychic → 3d8 once Warlock 5 grants L3 pact slots. Bind Hexed/Pact Weapon onto it to attack with CHA."
+            },
+            {
+              "spell": "Wrathful Smite",
+              "level": "1",
+              "school": "Evocation",
+              "save": "WIS save (to avoid Frightened)",
+              "when": "char 1 (Hexblade) / char 3 (Paladin)",
+              "why": "The one prepared spell in the nova line: +1d6 psychic (doubles to 2d6 on a crit) and can Frighten. Concentration — cast once and it rides subsequent swings."
+            }
+          ],
+          "recommended": [
+            {
+              "spell": "Hex",
+              "level": "1",
+              "school": "Enchantment",
+              "save": "None (rider on each hit)",
+              "when": "char 1 (Warlock 1)",
+              "why": "+1d6 Necrotic per hit (~+3d6/turn on a 3-attack nova) + disadvantage on a chosen ability. Concentration — better for sustained fights than the one-shot nova (competes with Wrathful Smite)."
+            },
+            {
+              "spell": "Shield",
+              "level": "1",
+              "school": "Abjuration",
+              "save": "None (reaction, +5 AC)",
+              "when": "char 1 (Hexblade L1 expanded)",
+              "why": "Reaction +5 AC to dodge an incoming hit; not concentration; strong survival pick for a melee body."
+            },
+            {
+              "spell": "Armour of Agathys",
+              "level": "1",
+              "school": "Abjuration",
+              "save": "None",
+              "when": "char 1–6",
+              "why": "Temp HP + Cold retaliation that scales with the pact slot — 15 temp HP / 15 Cold from a Warlock-5 L3 pact slot. Not concentration."
+            },
+            {
+              "spell": "Bless",
+              "level": "1",
+              "school": "Enchantment",
+              "save": "None (concentration)",
+              "when": "char 3 (Paladin 2)",
+              "why": "+1d4 to attack rolls and saves for up to 3 allies; best pre-fight buff on turns not riding Wrathful Smite."
+            },
+            {
+              "spell": "Command",
+              "level": "1",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "char 3 (Paladin 2)",
+              "why": "Cheap single-target control (Drop / Halt / Approach) to open a nova or peel an enemy caster."
+            },
+            {
+              "spell": "Hellish Rebuke",
+              "level": "1",
+              "school": "Evocation",
+              "save": "DEX save (half on save)",
+              "when": "char 8 (Paladin 3, Oathbreaker oath spell)",
+              "why": "Free ALWAYS-PREPARED Oathbreaker oath spell; reaction fire damage when hit, at zero prepared-slot cost."
+            },
+            {
+              "spell": "Darkness",
+              "level": "2",
+              "school": "Evocation",
+              "save": "None",
+              "when": "char 10 (Paladin 5, Oathbreaker oath spell)",
+              "why": "Free always-prepared oath spell; vision denial Durc can fight inside via the Warlock's Devil's Sight."
+            },
+            {
+              "spell": "Spiteful Suffering",
+              "level": "Channel Oath (not a spell)",
+              "school": "Oathbreaker Channel Oath — Necrotic",
+              "save": "CHA save",
+              "when": "char 8 (Paladin 3)",
+              "why": "1d4+CHA Necrotic/turn AND grants all attackers Advantage on the target — a self-contained advantage/crit-fishing source when the Risky Ring isn't equipped."
+            },
+            {
+              "spell": "Eldritch Blast",
+              "level": "Cantrip",
+              "school": "Evocation",
+              "save": "Ranged spell attack",
+              "when": "char 1 (Warlock 1)",
+              "why": "Ranged fallback for turns he can't reach melee (2 beams at char 5, 3 at char 10); a real option with Agonising Blast + CHA 20."
+            }
+          ]
+        },
+        "leveling": [
+          {
+            "char_level": 2,
+            "class": "Paladin 1",
+            "gains": "Lay on Hands"
+          },
+          {
+            "char_level": 3,
+            "class": "Paladin 2",
+            "gains": "Divine Smite"
+          },
+          {
+            "char_level": 4,
+            "class": "Warlock 2",
+            "gains": "Invocation (Devil's Sight)"
+          },
+          {
+            "char_level": 5,
+            "class": "Warlock 3",
+            "gains": "Pact of the Blade + self-cast Shadow Blade (2d8)"
+          },
+          {
+            "char_level": 6,
+            "class": "Warlock 4",
+            "gains": "Feat: Savage Attacker"
+          },
+          {
+            "char_level": 7,
+            "class": "Warlock 5",
+            "gains": "Deepened Pact → 2 attacks; Shadow Blade → 3d8"
+          },
+          {
+            "char_level": 8,
+            "class": "Paladin 3",
+            "gains": "Pick any oath, break it → Oathbreaker"
+          },
+          {
+            "char_level": 9,
+            "class": "Paladin 4",
+            "gains": "Feat: Great Weapon Master (bonus-attack-on-crit)"
+          },
+          {
+            "char_level": 10,
+            "class": "Paladin 5",
+            "gains": "Extra Attack stacks → 3 attacks"
+          },
+          {
+            "char_level": 11,
+            "class": "Paladin 6",
+            "gains": "Aura of Protection"
+          },
+          {
+            "char_level": 12,
+            "class": "Paladin 7",
+            "gains": "Aura of Hate"
+          }
+        ],
+        "itemization": {
+          "act1": [
+            "Everburn Blade (Nautiloid — Commander Zhalk): 2d6 + 1d4 fire greatsword, the strongest turn-1 weapon; bind it via Hex Warrior to swing off CHA even at STR 8",
+            "Sword of Justice (Risen Road — Anders/Karlach questline): +1 heavy-armour greatsword that casts Compelled Duel — a solid aggro option before the pact blade",
+            "Blood of Lathander (Rosymorn Monastery puzzle): +3 legendary mace with Sunbeam and a party revive-at-0-HP aura — an excellent one-hander to pair with a shield if you go sword-and-board early",
+            "Adamantine Splint/Scale Mail + Adamantine Shield (Grymforge forge): crit-immunity, −damage, and reels attackers — the Act 1–2 defensive backbone for a frontliner",
+            "Phalar Aluve (Underdark, in the stone): Shriek adds thunder to every hit on the target and Sing buffs allies — carry it early or hand off",
+            "Caustic Band (Underdark — Derryth Bonecloak): +2 acid on weapon hits — cheap flat damage while smite slots are scarce",
+            "Auntie Ethel's Hair → CHA 17 → 18 (raises Aura DCs, attack/smite accuracy, and prepared-spell count)",
+            "Diadem of Arcane Synergy (Crèche): reallocated from Toaster — inflict a condition (Wrathful Smite/Hexblade's Curse) → +CHA to weapon damage; Act 1–2 head slot before Sarevok's Helmet",
+            "Strange Conduit Ring (Crèche): +1d4 psychic on attacks while Concentrating (Wrathful Smite/Bless) — doubled by the Resonance Stone and on a crit; competes with the Shadow Blade Ring for a ring slot",
+            "Note: Pact of the Blade + self-cast Shadow Blade come online at Warlock 3 (char 5) — a 2d8 psychic one-hander, so you can drop the greatsword for blade-and-shield"
+          ],
+          "act2": [
+            "Self-cast Shadow Blade upcast to 3d8 (Warlock 5, char 7) as the main weapon + a shield (or keep the Adamantine Shield)",
+            "Risky Ring (Moonrise — Araj Oblodra): advantage on ALL attacks (disadvantage on saves) — the crit-fishing engine; keep it behind Aura of Protection to offset the save penalty",
+            "Ring slot 2 (flex): Strange Conduit Ring (+1d4 psychic while concentrating — feeds the nova) OR Shadow Blade Ring (bonus-action backup blade). Conduit usually wins on nova turns",
+            "Killer's Sweetheart (Gauntlet of Shar — Self-Same Trial): your first attack after a kill is a GUARANTEED crit → a free doubled smite every fight",
+            "Head slot: Covert Cowl (Last Light — −1 crit while Obscured) vs the Diadem (+CHA weapon damage). Cowl for crit-fishing in Darkness; Diadem for raw damage. (A 2nd Covert-Critical head — the Dark Justiciar Helmet — lets Batman run one too.)",
+            "Amulet/heavy armour: keep the Adamantine set or buy heavy armour from Moonrise vendors until the Helldusk set (Act 3)",
+            "Fight beside the Trickster to share its Resonance Stone aura (doubles the psychic Shadow Blade)"
+          ],
+          "act3": [
+            "Bhaalist Armour (piercing-vuln aura)",
+            "Heavy piercing Pike (two-handed → enables GWM's -5/+10)",
+            "Sarevok's Horned Helmet (crit range)",
+            "Killer's Sweetheart (guaranteed crit after a kill)",
+            "A defensive amulet",
+            "Helldusk Gloves"
+          ]
+        },
+        "playstyle": "Pre-apply Hexblade's Curse the turn before so the bonus action is free. Nova turn: attack (3) + Haste (3) + GWM bonus attack (1) = 7 auto-crit swings on a Held target, smiting each; short rest to refuel. Half-Orc adds a die on crits; Curse drops the crit threshold to 19–20; Risky Ring keeps you at advantage. Dark Urge bonus: A Most Bloody Inheritance (from the Act-3 Murder questline) reduces Durc's crit threshold by a further −2, stacking with Curse (−1) + Sarevok's Helmet + Covert Cowl — a very wide crit range for non-Held targets.",
+        "late_game_config": {
+          "note": "At Act 3 you can run either weapon set.",
+          "shadow_blade_set": "3d8 psychic one-hander + shield; ×2 from the Trickster's Resonance Stone (shared, buggy); GWM bonus attack only.",
+          "piercing_set": "Heavy piercing Pike (1d10) two-handed; ×2 from your own Bhaalist Armour (always on); GWM bonus attack + All In (-5/+10); no shield."
+        },
+        "nova": {
+          "assumptions": "Held target (every hit auto-crits), full 8-slot dump. Smites double their dice on a crit; Half-Orc adds a die; Savage Attacker rerolls every die (d8→5.81, d10→7.15, d6→4.47). Flat weapon bonuses (CHA 5 + Aura of Hate 5 + Improved Pact Weapon 1 + Curse 4 [+ GWM 10 on the pike]) ride the weapon's type so they double; smites are radiant so neither aura doubles them.",
+          "configs": [
+            {
+              "name": "Shadow Blade + Resonance Stone (psychic ×2)",
+              "lines": [
+                {
+                  "line": "Weapon swing — 7d8 + 15, psychic ×2",
+                  "count": 7,
+                  "each": 111.4,
+                  "total": 780
+                },
+                {
+                  "line": "Divine Smite L3 — 9d8 radiant",
+                  "count": 2,
+                  "each": 52.3,
+                  "total": 105
+                },
+                {
+                  "line": "Divine Smite L2 — 7d8 radiant",
+                  "count": 2,
+                  "each": 40.7,
+                  "total": 81
+                },
+                {
+                  "line": "Divine Smite L1 — 5d8 radiant",
+                  "count": 3,
+                  "each": 29.1,
+                  "total": 87
+                },
+                {
+                  "line": "Wrathful Smite — 2d6 psychic ×2",
+                  "count": 1,
+                  "each": 17.9,
+                  "total": 18
+                }
+              ],
+              "turn_total": 1070
+            },
+            {
+              "name": "Pike + Bhaalist (piercing ×2)",
+              "lines": [
+                {
+                  "line": "Weapon swing — 3d10 + 25 (incl. GWM +10), piercing ×2",
+                  "count": 7,
+                  "each": 92.9,
+                  "total": 650
+                },
+                {
+                  "line": "Divine Smite L3 — 9d8 radiant",
+                  "count": 2,
+                  "each": 52.3,
+                  "total": 105
+                },
+                {
+                  "line": "Divine Smite L2 — 7d8 radiant",
+                  "count": 2,
+                  "each": 40.7,
+                  "total": 81
+                },
+                {
+                  "line": "Divine Smite L1 — 5d8 radiant",
+                  "count": 3,
+                  "each": 29.1,
+                  "total": 87
+                },
+                {
+                  "line": "Wrathful Smite — 2d6 psychic (undoubled)",
+                  "count": 1,
+                  "each": 8.9,
+                  "total": 9
+                }
+              ],
+              "turn_total": 930
+            }
+          ],
+          "caveats": "Shadow Blade + Resonance Stone has the higher ceiling (~1,070) but rides the Trickster's shared, buggy stone — without it it falls to ~670, so the Pike is better whenever the stone isn't up. Both figures assume the Savage-Attacker-rerolls-smite quirk (bg3.wiki: 'unknown if bugged/intended') and that Hexblade's Curse's +4 rides the weapon's type; if Curse is untyped, shave ~28 off each."
+        }
+      }
+    ],
+    "Batman": [
+      {
+        "name": "The Ambusher — Melee Shadow-Blade (Config A)",
+        "is_primary": true,
+        "role": "Melee stealth assassin / DEX-save nuker / scout",
+        "class": "Arcane Trickster Rogue 11 / War Domain Cleric 1",
+        "race": "Astarion (High Elf / Vampire Spawn)",
+        "race_notes": "Fey Ancestry (no Charm/Sleep), Perception proficiency, extra cantrip, bonus-action Bite. No Superior Darkvision or innate stealth-advantage, so Hide leans on Reliable Talent + Expertise (still floor-10 reliable); Shadow Blade's dim-light advantage still works at melee range.",
+        "background": "Charlatan (Deception + Sleight of Hand) — Astarion's fixed origin background (can't be changed, even via respec)",
+        "starting_stats": {
+          "STR": 8,
+          "DEX": 17,
+          "CON": 14,
+          "INT": 12,
+          "WIS": 15,
+          "CHA": 8
+        },
+        "stats_note": "High Elf floating +2 DEX / +1 WIS already applied.",
+        "ability_targets": "DEX 17 → 18 (Hag's Hair) → 20 (Graceful Cloth's +2, worn all game) — so the Mirror of Loss is NOT needed on DEX. Redirect the Mirror to WIS: WIS 15 → 17 (R8 feat) → 19 (Mirror of Loss) for better scroll/Command DC + mental saves.",
+        "feats": [
+          {
+            "at": "R4",
+            "feat": "Savage Attacker",
+            "note": "Melee-only; rerolls Shadow Blade + Sneak dice."
+          },
+          {
+            "at": "R8",
+            "feat": "+2 WIS",
+            "note": "→ 17 (scroll/Cleric DC + WIS saves)."
+          },
+          {
+            "at": "R10",
+            "feat": "Alert",
+            "note": "+5 initiative + immune to Surprise — guaranteed-first-turn ambush. Chosen over Dual Wielder, whose off-hand attack can't carry Sneak Attack and is dead when the bonus action is always Hide."
+          }
+        ],
+        "casting": "AT spells = INT (utility: Shield, Disguise Self, Shadow Blade). Stolen scrolls + Cleric spells = WIS (Cleric taken after Rogue 1 → scrolls key off WIS).",
+        "key_spells": [
+          "AT: Shield, Disguise Self, Shadow Blade",
+          "Cleric (WIS): Create Water, Command, Guidance",
+          "Offense = stolen scrolls (see spells → recommended; note the real DEX-save cold is Ice Storm, not Cone of Cold)"
+        ],
+        "creation": {
+          "level1_class": "Rogue 1",
+          "level1_gains": "Expertise in 2 skills (Sleight of Hand + Stealth) + Sneak Attack (1d6). MUST be the character-creation class so Expertise covers the right skills and the stolen-scroll DC keys off the later WIS dip.",
+          "subclass_choice": "Arcane Trickster is chosen at Rogue 3 (character level 4), not at creation.",
+          "proficiencies": {
+            "armor_weapons": "Rogue base: Light armour; Simple weapons, Hand Crossbows, Longswords, Rapiers, Shortswords. The War Cleric dip (char 2) adds Medium + Heavy armour, Shields, and Martial weapons (Heavy only because it's a subclass grant).",
+            "saving_throws": "Dexterity + Intelligence (Rogue, the creation class). The Cleric dip grants NO save proficiencies (multiclassing never does).",
+            "skills": "Rogue picks 4 skills and Expertise in 2 (Sleight of Hand + Stealth) at level 1; Astarion's Charlatan background grants Sleight of Hand + Deception (so Stealth comes from a Rogue skill pick, not the background). Expertise #2 (Perception + Investigation) comes at Rogue 6."
+          },
+          "starting_cantrips": "None from the class at Rogue 1 (AT casting starts at Rogue 3). Astarion (High Elf) picks 1 racial wizard cantrip at creation — take Booming Blade.",
+          "starting_spells": "None at Rogue 1 — the first AT spells (3) are learned at Rogue 3 (char 4).",
+          "notes": "Astarion (High Elf / Vampire Spawn). 3 feats total (Rogue 4/8/10 — Rogue uniquely gets a bonus feat at level 10). Rogue-first ordering makes stolen-scroll DCs key off WIS via the War Cleric dip."
+        },
+        "spells": {
+          "note": "AT class spells key off INT; the stolen scrolls and Cleric spells key off WIS (Rogue-first ordering). Mandatory = the loop depends on it; Recommended = flex + the stolen-scroll arsenal. CORRECTION: the plan's 'DEX-save cold' scrolls are mostly CON saves — Ice Storm is the real DEX-save cold option.",
+          "mandatory": [
+            {
+              "spell": "Mage Hand",
+              "level": "Cantrip (free)",
+              "school": "Conjuration",
+              "save": "None",
+              "when": "char 4 (Rogue 3, Mage Hand Legerdemain)",
+              "why": "Invisible + permanent hand: scouts, flanks to enable Sneak Attack in the open, and throws water bottles (no action) to set up Wet. Core to both configs."
+            },
+            {
+              "spell": "Booming Blade",
+              "level": "Cantrip",
+              "school": "Evocation",
+              "save": "Melee weapon attack (DEX)",
+              "when": "char 1 (High Elf racial) / char 4 (Rogue 3)",
+              "why": "Once-per-turn Sneak-Attack delivery in melee; weapon damage + thunder-on-move, scales at char 5 & 11. Central to Config A."
+            },
+            {
+              "spell": "Shield",
+              "level": "1",
+              "school": "Abjuration",
+              "save": "None (reaction)",
+              "when": "char 4 (Rogue 3, any-school pick)",
+              "why": "+5 AC and Magic Missile immunity — the frail assassin's main survival button. Abjuration, so it needs the any-school pick or a Replacement."
+            },
+            {
+              "spell": "Shadow Blade",
+              "level": "2",
+              "school": "Illusion",
+              "save": "None (bonus action to summon)",
+              "when": "char 8 (Rogue 7, via replacement)",
+              "why": "2d8 (3d8 upcast) psychic shortsword, advantage vs dim-light/dark targets, lasts until long rest, no concentration. Config A's main weapon — psychic doubled by the Resonance Stone, auto-crit vs Held."
+            },
+            {
+              "spell": "Guidance",
+              "level": "Cantrip",
+              "school": "Divination",
+              "save": "None",
+              "when": "char 2 (War Cleric dip)",
+              "why": "+1d4 to interactive ability checks — dialogue, lockpicking/disarming, and the confront-check if a theft goes wrong. ⚠ Does NOT apply to the background pickpocket Steal roll (variable dice don't attach). Still a fine utility cantrip; just not a stealing booster."
+            },
+            {
+              "spell": "Create Water",
+              "level": "1",
+              "school": "Transmutation",
+              "save": "None",
+              "when": "char 2 (War Cleric dip)",
+              "why": "Applies Wet (double Lightning/Cold) to set up Toaster's lightning and your own cold scrolls. Config A only."
+            },
+            {
+              "spell": "Command",
+              "level": "1",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "char 2 (War Cleric dip)",
+              "why": "Single-target hard control (Halt / Drop / Flee), keys off WIS; can be forced to disadvantage via Magical Ambush. Config A only."
+            }
+          ],
+          "recommended": [
+            {
+              "spell": "Disguise Self",
+              "level": "1",
+              "school": "Illusion",
+              "save": "None",
+              "when": "char 4 (Rogue 3)",
+              "why": "Infiltration / skip-fights and a fresh identity after a botched steal (both configs)."
+            },
+            {
+              "spell": "Fog Cloud",
+              "level": "1",
+              "school": "Conjuration",
+              "save": "None",
+              "when": "char 4+ (any-school pick / replacement)",
+              "why": "Self-made obscurement to Hide (arms Magical Ambush) and to feed the Eversight-Ring darkness combo."
+            },
+            {
+              "spell": "Misty Step",
+              "level": "2",
+              "school": "Conjuration",
+              "save": "None",
+              "when": "char 8+ (Rogue 7, replacement)",
+              "why": "Reposition/escape without relying solely on the Night Walkers / Amulet of Misty Step item copies."
+            },
+            {
+              "spell": "Healing Word",
+              "level": "1",
+              "school": "Evocation",
+              "save": "None",
+              "when": "char 2 (War Cleric dip)",
+              "why": "Bonus-action ranged revive/heal for a party with no dedicated healer; clutch when out of Hide range."
+            },
+            {
+              "spell": "Ice Storm (scroll)",
+              "level": "4",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "stolen scroll (DC uses WIS)",
+              "why": "The ACTUAL DEX-save cold option the plan wants (Cold + Bludgeoning) — works fully with Magical Ambush; use this rather than the CON-save cold nukes below when DEX-save is the goal."
+            },
+            {
+              "spell": "Chain Lightning (scroll)",
+              "level": "6",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "stolen scroll",
+              "why": "True DEX-save AoE; works fully with Magical Ambush (direct-damage save spell)."
+            },
+            {
+              "spell": "Cone of Cold (scroll)",
+              "level": "5",
+              "school": "Evocation",
+              "save": "CON save (NOT DEX)",
+              "when": "stolen scroll",
+              "why": "Big cold nuke, but a Constitution save — contradicts the plan's 'DEX-save cold' label. Magical Ambush still disadvantages the save; Evasion is irrelevant to it."
+            },
+            {
+              "spell": "Otiluke's Freezing Sphere (scroll)",
+              "level": "6",
+              "school": "Evocation",
+              "save": "CON save (NOT DEX)",
+              "when": "stolen scroll",
+              "why": "Large cold burst, but also a CON save (not DEX) — same correction as Cone of Cold."
+            }
+          ]
+        },
+        "leveling": [
+          {
+            "char_level": 2,
+            "class": "War Cleric 1",
+            "gains": "WIS casting; medium/heavy armour + shields + martial; War Priest; Create Water, Command, Guidance"
+          },
+          {
+            "char_level": 3,
+            "class": "Rogue 2",
+            "gains": "Cunning Action (bonus-action Hide — arms Magical Ambush + Sneak Attack)"
+          },
+          {
+            "char_level": 4,
+            "class": "Rogue 3",
+            "gains": "Arcane Trickster: invisible Mage Hand; Booming Blade; Shield, Disguise Self"
+          },
+          {
+            "char_level": 5,
+            "class": "Rogue 4",
+            "gains": "Feat: Savage Attacker"
+          },
+          {
+            "char_level": 6,
+            "class": "Rogue 5",
+            "gains": "Uncanny Dodge"
+          },
+          {
+            "char_level": 7,
+            "class": "Rogue 6",
+            "gains": "Expertise #2 (Perception + Investigation)"
+          },
+          {
+            "char_level": 8,
+            "class": "Rogue 7",
+            "gains": "Evasion + 2nd-level slots → Shadow Blade; Sneak Attack 4d6"
+          },
+          {
+            "char_level": 9,
+            "class": "Rogue 8",
+            "gains": "Feat: +2 WIS (→17)"
+          },
+          {
+            "char_level": 10,
+            "class": "Rogue 9",
+            "gains": "Magical Ambush (Hide → targets have disadvantage vs your spells/scrolls)"
+          },
+          {
+            "char_level": 11,
+            "class": "Rogue 10",
+            "gains": "Feat: Dual Wielder (or Alert) + 3rd cantrip"
+          },
+          {
+            "char_level": 12,
+            "class": "Rogue 11",
+            "gains": "Reliable Talent (never roll <10 on proficient checks); Sneak Attack 6d6"
+          }
+        ],
+        "itemization": {
+          "act1": [
+            "Graceful Cloth (advantage on stealing — wear all game)",
+            "Gloves of Thievery",
+            "Knife of the Undermountain King (main-hand until Shadow Blade, crit 19–20)",
+            "Night Walkers boots + Amulet of Misty Step (2 free warps/short rest)",
+            "Hoard Superior Elixir of Arcane Cultivation + Battlemage Elixirs"
+          ],
+          "act2": [
+            "Deathstalker Mantle (Invisible on kill — reposition + re-ambush)",
+            "Bracers of Defence (+2 AC, no armour)",
+            "Eversight Ring (House of Healing, Reithwin — grab it THIS act; it's missable) — see through your own Darkness, the 'Batman' combo",
+            "Retire the old tank gear — you're squishy now"
+          ],
+          "act3": [
+            "Self-cast Shadow Blade (3d8) main-hand + Light off-hand: Rhapsody OR Bloodthirst (Orin — Improved Critical, crit −1 on all attacks; the better crit off-hand)",
+            "Eversight Ring (carried over from Act 2 — the Darkness 'Batman' combo)",
+            "Carries the Resonance Stone (doubles your + the Paladin's psychic — but Astarion eats its mental-save debuff, so cluster near the Paladin's Aura of Protection)",
+            "Neck slot free (Amulet of Greater Health went to the Bard to guard Hold Monster) — use a defensive amulet (e.g. Amulet of the Harpers / a save-boosting neck); your survival is Uncanny Dodge + Evasion + Shield, not CON",
+            "Ne'er Misser + Hellfire Hand Crossbow (ranged backup)"
+          ]
+        },
+        "playstyle": "Pre-cast Shadow Blade at long rest (Superior Elixir of Arcane Cultivation → L3 slot → 3d8, lasts all day, no concentration). Each turn: bonus-action Hide (arms Magical Ambush AND the advantage for Sneak Attack) → Booming Blade + Shadow Blade + Sneak Attack as one huge psychic strike; the Sneak Attack adopts the blade's psychic type, so the Resonance Stone doubles the whole strike and a Held target auto-crits it. Between strikes, crouch and cast a stolen DEX-save scroll (cold-first) at disadvantage via Magical Ambush. The invisible Mage Hand throws water for the Sorcerer or parks by a target to guarantee Sneak Attack. Vanish with Cunning Action Disengage → fog + Eversight, or Misty Step. CO-EQUAL with Config B (no single 'primary'): run Config A for Act-2 psychic-nova set-pieces vs LIVING bosses (Resonance Stone ×2 + Hold auto-crit); it's fragile and Stone-dependent, so switch to Config B for undead/immune bosses and safer backline turns.",
+        "traps": [
+          "Magical Ambush needs the Hide ACTION (not mere invisibility); only helps DEX-save direct-damage scrolls fully (control spells: initial save only; surface spells: none).",
+          "The 3d8 upcast needs the SUPERIOR Elixir of Arcane Cultivation (base/Greater give only L1/L2 slots).",
+          "The Eversight 'Batman' combo is an Act 3 item and collapses vs enemies with Devil's Sight.",
+          "Only 3 feats on an 11/1 split."
+        ],
+        "pickpocket": {
+          "note": "Batman is the party's thief — this is how he lifts key gear, scrolls, and buff sources with near-certainty, and gets away clean on the rare miss. ⚠ CORRECTION: pickpocketing resolves as a BACKGROUND d20 roll, so variable dice like Guidance and Bardic Inspiration do NOT apply to it — only FLAT Sleight-of-Hand bonuses (gear) change the number. The guaranteed ceiling is therefore fixed by Reliable Talent + flat gear, not buffs. Applies to both configs (the War Cleric dip's Guidance is for dialogue/other checks, not the steal).",
+          "check_formula": "Pickpocketing rolls Sleight of Hand: d20 + DEX mod + proficiency, with Expertise DOUBLING proficiency. At char 12 with DEX 20 (+5) and Expertise (+8) that's a +13 flat. Reliable Talent (Rogue 11) floors the raw d20 at 10 on proficient skills, so his minimum result is 10 + 13 = 23 and a natural 1 can't auto-fail. Proficiency does NOT stack from multiple sources; only Expertise raises it.",
+          "success_math": "The number the UI shows is a 'roll target' = the raw d20 you need (flat bonuses already subtracted), NOT the DC. Reliable Talent floors the die at 10, so ANY item with roll target ≤ 10 (underlying DC ≤ 23) is a GUARANTEED steal with zero setup. To beat a HIGHER target you must add FLAT Sleight-of-Hand gear (Smuggler's Ring +2 → target ≤ 12; + Gloves of Power +1 → ≤ 13) — Guidance and Bardic Inspiration do NOT apply to the background pickpocket roll. Advantage (Graceful Cloth) doesn't raise the guaranteed floor but makes mid/high targets very likely. Virtually every merchant item sits at DC ≤ 23, so Batman auto-succeeds on nearly all of them; for the rare over-floor item use flat gear, or Enthrall the vendor and steal freely.",
+          "detection": "Pickpocketing requires being HIDDEN; opening/closing the steal window is free while unseen (only clicking Steal rolls). A failed steal and 'caught possessing stolen goods' are SEPARATE crimes. On a fail the victim attacks or offers a Deception/Intimidation/Persuasion check (pass = they watch you; a 2nd catch = arrest). Even a SUCCESS starts a delayed investigation: the victim searches for a few turns — if you stay out of sight/range until it expires, the whole party is permanently safe (you can then wear the stolen item openly). An accused character carrying no session-stolen loot always proves innocence.",
+          "modifiers": [
+            { "source": "DEX 20 (+5)", "effect": "+5 flat, baked into the displayed roll target", "stacks": "Flat, capped at the DEX 20 ceiling", "how": "Self — DEX 17 → 18 (Hag's Hair) → 20 (Mirror of Loss); Graceful Cloth's +2 helps reach 20 but doesn't exceed it" },
+            { "source": "Proficiency + Expertise (+8)", "effect": "Proficiency +4 doubled by Expertise, baked into the displayed target", "stacks": "Proficiency doesn't stack across sources; Expertise doubles the one bonus", "how": "Self — Charlatan background + Rogue both grant Sleight of Hand proficiency; Rogue level-1 Expertise doubles it" },
+            { "source": "Reliable Talent (Rogue 11)", "effect": "Treats any d20 under 10 as a 10; removes natural-1 auto-fail → result ≥ 23", "stacks": "A floor, not a bonus — turns every DC ≤ 23 item into an auto-steal", "how": "Self — class feature at Rogue 11" },
+            { "source": "Guidance (+1d4) — DOES NOT APPLY to the steal", "effect": "Variable dice don't attach to the background pickpocket roll. Guidance DOES help the confront-check dialogue on a fail, and normal skill checks (lockpicking, disarming) — just not the Steal roll itself", "stacks": "N/A for pickpocketing", "how": "Common misconception — the War Cleric dip's Guidance is for dialogue/other checks, not stealing" },
+            { "source": "Graceful Cloth → Cat's Grace", "effect": "Advantage on ALL Dexterity checks incl. Sleight of Hand (2d20 take higher)", "stacks": "Advantage does NOT stack — this alone fills the advantage slot", "how": "Self — worn all game, passive always on" },
+            { "source": "Gloves of Thievery", "effect": "Advantage on Sleight of Hand", "stacks": "Redundant with the Graceful Cloth (advantage doesn't stack) — backup only", "how": "Self — Brem, Zhentarim basement" },
+            { "source": "Bardic Inspiration — DOES NOT APPLY to the steal", "effect": "Same background-roll problem as Guidance: a Bardic Inspiration die can't be added to the pickpocket roll. Save it for the confront-check dialogue on a fail", "stacks": "N/A for pickpocketing", "how": "Ally — useful for the social save if caught, not the lift" },
+            { "source": "Flat SoH item bonuses (Smuggler's Ring +2, Gloves of Power +1)", "effect": "Directly LOWER the displayed roll target — the ONLY lever that beats an over-floor target", "stacks": "Additive and reflected in the UI number", "how": "Self via gear swap — reserve for a rare over-DC-23 item; stack both for +3" },
+            { "source": "Bless (+1d4) — DOES NOT APPLY", "effect": "Nothing for stealing — Bless only buffs Attack Rolls and Saving Throws, not ability checks", "stacks": "N/A", "how": "Common misconception — verified useless for pickpocketing" }
+          ],
+          "gear": [
+            { "item": "The Graceful Cloth", "effect": "Cat's Grace: Advantage on all DEX checks + up to +2 DEX (cap 20) — the single most important stealing item; makes every other advantage source redundant", "where": "Lady Esther, Rosymorn Monastery Trail (Act 1)" },
+            { "item": "Gloves of Thievery", "effect": "Advantage on Sleight of Hand (backup to the Cloth)", "where": "Brem, Zhentarim basement (Act 1)" },
+            { "item": "Amulet of Misty Step", "effect": "Bonus-action Misty Step, no slot — instant break-line-of-sight escape", "where": "Priestess Gut's chambers, Goblin Camp (Act 1)" },
+            { "item": "Disintegrating Night Walkers", "effect": "Bonus-action Misty Step (1/short rest) + web/grease immunity — 2nd free escape teleport", "where": "True Soul Nere, Grymforge (Act 1)" },
+            { "item": "Deathstalker Mantle", "effect": "Invisible for 2 turns on a KILL (in combat) — NOT a theft-escape tool; kill-gated, does not trigger on a failed steal", "where": "Dark Urge reward (Sceleritas Fel); Durc hands it to Batman" },
+            { "item": "Optional flat-bonus ring (Smuggler's Ring +2 / Gloves of Power +1)", "effect": "Additive flat SoH that directly lowers the displayed target — for a rare over-DC-24 item", "where": "Various vendors/loot; swap in only when needed" }
+          ],
+          "setup_by_act": {
+            "note": "Key point on 'combat vs pickpocket gear': Batman basically does NOT swap. The Graceful Cloth is Clothing (not armour), so it stacks with Bracers of Defence, and its Cat's Grace already gives advantage on Sleight of Hand — so his everyday combat kit steals at advantage with nothing to change. Gloves of Thievery become redundant once the Cloth is on. The only situational swap is a flat +SoH ring for a rare over-floor item, in for that one lift then back out. All swaps are free out of combat.",
+            "acts": [
+              {
+                "act": 1,
+                "standing_kit": "Graceful Cloth worn as the chest slot the moment you buy it from Lady Esther (Cat's Grace = advantage on DEX checks + DEX toward 18/20); Gloves of Thievery (Brem, Zhentarim basement) as an advantage backup.",
+                "combat_vs_steal": "No swap needed — the Cloth's advantage covers Sleight of Hand, so your normal light-armour kit already steals at advantage. Keep Gloves of Thievery in the bag unless you're not wearing the Cloth.",
+                "buffs": "None help the steal roll — Guidance/Bardic Inspiration don't apply to the background pickpocket check. DEX is only 17→18 here, so lean on advantage (Cloth) + Reliable Talent's floor; for a high-target item, swap in a flat +SoH ring. (Guidance is still worth casting for the confront-check dialogue if you get caught.)",
+                "targets": "Arron & Volo (Grove), Brem & Sparkle (Zhent basement), A'jak'nir Jeera + quartermaster (Crèche), Lady Esther. Lift scrolls, potions, gold; almost every Act 1 DC is under your guaranteed floor."
+              },
+              {
+                "act": 2,
+                "standing_kit": "Same Graceful Cloth. When you equip Bracers of Defence (+2 AC, no-armour) they take the GLOVES slot that Gloves of Thievery use.",
+                "combat_vs_steal": "Still no steal-swap: wear Bracers of Defence full-time for the AC — the Cloth carries the stealing advantage, so the Gloves of Thievery are redundant. Only swap in a flat +SoH ring for a rare hard target.",
+                "buffs": "DEX is 20 by now (Hag's Hair + Mirror if you've visited) → the flat +13 + Reliable Talent floor covers essentially everything. No steal-buffs needed; keep a flat +SoH ring handy for outliers.",
+                "targets": "Moonrise vendors (Araj Oblodra, Quartermaster Talli), Last Light Inn traders (Mattis, the Harpers). Clear scrolls, elixirs, and gear before the Act 2 point-of-no-return (Moonrise assault)."
+              },
+              {
+                "act": 3,
+                "standing_kit": "Graceful Cloth + Bracers of Defence. This is where a flat-bonus swap actually matters for the priciest vendor stock.",
+                "combat_vs_steal": "Combat kit and heist kit are the same. For an over-floor item, hot-swap a Smuggler's Ring (+2 SoH) or Gloves of Power (+1) into a ring/gloves slot just for that lift, then swap back. Do NOT rely on Disguise-Self identity resets — they don't work in the Lower City.",
+                "buffs": "Advantage from the Cloth + the floor handle almost everything. For the priciest over-floor items, swap a flat +SoH ring or Enthrall the vendor (Guidance/Bardic Inspiration don't apply). Toggle turn-based to freeze the investigation timer while you clear a whole vendor.",
+                "targets": "Sorcerous Sundries (scroll wall — Chain Lightning, Cone of Cold, Freezing Sphere), Lower City fences (Roah Moonglow), the Devil's Fee, circus/vendor stock. Highest-value heists in the game — but Lower City crime enforcement is the strictest, so launder aggressively."
+              }
+            ]
+          },
+          "escape_options": [
+            { "option": "Quicksave / reload (non-Honour)", "how": "THE reliable net. Quicksave before each steal; reload on a botched roll or getaway. Batman rarely fails the roll (floor 23), so this mainly insures the escape / investigation sweep." },
+            { "option": "Turn-based mode", "how": "Toggle ON before stealing: freezes patrols, the victim, and the post-theft investigation timer so you set up Hide and manage vision cones at your own pace. Each party member is an independent thief with its own check and caught-state." },
+            { "option": "Break line of sight, wait out the search", "how": "After a steal, immediately leave the victim's sight and the search radius; Hide (Cunning Action; near-automatic via Reliable Talent + Expertise). Wait a few turns for the investigation to expire → whole party permanently safe." },
+            { "option": "Hide in Fog Cloud / Darkness", "how": "Auto stealth success inside — enemy sight cones don't reach in (unless Devil's Sight). Good for the initial Hide and for vanishing after." },
+            { "option": "Misty Step / Night Walkers / Amulet of Misty Step", "how": "Bonus-action teleport (2–3 free/short rest) to break line of sight and clear the search area. Repositioning only — combine with waiting out the investigation." },
+            { "option": "Split loot / send to camp", "how": "An accused character holding NO session-stolen goods proves innocence automatically. Keep stolen items off Batman (hand to a clean character or send to the camp chest); use other members as extra thieves." },
+            { "option": "Enthrall (ally-cast)", "how": "If the victim is Enthralled when they notice the theft, no investigation starts and no suspicion is placed. Best cast by someone OTHER than the thief." },
+            { "option": "Feign Death (ally-cast) on a caught member", "how": "Stops NPCs initiating conversation with the caught character; guards usually disperse before it wears off." },
+            { "option": "Confront-check / return / drop", "how": "On a first catch, pass the offered Deception/Intimidation/Persuasion check; stealing can sometimes be undone by dropping the item, pickpocketing sometimes by returning it." },
+            { "option": "Disguise Self (limited)", "how": "Commit disguised, then dismiss (or vice-versa) to shed the culprit tag — works ONCE per character per jail and NOT in Act 3's Lower City." },
+            { "option": "NOT the Deathstalker Mantle", "how": "Its invisibility triggers only on a KILL in combat — a failed steal is not a kill, so it can't pre-empt or undo being caught. It's a combat re-ambush cloak, not a theft escape." }
+          ],
+          "failure_flow": {
+            "note": "If you're NOT reloading (self-imposed no-save-scum, or you just don't want to reload) here's the no-reload contingency for the exact chain you described: fail → dialogue → likely fail the social check → combat → vanish. Reality check: with Reliable Talent (floor 23) Batman almost never fails the actual Sleight of Hand roll — the real risk is the post-theft investigation or a botched CONFRONT check. And his CHA is 8, so plan to FAIL the offered social save.",
+            "steps": [
+              { "step": 1, "trigger": "Roll fails / you're spotted", "do": "The victim opens a dialogue or turns hostile. The theft dialogue offers a Deception / Intimidation / Persuasion check to talk your way out; returning the item can defuse a first offense." },
+              { "step": 2, "trigger": "The offered social check (you'll probably fail it)", "do": "At CHA 8 Batman flunks Deception/Persuasion more often than not. Better options: hand the conversation to SimonSays (the face) if he's in range, pre-buff with Guidance/Friends, or just accept the fail and drop to step 3. Intimidation can be easier if the target is weak-willed." },
+              { "step": 3, "trigger": "Talk fails → they call it in / attack", "do": "Two branches: (a) it goes LOUD → combat as guards/victim aggro; or (b) a delayed 'Thief!' investigation starts and reinforcements begin converging on your last known position." },
+              { "step": 4, "trigger": "Break contact (the 'fog cloud or something' step)", "do": "Bonus-action Hide (Reliable Talent ≈ automatic) → drop Fog Cloud or Darkness on yourself (auto-Obscured; enemy sight cones can't see in without Devil's Sight) → Cunning Action Disengage/Dash or a bonus-action Misty Step (Night Walkers / Amulet of Misty Step) out of the search radius. Toggle turn-based mode to do this at your own pace." },
+              { "step": 5, "trigger": "It went to combat", "do": "If witnesses must die to clear the crime, burst them down — this is where the party nova (or a Fog-Cloud-then-AoE) shines — then leave the area so no survivor reports you. A kill in combat procs the Deathstalker Mantle (Invisible) to slip away and reposition." },
+              { "step": 6, "trigger": "Launder & reset", "do": "Send stolen goods to camp or a clean party member (an accused character carrying no session-stolen loot auto-proves innocence). Wait out the investigation timer out of sight → the whole party goes permanently clean and can wear the loot openly. Worst case (Act 3 Lower City, no Disguise-Self reset): leave to a different district and let the heat cool." }
+            ]
+          },
+          "procedure": "0 — Standing kit: wear the Graceful Cloth (permanent Cat's Grace = advantage on DEX checks + DEX toward 20) all game; Gloves of Thievery as backup. Confirm DEX 20. This alone gives +13 flat, advantage, and (Rogue 11) a floor-10 die = guaranteed steal on any DC ≤ 23 item.\n1 — Isolate: split Batman from the party and approach the target alone, so a botched job only implicates him and no ally is caught holding loot.\n2 — Confirm flat gear: the Graceful Cloth already gives advantage. For a high-target item, swap in a Smuggler's Ring (+2) / Gloves of Power (+1) — these LOWER the shown target. (Guidance/Bardic Inspiration do NOT help the steal roll.)\n3 — Quicksave.\n4 — Turn-based ON: freeze patrols, the victim, and the investigation timer.\n5 — Hide: bonus-action Hide (Cunning Action; near-automatic). If a vision cone is a problem, use Fog Cloud/Darkness (auto-hide).\n6 — Read targets: open the steal window (free while unseen). Roll target ≤ 10 = auto-lift; advantage from the Cloth makes higher targets very likely. Prioritize high value / low target (key gear, scrolls, buff sources). For a rare over-floor item, swap in a flat +SoH ring (Smuggler's/Gloves of Power) or just Enthrall the vendor and steal freely — Guidance/Bardic Inspiration won't help the roll.\n7 — Steal item by item: one per pickpocket. To pull more from the same NPC, re-hide or hand off to a second hidden member. Reload if a roll would fail.\n8 — Escape BEFORE the alert matures: break line of sight and leave the search radius — Cunning Action Disengage/Dash or a bonus-action Misty Step. Do NOT rely on the Deathstalker Mantle. Stay out of sight until the 'Thief!' investigation expires.\n9 — Launder the loot: keep stolen goods off Batman if guards may sweep. If caught anyway: pass the confront check, return/drop the item, or have an ally Enthrall / Feign Death — or reload.\n10 — Turn-based OFF and resume."
+        },
+        "scores": {
+          "fit": 4,
+          "fun": 4,
+          "power": 3
+        }
+      },
+      {
+        "name": "The Ambusher — Ranged Sniper (Config B)",
+        "is_primary": false,
+        "role": "Backline stealth sniper / DEX-save nuker / scout",
+        "class": "Arcane Trickster Rogue 11 / Fighter 1 (Archery)",
+        "race": "Astarion (High Elf / Vampire Spawn)",
+        "race_notes": "Same as Config A. The Deathstalker Mantle covers the invisibility a Duergar would've given innately.",
+        "background": "Charlatan (Deception + Sleight of Hand) — Astarion's fixed origin background (can't be changed, even via respec)",
+        "starting_stats": {
+          "STR": 8,
+          "DEX": 17,
+          "CON": 14,
+          "INT": 14,
+          "WIS": 10,
+          "CHA": 8
+        },
+        "ability_targets": "DEX 17 → 18 (Hag's Hair) → 20 (Graceful Cloth's +2) — Mirror NOT needed on DEX. Redirect the Mirror to INT: INT 14 → 16 (R10 feat) → 18 (Mirror of Loss) for higher scroll DC.",
+        "feats": [
+          {
+            "at": "R4",
+            "feat": "Sharpshooter",
+            "note": "Not Savage Attacker — that's melee-only and does nothing for crossbows. Toggle the −5 OFF while you still need reliable hits (it doesn't fight an acuity engine here, but accuracy from stealth matters)."
+          },
+          {
+            "at": "R8",
+            "feat": "Alert",
+            "note": "First turn to open from stealth; immune to surprise."
+          },
+          {
+            "at": "R10",
+            "feat": "+2 INT",
+            "note": "Scroll DC → INT 16 (with the Mirror to 18). Dropped the Dual Wielder option — off-hand attacks can't carry Sneak Attack and are dead on a crossbow build."
+          }
+        ],
+        "casting": "Everything keys off INT (Fighter has no casting stat, so AT spells AND scrolls both use INT) — single-stat simplicity.",
+        "key_spells": [
+          "AT: Shield, Disguise Self, Shadow Blade (backup)",
+          "Offense = stolen scrolls (INT DC) + Ne'er Misser force Sneak Attack"
+        ],
+        "creation": {
+          "level1_class": "Rogue 1",
+          "level1_gains": "Expertise in 2 skills (Sleight of Hand + Stealth) + Sneak Attack (1d6). Character-creation class.",
+          "subclass_choice": "Arcane Trickster is chosen at Rogue 3 (character level 4).",
+          "proficiencies": {
+            "armor_weapons": "Rogue base: Light armour; Simple weapons, Hand Crossbows, Longswords, Rapiers, Shortswords. The Fighter 1 dip (char 2) adds Medium armour, Shields, Martial weapons + the Archery fighting style — NO Heavy armour (multiclassing never grants it).",
+            "saving_throws": "Dexterity + Intelligence (Rogue). The Fighter dip grants NO save proficiency (multiclass) — the 'CON save' the plan lists for Batman is incorrect; he keeps Rogue's DEX+INT.",
+            "skills": "Rogue picks 4 skills + Expertise in 2 (Sleight of Hand + Stealth) at level 1; Astarion's Charlatan background adds Sleight of Hand + Deception (Stealth comes from a Rogue pick). Expertise #2 (Perception + Investigation) at Rogue 6."
+          },
+          "starting_cantrips": "None from the class at Rogue 1. Astarion (High Elf) picks Booming Blade as his racial cantrip at creation (melee backup).",
+          "starting_spells": "None at Rogue 1 — first AT spells (3) at Rogue 3 (char 4).",
+          "notes": "Astarion. Single-stat INT: Fighter has no casting stat, so BOTH AT spells and stolen scrolls key off INT. 3 feats total (Rogue 4/8/10)."
+        },
+        "spells": {
+          "note": "Everything keys off INT (single-stat simplicity). Config B's damage is crossbows (Ne'er Misser force Sneak Attack), so its 'spells' are mostly the Fighter features + utility + the scroll arsenal. Mandatory = the loop depends on it; Recommended = flex + scrolls.",
+          "mandatory": [
+            {
+              "spell": "Fighting Style: Archery",
+              "level": "Feature (Fighter 1)",
+              "school": "N/A (passive)",
+              "save": "None",
+              "when": "char 2 (Fighter 1)",
+              "why": "+2 to ranged attack rolls — the sole reason for the dip on a hand-crossbow sniper (Ne'er Misser + Hellfire Hand Crossbow)."
+            },
+            {
+              "spell": "Mage Hand",
+              "level": "Cantrip (free)",
+              "school": "Conjuration",
+              "save": "None",
+              "when": "char 4 (Rogue 3)",
+              "why": "Invisible hand: scouts, throws water bottles for Wet (no action), and flanks to enable Sneak Attack."
+            },
+            {
+              "spell": "Shield",
+              "level": "1",
+              "school": "Abjuration",
+              "save": "None (reaction)",
+              "when": "char 4 (Rogue 3, any-school pick)",
+              "why": "+5 AC and Magic Missile immunity — main survival button."
+            },
+            {
+              "spell": "Second Wind",
+              "level": "Feature (Fighter 1)",
+              "school": "N/A (class action)",
+              "save": "None",
+              "when": "char 2 (Fighter 1)",
+              "why": "Free with the level: bonus-action self-heal (1d10 + Fighter level), short-rest recharge — a minor panic button for the frail assassin."
+            }
+          ],
+          "recommended": [
+            {
+              "spell": "Booming Blade",
+              "level": "Cantrip",
+              "school": "Evocation",
+              "save": "Melee weapon attack (DEX)",
+              "when": "char 1 (High Elf racial) / char 4",
+              "why": "Melee Sneak-Attack delivery when forced into adjacency; backup to the crossbows."
+            },
+            {
+              "spell": "Shadow Blade",
+              "level": "2",
+              "school": "Illusion",
+              "save": "None (bonus action)",
+              "when": "char 8 (Rogue 7, replacement)",
+              "why": "Darkness/adjacency melee backup only in Config B (no Resonance Stone psychic payoff since the primary weapon is a crossbow)."
+            },
+            {
+              "spell": "Disguise Self",
+              "level": "1",
+              "school": "Illusion",
+              "save": "None",
+              "when": "char 4 (Rogue 3)",
+              "why": "Infiltration / fresh identity after a botched steal."
+            },
+            {
+              "spell": "Fog Cloud",
+              "level": "1",
+              "school": "Conjuration",
+              "save": "None",
+              "when": "char 4+",
+              "why": "Self-obscure to Hide (arms Magical Ambush) and feed the Eversight darkness combo."
+            },
+            {
+              "spell": "Misty Step",
+              "level": "2",
+              "school": "Conjuration",
+              "save": "None",
+              "when": "char 8+ (replacement)",
+              "why": "Reposition/escape beyond the item teleports."
+            },
+            {
+              "spell": "Ice Storm (scroll)",
+              "level": "4",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "stolen scroll (DC uses INT)",
+              "why": "The real DEX-save cold AoE (works fully with Magical Ambush) — prefer over the CON-save cold nukes when DEX-save is the goal."
+            },
+            {
+              "spell": "Chain Lightning (scroll)",
+              "level": "6",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "stolen scroll",
+              "why": "True DEX-save AoE; full Magical Ambush benefit."
+            },
+            {
+              "spell": "Cone of Cold (scroll)",
+              "level": "5",
+              "school": "Evocation",
+              "save": "CON save (NOT DEX)",
+              "when": "stolen scroll",
+              "why": "Big cold nuke but a CON save — contradicts the plan's 'DEX-save cold' label; Magical Ambush still disadvantages the save."
+            }
+          ]
+        },
+        "leveling": [
+          {
+            "char_level": 2,
+            "class": "Fighter 1",
+            "gains": "Archery fighting style (+2 ranged); medium armour + shields + martial weapons — but NO save proficiency (multiclass dips grant none; Batman keeps Rogue's DEX + INT saves)"
+          },
+          {
+            "char_level": 3,
+            "class": "Rogue 2",
+            "gains": "Cunning Action (bonus-action Hide)"
+          },
+          {
+            "char_level": 4,
+            "class": "Rogue 3",
+            "gains": "Arcane Trickster: invisible Mage Hand; Booming Blade; Shield, Disguise Self"
+          },
+          {
+            "char_level": 5,
+            "class": "Rogue 4",
+            "gains": "Feat: Sharpshooter"
+          },
+          {
+            "char_level": 6,
+            "class": "Rogue 5",
+            "gains": "Uncanny Dodge"
+          },
+          {
+            "char_level": 7,
+            "class": "Rogue 6",
+            "gains": "Expertise #2 (Perception + Investigation)"
+          },
+          {
+            "char_level": 8,
+            "class": "Rogue 7",
+            "gains": "Evasion + 2nd-level slots → Shadow Blade (adjacency backup); Sneak Attack 4d6"
+          },
+          {
+            "char_level": 9,
+            "class": "Rogue 8",
+            "gains": "Feat: Alert"
+          },
+          {
+            "char_level": 10,
+            "class": "Rogue 9",
+            "gains": "Magical Ambush"
+          },
+          {
+            "char_level": 11,
+            "class": "Rogue 10",
+            "gains": "Feat: flex + 3rd cantrip"
+          },
+          {
+            "char_level": 12,
+            "class": "Rogue 11",
+            "gains": "Reliable Talent; Sneak Attack 6d6"
+          }
+        ],
+        "itemization": {
+          "act1": [
+            "Graceful Cloth (advantage on stealing)",
+            "Gloves of Thievery",
+            "Two +1 Hand Crossbows (placeholder)",
+            "Knife of the Undermountain King (early melee backup)",
+            "Night Walkers + Amulet of Misty Step",
+            "Hoard Superior Elixir of Arcane Cultivation + Battlemage Elixirs"
+          ],
+          "act2": [
+            "Deathstalker Mantle (Invisible on kill)",
+            "Bracers of Defence (+2 AC, no armour)",
+            "Keep stealing scrolls"
+          ],
+          "act3": [
+            "Ne'er Misser (main-hand — force Sneak Attack, bypasses resistances, free L3 Magic Missile). Available a whole act early at Moonrise (Act 2)",
+            "Hellfire Hand Crossbow (off-hand)",
+            "Eversight Ring (Darkness 'Batman' combo — grab it in Act 2 at Reithwin's House of Healing; it's missable)",
+            "Neck slot free (Amulet of Greater Health went to Toaster) — use a defensive amulet; the backline sniper needs CON even less than Config A",
+            "Does NOT carry the Resonance Stone (backline — force damage doesn't benefit; the Paladin runs the self-contained Pike + Bhaalist instead)"
+          ]
+        },
+        "playstyle": "Identical Hide → Magical-Ambush loop as Config A, but from the backline — snipe a Sneak-Attack crossbow shot (force, via Ne'er Misser) or a disadvantaged AoE scroll, never entering melee. Mage Hand still throws water for the Sorcerer and flanks to enable Sneak Attack. The cleanest positional split from the melee Paladin. CO-EQUAL with Config A (no single 'primary'): this is the safe default — backline, no Stone/Elixir dependency, and it works fine vs undead; pick Config A when you want the higher psychic-nova ceiling on a living boss.",
+        "traps": [
+          "Savage Attacker is melee-only — useless on crossbows; take Sharpshooter instead.",
+          "Same Magical Ambush / Superior Elixir / Eversight caveats as Config A.",
+          "Loses the psychic-×2 / Hold-auto-crit Shadow-Blade payoff (crossbows aren't psychic) and the War Cleric's Create Water / Guidance / WIS-saves; gains range safety, +2 accuracy, one-stat simplicity.",
+          "Pickpocketing: see Config A's pickpocket section — identical. (Guidance/Bardic Inspiration don't help the steal roll in either config, so Config B losing self-Guidance costs nothing for stealing; use flat +SoH gear for hard targets.)"
+        ],
+        "scores": {
+          "fit": 5,
+          "fun": 4.5,
+          "power": 3.5
+        }
+      }
+    ],
+    "Toaster": [
+      {
+        "name": "The Shock Bottle",
+        "is_primary": true,
+        "role": "Wet + Lightning AoE nuke + party Haste engine",
+        "class": "Sorcerer 10 (Draconic Bloodline — Blue) / Tempest Cleric 2",
+        "race": "Gale (Human)",
+        "race_notes": "Human (BG3): a freely-assigned +2/+1 ability bonus like every race (the CHA 17 in starting_stats is 15 point-buy + the +2 racial), 'Civil Militia' proficiency with Shields + Light armour + spear/pike/halberd/glaive (no trident), one extra skill, and +25% carry weight — stat-neutral vs any other race, so it costs nothing. NETHERESE ORB: only an EARLY-Act-1 issue — the 3-item 'The Wizard of Waterdeep' quest; feed Gale 3 magic items and the hunger resolves (Elminster later quells it entirely). Ignoring it stacks escalating Arcane Hunger debuffs (disadvantage on saves → attacks → half move) and only the final ignored stage is fatal — it is NOT an Act 1–2 resource drain. Recruited as a Wizard; respec via Withers into this Draconic-Blue Sorcerer / Tempest Cleric build.",
+        "background": "Sage (Arcana, History) — Gale's default",
+        "starting_stats": {
+          "STR": 8,
+          "DEX": 14,
+          "CON": 14,
+          "INT": 8,
+          "WIS": 12,
+          "CHA": 17
+        },
+        "ability_targets": "CHA 17 → 20 (Hag's Hair + Mirror).",
+        "metamagic": [
+          "Twinned + Extended (L2)",
+          "Quickened (L3)"
+        ],
+        "feats": [
+          {
+            "at": "Sorc 4",
+            "feat": "War Caster"
+          },
+          {
+            "at": "Sorc 8",
+            "feat": "Alert",
+            "note": "Swapped from Elemental Adept (redundant — Wet already negates lightning/cold resistance). Alert (+5 initiative, immune to Surprise) fixes the party's biggest R1 problem: low-DEX Toaster must Twinned-Haste the melee BEFORE they act. Haste concentration is already covered by War Caster (Sorc 4)."
+          }
+        ],
+        "key_spells": [
+          "Create Water (via Tempest dip)",
+          "Witch Bolt / Lightning Bolt",
+          "Haste (Twinned)",
+          "Counterspell",
+          "Glyph of Warding (scroll only — not a Sorcerer spell)"
+        ],
+        "creation": {
+          "level1_class": "Sorcerer 1 (Draconic Bloodline — Blue)",
+          "level1_gains": "Draconic Bloodline (Blue / lightning) subclass; Draconic Resilience (unarmoured AC = 13 + DEX, +1 HP per Sorcerer level); free Witch Bolt. Metamagic starts at Sorcerer 2.",
+          "subclass_choice": "Draconic Bloodline (Blue) is chosen at Sorcerer 1 (character creation).",
+          "proficiencies": {
+            "armor_weapons": "Sorcerer: no armour; Daggers, Quarterstaves, Light Crossbows. The Tempest Cleric 2 dip (char 11–12) later adds Heavy armour, Shields, and Martial weapons.",
+            "saving_throws": "Constitution + Charisma (Sorcerer, the creation class). The late Cleric dip grants no additional save proficiency.",
+            "skills": "Sorcerer chooses 2 from Arcana, Deception, Insight, Intimidation, Persuasion, Religion. Gale's Sage background adds Arcana + History; Human grants one extra skill proficiency."
+          },
+          "starting_cantrips": "4 known at level 1 — recommend Shocking Grasp (best lightning cantrip) + utility.",
+          "starting_spells": "2 known at level 1, plus Witch Bolt granted free by Blue Draconic Ancestry.",
+          "notes": "Gale (Human) — recruited on the Ravaged Beach as a Wizard, then respec'd via Withers into the Sorcerer build (assign the starting stats above during respec; the CHA 17 uses Human's +2 racial). 2 feats total (Sorc 4 + Sorc 8). Create Water and Destructive Wrath come from the Tempest Cleric 2 dip at char 11–12 — the Sorcerer cannot apply Wet on its own. Netherese orb: just feed him 3 magic items in early Act 1 (The Wizard of Waterdeep) and it's done."
+        },
+        "spells": {
+          "note": "Sorcerer is a KNOWN caster (learn on level-up, replace 1 per level); the Tempest Cleric 2 dip is a prepared caster re-picked freely. Mandatory = the wet-lightning engine + Haste; Recommended = flex nukes and utility.",
+          "mandatory": [
+            {
+              "spell": "Witch Bolt",
+              "level": "1",
+              "school": "Evocation",
+              "save": "Ranged spell attack",
+              "when": "Sorc 1 (free, Blue ancestry)",
+              "why": "1d12 Lightning, Concentration; re-activate each turn with no roll, builds Lightning Charges on The Spellsparkler, and works with Destructive Wrath."
+            },
+            {
+              "spell": "Chromatic Orb: Lightning",
+              "level": "1",
+              "school": "Evocation",
+              "save": "Ranged spell attack",
+              "when": "Sorc 1–3",
+              "why": "2d8 Lightning that creates an Electrified Water surface; upcasts +1d8/level; triggers Destructive Wrath — cheap single-target lightning that sets up the electrify combo."
+            },
+            {
+              "spell": "Lightning Bolt",
+              "level": "3",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "Sorc 5",
+              "why": "8d6 Lightning line — the main AoE nuke; doubled vs Wet, maximized by Destructive Wrath, boosted by Elemental Affinity + Elemental Adept."
+            },
+            {
+              "spell": "Haste",
+              "level": "3",
+              "school": "Transmutation",
+              "save": "None (Concentration)",
+              "when": "Sorc 5",
+              "why": "Single-target so Twinnable; Twinned Haste (3 sorcery points) on the Paladin is the party Haste engine. Never cast another Concentration spell after it."
+            },
+            {
+              "spell": "Counterspell",
+              "level": "3",
+              "school": "Abjuration",
+              "save": "Reaction (no save at equal/higher slot)",
+              "when": "Sorc 5",
+              "why": "Shuts down enemy casters; upcast to beat higher-level spells without a check."
+            },
+            {
+              "spell": "Create or Destroy Water",
+              "level": "1",
+              "school": "Transmutation",
+              "save": "None",
+              "when": "char 11 (Tempest Cleric 1)",
+              "why": "NOT a Sorcerer spell — obtained via the Tempest dip (prepared). Applies Wet (double Lightning/Cold), which doubles the whole lightning package. No save, so low WIS is irrelevant."
+            },
+            {
+              "spell": "Destructive Wrath",
+              "level": "Channel Divinity (not a spell)",
+              "school": "Tempest Domain feature",
+              "save": "N/A",
+              "when": "char 12 (Tempest Cleric 2)",
+              "why": "The payoff: spend a Channel Divinity charge to MAXIMISE any Thunder/Lightning roll (Lightning Bolt / Chain Lightning / Markoheshkir bolts / Thunderwave). 1/rest (2 with Amulet of the Devout)."
+            }
+          ],
+          "recommended": [
+            {
+              "spell": "Shocking Grasp",
+              "level": "Cantrip",
+              "school": "Evocation",
+              "save": "Melee spell attack",
+              "when": "Sorc 1",
+              "why": "Best lightning cantrip: 1d8→3d8 by char 10, strips Reactions, advantage vs metal armour; scales with Potent Robe, Elemental Affinity, Spellmight Gloves, Markoheshkir; the War Caster opportunity-spell payload."
+            },
+            {
+              "spell": "Cone of Cold",
+              "level": "5",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "Sorc 9–10",
+              "why": "5d8 Cold AoE; off-element for Elemental Adept: Lightning, but Wet gives Cold vulnerability too so it still doubles."
+            },
+            {
+              "spell": "Fireball",
+              "level": "3",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "Sorc 5+",
+              "why": "8d6 Fire AoE flex for fire-vulnerable or non-Wet packs; off-type (no Elemental Affinity/Adept synergy), situational."
+            },
+            {
+              "spell": "Misty Step",
+              "level": "2",
+              "school": "Conjuration",
+              "save": "None (bonus action)",
+              "when": "Sorc 3+",
+              "why": "Reposition out of your own electrified water."
+            },
+            {
+              "spell": "Thunderwave",
+              "level": "1",
+              "school": "Evocation",
+              "save": "CON save",
+              "when": "char 11 (Tempest domain, always-prepared)",
+              "why": "Free domain spell: 2d8 Thunder + knockback; a Thunder roll, so Destructive Wrath maximises it (16 guaranteed) and it triggers Reverberation gear."
+            },
+            {
+              "spell": "Aid",
+              "level": "2",
+              "school": "Abjuration",
+              "save": "None",
+              "when": "char 12 (Tempest Cleric 2)",
+              "why": "Party max-HP buff, no concentration, no save — a strong prepared pick that ignores the low WIS DC."
+            },
+            {
+              "spell": "Chain Lightning",
+              "level": "6",
+              "school": "Evocation",
+              "save": "DEX save",
+              "when": "Markoheshkir / scroll only (Sorc learns it at class 11, unreached)",
+              "why": "10d8 Lightning — accessed via Markoheshkir (Kereska's Favour / Bolts of Doom, 1/short rest) or scrolls, not learned at Sorc 10."
+            },
+            {
+              "spell": "Glyph of Warding",
+              "level": "3",
+              "school": "Abjuration",
+              "save": "DEX save",
+              "when": "scroll only for this build",
+              "why": "CORRECTION: listed in the party plan but NOT a Sorcerer spell (Bard/Cleric/Wizard, class level 5); the Cleric dip only reaches level 2, so this build can only cast it from scrolls."
+            }
+          ]
+        },
+        "leveling": {
+          "respecs": [
+            {
+              "label": "Level 1",
+              "note": "Gale is recruited on the Ravaged Beach as a level-1 Evocation Wizard. Do NOT level him as a Wizard — respec him into the Sorcerer build at Withers as soon as you can afford it (~100g). See the Respec tab for the actual leveling.",
+              "rows": [
+                {
+                  "char_level": 1,
+                  "class": "Wizard 1 (as recruited)",
+                  "gains": "Recruited state only — Evocation Wizard. A placeholder until the Withers respec into Sorcerer."
+                }
+              ]
+            },
+            {
+              "label": "Respec → Sorcerer",
+              "note": "Respec at Withers (~100g) and rebuild from level 1 as a Draconic (Blue) Sorcerer. Assign the starting stats during the respec (the CHA 17 uses Human's +2 racial) and re-pick Metamagic/spells to match this plan. Final: Sorcerer 10 → Tempest Cleric 2.",
+              "rows": [
+                {
+                  "char_level": 1,
+                  "class": "Sorcerer 1",
+                  "gains": "Draconic Bloodline (Blue → Lightning); Witch Bolt free from Blue ancestry; 4 cantrips (Shocking Grasp) + 2 spells; +1 HP/level (Draconic Resilience)"
+                },
+                {
+                  "char_level": 2,
+                  "class": "Sorcerer 2",
+                  "gains": "Font of Magic (sorcery points); Metamagic: Twinned + Quickened Spell (Extended later)"
+                },
+                {
+                  "char_level": 3,
+                  "class": "Sorcerer 3",
+                  "gains": "L2 spells (Misty Step); more sorcery points"
+                },
+                {
+                  "char_level": 4,
+                  "class": "Sorcerer 4",
+                  "gains": "Feat: War Caster"
+                },
+                {
+                  "char_level": 5,
+                  "class": "Sorcerer 5",
+                  "gains": "3rd-level slots → Haste (Twinned Haste on the Paladin), Counterspell, Lightning Bolt, Fireball"
+                },
+                {
+                  "char_level": 6,
+                  "class": "Sorcerer 6",
+                  "gains": "Draconic 6: Elemental Affinity — add CHA to Lightning damage"
+                },
+                {
+                  "char_level": 7,
+                  "class": "Sorcerer 7",
+                  "gains": "4th-level slots"
+                },
+                {
+                  "char_level": 8,
+                  "class": "Sorcerer 8",
+                  "gains": "Feat: Elemental Adept (Lightning — ignore Lightning resistance; treat 1s on damage dice as 2s)"
+                },
+                {
+                  "char_level": 9,
+                  "class": "Sorcerer 9",
+                  "gains": "5th-level slots (Cone of Cold)"
+                },
+                {
+                  "char_level": 10,
+                  "class": "Sorcerer 10",
+                  "gains": "Sorcerer capstone for this build; 6 cantrips; final Metamagic pick"
+                },
+                {
+                  "char_level": 11,
+                  "class": "Tempest Cleric 1",
+                  "gains": "Create/Destroy Water (the Wet engine → doubles Lightning/Cold); heavy armour + shields; Thunderwave domain spell"
+                },
+                {
+                  "char_level": 12,
+                  "class": "Tempest Cleric 2",
+                  "gains": "Channel Divinity: Destructive Wrath — maximise any Lightning/Thunder roll"
+                }
+              ]
+            }
+          ]
+        },
+        "itemization": {
+          "act1": [
+            "The Spellsparkler",
+            "Head slot open (the Diadem of Arcane Synergy went to Durc — its weapon-damage buff is dead on a pure caster); save it for a spell-DC hat (Hood of the Weave / Birthright later)"
+          ],
+          "act2": [
+            "Callous Glow Ring",
+            "Boots of Stormy Clamour",
+            "Coruscation Ring",
+            "Potent Robe (Alfira at Last Light — only if she survived Act 1)"
+          ],
+          "act3": [
+            "Markoheshkir (Kereska's Favour → Lightning)",
+            "Gloves of Belligerent Skies (Crèche, Act 1) — every Lightning/Thunder hit stacks Reverberation → 5 stacks = CON save or Prone; turns each AoE into soft-CC. (Spellmight Gloves do NOTHING for this kit — they need spell ATTACK rolls, and everything here is save-based.)",
+            "Birthright (+2 CHA)",
+            "Amulet of the Devout (extra Destructive Wrath) — Toaster keeps the neck; the Amulet of Greater Health went to the Bard"
+          ]
+        },
+        "playstyle": "Soak enemies with Create Water (Wet = lightning/cold vulnerability), then maximize with Destructive Wrath. Doubles as the party's Haste engine via Twinned Haste on the Paladin.",
+        "traps": [
+          "Friendly fire: electrified water damages anyone standing in it (incl. your melee), and Wet makes your own frontliner take double enemy lightning/cold — soak clusters that don't overlap the Paladin.",
+          "Gale's Netherese orb: a one-off early-Act-1 chore — feed him 3 magic items (The Wizard of Waterdeep) and it resolves; ignoring it stacks Arcane Hunger debuffs and only the final stage is fatal. Not an ongoing tax.",
+          "Respec cost: Gale joins as a Wizard — bank ~100g for the Withers respec into Sorcerer, and re-pick metamagic/spells to match this plan."
+        ]
+      }
+    ],
+    "SimonSays": [
+      {
+        "name": "The Commander",
+        "is_primary": true,
+        "role": "Ranged acuity control + damage + party face",
+        "class": "Swords Bard 10 / Fighter 1 / Wizard 1",
+        "build_order": "Pure Swords Bard to 7 → respec at 8 → Fighter 1 → Wizard 1 → Swords Bard 1–10.",
+        "race": "Half-Elf or Human (early shield)",
+        "background": "Entertainer or Guild Artisan (face)",
+        "starting_stats": {
+          "STR": 8,
+          "DEX": 16,
+          "CON": 14,
+          "INT": 10,
+          "WIS": 10,
+          "CHA": 17
+        },
+        "stats_note": "Adopt Gloves of Dexterity (DEX 18) then respec DEX points into INT 16.",
+        "ability_targets": "CHA 17 → 18 (Hag's Hair) → 20 (Mirror of Loss); 22 via a later ASI if using a shield.",
+        "feats": [
+          {
+            "at": "Bard 4 (retaken post-respec)",
+            "feat": "Sharpshooter"
+          },
+          {
+            "at": "Bard 8",
+            "feat": "War Caster",
+            "note": "Swapped from Dual Wielder (useless on a two-handed longbow). Advantage on CON saves to hold Hold Monster — the party's melee auto-crit engine — plus opportunity-spell casting. (Triggers at Bard class level 8.)"
+          }
+        ],
+        "fighting_styles": [
+          "Archery (Fighter)",
+          "Dueling (Bard)"
+        ],
+        "key_spells": [
+          "Glyph of Warding",
+          "Hold Monster",
+          "Confusion",
+          "Fear",
+          "Magical Secrets → Command + Counterspell",
+          "Wizard → Shield"
+        ],
+        "creation": {
+          "level1_class": "Fighter 1 (first class in the final post-respec build)",
+          "level1_gains": "Archery fighting style (+2 ranged), Second Wind, and — because Fighter is taken FIRST — STR + CON save proficiency, all armour (incl. Heavy) + Shields + Martial weapons, and 2 Fighter skills.",
+          "subclass_choice": "College of Swords is chosen at Bard 3 (Blade Flourish, a fighting style, Medium armour + Scimitars); Extra Attack at Bard 6. The Fighter/Wizard dips have no subclass at these levels.",
+          "proficiencies": {
+            "armor_weapons": "From Fighter 1 (first class): Light/Medium/Heavy armour, Shields, Simple + Martial weapons + the Archery fighting style. College of Swords also adds Medium armour + Scimitars.",
+            "saving_throws": "Strength + Constitution — from Fighter as the FIRST class (CON = concentration insurance for Hold Monster / Fear / Confusion). Multiclassing into Bard/Wizard grants no additional save proficiency.",
+            "skills": "Fighter picks 2 (Perception + Athletics, or Insight for the face). Bard adds 3 skills + Expertise on 2 (Bard 3) and 2 more (Bard 10) + Jack of All Trades (Bard 2) — the face/skill engine. Background Entertainer/Guild Artisan adds 2."
+          },
+          "starting_cantrips": "Bard: 2 at Bard 1 (Vicious Mockery, Friends) → 4 by Bard 10. The Wizard dip adds 3 INT cantrips (filler).",
+          "starting_spells": "Bard: 4 known at Bard 1 → 13 by Bard 10 + 2 Magical Secrets. Wizard 1: 6 spellbook picks — MUST include Shield (there is no Shield scroll to transcribe).",
+          "notes": "Half-Elf/Human. Final order (after the level-8 respec): Fighter 1 → Wizard 1 → Swords Bard ×10 = caster level 11 → a single L6 slot (the Wizard dip's whole point: Command up to 6 targets). Pre-respec you play pure Swords Bard 1–7. Feats/ASIs at Bard class levels 4 and 8."
+        },
+        "spells": {
+          "note": "Bard is a known caster (Always Prepared, replace 1 per level-up); Wizard-dip spells key off INT and re-prepare freely. Mandatory = the acuity-control engine; Recommended = the wider control/utility toolbox.",
+          "mandatory": [
+            {
+              "spell": "Fighting Style: Archery",
+              "level": "Feature (Fighter 1)",
+              "school": "N/A (passive)",
+              "save": "None",
+              "when": "char 8 (Fighter 1, post-respec)",
+              "why": "+2 ranged attack for the Slashing-Flourish → Arcane-Acuity engine (Hellrider's Longbow → Gontr Mael)."
+            },
+            {
+              "spell": "Hold Monster",
+              "level": "5",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "Bard 9",
+              "why": "Paralyse — attacks within 3m auto-crit, the party's melee auto-crit engine for Durc's smites. Upcast adds +1 target per slot above 5th. Concentration."
+            },
+            {
+              "spell": "Command",
+              "level": "1",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "Bard 10 (Magical Secrets)",
+              "why": "The bonus-action loop via the Band of the Mystic Scoundrel; +1 target per slot above 1st, so the Wizard-dip L6 slot hits up to 6. DC uses CHA + Arcane Acuity."
+            },
+            {
+              "spell": "Glyph of Warding",
+              "level": "3",
+              "school": "Abjuration",
+              "save": "DEX save",
+              "when": "Bard 5",
+              "why": "Pre-placed AoE burst (5d8, choose element) set before a fight as a ground trap."
+            },
+            {
+              "spell": "Shield",
+              "level": "1",
+              "school": "Abjuration",
+              "save": "None (reaction, INT via Wizard)",
+              "when": "char 9 (Wizard 1)",
+              "why": "+5 AC reaction and negates Magic Missile — the survivability payoff of the Wizard dip. Must be one of the 6 Wizard-1 picks (no Shield scroll exists)."
+            }
+          ],
+          "recommended": [
+            {
+              "spell": "Fear",
+              "level": "3",
+              "school": "Illusion",
+              "save": "WIS save",
+              "when": "Bard 5",
+              "why": "9m cone — frightened enemies drop weapons and can't act/approach; scales with CHA + Arcane Acuity. Concentration."
+            },
+            {
+              "spell": "Confusion",
+              "level": "4",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "Bard 7",
+              "why": "6m scramble — enemies attack randomly / skip turns. Concentration."
+            },
+            {
+              "spell": "Hypnotic Pattern",
+              "level": "3",
+              "school": "Illusion",
+              "save": "WIS save",
+              "when": "Bard 5",
+              "why": "Best-in-class AoE lockdown (9m incapacitate); superb acuity payoff. Concentration; breaks on damage."
+            },
+            {
+              "spell": "Counterspell",
+              "level": "3",
+              "school": "Abjuration",
+              "save": "Reaction (contested by slot level)",
+              "when": "Bard 10 (Magical Secrets)",
+              "why": "Shuts off enemy casters as a Reaction."
+            },
+            {
+              "spell": "Hold Person",
+              "level": "2",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "Bard 3",
+              "why": "Cheaper single-target paralyse (auto-crit within 3m), available far earlier than Hold Monster — the early-game stand-in. Concentration."
+            },
+            {
+              "spell": "Dominate Person",
+              "level": "5",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "Bard 9",
+              "why": "Turn a humanoid against its allies; a flex 5th-level pick alongside Hold Monster. Concentration."
+            },
+            {
+              "spell": "Magic Missile",
+              "level": "1",
+              "school": "Evocation",
+              "save": "None (auto-hit force)",
+              "when": "char 9 (Wizard 1)",
+              "why": "Reliable chip damage and a dependable concentration-breaker; force is INT-independent so it stays useful at INT 16."
+            },
+            {
+              "spell": "Vicious Mockery",
+              "level": "Cantrip",
+              "school": "Enchantment",
+              "save": "WIS save",
+              "when": "Bard 1",
+              "why": "Psychic damage + disadvantage on the target's next attack; free ranged control that plays into acuity."
+            },
+            {
+              "spell": "Friends",
+              "level": "Cantrip",
+              "school": "Enchantment",
+              "save": "None (Concentration)",
+              "when": "Bard 1",
+              "why": "Advantage on Charisma checks vs a non-hostile creature — the face enabler. Never cast on companions (approval loss when it ends)."
+            },
+            {
+              "spell": "Slow",
+              "level": "3",
+              "school": "Transmutation",
+              "save": "WIS save",
+              "when": "Bard 5",
+              "why": "UNDEAD-PROOF control (unlike Hold Monster/Command) — halves speed, −2 AC/DEX-saves, one action only, ~50% chance to fizzle a cast. Bank it as a known spell for the Act-2/undead/construct fights where paralyze doesn't work. Concentration."
+            },
+            {
+              "spell": "Healing Word",
+              "level": "1",
+              "school": "Evocation",
+              "save": "None",
+              "when": "Bard 1",
+              "why": "The no-healer party's emergency pickup: bonus-action ranged revive/heal so a downed ally doesn't cost a full turn. Cheap insurance to keep known — pairs with stocked Revivify scrolls."
+            }
+          ]
+        },
+        "leveling": {
+          "respecs": [
+            {
+              "label": "Level 1",
+              "note": "How you build from character creation and play until the level-8 respec — pure Swords Bard, no multiclassing yet.",
+              "rows": [
+                {
+                  "char_level": 1,
+                  "class": "Swords Bard 1",
+                  "gains": "Bardic Inspiration; 2 cantrips + 4 spells known (Vicious Mockery, Friends, Healing Word); Bard skills + Expertise setup"
+                },
+                {
+                  "char_level": 2,
+                  "class": "Swords Bard 2",
+                  "gains": "Jack of All Trades (½ prof to non-proficient checks); Song of Rest"
+                },
+                {
+                  "char_level": 3,
+                  "class": "Swords Bard 3",
+                  "gains": "College of Swords: Blade Flourish + Dueling fighting style, Medium armour + Scimitars; Expertise ×2; L2 spells (Hold Person)"
+                },
+                {
+                  "char_level": 4,
+                  "class": "Swords Bard 4",
+                  "gains": "Feat: Sharpshooter"
+                },
+                {
+                  "char_level": 5,
+                  "class": "Swords Bard 5",
+                  "gains": "L3 spells (Glyph of Warding, Fear, Hypnotic Pattern, Slow); Font of Inspiration (Bardic Inspiration on short rest)"
+                },
+                {
+                  "char_level": 6,
+                  "class": "Swords Bard 6",
+                  "gains": "Extra Attack → two ranged Slashing Flourishes in one action (+8 Arcane Acuity on turn 1)"
+                },
+                {
+                  "char_level": 7,
+                  "class": "Swords Bard 7",
+                  "gains": "L4 spells (Confusion); last level before the respec"
+                }
+              ]
+            },
+            {
+              "label": "Level 8 respec",
+              "note": "At char level 8, respec at Withers and rebuild from level 1 in this exact order. You're char level 8 the moment the rebuild reaches Bard 6 (Extra Attack); levels 9–12 then continue as Bard 7–10. Final: Fighter 1 → Wizard 1 → Swords Bard ×10.",
+              "rows": [
+                {
+                  "char_level": 1,
+                  "class": "Fighter 1",
+                  "gains": "Taken FIRST: Archery fighting style (+2 ranged), Second Wind; STR + CON save proficiency; all armour (incl. Heavy) + Shields + Martial weapons; 2 Fighter skills"
+                },
+                {
+                  "char_level": 2,
+                  "class": "Wizard 1",
+                  "gains": "Spellbook (6 picks — MUST include Shield; add Magic Missile); Arcane Recovery; scribe scrolls; 3 INT cantrips"
+                },
+                {
+                  "char_level": 3,
+                  "class": "Swords Bard 1",
+                  "gains": "Bardic Inspiration; Bard cantrips + spells (Vicious Mockery, Friends, Healing Word)"
+                },
+                {
+                  "char_level": 4,
+                  "class": "Swords Bard 2",
+                  "gains": "Jack of All Trades; Song of Rest"
+                },
+                {
+                  "char_level": 5,
+                  "class": "Swords Bard 3",
+                  "gains": "College of Swords: Blade Flourish + Dueling style, Medium armour + Scimitars; Expertise ×2; L2 spells (Hold Person)"
+                },
+                {
+                  "char_level": 6,
+                  "class": "Swords Bard 4",
+                  "gains": "Feat: Sharpshooter (retaken)"
+                },
+                {
+                  "char_level": 7,
+                  "class": "Swords Bard 5",
+                  "gains": "L3 spells (Glyph of Warding, Fear, Hypnotic Pattern, Slow); Font of Inspiration"
+                },
+                {
+                  "char_level": 8,
+                  "class": "Swords Bard 6",
+                  "gains": "Extra Attack — the rebuild catches up to your char level here; two ranged Slashing Flourishes/turn"
+                },
+                {
+                  "char_level": 9,
+                  "class": "Swords Bard 7",
+                  "gains": "L4 spells (Confusion)"
+                },
+                {
+                  "char_level": 10,
+                  "class": "Swords Bard 8",
+                  "gains": "Feat: War Caster (advantage on CON saves to hold Hold Monster; opportunity-spell casting)"
+                },
+                {
+                  "char_level": 11,
+                  "class": "Swords Bard 9",
+                  "gains": "L5 spells (Hold Monster — the melee auto-crit engine; Dominate Person)"
+                },
+                {
+                  "char_level": 12,
+                  "class": "Swords Bard 10",
+                  "gains": "Magical Secrets (Command + Counterspell); 2 more Expertise; caster level 11 → the single L6 slot (Command up to 6 targets)"
+                }
+              ]
+            }
+          ]
+        },
+        "itemization": {
+          "act1": [
+            "Hellrider's Longbow (Rivington — initiative)",
+            "Gloves of Dexterity (DEX 18)"
+          ],
+          "act2": [
+            "Helmet of Arcane Acuity (Mason's Guild — +2 acuity/hit → +spell save DC)"
+          ],
+          "act3": [
+            "Band of the Mystic Scoundrel (Akabi's Circus wheel → Chult jungle — cast Enchantment/Illusion as a bonus action after a weapon hit)",
+            "Gontr Mael (top bow — but it grants NO initiative; keep Hellrider's Longbow if you need to act first)",
+            "Amulet of Greater Health (CON 23) — reallocated here to armour Hold Monster concentration; stacks with War Caster"
+          ]
+        },
+        "playstyle": "OPENING: with Extra Attack (Bard 6), Blade Flourish is NOT once-per-turn — fire TWO ranged Slashing Flourishes in one Attack action = 4 hits = +8 Arcane Acuity on turn 1 (not +4), then convert via the Band of the Mystic Scoundrel into a bonus-action Hold Monster at the boosted DC. Sustain: land a flourish EVERY turn (Acuity also decays −1/turn on top of −2 per hit taken) to hold the DC; cap 10 = +10 spell save DC. The Wizard-dip 6th-level slot lets Command hit up to 6. ⚠ Hold Monster & Command have NO effect on undead — see the party undead-fallback plan; carry Hypnotic Pattern/Slow for those fights."
+      }
+    ]
+  },
+  "loot_guide": [
+    {
+      "act": 1,
+      "areas": [
+        {
+          "area": "Nautiloid (Prologue)",
+          "items": [
+            {
+              "name": "Everburn Blade",
+              "for": "Durc",
+              "core": true,
+              "note": "Looted from Commander Zhalk at the helm (kill him during the escape, or Command: Drop). Greatsword 2d6 + 1d4 fire, magical — Durc's early crit-smite weapon."
+            }
+          ],
+          "events": [
+            {
+              "name": "Recruit Lae'zel",
+              "note": "Freed from her pod on the ship."
+            },
+            {
+              "name": "Tadpole / Illithid Powers unlock",
+              "note": "You're infected here; the Dream Guardian later unlocks the Illithid Powers tree."
+            }
+          ]
+        },
+        {
+          "area": "Ravaged Beach / Dank Crypt & Camp",
+          "items": [
+            {
+              "name": "Deathstalker Mantle",
+              "for": "Batman",
+              "core": true,
+              "note": "DARK URGE EXCLUSIVE — given by Sceleritas Fel at camp in Act 1. Once/turn, killing a creature turns you Invisible for 2 turns. Durc (the Dark Urge) receives it, then hands it to Batman (the assassin's reposition/re-ambush cloak)."
+            }
+          ],
+          "events": [
+            {
+              "name": "Withers — recruit + RESPEC",
+              "note": "Sarcophagus in the Dank Crypt (Overgrown Ruins). Enables respec (100g) / revive / hirelings at camp — needed for every respec in this plan."
+            },
+            {
+              "name": "Recruit Shadowheart, Astarion, Gale",
+              "note": "Beach/cliffs area."
+            }
+          ]
+        },
+        {
+          "area": "Emerald Grove",
+          "items": [
+            {
+              "name": "Ring of Protection",
+              "for": "any",
+              "core": false,
+              "note": "From Mol in the Tiefling Hideout (pickpocket or gifted). +1 AC and +1 to all saves — top universal defensive ring."
+            },
+            {
+              "name": "Whispering Promise + Hellrider's Pride",
+              "for": "any",
+              "core": false,
+              "note": "Whispering Promise (Volo) + Hellrider's Pride (Zevlor/Kagha): a Bless-on-heal + resistance-on-heal combo for a support healer."
+            },
+            {
+              "name": "Gloves of Power",
+              "for": "any",
+              "core": false,
+              "note": "Carried by Za'krug at the Grove gate (or looted from the goblin who wears it). +1 Sleight of Hand, and while the wearer bears the Absolute's Brand its weapon hits inflict Absolute's Bane (−1d4 to the target's attacks & saves). NOT a +attack/DC item — a cheap flat pickpocket helper."
+            },
+            {
+              "name": "Sorrow (glaive)",
+              "for": "any",
+              "core": false,
+              "note": "Emerald Grove Hidden Vault (Wolf altar; unlocked via the Enclave Library puzzle). +1 reach glaive that grants the Sorrowful Lash cantrip — a decent early polearm for a martial/GWM user."
+            }
+          ],
+          "events": [
+            {
+              "name": "Save the Grove",
+              "note": "Central Act 1 hub — good path (kill goblin leaders) vs evil (raid with Minthara)."
+            },
+            {
+              "name": "Recruit Wyll",
+              "note": "Training tieflings at the grove."
+            }
+          ]
+        },
+        {
+          "area": "Sunlit Wetlands (Auntie Ethel)",
+          "items": [
+            {
+              "name": "Auntie Ethel's Hair (Hag's Hair)",
+              "for": "any",
+              "core": true,
+              "note": "Consumable: permanent +1 to ANY ability, uncapped. The plan assumes each PC gets one — it's the +1 that carries everyone's primary from 17→18 (then Mirror of Loss → 20)."
+            }
+          ],
+          "events": [
+            {
+              "name": "Get the Hag's Hair",
+              "note": "Drop Ethel low, then trigger her deal-offer cutscene and KILL her to loot the Hair. Do NOT accept a bargain (it breaks Durc's Paladin oath, and gives less)."
+            },
+            {
+              "name": "Rescue Mayrina",
+              "note": "Bitter Divorce questline."
+            }
+          ]
+        },
+        {
+          "area": "Blighted Village & Whispering Depths",
+          "items": [
+            {
+              "name": "Bracers of Defence",
+              "for": "Batman",
+              "core": true,
+              "note": "Apothecary's secret cellar beneath the village. +2 AC while wearing no armour and no shield — Batman's AC without armour."
+            },
+            {
+              "name": "Sussur weapons (Dagger/Greatsword)",
+              "for": "any",
+              "core": false,
+              "note": "Craft at the Blacksmith with Sussur Tree Bark (from the Sussur Tree in the Whispering Depths). On-hit Silence — shuts down enemy casters."
+            }
+          ],
+          "events": [
+            {
+              "name": "The Necromancy of Thay",
+              "note": "Permanent Speak with Dead (risky WIS saves) — behind a locked gate, opened with the Dark Amethyst."
+            },
+            {
+              "name": "Whispering Depths / Sussur Tree",
+              "note": "Silence-bark for the weapons + Dark Amethyst; Phase Spider Matriarch; a pit drops to the Underdark."
+            }
+          ]
+        },
+        {
+          "area": "Goblin Camp",
+          "items": [
+            {
+              "name": "Amulet of Misty Step",
+              "for": "Batman",
+              "core": true,
+              "note": "Gilded chest in Priestess Gut's chambers (Defiled Temple). Bonus-action Misty Step with no slot — free repositioning."
+            },
+            {
+              "name": "Goblin-leader loot (Gut / Ragzlin / Minthara)",
+              "for": "any",
+              "core": false,
+              "note": "The three goblin bosses drop assorted +1 weapons, potions, and gold — sweep the Shattered Sanctum before it turns hostile."
+            }
+          ],
+          "events": [
+            {
+              "name": "Volo's Ersatz Eye — permanent See Invisibility",
+              "note": "Rescue Volo (caged), let him operate at camp → Ersatz Eye (9m See Invisibility). Must be received via dialogue."
+            },
+            {
+              "name": "Recruit Halsin / Minthara",
+              "note": "Free Halsin (good) or side with goblins for Minthara (evil, raids the Grove)."
+            }
+          ]
+        },
+        {
+          "area": "Zhentarim Hideout (Waukeen's Rest / Risen Road)",
+          "items": [
+            {
+              "name": "The Spellsparkler",
+              "for": "Toaster",
+              "core": true,
+              "note": "Reward from Counsellor Florrick for rescuing her at the burning Waukeen's Rest. Quarterstaff — casting builds Lightning Charges. Toaster's early staff."
+            },
+            {
+              "name": "Gloves of Thievery",
+              "for": "Batman",
+              "core": true,
+              "note": "Sold by Brem in the Zhentarim Basement (after 'Find the Missing Shipment'). Advantage on Sleight of Hand — core thief glove."
+            },
+            {
+              "name": "Titanstring Bow",
+              "for": "any",
+              "core": false,
+              "note": "Brem (Zhentarim). Adds STR mod to ranged damage — best Act 1 bow (great with a STR-set item like the Club of Hill Giant Strength or Hill Giant elixirs)."
+            },
+            {
+              "name": "Zhentarim vendor stock (Brem / Sparkle)",
+              "for": "any",
+              "core": false,
+              "note": "The basement traders sell +1 hand crossbows, Smokepowder Bombs/Barrels (chasm & burst strats), scrolls, and misc gear — a one-stop Act 1 shop. Steal-friendly."
+            }
+          ],
+          "events": [
+            {
+              "name": "Rescue the Grand Duke (Waukeen's Rest fire)",
+              "note": "Save Florrick → The Spellsparkler + Flaming Fist plotline."
+            },
+            {
+              "name": "Recruit Karlach",
+              "note": "On the Risen Road; Anders' paladins want her dead — help her vs kill for the reward."
+            }
+          ]
+        },
+        {
+          "area": "Underdark",
+          "items": [
+            {
+              "name": "Boots of Stormy Clamour",
+              "for": "Toaster",
+              "core": true,
+              "note": "Sold by Omeluum (Ebonlake Grotto) after 'Help Omeluum Investigate the Parasite'. Applies 2 turns of Reverberation when you inflict a condition — a Reverberation staple, acquired in Act 1."
+            },
+            {
+              "name": "Phalar Aluve",
+              "for": "any",
+              "core": false,
+              "note": "Longsword in stone near the Selunite Outpost. Sing (buff allies) / Shriek (thunder AoE + debuff) — great for almost anyone."
+            },
+            {
+              "name": "Caustic Band + Club of Hill Giant Strength",
+              "for": "any",
+              "core": false,
+              "note": "Caustic Band (Derryth): +2 acid on weapon hits. Club (Arcane Tower): sets STR to 19 — off-hand it to free a non-STR build."
+            },
+            {
+              "name": "Ring of Mind-Shielding",
+              "for": "any",
+              "core": false,
+              "note": "Omeluum's reward for 'Help Omeluum Investigate the Parasite' (Ebonlake Grotto — persuade, pay, or steal). Advantage on saves vs Charmed + can't be possessed/read — solid utility ring."
+            }
+          ],
+          "events": [
+            {
+              "name": "Help Omeluum",
+              "note": "Myconid Colony — reward includes the Amulet of Misty Step or a ring, opens Omeluum's shop (Boots of Stormy Clamour)."
+            },
+            {
+              "name": "Arcane Tower",
+              "note": "Reactivate the tower; loot the Club of Hill Giant Strength + scrolls."
+            }
+          ]
+        },
+        {
+          "area": "Grymforge",
+          "items": [
+            {
+              "name": "Disintegrating Night Walkers",
+              "for": "Batman",
+              "core": true,
+              "note": "Loot from True Soul Nere. Bonus-action Misty Step (1/short rest) + immunity to Web/Entangle/grease-slip — assassin mobility."
+            },
+            {
+              "name": "Adamantine armour + shield (crafted)",
+              "for": "any",
+              "core": false,
+              "note": "Adamantine Forge with Mithral Ore: Splint (AC 18), Scale Mail (medium), Shield, Longsword, or Mace — all give −damage, crit immunity, and reel attackers. Best Act 1 gear; Mithral is limited (~2 moulds), so plan which pieces to craft."
+            },
+            {
+              "name": "Sentient Amulet",
+              "for": "any",
+              "core": false,
+              "note": "Grymforge, locked Adamantine chest near the Lava Elemental. A chatty amulet that casts Shatter (1/short rest; WIS save or the wielder becomes Hysterical) + Ki Restoration — Monk-flavoured, niche for this party."
+            }
+          ],
+          "events": [
+            {
+              "name": "Adamantine Forge",
+              "note": "Pour Mithral + mould, then fight Grym (lure onto the forge). One-time crafting."
+            },
+            {
+              "name": "True Soul Nere",
+              "note": "Free the deep gnomes vs side with the duergar; loot Nere for the Night Walkers."
+            }
+          ]
+        },
+        {
+          "area": "Mountain Pass / Rosymorn Monastery / Crèche Y'llek",
+          "items": [
+            {
+              "name": "Graceful Cloth",
+              "for": "Batman",
+              "core": true,
+              "note": "Sold by Lady Esther (Rosymorn trail). +2 DEX (cap 20) + Cat's Grace (advantage on DEX checks — helps stealing). Batman's all-game chest."
+            },
+            {
+              "name": "Knife of the Undermountain King",
+              "for": "Batman",
+              "core": true,
+              "note": "Sold by A'jak'nir Jeera (Crèche). +2 finesse shortsword, crit on 19–20, advantage vs obscured — Batman's main-hand until Shadow Blade."
+            },
+            {
+              "name": "Gloves of Dexterity",
+              "for": "SimonSays",
+              "core": true,
+              "note": "A'jak'nir Jeera (Crèche). Sets DEX to 18 — lets the Bard dump DEX and pump CHA."
+            },
+            {
+              "name": "Diadem of Arcane Synergy",
+              "for": "Durc",
+              "core": true,
+              "note": "Ardent Jhe'rezath, Inquisitor's Chamber (Crèche). Inflicting a condition adds your casting mod to WEAPON-attack damage — dead on a pure caster (was mis-assigned to Toaster). Give it to Durc: Wrathful Smite / Hexblade's Curse proc it for +CHA weapon damage (Act 1–2 head, before Sarevok's Helmet)."
+            },
+            {
+              "name": "Strange Conduit Ring",
+              "for": "Durc",
+              "core": true,
+              "note": "Crèche Y'llek. While Concentrating on a spell, your attacks deal +1d4 Psychic. Durc holds Wrathful Smite/Bless in his nova, so this adds psychic per swing — doubled by the Resonance Stone and again on a crit."
+            },
+            {
+              "name": "Gloves of Belligerent Skies",
+              "for": "Toaster",
+              "core": true,
+              "note": "Inquisitor's Chamber. Thunder/Lightning/Radiant applies Reverberation — Toaster's damage-glove pick (Spellmight Gloves are useless on his save-based AoE). At 5 Reverberation stacks the target must save or be knocked Prone — soft-CC that also sets up the melee."
+            },
+            {
+              "name": "Periapt of Wound Closure",
+              "for": "any",
+              "core": false,
+              "note": "Lady Esther. Auto-stabilise + always heal max — strong survivability amulet."
+            },
+            {
+              "name": "A'jak'nir Jeera — githyanki vendor stock",
+              "for": "any",
+              "core": false,
+              "note": "The Crèche quartermaster sells githyanki martial weapons, medium armour, whetstones, and the Gloves of Dexterity / Knife of the Undermountain King (core picks) — clear her stock (buy or steal) before leaving the Crèche, which locks."
+            },
+            {
+              "name": "Rosymorn / Crèche side-loot",
+              "for": "any",
+              "core": false,
+              "note": "The monastery and Crèche hold misc boots, potions, githyanki gear, and the Dawnmaster's Crest puzzle path to the Blood of Lathander — don't leave it under-looted. (Note: 'Everlasting Vigour' +2 STR is Araj's Act 2 potion, not a Rosymorn item.)"
+            }
+          ],
+          "events": [
+            {
+              "name": "Blood of Lathander (legendary mace)",
+              "note": "Rosymorn puzzle (Dawnmaster's Crest). +3 mace with Sunbeam + a party self-revive-at-0-HP aura — don't miss."
+            },
+            {
+              "name": "Zaith'isk → 'Awakened' permanent buff",
+              "note": "Crèche infirmary machine: pass 3 saves (DC 12/15/18) for permanent Awakened (Illithid powers as bonus actions); failing = permanent −2 stat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "act": 2,
+      "areas": [
+        {
+          "area": "Shadow-Cursed Lands",
+          "items": [
+            {
+              "name": "Moonlantern",
+              "for": "any",
+              "core": false,
+              "note": "Required to survive the region (shadow-curse protection). From Kar'niss after the Harper ambush, or Isobel/Balthazar."
+            },
+            {
+              "name": "Shadow of Menzoberranzan",
+              "for": "any",
+              "core": false,
+              "note": "Head slot, dropped by Kar'niss (the drider carrying the Moonlantern). Cast Invisibility 1/short rest while in shadow/darkness — excellent for any stealth or scout character (a strong alternative escape/ambush tool alongside Batman's kit)."
+            }
+          ],
+          "events": [
+            {
+              "name": "Free the pixie (Dolly Dolly Dolly)",
+              "note": "Freeing the pixie in the Moonlantern grants the party permanent Pixie's Blessing (curse immunity without holding the lantern). Missable."
+            }
+          ]
+        },
+        {
+          "area": "Last Light Inn",
+          "items": [
+            {
+              "name": "Shadow Blade Ring",
+              "for": "Durc",
+              "core": true,
+              "note": "Arabella's reward for 'Find Arabella's Parents' (delivered at camp). Bonus-action Shadow Blade, short-rest recharge, no concentration — Durc's backup blade (Batman self-casts his own)."
+            },
+            {
+              "name": "Coruscation Ring",
+              "for": "Toaster",
+              "core": true,
+              "note": "Trapped chest in a hidden cellar room. Spell damage while illuminated inflicts Radiating Orb — a Radiating-Orb combo piece."
+            },
+            {
+              "name": "Covert Cowl",
+              "for": "any",
+              "core": false,
+              "note": "Cellar, on a Meenlock. While Obscured, crit threshold −1 — superb for BOTH Batman (attacks from stealth) and Durc (obscured crit-smite)."
+            },
+            {
+              "name": "Potent Robe",
+              "for": "Toaster",
+              "core": true,
+              "note": "Alfira hands it over at Last Light in ACT 2 — ONLY if she survived Act 1 (as the Dark Urge, Durc must knock her out before camp, not kill her). Adds CHA mod to cantrip damage."
+            }
+          ],
+          "events": [
+            {
+              "name": "Protect Isobel — DON'T let the inn fall",
+              "note": "Stop the assassin Marcus from taking Isobel; if she dies the moonshield drops and the inn (vendors + quests) is lost. Missable."
+            },
+            {
+              "name": "Dammon (Karlach)",
+              "note": "Second-stage infernal-engine upgrade + hellish gear."
+            }
+          ]
+        },
+        {
+          "area": "Moonrise Towers",
+          "items": [
+            {
+              "name": "Risky Ring",
+              "for": "Durc",
+              "core": true,
+              "note": "Sold by Araj Oblodra. Advantage on all attack rolls (disadvantage on saves) — Durc's always-advantage crit enabler (re-sold in Act 3 if missed)."
+            },
+            {
+              "name": "Spineshudder Amulet",
+              "for": "any",
+              "core": false,
+              "note": "In a Mimic in Isobel's bedroom (upper floor, Moonrise). Applies Reverberation on your ranged SPELL-ATTACK hits only (not weapon hits or save spells) — good for a spell-attack caster, weak for Toaster's save-based nukes."
+            },
+            {
+              "name": "Moonrise Towers vendor & prison loot",
+              "for": "any",
+              "core": false,
+              "note": "Quartermaster Talli and the Moonrise traders sell heavy armour, martial weapons, and scrolls; the prison/temple levels hide gear and story items. Clear it before the assault — Moonrise is a point of no return."
+            }
+          ],
+          "events": [
+            {
+              "name": "Araj Oblodra — permanent +2 STR",
+              "note": "If Astarion bites her on request, she gives a Potion of Everlasting Vigour = PERMANENT +2 Strength (any PC can drink). Astarion disapproves."
+            }
+          ]
+        },
+        {
+          "area": "Gauntlet of Shar",
+          "items": [
+            {
+              "name": "Killer's Sweetheart",
+              "for": "Durc",
+              "core": true,
+              "note": "Self-Same Trial (kill your shadow clone). After you KILL, your next attack is a GUARANTEED crit (refreshes on long rest) — a free crit-smite for Durc. ⚠ As an Oathbreaker, do NOT kill the clone with Control Undead (it instakills the copy but the ring won't drop) — land a normal killing blow."
+            },
+            {
+              "name": "Callous Glow Ring",
+              "for": "Toaster",
+              "core": true,
+              "note": "Vault behind the DC30 door near Balthazar. +2 Radiant vs illuminated creatures — illumination combo piece."
+            },
+            {
+              "name": "Hellfire Hand Crossbow",
+              "for": "Batman",
+              "core": true,
+              "note": "Dropped by Yurgir (the orthon). Best hand crossbow in the game — Batman's ranged sidearm / off-hand."
+            },
+            {
+              "name": "Dark Justiciar Half-Plate & Spear of Night",
+              "for": "any",
+              "core": false,
+              "note": "Silent Library hidden chamber (tied to Shadowheart's arc) — solid heavy-armour + spear."
+            },
+            {
+              "name": "Full Dark Justiciar set (Mask / Gauntlets / Helmet)",
+              "for": "any",
+              "core": false,
+              "note": "Justiciar pieces span Grymforge (Act 1: Mask/Mail) and the Gauntlet (Half-Plate/Helmet/Gauntlets). The Dark Justiciar HELMET grants Covert Critical (crit threshold −1 while Obscured) — a SECOND obscured-crit head, so Durc and Batman can each run one (Covert Cowl + this) to crit on 19–20 in Darkness."
+            },
+            {
+              "name": "Umbral Gems (progression) + trial loot",
+              "for": "any",
+              "core": false,
+              "note": "Each trial hands an Umbral Gem (needed to reach the Nightsong) plus incidental gear — don't skip a trial thinking it's optional loot."
+            }
+          ],
+          "events": [
+            {
+              "name": "The Three Trials + Umbral Gems",
+              "note": "Soft-Step / Self-Same / Faith-Leap each give a gem (a 4th from Yurgir) → opens the way to the Nightsong."
+            },
+            {
+              "name": "Nightsong / Dame Aylin choice",
+              "note": "Free Dame Aylin (she becomes a camp ally + helps kill Ketheric) vs kill her for Shar/Ketheric — pivotal, tied to Shadowheart."
+            },
+            {
+              "name": "Mirror of Loss here is CRACKED",
+              "note": "The Gauntlet's Mirror is non-functional — the working +2-ability Mirror is in ACT 3 (Cloister of Sombre Embrace)."
+            }
+          ]
+        },
+        {
+          "area": "Mind Flayer Colony",
+          "items": [
+            {
+              "name": "Resonance Stone",
+              "for": "Batman",
+              "core": true,
+              "note": "Near the Mind-Archive Interface (Necrotic Laboratory). Placeable — applies psychic vulnerability + disadvantage-on-mental-saves in 9m. Batman carries it to double his + Durc's psychic Shadow Blade (note: it also debuffs your own party's mental saves)."
+            },
+            {
+              "name": "Staff of Cherished Necromancy",
+              "for": "any",
+              "core": false,
+              "note": "Dropped by Balthazar — on the good path he dies in the Gauntlet of Shar (Act 2), so it usually drops THERE, not the Colony. Free-casts a stored Necromancy spell on a kill + necro-save disadvantage — niche (no necromancer in this party)."
+            }
+          ],
+          "events": [
+            {
+              "name": "Apostle of Myrkul",
+              "note": "Ketheric's final form — freeing the Nightsong earlier gives crucial aid."
+            },
+            {
+              "name": "Astral-Touched Tadpole / the Emperor",
+              "note": "Consuming it grants strong Illithid powers — a permanent character change / one-time choice."
+            }
+          ]
+        },
+        {
+          "area": "Reithwin Town — Mason's Guild",
+          "items": [
+            {
+              "name": "Helmet of Arcane Acuity",
+              "for": "SimonSays",
+              "core": true,
+              "note": "ACT 2 (Mason's Guild is in Reithwin Town, not the Act 3 Lower City). Locked/trapped Gilded Chest in the secret basement. Weapon hits stack Arcane Acuity (+spell attack/save DC) — the Bard's control engine."
+            },
+            {
+              "name": "Reithwin Town side-loot",
+              "for": "any",
+              "core": false,
+              "note": "Reithwin is dense with loot: the Tower of the Sun/Waning Moon (light-lever puzzle), the apothecary and Thorm mansion, Gerringothe Thorm's gold hoard, and the Mason's Guild vault scrolls. Sweep the whole town while the moonlantern/pixie keeps the curse off."
+            }
+          ],
+          "events": [
+            {
+              "name": "Thorm Mausoleum puzzle",
+              "note": "Press the family plaques in mural order to open the way to the Gauntlet of Shar."
+            },
+            {
+              "name": "Oathbreaker Knight (Durc)",
+              "note": "If Durc's oath breaks, the Oathbreaker Knight is recruitable at camp to restore it for gold — keep smite access."
+            }
+          ]
+        },
+        {
+          "area": "House of Healing (Reithwin) — MISSABLE",
+          "items": [
+            {
+              "name": "Eversight Ring",
+              "for": "Batman",
+              "core": true,
+              "note": "ACT 2 — Reithwin's House of Healing, locked opulent chest in the morgue lab. Immunity to Blinded + SEE THROUGH MAGICAL DARKNESS — the enabler for Batman's Darkness 'Batman' combo. ⚠ MISSABLE: grab it BEFORE defeating Ketheric / clearing the Mind Flayer Colony, or the Shadow-Cursed Lands lock forever."
+            },
+            {
+              "name": "House of Healing alchemy & surgeon loot",
+              "for": "any",
+              "core": false,
+              "note": "The morgue/operating theatre is stuffed with alchemy ingredients, potions, and gear; the Malus Thorm 'Surgeon' fight drops scalpels and healing supplies."
+            }
+          ],
+          "events": [
+            {
+              "name": "Malus Thorm (the Surgeon)",
+              "note": "Optional fight in the House of Healing — the nurses and Malus guard the morgue where the Eversight Ring is stored."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "act": 3,
+      "areas": [
+        {
+          "area": "Rivington",
+          "items": [
+            {
+              "name": "Hellrider's Longbow",
+              "for": "SimonSays",
+              "core": true,
+              "note": "Sold by Ferg Drogher in Rivington. +initiative — the Bard controller wants to go first."
+            },
+            {
+              "name": "Nyrulna",
+              "for": "any",
+              "core": false,
+              "note": "Reward from the Circus of the Last Days quest. Legendary trident that returns when thrown and bursts for Thunder AoE — best-in-slot for any throwing build."
+            },
+            {
+              "name": "Band of the Mystic Scoundrel",
+              "for": "SimonSays",
+              "core": true,
+              "note": "Won from AKABI's wheel game at the Circus of the Last Days (Rivington): hit the jackpot → you're teleported (ALONE) to a Chult jungle where it sits in a backpack (Nyrulna is in the same jungle). Cast Enchantment/Illusion as a BONUS action after a weapon hit — the Bard's flourish→Command loop. ⚠ NOT at Sorcerous Sundries; don't over-spin the wheel (≈16 spins closes it)."
+            },
+            {
+              "name": "Rivington vendors & Requisitioned Barn",
+              "for": "any",
+              "core": false,
+              "note": "Ferg Drogher, the Circus traders, and the Open Hand temple hold early Act 3 gear, arrows, and scrolls; the barn has a hidden cellar. Good first-stop shopping/stealing before the Lower City."
+            }
+          ],
+          "events": [
+            {
+              "name": "Circus of the Last Days",
+              "note": "Side content + vendors; a couple of unique items and story hooks."
+            }
+          ]
+        },
+        {
+          "area": "Sorcerous Sundries / Ramazith's Tower",
+          "items": [
+            {
+              "name": "Markoheshkir",
+              "for": "Toaster",
+              "core": true,
+              "note": "Ramazith's Tower (accessed via Sorcerous Sundries / Lorroakan). Kereska's Favour → free empowered elemental spell — pick Lightning. Toaster's endgame staff."
+            },
+            {
+              "name": "Spellmight Gloves",
+              "for": "Toaster",
+              "core": true,
+              "note": "Sorcerous Sundries — +spell damage (with a small attack penalty). Toaster's damage gloves."
+            },
+            {
+              "name": "Gontr Mael",
+              "for": "SimonSays",
+              "core": true,
+              "note": "Ramazith's Tower — given if you side with Lorroakan, OR lootable by killing him on the protect-Aylin (good) path. Legendary longbow (self-Haste, Guiding Bolt) — but it grants NO initiative, so weigh it against keeping Hellrider's Longbow (+3 initiative) that the R1 control loop depends on."
+            },
+            {
+              "name": "Stolen scrolls (Chain Lightning, Freezing Sphere, Cone of Cold)",
+              "for": "Batman",
+              "core": true,
+              "note": "Buy/steal from Sorcerous Sundries — Batman's Magical-Ambush arsenal (lean cold to avoid overlapping Toaster's lightning)."
+            },
+            {
+              "name": "Quickspell Gloves",
+              "for": "any",
+              "core": false,
+              "note": "Sold at Sorcerous Sundries (Rolan). Cast a cantrip as a BONUS action, 1/short rest — handy QoL for any caster (Toaster/SimonSays)."
+            },
+            {
+              "name": "Robe of the Weave",
+              "for": "any",
+              "core": false,
+              "note": "Ramazith's Tower, inside a Globe of Invulnerability (needs See Invisibility + Arcana DC20). +2 AC, +1 Spell Save DC & Spell Attack, and heal 1d6 whenever you succeed on a save vs a spell — strong caster robe for anyone not using the Potent Robe."
+            }
+          ],
+          "events": [
+            {
+              "name": "Lorroakan vs Nightsong choice",
+              "note": "At Ramazith's Tower — siding with Lorroakan gives Gontr Mael; protecting Dame Aylin is the good path. Either way you can shop Markoheshkir/scrolls."
+            }
+          ]
+        },
+        {
+          "area": "Cloister of Sombre Embrace (House of Grief)",
+          "items": [],
+          "events": [
+            {
+              "name": "Mirror of Loss — permanent +2 ability (the REAL one)",
+              "note": "The working Mirror. Pass Religion DC20 / Arcana DC25 (or read the note) to understand it, then offer a prayer to Shar (DC25) to land a permanent +2 (cap 24). This is the +2 the whole plan assumes — every PC should visit."
+            }
+          ]
+        },
+        {
+          "area": "Stormshore Tabernacle",
+          "items": [
+            {
+              "name": "Amulet of the Devout",
+              "for": "Toaster",
+              "core": true,
+              "note": "Main offering chest in the basement. +2 spell save DC + an extra Channel Divinity (extra Destructive Wrath). ⚠️ Looting it inflicts the Castigated By Divinity curse UNLESS Jaheira loots it wearing Khalid's Gift."
+            }
+          ],
+          "events": [
+            {
+              "name": "The curse trap",
+              "note": "Don't brick the amulet — use Jaheira + Khalid's Gift to loot the offering chest cleanly."
+            }
+          ]
+        },
+        {
+          "area": "Temple of Bhaal / Murder Tribunal",
+          "items": [
+            {
+              "name": "Bhaalist Armour",
+              "for": "Durc",
+              "core": true,
+              "note": "PURCHASED from the Echo of Abazigal at the Murder Tribunal after completing 'Impress the Murder Tribunal' (the Unholy Assassin arc — natural on the Dark Urge). Aura of Murder: nearby enemies take DOUBLE piercing — pair with Durc's piercing Pike endgame. (Set: Amulet of Bhaal from Sarevok, Bhaalist Gloves — cheap thematic adds.)"
+            },
+            {
+              "name": "Sarevok's Horned Helmet",
+              "for": "Durc",
+              "core": true,
+              "note": "From Sarevok at the Murder Tribunal. Lowers crit threshold + on-kill bonuses — crit-fish core."
+            },
+            {
+              "name": "Bloodthirst",
+              "for": "Batman",
+              "core": true,
+              "note": "Legendary +2 dagger looted from ORIN (Bhaal Temple, after 'Get Orin's Netherstone'). Improved Critical = crit threshold −1 that applies to ALL your attacks (stacks with Knife/Covert Cowl); main-hand adds piercing-vuln, off-hand a to-hit boost. Batman's best crit-fishing off-hand — competes with Rhapsody for the slot."
+            },
+            {
+              "name": "Crimson Mischief",
+              "for": "any",
+              "core": false,
+              "note": "Also carried by ORIN (not Sarevok). Rapier — extra damage vs full-HP targets + a bonus main-hand attack while dual-wielding; a superb off-hand for a dual-wield Astarion/martial."
+            },
+            {
+              "name": "Ring of Murderous Opportunity + Sword of Chaos",
+              "for": "any",
+              "core": false,
+              "note": "Ring of Murderous Opportunity (Orin) — bonus damage + extra reaction attacks, strong for an assassin. Sword of Chaos (Sarevok, alongside the Horned Helmet) — +2 wounding longsword."
+            }
+          ],
+          "events": [
+            {
+              "name": "Murder questline (Dark Urge)",
+              "note": "Durc IS the Dark Urge — this arc (Unholy Assassin / embrace-or-resist Bhaal) is his story climax and gates the Bhaalist Armour."
+            }
+          ]
+        },
+        {
+          "area": "House of Hope (Raphael)",
+          "items": [
+            {
+              "name": "Amulet of Greater Health",
+              "for": "SimonSays",
+              "core": true,
+              "note": "On a pedestal in the Archive. Sets CON to 23 + advantage on CON saves. REALLOCATED to the Bard (was Batman) to armour Hold Monster concentration — the melee auto-crit engine — with no neck conflict; stacks with the Bard's War Caster feat. (Toaster keeps the Amulet of the Devout.)"
+            },
+            {
+              "name": "Helldusk Armour + Helldusk Gloves",
+              "for": "Durc",
+              "core": true,
+              "note": "The Helldusk set (best heavy armour + strong gloves). Durc's Act-3 armour."
+            },
+            {
+              "name": "Orphic Hammer + Infernal Rapier",
+              "for": "any",
+              "core": false,
+              "note": "Orphic Hammer frees Orpheus (story); the Infernal Rapier is a strong CHA-scaling weapon option."
+            },
+            {
+              "name": "Helldusk Boots",
+              "for": "any",
+              "core": false,
+              "note": "Completes the Helldusk set — fire immunity + a free bonus-action reposition (can't be knocked prone). Pair with the Helldusk Armour + Gloves on Durc, or give to any frontliner."
+            },
+            {
+              "name": "House of Hope vault (Korrilla / Hope's reward)",
+              "for": "any",
+              "core": false,
+              "note": "Raphael's boudoir and the archive hold a big gold/gem hoard, Elixirs of Universal Resistance, and scrolls; Hope hands over gear if freed. Loot the whole house during the fight."
+            }
+          ],
+          "events": [
+            {
+              "name": "Raphael fight",
+              "note": "Defeat Raphael (or loot during the Hope rescue) for the House of Hope gear."
+            }
+          ]
+        },
+        {
+          "area": "Cazador's Palace",
+          "items": [
+            {
+              "name": "Rhapsody",
+              "for": "Batman",
+              "core": true,
+              "note": "From Cazador. Dagger granting stacking +1/+2/+3 to attack, damage, and crit chance on kills — Batman's off-hand."
+            },
+            {
+              "name": "Cazador's palace loot (ritual chamber & kennels)",
+              "for": "any",
+              "core": false,
+              "note": "The palace holds a gold hoard, potions of Vampirism, the Ritual Dagger, and the trapped ritual-chamber gear. Sweep it fully during Astarion's questline — it doesn't reopen after the finale."
+            }
+          ],
+          "events": [
+            {
+              "name": "Astarion's Ascension choice",
+              "note": "MAJOR: ascend Astarion (power boost, darker) vs stay a Spawn (keeps Vampire weaknesses but the 'good' arc). Affects Batman directly."
+            }
+          ]
+        },
+        {
+          "area": "Lower City (Zhentarim / vendors)",
+          "items": [
+            {
+              "name": "Ne'er Misser",
+              "for": "Batman",
+              "core": true,
+              "note": "Sold by Roah Moonglow (Zhentarim) — available a whole act EARLY at Moonrise Towers (Act 2), then in the Lower City (Act 3). Hand crossbow that casts Magic Missile — Batman's Sneak Attack becomes FORCE (bypasses resistances, dodges Durc's piercing aura)."
+            },
+            {
+              "name": "Birthright",
+              "for": "Toaster",
+              "core": true,
+              "note": "Sold at Sorcerous Sundries by Rolan / Lorroakan's projection (ground floor). +2 Charisma helm (cap 22; stacks with the Mirror's Bard's Memory toward 24) — free CHA for Gale's head slot."
+            },
+            {
+              "name": "Helm of Balduran + Wyrmway loot (Ansur)",
+              "for": "any",
+              "core": false,
+              "note": "The Wyrmway (accessed from the Counting House basement) leads to the Ansur dragon fight → Helm of Balduran (regen + crit immunity), one of the best defensive helms in the game. The trials en route also hand out gear."
+            },
+            {
+              "name": "Facemaker's Boutique + Devil's Fee",
+              "for": "any",
+              "core": false,
+              "note": "Facemaker's (Figaro) sells headwear/clothing incl. hats with cast-a-spell effects; the Devil's Fee (Helsik) sells rare rings, scrolls, and Netherese/ritual gear. Prime stealing targets — see Batman's Act 3 pickpocket setup."
+            }
+          ],
+          "events": [
+            {
+              "name": "Iron Throne (time-sensitive)",
+              "note": "Rescue prisoners (Duke Ravengard, gnomes) before it floods — a real timer."
+            },
+            {
+              "name": "Steel Watch Foundry",
+              "note": "Destroy the Steel Watch to weaken the endgame assault."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tadpole": {
+    "title": "Tadpole / Illithid Powers plan",
+    "sub": "Who eats which parasites, in what order — and who becomes the party's one partial-illithid.",
+    "intro": "Every Mind Flayer Parasite Specimen (a \"tadpole\") unlocks one Illithid power for one character, so they're a limited resource you assign deliberately — don't sprinkle them evenly. This party is a psychic-damage engine (the Resonance Stone makes a target Vulnerable to psychic), so the psychic powers — Concentrated Blast, Psionic Overload, Mind Blast, Cull the Weak — land for DOUBLE. Two rules drive the whole plan: illithid save DCs key off your latest-added class's casting stat (and stack Arcane Acuity), and only ONE character can ever become a partial-illithid for the elite tier.",
+    "mechanics": [
+      {
+        "k": "Unlocking the tree",
+        "v": "Act 1: after the Goblin Camp bridge cutscene, the Dream Guardian visits at the next long rest and starts Embrace Your Potential. From then, any parasite you pick up is fed straight into the Illithid Powers tree instead of sitting in your inventory."
+      },
+      {
+        "k": "Tadpoles are limited & assignable",
+        "v": "Each parasite unlocks exactly one power for one character. Feed them to the carriers below in the priority order shown — an evenly-spread tree is a wasted one."
+      },
+      {
+        "k": "Save DC = latest class's casting stat + Arcane Acuity",
+        "v": "Save-based illithid powers (Black Hole, Mind Blast, Stage Fright…) use the spellcasting modifier of the LAST class you added, and every spell-save-DC bonus (Arcane Acuity, Arcane Enchantment) applies on top. That's why the Commander — CHA 20 plus his Acuity stack — is the best save-power carrier, and why Gale (WIS after the Tempest dip) and Batman (INT) are not."
+      },
+      {
+        "k": "Only ONE partial-illithid",
+        "v": "The single Astral-Touched Tadpole (from the Emperor at the very start of Act 3) turns exactly one character into a partial-illithid — the only way to reach the ELITE ring (Black Hole, Mind Blast, Freecast, Mind Sanctuary, Illithid Expertise…). It's offered to the Dark Urge first but can be handed to a companion with a Persuasion check. Everyone else is capped at the inner + middle rings."
+      },
+      {
+        "k": "Partial-illithid freebies",
+        "v": "Becoming partial-illithid instantly grants Concentrated Blast, Favourable Beginnings, Force Tunnel, Psionic Overload, Transfuse Health and Fly — and refunds any tadpoles already spent on those five inner powers, so early spends on them are effectively free."
+      },
+      {
+        "k": "Resonance Stone doubles psychic",
+        "v": "Keep the Resonance Stone on the target and every psychic illithid power hits double: Concentrated Blast (3d6 → 6d6), Psionic Overload's +1d4/hit, Mind Blast, and Cull the Weak's AoE."
+      },
+      {
+        "k": "The only cost",
+        "v": "Partial ceremorphosis is a permanent cosmetic change (dark eyes, black veins; reverts only in the epilogue) and draws a few companion disapproval lines. No mechanical downside — fine for this min-max party."
+      }
+    ],
+    "carrier": {
+      "who": "SimonSays (the Bard / Commander)",
+      "why": "Give the Astral-Touched Tadpole to the Commander. His Arcane Acuity engine (Slashing-Flourish hits → +spell save DC) stacks onto illithid save DCs, and his last class is Bard (CHA 20) — so Black Hole and Mind Blast land at the party's highest possible DC. Black Hole pulls a whole pack into one cluster (INT save at that sky-high DC) → the rest of the party AoEs the ball: Gale's Wet-doubled Lightning Bolt, Durc's cleave, the Commander's own bonus-action Command/Hold via the Band of the Mystic Scoundrel.",
+      "alt": "Thematic alternative: let Durc (the Dark Urge) take it — he's auto-offered it and also has CHA 20, so his Mind Blast / Black Hole are still strong. But Durc's #1 power, Luck of the Far Realms, is middle-ring and needs no transformation, so he loses almost nothing by NOT being the carrier. Recommendation stands: the Commander eats it, Durc stays free."
+    },
+    "order": [
+      {
+        "step": 1,
+        "act": "Act 1",
+        "who": "Durc",
+        "power": "Favourable Beginnings → Luck of the Far Realms",
+        "why": "Two tadpoles for the single biggest early spike: once per long rest, turn a hit into a crit → doubled Divine Smite + Savage Attacker rerolls + a GWM bonus swing. Save it for the opening smite."
+      },
+      {
+        "step": 2,
+        "act": "Act 1",
+        "who": "Batman",
+        "power": "Favourable Beginnings → Luck of the Far Realms",
+        "why": "Same combo for the Trickster: guarantee a crit on the opening Sneak Attack → doubled sneak dice. Favourable Beginnings also gives +proficiency to that first shot."
+      },
+      {
+        "step": 3,
+        "act": "Act 1",
+        "who": "SimonSays",
+        "power": "Favourable Beginnings",
+        "why": "+proficiency to his first ranged attack each fight helps land the opening Slashing Flourish that starts the Acuity ramp. Refunded at his Act-3 transformation, so it costs nothing net."
+      },
+      {
+        "step": 4,
+        "act": "Act 1–2",
+        "who": "Durc & Batman",
+        "power": "Psionic Overload",
+        "why": "+1d4 psychic per hit, DOUBLED by the Resonance Stone, across every attack of a multi-attacker. The self 1d4/turn is trivial behind Aura of Protection or a big HP pool."
+      },
+      {
+        "step": 5,
+        "act": "Act 2",
+        "who": "Durc",
+        "power": "Concentrated Blast → Cull the Weak",
+        "why": "Cull the Weak turns any low-HP enemy into a free kill plus a psychic AoE (doubled by Resonance) — great on the frontline where enemies cluster around him."
+      },
+      {
+        "step": 6,
+        "act": "Act 2",
+        "who": "SimonSays",
+        "power": "Luck of the Far Realms; Transfuse Health → Shield of Thralls",
+        "why": "Luck sets up Illithid Expertise post-transformation; Transfuse Health → Shield of Thralls is the prerequisite chain for Freecast. Both inner picks are refunded at transformation — bank the tadpoles for the Act-3 elite spend."
+      },
+      {
+        "step": 7,
+        "act": "Act 3 (start)",
+        "who": "SimonSays",
+        "power": "Commune with the Astral-Touched Tadpole → partial-illithid",
+        "why": "Persuade the party to route the Emperor's tadpole to the Commander. Auto-unlocks the five inner powers + Fly and refunds the tadpoles already spent on them, opening the elite ring."
+      },
+      {
+        "step": 8,
+        "act": "Act 3",
+        "who": "SimonSays",
+        "power": "Displace → Black Hole",
+        "why": "THE payoff. Force Tunnel is already free from the transformation → one tadpole to Displace, one to Black Hole. Pull the pack into a cluster at his Acuity-boosted INT-save DC."
+      },
+      {
+        "step": 9,
+        "act": "Act 3",
+        "who": "SimonSays",
+        "power": "Mind Blast",
+        "why": "No prerequisite. A 4d8 + CHA psychic cone that Stuns on a failed INT save at his huge DC — an opening-turn AoE lockdown, and psychic so the Resonance Stone doubles it."
+      },
+      {
+        "step": 10,
+        "act": "Act 3",
+        "who": "SimonSays",
+        "power": "Illithid Expertise; Freecast",
+        "why": "Illithid Expertise (via Luck) grants Expertise in Persuasion / Deception / Intimidation — piled onto the party face. Freecast (via Shield of Thralls) makes his next spell free: a no-slot 6th-level Command (6 targets) or Hold Monster."
+      },
+      {
+        "step": 11,
+        "act": "Act 3",
+        "who": "Batman & Durc",
+        "power": "Cull the Weak / top-ups",
+        "why": "Spend leftover parasites on Cull the Weak for the finishers and any missing inner-ring psychic powers. Gale generally donates his tadpoles here — see his row."
+      }
+    ],
+    "characters": [
+      {
+        "name": "SimonSays",
+        "short": "The one partial-illithid",
+        "dc": "CHA 20 + Arcane Acuity — the party's best illithid save DC by far.",
+        "note": "The elite-tier carrier. Eats the Astral-Touched Tadpole and turns the outer ring into reliable AoE control. Early inner-ring picks are refunded at the transformation, so nothing is wasted.",
+        "powers": [
+          {
+            "power": "Favourable Beginnings",
+            "tier": "Inner",
+            "prereq": "—",
+            "when": "Act 1",
+            "why": "+prof to the first ranged attack each fight; helps start the Acuity ramp. Free again (refunded) at transformation."
+          },
+          {
+            "power": "Luck of the Far Realms",
+            "tier": "Middle",
+            "prereq": "Favourable Beginnings",
+            "when": "Act 2",
+            "why": "Prerequisite for Illithid Expertise; also a crit on demand for a big Slashing-Flourish burst."
+          },
+          {
+            "power": "Shield of Thralls",
+            "tier": "Middle",
+            "prereq": "Transfuse Health",
+            "when": "Act 2",
+            "why": "10 temp HP on an ally, and the prerequisite for Freecast."
+          },
+          {
+            "power": "Black Hole",
+            "tier": "ELITE",
+            "prereq": "Displace (← Force Tunnel)",
+            "when": "Act 3",
+            "why": "Pull a whole pack into one cluster + Slow, INT save at his Acuity-boosted DC. The party's premier AoE set-up."
+          },
+          {
+            "power": "Mind Blast",
+            "tier": "ELITE",
+            "prereq": "— (partial-illithid)",
+            "when": "Act 3",
+            "why": "4d8 + CHA psychic cone, Stun on a failed INT save; doubled by the Resonance Stone."
+          },
+          {
+            "power": "Freecast",
+            "tier": "ELITE",
+            "prereq": "Shield of Thralls",
+            "when": "Act 3",
+            "why": "Next spell costs no slot — a free 6th-level Command (6 targets) or Hold Monster."
+          },
+          {
+            "power": "Illithid Expertise",
+            "tier": "ELITE",
+            "prereq": "Luck of the Far Realms",
+            "when": "Act 3",
+            "why": "Expertise in Persuasion / Deception / Intimidation — stacks onto the party face."
+          }
+        ]
+      },
+      {
+        "name": "Durc",
+        "short": "Crit-smite amplifier",
+        "dc": "CHA 20 (Paladin is the last class added) — strong, but he isn't the partial-illithid, so no elite ring.",
+        "note": "Wants exactly two things from the tree, both inner/middle ring — no transformation needed.",
+        "powers": [
+          {
+            "power": "Favourable Beginnings",
+            "tier": "Inner",
+            "prereq": "—",
+            "when": "Act 1",
+            "why": "+prof to the first attack against each enemy — better odds to land the opening crit-smite."
+          },
+          {
+            "power": "Luck of the Far Realms",
+            "tier": "Middle",
+            "prereq": "Favourable Beginnings",
+            "when": "Act 1",
+            "why": "TOP pick. Once per long rest, turn a hit into a crit → doubled Divine Smite, Savage Attacker rerolls, and a GWM bonus swing. Save it for the nova."
+          },
+          {
+            "power": "Psionic Overload",
+            "tier": "Inner",
+            "prereq": "—",
+            "when": "Act 1–2",
+            "why": "+1d4 psychic per hit across all three attacks, DOUBLED by the Resonance Stone. Self-damage is trivial behind Aura of Protection."
+          },
+          {
+            "power": "Cull the Weak",
+            "tier": "Middle",
+            "prereq": "Concentrated Blast",
+            "when": "Act 2",
+            "why": "Low-HP enemies die outright plus a psychic AoE (doubled) — cleans up the pack after the nova."
+          }
+        ]
+      },
+      {
+        "name": "Batman",
+        "short": "Crit Sneak Attack",
+        "dc": "INT (Arcane Trickster is the last class) — weak save DCs, so stick to no-save powers.",
+        "note": "DEX sniper / duelist. Save-based illithid powers are wasted on his low INT DC; take the passive and reaction picks.",
+        "powers": [
+          {
+            "power": "Favourable Beginnings",
+            "tier": "Inner",
+            "prereq": "—",
+            "when": "Act 1",
+            "why": "+prof to his first attack on each target — a better opening Sneak Attack / crit-fish."
+          },
+          {
+            "power": "Luck of the Far Realms",
+            "tier": "Middle",
+            "prereq": "Favourable Beginnings",
+            "when": "Act 1",
+            "why": "Turn the opening Sneak Attack hit into a guaranteed crit → doubled sneak dice. His biggest single-shot burst."
+          },
+          {
+            "power": "Psionic Overload",
+            "tier": "Inner",
+            "prereq": "—",
+            "when": "Act 2",
+            "why": "+1d4 psychic per hit across his attacks, doubled by the Resonance Stone."
+          },
+          {
+            "power": "Cull the Weak",
+            "tier": "Middle",
+            "prereq": "Concentrated Blast",
+            "when": "Act 2–3",
+            "why": "His job is picking off low-HP targets — the free-kill + psychic AoE fits perfectly."
+          }
+        ]
+      },
+      {
+        "name": "Toaster",
+        "short": "Minimal — donate tadpoles",
+        "dc": "CHA while pure Sorcerer, but WIS (weak) after the Act-3 Tempest dip — and no elite ring.",
+        "note": "The odd one out: he makes no weapon attacks (so Psionic Overload and Favourable Beginnings are near-dead), and Concentrated Blast would drop his Haste concentration. His one high-value pick (Freecast) is elite-only and he isn't the carrier. Verdict: take almost nothing and donate his parasites to the Commander, Durc and Batman.",
+        "powers": [
+          {
+            "power": "Favourable Beginnings",
+            "tier": "Inner",
+            "prereq": "—",
+            "when": "optional",
+            "why": "Only real use is +prof to a first ability CHECK (skills) — marginal in combat."
+          },
+          {
+            "power": "Psionic Backlash",
+            "tier": "Middle",
+            "prereq": "Concentrated Blast",
+            "when": "optional",
+            "why": "Back-line reaction: an enemy casts → 1d4 per spell level of psychic (doubled by Resonance) to the caster. No DC needed — the only pick worth a spare tadpole on Gale."
+          },
+          {
+            "power": "(donate the rest)",
+            "tier": "—",
+            "prereq": "—",
+            "when": "all acts",
+            "why": "Every other parasite is better spent on the three carriers above."
+          }
+        ]
+      }
+    ]
+  }
+}

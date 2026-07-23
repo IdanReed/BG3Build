@@ -1,0 +1,18 @@
+# Scrape + clean + chunk (lightweight; no GPU needed)
+requests>=2.31
+beautifulsoup4>=4.12
+markdownify>=0.11
+tiktoken>=0.5
+tqdm>=4.66
+
+# Embed + index + search
+lancedb>=0.13
+sentence-transformers>=3.0
+
+# torch: install the CUDA build for your 3080 SEPARATELY, e.g.:
+#   uv pip install torch --index-url https://download.pytorch.org/whl/cu124
+# (sentence-transformers pulls in a torch, but the default wheel may be CPU-only.)
+torch
+
+# MCP server (exposes bg3_search to Claude Code)
+mcp>=1.2

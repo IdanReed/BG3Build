@@ -1,0 +1,11 @@
+{
+  "name": "bg3-party-plan",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "BG3 party plan. party_plan.json is the single source of truth; `npm run build` embeds it into index.html.",
+  "scripts": {
+    "build": "node build.mjs",
+    "validate": "node --input-type=commonjs -e \"JSON.parse(require('fs').readFileSync('party_plan.json','utf8')); console.log('party_plan.json: valid JSON')\""
+  }
+}

@@ -1,6 +1,6 @@
 # BG3 Party Build Review — Power + Fun/Journey (merged)
 
-_Two adversarial multi-agent passes over the four `party-plan.md` builds: **Part A** hunts for strictly-stronger options and audits patch state; **Part B** looks for more-fun / earlier-online / smoother-respec variants. Verdicts reconcile both._
+_Two adversarial multi-agent passes over the four `party_plan.json` builds: **Part A** hunts for strictly-stronger options and audits patch state; **Part B** looks for more-fun / earlier-online / smoother-respec variants. Verdicts reconcile both._
 
 ## Executive summary
 
@@ -20,7 +20,7 @@ _Two adversarial multi-agent passes over the four `party-plan.md` builds: **Part
 
 _Patch sources:_ <https://baldursgate3.game/news/the-final-patch-new-subclasses-photo-mode-and-cross-play_138> · <https://www.gameleap.com/articles/bg3-patch-8-full-notes-new-classes-and-all-changes> · <https://bg3.wiki/wiki/Deepened_Pact> · <https://store.steampowered.com/news/app/1086940/view/3347878489035336762> · <https://bg3.wiki/wiki/Patch_Notes> · <https://gamerant.com/baldurs-gate-3-hotfix-update-30-patch-notes-changelog-whats-new/>
 
-> Actionable changes are collected at the end of **Part A** (“Suggested edits to party-plan.md”). Ask and I’ll apply them.
+> Actionable changes are collected at the end of **Part A** (“Suggested edits to party_plan.json”). Ask and I’ll apply them.
 
 ---
 
@@ -180,7 +180,7 @@ No load-bearing nerf. Patch 8 only **buffed/fixed** relevant pieces: Mobile Flou
 - <https://bg3.wiki/wiki/Wet_(Condition)> — Wet-doubling page, updated 2026-06-15.
 - <https://bg3.wiki/wiki/Guide:Book%27s_Guide_to_Crits> — current crit-item reference (Risky Ring / Sarevok's / Killer's Sweetheart).
 
-## Suggested edits to party-plan.md
+## Suggested edits to party_plan.json
 
 - **Build #1 (Paladin):** Keep as **Oathbreaker Paladin 7 / Hexblade Warlock 5, Half-Orc**. Add a note: "3-attack nova is Act 3 (~char L10); plays as a 2-attack smiter before then." Add a caveat that Risky Ring gives permanent *disadvantage on saves* — budget Freedom of Movement or consider 6/6 if late-game mods lean on Hold/Feeblemind. Correct any "everything doubles on crit" wording: only weapon + smite + Savage die double (DRS).
 - **Build #2 (Rogue):** Change the split from **Gloomstalker 5 / Assassin 4 / Champion 3** to **Gloomstalker 5 / Thief 4 / Battle Master 3**. Remove the false premise that pickpocket needs a dedicated slot or that a 5/4/3 archer reaches "MAX" pickpocket (Reliable Talent = Rogue 11). Note Arcane Trickster (Rogue 11 / 1-dip) as the *conditional switch* if caster-fantasy outranks early-online. Add: "Trip Attack (Ranged) sets up Prone → melee advantage for the Paladin; don't shoot the prone target yourself."

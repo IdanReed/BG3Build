@@ -1,0 +1,375 @@
+ntro
+This post serves as a reference for different Arcane Trickster multiclasses, play styles, and pros/cons to each. This is meant to be a compilation of all the important works regarding the subclass as of the date posted and any future edit dates.
+
+References and Useful Links:
+
+Arcane Trickster Wiki page.
+
+An Argument for Arcane Trickster Reddit post by Me.
+
+Mage Hand Legerdemain Guide Reddit post by Me.
+
+Magical Ambush Guide Reddit post by Me.
+
+Stealth Archer mechanical guide Youtube Video by Morgana Evelyn. She generally does a great job of explaining mechanics, and this is the best guide on stealth and darkness mechanics I’ve seen. Just a couple notes here.
+
+Greater Invisibility: Slight correction on her mention of random stealth check DCs. There are 2 different types of associated stealth checks. The first stealth check is always to keep the spell running and follows the known progression. Subsequent stealth checks on the same action are against enemy perception checks and are to avoid being “noticed” by the NPCs that saw your action and are much more random. The latter stealth checks will cause combat to begin if failed even if invisibility is maintained, although this scenario rarely occurs. I explain this in my comment here.
+
+Reliable Talent: This guide is focused on the gloomstalker assassin build and does not mention the benefits of reliable talent for guaranteed infallible stealth checks.
+
+Batman Stealth Mechanics Reddit post by CCYellow.
+
+This is one of the best Reddit posts that really delves into some stealth and darkness mechanics along with surprise rounds. It doesn’t cover as much as Morgana’s video though.
+
+Retribution Damage Guide Reddit post by LostAccount2099.
+
+Uncanny Dodge Workshop Reddit post by Remus71.
+
+His other build guide post including info about bomb striking and mental fatigue is linked in the builds section.
+
+Arcane Trickster Saves the World! Silly Goose Reddit post by Meph6148795.
+
+____________________
+
+Builds
+Any EIP builds linked are suggestions. Equipment and build path can vary based on play style preferences. Some EIP build links may have associated links for suggested Mage Hand equipment if interested. If you are heavily using Mage Hand equipment, I recommend custom honour mode for multiple saves.
+
+First, let’s talk about Pure Arcane Trickster for 12 levels. I think it is always less optimal than taking a good 1 level dip. That’s all, now let’s move on.
+
+_____
+
+Reliable Trickster
+
+11 Arcane Trickster / 1 Dip
+
+Reliable Talent is for the true rogues among us. They end up skilled enough never to fail a Stealth check (except Greater Invisibility) or sleight of hand check. Perfect for the solo scroll hoarder and stealth abuser who wants to pilfer Sorcerous Sundries and then hide right in front of enemy faces or abuse Darkness without any worry. I don’t care what anyone tells you; level 11 rogues are the best stealth and darkness abusers in the game. Although, I understand stealth play does not appeal to everyone. If you don’t like stealth, and you don’t like stealing and using consumables, don’t play a Reliable Trickster!
+
+So what do we look for in a dip? Armor, shield, and weapon proficiencies are always nice. You can’t go wrong with a couple extra utility spells or features like a fighting style. Wizard spell scribing is overrated in my opinion. I am a firm believer that Arcane Trickster is a thief and a scroll caster. Spell slots are for Shield and possibly other utility spells like Arcane Lock.
+
+In general, I recommend taking the dip at level 2 because proficiencies are immensely helpful in the early game.
+
+I recommend this mainly for solo and duo parties.
+
+AT Shadow Blade Assassin Demonstration Youtube video demonstration by Baltemys. Short video showing what you can do with a Reliable Trickster. Pure 12 Arcane Trickster is used in the video with a couple minor mods.
+
+11 AT / 1 Cleric:
+
+Varying proficiencies based on subclass, but all have medium armor and shields. You can get heavy armor and martial weapons with war cleric for example, not to mention the war cleric charges. Cleric is the best dip if you want heavy armor while retaining dexterity saving throw proficiency. Plus with reliable talent, you don’t even have to worry about disadvantage on stealth checks!
+
+Wisdom spellcasting stat. Arguably, wisdom is the best casting stat in the game if you aren’t charisma obsessed since increasing wisdom also increases your wisdom saving throws.
+
+Useful cantrips including Guidance, Resistance, and Thaumaturgy. If you want to do intimidation, you can skip the silver pendant and still use thaumaturgy and guidance at the same time. This does require casting one of them before the conversation though, since you can’t use 2 actions during a conversation.
+
+Useful non-scroll spells including Command, Create Water, Sanctuary (which we can use to save our mage hand and potentially do shenanigans), and Shield of Faith.
+
+Subclass varying benefits.
+
+2 extra proficiencies for your reliable talents.
+
+Shadowheart Dark Justiciar / Wednesday Addams EIP build
+
+Mage Hand / Thing EIP Build - Console compatible
+
+“I do my best work in the dark” - Wednesday. Okay, I recently finished watching season 2. This is supposed to be a thematic Dark Justiciar focused build for Shadowheart using her original Trickery subclass that sort of feels like Wednesday and Thing.
+
+11 AT / 1 War Cleric More optimal EIP Build
+
+Swaps intimidation for athletics, takes War instead of Trickery, swaps equipment. We’ll utilize Heavy Armor Master for synergy with rogue's already great damage reduction mechanics.
+
+11 AT / 1 Hexblade:
+
+Medium armor, shield, and martial weapon proficiencies.
+
+Charisma spellcasting stat. This dip is for all of you who love being the face and passing every conversation check with expertise and reliable talent.
+
+Okay cantrips. You can at least nab something like Friends and Minor Illusion, but they are a little redundant.
+
+Okay spells. You can at least grab Shield and then a second spell. There are a variety of different options for the second spell depending on your preferences.
+
+Dexterity based version and charisma based version with hexed weapon are both options. I prefer dexterity personally for higher AC, better ranged accuracy, better initiative, and better dexterity saves for evasion. I also find the associated skills more important.
+
+See Meph’s Silly Goose post Arcane Trickster Saves the World!, mentioned in the intro.
+
+Astarion Charismatic Trickster EIP build - Dexterity version and my personal preference (don’t bind weapon).
+
+Tricky Goose EIP build - Charisma based version with efforts to maximize single hit damage.
+
+The goal of both of these builds is to kill as many enemies as possible with single hits outside of combat like a true assassin.
+
+11 AT / 1 Fighter:
+
+Medium armor, shield, and martial weapon proficiencies.
+
+Fighting Style. This is the big one here. If you want to do stealth sniper gameplay as an Arcane Trickster, the +2 accuracy is hard to pass up. It’s certainly better by itself than a 4th feat in my opinion.
+
+Intelligence spellcasting stat. Unfortunately, you are stuck with the worst casting stat.
+
+With PC equipment exploit giving mage hand the Bhaalist armor, this is easily the highest damage no resource single shot sniper in the game, at least if playing solo.
+
+Stealth Sniper EIP build.
+
+11 / 1 Throwing build?
+
+_____
+
+Subtle Trickster
+
+9 Arcane Trickster / 3 Sorcerer
+
+This build is for the people who want to abuse stealth without abusing darkness. What’s something interesting we can do with Magical Ambush that separates it a bit from arcane acuity strategies to just get your DC so high that all your spells have a 100% chance of success? Well, Magical Ambush lets you increase chances without having to build up acuity. This is useful again for out of combat stealth abuse. 3 levels in Sorcerer gets you the Subtle Spell metamagic, which allows you to stay hiding while casting, meaning you can cast spells on enemies without entering combat. If you are abusing darkness, you can cast spells without entering combat regardless of hiding and subtle spell, at least unless the enemy has Devil’s Sight.
+
+Subtle Trickster EIP Build
+
+Use halfling to reroll stealth checks out of combat for subtle scrolls strategy. You can always fall back on shadow blade for damage.
+
+_____
+
+Frostbite Trickster
+
+9 Arcane Trickster / 2 Divination Wizard / 1 Fighter
+
+Frostbite Trickster Build Guide Reddit post and multiple Youtube videos by LostAccount2099
+
+Lost Account did some fantastic work here making a creative duo that utilizes the frozen status. Budgeoning sneak attacks, force sneak attacks, portent die, and mage hand utility work together for an interesting play style designed for a duo party, but can be played solo or with a party with variations listed in the post.
+
+_____
+
+Arcane Tankster
+
+7 Arcane Trickster / 5 Abjuration Wizard
+
+Arcane Trickster Build Guide Reddit post and Youtube video by Remus71
+
+Remus has created a masterful combination of multiple mechanics including retribution damage, free arcane ward refreshes, bomb striking, and mental fatigue with this build. This is not your typical Abjuration tank, but more of a fun roguish twist on it. Arcane Tankster does not need the Magical Ambush feature here because it is using mainly reverse acuity with Mental Fatigue. It takes rogue to 7 for Uncanny Dodge and Evasion and takes wizard to 5 for Arcane Wards and extra spells and spell slots.
+
+_____
+
+Tricky Swarm (and Alternatives)
+
+7 Arcane Trickster / 5 Ranger
+
+Tricky Swarm Build Guide Reddit post and Immortal 4 Youtube video by CrownWBG
+
+This is a very tanky brawler setup with a mage hand for support and access to great utility spells like shield while having uncanny dodge and evasion from the rogue.
+
+Ranger is an excellent multiclass to get extra attack. It swaps your spellcasting stat to wisdom (which I prefer since you can increase wisdom saves), gives you a fighting style, gives extra spells and spell slots, and it is the only way to get heavy armor proficiency and extra attack while maintaining evasion and dexterity saving throw proficiency. Can work great with a Heavy Armor Master setup. CrownWBG opts to use Armor of Agility and focus more on high AC, which can also be better for stealth rolls.
+
+CrownWBG used bloodthirst with bees, but you can also use shadow blade with moths if you want. You also don’t have to use swarmkeeper. Hunter for hordebreaker strategies or even just the standard gloomstalker can work well. Personally, I just think teleporting around is fun.
+
+____________________
+
+Honorable Mentions
+Three-Handed Storm Rogue
+
+3 Arcane Trickster / 6 Evocation Wizard / 2 Tempest Cleric / 1 Storm Sorcerer
+
+Three-Handed Storm Rogue Build Guide Reddit post by Rawbzilla7
+
+This is one of the OG builds utilizing Arcane Trickster by one of my favorite build creators. The build is outdated and it is light on the rogue levels, but it was a trailblazer and worthy of a mention.
+
+_____
+
+Dancing Breeze Evocation Trickster
+
+10 Arcane Trickster / 2 Evocation Wizard
+
+AerieSpare7118 was one of the early adopters and advocates for Arcane Trickster, but I don’t think they ever made a build guide. The core concept of this build is to use Sentinel and Polearm Master with The Dancing Breeze with scroll casting. You cast scrolls on your turn and use your reactions for attack and sneak attack. This build is not the most optimized by today’s standards dominated by easy psychic/piercing/wet vulnerabilities, but it’s certainly fun. 
+
+_____
+
+Whispering Cold Arcane Trickster
+
+1 War Cleric / 5 Arcane Trickster / 2 White Draconic Sorcerer / 4 Abjuration Wizard
+
+Whispering Cold Arcane Trickster Build Reddit post by RAM-Redditor
+
+RAM-Redditor was the one who clued me in on reverse pickpocketing Mage Hand using a controller. They made a build that basically tried to combine multiple of the above builds including the Frostbite Trickster and the Arcane Tankster. This build is very tanky and versatile.
+
+____________________
+
+Other Builds I’ve Seen
+You are of course welcome to try these as anything is viable. I have seen people advocating for them, but they are not my preference.
+
+10 Arcane Trickster / 2 Paladin: It misses reliable talent for a couple of smites. The point of high level rogue is to get that resource free repeatable sneak attack and stealth. You will probably enjoy the Swords Bard / Paladin (SSB or SSSB) builds more.
+
+9 Arcane Trickster / 3 Swarmkeeper: Shadow blade build with moths. It’s much better to just go 7/5 Tricky Swarm if you want to go this route.
+
+3 Arcane Trickster / 9 Bladsinger: I’ve seen this one suggested by myself prior to patch 8 release. I think bladesinger generally works better with the thief multiclass unless you plan on really making use of Mage Hand. 
+
+10 Arcane Trickster / 2 Bladesinger: A combination of a little bladesinging with Magical Ambush. I’d generally prefer to just go for a Reliable Trickster at that point.
+
+____________________
+
+Conclusion
+Thank you! I will try to keep this updated. Let me know if you think anything interesting is missing.
+
+See my prior similar Reddit post on Swashbuckler Multiclasses if interested.
+
+Credits:
+
+Multiple credits of referenced material as listed in the document.
+LostAccount2099, Remus71, CrownWBG, and Meph6148795: Discussions on Arcane Trickster and build contributions.
+Grousedrum and EndoQuestion1000: Feedback and suggestions.
+JRandall0308: Chief Editor.
+
+Edits:
+Added Whispering Cold build - Nov 24, 2025 (took me a while to get to updating).
+Added Gamestegy Links for 11 AT / 1 Fighter Dec 07, 2025.
+Edited Subtle Trickster to reflect benefits of halfling when not getting reliable talent Feb 17, 2026.
+
+147
+·
+37
+Comments Section
+u/chilovehan avatar
+chilovehan
+•
+10mo ago
+Awesome post. This is making it so hard to finish my current run before getting lured into a rogue solo run!
+
+Quick note: trickery cleric level 2 invoke duplicity can be used to duplicate items, weapons for console and everything for PC. It could be helpful if you want to arm your mage hand and are worried about losing it if the hand dies.
+
+8
+u/Captain_ET avatar
+Captain_ET
+OP
+•
+10mo ago
+Yes, I tested this a bit with Proxy trying to figure out a way to get it to work on console, but unfortunately nothing was discovered other than disarm. I agree, that's a really good point about backup items in case it dies! Thanks. I'll have to add it to my mage hand guide. Will work on that next.
+
+4
+u/brightseid avatar
+brightseid
+•
+10mo ago
+Love to see the AT appreciation. I just finished a solo honour 11/1 with the war cleric dip and it's so good to have those utility spells in a pinch.
+
+8
+u/Captain_ET avatar
+Captain_ET
+OP
+•
+10mo ago
+Of everything here, I think the war cleric dip has to be my favorite. It's extremely well rounded and versatile. I'm happy with how they reworked the charges to flow better as well. If you happen to have any clips from the run, I would be happy to link them.
+
+3
+
+4 more replies
+psychoactive-drug
+•
+10mo ago
+I've been having a lot of fun with a level of light cleric for warding flare. Only in Act 1 so far, but it's saved my butt a bunch of times in melee because I'm trying to run the Hunter's Dagger + Booming Blade combo from these two guides:
+
+DRUNKEN MASTER BUILD GUIDE : r/BG3Builds
+
+PSA: Don’t wait for Booming Blade - you could be Booming with Hunter’s Dagger from early game now. : r/BG3Builds
+
+The medium armor proficiency lets me run the Speedy Lightfeet boots as an alternative to the Linebreaker ones
+
+4
+u/Captain_ET avatar
+Captain_ET
+OP
+•
+10mo ago
+Ah Zemus and ZostAccount. Yes good stuff.
+
+I love Speedy Lightfeet early to mid game. This strategy is much easier with a swashbuckler multiclass, but it's definitely fun. If Mage Hand had better initiative, it would be easier to combo together with shoving yourself and such.
+
+3
+Spawn_of_Madness
+•
+10mo ago
+Great post!
+
+I played a 4E monk / AT multiclass (8/4 for 3 feats, or 7/5 for uncanny dodge).
+The main idea is to booming blade with Mourning Frost, have your mage hand freeze them by throwing a water bottle, and then sharpshooter force damage sneak attack with Ne'er Misser coated in arsonists oil.
+
+This sets up Fangs of the Fire Snake + Flurry of blows all with fire vulnerability.
+
+In act 3 swap in Cold Snap and trigger Chilled for free from misses.
+
+It's a bit clunky to set up, and usually overkill, but it's been very a fun and versatile combination of melee and ranged. Works great as a duo with a Harold/Baneful debuffer.
+
+3
+u/Captain_ET avatar
+Captain_ET
+OP
+•
+10mo ago
+Ah, the mythical Flamebite Trickster, combining Lost's Frostbite Trickster with Remus's arsonist oil and 4e monk madness.
+
+I have theorized on this many times but have never tried it. Interesting stuff.
+
+5
+Spawn_of_Madness
+•
+10mo ago
+Haha Exactly!
+
+I have been eyeing another u/Lostaccount2099 + u/Remus71 hybrid in a Melee Hunter / Sorcerer combo, but still waiting on the definitive melee hunter breakdown from Lost.
+
+3
+
+4 more replies
+u/jSlice__ avatar
+jSlice__
+•
+10mo ago
+What about 7 Arcane Trickster / 5 Paladin? Extra attack, Shadow Blade, smites. Plus evasion, 4d6 sneak attack, etc.
+
+2
+u/Captain_ET avatar
+Captain_ET
+OP
+•
+10mo ago
+I haven't tried it, but I've thought about it a few times. I am not a huge fan of smites when you only get to 2nd level spell slots. I think shield and utility is more valuable personally. I also dont like to long rest a ton.
+
+It's also sad that you can't get both aura of protection and evasion. Plus, paladin is a hard sell for me at baseline since I steal and murder and don't care for oaths. CrownWBG had been thinking about a 7/5 warlock version but I think that one is probably also worse than the ranger version.
+
+Have you tried it?
+
+2
+
+1 more reply
+u/cel3r1ty avatar
+cel3r1ty
+•
+9mo ago
+if i wanted to play the reliable trickster with a full party, what builds would go well with it for companions?
+
+2
+u/Captain_ET avatar
+Captain_ET
+OP
+•
+9mo ago
+I think having a full versatile control unit is always nice, like the classic fire acuity sorcerer or arcane acuity bard.
+
+To be honest there are so many ways you can go with a full party composition it's hard to say. You could go for a terrain control party and have your mage hand help throw enemies into the blender. You could go with a darkness based party. You could go with a wet/lightning based party and use mage hand for helping apply wet and then use magical ambush for chain lightning and freezing sphere.
+
+I think more important than specific builds is the theme behind the composition and general combat strategy.
+
+2
+
+2 more replies
+EndoQuestion1000
+•
+10mo ago
+Such a helpful post, thank you! Really nice to read about the different ways to play to its strengths. Going to do a proper AT playthrough one of these days 😄
+
+14
+Artorias_Erebus679
+•
+10mo ago
+I love arcane trickster, thank you for this post time to do my third AT run
+
+6
+u/CrownWBG avatar
+CrownWBG
+•
+10mo ago
+🙏 Thanks for your consistent contributions to an awesome class!
+
+5

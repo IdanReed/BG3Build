@@ -1,0 +1,21 @@
+[package]
+name = "bg3-party-server"
+version = "0.1.0"
+edition = "2021"
+description = "Local axum server for the BG3 party guide: serves the UI, assembles the plan from per-character Markdown files, and persists checkoff state to disk."
+
+[[bin]]
+name = "bg3"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "fs", "signal"] }
+tower-http = { version = "0.5", features = ["fs"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+serde_yaml = "0.9"
+anyhow = "1"
+
+[profile.release]
+opt-level = 2

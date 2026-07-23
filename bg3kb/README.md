@@ -1,0 +1,90 @@
+# bg3kb — local hybrid-search KB from bg3.wiki
+
+Scrapes every content page on [bg3.wiki](https://bg3.wiki) (MediaWiki 1.43.9),
+converts each to Markdown (keeping the stat tables), chunks it, embeds the
+chunks on your GPU, and stores them in an embedded **LanceDB** table with both
+a vector index and a BM25 full-text index. Query it from a CLI or from Claude
+Code via an MCP server.
+
+## Setup (git bash + uv)
+
+Run everything from **git bash** at the repo root, in a **uv**-managed venv.
+
+```bash
+cd /c/EpicSource/Personal/bg3
+uv venv bg3kb/.venv
+source bg3kb/.venv/Scripts/activate
+uv pip install -r bg3kb/requirements.txt
+# Install the CUDA torch build for the 3080 (otherwise embedding runs on CPU):
+uv pip install torch --index-url https://download.pytorch.org/whl/cu124
+```
+
+Then set a real contact string in `bg3kb/config.py` (`USER_AGENT`).
+
+Re-activate in any new git bash shell with `source bg3kb/.venv/Scripts/activate`
+(or prefix commands with `uv run` to skip activation).
+
+## Run order
+
+```bash
+# 1. Scrape (resumable, ~1.5h at the default polite rate). Dry run first:
+python -m bg3kb.scrape --titles "Astarion" "Bhaalist Armour" "Divine Smite" "Resonance Stone"
+python -m bg3kb.scrape                 # full run (all namespace-0 pages)
+
+# 2. Build the index (embeds on GPU, prints chunks/sec):
+python -m bg3kb.embed_index
+
+# 3. Query:
+python -m bg3kb.cli "where do I find Bhaalist Armour"
+python -m bg3kb.cli "best weapon type for a crit-smite paladin" --k 5
+python -m bg3kb.cli            # no query -> interactive REPL (model loads once)
+```
+
+The model downloads once (during step 2) into the HuggingFace cache. After
+that, bg3kb switches HuggingFace to **offline mode** automatically, so each run
+loads from cache with no Hub network check (config: `HF_OFFLINE_WHEN_CACHED`).
+
+### Warm daemon (fast repeat queries)
+
+A one-shot `cli` call would normally reload the model each time (~15-20 s of
+CUDA init). Instead, the first query auto-starts a background **daemon**
+(`bg3kb.daemon`) that holds the model in VRAM and serves queries over a loopback
+socket; it shuts down after 5 min idle (`DAEMON_IDLE_SECONDS`). So:
+
+- 1st query: ~17 s (spawns + warms the daemon)
+- subsequent queries: ~0.4 s
+
+Flags/knobs: `--no-daemon` runs fully in-process; port/idle timeout are in
+`config.py`. The REPL and MCP server stay warm on their own and don't use the
+daemon. To watch the daemon live: `python -m bg3kb.daemon`.
+
+## Preview without a GPU
+
+`clean.py` and `chunk.py` run standalone against cached raw pages, so you can
+confirm fidelity before installing torch (only the lightweight deps are needed:
+`uv pip install requests beautifulsoup4 markdownify tiktoken tqdm`):
+
+```bash
+python -m bg3kb.clean "Bhaalist Armour"     # prints the Markdown (tables kept)
+python -m bg3kb.chunk "Bhaalist Armour"     # prints the chunk breakdown
+```
+
+## MCP server (query from Claude Code)
+
+```bash
+claude mcp add bg3-wiki -- \
+  C:/EpicSource/Personal/bg3/bg3kb/.venv/Scripts/python.exe \
+  C:/EpicSource/Personal/bg3/bg3kb/mcp_server.py
+```
+
+Use the venv's Python (so the server has torch/lancedb/mcp) and the script's
+absolute path — `mcp_server.py` self-bootstraps `sys.path`, so it works no
+matter which directory Claude Code launches it from. The server exposes one
+tool, `bg3_search(query, k=8, category=None)`.
+
+## Notes
+
+- Content is CC BY-SA 4.0; every chunk stores its source `url` for attribution.
+- `robots.txt` disallows `/w/api.php` for crawlers — this tool is a one-time,
+  low-rate personal archive that caches to disk and never re-fetches. Keep the
+  rate modest and the `USER_AGENT` honest.

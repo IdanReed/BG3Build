@@ -1,0 +1,343 @@
+ARCANE TANKSTER – ENDGAME
+
+Arcane Trickster, more than any other other class, can consolidate four notable recent advancements into one coherent build: Bomb Striking, Arcane Ward Refreshing, Uncanny Dodge Abuse & Retribution Stacking. The aim of this guide is to offer fun, thematic and accessible Trickster/Artificer gameplay that feels impactful at all stages of the game whether solo or in a party.
+
+FOREWORD
+
+This guide is intended for players with a working knowledge of the game. For this reason I will only cover itemisations, mechanics and patterns of play material to the build specifically.
+
+The BG3 community is mature and there are a wealth of fantastic resources available
+
+covering core gameplay. As an example, equipping Ring of Free Action against enemies with Hold/Paralysis is not listed. 
+
+The build fully explores moderately advanced mechanics.
+
+The highlighted further reading and good old-fashioned practice will really enable you to push the limits. I highly recommend engaging with all aspects as soon as they are available to you. This is an execution based build, there is no substitute for throwing it into the fire.   
+
+If you are unsure on anything please, please ask. There's more than a few big nerds lurking here who will take any opportunity to talk about the game.
+
+Let's get into it…
+
+1. THE BUILD
+
+1a. Origin & Race
+
+Githyanki is mandatory. Medium Armour Proficiency is core to the build’s itemisation until Level 10.
+
+The build is intended to be Tav/Durge/Lae’zel origin and gets priority for all contested buffs - Hag’s Hair, Awakened etc.
+
+1b. Starting Class
+
+Start as Rogue and take Expertise : Athletics & Sleight_of_Hand. For your remaining proficiencies take Stealth & Deception. Athletics & Sleight of Hand are central to the build; please don’t skip. There is plenty of room for Persuasion as the party face - don't mind 8 or 10 Charisma, because expertise and a few buffs easily covers you.
+
+STATS: 8/17/14/16/10/8. I value better  WIS saves but if you like speaking to people switch to 10 Charisma.
+
+1c. Levelling
+
+Rogue 2: Cunning actions. 
+
+Rogue 3: Arcane_Trickster 
+
+- Cantrips: Minor_Illusion & Booming_Blade 
+
+- Spells: Shield , Disguise_Self & Tasha’s Hideous Laughter
+
+Rogue 4: Take Dual_Wielder. Swap Tasha’s Laughter for Longstrider Take any spell.
+
+Rogue 5: Uncanny_Dodge. Swap your Level 4 spell for Thunderwave 
+
+Wizard 1: 
+
+Cantrips: Blade_Ward, Friends & Shocking_Grasp
+
+Spells: Magic_Missile , Mage_Armour , Protection_from_Evil_and_Good & remainder to taste.
+
+Wizard 2: Abjuration_School 
+
+Spells: To taste
+
+Wizard 3: Shadow_Blade & Darkvision  
+
+Wizard 4: Savage_Attacker 
+
+Cantrips: Light 
+
+Spells: Hold_Person  & Misty_Step 
+
+Rogue 6: Expertise Stealth & Persuasion
+
+Rogue 7: Evasion 
+
+Wizard 5:
+
+Spells: Counterspell & Glyph_of_Warding 
+
+1d. Final Split 
+
+Arcane Trickster 7, Abjuration Wizard 5
+
+2. MECHANICS
+
+Reaching into your tool box and finding solutions to any given problem is the essence of Arcane Trickster gameplay. Being able to try whatever dumb idea pops into your head and get away with it is the foundation of the build and its itemisation. For this reason the build has rotating items depending on the situation - This is your toolbox.
+
+I cannot stress enough how important being creative is to enjoying Arcane Trickster - Retain all the given items for your entire run and consider where they are relevant.
+
+Let’s take a look at the build's core mechanics…
+
+2a. Expertise
+
+Buffing and leveraging our skill proficiencies is relevant for the entire game. Mark_of_the_Shifter  & Guidance  add +2d4 to every skill check. Use with Smugglers Ring, Gloves Of Thievery to virtually guarantee low DC steals (arrows, low level scrolls, etc).
+
+If you do get caught Deception Expertise and the +2d4 gets you out of trouble. To avoid getting caught, use a darkness arrow next to the target, then hide and pause to pickpocket. If they catch you and you don’t get a chance for deception, just use cunning action hide in the darkness. Then, escape to camp. Pick a different disguise next time, and they won’t know any better!
+
+I strongly advise not to overdo it. You won’t always have carry weight for an overflowing inventory, especially if you’re not running Str Elixir. Think up a quick plan for your adventuring day, visit one or two traders that have a loot table you're enjoying, and get on with your run. Like mage hand throwing void bulbs and healing potions? Skip by Omeluum and Derryth and crack on.
+
+The +2d4 bonus to checks also apply to Athletics:
+
+r/BG3Builds - ARCANE TRICKSTER - BUILD GUIDE
+You are very very good at dropping people on their heads and into chasms. Get the hang of animation cancelling improvised melee weapon to manoeuvre baddies next to ledges, or lure with Minor illusion, and then throw them in! Have your mage hand do it with you. Or toss enemies back and forth with your mage hand for a nice game of catch. This is reliable instakills for the entire game.
+
+2b. Mage Hand 
+
+You can do all sorts of things with it depending on how you want to play. You can turn your mage hand into a returning pike thrower, a support potion thrower to give you bless and blade ward, or just use it normally by alternating between invisibility and helping you throw enemies off cliffs or into lava. Stock up on strength potions to feed it! 
+
+***Further Reading Captain ET's Mage Hand Guide - Turn mage hand into…whatever you want really!
+
+2c. Bomb Striking
+
+Smokepowder bombs are a DEX save so Rogues & Monks can buff their saves and be functionally immune to virtually all grenade damage, big AoE spells like fireballs, and a few other things. Check the wiki for a comprehensive list:
+
+***Further ReadingThings that can be evaded for zero damage 
+
+Anyways, a couple of us tinkering led to:
+
+***Further Reading 1 BOMB, 100 EXPLOSIONS - optimise your explosions, especially if you want to one shot endgame bosses.
+
+We can’t get near the ceiling above until we get Evasion at 11 but for early mid-game we’re in business as soon as we have a Bow, some riders, and a Smokepowder_Bomb 
+
+A fire arrow with lightning charges from Speedy Lightfeet and acid damage from Caustic Band will generate 7 explosions with 1-4 lightning charges, or 9 explosions with 5 charges. At an average 12 damage per explosion this will splatter most encounters:
+
+r/BG3Builds - ARCANE TRICKSTER - BUILD GUIDE
+It is very satisfying. The flash bang and splatter are addictive. I promise if you do it once you will want to do it again.
+
+‘I think I’ve found a new hyper-fixation…’
+
+2d. Uncanny Retribution
+
+Pulling together three strands the build develops into a hyper tank dealing retribution damage capable of one-shotting enemies. To do this we combine Arcane Ward, Damage Reduction, and Uncanny Dodge with multiple retribution sources carrying multiple riders. All the required riders ramp our bomb striking damage; nothing on the build is wasted. 
+
+It does take a turn or two to get the full kit online. Within fights it does take practice to sequence all the moving parts correctly as well, but done well looks something like this:
+
+r/BG3Builds - ARCANE TRICKSTER - BUILD GUIDE
+***Further Reading: Full guide to (very high retribution) - Stack Elemental Infusions, Psionic Overload & Lightning Charges to multiple retribution sources.
+
+***Further Reading: free_shields_every_turn - free restacks of Arcane Ward with no spell casting required. Using Booming Blade restores our charges, as does acquiring lightning charges.
+
+***Further Reading: uncanny_dodge_workshop - Use multiple times on your own turn by stealing enemies reaction, very broken.
+
+3. ITEMISATION & GAMEPLAY
+
+3a. Levels 1 to 4
+
+Arcane Trickster has a very comfortable early game because of Expertise, Disguise Self, Stealth, Shield, Mobility & Medium Armor Proficiency. Work towards the following:
+
+Shapeshifters_Boon_Ring 1d4 to all skill checks
+
+Silver_Pendant 1d4 to all skill checks
+
+The_Speedy_Lightfeet 3x lightning charges on dash
+
+Gloves_of_Thievery advantage on Sleight of Hand Checks
+
+Smugglers_Ring +2 Stealth & Sleight of Hand
+
+Rupturing_Blade*** do not miss this from Brem in the Zhent hideout - it is the build’s capstone.  
+
+The_Oak_Fathers_Embrace*** do not miss from Owlbear nest. Retribution damage against undead, extremely effective in Act 2, onlines Uncanny Retribution
+
+Loviatars_Scourge*** do not miss, necrotic resistance, offhand utility popping void bulbs, potions etc. Self damage null from damage reduction**.**
+
+Expertise and Minor Illusion carry the early game. Easy stealing will always land you high value scrolls and special arrows. Group enemies with minor illusion to get the most value out of them. Use dash and hide to generate lightning charges and advantage as required. Athletics expertise with bonuses ‘solves’ some notable fights: Anders and Minthara in particular. Mage hand heals you, sets vulnerability with water bottles, and can get in on the throwing.  
+
+3b. Level 5
+
+We start to tank up now, this is a central to the build. Uncanny Dodge stays active on your turn when forcing opportunity attacks. Its behaviour is discussed above and we begin our progression to retribution hyper-tank:
+
+Get the following items:
+
+Adamantine_Splint_Armour gives solid AC, damage reduction and miss chance on reeling. 
+
+Caustic_Band generates infusions from booming blade to power the build. Rotates with Shapeshifters Boon 
+
+Bow_of_the_Banshee gives soft CC and bonus damage.
+
+Dark_Justiciar_Mail retribution damage when obscured. Rotates with Oakfathers Embrace & Adamantine Scale Mail
+
+***Derryth_Bonecloak & Cyrel have smokepowder bombs on their loot table; if you see one, grab it. As above don’t grind, this isn't Runescape, and Cyrel is practically begging to be launched off the tollhouse.
+
+The combination of AC, Uncanny Dodge damage reduction, and dash lets us move round the battlefield essentially risk free for position, fleeing etc. 
+
+3c. Level 6
+
+Pick up the following items from the monastery & creche: 
+
+Ring_of_Elemental_Infusion: The build extracts enormous value from this. We triple dip to power Retribution Tech (rides on every source), Bomb Tech, and weapon attacks. Best in Slot.
+
+Knife_of_the_Undermountain_King: Effectively savage attacker. It even re-rolls 1&2s on our retribution damage! 
+
+Defender_Flail: Damage reduction & AC. 
+
+Holy_Lance_Helm: Free damage. Uncanny Dodge, damage reduction & crit immunity makes forcing opportunity attacks essentially risk free. Also stacks acuity from Gloves of Battlemagepower
+
+Periapt_of_Wound_Closure full heal from potions. Makes Mage hand very good at sustaining you. Best in slot until Act 3 for retribution tanking.
+
+Make sure to get…
+
+Awakened
+
+This outrageously strong buff is fairly essential for pushing towards the build’s ceiling. 
+
+Psionic_Overload  generates additional Explosions, is a damage rider on every retribution source and weapon attack. A large portion of retribution damage when we get resi stone - A full action to activate feels bad.
+
+Cull_the_Weak  procs everytime an enemy is overkilled by bomb tech, so 5 explosions on a dead enemy generates 5d4 psychic. It’s not hard to imagine where these numbers go…
+
+Shield_of_Thralls Stun forces bomb save fail, leverage with retribution to AoE stun and then bomb strike.
+
+We are seriously tanky now. 3 damage reduction from Adamantine and Flail along with Shield, Uncanny Dodge & Blade ward makes us very, very hard to take down. Holy Lance Helm adds damage to our movement - Dash every turn for lightning charges and force opportunity attacks as much as you're comfortable with - don't forget to turn Uncanny Dodge on for when they do land a hit. At this point the damage is modest but it's free real estate and we are going to ramp it up.
+
+3d. Level 7 
+
+We unlock Abjuration Wizard here and we have 2 Arcane Ward charges. Doesn’t sound like alot and we have no spellslots to recharge it but it does replenish from zero stacks to wizard level with Booming Blade and on acquiring lightning charges.
+
+Talli also has a guaranteed stack of Smokepowder bombs, which we can steal at will - If It’s alrite by Jaheira, it’s alrite by me. 
+
+Add the following items:
+
+Gloves_of_Battlemages_Power Stack Arcane Acuity on hit/on miss, Booming Blade & Grenades 
+
+Fleshmelter_Cloak Retribution source, maintains Arcane Acuity
+
+Shadeclinger_Armour Abuse for advantage on all saves, very important to high end bomb striking. 
+
+Ring_of_Mental_Inhibition debuff mental saves, will leverage fully in Act 3.,  
+
+At this point we can use retribution fairly consistently - Generate infusion with booming blade and lightning charges with dash. Blade Ward is high value, an offensive cantrip in effect. Leverage the 75% damage reduction it provides when combined with Uncanny Dodge for very solid damage across the battlefield. This is core Tankster gameplay, lock it in.
+
+With The_Oak_Fathers_Embrace and Loviatars_Scourge (for necrotic resistance) equipped Undead will take very respectable damage and we will take close to zero - Shadows will one shot themselves. For non undead (Alives!?) equip Dark_Justiciar_Mail & Defender_Flail. If you are not comfortable with your tank keep Adamantine Scale and just maintain acuity between holy lance helm & fleshmelter and accept lower retribution damage.
+
+Booming Blade, Lance Helm Misses and Throwing potions/grenades all generate Arcane Acuity. On hit retribution generates and loses a stack so we can reliably build max acuity while taking hits. Have fun with your stolen scrolls!! Some of my favorites include:
+
+Evards_Black_Tentacles
+
+Phantasmal_Killer Pin down a big bad while you work through trash mobs. Cand rop Resonance Stone next to them to double the damage and disadvantage the saving throw (just dont forget it!)
+
+Scroll_of_Fire_Shield additional retribution source, use cold as easy vulnerability from wet and fire is a light source so turns off shadowblade.
+
+Fear Disarm and abuse your movement and retribution to scoop up their weapons.
+
+The entire point of the build is to enable fun - You are exceptionally hard to kill, stolen scrolls are never wasted, and at any point you can take range and end any encounter with one shot.
+
+3e. Level 8 
+
+We finally get our delayed Shadow_Blade. This spell’s implementation is an aberration and it has no business being available in Act 1. Picking it up here feels somewhat balanced. Causes brain damage. Turning off lights is a very good use of mage hand to enable the shadow blade passive. Have an ally use Drakethroat_Glaive to enchant your shadowblade for infusion generation.
+
+Midgame itemization:
+
+Head Holy_Lance_Helm 
+
+Cloak Fleshmelter_Cloak 
+
+Chest Dark_Justiciar_Mail / The_Oak_Fathers_Embrace  
+
+Gloves Gloves_of_Battlemages_Power  
+
+Boots The_Speedy_Lightfeet (max damage) or Bonespike_Boots (+4AC with mage armor)
+
+Amulet Periapt_of_Wound_Closure  
+
+Ring 1 (open) Shadow-Cloaked_Ring 1d4 damage on attacks and retribution (unarmed) when obscured / Utility   
+
+Ring 2 Ring_of_Elemental_Infusion 
+
+Main Hand Shadow_Blade 
+
+Offhand Loviatars_Scourge / Defender_Flail  
+
+Bow Bow_of_the_Banshee 
+
+3f. Level 9
+
+Savage_Attacker ramps up both our Shadow Blade and Retribution. We also have 4 ward stacks refreshed from 0 by Booming Blade. Make sure to grab; 
+
+Braindrain_Gloves - Mental Fatigue form psychic damage including Cull the Weak - Reverse Acuity from kills. Add in disadvantage on mental saves from Resonance_Stone and acuity is redundant. Bomb tech can overstack Mental_Fatigue_(Condition) for an outrageous debuff to mental saves:
+
+r/BG3Builds - ARCANE TRICKSTER - BUILD GUIDE
+3g. Level 10
+
+Make sure you accept the Astral-Touched_Tadpole to become partial Illithid. Access the following elite Illithid powers:
+
+Black_Hole Group enemies for bomb striking and inflict 2 turns of mental fatigue
+
+Mind_Blast Very good damage, stunned targets auto fails bomb blasts, 4 turns of mental fatigue
+
+Fracture_Psyche Provides sustain for retribution tanking and 2 stacks of mental fatigue 
+
+Rush the following items to complete the build:
+
+Bonespike_Helmet free menacing attack, +8 damage on Shadow Blade, failed save gives 4 mental fatigue. 1d4 psychic from Bow of the Banshee applies immediately on failed save 
+
+Bonespike_Garb -2 Damage Reduction and a retribution source. 
+
+For Act 3 bombs visit Bumpnagel & Oliver_Tefoco 
+
+3h. Level 11
+
+We finally access Evasion allowing us to Bomb Strike in melee. Stack infusions, lightning charges, psionic overload and detonate with a fire arrows or booming blade at point blank. For top end bomb striking see above.
+
+At this point the build is overwhelming - Most endgame builds are - but the combination of damage reduction and resonance stone doubling psychic damage from multiple sources easily crushes fights. Multiple cull the weak procs from bomb striking is particularly offensive. SteelWatchers are somewhat resilient to our kit but bombs are plentiful so just nuke them.
+
+3i. Level 12
+
+Grab Amulet_of_Greater_Health. Respeccing your ability points from Constitution to Wisdom and dropping Dual-Wielder for ASI Dex are notable optimizations to Saves, AC and Attack Rolls. The HP pool from Amulet really allows you to go to town. You can basically do whatever you like at this point.
+
+Not much else here aside from hit dice, Spell Slots, and another Arcane ward charge. You can scribe Scroll of Fire Shield & Phantasmal Killer for quality of life. 
+
+Endgame itemization:
+
+Head Bonespike_Helmet 
+
+Cloak Fleshmelter_Cloak 
+
+Chest Bonespike_Garb 
+
+Gloves Braindrain_Gloves 
+
+Boots The_Speedy_Lightfeet (max damage) or Bonespike_Boots (+4AC with mage armor)
+
+Amulet Amulet_of_Greater_Health 
+
+Ring 1 Ring_of_Mental_Inhibition 
+
+Ring 2 Ring_of_Elemental_Infusion 
+
+Main Hand Shadow_Blade 
+
+Offhand Rhapsody   
+
+Bow Bow_of_the_Banshee 
+
+RUN FOR YOUR LIVES!
+
+The end game loop is to continually stack Mental Fatigue through Shadow Blade, Illithid Powers and Bomb Striking to land CC spells, particularly Fear and Phantasmal_Killer, which stacks more mental fatigue. Our Mainhand, Bow, Spells and Grenades all frighten enemies, deal psychic damage and debuff mental saves. Stride through the battlefield damaging any who dare attack you, strike deadly bombs in the face of your enemies and survive any encounter with your hyper tank.
+
+CREDITS
+
+Getting all the tech here into a proper 1-12 build has been incredibly rewarding. You would not believe the amount of hours u/meph6148795, u/Routine_Ad3835 // Willowman69, u/c4b-Bg3, u/grousedrum, u/LostAccount2099, u/Endoquestion1000, u/JRandall0308, u/Salmonaru, u/Captain ET, u/SuddenBag, u/-FriendlyLich-, u/Holmsky11, u/Cocohomlogy put in to stress testing stuff. This build simply doesn't exist without the passion and energy they all have for the game. If you do play the build please let us know your thoughts, any and all suggestions are welcome!!
+
+Youtube Full Guide
+
+ARCANE TANKSTER
+
+Thanks for reading Guys
+
+Note 1: For non-Gith please see u/grousedrum comments. Trades a portion of retribution damage for stable stealth & scroll casting. Full endgame kit unaffected.

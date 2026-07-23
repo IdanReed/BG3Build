@@ -36,14 +36,15 @@ builds:
   creation:
     level1_class: Rogue 1 (taken at character creation / first class in the respec)
     level1_gains: 'Expertise in 2 skills (Sleight of Hand + Stealth) + Sneak Attack 1d6 (vestigial once he punches — Sneak Attack needs a finesse weapon, not fists). MUST be the creation class so Expertise lands on the thief skills.'
-    subclass_choice: 'Way of the Open Hand is chosen at Monk 3; Thief at Rogue 3. Rogue 1 has no subclass.'
+    subclass_choice: Open Hand (Monk 3) · Thief (Rogue 3)
     proficiencies:
-      armor_weapons: 'Rogue: Light armour; Simple weapons, Hand Crossbows, Longswords, Rapiers, Shortswords. Monk adds Simple + Shortsword proficiency and the unarmed/Martial-Arts kit — but you fight UNARMED and UNARMOURED (a weapon or armour disables Martial Arts / Flurry / Unarmoured Defence).'
-      saving_throws: 'Dexterity + Intelligence (Rogue, the creation class). Monk grants no extra save proficiency (multiclassing never does) — but DEX saves + Evasion (Monk 7) cover the ones that matter.'
-      skills: 'Rogue picks 4 skills + Expertise in 2 (Sleight of Hand + Stealth) at level 1; Charlatan background adds Deception + Sleight of Hand. NOTE: this split reaches only Rogue 3 — so ONE Expertise pair (no Rogue-6 second pair) and NO Reliable Talent (Rogue 11). See pickpocket.'
-    starting_cantrips: 'None from class. High Elf picks one wizard cantrip at creation — take a utility one (Friends / Light / Blade Ward); it barely matters for a puncher.'
-    starting_spells: None — this is a Ki/martial build, not a caster.
-    notes: 'Astarion (companion) — respec at Withers. Take Rogue 1 FIRST for Expertise, then pour into Monk (the combat identity), and finish the Thief dip for the second bonus action. 2 feats total (Monk 4 + Monk 8). Fights unarmed + unarmoured with a daily Giant Strength elixir; keeps DEX for pickpocketing.'
+      armor_weapons: Unarmed & unarmoured — required for Martial Arts / Flurry / Unarmoured Defence.
+      saving_throws: DEX + INT (Rogue).
+      skills: 'Expertise: Sleight of Hand + Stealth (Rogue 1). Only Rogue 3 → no second Expertise pair and no Reliable Talent.'
+      # (kept terse; detail on hover / in pickpocket)
+    starting_cantrips: 'High Elf racial cantrip — a utility pick; marginal for a puncher.'
+    starting_spells: None — Ki/martial build.
+    notes: '2 feats (Monk 4 + Monk 8). Rogue 1 FIRST for Expertise, then Monk 1–9, then Thief. Daily Giant Strength elixir; keeps DEX for pickpocketing.'
   spells:
     note: 'Not a caster — these are the Ki abilities and features that define the turn. Mandatory = the core loop; Recommended = the situational toolkit.'
     mandatory:
@@ -121,55 +122,39 @@ builds:
       when: char 1
       why: 'Astarion''s bite: a free bonus-action heal/buff on a grappled or downed foe (mostly out of combat) — minor in the flurry economy, but costs nothing.'
   leveling:
-    respecs:
-    - label: As recruited
-      note: Astarion joins as a level-1 Rogue (Assassin path). Do NOT level him as-is — respec at Withers into this build as soon as you can afford it (~100g).
-      rows:
-      - char_level: 1
-        class: Rogue 1 (Assassin — as recruited)
-        gains: Recruited state only; a placeholder until the Withers respec.
-    - label: Respec → Open Hand Monk / Thief
-      note: 'Rebuild from level 1. Take Rogue 1 FIRST (Expertise: Sleight of Hand + Stealth), then Monk 1–9 for the combat identity, then Rogue 2 → Thief 3 for the second bonus action. Feats at Monk 4 (Tavern Brawler) + Monk 8 (Alert).'
-      rows:
-      - char_level: 1
-        class: Rogue 1
-        gains: 'Expertise (Sleight of Hand + Stealth); Sneak Attack 1d6 (vestigial once unarmed); DEX + INT saves'
-      - char_level: 2
-        class: Monk 1
-        gains: Unarmoured Defence (AC 10 + DEX + WIS); Martial Arts (DEX unarmed, Deft Strikes 1d4, bonus Unarmed Strike); Flurry of Blows; Ki 2
-      - char_level: 3
-        class: Monk 2
-        gains: Unarmoured Movement (+3m); Patient Defense; Step of the Wind (Dash/Disengage)
-      - char_level: 4
-        class: Monk 3
-        gains: 'Way of the Open Hand (Flurry: Topple/Stagger/Push); Deflect Missiles; Martial Arts die → 1d6'
-      - char_level: 5
-        class: Monk 4
-        gains: 'Feat: Tavern Brawler; Slow Fall'
-      - char_level: 6
-        class: Monk 5
-        gains: Extra Attack; Stunning Strike
-      - char_level: 7
-        class: Monk 6
-        gains: 'Manifestation (Mind/Body/Soul) + Wholeness of Body; Ki-Empowered Strikes (unarmed count as magical); Improved Unarmoured Movement'
-      - char_level: 8
-        class: Monk 7
-        gains: Evasion; Stillness of Mind
-      - char_level: 9
-        class: Monk 8
-        gains: 'Feat: Alert'
-      - char_level: 10
-        class: Monk 9
-        gains: 'Ki Resonation (Punch → Blast); Advanced Unarmoured Movement; Martial Arts die → 1d8; Ki 10'
-      - char_level: 11
-        class: Rogue 2
-        gains: Cunning Action (Dash / Disengage / Hide as a bonus action)
-      - char_level: 12
-        class: Rogue 3 (Thief)
-        gains: Fast Hands (2nd bonus action → double Flurry); Second-Story Work; Supreme Sneak (Invisibility, 1/short rest)
-    variant:
-      label: '3-feat variant — Monk 8 / Thief 4'
-      note: 'Drop Monk 9 → Rogue 4 instead (Monk 8 / Thief 4). Trades Ki Resonation + the 1d8 Martial-Arts die + a Ki point for a THIRD feat (take +2 WIS, or Alert/ASI) and slightly deeper Rogue. Take it if you value the extra feat over the Monk-9 nova.'
+  - char_level: 2
+    class: Monk 1
+    gains: Unarmoured Defence; Martial Arts (Flurry of Blows, DEX unarmed, 1d4)
+  - char_level: 3
+    class: Monk 2
+    gains: Unarmoured Movement; Patient Defense; Step of the Wind
+  - char_level: 4
+    class: Monk 3
+    gains: 'Open Hand (Flurry: Topple / Stagger / Push); Deflect Missiles; 1d6'
+  - char_level: 5
+    class: Monk 4
+    gains: 'Feat: Tavern Brawler'
+  - char_level: 6
+    class: Monk 5
+    gains: Extra Attack; Stunning Strike
+  - char_level: 7
+    class: Monk 6
+    gains: Manifestation of Mind; Wholeness of Body; Ki-Empowered Strikes
+  - char_level: 8
+    class: Monk 7
+    gains: Evasion; Stillness of Mind
+  - char_level: 9
+    class: Monk 8
+    gains: 'Feat: Alert'
+  - char_level: 10
+    class: Monk 9
+    gains: Ki Resonation; Martial Arts 1d8
+  - char_level: 11
+    class: Rogue 2
+    gains: Cunning Action
+  - char_level: 12
+    class: Rogue 3 (Thief)
+    gains: Fast Hands (→ double Flurry); Supreme Sneak
   itemization:
     act1:
     - id: graceful-cloth
@@ -221,10 +206,21 @@ builds:
     - **Vs undead / stun-immune / legendary-resistant bosses:** Stunning Strike may bounce — lean on raw Flurry + Topple (Prone → advantage) and switch Manifestation to Soul (radiant) if they resist psychic.
     - **Out of combat:** the party thief — see pickpocket.
   pickpocket:
-    note: 'Still the party thief, but WITHOUT Rogue 11 Reliable Talent — steals are no longer floor-guaranteed. Expertise (Rogue 1) + advantage (Graceful Cloth) still clear nearly every Act 1–2 lift; save-scum the rare high-DC item.'
-    math: 'At char 12: DEX 20 (+5) + proficiency +4 doubled by Expertise (+8) = +13 flat, rolled with advantage from the Graceful Cloth. No Reliable-Talent floor, so a low roll CAN fail — but advantage makes that rare, and most targets sit well under the number. Guidance / Bardic Inspiration do NOT apply to the background pickpocket roll; only flat Sleight-of-Hand gear lowers it.'
-    gear: 'Graceful Cloth (all game — advantage + DEX toward 20, and it''s clothing so Unarmoured Defence still works); Gloves of Thievery as a backup advantage source; a flat +SoH ring (Smuggler''s Ring +2 / Gloves of Power +1) swapped in for a rare over-floor target.'
-    fallback: 'For a must-have high-DC item: quicksave-scum, Enthrall the vendor (ally-cast), or hand the lift to another member. Escape/laundering is unchanged from any thief — turn-based mode to freeze timers, break line of sight, split stolen loot to a clean member, wait out the investigation.'
+    note: |-
+      Still the party thief, but WITHOUT Rogue 11 Reliable Talent — steals are no longer floor-guaranteed. Expertise (Rogue 1) + advantage (Graceful Cloth) still clear nearly every Act 1–2 lift; save-scum the rare high-DC item.
+
+      For a must-have high-DC item: quicksave-scum, Enthrall the vendor (ally-cast), or hand the lift to another member. Escape/laundering is unchanged from any thief — turn-based mode to freeze timers, break line of sight, split stolen loot to a clean member, wait out the investigation.
+    success_math: 'At char 12: DEX 20 (+5) + proficiency +4 doubled by Expertise (+8) = +13 flat, rolled with advantage from the Graceful Cloth. No Reliable-Talent floor, so a low roll CAN fail — but advantage makes it rare, and most targets sit well under the number. Guidance / Bardic Inspiration do NOT apply to the background pickpocket roll; only flat Sleight-of-Hand gear lowers it.'
+    gear:
+    - item: The Graceful Cloth
+      effect: 'Cat''s Grace — advantage on DEX checks (stealing) + DEX toward 20; it''s Clothing, so Unarmoured Defence still works. Worn all game.'
+      where: Lady Esther, Rosymorn Monastery Trail (Act 1)
+    - item: Gloves of Thievery
+      effect: Advantage on Sleight of Hand — a backup once the Cloth takes the gloves slot.
+      where: Brem, Zhentarim Basement (Act 1)
+    - item: Smuggler's Ring (+2) / Gloves of Power (+1)
+      effect: Flat +Sleight of Hand — the only lever that beats an over-floor target; swap in for that one lift.
+      where: Various vendors / loot
   traps:
   - 'Must stay UNARMED + UNARMOURED: a weapon (even a monk shortsword) or any armour/shield disables Martial Arts, Flurry, and Unarmoured Defence — and a weapon loses Tavern Brawler + all the unarmed riders (Soul Fist, Manifestation, Boots of Kushigo).'
   - 'The Giant Strength elixir is load-bearing (attack, damage, Stun DC) and occupies the one-elixir-per-long-rest slot — no Bloodlust/Battlemage elixir at the same time. Bank a stack.'
@@ -234,8 +230,4 @@ builds:
   - 'Only 2 feats (Monk 4 + Monk 8). If that stings, use the Monk 8 / Thief 4 variant for a 3rd feat (loses Ki Resonation).'
   illithid:
     note: 'His illithid save DC is WIS (~16) — his newest countable class is Monk (Thief-Rogue is ignored for spell DC), NOT the dead INT it looks like — and he carries the Resonance Stone, whose aura gives enemies disadvantage on INT saves. So he is the party''s active AoE nuker: Black Hole + Mind Blast (INT-save powers). Psionic Overload is still his STANDOUT damage (+1d4 psychic per hit across a 4–6-hit flurry, doubled by the Stone), with Luck of the Far Realms alongside. Do NOT give him Awakened (bonus action is Flurry/Step). See the tadpole plan.'
-  scores:
-    fit: 5
-    fun: 5
-    power: 4
 ---

@@ -15,6 +15,7 @@ builds:
     INT: 8
     WIS: 12
     CHA: 17
+  stats_note: 'Point-buy base 8/14/14/8/12/15 = all 27 points (14s cost 2 each — set BOTH DEX and CON to 14 in point-buy). Then Human +2 → CHA 17; the +1 racial is a free spare (CON/DEX/WIS — no modifier change, so just bank it on CON). If you see 2 points left, you set a physical to 13 — bump it to 14.'
   ability_targets: CHA 17 → 20 (Hag's Hair + Mirror).
   metamagic:
   - Twinned + Extended (L2)
@@ -34,14 +35,14 @@ builds:
   creation:
     level1_class: Sorcerer 1 (Storm Sorcery)
     level1_gains: Storm Sorcery subclass; Tempestuous Magic (after casting any levelled spell, Fly 9m as a bonus action with no opportunity attacks) from level 1. Metamagic starts at Sorcerer 2. (No Draconic Resilience AC/HP and no free Witch Bolt — Storm trades durability for mobility + AoE.)
-    subclass_choice: Storm Sorcery is chosen at Sorcerer 1 (character creation).
+    subclass_choice: Storm Sorcery (Sorcerer 1)
     proficiencies:
-      armor_weapons: 'Sorcerer: no armour; Daggers, Quarterstaves, Light Crossbows. The Tempest Cleric 2 dip (char 11–12) later adds Heavy armour, Shields, and Martial weapons.'
-      saving_throws: Constitution + Charisma (Sorcerer, the creation class). The late Cleric dip grants no additional save proficiency.
-      skills: Sorcerer chooses 2 from Arcana, Deception, Insight, Intimidation, Persuasion, Religion. Gale's Sage background adds Arcana + History; Human grants one extra skill proficiency.
-    starting_cantrips: 4 known at level 1 — recommend Shocking Grasp (best lightning cantrip) + utility.
-    starting_spells: '2 known at level 1 (Storm grants no free level-1 spell). Take Chromatic Orb: Lightning + Shield; add Witch Bolt at level 2.'
-    notes: 'Gale (Human) — recruited on the Ravaged Beach as a Wizard, then respec''d via Withers into the Sorcerer build (assign the starting stats above during respec; the CHA 17 uses Human''s +2 racial). 2 feats total (Sorc 4 + Sorc 8). Create Water arrives at Sorc 6 via Storm''s Storm Spells (self-apply Wet without the dip); Destructive Wrath still comes from the Tempest Cleric 2 dip at char 11–12. Netherese orb: just feed him 3 magic items in early Act 1 (The Wizard of Waterdeep) and it''s done.'
+      armor_weapons: No armour early — heavy armour + shields arrive with the Tempest dip (11–12).
+      saving_throws: CON + CHA (Sorcerer-first).
+      skills: Sage (Arcana, History) + 2 Sorcerer picks + Human extra.
+    starting_cantrips: 4 at level 1 — Shocking Grasp + utility.
+    starting_spells: 'Chromatic Orb: Lightning + Shield; add Witch Bolt at level 2.'
+    notes: '2 feats (Sorc 4 + Sorc 8). Create Water comes free at Sorc 6 (Storm Spells); Destructive Wrath from the Tempest 2 dip (11–12). Netherese orb: feed him 3 magic items in early Act 1 — done.'
   spells:
     note: Sorcerer is a KNOWN caster (learn on level-up, replace 1 per level); the Tempest Cleric 2 dip is a prepared caster re-picked freely. Mandatory = the wet-lightning engine + Haste; Recommended = flex nukes and utility.
     mandatory:
@@ -156,51 +157,90 @@ builds:
       why: 'CORRECTION: listed in the party plan but NOT a Sorcerer spell (Bard/Cleric/Wizard, class level 5); the Cleric dip only reaches level 2, so this build can only cast it from scrolls.'
   leveling:
     respecs:
-    - label: Level 1
-      note: Gale is recruited on the Ravaged Beach as a level-1 Evocation Wizard. Do NOT level him as a Wizard — respec him into the Sorcerer build at Withers as soon as you can afford it (~100g). See the Respec tab for the actual leveling.
+    - label: Lv 1–5 · Cleric-start
+      note: 'Early game: Tempest Cleric 1 FIRST for on-demand Wet (Create Water) + heavy armour in Act 1, then Sorcerer. Tradeoff — Cleric-first means WIS+CHA saves (no CON) until the char-6 respec.'
       rows:
       - char_level: 1
-        class: Wizard 1 (as recruited)
-        gains: Recruited state only — Evocation Wizard. A placeholder until the Withers respec into Sorcerer.
-    - label: Respec → Sorcerer
-      note: 'Respec at Withers (~100g) and rebuild from level 1 as a Storm Sorcery Sorcerer. Take Sorcerer at level 1 (restores CON + CHA saves — a Cleric-first order gives WIS + CHA and LOSES the CON save that guards Twinned-Haste concentration) and dip Tempest LAST at char 11–12. Assign the starting stats during the respec (the CHA 17 uses Human''s +2 racial). Final: Sorcerer 10 → Tempest Cleric 2.'
+        class: Tempest Cleric 1
+        gains: Create Water (Wet); heavy armour + shields
+      - char_level: 2
+        class: Sorcerer 1
+        gains: Storm Sorcery; Tempestuous Magic (fly)
+      - char_level: 3
+        class: Sorcerer 2
+        gains: Metamagic (Twinned + Quickened)
+      - char_level: 4
+        class: Sorcerer 3
+        gains: L2 slots (Misty Step)
+      - char_level: 5
+        class: Sorcerer 4
+        gains: 'Feat: War Caster'
+    - label: Lv 6 · respec to all-Sorcerer
+      note: 'At char 6, respec to PURE Sorcerer (drop the early Cleric). Regains CON+CHA saves (Twinned-Haste concentration), on-time Lightning Bolt, and the Storm-6 spike — and Create Water now comes free from Storm Spells at Sorc 6.'
       rows:
       - char_level: 1
         class: Sorcerer 1
-        gains: 'Storm Sorcery; Tempestuous Magic (bonus-action Fly 9m after any levelled spell, no opportunity attacks); 4 cantrips (Shocking Grasp) + 2 spells (Chromatic Orb: Lightning, Shield)'
+        gains: Storm Sorcery; Tempestuous Magic (fly)
       - char_level: 2
         class: Sorcerer 2
-        gains: 'Font of Magic (sorcery points); Metamagic: Twinned + Quickened Spell (Extended later)'
+        gains: Metamagic (Twinned + Quickened)
       - char_level: 3
         class: Sorcerer 3
-        gains: L2 spells (Misty Step); more sorcery points
+        gains: L2 slots (Misty Step)
       - char_level: 4
         class: Sorcerer 4
         gains: 'Feat: War Caster'
       - char_level: 5
         class: Sorcerer 5
-        gains: 3rd-level slots → Haste (Twinned Haste on the Paladin), Counterspell, Lightning Bolt, Fireball
+        gains: L3 slots → Twinned Haste; Lightning Bolt; Counterspell
       - char_level: 6
         class: Sorcerer 6
-        gains: 'Storm 6 (the power spike): Storm Spells (Create Water, Call Lightning, Sleet Storm, Thunderwave, Gust of Wind) + Heart of the Storm (free Lightning/Thunder AoE splash) + Lightning/Thunder resistance'
+        gains: Storm Spells (Create Water, Call Lightning, Sleet Storm); Heart of the Storm; resistance
       - char_level: 7
         class: Sorcerer 7
-        gains: 4th-level slots
+        gains: L4 slots
       - char_level: 8
         class: Sorcerer 8
-        gains: 'Feat: Alert (+5 initiative, immune to Surprise — so low-DEX Gale can Twinned-Haste the melee before they act)'
+        gains: 'Feat: Alert'
+    - label: Endgame · Sorc 10 / Tempest 2
+      note: 'Final build: pure Sorcerer to 10, then the 2 Tempest levels at 11–12 for Destructive Wrath. Cleric LAST keeps CON saves (no reorder respec needed). Cleric-first also works if you want Wrath the moment you dip, but loses the CON save.'
+      rows:
+      - char_level: 1
+        class: Sorcerer 1
+        gains: Storm Sorcery; Tempestuous Magic (fly)
+      - char_level: 2
+        class: Sorcerer 2
+        gains: Metamagic (Twinned + Quickened)
+      - char_level: 3
+        class: Sorcerer 3
+        gains: L2 slots (Misty Step)
+      - char_level: 4
+        class: Sorcerer 4
+        gains: 'Feat: War Caster'
+      - char_level: 5
+        class: Sorcerer 5
+        gains: L3 slots → Twinned Haste; Lightning Bolt
+      - char_level: 6
+        class: Sorcerer 6
+        gains: Storm Spells; Heart of the Storm; resistance
+      - char_level: 7
+        class: Sorcerer 7
+        gains: L4 slots
+      - char_level: 8
+        class: Sorcerer 8
+        gains: 'Feat: Alert'
       - char_level: 9
         class: Sorcerer 9
-        gains: 5th-level slots (Cone of Cold)
+        gains: L5 slots (Cone of Cold)
       - char_level: 10
         class: Sorcerer 10
-        gains: Sorcerer capstone for this build; 6 cantrips; final Metamagic pick
+        gains: capstone; 6 cantrips
       - char_level: 11
         class: Tempest Cleric 1
-        gains: Create/Destroy Water (the Wet engine → doubles Lightning/Cold); heavy armour + shields; Thunderwave domain spell
+        gains: Create/Destroy Water; heavy armour + shields
       - char_level: 12
         class: Tempest Cleric 2
-        gains: 'Channel Divinity: Destructive Wrath — maximise any Lightning/Thunder roll'
+        gains: Destructive Wrath (maximise Lightning/Thunder)
   itemization:
     act1:
     - id: the-spellsparkler

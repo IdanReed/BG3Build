@@ -31,11 +31,11 @@ builds:
   creation:
     level1_class: Warlock 1 (Hexblade patron)
     level1_gains: Pact Magic (1 × L1 short-rest slot), Hexblade's Curse (bonus action), Bind Hexed Weapon (attack with CHA). Pact Boon (Pact of the Blade) is not until Warlock 3.
-    subclass_choice: Patron (Hexblade) is chosen at Warlock 1 — Warlock picks its subclass at level 1, not level 3.
+    subclass_choice: Hexblade patron (Warlock 1)
     proficiencies:
-      armor_weapons: 'Base Warlock: Light armour + Simple weapons. Hexblade''s Hex Warrior adds Medium armour, Shields, and Martial weapons at Warlock 1. (Paladin levels later add Heavy armour + all Martial.)'
-      saving_throws: Wisdom + Charisma (granted by Warlock, the character-creation class). Multiclassing into Paladin grants NO additional save proficiencies.
-      skills: Choose 2 from the Warlock list (Arcana, Deception, History, Intimidation, Investigation, Nature, Religion). Dark Urge's fixed Haunted One background adds Medicine + Intimidation.
+      armor_weapons: Medium armour + shields + martial (Hexblade, Warlock 1); heavy armour from Paladin.
+      saving_throws: WIS + CHA (Warlock).
+      skills: 2 Warlock picks + Haunted One (Medicine, Intimidation).
     starting_cantrips: 2 known at Warlock 1 — recommend Eldritch Blast + one filler.
     starting_spells: 2 known from the Warlock list plus the Hexblade L1 expanded adds (Shield, Wrathful Smite).
     notes: 'Charles''s character-creation class is Warlock 1 (Half-Orc Dark Urge). RUSH Warlock 1→2→3 first (Devil''s Sight at char 2, Pact of the Blade + self-cast Shadow Blade at char 3), THEN multiclass Paladin from character level 4 — so Divine Smite lands at char 5 (two levels later than a Paladin-first order). Worth it: early Act 1''s problem is landing attacks with no party control (Hold Person/Monster) online yet, and the Shadow Blade + Devil''s Sight package is a self-contained advantage/defense source from char 3. Oathbreaker and the auras arrive later; the L6–12 tail is unchanged.'

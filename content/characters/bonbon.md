@@ -10,7 +10,10 @@ builds:
   background: Entertainer or Guild Artisan (face)
   starting_stats:
     STR: 8
-    DEX: 16
+    DEX:
+      base: 16
+      final: 18
+      via: Gloves of Dexterity — sets DEX to 18 (Crèche, Act 1)
     CON: 14
     INT: 10
     WIS: 10
@@ -35,11 +38,11 @@ builds:
   creation:
     level1_class: Fighter 1 (taken at character creation)
     level1_gains: Archery fighting style (+2 ranged), Second Wind, and — because Fighter is taken FIRST — STR + CON save proficiency, all armour (incl. Heavy) + Shields + Martial weapons, and 2 Fighter skills.
-    subclass_choice: College of Swords is chosen at Bard 3 / char 4 (Blade Flourish, a fighting style, Medium armour + Scimitars); Extra Attack at Bard 6 / char 7. The Fighter dip has no subclass.
+    subclass_choice: College of Swords (Bard 3)
     proficiencies:
-      armor_weapons: 'From Fighter 1 (first class): Light/Medium/Heavy armour, Shields, Simple + Martial weapons + the Archery fighting style. College of Swords also adds Medium armour + Scimitars.'
-      saving_throws: Strength + Constitution — from Fighter as the FIRST class (CON = concentration insurance for Hold Monster / Fear / Confusion). Multiclassing into Bard grants no additional save proficiency.
-      skills: Fighter picks 2 (Perception + Athletics, or Insight for the face). Bard adds 3 skills + Expertise on 2 (Bard 3) and 2 more (Bard 10) + Jack of All Trades (Bard 2) — the face/skill engine. Background Entertainer/Guild Artisan adds 2.
+      armor_weapons: All armour + shields + martial + Archery (Fighter 1); Medium + Scimitars (College of Swords).
+      saving_throws: STR + CON (Fighter-first) — CON guards Hold Monster concentration.
+      skills: Fighter 2 + Bard skills; Expertise ×4 (Bard 3 + 10) + Jack of All Trades — the party face.
     starting_cantrips: 'Bard: 2 at Bard 1 (Vicious Mockery, Friends) → 4 by Bard 10.'
     starting_spells: 'Bard: 4 known at Bard 1 → ~14 by Bard 11, plus 2 Magical Secrets at Bard 10. No Wizard dip, so no Shield reaction — lean on range, positioning, and the Fighter dip''s heavy armour instead.'
     notes: 'Half-Elf/Human. Order: Fighter 1 at character creation → Swords Bard ×11 (no respec). Bard 11 = caster level 11 → a single L6 slot, so Command still hits up to 6 targets WITHOUT a Wizard dip. Dropping Wizard costs only the Shield reaction + scroll scribing; the mass-Command ceiling is unchanged. Feats/ASIs at Bard class levels 4 (char 5) and 8 (char 9).'

@@ -1,5 +1,5 @@
 ---
-note: Who actually covers each skill (★ Expertise = doubled bonus · ● Proficient · ½ Jack of All Trades = half proficiency on non-proficient checks). Save/background/racial proficiencies are fixed; class skill picks are the plan's recommended loadout. The party is CHA-heavy, so Batman carries the DEX/INT/WIS skills while three characters can face.
+note: Who actually covers each skill (★ Expertise = doubled bonus · ● Proficient · ½ Jack of All Trades = half proficiency on non-proficient checks). Save/background/racial proficiencies are fixed; class skill picks are the plan's recommended loadout. The party is CHA-heavy, so Asterion carries the DEX/INT/WIS skills while three characters can face.
 legend:
   expertise: ★ Expertise (double proficiency bonus)
   proficient: ● Proficient
@@ -42,7 +42,7 @@ skills:
 - skill: Persuasion
   ability: CHA
 characters:
-  Durc:
+  Charles:
     saves:
     - WIS
     - CHA
@@ -53,7 +53,7 @@ characters:
     - Deception
     - Religion
     source: Half-Orc (Intimidation) + Haunted One background (Intimidation, Medicine) + Warlock's 2 picks (Deception, Religion). No Expertise, but CHA 20 makes Intimidation/Deception a genuine secondary face.
-  Batman:
+  Asterion:
     saves:
     - DEX
     - INT
@@ -67,7 +67,7 @@ characters:
     - Acrobatics
     - Insight
     source: 'Charlatan background (Deception, Sleight of Hand) + High Elf (Perception) + Rogue''s 4 picks (Stealth, Investigation, Acrobatics, Insight). Expertise: SoH + Stealth (Rogue 1), Perception + Investigation (Rogue 6). Reliable Talent floors all proficient checks at 10 from level 12 — the party''s skill monkey.'
-  Toaster:
+  Gale:
     saves:
     - CON
     - CHA
@@ -79,7 +79,7 @@ characters:
     - Insight
     - Perception
     source: Sage background (Arcana, History) + Sorcerer's 2 picks (Persuasion, Insight) + Human free skill (Perception). CHA 20 → a decent Persuasion backup.
-  SimonSays:
+  Bonbon:
     saves:
     - STR
     - CON

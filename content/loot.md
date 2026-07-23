@@ -5,9 +5,9 @@ loot_guide:
   - area: Nautiloid (Prologue)
     items:
     - name: Everburn Blade
-      for: Durc
+      for: Charles
       core: true
-      note: 'Looted from Commander Zhalk at the helm (kill him during the escape, or Command: Drop). Greatsword 2d6 + 1d4 fire, magical — Durc''s early crit-smite weapon.'
+      note: 'Looted from Commander Zhalk at the helm (kill him during the escape, or Command: Drop). Greatsword 2d6 + 1d4 fire, magical — Charles''s early crit-smite weapon.'
     events:
     - name: Recruit Lae'zel
       note: Freed from her pod on the ship.
@@ -16,9 +16,9 @@ loot_guide:
   - area: Ravaged Beach / Dank Crypt & Camp
     items:
     - name: Deathstalker Mantle
-      for: Batman
+      for: Asterion
       core: true
-      note: DARK URGE EXCLUSIVE — given by Sceleritas Fel at camp in Act 1. Once/turn, killing a creature turns you Invisible for 2 turns. Durc (the Dark Urge) receives it, then hands it to Batman (the assassin's reposition/re-ambush cloak).
+      note: DARK URGE EXCLUSIVE — given by Sceleritas Fel at camp in Act 1. Once/turn, killing a creature turns you Invisible for 2 turns. Charles (the Dark Urge) receives it, then hands it to Asterion (the assassin's reposition/re-ambush cloak).
     events:
     - name: Withers — recruit + RESPEC
       note: Sarcophagus in the Dank Crypt (Overgrown Ruins). Enables respec (100g) / revive / hirelings at camp — needed for every respec in this plan.
@@ -55,15 +55,15 @@ loot_guide:
       note: 'Consumable: permanent +1 to ANY ability, uncapped. The plan assumes each PC gets one — it''s the +1 that carries everyone''s primary from 17→18 (then Mirror of Loss → 20).'
     events:
     - name: Get the Hag's Hair
-      note: Drop Ethel low, then trigger her deal-offer cutscene and KILL her to loot the Hair. Do NOT accept a bargain (it breaks Durc's Paladin oath, and gives less).
+      note: Drop Ethel low, then trigger her deal-offer cutscene and KILL her to loot the Hair. Do NOT accept a bargain (it breaks Charles's Paladin oath, and gives less).
     - name: Rescue Mayrina
       note: Bitter Divorce questline.
   - area: Blighted Village & Whispering Depths
     items:
     - name: Bracers of Defence
-      for: Batman
+      for: Asterion
       core: true
-      note: Apothecary's secret cellar beneath the village. +2 AC while wearing no armour and no shield — Batman's AC without armour.
+      note: Apothecary's secret cellar beneath the village. +2 AC while wearing no armour and no shield — Asterion's AC without armour.
     - name: Sussur weapons (Dagger/Greatsword)
       for: any
       core: false
@@ -76,7 +76,7 @@ loot_guide:
   - area: Goblin Camp
     items:
     - name: Amulet of Misty Step
-      for: Batman
+      for: Asterion
       core: true
       note: Gilded chest in Priestess Gut's chambers (Defiled Temple). Bonus-action Misty Step with no slot — free repositioning.
     - name: Goblin-leader loot (Gut / Ragzlin / Minthara)
@@ -91,17 +91,17 @@ loot_guide:
   - area: Zhentarim Hideout (Waukeen's Rest / Risen Road)
     items:
     - name: The Spellsparkler
-      for: Toaster
+      for: Gale
       core: true
-      note: Reward from Counsellor Florrick for rescuing her at the burning Waukeen's Rest. Quarterstaff — casting builds Lightning Charges. Toaster's early staff.
+      note: Reward from Counsellor Florrick for rescuing her at the burning Waukeen's Rest. Quarterstaff — casting builds Lightning Charges. Gale's early staff.
     - name: Gloves of Thievery
-      for: Batman
+      for: Asterion
       core: true
       note: Sold by Brem in the Zhentarim Basement (after 'Find the Missing Shipment'). Advantage on Sleight of Hand — core thief glove.
     - name: Titanstring Bow
-      for: any
-      core: false
-      note: Brem (Zhentarim). Adds STR mod to ranged damage — best Act 1 bow (great with a STR-set item like the Club of Hill Giant Strength or Hill Giant elixirs).
+      for: Bonbon
+      core: true
+      note: 'Brem (Zhentarim Basement). Adds your STR modifier to ranged damage — Bonbon''s Act 1 weapon: pair with an Elixir of Giant Strength (Hill 21 → Cloud 27) for +5 to +8 per hit. Two-handed longbow, so it does NOT dual-wield — switch to dual hand crossbows once the Helmet of Arcane Acuity (Act 2) is online.'
     - name: Zhentarim vendor stock (Brem / Sparkle)
       for: any
       core: false
@@ -114,7 +114,7 @@ loot_guide:
   - area: Underdark
     items:
     - name: Boots of Stormy Clamour
-      for: Toaster
+      for: Gale
       core: true
       note: Sold by Omeluum (Ebonlake Grotto) after 'Help Omeluum Investigate the Parasite'. Applies 2 turns of Reverberation when you inflict a condition — a Reverberation staple, acquired in Act 1.
     - name: Phalar Aluve
@@ -137,7 +137,7 @@ loot_guide:
   - area: Grymforge
     items:
     - name: Disintegrating Night Walkers
-      for: Batman
+      for: Asterion
       core: true
       note: Loot from True Soul Nere. Bonus-action Misty Step (1/short rest) + immunity to Web/Entangle/grease-slip — assassin mobility.
     - name: Adamantine armour + shield (crafted)
@@ -156,29 +156,29 @@ loot_guide:
   - area: Mountain Pass / Rosymorn Monastery / Crèche Y'llek
     items:
     - name: Graceful Cloth
-      for: Batman
+      for: Asterion
       core: true
-      note: Sold by Lady Esther (Rosymorn trail). +2 DEX (cap 20) + Cat's Grace (advantage on DEX checks — helps stealing). Batman's all-game chest.
+      note: Sold by Lady Esther (Rosymorn trail). +2 DEX (cap 20) + Cat's Grace (advantage on DEX checks — helps stealing). Asterion's all-game chest.
     - name: Knife of the Undermountain King
-      for: Batman
+      for: Asterion
       core: true
-      note: Sold by A'jak'nir Jeera (Crèche). +2 finesse shortsword, crit on 19–20, advantage vs obscured — Batman's main-hand until Shadow Blade.
+      note: Sold by A'jak'nir Jeera (Crèche). +2 finesse shortsword, crit on 19–20, advantage vs obscured — Asterion's main-hand until Shadow Blade.
     - name: Gloves of Dexterity
-      for: SimonSays
+      for: Bonbon
       core: true
       note: A'jak'nir Jeera (Crèche). Sets DEX to 18 — lets the Bard dump DEX and pump CHA.
     - name: Diadem of Arcane Synergy
-      for: Durc
+      for: Charles
       core: true
-      note: 'Ardent Jhe''rezath, Inquisitor''s Chamber (Crèche). Inflicting a condition adds your casting mod to WEAPON-attack damage — dead on a pure caster (was mis-assigned to Toaster). Give it to Durc: Wrathful Smite / Hexblade''s Curse proc it for +CHA weapon damage (Act 1–2 head, before Sarevok''s Helmet).'
+      note: 'Ardent Jhe''rezath, Inquisitor''s Chamber (Crèche). Inflicting a condition adds your casting mod to WEAPON-attack damage — dead on a pure caster (was mis-assigned to Gale). Give it to Charles: Wrathful Smite / Hexblade''s Curse proc it for +CHA weapon damage (Act 1–2 head, before Sarevok''s Helmet).'
     - name: Strange Conduit Ring
-      for: Durc
+      for: Charles
       core: true
-      note: Crèche Y'llek. While Concentrating on a spell, your attacks deal +1d4 Psychic. Durc holds Wrathful Smite/Bless in his nova, so this adds psychic per swing — doubled by the Resonance Stone and again on a crit.
+      note: Crèche Y'llek. While Concentrating on a spell, your attacks deal +1d4 Psychic. Charles holds Wrathful Smite/Bless in his nova, so this adds psychic per swing — doubled by the Resonance Stone and again on a crit.
     - name: Gloves of Belligerent Skies
-      for: Toaster
+      for: Gale
       core: true
-      note: Inquisitor's Chamber. Thunder/Lightning/Radiant applies Reverberation — Toaster's damage-glove pick (Spellmight Gloves are useless on his save-based AoE). At 5 Reverberation stacks the target must save or be knocked Prone — soft-CC that also sets up the melee.
+      note: Inquisitor's Chamber. Thunder/Lightning/Radiant applies Reverberation — Gale's damage-glove pick (Spellmight Gloves are useless on his save-based AoE). At 5 Reverberation stacks the target must save or be knocked Prone — soft-CC that also sets up the melee.
     - name: Periapt of Wound Closure
       for: any
       core: false
@@ -207,28 +207,28 @@ loot_guide:
     - name: Shadow of Menzoberranzan
       for: any
       core: false
-      note: Head slot, dropped by Kar'niss (the drider carrying the Moonlantern). Cast Invisibility 1/short rest while in shadow/darkness — excellent for any stealth or scout character (a strong alternative escape/ambush tool alongside Batman's kit).
+      note: Head slot, dropped by Kar'niss (the drider carrying the Moonlantern). Cast Invisibility 1/short rest while in shadow/darkness — excellent for any stealth or scout character (a strong alternative escape/ambush tool alongside Asterion's kit).
     events:
     - name: Free the pixie (Dolly Dolly Dolly)
       note: Freeing the pixie in the Moonlantern grants the party permanent Pixie's Blessing (curse immunity without holding the lantern). Missable.
   - area: Last Light Inn
     items:
     - name: Shadow Blade Ring
-      for: Durc
+      for: Charles
       core: true
-      note: Arabella's reward for 'Find Arabella's Parents' (delivered at camp). Bonus-action Shadow Blade, short-rest recharge, no concentration — Durc's backup blade (Batman self-casts his own).
+      note: Arabella's reward for 'Find Arabella's Parents' (delivered at camp). Bonus-action Shadow Blade, short-rest recharge, no concentration — Charles's backup blade (Asterion self-casts his own).
     - name: Coruscation Ring
-      for: Toaster
+      for: Gale
       core: true
       note: Trapped chest in a hidden cellar room. Spell damage while illuminated inflicts Radiating Orb — a Radiating-Orb combo piece.
     - name: Covert Cowl
       for: any
       core: false
-      note: Cellar, on a Meenlock. While Obscured, crit threshold −1 — superb for BOTH Batman (attacks from stealth) and Durc (obscured crit-smite).
+      note: Cellar, on a Meenlock. While Obscured, crit threshold −1 — superb for BOTH Asterion (attacks from stealth) and Charles (obscured crit-smite).
     - name: Potent Robe
-      for: Toaster
+      for: Gale
       core: true
-      note: Alfira hands it over at Last Light in ACT 2 — ONLY if she survived Act 1 (as the Dark Urge, Durc must knock her out before camp, not kill her). Adds CHA mod to cantrip damage.
+      note: Alfira hands it over at Last Light in ACT 2 — ONLY if she survived Act 1 (as the Dark Urge, Charles must knock her out before camp, not kill her). Adds CHA mod to cantrip damage.
     events:
     - name: Protect Isobel — DON'T let the inn fall
       note: Stop the assassin Marcus from taking Isobel; if she dies the moonshield drops and the inn (vendors + quests) is lost. Missable.
@@ -237,13 +237,13 @@ loot_guide:
   - area: Moonrise Towers
     items:
     - name: Risky Ring
-      for: Durc
+      for: Charles
       core: true
-      note: Sold by Araj Oblodra. Advantage on all attack rolls (disadvantage on saves) — Durc's always-advantage crit enabler (re-sold in Act 3 if missed).
+      note: Sold by Araj Oblodra. Advantage on all attack rolls (disadvantage on saves) — Charles's always-advantage crit enabler (re-sold in Act 3 if missed).
     - name: Spineshudder Amulet
       for: any
       core: false
-      note: In a Mimic in Isobel's bedroom (upper floor, Moonrise). Applies Reverberation on your ranged SPELL-ATTACK hits only (not weapon hits or save spells) — good for a spell-attack caster, weak for Toaster's save-based nukes.
+      note: In a Mimic in Isobel's bedroom (upper floor, Moonrise). Applies Reverberation on your ranged SPELL-ATTACK hits only (not weapon hits or save spells) — good for a spell-attack caster, weak for Gale's save-based nukes.
     - name: Moonrise Towers vendor & prison loot
       for: any
       core: false
@@ -254,17 +254,17 @@ loot_guide:
   - area: Gauntlet of Shar
     items:
     - name: Killer's Sweetheart
-      for: Durc
+      for: Charles
       core: true
-      note: Self-Same Trial (kill your shadow clone). After you KILL, your next attack is a GUARANTEED crit (refreshes on long rest) — a free crit-smite for Durc. ⚠ As an Oathbreaker, do NOT kill the clone with Control Undead (it instakills the copy but the ring won't drop) — land a normal killing blow.
+      note: Self-Same Trial (kill your shadow clone). After you KILL, your next attack is a GUARANTEED crit (refreshes on long rest) — a free crit-smite for Charles. ⚠ As an Oathbreaker, do NOT kill the clone with Control Undead (it instakills the copy but the ring won't drop) — land a normal killing blow.
     - name: Callous Glow Ring
-      for: Toaster
+      for: Gale
       core: true
       note: Vault behind the DC30 door near Balthazar. +2 Radiant vs illuminated creatures — illumination combo piece.
     - name: Hellfire Hand Crossbow
-      for: Batman
+      for: Asterion
       core: true
-      note: Dropped by Yurgir (the orthon). Best hand crossbow in the game — Batman's ranged sidearm / off-hand.
+      note: Dropped by Yurgir (the orthon). Best hand crossbow in the game — Asterion's ranged sidearm / off-hand.
     - name: Dark Justiciar Half-Plate & Spear of Night
       for: any
       core: false
@@ -272,7 +272,7 @@ loot_guide:
     - name: Full Dark Justiciar set (Mask / Gauntlets / Helmet)
       for: any
       core: false
-      note: 'Justiciar pieces span Grymforge (Act 1: Mask/Mail) and the Gauntlet (Half-Plate/Helmet/Gauntlets). The Dark Justiciar HELMET grants Covert Critical (crit threshold −1 while Obscured) — a SECOND obscured-crit head, so Durc and Batman can each run one (Covert Cowl + this) to crit on 19–20 in Darkness.'
+      note: 'Justiciar pieces span Grymforge (Act 1: Mask/Mail) and the Gauntlet (Half-Plate/Helmet/Gauntlets). The Dark Justiciar HELMET grants Covert Critical (crit threshold −1 while Obscured) — a SECOND obscured-crit head, so Charles and Asterion can each run one (Covert Cowl + this) to crit on 19–20 in Darkness.'
     - name: Umbral Gems (progression) + trial loot
       for: any
       core: false
@@ -287,9 +287,9 @@ loot_guide:
   - area: Mind Flayer Colony
     items:
     - name: Resonance Stone
-      for: Batman
+      for: Asterion
       core: true
-      note: 'Near the Mind-Archive Interface (Necrotic Laboratory). Placeable — applies psychic vulnerability + disadvantage-on-mental-saves in 9m. Batman carries it to double his + Durc''s psychic Shadow Blade (note: it also debuffs your own party''s mental saves).'
+      note: 'Near the Mind-Archive Interface (Necrotic Laboratory). Placeable — applies psychic vulnerability + disadvantage-on-mental-saves in 9m. Asterion carries it to double his + Charles''s psychic Shadow Blade (note: it also debuffs your own party''s mental saves).'
     - name: Staff of Cherished Necromancy
       for: any
       core: false
@@ -302,7 +302,7 @@ loot_guide:
   - area: Reithwin Town — Mason's Guild
     items:
     - name: Helmet of Arcane Acuity
-      for: SimonSays
+      for: Bonbon
       core: true
       note: ACT 2 (Mason's Guild is in Reithwin Town, not the Act 3 Lower City). Locked/trapped Gilded Chest in the secret basement. Weapon hits stack Arcane Acuity (+spell attack/save DC) — the Bard's control engine.
     - name: Reithwin Town side-loot
@@ -312,14 +312,14 @@ loot_guide:
     events:
     - name: Thorm Mausoleum puzzle
       note: Press the family plaques in mural order to open the way to the Gauntlet of Shar.
-    - name: Oathbreaker Knight (Durc)
-      note: If Durc's oath breaks, the Oathbreaker Knight is recruitable at camp to restore it for gold — keep smite access.
+    - name: Oathbreaker Knight (Charles)
+      note: If Charles's oath breaks, the Oathbreaker Knight is recruitable at camp to restore it for gold — keep smite access.
   - area: House of Healing (Reithwin) — MISSABLE
     items:
     - name: Eversight Ring
-      for: Batman
+      for: Asterion
       core: true
-      note: 'ACT 2 — Reithwin''s House of Healing, locked opulent chest in the morgue lab. Immunity to Blinded + SEE THROUGH MAGICAL DARKNESS — the enabler for Batman''s Darkness ''Batman'' combo. ⚠ MISSABLE: grab it BEFORE defeating Ketheric / clearing the Mind Flayer Colony, or the Shadow-Cursed Lands lock forever.'
+      note: 'ACT 2 — Reithwin''s House of Healing, locked opulent chest in the morgue lab. Immunity to Blinded + SEE THROUGH MAGICAL DARKNESS — the enabler for Asterion''s Darkness ''Asterion'' combo. ⚠ MISSABLE: grab it BEFORE defeating Ketheric / clearing the Mind Flayer Colony, or the Shadow-Cursed Lands lock forever.'
     - name: House of Healing alchemy & surgeon loot
       for: any
       core: false
@@ -332,7 +332,7 @@ loot_guide:
   - area: Rivington
     items:
     - name: Hellrider's Longbow
-      for: SimonSays
+      for: Bonbon
       core: true
       note: Sold by Ferg Drogher in Rivington. +initiative — the Bard controller wants to go first.
     - name: Nyrulna
@@ -340,7 +340,7 @@ loot_guide:
       core: false
       note: Reward from the Circus of the Last Days quest. Legendary trident that returns when thrown and bursts for Thunder AoE — best-in-slot for any throwing build.
     - name: Band of the Mystic Scoundrel
-      for: SimonSays
+      for: Bonbon
       core: true
       note: 'Won from AKABI''s wheel game at the Circus of the Last Days (Rivington): hit the jackpot → you''re teleported (ALONE) to a Chult jungle where it sits in a backpack (Nyrulna is in the same jungle). Cast Enchantment/Illusion as a BONUS action after a weapon hit — the Bard''s flourish→Command loop. ⚠ NOT at Sorcerous Sundries; don''t over-spin the wheel (≈16 spins closes it).'
     - name: Rivington vendors & Requisitioned Barn
@@ -353,25 +353,25 @@ loot_guide:
   - area: Sorcerous Sundries / Ramazith's Tower
     items:
     - name: Markoheshkir
-      for: Toaster
+      for: Gale
       core: true
-      note: Ramazith's Tower (accessed via Sorcerous Sundries / Lorroakan). Kereska's Favour → free empowered elemental spell — pick Lightning. Toaster's endgame staff.
+      note: Ramazith's Tower (accessed via Sorcerous Sundries / Lorroakan). Kereska's Favour → free empowered elemental spell — pick Lightning. Gale's endgame staff.
     - name: Spellmight Gloves
-      for: Toaster
+      for: Gale
       core: true
-      note: Sorcerous Sundries — +spell damage (with a small attack penalty). Toaster's damage gloves.
+      note: Sorcerous Sundries — +spell damage (with a small attack penalty). Gale's damage gloves.
     - name: Gontr Mael
-      for: SimonSays
+      for: Bonbon
       core: true
       note: Ramazith's Tower — given if you side with Lorroakan, OR lootable by killing him on the protect-Aylin (good) path. Legendary longbow (self-Haste, Guiding Bolt) — but it grants NO initiative, so weigh it against keeping Hellrider's Longbow (+3 initiative) that the R1 control loop depends on.
     - name: Stolen scrolls (Chain Lightning, Freezing Sphere, Cone of Cold)
-      for: Batman
+      for: Asterion
       core: true
-      note: Buy/steal from Sorcerous Sundries — Batman's Magical-Ambush arsenal (lean cold to avoid overlapping Toaster's lightning).
+      note: Buy/steal from Sorcerous Sundries — Asterion's Magical-Ambush arsenal (lean cold to avoid overlapping Gale's lightning).
     - name: Quickspell Gloves
       for: any
       core: false
-      note: Sold at Sorcerous Sundries (Rolan). Cast a cantrip as a BONUS action, 1/short rest — handy QoL for any caster (Toaster/SimonSays).
+      note: Sold at Sorcerous Sundries (Rolan). Cast a cantrip as a BONUS action, 1/short rest — handy QoL for any caster (Gale/Bonbon).
     - name: Robe of the Weave
       for: any
       core: false
@@ -387,7 +387,7 @@ loot_guide:
   - area: Stormshore Tabernacle
     items:
     - name: Amulet of the Devout
-      for: Toaster
+      for: Gale
       core: true
       note: Main offering chest in the basement. +2 spell save DC + an extra Channel Divinity (extra Destructive Wrath). ⚠️ Looting it inflicts the Castigated By Divinity curse UNLESS Jaheira loots it wearing Khalid's Gift.
     events:
@@ -396,17 +396,17 @@ loot_guide:
   - area: Temple of Bhaal / Murder Tribunal
     items:
     - name: Bhaalist Armour
-      for: Durc
+      for: Charles
       core: true
-      note: 'PURCHASED from the Echo of Abazigal at the Murder Tribunal after completing ''Impress the Murder Tribunal'' (the Unholy Assassin arc — natural on the Dark Urge). Aura of Murder: nearby enemies take DOUBLE piercing — pair with Durc''s piercing Pike endgame. (Set: Amulet of Bhaal from Sarevok, Bhaalist Gloves — cheap thematic adds.)'
+      note: 'PURCHASED from the Echo of Abazigal at the Murder Tribunal after completing ''Impress the Murder Tribunal'' (the Unholy Assassin arc — natural on the Dark Urge). Aura of Murder: nearby enemies take DOUBLE piercing — pair with Charles''s piercing Pike endgame. (Set: Amulet of Bhaal from Sarevok, Bhaalist Gloves — cheap thematic adds.)'
     - name: Sarevok's Horned Helmet
-      for: Durc
+      for: Charles
       core: true
       note: From Sarevok at the Murder Tribunal. Lowers crit threshold + on-kill bonuses — crit-fish core.
     - name: Bloodthirst
-      for: Batman
+      for: Asterion
       core: true
-      note: Legendary +2 dagger looted from ORIN (Bhaal Temple, after 'Get Orin's Netherstone'). Improved Critical = crit threshold −1 that applies to ALL your attacks (stacks with Knife/Covert Cowl); main-hand adds piercing-vuln, off-hand a to-hit boost. Batman's best crit-fishing off-hand — competes with Rhapsody for the slot.
+      note: Legendary +2 dagger looted from ORIN (Bhaal Temple, after 'Get Orin's Netherstone'). Improved Critical = crit threshold −1 that applies to ALL your attacks (stacks with Knife/Covert Cowl); main-hand adds piercing-vuln, off-hand a to-hit boost. Asterion's best crit-fishing off-hand — competes with Rhapsody for the slot.
     - name: Crimson Mischief
       for: any
       core: false
@@ -417,17 +417,17 @@ loot_guide:
       note: Ring of Murderous Opportunity (Orin) — bonus damage + extra reaction attacks, strong for an assassin. Sword of Chaos (Sarevok, alongside the Horned Helmet) — +2 wounding longsword.
     events:
     - name: Murder questline (Dark Urge)
-      note: Durc IS the Dark Urge — this arc (Unholy Assassin / embrace-or-resist Bhaal) is his story climax and gates the Bhaalist Armour.
+      note: Charles IS the Dark Urge — this arc (Unholy Assassin / embrace-or-resist Bhaal) is his story climax and gates the Bhaalist Armour.
   - area: House of Hope (Raphael)
     items:
     - name: Amulet of Greater Health
-      for: SimonSays
+      for: Bonbon
       core: true
-      note: On a pedestal in the Archive. Sets CON to 23 + advantage on CON saves. REALLOCATED to the Bard (was Batman) to armour Hold Monster concentration — the melee auto-crit engine — with no neck conflict; stacks with the Bard's War Caster feat. (Toaster keeps the Amulet of the Devout.)
+      note: On a pedestal in the Archive. Sets CON to 23 + advantage on CON saves. REALLOCATED to the Bard (was Asterion) to armour Hold Monster concentration — the melee auto-crit engine — with no neck conflict; stacks with the Bard's War Caster feat. (Gale keeps the Amulet of the Devout.)
     - name: Helldusk Armour + Helldusk Gloves
-      for: Durc
+      for: Charles
       core: true
-      note: The Helldusk set (best heavy armour + strong gloves). Durc's Act-3 armour.
+      note: The Helldusk set (best heavy armour + strong gloves). Charles's Act-3 armour.
     - name: Orphic Hammer + Infernal Rapier
       for: any
       core: false
@@ -435,7 +435,7 @@ loot_guide:
     - name: Helldusk Boots
       for: any
       core: false
-      note: Completes the Helldusk set — fire immunity + a free bonus-action reposition (can't be knocked prone). Pair with the Helldusk Armour + Gloves on Durc, or give to any frontliner.
+      note: Completes the Helldusk set — fire immunity + a free bonus-action reposition (can't be knocked prone). Pair with the Helldusk Armour + Gloves on Charles, or give to any frontliner.
     - name: House of Hope vault (Korrilla / Hope's reward)
       for: any
       core: false
@@ -446,24 +446,24 @@ loot_guide:
   - area: Cazador's Palace
     items:
     - name: Rhapsody
-      for: Batman
+      for: Asterion
       core: true
-      note: From Cazador. Dagger granting stacking +1/+2/+3 to attack, damage, and crit chance on kills — Batman's off-hand.
+      note: From Cazador. Dagger granting stacking +1/+2/+3 to attack, damage, and crit chance on kills — Asterion's off-hand.
     - name: Cazador's palace loot (ritual chamber & kennels)
       for: any
       core: false
       note: The palace holds a gold hoard, potions of Vampirism, the Ritual Dagger, and the trapped ritual-chamber gear. Sweep it fully during Astarion's questline — it doesn't reopen after the finale.
     events:
     - name: Astarion's Ascension choice
-      note: 'MAJOR: ascend Astarion (power boost, darker) vs stay a Spawn (keeps Vampire weaknesses but the ''good'' arc). Affects Batman directly.'
+      note: 'MAJOR: ascend Astarion (power boost, darker) vs stay a Spawn (keeps Vampire weaknesses but the ''good'' arc). Affects Asterion directly.'
   - area: Lower City (Zhentarim / vendors)
     items:
     - name: Ne'er Misser
-      for: Batman
+      for: Asterion
       core: true
-      note: Sold by Roah Moonglow (Zhentarim) — available a whole act EARLY at Moonrise Towers (Act 2), then in the Lower City (Act 3). Hand crossbow that casts Magic Missile — Batman's Sneak Attack becomes FORCE (bypasses resistances, dodges Durc's piercing aura).
+      note: Sold by Roah Moonglow (Zhentarim) — available a whole act EARLY at Moonrise Towers (Act 2), then in the Lower City (Act 3). Hand crossbow that casts Magic Missile — Asterion's Sneak Attack becomes FORCE (bypasses resistances, dodges Charles's piercing aura).
     - name: Birthright
-      for: Toaster
+      for: Gale
       core: true
       note: Sold at Sorcerous Sundries by Rolan / Lorroakan's projection (ground floor). +2 Charisma helm (cap 22; stacks with the Mirror's Bard's Memory toward 24) — free CHA for Gale's head slot.
     - name: Helm of Balduran + Wyrmway loot (Ansur)
@@ -473,7 +473,7 @@ loot_guide:
     - name: Facemaker's Boutique + Devil's Fee
       for: any
       core: false
-      note: Facemaker's (Figaro) sells headwear/clothing incl. hats with cast-a-spell effects; the Devil's Fee (Helsik) sells rare rings, scrolls, and Netherese/ritual gear. Prime stealing targets — see Batman's Act 3 pickpocket setup.
+      note: Facemaker's (Figaro) sells headwear/clothing incl. hats with cast-a-spell effects; the Devil's Fee (Helsik) sells rare rings, scrolls, and Netherese/ritual gear. Prime stealing targets — see Asterion's Act 3 pickpocket setup.
     events:
     - name: Iron Throne (time-sensitive)
       note: Rescue prisoners (Duke Ravengard, gnomes) before it floods — a real timer.

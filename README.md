@@ -41,11 +41,10 @@ surface to worry about.
 | `content/proficiencies.md` | Skill/save coverage matrix. |
 | `content/loot.md` | The act-by-act loot guide (`loot_guide`). |
 | `content/tadpole.md` | Illithid-powers plan. |
-| `content/characters/*.md` | One file per character (`durc`, `batman`, `toaster`, `simonsays`). Each holds `nickname` + a `builds` array. |
+| `content/characters/*.md` | One file per character (`charles`, `asterion`, `gale`, `bonbon`). Each holds `nickname` + a `builds` array. |
 | `progress.json` | Your checkoffs (`{ "checked": { key: true } }`). **Git-tracked** — your playthrough progress shows up as a clean diff. |
-| `index.html` | The UI. Served as a static file. |
-| `src/` | The Rust server (`main.rs`, `content.rs`, `progress.rs`, `migrate.rs`). |
-| `party_plan.json`, `build.mjs` | **Legacy.** The frozen pre-migration monolith + its Node embed script. No longer authoritative; kept as a backup and `file://` fallback. Safe to delete once you trust `content/`. |
+| `index.html` | The UI. Served as a static file by the server. |
+| `src/` | The Rust server (`main.rs`, `content.rs`, `progress.rs`). |
 
 ## Editing the guide
 
@@ -57,7 +56,7 @@ Character files look like:
 
 ```markdown
 ---
-nickname: Durc
+nickname: Charles
 builds:
   - name: The Three Booms
     role: Melee crit-smite nova frontline
@@ -85,25 +84,12 @@ Keys are stable composite strings so `progress.json` diffs cleanly and survives
 edits, e.g.
 
 ```
-lvl:durc/the-three-booms/main/7
-item:durc/the-three-booms/act1/everburn-blade
+lvl:charles/the-three-booms/main/7
+item:charles/the-three-booms/act1/everburn-blade
 loot:1/emerald-grove/idol-of-silvanus
 ```
 
 To reset progress, empty the file: `{ "version": 1, "checked": {} }`.
-
-## Regenerating content from the backup
-
-`content/` was generated from `party_plan.json` by:
-
-```sh
-cargo run -- migrate     # or: target/debug/bg3 migrate
-```
-
-This splits the monolith into `content/*.md`, promotes each itemization string to a
-`{ id, item, note }` object (so items get stable checkoff ids), and **verifies** the
-result reproduces the original JSON. Re-running overwrites the generated files, so
-only run it to rebuild from scratch — day-to-day edits go straight into `content/`.
 
 ## Dev note
 

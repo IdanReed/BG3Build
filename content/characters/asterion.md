@@ -1,5 +1,5 @@
 ---
-nickname: Batman
+nickname: Asterion
 builds:
 - name: The Ambusher — Melee Shadow-Blade (Config A)
   is_primary: true
@@ -81,7 +81,7 @@ builds:
       school: Transmutation
       save: None
       when: char 2 (War Cleric dip)
-      why: Applies Wet (double Lightning/Cold) to set up Toaster's lightning and your own cold scrolls. Config A only.
+      why: Applies Wet (double Lightning/Cold) to set up Gale's lightning and your own cold scrolls. Config A only.
     - spell: Command
       level: '1'
       school: Enchantment
@@ -197,7 +197,7 @@ builds:
       note: Bracers of Defence (+2 AC, no armour)
     - id: eversight-ring
       item: Eversight Ring
-      note: Eversight Ring (House of Healing, Reithwin — grab it THIS act; it's missable) — see through your own Darkness, the 'Batman' combo
+      note: Eversight Ring (House of Healing, Reithwin — grab it THIS act; it's missable) — see through your own Darkness, the 'Asterion' combo
     - id: retire-the-old-tank-gear-you-re-squishy-now
       item: Retire the old tank gear — you're squishy now
       note: Retire the old tank gear — you're squishy now
@@ -207,7 +207,7 @@ builds:
       note: 'Self-cast Shadow Blade (3d8) main-hand + Light off-hand: Rhapsody OR Bloodthirst (Orin — Improved Critical, crit −1 on all attacks; the better crit off-hand)'
     - id: eversight-ring
       item: Eversight Ring
-      note: Eversight Ring (carried over from Act 2 — the Darkness 'Batman' combo)
+      note: Eversight Ring (carried over from Act 2 — the Darkness 'Asterion' combo)
     - id: carries-the-resonance-stone
       item: Carries the Resonance Stone
       note: Carries the Resonance Stone (doubles your + the Paladin's psychic — but Astarion eats its mental-save debuff, so cluster near the Paladin's Aura of Protection)
@@ -217,16 +217,22 @@ builds:
     - id: ne-er-misser-hellfire-hand-crossbow
       item: Ne'er Misser + Hellfire Hand Crossbow
       note: Ne'er Misser + Hellfire Hand Crossbow (ranged backup)
-  playstyle: 'Pre-cast Shadow Blade at long rest (Superior Elixir of Arcane Cultivation → L3 slot → 3d8, lasts all day, no concentration). Each turn: bonus-action Hide (arms Magical Ambush AND the advantage for Sneak Attack) → Booming Blade + Shadow Blade + Sneak Attack as one huge psychic strike; the Sneak Attack adopts the blade''s psychic type, so the Resonance Stone doubles the whole strike and a Held target auto-crits it. Between strikes, crouch and cast a stolen DEX-save scroll (cold-first) at disadvantage via Magical Ambush. The invisible Mage Hand throws water for the Sorcerer or parks by a target to guarantee Sneak Attack. Vanish with Cunning Action Disengage → fog + Eversight, or Misty Step. CO-EQUAL with Config B (no single ''primary''): run Config A for Act-2 psychic-nova set-pieces vs LIVING bosses (Resonance Stone ×2 + Hold auto-crit); it''s fragile and Stone-dependent, so switch to Config B for undead/immune bosses and safer backline turns.'
+  playstyle: |-
+    - **Pre-cast Shadow Blade** at long rest (Superior Elixir of Arcane Cultivation → L3 slot → 3d8, lasts all day, no concentration).
+    - **Each turn:** bonus-action Hide (arms Magical Ambush AND the advantage for Sneak Attack) → Booming Blade + Shadow Blade + Sneak Attack as one huge psychic strike; the Sneak Attack adopts the blade's psychic type, so the Resonance Stone doubles the whole strike and a Held target auto-crits it.
+    - Between strikes, crouch and cast a stolen DEX-save scroll (cold-first) at disadvantage via Magical Ambush.
+    - The invisible Mage Hand throws water for the Sorcerer or parks by a target to guarantee Sneak Attack.
+    - Vanish with Cunning Action Disengage → fog + Eversight, or Misty Step.
+    - **CO-EQUAL with Config B** (no single 'primary'): run Config A for Act-2 psychic-nova set-pieces vs LIVING bosses (Resonance Stone ×2 + Hold auto-crit); it's fragile and Stone-dependent, so switch to Config B for undead/immune bosses and safer backline turns.
   traps:
   - 'Magical Ambush needs the Hide ACTION (not mere invisibility); only helps DEX-save direct-damage scrolls fully (control spells: initial save only; surface spells: none).'
   - The 3d8 upcast needs the SUPERIOR Elixir of Arcane Cultivation (base/Greater give only L1/L2 slots).
-  - The Eversight 'Batman' combo is an Act 3 item and collapses vs enemies with Devil's Sight.
+  - The Eversight 'Asterion' combo is an Act 3 item and collapses vs enemies with Devil's Sight.
   - Only 3 feats on an 11/1 split.
   pickpocket:
-    note: 'Batman is the party''s thief — this is how he lifts key gear, scrolls, and buff sources with near-certainty, and gets away clean on the rare miss. ⚠ CORRECTION: pickpocketing resolves as a BACKGROUND d20 roll, so variable dice like Guidance and Bardic Inspiration do NOT apply to it — only FLAT Sleight-of-Hand bonuses (gear) change the number. The guaranteed ceiling is therefore fixed by Reliable Talent + flat gear, not buffs. Applies to both configs (the War Cleric dip''s Guidance is for dialogue/other checks, not the steal).'
+    note: 'Asterion is the party''s thief — this is how he lifts key gear, scrolls, and buff sources with near-certainty, and gets away clean on the rare miss. ⚠ CORRECTION: pickpocketing resolves as a BACKGROUND d20 roll, so variable dice like Guidance and Bardic Inspiration do NOT apply to it — only FLAT Sleight-of-Hand bonuses (gear) change the number. The guaranteed ceiling is therefore fixed by Reliable Talent + flat gear, not buffs. Applies to both configs (the War Cleric dip''s Guidance is for dialogue/other checks, not the steal).'
     check_formula: 'Pickpocketing rolls Sleight of Hand: d20 + DEX mod + proficiency, with Expertise DOUBLING proficiency. At char 12 with DEX 20 (+5) and Expertise (+8) that''s a +13 flat. Reliable Talent (Rogue 11) floors the raw d20 at 10 on proficient skills, so his minimum result is 10 + 13 = 23 and a natural 1 can''t auto-fail. Proficiency does NOT stack from multiple sources; only Expertise raises it.'
-    success_math: The number the UI shows is a 'roll target' = the raw d20 you need (flat bonuses already subtracted), NOT the DC. Reliable Talent floors the die at 10, so ANY item with roll target ≤ 10 (underlying DC ≤ 23) is a GUARANTEED steal with zero setup. To beat a HIGHER target you must add FLAT Sleight-of-Hand gear (Smuggler's Ring +2 → target ≤ 12; + Gloves of Power +1 → ≤ 13) — Guidance and Bardic Inspiration do NOT apply to the background pickpocket roll. Advantage (Graceful Cloth) doesn't raise the guaranteed floor but makes mid/high targets very likely. Virtually every merchant item sits at DC ≤ 23, so Batman auto-succeeds on nearly all of them; for the rare over-floor item use flat gear, or Enthrall the vendor and steal freely.
+    success_math: The number the UI shows is a 'roll target' = the raw d20 you need (flat bonuses already subtracted), NOT the DC. Reliable Talent floors the die at 10, so ANY item with roll target ≤ 10 (underlying DC ≤ 23) is a GUARANTEED steal with zero setup. To beat a HIGHER target you must add FLAT Sleight-of-Hand gear (Smuggler's Ring +2 → target ≤ 12; + Gloves of Power +1 → ≤ 13) — Guidance and Bardic Inspiration do NOT apply to the background pickpocket roll. Advantage (Graceful Cloth) doesn't raise the guaranteed floor but makes mid/high targets very likely. Virtually every merchant item sits at DC ≤ 23, so Asterion auto-succeeds on nearly all of them; for the rare over-floor item use flat gear, or Enthrall the vendor and steal freely.
     detection: 'Pickpocketing requires being HIDDEN; opening/closing the steal window is free while unseen (only clicking Steal rolls). A failed steal and ''caught possessing stolen goods'' are SEPARATE crimes. On a fail the victim attacks or offers a Deception/Intimidation/Persuasion check (pass = they watch you; a 2nd catch = arrest). Even a SUCCESS starts a delayed investigation: the victim searches for a few turns — if you stay out of sight/range until it expires, the whole party is permanently safe (you can then wear the stolen item openly). An accused character carrying no session-stolen loot always proves innocence.'
     modifiers:
     - source: DEX 20 (+5)
@@ -280,12 +286,12 @@ builds:
       where: True Soul Nere, Grymforge (Act 1)
     - item: Deathstalker Mantle
       effect: Invisible for 2 turns on a KILL (in combat) — NOT a theft-escape tool; kill-gated, does not trigger on a failed steal
-      where: Dark Urge reward (Sceleritas Fel); Durc hands it to Batman
+      where: Dark Urge reward (Sceleritas Fel); Charles hands it to Asterion
     - item: Optional flat-bonus ring (Smuggler's Ring +2 / Gloves of Power +1)
       effect: Additive flat SoH that directly lowers the displayed target — for a rare over-DC-24 item
       where: Various vendors/loot; swap in only when needed
     setup_by_act:
-      note: 'Key point on ''combat vs pickpocket gear'': Batman basically does NOT swap. The Graceful Cloth is Clothing (not armour), so it stacks with Bracers of Defence, and its Cat''s Grace already gives advantage on Sleight of Hand — so his everyday combat kit steals at advantage with nothing to change. Gloves of Thievery become redundant once the Cloth is on. The only situational swap is a flat +SoH ring for a rare over-floor item, in for that one lift then back out. All swaps are free out of combat.'
+      note: 'Key point on ''combat vs pickpocket gear'': Asterion basically does NOT swap. The Graceful Cloth is Clothing (not armour), so it stacks with Bracers of Defence, and its Cat''s Grace already gives advantage on Sleight of Hand — so his everyday combat kit steals at advantage with nothing to change. Gloves of Thievery become redundant once the Cloth is on. The only situational swap is a flat +SoH ring for a rare over-floor item, in for that one lift then back out. All swaps are free out of combat.'
       acts:
       - act: 1
         standing_kit: Graceful Cloth worn as the chest slot the moment you buy it from Lady Esther (Cat's Grace = advantage on DEX checks + DEX toward 18/20); Gloves of Thievery (Brem, Zhentarim basement) as an advantage backup.
@@ -304,7 +310,7 @@ builds:
         targets: Sorcerous Sundries (scroll wall — Chain Lightning, Cone of Cold, Freezing Sphere), Lower City fences (Roah Moonglow), the Devil's Fee, circus/vendor stock. Highest-value heists in the game — but Lower City crime enforcement is the strictest, so launder aggressively.
     escape_options:
     - option: Quicksave / reload (non-Honour)
-      how: THE reliable net. Quicksave before each steal; reload on a botched roll or getaway. Batman rarely fails the roll (floor 23), so this mainly insures the escape / investigation sweep.
+      how: THE reliable net. Quicksave before each steal; reload on a botched roll or getaway. Asterion rarely fails the roll (floor 23), so this mainly insures the escape / investigation sweep.
     - option: Turn-based mode
       how: 'Toggle ON before stealing: freezes patrols, the victim, and the post-theft investigation timer so you set up Hide and manage vision cones at your own pace. Each party member is an independent thief with its own check and caught-state.'
     - option: Break line of sight, wait out the search
@@ -314,7 +320,7 @@ builds:
     - option: Misty Step / Night Walkers / Amulet of Misty Step
       how: Bonus-action teleport (2–3 free/short rest) to break line of sight and clear the search area. Repositioning only — combine with waiting out the investigation.
     - option: Split loot / send to camp
-      how: An accused character holding NO session-stolen goods proves innocence automatically. Keep stolen items off Batman (hand to a clean character or send to the camp chest); use other members as extra thieves.
+      how: An accused character holding NO session-stolen goods proves innocence automatically. Keep stolen items off Asterion (hand to a clean character or send to the camp chest); use other members as extra thieves.
     - option: Enthrall (ally-cast)
       how: If the victim is Enthralled when they notice the theft, no investigation starts and no suspicion is placed. Best cast by someone OTHER than the thief.
     - option: Feign Death (ally-cast) on a caught member
@@ -326,14 +332,14 @@ builds:
     - option: NOT the Deathstalker Mantle
       how: Its invisibility triggers only on a KILL in combat — a failed steal is not a kill, so it can't pre-empt or undo being caught. It's a combat re-ambush cloak, not a theft escape.
     failure_flow:
-      note: 'If you''re NOT reloading (self-imposed no-save-scum, or you just don''t want to reload) here''s the no-reload contingency for the exact chain you described: fail → dialogue → likely fail the social check → combat → vanish. Reality check: with Reliable Talent (floor 23) Batman almost never fails the actual Sleight of Hand roll — the real risk is the post-theft investigation or a botched CONFRONT check. And his CHA is 8, so plan to FAIL the offered social save.'
+      note: 'If you''re NOT reloading (self-imposed no-save-scum, or you just don''t want to reload) here''s the no-reload contingency for the exact chain you described: fail → dialogue → likely fail the social check → combat → vanish. Reality check: with Reliable Talent (floor 23) Asterion almost never fails the actual Sleight of Hand roll — the real risk is the post-theft investigation or a botched CONFRONT check. And his CHA is 8, so plan to FAIL the offered social save.'
       steps:
       - step: 1
         trigger: Roll fails / you're spotted
         do: The victim opens a dialogue or turns hostile. The theft dialogue offers a Deception / Intimidation / Persuasion check to talk your way out; returning the item can defuse a first offense.
       - step: 2
         trigger: The offered social check (you'll probably fail it)
-        do: 'At CHA 8 Batman flunks Deception/Persuasion more often than not. Better options: hand the conversation to SimonSays (the face) if he''s in range, pre-buff with Guidance/Friends, or just accept the fail and drop to step 3. Intimidation can be easier if the target is weak-willed.'
+        do: 'At CHA 8 Asterion flunks Deception/Persuasion more often than not. Better options: hand the conversation to Bonbon (the face) if he''s in range, pre-buff with Guidance/Friends, or just accept the fail and drop to step 3. Intimidation can be easier if the target is weak-willed.'
       - step: 3
         trigger: Talk fails → they call it in / attack
         do: 'Two branches: (a) it goes LOUD → combat as guards/victim aggro; or (b) a delayed ''Thief!'' investigation starts and reinforcements begin converging on your last known position.'
@@ -348,7 +354,7 @@ builds:
         do: 'Send stolen goods to camp or a clean party member (an accused character carrying no session-stolen loot auto-proves innocence). Wait out the investigation timer out of sight → the whole party goes permanently clean and can wear the loot openly. Worst case (Act 3 Lower City, no Disguise-Self reset): leave to a different district and let the heat cool.'
     procedure: |-
       0 — Standing kit: wear the Graceful Cloth (permanent Cat's Grace = advantage on DEX checks + DEX toward 20) all game; Gloves of Thievery as backup. Confirm DEX 20. This alone gives +13 flat, advantage, and (Rogue 11) a floor-10 die = guaranteed steal on any DC ≤ 23 item.
-      1 — Isolate: split Batman from the party and approach the target alone, so a botched job only implicates him and no ally is caught holding loot.
+      1 — Isolate: split Asterion from the party and approach the target alone, so a botched job only implicates him and no ally is caught holding loot.
       2 — Confirm flat gear: the Graceful Cloth already gives advantage. For a high-target item, swap in a Smuggler's Ring (+2) / Gloves of Power (+1) — these LOWER the shown target. (Guidance/Bardic Inspiration do NOT help the steal roll.)
       3 — Quicksave.
       4 — Turn-based ON: freeze patrols, the victim, and the investigation timer.
@@ -356,7 +362,7 @@ builds:
       6 — Read targets: open the steal window (free while unseen). Roll target ≤ 10 = auto-lift; advantage from the Cloth makes higher targets very likely. Prioritize high value / low target (key gear, scrolls, buff sources). For a rare over-floor item, swap in a flat +SoH ring (Smuggler's/Gloves of Power) or just Enthrall the vendor and steal freely — Guidance/Bardic Inspiration won't help the roll.
       7 — Steal item by item: one per pickpocket. To pull more from the same NPC, re-hide or hand off to a second hidden member. Reload if a roll would fail.
       8 — Escape BEFORE the alert matures: break line of sight and leave the search radius — Cunning Action Disengage/Dash or a bonus-action Misty Step. Do NOT rely on the Deathstalker Mantle. Stay out of sight until the 'Thief!' investigation expires.
-      9 — Launder the loot: keep stolen goods off Batman if guards may sweep. If caught anyway: pass the confront check, return/drop the item, or have an ally Enthrall / Feign Death — or reload.
+      9 — Launder the loot: keep stolen goods off Asterion if guards may sweep. If caught anyway: pass the confront check, return/drop the item, or have an ally Enthrall / Feign Death — or reload.
       10 — Turn-based OFF and resume.
   scores:
     fit: 4
@@ -397,7 +403,7 @@ builds:
     subclass_choice: Arcane Trickster is chosen at Rogue 3 (character level 4).
     proficiencies:
       armor_weapons: 'Rogue base: Light armour; Simple weapons, Hand Crossbows, Longswords, Rapiers, Shortswords. The Fighter 1 dip (char 2) adds Medium armour, Shields, Martial weapons + the Archery fighting style — NO Heavy armour (multiclassing never grants it).'
-      saving_throws: Dexterity + Intelligence (Rogue). The Fighter dip grants NO save proficiency (multiclass) — the 'CON save' the plan lists for Batman is incorrect; he keeps Rogue's DEX+INT.
+      saving_throws: Dexterity + Intelligence (Rogue). The Fighter dip grants NO save proficiency (multiclass) — the 'CON save' the plan lists for Asterion is incorrect; he keeps Rogue's DEX+INT.
       skills: 'Rogue picks 4 skills + Expertise in 2 (Sleight of Hand + Stealth) at level 1; Astarion''s Charlatan background adds Sleight of Hand + Deception (Stealth comes from a Rogue pick). Expertise #2 (Perception + Investigation) at Rogue 6.'
     starting_cantrips: None from the class at Rogue 1. Astarion (High Elf) picks Booming Blade as his racial cantrip at creation (melee backup).
     starting_spells: None at Rogue 1 — first AT spells (3) at Rogue 3 (char 4).
@@ -481,7 +487,7 @@ builds:
   leveling:
   - char_level: 2
     class: Fighter 1
-    gains: Archery fighting style (+2 ranged); medium armour + shields + martial weapons — but NO save proficiency (multiclass dips grant none; Batman keeps Rogue's DEX + INT saves)
+    gains: Archery fighting style (+2 ranged); medium armour + shields + martial weapons — but NO save proficiency (multiclass dips grant none; Asterion keeps Rogue's DEX + INT saves)
   - char_level: 3
     class: Rogue 2
     gains: Cunning Action (bonus-action Hide)
@@ -551,14 +557,18 @@ builds:
       note: Hellfire Hand Crossbow (off-hand)
     - id: eversight-ring
       item: Eversight Ring
-      note: Eversight Ring (Darkness 'Batman' combo — grab it in Act 2 at Reithwin's House of Healing; it's missable)
+      note: Eversight Ring (Darkness 'Asterion' combo — grab it in Act 2 at Reithwin's House of Healing; it's missable)
     - id: neck-slot-free
       item: Neck slot free
-      note: Neck slot free (Amulet of Greater Health went to Toaster) — use a defensive amulet; the backline sniper needs CON even less than Config A
+      note: Neck slot free (Amulet of Greater Health went to Gale) — use a defensive amulet; the backline sniper needs CON even less than Config A
     - id: does-not-carry-the-resonance-stone
       item: Does NOT carry the Resonance Stone
       note: Does NOT carry the Resonance Stone (backline — force damage doesn't benefit; the Paladin runs the self-contained Pike + Bhaalist instead)
-  playstyle: 'Identical Hide → Magical-Ambush loop as Config A, but from the backline — snipe a Sneak-Attack crossbow shot (force, via Ne''er Misser) or a disadvantaged AoE scroll, never entering melee. Mage Hand still throws water for the Sorcerer and flanks to enable Sneak Attack. The cleanest positional split from the melee Paladin. CO-EQUAL with Config A (no single ''primary''): this is the safe default — backline, no Stone/Elixir dependency, and it works fine vs undead; pick Config A when you want the higher psychic-nova ceiling on a living boss.'
+  playstyle: |-
+    - Identical Hide → Magical-Ambush loop as Config A, but **from the backline** — snipe a Sneak-Attack crossbow shot (force, via Ne'er Misser) or a disadvantaged AoE scroll, never entering melee.
+    - Mage Hand still throws water for the Sorcerer and flanks to enable Sneak Attack.
+    - The cleanest positional split from the melee Paladin.
+    - **CO-EQUAL with Config A** (no single 'primary'): this is the safe default — backline, no Stone/Elixir dependency, and it works fine vs undead; pick Config A when you want the higher psychic-nova ceiling on a living boss.
   traps:
   - Savage Attacker is melee-only — useless on crossbows; take Sharpshooter instead.
   - Same Magical Ambush / Superior Elixir / Eversight caveats as Config A.

@@ -50,19 +50,11 @@ fn read_doc(path: &Path) -> Result<Doc> {
     parse_frontmatter(&raw).with_context(|| format!("in {}", path.display()))
 }
 
-/// Load the plan from whichever source is present.
+/// Load the plan by assembling it from the split `content/*.md` files.
 pub fn load_plan(root: &Path) -> Result<Value> {
     let content_dir = root.join("content");
-    if content_dir.join("meta.md").exists() {
-        assemble_from_content(&content_dir)
-            .with_context(|| format!("assembling plan from {}", content_dir.display()))
-    } else {
-        let path = root.join("party_plan.json");
-        let raw = std::fs::read_to_string(&path)
-            .with_context(|| format!("reading {}", path.display()))?;
-        serde_json::from_str(&raw)
-            .with_context(|| format!("parsing {} as JSON", path.display()))
-    }
+    assemble_from_content(&content_dir)
+        .with_context(|| format!("assembling plan from {}", content_dir.display()))
 }
 
 /// Assemble the top-level `{meta, party, proficiencies, characters, loot_guide,

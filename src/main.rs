@@ -1,12 +1,10 @@
 //! BG3 party-guide local server.
 //!
 //!   bg3            Serve the guide on http://127.0.0.1:8787 (set BG3_PORT to change).
-//!   bg3 migrate    Split party_plan.json into content/*.md (one-shot).
 //!
 //! Local, single-user, loopback-only: no auth, no TLS, nothing exposed off-box.
 
 mod content;
-mod migrate;
 mod progress;
 
 use std::path::PathBuf;
@@ -34,11 +32,6 @@ struct AppState {
 #[tokio::main]
 async fn main() -> Result<()> {
     let root = std::env::current_dir().context("resolving current directory")?;
-    let mut args = std::env::args().skip(1);
-
-    if args.next().as_deref() == Some("migrate") {
-        return migrate::run(&root);
-    }
 
     let progress = Arc::new(ProgressStore::load(&root).context("loading progress.json")?);
     let state = AppState {
@@ -61,12 +54,7 @@ async fn main() -> Result<()> {
         .await
         .with_context(|| format!("binding {addr} (is it already in use?)"))?;
 
-    let source = if root.join("content/meta.md").exists() {
-        "content/*.md"
-    } else {
-        "party_plan.json"
-    };
-    println!("BG3 party guide serving from {source}");
+    println!("BG3 party guide serving from content/*.md");
     println!("  →  http://{addr}");
     println!("Press Ctrl-C to stop.");
 

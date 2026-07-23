@@ -1,5 +1,5 @@
 ---
-nickname: Durc
+nickname: Charles
 builds:
 - name: The Three Booms
   is_primary: true
@@ -24,10 +24,10 @@ builds:
     feat: Great Weapon Master
     note: Bonus-attack-on-crit works with any melee weapon incl. Shadow Blade — the 7th swing. The +2 CHA feat was redundant (Hag+Mirror reach 20).
   invocations:
+  - Devil's Sight (take FIRST, at Warlock 2 / char 2 — enables the Shadow Blade + Darkness combo)
   - Thirsting Blade (the 3rd attack)
   - Improved Pact Weapon
-  - Devil's Sight
-  weapon_plan: Self-cast Shadow Blade (3d8 at W5) early/mid → Heavy piercing Pike once Bhaalist Armour drops.
+  weapon_plan: Self-cast Shadow Blade (2d8 from char 3, 3d8 at W5) + shield, run with Devil's Sight/Darkness for advantage → Heavy piercing Pike once Bhaalist Armour drops.
   creation:
     level1_class: Warlock 1 (Hexblade patron)
     level1_gains: Pact Magic (1 × L1 short-rest slot), Hexblade's Curse (bonus action), Bind Hexed Weapon (attack with CHA). Pact Boon (Pact of the Blade) is not until Warlock 3.
@@ -38,27 +38,27 @@ builds:
       skills: Choose 2 from the Warlock list (Arcana, Deception, History, Intimidation, Investigation, Nature, Religion). Dark Urge's fixed Haunted One background adds Medicine + Intimidation.
     starting_cantrips: 2 known at Warlock 1 — recommend Eldritch Blast + one filler.
     starting_spells: 2 known from the Warlock list plus the Hexblade L1 expanded adds (Shield, Wrathful Smite).
-    notes: Durc's character-creation class is Warlock 1 (Half-Orc Dark Urge); Paladin is multiclassed in from character level 2. Divine Smite (Paladin 2), Oathbreaker, and the auras all arrive later.
+    notes: 'Charles''s character-creation class is Warlock 1 (Half-Orc Dark Urge). RUSH Warlock 1→2→3 first (Devil''s Sight at char 2, Pact of the Blade + self-cast Shadow Blade at char 3), THEN multiclass Paladin from character level 4 — so Divine Smite lands at char 5 (two levels later than a Paladin-first order). Worth it: early Act 1''s problem is landing attacks with no party control (Hold Person/Monster) online yet, and the Shadow Blade + Devil''s Sight package is a self-contained advantage/defense source from char 3. Oathbreaker and the auras arrive later; the L6–12 tail is unchanged.'
   spells:
-    note: 'Durc is a smite platform, not a spell-slinger — most slots are spent as Divine Smite. Concentration is the bottleneck: hold only ONE of Wrathful Smite / Bless / Divine Favour / Shield of Faith at a time. Mandatory = the nova depends on it; Recommended = strong flex / buffs.'
+    note: 'Charles is a smite platform, not a spell-slinger — most slots are spent as Divine Smite. Concentration is the bottleneck: hold only ONE of Wrathful Smite / Bless / Divine Favour / Shield of Faith at a time. Mandatory = the nova depends on it; Recommended = strong flex / buffs.'
     mandatory:
     - spell: Divine Smite
       level: Feature (Paladin 2)
       school: Class feature — Radiant
       save: None (melee weapon attack roll)
-      when: char 3
+      when: char 5
       why: 'The build''s core. Expend any slot on a melee hit: 2d8 Radiant at L1, +1d8 per slot level above 1st (cap 5d8 at an L4 slot), +1d8 vs Fiends/Undead; dice DOUBLE on a crit. Not a prepared spell and not stopped by Counterspell — set the Critical-Hit Divine Smite reactions to auto-confirm.'
     - spell: Shadow Blade
       level: '2'
       school: Illusion
       save: None (bonus action to summon)
-      when: char 5 (Warlock 3)
-      why: 'Core early/mid weapon: bonus action, NOT concentration, lasts until long rest; 2d8 psychic → 3d8 once Warlock 5 grants L3 pact slots. Bind Hexed/Pact Weapon onto it to attack with CHA.'
+      when: char 3 (Warlock 3)
+      why: 'Core early/mid weapon AND the early-game advantage engine: bonus action, NOT concentration, lasts until long rest; 2d8 psychic → 3d8 once Warlock 5 grants L3 pact slots. Bind Hexed/Pact Weapon onto it to attack with CHA. Grants Advantage on melee attacks vs any Lightly/Heavily Obscured target — so it hits at advantage in the abundant dim-light of Act 1, and with Devil''s Sight you fight inside your own Darkness: enemies in it are Blinded (they attack you at disadvantage), while you see fine and attack them at advantage. Verified: bg3.wiki/wiki/Shadow_Blade.'
     - spell: Wrathful Smite
       level: '1'
       school: Evocation
       save: WIS save (to avoid Frightened)
-      when: char 1 (Hexblade) / char 3 (Paladin)
+      when: char 1 (Hexblade) / char 5 (Paladin)
       why: 'The one prepared spell in the nova line: +1d6 psychic (doubles to 2d6 on a crit) and can Frighten. Concentration — cast once and it rides subsequent swings.'
     recommended:
     - spell: Hex
@@ -83,13 +83,13 @@ builds:
       level: '1'
       school: Enchantment
       save: None (concentration)
-      when: char 3 (Paladin 2)
+      when: char 5 (Paladin 2)
       why: +1d4 to attack rolls and saves for up to 3 allies; best pre-fight buff on turns not riding Wrathful Smite.
     - spell: Command
       level: '1'
       school: Enchantment
       save: WIS save
-      when: char 3 (Paladin 2)
+      when: char 5 (Paladin 2)
       why: Cheap single-target control (Drop / Halt / Approach) to open a nova or peel an enemy caster.
     - spell: Hellish Rebuke
       level: '1'
@@ -101,8 +101,8 @@ builds:
       level: '2'
       school: Evocation
       save: None
-      when: char 10 (Paladin 5, Oathbreaker oath spell)
-      why: Free always-prepared oath spell; vision denial Durc can fight inside via the Warlock's Devil's Sight.
+      when: char 3 (learn as a Warlock spell) / char 10 (free Oathbreaker oath spell)
+      why: 'Vision-denial bubble Charles fights inside via Devil''s Sight — enemies in it are Blinded (disadvantage to hit him) while he sees fine and keeps advantage; NOT concentration in BG3 (a placed cloud, ~10 turns). Learn it as a Warlock spell from char 3 to run the combo through Act 1–2; it becomes free + always-prepared as an Oathbreaker oath spell at char 10. Collapses vs enemies with their own Devil''s Sight/truesight.'
     - spell: Spiteful Suffering
       level: Channel Oath (not a spell)
       school: Oathbreaker Channel Oath — Necrotic
@@ -117,17 +117,17 @@ builds:
       why: Ranged fallback for turns he can't reach melee (2 beams at char 5, 3 at char 10); a real option with Agonising Blast + CHA 20.
   leveling:
   - char_level: 2
+    class: Warlock 2
+    gains: Invocation (Devil's Sight — see normally in magical Darkness)
+  - char_level: 3
+    class: Warlock 3
+    gains: Pact of the Blade + self-cast Shadow Blade (2d8) → advantage engine online (advantage vs dim-light/obscured targets; fight inside Darkness via Devil's Sight)
+  - char_level: 4
     class: Paladin 1
     gains: Lay on Hands
-  - char_level: 3
-    class: Paladin 2
-    gains: Divine Smite
-  - char_level: 4
-    class: Warlock 2
-    gains: Invocation (Devil's Sight)
   - char_level: 5
-    class: Warlock 3
-    gains: Pact of the Blade + self-cast Shadow Blade (2d8)
+    class: Paladin 2
+    gains: Divine Smite (nova online)
   - char_level: 6
     class: Warlock 4
     gains: 'Feat: Savage Attacker'
@@ -174,7 +174,7 @@ builds:
       note: Auntie Ethel's Hair → CHA 17 → 18 (raises Aura DCs, attack/smite accuracy, and prepared-spell count)
     - id: diadem-of-arcane-synergy
       item: Diadem of Arcane Synergy
-      note: 'Diadem of Arcane Synergy (Crèche): reallocated from Toaster — inflict a condition (Wrathful Smite/Hexblade''s Curse) → +CHA to weapon damage; Act 1–2 head slot before Sarevok''s Helmet'
+      note: 'Diadem of Arcane Synergy (Crèche): reallocated from Gale — inflict a condition (Wrathful Smite/Hexblade''s Curse) → +CHA to weapon damage; Act 1–2 head slot before Sarevok''s Helmet'
     - id: strange-conduit-ring
       item: Strange Conduit Ring
       note: 'Strange Conduit Ring (Crèche): +1d4 psychic on attacks while Concentrating (Wrathful Smite/Bless) — doubled by the Resonance Stone and on a crit; competes with the Shadow Blade Ring for a ring slot'
@@ -196,7 +196,7 @@ builds:
       note: 'Killer''s Sweetheart (Gauntlet of Shar — Self-Same Trial): your first attack after a kill is a GUARANTEED crit → a free doubled smite every fight'
     - id: head-slot
       item: Head slot
-      note: 'Head slot: Covert Cowl (Last Light — −1 crit while Obscured) vs the Diadem (+CHA weapon damage). Cowl for crit-fishing in Darkness; Diadem for raw damage. (A 2nd Covert-Critical head — the Dark Justiciar Helmet — lets Batman run one too.)'
+      note: 'Head slot: Covert Cowl (Last Light — −1 crit while Obscured) vs the Diadem (+CHA weapon damage). Cowl for crit-fishing in Darkness; Diadem for raw damage. (A 2nd Covert-Critical head — the Dark Justiciar Helmet — lets Asterion run one too.)'
     - id: amulet-heavy-armour
       item: Amulet/heavy armour
       note: 'Amulet/heavy armour: keep the Adamantine set or buy heavy armour from Moonrise vendors until the Helldusk set (Act 3)'
@@ -222,7 +222,12 @@ builds:
     - id: helldusk-gloves
       item: Helldusk Gloves
       note: Helldusk Gloves
-  playstyle: 'Pre-apply Hexblade''s Curse the turn before so the bonus action is free. Nova turn: attack (3) + Haste (3) + GWM bonus attack (1) = 7 auto-crit swings on a Held target, smiting each; short rest to refuel. Half-Orc adds a die on crits; Curse drops the crit threshold to 19–20; Risky Ring keeps you at advantage. Dark Urge bonus: A Most Bloody Inheritance (from the Act-3 Murder questline) reduces Durc''s crit threshold by a further −2, stacking with Curse (−1) + Sarevok''s Helmet + Covert Cowl — a very wide crit range for non-Held targets.'
+  playstyle: |-
+    - **Early Act 1 (char 3+):** self-cast Shadow Blade + shield and fight from advantage — Shadow Blade grants advantage vs obscured/dim-light targets, and casting Darkness lets you fight inside it with Devil's Sight (you see, enemies are Blinded → they miss you, you hit at advantage). This is the fix for "missing attacks" before any party control is online; Divine Smite comes online at char 5.
+    - **Pre-apply Hexblade's Curse** the turn before so the bonus action is free.
+    - **Nova turn:** attack (3) + Haste (3) + GWM bonus attack (1) = 7 auto-crit swings on a Held target, smiting each; short rest to refuel.
+    - Half-Orc adds a die on crits; Curse drops the crit threshold to 19–20; Risky Ring keeps you at advantage.
+    - **Dark Urge bonus:** A Most Bloody Inheritance (from the Act-3 Murder questline) reduces Charles's crit threshold by a further −2, stacking with Curse (−1) + Sarevok's Helmet + Covert Cowl — a very wide crit range for non-Held targets.
   late_game_config:
     note: At Act 3 you can run either weapon set.
     shadow_blade_set: 3d8 psychic one-hander + shield; ×2 from the Trickster's Resonance Stone (shared, buggy); GWM bonus attack only.

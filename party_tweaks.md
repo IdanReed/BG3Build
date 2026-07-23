@@ -1,8 +1,8 @@
 # Party Tweaks — staging
 
-_A scratchpad of proposed build changes to fold into `content/` once the Rust migration settles. Nothing here is wired into the `content/` pipeline yet — treat it as the changelog to apply (and as the rationale for each change). Same assumptions as the main plan: **non-Honour, Patch 8 (+ hotfixes #30–#36)**. Load-bearing claims are sourced to bg3.wiki._
+_✅ **APPLIED to `content/` on 2026-07-23.** This doc is now the changelog + rationale for those changes (kept for reference). Same assumptions as the main plan: **non-Honour, Patch 8 (+ hotfixes #30–#36)**. Load-bearing claims are sourced to bg3.wiki._
 
-> When applying: the nickname changes below also rename the character files (`content/characters/durc.md → charles.md`, etc.) and every `nickname:`/cross-reference in `meta`, `party`, `loot`, and the other character docs.
+> Applied: character files renamed (`durc.md → charles.md`, `batman.md → asterion.md`, `toaster.md → gale.md`, `simonsays.md → bonbon.md`); `nickname:` + roster classes updated; build tweaks written into `charles.md` / `gale.md` / `bonbon.md`; and cross-references fixed in `party.md` / `loot.md` / `proficiencies.md` / `tadpole.md` / `README.md`. Verified: the `cargo` server assembles `/api/plan` (HTTP 200) with the new roster. (The frozen `party_plan.json` / `index.html` backup was intentionally left untouched.)
 
 ---
 
@@ -76,13 +76,28 @@ Only the first five levels reorder — the L6–12 tail is identical to the curr
 
 Once the **Helmet of Arcane Acuity** is equipped, switch to **two hand crossbows** so every attack (main + off-hand + flourish projectiles) stacks Acuity → sky-high spell-save DC → bonus-action **Hold Monster / Command** via the **Band of the Mystic Scoundrel** (Act 3). This is the existing endgame loop in `simonsays.md`; the only change is that it's now the **Act-2+** configuration, not the Act-1 one.
 
-### Leveling / ordering change
+### Leveling / ordering change — endpoint **Swords Bard 11 / Fighter 1** (Wizard dip dropped)
 
-The current `simonsays.md` plays **pure Swords Bard 1–7, then respecs at char 8** to insert Fighter 1 / Wizard 1. The tweak: **take Fighter 1 at creation** and go Bard from there (endpoint class composition **Swords Bard 10 / Fighter 1 / Wizard 1 unchanged**). This makes the Titanstring archer real from Act 1 and removes the respec.
+The current `simonsays.md` plays **pure Swords Bard 1–7, then respecs at char 8** to insert Fighter 1 / Wizard 1 (endpoint Bard 10 / Fighter 1 / Wizard 1). The tweak: **drop the Wizard dip**, **take Fighter 1 at creation**, and go pure Bard to 11 — no respec.
 
-Suggested order: **Fighter 1 (char 1) → Wizard 1 (char 2) → Swords Bard 1–10 (char 3–12).** Breakpoints land at: College of Swords char 5, Extra Attack char 8, Hold Monster char 11, Magical Secrets + the L6 slot char 12 — the same tail the level-8 respec produced.
+Why dropping Wizard costs nothing on control: `Fighter 1 / Bard 11` is still **caster level 11**, so it keeps the single **6th-level slot** for mass **Command (up to 6 targets)**. You only give up the **Shield reaction** + scroll scribing. Feat count is unchanged (2 feats, at Bard 4 and Bard 8).
 
-> ⚠ **Open decision (see bottom):** taking Fighter+Wizard first delays every Bard breakpoint ~1–2 char levels vs. playing pure Bard early. Alternative: keep Fighter at creation but **defer the Wizard 1 dip** to the very end (or drop it) so Bard breakpoints come sooner. Titanstring + Archery is the priority either way.
+Order and breakpoints — note these arrive *earlier* than the old respec plan, since no Wizard level pushes them back:
+
+| Char | Class | Key gains |
+|---|---|---|
+| 1 | Fighter 1 | Archery (+2 ranged), Second Wind; STR + CON saves; heavy armour + shields + martial |
+| 2 | Bard 1 | Bardic Inspiration; cantrips + spells |
+| 3 | Bard 2 | Jack of All Trades; Song of Rest |
+| 4 | Bard 3 | **College of Swords** (Blade Flourish, Dueling), Expertise ×2, L2 (Hold Person) |
+| 5 | Bard 4 | **Feat: Sharpshooter** |
+| 6 | Bard 5 | L3 (Glyph, Fear, Hypnotic Pattern, Slow); Font of Inspiration |
+| 7 | Bard 6 | **Extra Attack** → two ranged Slashing Flourishes/turn |
+| 8 | Bard 7 | L4 (Confusion) |
+| 9 | Bard 8 | **Feat: War Caster** |
+| 10 | Bard 9 | L5 (**Hold Monster** — the melee auto-crit engine; Dominate Person) |
+| 11 | Bard 10 | **Magical Secrets** (Command + Counterspell); 2 more Expertise |
+| 12 | Bard 11 | caster level 11 → the single **L6 slot** (Command up to 6) |
 
 ---
 
@@ -120,6 +135,18 @@ You trade Draconic Resilience (base AC 13 + DEX, +1 HP/level → squishier now) 
 
 **Keep the Tempest Cleric 2 dip** at the end anyway: **Destructive Wrath** (maximize any lightning/thunder roll) is still your biggest single multiplier, and heavy armour + shields help the squishier Storm body. Its Create Water just becomes redundant with the Sorc-6 version (fine — more Wet on demand).
 
+### Leveling order (decided): Sorcerer-first, Cleric last
+
+Currently played as **Tempest Cleric 2 / Sorcerer 1** (char 3). Plan:
+
+- **Now → char 6:** keep the current order — no rush to respec (Withers ≈ 100g).
+- **At char 6, respec to Sorcerer-first** → you come out **Sorcerer 6**, exactly the Storm power spike (Storm Spells + Heart of the Storm + lightning/thunder resistance).
+- **Sorcerer 7–10** (char 7–10) → **Tempest Cleric 1–2** at char 11–12 for **Destructive Wrath**.
+
+**Why the reorder matters beyond spell progression — saving throws.** The class taken at *character level 1* sets your save proficiencies. Taken **Cleric-first** (current), you have **WIS + CHA** and **no CON save** — the exact proficiency that guards concentration on **Twinned Haste**, the party Haste engine. Respec-ing to **Sorcerer at level 1** restores **CON + CHA**. → `toaster.md` already flags this.
+
+Destructive Wrath is a "bolt-on multiplier," so deferring it to char 12 costs little, and Storm self-supplies Create Water at Sorc 6 (so the Cleric dip is now *only* Wrath + heavy armour). Tradeoff: char 6–10 you're a no-armour Storm Sorc — kite with Tempestuous flight and lean on the lightning/thunder resistance until armour lands at char 11.
+
 ### Early gear (Act 1)
 
 - **The Spellsparkler** — quarterstaff, builds **Lightning Charges** (+1 attack, +1 lightning; 5 charges → 1d8 burst). Reward from **Counsellor Florrick** for *Rescue the Grand Duke* at **Waukeen's Rest**. ⚠ It's flagged "Consumable by Gale" — **wield it, don't feed it to the orb.** → <https://bg3.wiki/wiki/The_Spellsparkler>
@@ -128,7 +155,7 @@ You trade Draconic Resilience (base AC 13 + DEX, +1 HP/level → squishier now) 
 
 ---
 
-## Open decisions to confirm
+## Resolved
 
-1. **Bonbon ordering** — Fighter 1 + Wizard 1 both at the front (char 1–2, recommended for the cleanest Titanstring Act 1), **or** Fighter 1 at creation but defer/drop the Wizard 1 dip so Bard breakpoints arrive sooner?
-2. **Gale split** — keep the **Sorc 10 / Tempest 2** chassis (Destructive Wrath + armour), or go **pure Storm Sorc 12** for Storm's Fury (L11), native Chain Lightning, a 6th-level slot, and a 3rd feat (losing Destructive Wrath)?
+- **Bonbon — Wizard dip dropped.** Endpoint **Swords Bard 11 / Fighter 1** (Fighter at creation, then pure Bard, no respec). Keeps the L6 mass-Command slot via caster level 11; gives up only the Shield reaction. See §2 "Leveling / ordering change."
+- **Gale leveling order** — **Sorcerer-first, Tempest Cleric 2 last** (respec at char 6). See §3 "Leveling order."

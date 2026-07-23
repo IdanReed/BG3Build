@@ -8,8 +8,8 @@ roster:
   played_by: Idan
 - slot: 2
   nickname: Asterion
-  class: Arcane Trickster 11 / 1-dip (War Cleric or Fighter)
-  role: Stealth assassin — melee Shadow-Blade or ranged sniper
+  class: Open Hand Monk 9 / Thief Rogue 3
+  role: Stun/flurry striker + party thief
   character: Astarion
   played_by: Idan
 - slot: 3

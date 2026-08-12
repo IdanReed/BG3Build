@@ -23,9 +23,18 @@ def get_model():
     if device == "cpu":
         print("WARNING: CUDA not available — embedding on CPU (slow). Install the "
               "CUDA torch build to use your 3080.", file=sys.stderr)
-    model = SentenceTransformer(C.EMBED_MODEL, device=device)
-    if C.USE_FP16 and device == "cuda":
-        model = model.half()
+    # Load CUDA weights directly in fp16. Loading fp32 and converting afterward
+    # briefly doubles host/virtual-memory pressure for large embedding models.
+    model_kwargs = (
+        {"torch_dtype": torch.float16}
+        if C.USE_FP16 and device == "cuda"
+        else None
+    )
+    model = SentenceTransformer(
+        C.EMBED_MODEL,
+        device=device,
+        model_kwargs=model_kwargs,
+    )
     print(f"Loaded {C.EMBED_MODEL} on {device}"
           f"{' (fp16)' if C.USE_FP16 and device == 'cuda' else ''}", file=sys.stderr)
     return model

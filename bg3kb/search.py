@@ -33,6 +33,13 @@ def _reranker():
     return RRFReranker()
 
 
+def _category_filter(category: str) -> str:
+    """Build a safe LanceDB SQL literal for a category filter."""
+    if len(category) > 200 or any(ord(char) < 32 for char in category):
+        raise ValueError("category must be at most 200 printable characters")
+    return category.replace("'", "''")
+
+
 def search(query: str, k: int = 8, category: str | None = None) -> list[dict]:
     """Return up to k ranked chunks. `category` filters to a wiki category."""
     qv = embed_query(query)
@@ -45,7 +52,8 @@ def search(query: str, k: int = 8, category: str | None = None) -> list[dict]:
         .limit(k)
     )
     if category:
-        q = q.where(f"array_has(categories, '{category}')", prefilter=True)
+        safe_category = _category_filter(category)
+        q = q.where(f"array_has(categories, '{safe_category}')", prefilter=True)
 
     hits = []
     for r in q.to_list():

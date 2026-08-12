@@ -60,13 +60,13 @@ characters:
     expertise:
     - Sleight of Hand
     - Stealth
-    - Perception
-    - Investigation
     proficient:
     - Deception
     - Acrobatics
     - Insight
-    source: 'Charlatan background (Deception, Sleight of Hand) + High Elf (Perception) + Rogue''s 4 picks (Stealth, Investigation, Acrobatics, Insight). Expertise: SoH + Stealth (Rogue 1), Perception + Investigation (Rogue 6). Reliable Talent floors all proficient checks at 10 from level 12 — the party''s skill monkey.'
+    - Perception
+    - Investigation
+    source: 'Charlatan background (Deception, Sleight of Hand) + High Elf (Perception) + Rogue''s 4 picks (Stealth, Investigation, Acrobatics, Insight). This Rogue 3 build gets Expertise only in Sleight of Hand + Stealth at Rogue 1; it does not reach Rogue 6 for another pair or Rogue 11 for Reliable Talent.'
   Gale:
     saves:
     - CON
@@ -95,4 +95,3 @@ characters:
     jack_of_all_trades: true
     source: Guild Artisan background (Insight, Persuasion) + Human free skill (Deception) + Fighter's 2 picks (Perception, Athletics) + Bard's picks (Performance, Intimidation). Expertise ×4 (Bard 3 + Bard 10). Jack of All Trades adds half proficiency to every OTHER check — the primary face + skill generalist.
 ---
-

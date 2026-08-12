@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BG3 Party Plan</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%8E%B2%3C/text%3E%3C/svg%3E">
 <script>
   /* Set theme before first paint to avoid a flash of the wrong theme. */
   (function () {
@@ -76,6 +77,14 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: var(--accent); }
+  a.wiki-item {
+    color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent);
+    text-decoration-thickness: 1px; text-underline-offset: 2px;
+  }
+  a.wiki-item:hover { color: var(--accent); text-decoration-color: currentColor; }
+  a.wiki-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  a.wiki-item::after { content: "\2197"; margin-left: .22em; color: var(--accent); font-size: .72em; }
+  .wiki-item-group { display: inline; }
 
   /* ---- Header ---- */
   header.app {
@@ -98,7 +107,8 @@
     display: inline-flex; align-items: center; gap: 6px;
     background: var(--surface-2); color: var(--text-muted);
     border: 1px solid var(--border); border-radius: 999px;
-    padding: 3px 10px; font-size: .78rem; font-weight: 600; white-space: nowrap;
+    padding: 3px 10px; font-size: .78rem; font-weight: 600;
+    white-space: normal; overflow-wrap: anywhere; max-width: 100%;
   }
   .chip.accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
   .chip .chip-k { color: var(--text-muted); font-weight: 500; opacity: .8; }
@@ -190,6 +200,37 @@
 
   main.content { min-width: 0; }
 
+  /* ---- In-page outline ---- */
+  .page-outline {
+    position: sticky; top: calc(var(--header-h, 76px) + 8px); z-index: 20;
+    display: flex; align-items: center; gap: 10px; min-width: 0;
+    margin: 0 0 18px; padding: 8px 10px;
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    border: 1px solid var(--border); border-radius: 11px; box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+  }
+  .page-outline-label {
+    flex: 0 0 auto; padding: 0 4px; color: var(--text-muted);
+    font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em;
+  }
+  .page-outline-links {
+    display: flex; gap: 4px; min-width: 0; overflow-x: auto;
+    scrollbar-width: thin; overscroll-behavior-inline: contain;
+  }
+  .page-outline-link {
+    flex: 0 0 auto; padding: 5px 9px; border: 1px solid transparent;
+    border-radius: 7px; color: var(--text-muted); font-size: .76rem;
+    font-weight: 650; line-height: 1.25; text-decoration: none; white-space: nowrap;
+    transition: color .12s ease, background-color .12s ease, border-color .12s ease;
+  }
+  .page-outline-link:hover { color: var(--text); background: var(--surface-2); }
+  .page-outline-link:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .page-outline-link[aria-current="location"] {
+    color: var(--accent); background: var(--accent-soft);
+    border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
+  }
+  .page-section { scroll-margin-top: calc(var(--header-h, 76px) + 64px); }
+
   /* ---- Cards / sections ---- */
   .card {
     background: var(--surface); border: 1px solid var(--border);
@@ -197,6 +238,7 @@
     padding: 18px 20px; margin-bottom: 18px;
   }
   .view-title { margin: 0 0 4px; font-size: 1.5rem; font-weight: 700; letter-spacing: -.01em; }
+  .view-title:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
   .view-sub { color: var(--text-muted); margin: 0 0 4px; font-size: .95rem; }
 
   .section-title {
@@ -222,6 +264,63 @@
   tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 45%, transparent); }
   td .cell-strong { font-weight: 600; }
   .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* ---- Leveling guide ---- */
+  .level-table { min-width: 900px; }
+  .level-table thead th { position: sticky; top: 0; z-index: 2; }
+  .level-table tbody tr { transition: background-color .14s ease; }
+  .level-table tbody tr:hover td {
+    background: color-mix(in srgb, var(--accent-soft) 40%, var(--surface));
+  }
+  .level-number {
+    display: inline-grid; place-items: center; width: 28px; height: 28px;
+    border-radius: 999px; background: var(--accent); color: var(--accent-text);
+    font-size: .76rem; line-height: 1; font-weight: 800;
+  }
+  .level-gain-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+  .level-gain-list li { position: relative; margin: 0; padding-left: 14px; line-height: 1.35; }
+  .level-gain-list li::before {
+    content: ""; position: absolute; left: 1px; top: .52em; width: 5px; height: 5px;
+    border-radius: 50%; background: var(--text-muted);
+  }
+  .level-class {
+    display: flex; align-items: center; gap: 7px; min-width: 118px;
+  }
+  .level-choice-list {
+    display: grid; gap: 6px; min-width: 300px;
+  }
+  .level-choice {
+    position: relative; display: grid;
+    grid-template-columns: minmax(112px, 134px) minmax(0, 1fr) 24px;
+    min-height: 38px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface); transition: border-color .14s ease, box-shadow .14s ease;
+  }
+  .level-choice:hover, .level-choice:focus-visible, .level-choice:focus-within {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+  .level-choice:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .level-choice:not(.has-detail) {
+    grid-template-columns: minmax(112px, 134px) minmax(0, 1fr);
+  }
+  .level-choice-category {
+    display: flex; align-items: center; gap: 6px;
+    border-radius: 7px 0 0 7px;
+    padding: 6px 8px; background: var(--surface-2); color: var(--accent);
+    font-size: .66rem; line-height: 1.3; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .05em;
+  }
+  .level-choice-body { display: flex; align-items: center; min-width: 0; padding: 5px 8px; }
+  .level-choice-recommendation { font-weight: 600; overflow-wrap: anywhere; }
+  .detail-cue {
+    align-self: center; display: inline-grid; place-items: center; width: 18px; height: 18px;
+    border: 1px solid var(--border); border-radius: 999px; color: var(--accent);
+    background: var(--accent-soft); font-size: .68rem; line-height: 1; font-weight: 800;
+  }
+  .level-choice > .detail-cue { margin-right: 6px; }
+  .section-hint {
+    margin: -3px 0 12px; color: var(--text-muted); font-size: .8rem; line-height: 1.4;
+  }
 
   /* ---- Definition grid ---- */
   .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 20px; margin: 0; }
@@ -254,10 +353,111 @@
     border-radius: 8px; padding: 4px 10px; font-size: .84rem; font-weight: 500;
   }
 
-  /* ---- Itemization columns ---- */
-  .acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-  .act-col { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
-  .act-col h4 { margin: 0 0 8px; font-size: .82rem; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+  /* ---- Itemization guide ---- */
+  .itemization-tabs > .tabs { margin-bottom: 14px; }
+  .itemization-note { margin: -2px 0 12px; font-size: .8rem; }
+  .item-slot-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px; align-items: start;
+  }
+  .item-slot {
+    min-width: 0; background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px;
+    transition: border-color .14s ease, box-shadow .14s ease;
+  }
+  .item-slot:hover {
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+    box-shadow: 0 7px 20px rgba(28, 24, 44, .08);
+  }
+  .item-slot h4 {
+    margin: 0 0 8px; font-size: .72rem; color: var(--accent);
+    text-transform: uppercase; letter-spacing: .07em;
+  }
+  .card-heading {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-count {
+    display: inline-grid; place-items: center; min-width: 20px; height: 20px;
+    margin-left: auto; padding: 0 6px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text-muted);
+    font-size: .62rem; font-weight: 800; letter-spacing: 0; font-variant-numeric: tabular-nums;
+  }
+  .card-icon {
+    display: inline-grid; place-items: center; flex: 0 0 27px;
+    width: 27px; height: 27px; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--accent-soft); color: var(--accent);
+    font-family: "Segoe UI Symbol", "Segoe UI Emoji", "Noto Sans Symbols 2", sans-serif;
+    font-size: .92rem; line-height: 1; letter-spacing: 0; text-transform: none;
+  }
+  .level-class .card-icon {
+    flex-basis: 25px; width: 25px; height: 25px; font-size: .82rem;
+  }
+  .level-choice-category .card-icon {
+    flex-basis: 23px; width: 23px; height: 23px;
+    border-radius: 7px; background: var(--surface); font-size: .76rem;
+  }
+  .item-slot ul.checklist li.ck-li {
+    align-items: center; overflow: visible; padding: 7px 4px; border-radius: 7px;
+    transition: background-color .12s ease;
+  }
+  .item-slot ul.checklist li.ck-li:hover {
+    background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
+  }
+  .item-slot ul.checklist li.ck-li::before { display: none; }
+  .item-tip-wrap { position: relative; display: inline-flex; align-items: baseline; min-width: 0; max-width: 100%; }
+  .item-details {
+    display: inline-grid; place-items: center; width: 18px; height: 18px;
+    margin-left: 4px; padding: 0; border: 1px solid var(--border); border-radius: 999px;
+    color: var(--accent); background: var(--surface); font: inherit; font-size: .62rem;
+    line-height: 1; font-weight: 800; cursor: help; flex: 0 0 auto;
+  }
+  .item-details:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .item-details:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .item-name {
+    appearance: none; background: none; border: 0; border-bottom: 1px dotted var(--accent);
+    color: var(--text); padding: 1px 0; max-width: 100%; overflow-wrap: anywhere;
+    font: inherit; font-weight: 600; text-align: left;
+    cursor: help;
+  }
+  a.item-name { display: inline; text-decoration: none; cursor: pointer; }
+  .item-name.wiki-item-group { display: inline-block; }
+  .item-name .wiki-item { text-decoration: none; }
+  .item-name:hover { color: var(--accent); }
+  .item-name:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .item-tip {
+    position: fixed; z-index: 1000; left: 16px; top: 16px;
+    width: min(390px, calc(100vw - 32px)); padding: 12px 14px;
+    color: var(--text); background: var(--surface); border: 1px solid var(--border);
+    border-radius: 9px; box-shadow: 0 12px 32px rgba(0,0,0,.32);
+    font-size: .82rem; line-height: 1.45; font-weight: 400;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transform: translateY(4px); transition: opacity .12s ease, transform .12s ease, visibility .12s;
+  }
+  .item-tip-k {
+    display: block; margin-bottom: 7px; color: var(--accent); font-size: .65rem;
+    font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  }
+  .tip-content { display: grid; gap: 7px; }
+  .tip-summary { display: block; color: var(--text); }
+  .tip-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 9px; }
+  .tip-fact { display: contents; }
+  .tip-fact-k {
+    color: var(--text-muted); font-size: .65rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .04em; white-space: nowrap;
+  }
+  .tip-fact-v { min-width: 0; color: var(--text); }
+  .item-tip-wrap:hover .item-tip,
+  .item-tip-wrap:focus-within .item-tip,
+  .item-tip-wrap.tip-pinned .item-tip,
+  .level-choice:hover > .item-tip,
+  .level-choice:focus-within > .item-tip,
+  .level-choice:focus-visible > .item-tip {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .item-tip-wrap.tip-dismissed .item-tip,
+  .level-choice.tip-dismissed > .item-tip {
+    opacity: 0 !important; visibility: hidden !important; transform: translateY(4px) !important;
+  }
 
   /* ---- Meters ---- */
   .meters { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
@@ -299,19 +499,27 @@
 
   .subgrid { display: grid; gap: 18px; }
   @media (min-width: 780px) { .subgrid.two { grid-template-columns: 1fr 1fr; align-items: start; } }
-  /* Leveling (emphasised, wider) | Spells (one column, grouped by level) */
-  @media (min-width: 1024px) {
-    .lvl-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; align-items: start; }
-    .lvl-grid.solo { grid-template-columns: 1fr; }
-  }
-  .lvl-grid > .lvl-main, .lvl-grid > .prio-col { min-width: 0; }
-  .lvl-grid .prio-col .section-title { margin-top: 0; }
   ul.priority { list-style: none; padding-left: 0; margin: 4px 0 0; }
   ul.priority li { padding: 3px 0; line-height: 1.35; }
-  .spell-group + .spell-group { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); }
-  .spell-group-h { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); margin-bottom: 2px; }
-  .lvl1-foot { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); font-size: .82rem; color: var(--text-muted); display: grid; gap: 4px; }
-  .lvl1-foot .li-strong { color: var(--text); }
+  .spell-list-note { margin: -2px 0 12px; font-size: .8rem; }
+  .spell-plan-legend {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 7px;
+    margin: -4px 0 14px; color: var(--text-muted); font-size: .78rem;
+  }
+  .spell-entry-main { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; min-width: 0; }
+  .spell-plan-badge {
+    display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;
+    padding: 2px 6px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+    border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+    font-size: .64rem; line-height: 1.2; font-weight: 700; white-space: nowrap;
+  }
+  .spell-level-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .spell-level .item-name { font-weight: 600; }
+  .spell-checklist .spell-planned {
+    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  .spell-checklist .spell-alternative .item-name { color: color-mix(in srgb, var(--text) 78%, var(--text-muted)); }
+  .spell-checklist .spell-alternative:hover .item-name { color: var(--text); }
   .has-hover { border-bottom: 1px dotted var(--text-muted); cursor: help; }
   .prio-key { font-weight: 700; color: var(--text); border-bottom-color: var(--accent); }
   .stat-base { text-decoration: line-through; color: var(--text-muted); font-size: .7em; margin-right: 5px; opacity: .75; }
@@ -327,8 +535,37 @@
     .nav-group-h { width: 100%; margin: 6px 6px 2px; }
     .nav-item.nav-item-sub { padding-left: 12px; }
     .nav-item .nav-sub { display: none; }
+    .page-outline { margin-inline: 0; }
+    .page-outline-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .level-table-wrap { border: 0; overflow: visible; background: transparent; }
+    .level-table, .level-table tbody { display: block; min-width: 0; }
+    .level-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .level-table tbody { display: grid; gap: 12px; }
+    .level-table tbody tr {
+      position: relative; display: grid; grid-template-columns: 46px minmax(0, 1fr);
+      border: 1px solid var(--border); border-radius: 11px; overflow: visible;
+      background: var(--surface);
+    }
+    .level-table tbody td { display: block; border: 0; background: transparent !important; }
+    .level-table .level-check-cell {
+      position: absolute; top: 13px; right: 12px; width: auto; padding: 0;
+    }
+    .level-table .level-number-cell { padding: 10px 6px 8px 10px; }
+    .level-table .level-class-cell { padding: 11px 42px 8px 2px; }
+    .level-table .level-gains-cell, .level-table .level-recommendations-cell {
+      grid-column: 1 / -1; padding: 10px 12px;
+      border-top: 1px solid var(--border);
+    }
+    .level-table .level-gains-cell::before, .level-table .level-recommendations-cell::before {
+      content: attr(data-label); display: block; margin-bottom: 7px; color: var(--text-muted);
+      font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
+    }
+    .level-choice-list { min-width: 0; }
   }
   @media (max-width: 480px) {
+    .item-slot-grid { grid-template-columns: 1fr; }
+    .level-choice { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr) 24px; }
+    .level-choice:not(.has-detail) { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr); }
     .header-inner { padding: 12px 14px; }
     .toptabs-bar { padding: 0 14px; }
     .card { padding: 14px; }
@@ -413,23 +650,31 @@ async function loadProgress() {
 }
 function isChecked(key) { return !!PROGRESS[key]; }
 async function setChecked(key, checked) {
+  const previous = !!PROGRESS[key];
   if (checked) PROGRESS[key] = true;
   else delete PROGRESS[key];
   try {
-    await fetch("/api/progress", {
+    const res = await fetch("/api/progress", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ key: key, checked: checked }),
     });
+    if (!res.ok) throw new Error("bad status " + res.status);
+    return true;
   } catch (e) {
-    /* keep the in-memory toggle even if the server isn't reachable */
+    if (previous) PROGRESS[key] = true;
+    else delete PROGRESS[key];
+    return false;
   }
 }
 /* A checkbox bound to a checkoff key. */
-function checkbox(key) {
-  const cb = h("input", { type: "checkbox", class: "ck", "aria-label": "Mark done" });
+function checkbox(key, label) {
+  const cb = h("input", { type: "checkbox", class: "ck", "aria-label": label || "Mark item complete" });
   cb.checked = isChecked(key);
-  cb.addEventListener("change", () => setChecked(key, cb.checked));
+  cb.addEventListener("change", async () => {
+    const ok = await setChecked(key, cb.checked);
+    if (!ok) cb.checked = isChecked(key);
+  });
   return cb;
 }
 
@@ -552,14 +797,122 @@ function renderTags(items) {
   );
 }
 
+function cardIcon(symbol) {
+  return h("span", { class: "card-icon", "aria-hidden": "true" }, symbol);
+}
+
+function cardHeading(label, symbol, count) {
+  return h("h4", { class: "card-heading" },
+    cardIcon(symbol),
+    h("span", null, label),
+    count != null ? h("span", { class: "card-count", "aria-label": count + " entries" }, String(count)) : null
+  );
+}
+
+function levelCategoryIcon(category) {
+  const value = String(category).toLowerCase();
+  if (value.includes("cantrip")) return "✧";
+  if (value.includes("feat")) return "★";
+  if (value.includes("spell") || value.includes("magical secrets")) return "✦";
+  if (value.includes("subclass") || value.includes("patron") || value.includes("pact")) return "◆";
+  if (value.includes("metamagic")) return "↻";
+  if (value.includes("expertise")) return "◎";
+  if (value.includes("invocation")) return "◇";
+  if (value.includes("fighting style")) return "⚔";
+  if (value.includes("multiclass")) return "⇄";
+  return "•";
+}
+
+function classIcon(className) {
+  const value = String(className).toLowerCase();
+  if (value.includes("bard")) return "♫";
+  if (value.includes("cleric")) return "✚";
+  if (value.includes("fighter")) return "⚔";
+  if (value.includes("monk")) return "✊";
+  if (value.includes("paladin")) return "🛡";
+  if (value.includes("rogue")) return "🗡";
+  if (value.includes("sorcerer")) return "✦";
+  if (value.includes("warlock")) return "◉";
+  if (value.includes("wizard")) return "⌁";
+  return "◆";
+}
+
+function renderClass(className) {
+  return h("span", { class: "level-class" },
+    cardIcon(classIcon(className)),
+    h("span", null, className)
+  );
+}
+
+function renderLevelGains(gains) {
+  const entries = arr(gains).filter(has);
+  if (!entries.length) return h("span", { class: "muted" }, "—");
+  return h("ul", { class: "level-gain-list" },
+    entries.map((gain) => h("li", null, gain))
+  );
+}
+
+function renderLevelRecommendation(rec) {
+  const category = String(rec.category || "Choice");
+  const values = arr(rec.recommendation).filter(has).map(String);
+  const wikiTitles = arr(rec.wiki).filter(has).map(String);
+  const spellRecommendations = /spell|cantrip|magical secrets/i.test(category);
+  const recommendation = [];
+  values.forEach((value, index) => {
+    if (index) recommendation.push(" · ");
+    const wikiTitle = wikiTitles[index] || (wikiTitles.length === 1 ? wikiTitles[0] : value);
+    recommendation.push(
+      wikiTitles.length
+        ? wikiPageLink(wikiTitle, null, value)
+        : spellRecommendations
+          ? wikiSpellNode(value)
+          : value
+    );
+  });
+  const hasNote = has(rec.note);
+  const tipId = hasNote ? "level-tip-" + (++LEVEL_TIP_SERIAL) : null;
+  const tipNode = hasNote ? h("span", { class: "item-tip", id: tipId, role: "tooltip" },
+    h("span", { class: "item-tip-k" }, "Why this pick"),
+    h("span", { class: "tip-content" }, h("span", { class: "tip-summary" }, rec.note))
+  ) : null;
+  const choice = h("div", {
+    class: "level-choice" + (hasNote ? " has-detail" : ""),
+    tabindex: hasNote ? "0" : null,
+    "aria-describedby": tipId,
+  },
+    h("div", { class: "level-choice-category" },
+      cardIcon(levelCategoryIcon(category)),
+      h("span", null, category)
+    ),
+    h("div", { class: "level-choice-body" },
+      h("div", { class: "level-choice-recommendation" }, recommendation.length ? recommendation : "—")
+    ),
+    hasNote ? h("span", { class: "detail-cue", "aria-hidden": "true" }, "i") : null,
+    tipNode
+  );
+  if (tipNode) attachHoverTip(choice, choice, tipNode);
+  return choice;
+}
+
+let LEVEL_TIP_SERIAL = 0;
+
+function renderLevelRecommendations(recommendations) {
+  const entries = arr(recommendations).filter((rec) => rec && typeof rec === "object");
+  if (!entries.length) return h("span", { class: "muted" }, "No selection required");
+  return h("div", { class: "level-choice-list" }, entries.map(renderLevelRecommendation));
+}
+
 function renderLevelingTable(rows, keyPrefix) {
-  return tableWrap(
+  const wrapped = tableWrap(
     h(
       "table",
-      null,
+      { class: "level-table" },
       h("thead", null, h("tr", null,
         keyPrefix ? h("th", { scope: "col", class: "ck-col" }, "✓") : null,
-        h("th", { scope: "col" }, "Lvl"), h("th", { scope: "col" }, "Class"), h("th", { scope: "col" }, "Gains"))),
+        h("th", { scope: "col" }, "Lvl"),
+        h("th", { scope: "col" }, "Class"),
+        h("th", { scope: "col" }, "Automatic gains"),
+        h("th", { scope: "col" }, "Recommended choices"))),
       h(
         "tbody",
         null,
@@ -567,15 +920,18 @@ function renderLevelingTable(rows, keyPrefix) {
           h(
             "tr",
             null,
-            keyPrefix ? h("td", { class: "ck-col" }, checkbox(keyPrefix + "/" + r.char_level)) : null,
-            h("td", { class: "num cell-strong" }, r.char_level),
-            h("td", { class: "cell-strong" }, r.class),
-            h("td", null, r.gains)
+            keyPrefix ? h("td", { class: "ck-col level-check-cell" }, checkbox(keyPrefix + "/" + r.char_level, "Mark character level " + r.char_level + " complete")) : null,
+            h("td", { class: "num cell-strong level-number-cell" }, h("span", { class: "level-number" }, r.char_level)),
+            h("td", { class: "cell-strong level-class-cell" }, renderClass(r.class)),
+            h("td", { class: "level-gains-cell", "data-label": "Automatic gains" }, renderLevelGains(r.gains)),
+            h("td", { class: "level-recommendations-cell", "data-label": "Recommended choices" }, renderLevelRecommendations(r.recommendations))
           )
         )
       )
     )
   );
+  wrapped.className += " level-table-wrap";
+  return wrapped;
 }
 
 /* Leveling can be a flat array (single table) or { respecs: [...] }. A respec
@@ -601,37 +957,301 @@ function renderLeveling(lv, idHint, keyRoot) {
   return h("div");
 }
 
-/* A checkable itemization list. Entries are either bare strings (pre-migration)
-   or { id, item, note } objects (post-migration); both render the same and get
-   a stable checkoff key. */
+const ITEM_SLOT_ORDER = ["Weapons", "Shields", "Armour", "Head", "Hands", "Feet", "Cloaks", "Amulets", "Rings", "Consumables", "Other"];
+const ITEM_SLOT_ICONS = {
+  Weapons: "⚔",
+  Shields: "⛨",
+  Armour: "🛡",
+  Head: "⛑",
+  Hands: "🧤",
+  Feet: "🥾",
+  Cloaks: "🧥",
+  Amulets: "♦",
+  Rings: "◉",
+  Consumables: "⚗",
+  Other: "✦",
+};
+
+function itemSlotIcon(slot) {
+  return ITEM_SLOT_ICONS[slot] || ITEM_SLOT_ICONS.Other;
+}
+
+/* Prefer an explicit content slot, but classify legacy entries so older content
+   remains useful. This is intentionally presentation-only; checklist keys still
+   derive from the content IDs. */
+function itemSlot(entry) {
+  if (entry && typeof entry === "object" && has(entry.slot)) return humanize(entry.slot);
+  const text = String(entry && typeof entry === "object" ? (entry.item || entry.id || "") : entry).toLowerCase();
+  const hasAny = (words) => words.some((word) => text.includes(word));
+  if (hasAny(["bow", "blade", "pike", "sword", "staff", "markoheshkir", "phalar", "weapon"])) return "Weapons";
+  if (hasAny(["shield", "warboard"])) return "Shields";
+  if (hasAny(["armour", "armor", "robe", "cloth", "mail"])) return "Armour";
+  if (hasAny(["helmet", "helm", "head", "cowl", "mask", "diadem", "birthright", "hat"])) return "Head";
+  if (hasAny(["glove", "bracer", "gauntlet"])) return "Hands";
+  if (hasAny(["boot", "night walker", "shoes"])) return "Feet";
+  if (hasAny(["cloak", "mantle", "cape"])) return "Cloaks";
+  if (hasAny(["amulet", "neck", "periapt"])) return "Amulets";
+  if (hasAny(["ring", "band"])) return "Rings";
+  if (hasAny(["elixir", "potion", "hair"])) return "Consumables";
+  return "Other";
+}
+
+function tooltipContent(summary, facts) {
+  const rows = arr(facts).filter((fact) => fact && has(fact[1]));
+  return h("span", { class: "tip-content" },
+    has(summary) ? h("span", { class: "tip-summary" }, summary) : null,
+    rows.length ? h("span", { class: "tip-facts" },
+      rows.map((fact) => h("span", { class: "tip-fact" },
+        h("span", { class: "tip-fact-k" }, fact[0]),
+        h("span", { class: "tip-fact-v" }, fact[1])
+      ))
+    ) : null
+  );
+}
+
+function itemTip(entry) {
+  if (!entry || typeof entry !== "object") return null;
+  const effect = has(entry.effect) ? String(entry.effect) : null;
+  const why = has(entry.why) ? String(entry.why) : null;
+  const note = has(entry.note) ? String(entry.note) : null;
+  const summary = why || (!effect ? note : null);
+  const facts = [
+    ["Effect", effect],
+    ["Note", note && note !== summary && note !== effect ? note : null],
+  ];
+  return summary || effect ? tooltipContent(summary, facts) : null;
+}
+
+const BG3_WIKI_ROOT = "https://bg3.wiki/wiki/";
+
+function bg3WikiUrl(title) {
+  return BG3_WIKI_ROOT + encodeURIComponent(title).replace(/%20/g, "_");
+}
+
+function wikiPageLink(title, attrs, label) {
+  const linkAttrs = Object.assign({
+    href: bg3WikiUrl(title),
+    target: "_blank",
+    rel: "noopener noreferrer",
+    title: "Open " + title + " on bg3.wiki",
+  }, attrs || {});
+  linkAttrs.class = ["wiki-item", attrs && attrs.class].filter(Boolean).join(" ");
+  delete linkAttrs.type;
+  if (linkAttrs["aria-describedby"]) delete linkAttrs.title;
+  return h("a", linkAttrs, label || title);
+}
+
+/* Content may provide `wiki: false`, one page title, or a list of page titles. */
+function wikiItemNode(entry, attrs, linkByDefault = true) {
+  const isObj = entry && typeof entry === "object";
+  const label = String(isObj ? entry.item || entry.name || "" : entry);
+  const configured = isObj ? entry.wiki : undefined;
+  if (configured === false || (!linkByDefault && configured == null)) return null;
+  const titles = configured == null ? [label] : arr(configured).filter(has).map(String);
+  if (!titles.length) return null;
+  if (titles.length > 1) {
+    const groupAttrs = Object.assign({}, attrs || {});
+    groupAttrs.class = ["wiki-item-group", attrs && attrs.class].filter(Boolean).join(" ");
+    delete groupAttrs.type;
+    const linkAttrs = groupAttrs["aria-describedby"]
+      ? { "aria-describedby": groupAttrs["aria-describedby"] }
+      : null;
+    const links = [];
+    titles.forEach((title, i) => {
+      if (i) links.push(" + ");
+      links.push(wikiPageLink(title, linkAttrs));
+    });
+    return h("span", groupAttrs, links);
+  }
+  return wikiPageLink(titles[0], attrs, label);
+}
+
+function positionItemTip(button, tip) {
+  if (!button || !tip) return;
+  const gap = 9;
+  const edge = 16;
+  const header = document.querySelector("header.app");
+  const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+  const buttonRect = button.getBoundingClientRect();
+  const width = Math.min(390, Math.max(180, window.innerWidth - edge * 2));
+  tip.style.width = width + "px";
+  // visibility:hidden still has layout, so the real wrapped height is available.
+  const height = tip.offsetHeight;
+  const centered = buttonRect.left + buttonRect.width / 2 - width / 2;
+  const left = Math.max(edge, Math.min(centered, window.innerWidth - width - edge));
+  const above = buttonRect.top - height - gap;
+  const below = buttonRect.bottom + gap;
+  const minTop = Math.max(edge, headerBottom + 8);
+  const maxTop = Math.max(minTop, window.innerHeight - height - edge);
+  let top = above >= minTop ? above : below;
+  if (top + height > window.innerHeight - edge && above >= minTop) top = above;
+  tip.style.left = left + "px";
+  tip.style.top = Math.max(minTop, Math.min(top, maxTop)) + "px";
+}
+
+let ACTIVE_HOVER_TIP = null;
+let HOVER_TIP_FRAME = 0;
+
+function scheduleHoverTipPosition() {
+  if (!ACTIVE_HOVER_TIP || HOVER_TIP_FRAME) return;
+  HOVER_TIP_FRAME = window.requestAnimationFrame(() => {
+    HOVER_TIP_FRAME = 0;
+    if (!ACTIVE_HOVER_TIP) return;
+    const { anchor, tipNode } = ACTIVE_HOVER_TIP;
+    if (!anchor.isConnected || !tipNode.isConnected) {
+      ACTIVE_HOVER_TIP = null;
+      return;
+    }
+    positionItemTip(anchor, tipNode);
+  });
+}
+
+window.addEventListener("scroll", scheduleHoverTipPosition, true);
+window.addEventListener("resize", scheduleHoverTipPosition);
+
+function attachHoverTip(host, anchor, tipNode) {
+  if (!host || !anchor || !tipNode) return;
+  const reveal = () => {
+    host.classList.remove("tip-dismissed");
+    ACTIVE_HOVER_TIP = { host, anchor, tipNode };
+    positionItemTip(anchor, tipNode);
+  };
+  const release = () => {
+    window.requestAnimationFrame(() => {
+      if (!ACTIVE_HOVER_TIP || ACTIVE_HOVER_TIP.host !== host) return;
+      if (host.classList.contains("tip-pinned")) return;
+      if (!host.matches(":hover") && !host.contains(document.activeElement)) ACTIVE_HOVER_TIP = null;
+    });
+  };
+  host.addEventListener("mouseenter", reveal);
+  host.addEventListener("focusin", reveal);
+  host.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") {
+      ev.preventDefault();
+      host.classList.remove("tip-pinned");
+      const details = host.querySelector(".item-details");
+      if (details) details.setAttribute("aria-expanded", "false");
+      host.classList.add("tip-dismissed");
+      if (ACTIVE_HOVER_TIP && ACTIVE_HOVER_TIP.host === host) ACTIVE_HOVER_TIP = null;
+    }
+  });
+  host.addEventListener("mouseleave", () => {
+    host.classList.remove("tip-dismissed");
+    release();
+  });
+  host.addEventListener("focusout", () => {
+    host.classList.remove("tip-dismissed");
+    release();
+  });
+}
+
+/* Shared linked-name tooltip used by both item and spell checklists. */
+function linkedNameTip(label, linkedNode, tip, tipId, heading) {
+  const tipNode = tip ? h("span", { class: "item-tip", id: tipId, role: "tooltip" },
+    h("span", { class: "item-tip-k" }, heading),
+    tip
+  ) : null;
+  const nameControl = linkedNode || h("button", {
+    class: "item-name", type: "button",
+    "aria-describedby": tip ? tipId : null,
+    title: tip ? null : "No details provided",
+  }, label);
+  const detailsControl = tipNode ? h("button", {
+    class: "item-details", type: "button",
+    "aria-label": "Show details for " + label,
+    "aria-describedby": tipId,
+    "aria-expanded": "false",
+  }, "i") : null;
+  const tipWrap = h("span", { class: "item-tip-wrap" + (tipNode ? " has-tip" : "") },
+    nameControl, detailsControl, tipNode);
+  if (tipNode) {
+    attachHoverTip(tipWrap, detailsControl, tipNode);
+    detailsControl.addEventListener("click", () => {
+      const pinned = tipWrap.classList.toggle("tip-pinned");
+      detailsControl.setAttribute("aria-expanded", String(pinned));
+      if (pinned) {
+        document.querySelectorAll(".item-tip-wrap.tip-pinned").forEach((other) => {
+          if (other === tipWrap) return;
+          other.classList.remove("tip-pinned");
+          const otherButton = other.querySelector(".item-details");
+          if (otherButton) otherButton.setAttribute("aria-expanded", "false");
+        });
+        ACTIVE_HOVER_TIP = { host: tipWrap, anchor: detailsControl, tipNode };
+        positionItemTip(detailsControl, tipNode);
+      } else if (ACTIVE_HOVER_TIP && ACTIVE_HOVER_TIP.host === tipWrap) {
+        ACTIVE_HOVER_TIP = null;
+      }
+    });
+  }
+  return tipWrap;
+}
+
+/* A checkable, slot-grouped item list. The visible row is deliberately only the
+   item name; effect and build rationale live in an accessible hover/focus bubble. */
 function itemChecklist(entries, act, keyRoot) {
   return h(
     "ul",
     { class: "clean checklist" },
     entries.map((entry, i) => {
       const isObj = entry && typeof entry === "object";
-      const label = isObj ? entry.note || entry.item || "" : String(entry);
+      const label = isObj ? entry.item || entry.note || "" : String(entry);
+      const tip = itemTip(entry);
       const id = isObj && entry.id ? entry.id : (slug(label).slice(0, 60) || "i" + i);
       const key = keyRoot ? "item:" + keyRoot + "/" + act + "/" + id : null;
-      return h("li", { class: "ck-li" }, key ? checkbox(key) : null, h("span", null, label));
+      const tipId = "item-tip-" + slug(keyRoot || "build") + "-" + slug(act) + "-" + slug(id) + "-" + i;
+      const nameLink = wikiItemNode(entry, {
+        class: "item-name", type: "button",
+        "aria-describedby": tip ? tipId : null,
+      });
+      const tipWrap = linkedNameTip(label, nameLink, tip, tipId, "What it does & why it fits");
+      return h(
+        "li",
+        { class: "ck-li" },
+        key ? checkbox(key, "Mark " + label + " acquired") : null,
+        tipWrap
+      );
     })
   );
 }
 
+function itemActPanel(entries, act, keyRoot) {
+  const groups = new Map();
+  arr(entries).forEach((entry) => {
+    const slot = itemSlot(entry);
+    if (!groups.has(slot)) groups.set(slot, []);
+    groups.get(slot).push(entry);
+  });
+  const slots = Array.from(groups.keys()).sort((a, b) => {
+    const ai = ITEM_SLOT_ORDER.indexOf(a);
+    const bi = ITEM_SLOT_ORDER.indexOf(b);
+    return (ai < 0 ? ITEM_SLOT_ORDER.length : ai) - (bi < 0 ? ITEM_SLOT_ORDER.length : bi) || a.localeCompare(b);
+  });
+  return h(
+    "div",
+    { class: "item-slot-grid" },
+    slots.map((slot) => h("section", { class: "item-slot" },
+      cardHeading(slot, itemSlotIcon(slot), groups.get(slot).length),
+      itemChecklist(groups.get(slot), act, keyRoot)
+    ))
+  );
+}
+
 function renderItemization(it, keyRoot) {
-  const cols = [];
-  ["act1", "act2", "act3"].forEach((key, i) => {
-    if (has(it[key])) {
-      cols.push(h("div", { class: "act-col" }, h("h4", null, "Act " + (i + 1)), itemChecklist(arr(it[key]), key, keyRoot)));
-    }
-  });
-  // include any unexpected extra keys gracefully
-  Object.keys(it).forEach((key) => {
-    if (!["act1", "act2", "act3"].includes(key) && has(it[key])) {
-      cols.push(h("div", { class: "act-col" }, h("h4", null, humanize(key)), itemChecklist(arr(it[key]), key, keyRoot)));
-    }
-  });
-  return h("div", { class: "acts" }, cols);
+  const standard = ["act1", "act2", "act3"];
+  const keys = standard.filter((key) => has(it[key])).concat(
+    Object.keys(it).filter((key) => !standard.includes(key) && has(it[key]))
+  );
+  const entries = keys.map((key) => ({
+    label: /^act([123])$/.test(key) ? "Act " + key.slice(-1) : humanize(key),
+    count: arr(it[key]).length,
+    content: itemActPanel(it[key], key, keyRoot),
+  }));
+  return h(
+    "div",
+    { class: "itemization-tabs" },
+    h("p", { class: "muted itemization-note" }, "Each tab shows gear added or changed in that act. Keep earlier items until explicitly replaced; hover or focus a name for its effect and build rationale."),
+    miniTabs("items-" + slug(keyRoot || "build"), entries, "Itemization by act")
+  );
 }
 
 function renderScores(scores) {
@@ -658,19 +1278,6 @@ function renderScores(scores) {
       );
     })
   );
-}
-
-function renderLateGame(cfg) {
-  const kids = [];
-  if (has(cfg.note)) kids.push(h("p", { class: "prose muted", style: "margin:0 0 10px" }, cfg.note));
-  const dl = h("dl", { class: "facts" });
-  Object.keys(cfg).forEach((k) => {
-    if (k === "note") return;
-    if (!has(cfg[k])) return;
-    dl.appendChild(h("div", { class: "fact" }, h("dt", null, humanize(k)), h("dd", null, cfg[k])));
-  });
-  if (dl.children.length) kids.push(dl);
-  return h("div", null, kids);
 }
 
 function renderNova(nova) {
@@ -752,91 +1359,102 @@ function renderCreation(c) {
 }
 
 /* ---------------- Spell selection (mandatory / recommended) ---------------- */
-function renderSpellEntry(s) {
-  const bits = [];
-  if (has(s.level)) bits.push(s.level);
-  if (has(s.school)) bits.push(s.school);
-  if (has(s.save)) bits.push(s.save);
-  if (has(s.when)) bits.push(s.when);
-  const meta = bits.join(" · ");
-  return h(
-    "li",
-    null,
-    h("span", { class: "li-strong" }, s.spell),
-    meta ? h("div", { class: "li-meta" }, meta) : null,
-    has(s.why) ? h("div", { class: "li-meta" }, richText(s.why)) : null
-  );
-}
-function renderSpells(sp) {
-  const wrap = h("div", null);
-  if (has(sp.note)) wrap.appendChild(h("p", { class: "prose muted", style: "margin-top:0;font-size:.85rem" }, sp.note));
-  const cols = [];
-  if (has(sp.mandatory)) cols.push(h("div", null, subhead("Mandatory"), bulletList(sp.mandatory.map(renderSpellEntry))));
-  if (has(sp.recommended)) cols.push(h("div", null, subhead("Recommended"), bulletList(sp.recommended.map(renderSpellEntry))));
-  wrap.appendChild(h("div", { class: "subgrid two" }, cols));
-  return wrap;
+function wikiSpellNode(spell, attrs) {
+  const isObj = spell && typeof spell === "object";
+  const label = String(isObj ? spell.spell : spell);
+  const title = isObj && has(spell.wiki) ? String(spell.wiki) : label;
+  return wikiPageLink(title, attrs, label);
 }
 
-/* Priority columns: split a build's spells into choosable cantrips vs leveled
-   spells (class FEATURES like Divine Smite / Flurry keep a "Feature"/"Ki" level
-   and are excluded here — they live in the Leveling gains). Each entry shows the
-   NAME only; level/school/save/when + why go in a hover tooltip. Entries drawn
-   from `mandatory` are the build-defining picks and get emphasised. */
-function splitSpells(sp) {
-  const tag = (list, key) => arr(list).map((s) => Object.assign({ __key: key }, s));
-  const all = tag(sp.mandatory, true).concat(tag(sp.recommended, false));
-  const lvlOf = (s) => String(s.level == null ? "" : s.level).trim();
-  return {
-    cantrips: all.filter((s) => /cantrip/i.test(lvlOf(s))),
-    spells: all.filter((s) => /^[1-6]$/.test(lvlOf(s))),
-  };
+/* Itemization-style spell lists. Class features with non-numeric levels stay
+   out of this view because they already appear in Leveling. */
+function spellTip(s) {
+  return tooltipContent(has(s.why) ? String(s.why) : null, [
+    ["School", has(s.school) ? String(s.school) : null],
+    ["Save / roll", has(s.save) ? String(s.save) : null],
+    ["Available", has(s.when) ? String(s.when) : null],
+  ]);
 }
-function renderPriorityList(entries) {
+
+function isChoosableSpell(s) {
+  const level = String(s && s.level != null ? s.level : "").trim();
+  return /cantrip/i.test(level) || /^[1-6]$/.test(level);
+}
+
+function spellChecklist(entries) {
   return h(
     "ul",
-    { class: "clean priority" },
-    entries.map((s) => {
-      const lvl = String(s.level == null ? "" : s.level).trim();
-      const bits = [];
-      if (lvl) bits.push(/^[1-6]$/.test(lvl) ? "Lvl " + lvl : lvl);
-      if (has(s.school)) bits.push(s.school);
-      if (has(s.save)) bits.push(s.save);
-      if (has(s.when)) bits.push(s.when);
-      const tip = (bits.join(" · ") + (has(s.why) ? "\n\n" + s.why : "")).trim();
-      return h("li", null, h("span", { class: "has-hover" + (s.__key ? " prio-key" : ""), title: tip || null }, s.spell));
+    { class: "clean checklist spell-checklist" },
+    entries.map((s, i) => {
+      const label = String(s.spell);
+      const id = slug(label).slice(0, 60) || "s" + i;
+      const tip = spellTip(s);
+      const tipId = "spell-tip-" + id + "-" + i;
+      const nameLink = wikiSpellNode(s, {
+        class: "item-name spell-name",
+        "aria-describedby": tip ? tipId : null,
+      });
+      const planLevel = s.guide_level;
+      return h("li", { class: "ck-li " + (planLevel != null ? "spell-planned" : "spell-alternative") },
+        h("span", { class: "spell-entry-main" },
+          linkedNameTip(label, nameLink, tip, tipId, "Spell details & build use"),
+          planLevel != null
+            ? h("span", {
+                class: "spell-plan-badge",
+                title: "Included in the leveling guide at character level " + planLevel,
+                "aria-label": "Leveling-guide pick at character level " + planLevel,
+              }, h("span", { "aria-hidden": "true" }, "◆"), "Lv " + planLevel)
+            : null
+        )
+      );
     })
   );
 }
-/* One spell column divided by spell level: Cantrips, then Level 1..6. Class
-   features (level "Feature"/"Ki"/etc.) are excluded — they live in Leveling. */
-function renderSpellsByLevel(sp) {
-  const tag = (list, key) => arr(list).map((s) => Object.assign({ __key: key }, s));
-  const all = tag(sp.mandatory, true).concat(tag(sp.recommended, false));
+
+function spellLevelPanel(entries) {
   const lvlOf = (s) => String(s.level == null ? "" : s.level).trim();
   const groups = [];
-  const cantrips = all.filter((s) => /cantrip/i.test(lvlOf(s)));
+  const cantrips = entries.filter((s) => /cantrip/i.test(lvlOf(s)));
   if (cantrips.length) groups.push(["Cantrips", cantrips]);
-  for (let L = 1; L <= 6; L++) {
-    const g = all.filter((s) => lvlOf(s) === String(L));
-    if (g.length) groups.push(["Level " + L, g]);
+  for (let level = 1; level <= 6; level++) {
+    const matches = entries.filter((s) => lvlOf(s) === String(level));
+    if (matches.length) groups.push(["Level " + level, matches]);
   }
-  if (!groups.length) return null;
-  return h("div", { class: "spell-groups" }, groups.map(([label, entries]) =>
-    h("div", { class: "spell-group" }, h("div", { class: "spell-group-h" }, label), renderPriorityList(entries))));
+  return h("div", { class: "item-slot-grid spell-level-grid" },
+    groups.map(([label, levelEntries]) =>
+      h("section", { class: "item-slot spell-level" },
+        cardHeading(label, label === "Cantrips" ? "✧" : "✦", levelEntries.length),
+        spellChecklist(levelEntries)
+      )
+    )
+  );
 }
-/* Concise Level-1 proficiencies footnote shown under the leveling table. */
-function renderLvl1Footnote(c) {
-  const rows = [];
-  const add = (k, v) => { if (has(v)) rows.push(h("div", null, h("span", { class: "li-strong" }, k + ": "), v)); };
-  if (c.proficiencies) {
-    add("Saves", c.proficiencies.saving_throws);
-    add("Skills", c.proficiencies.skills);
-    add("Armour & weapons", c.proficiencies.armor_weapons);
-  }
-  add("Starting cantrips", c.starting_cantrips);
-  add("Starting spells", c.starting_spells);
-  if (!rows.length) return null;
-  return h("div", { class: "lvl1-foot" }, h("div", { class: "spell-group-h" }, "Level 1 — proficiencies & spells"), rows);
+
+function combinedSpellEntries(sp) {
+  const seen = new Set();
+  const entries = [];
+  ["mandatory", "recommended", "alternatives"].forEach((listName) => {
+    arr(sp[listName]).filter(isChoosableSpell).forEach((spell) => {
+      const key = String(spell.spell || "").toLowerCase();
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      entries.push(spell);
+    });
+  });
+  return entries;
+}
+
+function renderSpellsByLevel(sp) {
+  const entries = combinedSpellEntries(sp);
+  if (!entries.length) return null;
+  return h("div", { class: "spell-list-ui" },
+    has(sp.note) ? h("p", { class: "muted spell-list-note" }, sp.note) : null,
+    h("div", { class: "spell-plan-legend" },
+      h("span", { class: "spell-plan-badge", "aria-hidden": "true" }, "◆", "Lv N"),
+      h("span", null, "Included in the leveling guide at that character level; unmarked entries are other good choices. Use the info button for details.")
+    ),
+    spellLevelPanel(entries)
+  );
 }
 
 /* ---------------- Pickpocketing dossier ---------------- */
@@ -879,7 +1497,7 @@ function renderPickpocket(pp) {
           "table",
           null,
           h("thead", null, h("tr", null, h("th", { scope: "col" }, "Item"), h("th", { scope: "col" }, "Effect"), h("th", { scope: "col" }, "Where"))),
-          h("tbody", null, pp.gear.map((g) => h("tr", null, h("td", { class: "cell-strong" }, g.item), h("td", null, g.effect), h("td", null, g.where))))
+          h("tbody", null, pp.gear.map((g) => h("tr", null, h("td", { class: "cell-strong" }, wikiItemNode(g) || g.item), h("td", null, g.effect), h("td", null, g.where))))
         )
       )
     );
@@ -965,9 +1583,85 @@ function renderGameplan(gp) {
   return wrap;
 }
 
+const PAGE_OUTLINE_OBSERVERS = [];
+
+function clearPageOutlineObservers() {
+  PAGE_OUTLINE_OBSERVERS.splice(0).forEach((observer) => observer.disconnect());
+}
+
+function addPageOutline(wrap, keyRoot) {
+  const sections = Array.from(wrap.children).filter((node) =>
+    node.matches && node.matches("section.card") && node.querySelector(".section-title")
+  );
+  if (sections.length < 2) return;
+
+  const links = [];
+  sections.forEach((node, index) => {
+    const title = node.querySelector(".section-title");
+    const label = title.textContent.trim();
+    node.classList.add("page-section");
+    node.id = "section-" + slug(keyRoot) + "-" + slug(label) + "-" + index;
+    const link = h("a", {
+      class: "page-outline-link",
+      href: "#" + node.id,
+    }, label);
+    link.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      node.scrollIntoView({ block: "start", behavior: "auto" });
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", "#" + node.id);
+      }
+      setActive(node.id);
+    });
+    links.push({ link, node });
+  });
+
+  const setActive = (id) => {
+    links.forEach(({ link, node }) => {
+      if (node.id === id) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  const nav = h("nav", { class: "page-outline", "aria-label": "On this page" },
+    h("span", { class: "page-outline-label" }, "On this page"),
+    h("span", { class: "page-outline-links" }, links.map(({ link }) => link))
+  );
+  wrap.insertBefore(nav, wrap.firstChild);
+  setActive(sections[0].id);
+
+  if ("IntersectionObserver" in window) {
+    const visible = new Map();
+    const header = document.querySelector("header.app");
+    const headerBottom = header ? Math.round(header.getBoundingClientRect().bottom) : 0;
+    const marker = headerBottom + 58;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => visible.set(entry.target, entry.isIntersecting));
+      const candidates = sections.filter((node) => visible.get(node));
+      if (!candidates.length) return;
+      const passed = candidates
+        .filter((node) => node.getBoundingClientRect().top <= marker + 2)
+        .sort((a, b) => b.getBoundingClientRect().top - a.getBoundingClientRect().top);
+      const current = passed[0] || candidates.sort((a, b) =>
+        a.getBoundingClientRect().top - b.getBoundingClientRect().top
+      )[0];
+      if (current) setActive(current.id);
+    }, {
+      rootMargin: "-" + marker + "px 0px -65% 0px",
+      threshold: [0, 0.01],
+    });
+    sections.forEach((node) => observer.observe(node));
+    PAGE_OUTLINE_OBSERVERS.push(observer);
+  }
+}
+
 function renderBuild(b, charName) {
   const wrap = h("div", { class: "build" });
   const keyRoot = slug(charName || "char") + "/" + slug(b.name || "build");
+
+  // Put the at-a-glance combat loop first so a character page opens with the
+  // decisions the player needs at the table.
+  if (has(b.playstyle)) wrap.appendChild(section("Playstyle", richText(b.playstyle)));
 
   // Overview — role + a couple of identity facts (no build_order / ability_targets;
   // ability boosts moved under Ability scores, level order into Leveling).
@@ -1000,21 +1694,20 @@ function renderBuild(b, charName) {
     wrap.appendChild(cre);
   }
 
-  // Kit tags (no Feats — those are folded into the Leveling gains).
+  // Build-defining tags not already folded into the Leveling gains.
   const kit = [];
-  if (has(b.invocations)) kit.push(section("Invocations", renderTags(b.invocations)));
   if (has(b.metamagic)) kit.push(section("Metamagic", renderTags(b.metamagic)));
   if (has(b.fighting_styles)) kit.push(section("Fighting styles", renderTags(b.fighting_styles)));
   if (has(b.key_abilities)) kit.push(section("Signature abilities", renderTags(b.key_abilities)));
   if (kit.length) wrap.appendChild(h("div", { class: "subgrid two" }, kit));
 
-  // Leveling (emphasised, wider) | Spells (one column, grouped by level). The
-  // Level-1 detail is folded INTO the leveling column — a prepended L1 row on the
-  // flat path plus a concise proficiency footnote — so there's no separate block.
-  // Feats + class features live in the leveling gains; the spell column holds
-  // only choosable cantrips / leveled spells.
-  const lvGrid = [];
-  const levelMain = h("div", { class: "lvl-main" }, h("h3", { class: "section-title" }, "Leveling"));
+  // Level 1 is an explicit row in the structured guide. The legacy prepend keeps
+  // older content usable, while migrated builds separate automatic gains from
+  // recommendations directly in every row.
+  const levelMain = h("div", { class: "lvl-main" },
+    h("h3", { class: "section-title" }, "Leveling"),
+    h("p", { class: "section-hint" }, "Automatic gains are fixed; recommended choices are the picks to make. Hover or focus a choice to see why it fits.")
+  );
   if (has(b.leveling)) {
     let lv = b.leveling;
     if (Array.isArray(lv) && has(b.creation) && has(b.creation.level1_class) && (!lv[0] || lv[0].char_level !== 1)) {
@@ -1022,24 +1715,18 @@ function renderBuild(b, charName) {
     }
     levelMain.appendChild(renderLeveling(lv, b.name, keyRoot));
   }
-  if (has(b.creation)) {
-    const foot = renderLvl1Footnote(b.creation);
-    if (foot) levelMain.appendChild(foot);
-  }
-  lvGrid.push(levelMain);
-  if (has(b.spells)) {
-    const groups = renderSpellsByLevel(b.spells);
-    if (groups) lvGrid.push(h("div", { class: "prio-col" }, h("h3", { class: "section-title" }, "Spells"), groups));
-  }
-  wrap.appendChild(h("section", { class: "card lvl-grid" + (lvGrid.length > 1 ? "" : " solo") }, lvGrid));
+  wrap.appendChild(h("section", { class: "card" }, levelMain));
 
+  if (has(b.spells)) {
+    const spells = renderSpellsByLevel(b.spells);
+    if (spells) wrap.appendChild(section("Spells", spells));
+  }
   if (has(b.itemization)) wrap.appendChild(section("Itemization", renderItemization(b.itemization, keyRoot)));
-  if (has(b.playstyle)) wrap.appendChild(section("Playstyle", richText(b.playstyle)));
   if (has(b.traps)) wrap.appendChild(section("Traps & caveats", bulletList(arr(b.traps))));
   if (has(b.pickpocket)) wrap.appendChild(section("Pickpocketing", renderPickpocket(b.pickpocket)));
-  if (has(b.late_game_config)) wrap.appendChild(section("Late-game configuration", renderLateGame(b.late_game_config)));
   if (has(b.nova)) wrap.appendChild(section("Nova turn", renderNova(b.nova)));
 
+  addPageOutline(wrap, keyRoot);
   return wrap;
 }
 
@@ -1049,8 +1736,7 @@ function renderCharacter(name, builds) {
   const header = h(
     "div",
     { class: "card" },
-    h("h2", { class: "view-title" }, name),
-    builds.length === 1 && has(builds[0].name) ? h("p", { class: "view-sub" }, builds[0].name) : null
+    h("h2", { class: "view-title" }, name)
   );
   container.appendChild(header);
 
@@ -1196,18 +1882,107 @@ function renderItemAllocation(items) {
         "tbody",
         null,
         items.map((it) =>
-          h("tr", null, h("td", { class: "cell-strong" }, it.item), h("td", null, it.to), h("td", null, it.why))
+          h("tr", null, h("td", { class: "cell-strong" }, wikiItemNode(it, null, false) || it.item), h("td", null, it.to), h("td", null, it.why))
         )
       )
     )
   );
 }
 
+function renderAct1Coverage(coverage) {
+  const wrap = h("div", null);
+  if (has(coverage.note)) wrap.appendChild(richText(coverage.note));
+  wrap.appendChild(
+    tableWrap(
+      h(
+        "table",
+        null,
+        h("thead", null, h("tr", null,
+          h("th", { scope: "col" }, "Need"),
+          h("th", { scope: "col" }, "Owner"),
+          h("th", { scope: "col" }, "Online"),
+          h("th", { scope: "col" }, "Backup / operating note"),
+          h("th", { scope: "col" }, "Concentration")
+        )),
+        h("tbody", null, arr(coverage.rows).map((row) =>
+          h("tr", null,
+            h("td", { class: "cell-strong" }, row.need),
+            h("td", null, row.owner),
+            h("td", null, row.online),
+            h("td", null, richText(row.backup)),
+            h("td", null, richText(row.concentration))
+          )
+        ))
+      )
+    )
+  );
+  return wrap;
+}
+
+function renderConcentrationPlan(plan) {
+  const wrap = h("div", null);
+  if (has(plan.note)) wrap.appendChild(richText(plan.note));
+  wrap.appendChild(
+    tableWrap(
+      h(
+        "table",
+        null,
+        h("thead", null, h("tr", null,
+          h("th", { scope: "col" }, "Character"),
+          h("th", { scope: "col" }, "Default"),
+          h("th", { scope: "col" }, "Alternatives"),
+          h("th", { scope: "col" }, "Rule")
+        )),
+        h("tbody", null, arr(plan.rows).map((row) =>
+          h("tr", null,
+            h("td", { class: "cell-strong" }, row.character),
+            h("td", null, richText(row.default)),
+            h("td", null, richText(row.alternatives)),
+            h("td", null, richText(row.rule))
+          )
+        ))
+      )
+    )
+  );
+  return wrap;
+}
+
+function renderCoreItems(core) {
+  const wrap = h("div", null);
+  if (has(core.note)) wrap.appendChild(richText(core.note));
+  wrap.appendChild(
+    tableWrap(
+      h(
+        "table",
+        null,
+        h("thead", null, h("tr", null,
+          h("th", { scope: "col" }, "Core item"),
+          h("th", { scope: "col" }, "Owner"),
+          h("th", { scope: "col" }, "Where / when"),
+          h("th", { scope: "col" }, "Party job")
+        )),
+        h("tbody", null, arr(core.rows).map((row) =>
+          h("tr", null,
+            h("td", { class: "cell-strong" }, wikiItemNode(row, null, false) || row.item),
+            h("td", null, row.owner),
+            h("td", null, row.timing),
+            h("td", null, richText(row.why))
+          )
+        ))
+      )
+    )
+  );
+  return wrap;
+}
+
 function renderOverview(party) {
   const c = h("div", null);
-  c.appendChild(h("div", { class: "card" }, h("h2", { class: "view-title" }, "Party overview"), h("p", { class: "view-sub" }, "Roster, synergies, item allocation, and act-by-act progression at a glance.")));
+  c.appendChild(h("div", { class: "card" }, h("h2", { class: "view-title" }, "Party overview"), h("p", { class: "view-sub" }, "Act 1 coverage, concentration ownership, core items, synergies, and progression at a glance.")));
 
   if (has(party.roster)) c.appendChild(section("Roster", renderRoster(party.roster)));
+  if (has(party.act1_coverage)) c.appendChild(section("Act 1 must-have coverage", renderAct1Coverage(party.act1_coverage)));
+  if (has(party.act1_concentration)) c.appendChild(section("Act 1 concentration plan", renderConcentrationPlan(party.act1_concentration)));
+  if (has(party.act1_core_items)) c.appendChild(section("Act 1 core items", renderCoreItems(party.act1_core_items)));
   if (has(party.synergies)) c.appendChild(section("Synergies", renderPairList(party.synergies, "name", "how")));
   if (has(party.combat_gameplan)) c.appendChild(section("Combat gameplan", renderGameplan(party.combat_gameplan)));
   if (has(party.item_allocation)) c.appendChild(section("Item allocation", renderItemAllocation(party.item_allocation)));
@@ -1316,8 +2091,8 @@ function lootTable(items, keyPrefix) {
       h("th", { scope: "col" }, "Item"), h("th", { scope: "col" }, "For"), h("th", { scope: "col" }, "Notes"))),
     h("tbody", null, items.map((it) =>
       h("tr", { class: it.core ? "loot-core" : null },
-        keyPrefix ? h("td", { class: "ck-col" }, checkbox(keyPrefix + "/" + slug(it.name))) : null,
-        h("td", { class: "cell-strong" }, (it.core ? "★ " : "") + it.name),
+        keyPrefix ? h("td", { class: "ck-col" }, checkbox(keyPrefix + "/" + slug(it.name), "Mark " + it.name + " acquired")) : null,
+        h("td", { class: "cell-strong" }, it.core ? "★ " : null, wikiItemNode(it) || it.name),
         h("td", null, it.for && it.for !== "any" ? h("span", { class: "who-chip" }, it.for) : h("span", { class: "muted" }, "any")),
         h("td", null, (it.note || "") + (it.verify ? "  ⚠ verify" : ""))
       )
@@ -1326,9 +2101,9 @@ function lootTable(items, keyPrefix) {
 }
 
 /* Reusable ARIA tab group (same behaviour as the build tabs). entries = [{label, count, content}]. */
-function miniTabs(idBase, entries) {
+function miniTabs(idBase, entries, ariaLabel) {
   const wrap = h("div", null);
-  const tablist = h("div", { class: "tabs", role: "tablist" });
+  const tablist = h("div", { class: "tabs", role: "tablist", "aria-label": ariaLabel || null });
   const panels = h("div", null);
   const tabs = [];
   entries.forEach((entry, i) => {
@@ -1706,6 +2481,7 @@ function buildTopTabs(onActivate) {
   const lastKey = { party: "__overview__", tadpole: "__tad__", loot: null };
 
   function renderContent(key, focusContent) {
+    clearPageOutlineObservers();
     content.innerHTML = "";
     if (key === "__overview__") content.appendChild(renderOverview(data.party || {}));
     else if (key === "__proficiencies__") content.appendChild(renderProficiencies(data.proficiencies || {}));

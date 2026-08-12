@@ -7,6 +7,7 @@
 //! This lets the same binary serve Phase 1 (before migration) and Phase 2
 //! (after `bg3 migrate` has written the `content/` tree).
 
+use std::collections::HashSet;
 use std::path::Path;
 
 use anyhow::{anyhow, Context, Result};
@@ -39,14 +40,13 @@ pub fn parse_frontmatter(text: &str) -> Result<Doc> {
         .strip_prefix("---")
         .map(|b| b.trim_start_matches('\n').to_string())
         .unwrap_or_default();
-    let data: Value =
-        serde_yaml::from_str(yaml).context("parsing YAML front matter into JSON")?;
+    let data: Value = serde_yaml::from_str(yaml).context("parsing YAML front matter into JSON")?;
     Ok(Doc { data, body })
 }
 
 fn read_doc(path: &Path) -> Result<Doc> {
-    let raw = std::fs::read_to_string(path)
-        .with_context(|| format!("reading {}", path.display()))?;
+    let raw =
+        std::fs::read_to_string(path).with_context(|| format!("reading {}", path.display()))?;
     parse_frontmatter(&raw).with_context(|| format!("in {}", path.display()))
 }
 
@@ -74,10 +74,9 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
 
     // Characters: one file each under content/characters/, keyed by `nickname`.
     let mut chars: Vec<(String, Value)> = Vec::new();
+    let mut nicknames = HashSet::new();
     let cdir = dir.join("characters");
-    for entry in std::fs::read_dir(&cdir)
-        .with_context(|| format!("reading {}", cdir.display()))?
-    {
+    for entry in std::fs::read_dir(&cdir).with_context(|| format!("reading {}", cdir.display()))? {
         let path = entry?.path();
         if path.extension().and_then(|e| e.to_str()) != Some("md") {
             continue;
@@ -89,6 +88,12 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
             .and_then(|v| v.as_str())
             .ok_or_else(|| anyhow!("{}: missing `nickname`", path.display()))?
             .to_string();
+        if !nicknames.insert(nickname.clone()) {
+            return Err(anyhow!(
+                "{}: duplicate character nickname `{nickname}`",
+                path.display()
+            ));
+        }
         let builds = doc
             .data
             .get("builds")
@@ -109,11 +114,18 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
                 .collect()
         })
         .unwrap_or_default();
-    chars.sort_by_key(|(nick, _)| {
-        roster_order
+    chars.sort_by(|(left, _), (right, _)| {
+        let left_position = roster_order
             .iter()
-            .position(|r| r == nick)
-            .unwrap_or(usize::MAX)
+            .position(|roster_nick| roster_nick == left)
+            .unwrap_or(usize::MAX);
+        let right_position = roster_order
+            .iter()
+            .position(|roster_nick| roster_nick == right)
+            .unwrap_or(usize::MAX);
+        left_position
+            .cmp(&right_position)
+            .then_with(|| left.to_lowercase().cmp(&right.to_lowercase()))
     });
 
     let mut characters = Map::new();
@@ -129,4 +141,28 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
     root.insert("loot_guide".into(), loot_guide);
     root.insert("tadpole".into(), tadpole);
     Ok(Value::Object(root))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::parse_frontmatter;
+
+    #[test]
+    fn frontmatter_accepts_bom_and_windows_line_endings() {
+        let doc = parse_frontmatter(
+            "\u{feff}---\r\nnickname: Charles\r\nbuilds: []\r\n---\r\nBody text\r\n",
+        )
+        .unwrap();
+
+        assert_eq!(doc.data["nickname"], "Charles");
+        assert_eq!(doc.body, "Body text\n");
+    }
+
+    #[test]
+    fn frontmatter_requires_a_closing_fence() {
+        let result = parse_frontmatter("---\nnickname: Charles\n");
+        assert!(result.is_err());
+        let error = result.err().unwrap();
+        assert!(error.to_string().contains("not closed"));
+    }
 }

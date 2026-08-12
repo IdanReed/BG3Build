@@ -19,7 +19,7 @@ For a faster binary: `cargo run --release` (or `cargo build --release` then run
 ## How it fits together
 
 ```
-Browser (index.html — vanilla JS, unchanged UI)
+Browser (index.html — vanilla JS, accessible tabs and item tooltips)
    │  GET  /api/plan      → merged guide JSON
    │  GET  /api/progress  → checkoff state
    │  POST /api/progress  → toggle one checkoff → written to disk
@@ -66,11 +66,17 @@ builds:
       # ...
     itemization:
       act1:
-        - id: everburn-blade
-          item: Everburn Blade
-          note: "Everburn Blade (Nautiloid — Commander Zhalk): ..."
+        - id: early-pact-weapon
+          item: Early pact-bound weapon
+          slot: weapons
+          note: "Bind the best available weapon so it attacks with Charisma."
 ---
 ```
+
+Each itemization entry has a stable `id`, display `item`, equipment `slot`, and
+`note`. The UI groups entries by act and slot, showing the note in the item's
+hover/focus tooltip. Keep IDs stable when renaming an item so existing checkoffs
+survive content edits.
 
 ## Checkoffs
 
@@ -85,7 +91,7 @@ edits, e.g.
 
 ```
 lvl:charles/the-three-booms/main/7
-item:charles/the-three-booms/act1/everburn-blade
+item:charles/the-three-booms/act1/early-pact-weapon
 loot:1/emerald-grove/idol-of-silvanus
 ```
 

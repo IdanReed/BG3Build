@@ -40,6 +40,13 @@ def raw_path(title: str) -> Path:
     return C.RAW / _slug(title)
 
 
+def _write_record_atomic(path: Path, record: dict) -> None:
+    """Replace a cache record only after its complete JSON is on disk."""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(path)
+
+
 class Client:
     """Thin throttled MediaWiki API client with maxlag + retry handling."""
 
@@ -145,7 +152,7 @@ def scrape(titles: list[str] | None = None, limit: int | None = None) -> None:
             continue
         try:
             record = fetch_page(client, title)
-            dest.write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
+            _write_record_atomic(dest, record)
             fetched += 1
         except Exception as e:  # noqa: BLE001 — keep going; the run is resumable
             failed += 1

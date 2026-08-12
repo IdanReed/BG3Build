@@ -5,8 +5,8 @@ Strategy:
     ("Bhaalist Armour > Properties") so each chunk carries its context.
   - Within a section, greedily pack blank-line-separated blocks into windows of
     ~CHUNK_TOKENS tokens with ~CHUNK_OVERLAP overlap between windows.
-  - A block bigger than the window (typically a stat table) is emitted whole —
-    tables are never split.
+  - A block bigger than the window is split on token boundaries. Markdown tables
+    are split by rows while repeating their header in each fragment.
 
 Token counting uses tiktoken (cl100k_base) as a fast, model-agnostic proxy; the
 exact tokenizer doesn't matter for sizing.
@@ -29,10 +29,75 @@ from bg3kb.clean import load_markdown  # noqa: E402
 
 _ENC = tiktoken.get_encoding("cl100k_base")
 _HEADING = re.compile(r"^(#{1,6})\s+(.*)$")
+_TABLE_SEPARATOR = re.compile(
+    r"^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?\s*$"
+)
 
 
 def ntokens(text: str) -> int:
     return len(_ENC.encode(text))
+
+
+def _token_windows(text: str, max_tokens: int) -> list[str]:
+    """Hard-limit arbitrary text without splitting a UTF-8 character."""
+    if max_tokens < 1:
+        raise ValueError("max_tokens must be positive")
+    tokens = _ENC.encode(text)
+    windows: list[str] = []
+    start = 0
+    while start < len(tokens):
+        end = min(start + max_tokens, len(tokens))
+        while end > start:
+            try:
+                window = _ENC.decode_bytes(tokens[start:end]).decode(
+                    "utf-8", errors="strict"
+                )
+                break
+            except UnicodeDecodeError:
+                end -= 1
+        else:
+            raise ValueError(
+                "max_tokens is too small to split text at a UTF-8 boundary"
+            )
+        windows.append(window)
+        start = end
+    return windows
+
+
+def _split_oversized_block(block: str, max_tokens: int) -> list[str]:
+    """Split a large block, retaining Markdown table headers where possible."""
+    lines = block.splitlines()
+    if (
+        len(lines) >= 3
+        and "|" in lines[0]
+        and _TABLE_SEPARATOR.match(lines[1])
+    ):
+        header = lines[:2]
+        fragments: list[str] = []
+        current = list(header)
+        for row in lines[2:]:
+            candidate = "\n".join([*current, row])
+            if ntokens(candidate) <= max_tokens:
+                current.append(row)
+                continue
+
+            if len(current) > len(header):
+                fragments.append("\n".join(current))
+                current = list(header)
+
+            candidate = "\n".join([*header, row])
+            if ntokens(candidate) <= max_tokens:
+                current.append(row)
+            else:
+                # A single pathological row cannot retain the header and remain
+                # bounded; split it losslessly as ordinary text.
+                fragments.extend(_token_windows(candidate, max_tokens))
+
+        if len(current) > len(header):
+            fragments.append("\n".join(current))
+        return fragments
+
+    return _token_windows(block, max_tokens)
 
 
 def iter_sections(markdown: str, page_title: str):
@@ -64,30 +129,27 @@ def _pack(blocks: list[str], max_tokens: int, overlap: int) -> list[str]:
     """Greedily pack blocks into token-bounded windows, with token overlap."""
     windows: list[str] = []
     cur: list[str] = []
-    cur_tok = 0
     for block in blocks:
-        bt = ntokens(block)
-        if bt > max_tokens:
-            # Oversized block (e.g. a big stat table): flush, then keep it whole.
+        if ntokens(block) > max_tokens:
+            # Flush before emitting independently bounded fragments.
             if cur:
                 windows.append("\n\n".join(cur))
-                cur, cur_tok = [], 0
-            windows.append(block)
+                cur = []
+            windows.extend(_split_oversized_block(block, max_tokens))
             continue
-        if cur_tok + bt > max_tokens and cur:
+        if cur and ntokens("\n\n".join([*cur, block])) > max_tokens:
             windows.append("\n\n".join(cur))
             # Carry the tail blocks (up to `overlap` tokens) into the next window.
             carry: list[str] = []
-            ct = 0
             for pb in reversed(cur):
-                pt = ntokens(pb)
-                if ct + pt > overlap:
+                candidate = [pb, *carry]
+                if ntokens("\n\n".join(candidate)) > overlap:
                     break
-                carry.insert(0, pb)
-                ct += pt
-            cur, cur_tok = list(carry), ct
+                carry = candidate
+            while carry and ntokens("\n\n".join([*carry, block])) > max_tokens:
+                carry.pop(0)
+            cur = carry
         cur.append(block)
-        cur_tok += bt
     if cur:
         windows.append("\n\n".join(cur))
     return windows
@@ -105,15 +167,15 @@ def _common_crumb(a: str, b: str) -> str:
 
 
 def _merge_small(frags: list[tuple[str, str]], max_tokens: int) -> list[tuple[str, str]]:
-    """Coalesce consecutive fragments while the combined text stays under the
-    window cap. Collapses infobox micro-sections into coherent chunks."""
+    """Coalesce fragments while their complete stored text remains bounded."""
     out: list[tuple[str, str]] = []
     for crumb, text in frags:
         if out:
             pc, ptext = out[-1]
             combined = f"{ptext}\n\n{text}"
-            if ntokens(combined) <= max_tokens:
-                out[-1] = (_common_crumb(pc, crumb), combined)
+            combined_crumb = _common_crumb(pc, crumb)
+            if ntokens(f"{combined_crumb}\n\n{combined}") <= max_tokens:
+                out[-1] = (combined_crumb, combined)
                 continue
         out.append((crumb, text))
     return out
@@ -126,7 +188,10 @@ def chunk_page(doc: dict) -> list[dict]:
         if not section:
             continue
         blocks = [b.strip() for b in re.split(r"\n{2,}", section) if b.strip()]
-        for window in _pack(blocks, C.CHUNK_TOKENS, C.CHUNK_OVERLAP):
+        content_budget = C.CHUNK_TOKENS - ntokens(f"{crumb}\n\n")
+        if content_budget < 1:
+            raise ValueError(f"breadcrumb exceeds chunk limit: {crumb}")
+        for window in _pack(blocks, content_budget, C.CHUNK_OVERLAP):
             frags.append((crumb, window))
 
     chunks: list[dict] = []

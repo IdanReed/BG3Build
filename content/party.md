@@ -24,180 +24,245 @@ roster:
   role: Control + damage + face
   character: Bard
   played_by: Alondra
+act1_coverage:
+  note: |-
+    This is the party's minimum coverage, not a list of every good spell. "Online" is character level for this exact multiclass order. Water, Darkness Arrows, Phalar Aluve, and the martial control abilities do not use Concentration, so they can coexist with the three combat concentration lanes below.
+
+    Default hard-fight stack from character level 6: Charles holds Bless, Gale holds Twinned Haste, Bonbon holds Hold Person/Hypnotic Pattern, and Asterion uses Stunning Strike. Each effect belongs to a different character, so there is no concentration collision.
+  rows:
+  - need: Wet / water setup
+    owner: Gale
+    online: 'Char 1–5: prepared Create Water from Tempest Cleric. Char 6+: free Storm Spell after the pure-Sorcerer respec.'
+    backup: 'Gale has Mage Hand at char 2 and Bonbon at char 5. Drop a water bottle where the Hand can reach it, then use the Hand''s Throw for a 2m Wet splash; any party member can also throw a bottle. Use the spell for clusters and the bottle for one target or when saving a slot.'
+    concentration: None — Create Water, Mage Hand, and throwing water do not compete with Haste.
+  - need: Guidance / ability checks
+    owner: 'Gale through char 5; Silver Pendant after the char-6 respec'
+    online: Char 1 from Gale; the pendant is available immediately southwest of the Grove.
+    backup: 'Keep the Silver Pendant as a shared exploration swap, usually on the character making the check. Bonbon also takes Enhance Ability at char 5 for advantage on a chosen ability when a check matters.'
+    concentration: 'Guidance and Enhance Ability each use Concentration. They are out-of-combat check buffs: do not carry them into a fight expecting Gale''s Haste or Bonbon''s control to remain.'
+  - need: Longstrider
+    owner: Bonbon
+    online: Char 2 (Bard 1)
+    backup: Cast on all four party members after each long rest; ritual casting outside combat costs no spell slot.
+    concentration: None — lasts until long rest.
+  - need: Bless
+    owner: 'Gale at char 1–5; Charles at char 4+'
+    online: 'Gale prepares it immediately; Charles gains Paladin spellcasting at Paladin 2 (char 4).'
+    backup: 'From char 6 onward, Charles is the default Bless holder so Gale can hold Haste and Bonbon can hold control. Phalar Sing is a short-rest, concentration-free accuracy fallback when Shriek is not the better mode.'
+    concentration: 'Yes, on Charles in the default stack. It competes only with Charles''s Hex, Divine Favour, Wrathful Smite, or later self-cast Darkness.'
+  - need: Bane / save debuff
+    owner: 'Gale at char 4–5; Charles from the relevant Act 1 items'
+    online: 'When Bonbon gains Hold Person at char 4, Gale can prepare Cleric Bane for the two-level bridge. Phalar Aluve arrives in the Underdark; Gloves of Baneful Striking arrive on the Rosymorn trail.'
+    backup: 'Bane first, then Bonbon casts Hold Person: different casters, so both Concentration effects coexist. Gale''s WIS 12 makes Bane only DC 11–12 in this window, so prefer low-CHA targets. Once available, Phalar Shriek applies −1d4 to nearby enemy saves without an initial save, and Charles''s Baneful Strike applies another concentration-free −1d4 save penalty for 2 turns after his weapon hit.'
+    concentration: 'Bane uses Gale''s Concentration and never coexists with his Haste. At char 6, retire prepared Bane and use Shriek/Baneful Strike while Gale holds Twinned Haste.'
+  - need: Darkness / protected melee lane
+    owner: 'Charles uses it; Bonbon preferably fires the Arrow of Darkness'
+    online: 'Devil''s Sight at char 2; use farmed Darkness Arrows throughout Act 1.'
+    backup: 'The arrow makes a 3m cloud for 3 turns without Concentration. Bonbon places it before Charles swaps to Phalar and activates Shriek; keep Gale and Asterion outside unless they can see through magical Darkness.'
+    concentration: None from the arrow — Charles remains free to hold Bless, Hex, or Divine Favour.
+  - need: Haste
+    owner: Gale
+    online: Char 6, when the early Cleric/Sorcerer bridge respecs to pure Storm Sorcerer 6.
+    backup: 'Twinned Spell targets Charles + Asterion for 3 Sorcery Points. This is the default boss-fight use of Gale''s concentration; protect it with Sorcerer-first CON proficiency, War Caster, Safeguard Shield, positioning, and Shield.'
+    concentration: 'Yes. Gale must not cast Witch Bolt, Call Lightning, or Sleet Storm while maintaining Haste; ending Haste makes both targets Lethargic.'
+  - need: Single-target hard control
+    owner: Bonbon
+    online: 'Tasha''s Hideous Laughter at char 3; Hold Person at char 4. Asterion adds Stunning Strike at char 6.'
+    backup: 'Hold Person is the humanoid auto-crit setup for Charles. Charles''s Command (char 4) and Asterion''s Stunning Strike/Topple are non-concentration backups; use them when Bonbon is already holding another control spell or the target is not a humanoid.'
+    concentration: 'Bonbon concentrates on Hold Person or Tasha''s, never both. Asterion''s control and Charles''s Command use no Concentration.'
+  - need: Group control / caster denial
+    owner: 'Bonbon for control; Gale for Counterspell'
+    online: 'Bonbon gets Hypnotic Pattern at char 6; Gale learns Counterspell at char 6.'
+    backup: 'Gale''s free Sleet Storm is excellent against groups and enemy concentration, but it replaces Haste. Bonbon''s Hypnotic Pattern preserves Gale''s Haste lane; Counterspell is a Reaction and consumes no Concentration.'
+    concentration: 'Bonbon holds Hypnotic Pattern. Gale holds Haste; use Sleet Storm instead of Haste, not alongside it.'
+  - need: Emergency recovery
+    owner: Bonbon
+    online: Char 2 (Bard 1); Gale also has it while Tempest Cleric is present at char 1–5.
+    backup: Stock Healing Potions and Revivify scrolls; Healing Word is for a bonus-action ranged pickup, not sustained healing.
+    concentration: None.
+act1_concentration:
+  note: One concentration effect per character. Starting another immediately ends the first; Haste also inflicts Lethargic when it ends. The defaults deliberately occupy three different casters.
+  rows:
+  - character: Charles
+    default: Bless from char 4 onward.
+    alternatives: Hex for repeated personal damage; Divine Favour for short radiant burst; Wrathful Smite for fear.
+    rule: 'Pick one. Act 1 Darkness must come from an arrow so it does not evict the chosen buff.'
+  - character: Asterion
+    default: None — his attacks, Stunning Strike, Flurry variants, and Giant Strength elixir need no Concentration.
+    alternatives: None in the selected build.
+    rule: He is the safe martial control lane and cannot break another party member's spell by acting.
+  - character: Gale
+    default: Twinned Haste from char 6 onward; at char 4–5 use Bane when setting up Bonbon's Hold Person.
+    alternatives: 'Before char 6: Bless or Witch Bolt. After char 6: Call Lightning for slot-efficient damage or Sleet Storm for terrain/caster control.'
+    rule: 'After casting Haste, cast only non-concentration spells: Create Water, Lightning Bolt, Chromatic Orb, Shield, and Counterspell are all safe.'
+  - character: Bonbon
+    default: Hold Person against a priority humanoid; Hypnotic Pattern against a group from char 6.
+    alternatives: Tasha's Hideous Laughter early; Faerie Fire before it is replaced; Enhance Ability or Invisibility outside combat.
+    rule: Choose exactly one control effect. Guidance/Enhance Ability/Friends are also Concentration and should be treated as exploration modes.
+act1_core_items:
+  note: These are the plan-defining Act 1 assignments. The Loot tab keeps the full route and checklist; personal character pages contain the complete slot-by-slot loadouts.
+  rows:
+  - item: Silver Pendant
+    owner: Shared utility swap
+    timing: Ravaged Beach / Harper outpost, before the Grove
+    why: Keeps Guidance available after Gale drops Tempest Cleric at character level 6. Do not feed it to Gale's orb.
+  - item: Phalar Aluve
+    owner: Charles
+    timing: Underdark, near the Selûnite Outpost
+    why: 'Bind and wield it two-handed. Pre-activate Shriek for serious fights: its 6m aura penalises enemy saves/attacks by 1d4 and adds 1d4 Thunder whenever the affected enemy is damaged, amplifying Asterion''s multi-hit turns and helping Bonbon''s Hold Person land. It replaces Gale''s short-lived Bane duty without using Concentration and stops if the sword is unequipped.'
+  - item: Titanstring Bow + Club of Hill Giant Strength
+    wiki:
+    - Titanstring Bow
+    - Club of Hill Giant Strength
+    owner: Bonbon
+    timing: Zhentarim Basement + Arcane Tower
+    why: The club sets STR 19 while sitting in Bonbon's melee set; Titanstring adds the +4 STR modifier to every ranged hit and Slashing-Flourish projectile.
+  - item: The Spellsparkler / Melf's First Staff
+    wiki:
+    - The Spellsparkler
+    - Melf's First Staff
+    owner: Gale
+    timing: Waukeen's Rest reward / Blurg in the Underdark
+    why: Use Spellsparkler for multi-hit/Lightning-Charge turns and Melf's +1 spell attack/DC when Haste, Lightning Bolt, or control reliability matters more.
+  - item: Safeguard Shield
+    owner: Gale
+    timing: Dammon in the Emerald Grove
+    why: +2 AC and +1 to all saves; the save bonus directly protects Twinned Haste, and Gale's Human Civil Militia keeps shield proficiency after the respec.
+  - item: Boots of Striding
+    owner: Charles
+    timing: Minthara in the Shattered Sanctum
+    why: Starting Bless/Hex/Divine Favour grants Momentum, and the boots prevent Prone or forced movement while concentrating so the frontline buff is harder to disrupt.
+  - item: Graceful Cloth + Bracers of Defence
+    wiki:
+    - The Graceful Cloth
+    - Bracers of Defence
+    owner: Asterion
+    timing: Rosymorn trail / Blighted Village cellar
+    why: DEX 20 plus advantage on DEX checks and +2 AC while unarmoured/shieldless; this is the Monk/thief baseline, with offensive gloves swapped in only when appropriate.
+  - item: The Protecty Sparkswall
+    owner: Bonbon
+    timing: Grymforge trapped bridge chest
+    why: +1 Spell Save DC is the late-Act-1 bridge that makes Hold Person, Hypnotic Pattern, Fear, Slow, and Glyph of Warding more reliable before Arcane Acuity arrives.
 synergies:
 - name: Haste engine
-  how: Sorcerer Twinned-Hastes the Paladin (Haste is single-target, so Twinnable) → a 4th attack.
-- name: Wet → doubled
-  how: Sorcerer's Create Water (+ Trickster Mage-Hand water bottles) makes lightning/cold hit double.
-- name: Control → auto-crit
-  how: Bard's Hold Monster paralyzes a target → melee auto-crits → doubled crit-smites for the Paladin.
-- name: Shared psychic
-  how: Trickster carries the Resonance Stone up front — doubling both its own and the Paladin's psychic Shadow Blade strikes (melee config).
+  how: Gale Twinned-Hastes Charles and Asterion at character level 6, when the early Cleric bridge respecs to pure Storm Sorcerer 6. The extra Actions are strongest on Charles's three-attack non-Honour turn and Asterion's Attack action.
+- name: Control into melee
+  how: Asterion opens bosses with Stunning Strike; Bonbon later adds Hold Monster. Stun grants advantage; Paralyzed from Hold Monster makes melee hits crit automatically, turning Charles's smites into the finisher.
+- name: Wet lane
+  how: Gale applies Wet to a cluster away from the melee, then doubles Lightning/Cold damage into it. Asterion uses mobility to keep the melee lane physically separate.
+- name: Psychic package
+  how: Late in Act 2, the Resonance Stone pickup triggers Charles's Shadow Blade respec. Asterion carries it for Manifestation of Mind and Psionic Overload across multiple Flurry hits while keeping Charles in the 9m aura to double Shadow Blade and Strange Conduit; holster it against psychic or mental-save threats.
 - name: Auras
-  how: Paladin's Aura of Protection (+CHA saves) + Aura of Hate (+CHA melee damage) buff the melee cluster.
+  how: Charles's Aura of Protection protects the frontline's saving throws; Aura of Hate adds his CHA modifier to nearby melee-weapon damage, not to Asterion's unarmed strikes.
 combat_gameplan:
   note: |-
-    Run **two kill zones**.
-    - **Zone 1 (frontline)** — the Bard-Held priority/boss target that Charles and Asterion auto-crit into oblivion (psychic/piercing — keep water OUT of it).
-    - **Zone 2 (backline adds)** — the cluster Gale Wets and detonates with maximized, doubled lightning/cold plus Asterion's disadvantaged cold scrolls — physically separated so Electrified Water never touches the melee.
+    Use two separated lanes: Charles and Asterion own a priority target in melee, while Gale Wets and detonates a second cluster. Do not put the melee in Electrified Water.
 
-    **Two sequencing linchpins:**
-    - **Initiative** — the R1 chain assumes Bard acts before Sorcerer before Charles, and BG3 has NO delay-turn, so on bad rolls the nova simply slips to R2.
-    - **Bonus-action conflict** — Charles's R1 Hexblade's Curse vs GWM attack forces the true 7-swing turn to R2.
-
-    In **Act 3** treat the Resonance-Stone psychic-×2 as unreliable (known post-Act-2 bug) and default Charles to the self-contained Pike + Bhaalist set.
+    In Act 1, the party is still assembling: Asterion's Stun and Charles's Divine Smite are the boss plan, Gale's Lightning/Spellsparkler handle the add lane, and Bonbon deals Titanstring damage. The Hold Monster + Acuity + Band loop begins in Acts 2–3, not in early Act 1.
   per_character:
-  - character: Bonbon (Bard) — the initiator
-    role: 'Arcane-Acuity control engine: locks the priority target with Hold Monster so the melee auto-crits, then escalates to mass Command.'
-    priority_actions: |-
-      Wants to act **FIRST** (Hellrider's Longbow initiative).
-      - R1: ranged Slashing Flourish (2 hits) on the priority target → ~+4 Arcane Acuity (raises spell save DC THAT turn) and arms the Band of the Mystic Scoundrel → bonus-action Hold Monster at the boosted DC → Paralyzed (hold concentration).
-      - R2: Flourish again (Acuity climbs) → Hold Monster/Command on the next target.
-      - R3: Acuity near +10 → Command 'Drop'/'Prone' on up to 6 via the Bard-11 L6 slot, or Fear/Confusion; Counterspell the enemy caster; hand out Bardic Inspiration.
-    avoid: |-
-      - **Never** fire the control spell BEFORE a weapon hit lands that turn (both the Band bonus-cast AND the fresh Acuity need the Flourish to resolve first).
-      - Stay ranged/unhit: Acuity decays −2 per hit taken, and losing Bard concentration (or letting the Held target die early) drops the melee's auto-crit.
-  - character: Gale (Sorcerer) — the engine + AoE
-    role: Party Haste engine plus a Wet + maximized-Lightning AoE aimed at the SECONDARY cluster (kept off the frontline).
-    priority_actions: |-
-      - R1: action = Twinned Haste on Charles + Asterion (the extra Action fuels Charles's 6–7 swings, plus +2 AC and DEX-save advantage on both); bonus = Quickened Create Water on a separate add cluster (or let Asterion's Mage Hand do the Wet). Now locked concentrating on Haste.
-      - R2+: Haste persists for free → detonate: Destructive Wrath (maximize) + Markoheshkir-empowered Lightning Bolt/Chain Lightning (or Cone of Cold) on the Wet cluster — Wet doubles it and already negates any lightning resistance, lightning-on-water Shocks them. Save the 2nd Destructive Wrath (Amulet of the Devout) for a second cluster; hold Counterspell.
-    avoid: |-
-      - **Electrified-water friendly fire** — never Wet the ground Charles/Asterion stand on and never arc lightning into the melee's water (recurring lightning + prone; a Wet ally takes DOUBLE enemy lightning/cold).
-      - Keep the water/lightning cluster physically separate, and guard Haste concentration (War Caster) — if it breaks, Charles and Asterion go Lethargic and lose their next turn.
-  - character: Charles (Paladin) — the finisher
-    role: Melee crit-smite nova — the single-target finisher that deletes the Bard-Held priority target.
-    priority_actions: |-
-      - Pre-fight: bind Shadow Blade/Pike and short-rest to refund the pact slot; position so Aura of Protection (+CHA saves) and Aura of Hate (+CHA melee damage) blanket the melee cluster and the Resonance-Stone carrier.
-      - R1: bonus = Hexblade's Curse on the Paralyzed target; action (3) + Haste action (3) = 6 auto-crit strikes, Divine Smite the biggest slots first (doubled on the crit; psychic doubled again by the stone), Half-Orc extra die, Savage Attacker rerolls → ~800–1000 on a Held target.
-      - R2+ (Curse up, bonus free): full 7 swings incl. the GWM bonus-attack-on-crit; use Killer's Sweetheart's guaranteed crit after a kill; when smites dry up, plain Hasted swings.
-    avoid: |-
-      - Do not stand in the Sorcerer's water (electrify + Wet doubles enemy lightning/cold on you).
-      - On R1 do **NOT** spend the bonus action on the GWM attack instead of Hexblade's Curse — Curse can't be pre-cast before initiative, and its +damage rider is what the doubled-nova math depends on (the GWM swing only comes online R2 once Curse is already up).
-  - character: Asterion (Rogue, Config A) — the assassin
-    role: 'Stealth assassin / DEX-save nuker: one massive ambush strike on the Held target, plus ownership of the Wet-and-cold AoE lane and the free water-bottle setup.'
-    priority_actions: |-
-      - Pre-fight: pre-cast 3d8 Shadow Blade (Superior Elixir, no concentration); place the Resonance Stone by the melee cluster inside Charles's Aura; start Hidden; invisible Mage Hand throws water bottles to pre-Wet the enemy cluster.
-      - Each turn: bonus = Hide (Reliable Talent → near-automatic; arms Magical Ambush AND Sneak-Attack advantage), action = Booming Blade + Shadow Blade + Sneak Attack 6d6 as ONE strike — auto-crit on the Held target, whole strike doubled psychic by the stone.
-      - On a kill, Deathstalker Mantle turns him Invisible → reposition + re-ambush.
-      - When Charles already covers the melee target, crouch-cast a stolen cold scroll (Ice Storm / Cone of Cold) into the Wet cluster at disadvantage (Magical Ambush).
-    avoid: |-
-      - Don't linger in melee after the alpha strike — he's squishy (lean on Cunning Action Disengage/Hide, Misty Step, Uncanny Dodge + Evasion + Shield).
-      - He sits INSIDE his own Resonance Stone aura with no Gnome Cunning: vs psychic/mind enemies the stone gives HIM psychic vulnerability + disadvantage on mental saves, so keep him in Charles's Aura of Protection — or don't deploy the stone that fight.
+  - character: Bonbon (Bard)
+    role: Ranged Titanstring damage in Act 1; later the Arcane-Acuity controller.
+    priority_actions: 'Act 1: use Titanstring shots and ranged Slashing Flourish when College of Swords is online. Acts 2–3: land a weapon hit before using the Band of the Mystic Scoundrel for a bonus-action Enchantment/Illusion control spell.'
+  - character: Gale (Sorcerer)
+    role: Haste engine and Wet/lightning AoE, always aimed away from the melee lane.
+    priority_actions: 'At character level 6 (the pure-Sorcerer-6 respec), Twinned Haste Charles + Asterion when the encounter warrants it. In other fights, Create Water then Lightning Bolt/Chromatic Orb; keep Haste concentration protected rather than trying to maintain another concentration spell.'
+  - character: Charles (Paladin)
+    role: The held-target crit-smite finisher and Aura carrier.
+    priority_actions: 'ACT 1 through most of ACT 2 — bind and two-hand Phalar Aluve, activate Shriek before combat, and fight inside a concentration-free Darkness Arrow cloud with Devil''s Sight; use Booming Blade to activate the Ring of Arcane Synergy, then GWM attacks and Divine Smites. LATE ACT 2+ — after the Resonance Stone respec, summon/bind Shadow Blade in the main hand, off-hand Phalar with Dual Wielder, self-cast Darkness, and stay in Asterion''s Stone aura.'
+  - character: Asterion (Monk)
+    role: Unarmed Tavern-Brawler striker, Stun setter, mobile thief, and later Resonance Stone carrier.
+    priority_actions: 'Drink Giant Strength, make unarmed attacks, and spend Ki on Stunning Strike against the priority target. Use Flurry: Topple for Prone/advantage or Stagger to remove reactions. At Thief 3, two bonus actions enable two Flurries per turn; Deathstalker Mantle then provides repositioning on a kill.'
   opening_rotation:
   - step: 1
-    who: All — pre-combat setup
-    action: 'Long-rest buffs: Charles and Asterion each pre-cast 3d8 Shadow Blade via a Superior Elixir of Arcane Cultivation (no concentration); Charles binds his Pact weapon and short-rests to refund the slot. Asterion goes Hidden and places the Resonance Stone where the melee will cluster (inside Charles''s planned Aura, away from psychic-save-fragile allies); his invisible Mage Hand throws water bottles to pre-Wet the add cluster. Open from stealth for a surprise round.'
+    who: All — before combat
+    action: 'ACT 1/early ACT 2: Bonbon preferably places a Darkness Arrow first, then Charles switches to bound two-handed Phalar Aluve and activates Shriek. LATE ACT 2+: Charles summons/binds Shadow Blade and off-hands Phalar, while Asterion carries the Resonance Stone nearby. Once Tavern Brawler is online, Asterion drinks Giant Strength and leaves both melee hands empty; Bonbon equips the Hill Giant club main hand + Knife of the Undermountain King off-hand behind Titanstring and drinks Bloodlust for encounters with adds (swap to Hill Giant Strength for a single boss). Keep water bottles for Gale''s add lane.'
   - step: 2
-    who: Bonbon (Bard) — R1, first
-    action: Ranged Slashing Flourish (2 hits) on the boss → ~+4 Arcane Acuity (raises spell save DC this turn) and arms the Band of the Mystic Scoundrel → bonus-action Hold Monster → boss fails its WIS save → Paralyzed. Hold concentration on the lock.
+    who: Asterion
+    action: 'Reach the priority target, make unarmed attacks, and try Stunning Strike. Follow with Flurry: Topple when Prone will help the rest of the melee line.'
   - step: 3
-    who: Gale (Sorcerer) — R1
-    action: Action = Twinned Haste on Charles + Asterion (extra Action + +2 AC / DEX-save advantage). Bonus = Quickened Create Water on a SEPARATE add cluster, not under the melee. Sorcerer now locked concentrating on Haste; boss Held, adds Wet for next round.
+    who: Gale
+    action: 'Either Twinned-Haste Charles + Asterion, or Wet a separate add cluster and strike it with Lightning. Never electrify the ground beneath the melee.'
   - step: 4
-    who: Charles (Paladin) — R1
-    action: Bonus = Hexblade's Curse on the Paralyzed boss. Action (3) + Haste action (3) = 6 auto-crit Shadow Blade strikes; Divine Smite the top slots first (doubled on the crit, psychic doubled again by the stone), Half-Orc die, Savage Attacker rerolls. Boss deleted or near-dead (~800–1000). No GWM bonus attack this round — the bonus was spent on Curse.
+    who: Charles
+    action: 'Hexblade''s Curse the priority target and open with Booming Blade to activate the Ring of Arcane Synergy. In Act 1, follow with two-handed Phalar GWM attacks and Divine Smite. After the Act-2 respec, use Shadow Blade for the pact-weapon attacks and make the Phalar off-hand attack when the bonus action is free; once Paladin 5 returns, each non-Honour Attack action makes three Shadow Blade attacks.'
   - step: 5
-    who: Asterion (Rogue) — R1
-    action: Bonus = Hide (near-automatic). Action = Booming Blade + Shadow Blade + Sneak Attack 6d6 as one strike on the boss (auto-crit while Held, doubled psychic by the stone) → finishes it. The kill triggers the Deathstalker Mantle → Asterion turns Invisible.
-  - step: 6
-    who: Enemies — R1
-    action: 'If you surprised them, they skip this round. Otherwise they act with the alpha target already dead/locked: Asterion is Invisible, Charles soaks behind +2 AC from Haste, everyone in the aura has +CHA to saves.'
-  - step: 7
-    who: Bonbon (Bard) — R2
-    action: Slashing Flourish on the next priority target (Acuity now ~+6 to +8, control near-unresistable) → bonus-action Hold Monster on it; drop concentration on the dead boss. New target Paralyzed.
-  - step: 8
-    who: Gale (Sorcerer) — R2
-    action: 'Haste persists for free → action open to nuke: Destructive Wrath (maximize) + Markoheshkir Lightning Bolt/Chain Lightning (or Cone of Cold) on the Wet add cluster — doubled by Wet (which also negates any lightning resist), lightning-on-water Shocks them. Keep the blast clear of the melee.'
-  - step: 9
-    who: Charles (Paladin) — R2
-    action: Move to the new Held target. Full 7 swings now — Curse already up, so the bonus is free for the GWM bonus-attack-on-crit. Smite with remaining slots; once dry, plain Hasted swings. Killer's Sweetheart guarantees a crit on the first hit after a kill.
-  - step: 10
-    who: Asterion (Rogue) — R2
-    action: Still Invisible from the R1 kill → open with the big Booming-Blade/Shadow-Blade/Sneak strike on the new Held target (auto-crit), OR crouch-cast a stolen Ice Storm/Cone of Cold into the Wet cluster at disadvantage (Magical Ambush). Mage Hand re-Wets a fresh target or flanks to guarantee Sneak Attack. Then Hide/Disengage out.
-  - step: 11
-    who: Bonbon (Bard) — R3
-    action: Acuity at/near +10 → Command ('Drop'/'Prone') on up to 6 enemies via the Bard-11 L6 slot, or Fear/Confusion to mass-lock the rest. Counterspell the enemy caster; hand out Bardic Inspiration.
-  - step: 12
-    who: Gale (Sorcerer) — R3
-    action: Second Destructive Wrath (Amulet of the Devout) on the next Wet cluster, or Counterspell / Quickened Lightning Bolt on stragglers. Haste stays concentrated on the melee pair.
-  - step: 13
-    who: Charles + Asterion — R3
-    action: Clean up the controlled/prone enemies (advantage everywhere, guaranteed crits on any still Held). Charles falls back to plain swings / Lay on Hands once out of smites; Asterion hit-and-runs — kill a low target to re-proc Deathstalker invisibility, reposition, ambush again. Short-rest after the fight to refuel Charles's spell + pact slots.
+    who: Bonbon
+    action: 'Use Titanstring ranged attacks or Slashing Flourish. Once the late control package is online, hit first to build Acuity, then use the Band-enabled bonus-action Hold Monster/Command.'
 item_allocation:
-- item: Risky Ring (always-advantage)
-  to: Paladin
-  why: Oathbreaker has no advantage source; crit-fishing needs it.
-- item: Shadow Blade Ring
-  to: Paladin
-  why: Backup blade (the Trickster self-casts its own 3d8).
-- item: Resonance Stone (AoE psychic ×2)
-  to: Trickster (melee config) or Paladin (if Trickster goes ranged)
-  why: Doubles psychic for the carrier and nearby psychic Shadow Blades; a backline ranged Trickster can't keep the aura on the frontline, so hand it off.
+- item: Act 1 — Charles
+  to: Two-handed bound Phalar Aluve; Darkness Arrows; Dual Hand Crossbows +1; Luminous Armour; Boots of Striding; Amulet of Misty Step; Haste Helm; Gloves of Baneful Striking; Ring of Arcane Synergy; Strange Conduit Ring; temporary Great Weapon Master
+  why: 'SELECTED DEFAULT. Hexblade can bind the versatile Phalar while it is wielded in both hands, so character level 6 takes GWM instead of Dual Wielder. Pre-cast Shriek, then use concentration-free Darkness Arrow clouds for Devil''s Sight advantage while Charles concentrates on Bless, Divine Favour, or Hex. Booming Blade activates Arcane Synergy; Smite comes online at character level 4 and Extra Attack at 7.'
+- item: Act 2 — Charles (after Resonance Stone)
+  to: 3d8 Shadow Blade main hand + Phalar Aluve off-hand; Resonance Stone aura; Dual Wielder; Risky Ring; Luminous Armour; Boots of Striding; Amulet of Misty Step; Strange Conduit Ring
+  why: 'SELECTED DEFAULT after the late-Act-2 Stone pickup. Usually respec at character level 9 to Warlock 5 / Paladin 4: Dual Wielder replaces temporary GWM, Savage Attacker becomes the second feat, Shadow Blade immediately scales to 3d8 and becomes the bound main attacker, and Phalar stays equipped off-hand so Shriek remains active. Charles may now self-cast Darkness; Asterion carries the Stone within 9m to double Shadow Blade and Strange Conduit Psychic damage when the encounter is safe for the aura.'
+- item: Act 1 — Asterion
+  to: Empty melee hands; Dual Hand Crossbows +1; Graceful Cloth; Bracers of Defence; Disintegrating Night Walkers; Sentient Amulet; Ring of Protection; Crusher's Ring; Deathstalker Mantle
+  why: 'SELECTED DEFAULT from character level 5 onward: empty hands keep ordinary Attack/Extra Attack strikes unarmed so Tavern Brawler applies. Corellon''s Grace is an early levels 2–4 weapon only. Swap Bracers to Sparkle Hands or Gloves of Cinder and Sizzle for damage, and Graceful Cloth to Armour of Uninhibited Kushigo for a Patient-Defence counter fight. Keep Gloves of Thievery and Smuggler''s Ring as theft swaps.'
+- item: Act 1 — Gale
+  to: Bow of Awareness; The Spellsparkler; The Shadespell Circlet; Boots of Stormy Clamour; Gloves of Belligerent Skies; Pearl of Power Amulet; Safeguard Shield
+  why: 'SELECTED DEFAULT. Bow of Awareness occupies Gale''s otherwise-unused ranged slot for +1 Initiative, helping him establish Haste or Wet first. Safeguard''s +1 saves directly protects Haste concentration, while Tempestuous Magic replaces the Haste Helm''s mobility. Melf''s First Staff is the save-DC alternative for Lightning Bolt/control turns.'
+- item: Act 1 — Bonbon
+  to: Titanstring Bow + Club of Hill Giant Strength + Knife of the Undermountain King + Bloodlust; Gloves of Dexterity; The Protecty Sparkswall; Diadem of Arcane Synergy; Caustic Band; Broodmother's Revenge
+  why: 'SELECTED DEFAULT. The Light Club and Knife share Bonbon''s melee set without a feat: the Club supplies STR 19 while the Knife lowers the critical threshold for Titanstring shots. Bloodlust preserves an extra Action after a kill; use a Hill Giant elixir for a boss without adds. Protecty raises control DC, and a successful condition activates the Diadem for subsequent Flourish hits.'
+- item: Risky Ring
+  to: Charles
+  why: Act 2 permanent attack advantage and crit-fishing, with Aura of Protection helping offset its saving-throw drawback.
+- item: Resonance Stone
+  to: Asterion
+  why: Act 2 psychic multiplier for his many Manifestation/Psionic Overload hits and the trigger for Charles's Shadow Blade respec. Keep Charles within its 9m aura to double Shadow Blade and Strange Conduit damage; holster it against psychic damage or dangerous mental-save effects.
+- item: Helmet of Arcane Acuity + Band of the Mystic Scoundrel
+  wiki:
+  - Helmet of Arcane Acuity
+  - Band of the Mystic Scoundrel
+  to: Bonbon
+  why: 'Acts 2–3 control engine: weapon hits build spell DC, then the Band turns Enchantment/Illusion spells into bonus actions.'
+- item: Markoheshkir + Amulet of the Devout
+  wiki:
+  - Markoheshkir
+  - Amulet of the Devout
+  to: Gale
+  why: Act 3 lightning empower, spell DC, and an extra Destructive Wrath charge.
 - item: Amulet of Greater Health
-  to: Bard (Bonbon)
-  why: 'REALLOCATED from the Trickster to the Bard: CON 23 + CON-save advantage armours Hold Monster concentration (the melee auto-crit engine) with NO neck conflict (the Bard''s neck was free), while Gale keeps the Amulet of the Devout for the 2nd Destructive Wrath. Stacks with the Bard''s new War Caster feat. Asterion keeps Uncanny Dodge + Evasion + Shield, so CON isn''t his bottleneck.'
-- item: Knife of the Undermountain King
-  to: Trickster
-  why: Crit 19–20; early main-hand until Shadow Blade.
-- item: Deathstalker Mantle
-  to: Trickster
-  why: Invisible on kill — the assassin's reposition/re-ambush cloak; stands in for a Duergar/Deep-Gnome innate invisibility since the char is Astarion.
-- item: Helmet of Arcane Acuity
-  to: Bard
-  why: Its whole control engine.
-- item: Hellrider's Longbow
-  to: Bard
-  why: '+initiative bow option; Bonbon otherwise runs Titanstring (Act 1) → dual hand crossbows (Act 2+, the Acuity engine).'
-- item: Markoheshkir
-  to: Sorcerer
-  why: Lightning empower (Kereska's Favour).
-- item: Amulet of the Devout
-  to: Sorcerer
-  why: Spell DC + extra Destructive Wrath charge.
+  to: Bonbon
+  why: Act 3 CON 23 and CON-save advantage protect the concentration that enables the party's Hold Monster plan.
 progression:
 - act: 1
-  paladin: Shadow Blade + Devil's Sight (char 3) → Divine Smite (char 5)
-  trickster: Expertise, Mage Hand, Shield, Disguise; Knife main-hand; steals
-  sorcerer: Straight Storm Sorcery
-  bard: Face + Song of Rest + inspiration
+  paladin: Warlock 2 supplies Hexblade and Devil's Sight, then Paladin 1–5 supplies Divine Smite at character level 4, temporary Great Weapon Master at 6, and Extra Attack at 7. Bind and two-hand Phalar Aluve; source Darkness from farmed arrows and keep the temporary Vengeance oath intact.
+  asterion: Rogue 1 expertise, then Open Hand Monk; Tavern Brawler at character level 5 and Stunning Strike at 6.
+  sorcerer: Early Tempest Cleric 1 / Storm Sorcerer 4 is an Act 1 bridge; respec to pure Storm Sorcerer at character level 6 for the on-time Storm spike and CON saves.
+  bard: Fighter 1 then Swords Bard; Titanstring damage first, not the later Acuity-control loop.
 - act: 2
-  paladin: W5 → 2 attacks + 3d8 blade; Risky Ring
-  trickster: Shadow Blade + Magical Ambush + Evasion; Deathstalker Mantle; Eversight 'Asterion' combo
-  sorcerer: 'Tempest dip: Wet + maximize'
-  bard: Helmet of Arcane Acuity → control online
+  paladin: Keep two-handed Phalar/GWM and take Paladin 6 while travelling through most of Act 2. On acquiring the late-act Resonance Stone, usually respec at character level 9 to Warlock 5 / Paladin 4; Dual Wielder replaces GWM, Savage Attacker is the second feat, Shadow Blade starts at 3d8 in the main hand, and Phalar moves off-hand. Paladin 5 returns at character level 10 for the non-Honour three-attack stack. Break the fresh oath after the respec to become Oathbreaker.
+  asterion: Monk 6 features, Graceful Cloth/Bracers, and the Resonance Stone late in the act.
+  sorcerer: Storm Sorcerer 6 supplies Create Water, Call Lightning, Sleet Storm, and Heart of the Storm.
+  bard: Helmet of Arcane Acuity begins the ranged-hit-to-control transition.
 - act: 3
-  paladin: Bhaalist → piercing Pike + crit gear; 3 attacks (7 on a nova)
-  trickster: Reliable Talent; carries Resonance Stone; scroll arsenal + Ne'er Misser backup
-  sorcerer: Markoheshkir
-  bard: Band of the Mystic Scoundrel → full control loop
+  paladin: Shadow Blade + Phalar Aluve remains the endgame weapon package; Savage Attacker improves both weapons and every Divine Smite.
+  asterion: Monk 9 / Thief 3; double Flurry and Ki Resonation.
+  sorcerer: Tempest Cleric 2 at character levels 11–12 for Destructive Wrath.
+  bard: Band of the Mystic Scoundrel completes the control loop.
 watch_outs:
-- watch_out: Charisma overload
-  detail: Paladin/Warlock/Sorc/Bard are all CHA; lean on the Trickster (Expertise + Perception/Investigation) for the DEX/INT/WIS skills.
+- watch_out: Modded Hag's Hair assumption
+  detail: 'This run uses a mod that gives every party member a Hair. Charles, Bonbon, and Gale use it for CHA 17→18; Asterion uses it for DEX 17→18. In vanilla, only one exists.'
+- watch_out: Monk equipment rule
+  detail: 'Asterion must be unarmoured and shieldless. From Tavern Brawler onward, leave both melee hands empty: holding a monk weapon preserves Flurry and special unarmed commands, but ordinary Attack/Extra Attack actions swing that weapon and lose Tavern Brawler.'
 - watch_out: Resonance Stone debuff
-  detail: Its aura makes the whole party (incl. its Astarion carrier — no Gnome Cunning) psychic-vulnerable + disadvantage on mental saves; cluster it near the Paladin's Aura of Protection and keep it off save-fragile allies vs psychic/mind enemies.
+  detail: Its aura makes nearby creatures psychic-vulnerable and disadvantaged on mental saves. Use it around Charles's Aura of Protection, but holster it against psychic/mind enemies and do not rely on its known post-Act-2 reliability.
+- watch_out: Charles's Resonance respec and oath
+  detail: 'Keep the temporary Vengeance oath intact so Withers can perform the Stone respec normally. At the Resonance Stone, usually respec at character level 9 to Warlock 5 / Paladin 4, replace GWM with Dual Wielder, take Savage Attacker as the Paladin feat, then break the newly chosen oath into Oathbreaker. If Charles becomes an Oathbreaker early, he must first pay the Oathbreaker Knight to restore the oath before Withers will respec him.'
 - watch_out: Deepened Pact (non-Honour)
-  detail: The 3-attack stack works only outside Honour mode; don't drop Warlock below 5.
-- watch_out: Undead / crit-immune bosses break the nova (no respec needed)
-  detail: |-
-    Hold Monster & Command have NO effect on undead, the Resonance Stone excludes undead + constructs, and crit-immunity gear cancels auto-crits — so **both melee multipliers die** vs Ketheric (Act 2), Cazador, the Steel Watchers, and the Netherbrain.
-
-    Fallback (all tactical, no respec):
-    - **Bonbon** swaps to Hypnotic Pattern / Slow (work on undead) instead of Hold Monster, and keeps Healing Word for emergencies.
-    - **Charles** drops the Resonance Stone and leans on Risky-Ring advantage + Spiteful Suffering for crit-fishing — his Divine Smite already deals +1d8 vs Undead/Fiends, so radiant smites are actually STRONG here.
-    - **Gale/Asterion** are unaffected (lightning/force work on undead).
-
-    Treat the Hold→auto-crit→Stone nova as an **anti-LIVING-boss package**.
+  detail: The Paladin 5 Extra Attack and Warlock 5 Deepened Pact stack only outside Honour Mode; this guide is explicitly non-Honour.
+- watch_out: Undead / crit-immune bosses
+  detail: Hold Monster and Command do not control undead, and crit immunity prevents the held-target plan. Use Hypnotic Pattern/Slow where applicable; Charles still benefits from radiant Divine Smite against Undead/Fiends, while Gale and Asterion use lightning/force or Asterion's radiant Manifestation.
 skills_face:
 - duty: Face (Persuasion / Deception / Intimidation)
-  who: Bard (Expertise + Friends)
+  who: Bonbon (Expertise + Friends)
 - duty: Sleight of Hand / Stealth
-  who: Trickster (Expertise)
-- duty: Investigation / Arcana
-  who: Trickster (Expertise + Perception)
-- duty: Athletics (chasm throws)
-  who: Trickster (Expertise)
-- duty: Perception / Medicine
-  who: Split across the party
+  who: Asterion (Rogue 1 Expertise)
+- duty: Investigation / Perception
+  who: Asterion (proficient; no second Expertise pair in this Rogue 3 build)
+- duty: Athletics
+  who: Bonbon (Fighter proficiency)
+- duty: Arcana / History
+  who: Gale (Sage)
 ---
-

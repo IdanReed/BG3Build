@@ -1,5 +1,5 @@
 ---
-note: Who actually covers each skill (★ Expertise = doubled bonus · ● Proficient · ½ Jack of All Trades = half proficiency on non-proficient checks). Save/background/racial proficiencies are fixed; class skill picks are the plan's recommended loadout. The party is CHA-heavy, so Asterion carries the DEX/INT/WIS skills while three characters can face.
+note: Who covers each skill. ★ Expertise (doubled bonus) · ● Proficient · ½ Jack of All Trades (half proficiency on non-proficient checks). Saves, background and racial proficiencies are fixed; class skill picks are the plan's recommendation. The party is CHA-heavy, so Asterion carries DEX/INT/WIS while three characters can face.
 legend:
   expertise: ★ Expertise (double proficiency bonus)
   proficient: ● Proficient
@@ -52,7 +52,7 @@ characters:
     - Medicine
     - Deception
     - Religion
-    source: Half-Orc (Intimidation) + Haunted One background (Intimidation, Medicine) + Warlock's 2 picks (Deception, Religion). No Expertise, but CHA 20 makes Intimidation/Deception a genuine secondary face.
+    source: Half-Orc (Intimidation) + Haunted One (Intimidation, Medicine) + 2 Warlock picks (Deception, Religion). No Expertise, but CHA 20 makes Intimidation/Deception a real secondary face.
   Asterion:
     saves:
     - DEX
@@ -66,7 +66,7 @@ characters:
     - Insight
     - Perception
     - Investigation
-    source: 'Charlatan background (Deception, Sleight of Hand) + High Elf (Perception) + Rogue''s 4 picks (Stealth, Investigation, Acrobatics, Insight). This Rogue 3 build gets Expertise only in Sleight of Hand + Stealth at Rogue 1; it does not reach Rogue 6 for another pair or Rogue 11 for Reliable Talent.'
+    source: 'Charlatan (Deception, Sleight of Hand) + High Elf (Perception) + 4 Rogue picks (Stealth, Investigation, Acrobatics, Insight). Rogue 1 Expertise only — no second pair (Rogue 6), no Reliable Talent (Rogue 11).'
   Gale:
     saves:
     - CON
@@ -78,7 +78,7 @@ characters:
     - Persuasion
     - Insight
     - Perception
-    source: Sage background (Arcana, History) + Sorcerer's 2 picks (Persuasion, Insight) + Human free skill (Perception). CHA 20 → a decent Persuasion backup.
+    source: Sage (Arcana, History) + 2 Sorcerer picks (Persuasion, Insight) + Human free skill (Perception). CHA 20 → decent Persuasion backup.
   Bonbon:
     saves:
     - STR
@@ -93,5 +93,5 @@ characters:
     - Perception
     - Athletics
     jack_of_all_trades: true
-    source: Guild Artisan background (Insight, Persuasion) + Human free skill (Deception) + Fighter's 2 picks (Perception, Athletics) + Bard's picks (Performance, Intimidation). Expertise ×4 (Bard 3 + Bard 10). Jack of All Trades adds half proficiency to every OTHER check — the primary face + skill generalist.
+    source: Guild Artisan (Insight, Persuasion) + Human free skill (Deception) + 2 Fighter picks (Perception, Athletics) + Bard picks (Performance, Intimidation). Expertise ×4 (Bard 3 + 10). Jack of All Trades adds half proficiency to every OTHER check — the primary face and skill generalist.
 ---

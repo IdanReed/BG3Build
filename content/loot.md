@@ -14,7 +14,7 @@ loot_guide:
     - name: Silver Pendant
       for: Shared utility swap
       core: true
-      note: 'On a skeleton at the Harper outpost southwest of the Grove (X: 152 Y: 366). Grants Guidance at will. Gale supplies Guidance while the early Tempest Cleric level is present, but loses it at the character-level-6 pure-Sorcerer respec; keep this pendant so the party never loses the +1d4 ability-check tool. Do not feed it to Gale''s orb.'
+      note: 'On a skeleton at the Harper outpost southwest of the Grove (X: 152 Y: 366). Grants Guidance at will. MANDATORY PICKUP: with Gale on the Fire Sorlock build there is no Cleric level anywhere in the party, so this pendant is the ONLY source of Guidance for the whole run. Grab it before the Grove and keep it as a shared exploration swap. Do not feed it to Gale''s orb.'
     - name: Deathstalker Mantle
       wiki: The Deathstalker Mantle
       for: Asterion
@@ -36,9 +36,9 @@ loot_guide:
       core: true
       note: 'Sold by Auntie Ethel in the Grove. EARLY LEVELS 2–4 ONLY: it improves Flurry/bonus-action punches by +1 and grants +2 saving throws while unarmoured. Unequip it when Tavern Brawler arrives at character level 5; ordinary main-action attacks otherwise swing the staff instead of receiving Tavern Brawler and unarmed riders.'
     - name: Safeguard Shield
-      for: Gale
-      core: true
-      note: 'Sold by Dammon. +2 AC and +1 to all saving throws — Gale''s selected shield because the save bonus directly protects Twinned Haste concentration. Human Civil Militia preserves shield proficiency after the pure-Sorcerer respec.'
+      for: any
+      core: false
+      note: 'Sold by Dammon. +2 AC and +1 to all saving throws. NO LONGER GALE''S — the Fire Sorlock takes Dual Wielder at character level 4 and fills both hands with staves, so he cannot hold a shield. This is the main defensive regression of the build switch; the shield is free for anyone who can use it.'
     - name: Broodmother's Revenge
       for: Bonbon
       core: true
@@ -60,6 +60,8 @@ loot_guide:
       core: false
       note: Emerald Grove Hidden Vault (Wolf altar; unlocked via the Enclave Library puzzle). +1 reach glaive that grants the Sorrowful Lash cantrip — a decent early reach weapon for an optional martial.
     events:
+    - name: ⚠ Strange Ox — DO NOT KILL IT HERE
+      note: 'The wandering Strange Ox in the Grove carries the Hat of Fire Acuity ONLY from Act 2 onward — kill it here and you get just the Shapeshifter''s Boon Ring, and Gale''s entire build loses the item it depends on. Leave it alone; kill it at Dammon''s blacksmith in Last Light Inn in Act 2. If you miss it there, it reappears in Rivington on a hill west of the requisitioned barn in Act 3.'
     - name: Save the Grove
       note: Central Act 1 hub — good path (kill goblin leaders) vs evil (raid with Minthara).
     - name: Recruit Wyll
@@ -85,7 +87,7 @@ loot_guide:
     - name: Haste Helm
       for: Charles
       core: true
-      note: 'Moss-Covered Chest in the Blighted Village. Charles keeps its opening Momentum because the Ring of Arcane Synergy supplies his damage rider without consuming the head slot. Asterion can borrow it when Charles does not need the approach speed; Gale already has Tempestuous Magic.'
+      note: 'Moss-Covered Chest in the Blighted Village. Charles keeps its opening Momentum because the Ring of Arcane Synergy supplies his damage rider without consuming the head slot. Asterion can borrow it when Charles does not need the approach speed. ⚠ Gale no longer has Storm Sorcery''s Tempestuous Magic flight, and does not get Draconic Fly until character level 12 — but his head slot is committed to Shadespell and then the Hat of Fire Acuity, so he still cannot use this.'
     - name: Bracers of Defence
       for: Asterion
       core: true
@@ -187,7 +189,7 @@ loot_guide:
     - name: Melf's First Staff
       for: Gale
       core: true
-      note: 'Sold by Blurg. +1 Spell Save DC and spell attacks; Gale swaps from Spellsparkler when a save-based Lightning Bolt or control spell matters more than Lightning-Charge generation.'
+      note: 'Sold by Blurg. +1 Spell Save DC and +1 spell attacks. NOT a swap any more — with Dual Wielder at character level 4, Gale holds this OFF-HAND alongside Spellsparkler permanently, and the +1 spell attack applies to every individual Scorching Ray ray.'
     - name: The Shadespell Circlet + The Lifebringer
       for: Gale
       core: true
@@ -326,6 +328,10 @@ loot_guide:
       for: any
       core: false
       note: Head slot, dropped by Kar'niss (the drider carrying the Moonlantern). Cast Invisibility 1/short rest while in shadow/darkness — excellent for any stealth or scout character (a strong alternative escape/ambush tool alongside Asterion's kit).
+    - name: Ring of Mental Inhibition
+      for: Gale
+      core: true
+      note: 'In a locked chest in the House in Deep Shadows, just east of the Shadowed Battlefield waypoint. When a foe fails a saving throw against Gale''s spells they gain Mental Fatigue for 2 turns, stacking the odds for the next Command — and applying a condition also triggers Boots of Stormy Clamour. ⚠ Per the wiki it does NOT trigger on the saves a creature makes to shake off an existing effect, so it will not extend Hold Person. Swap it in over Coruscation for control-focused fights.'
     events:
     - name: Free the pixie (Dolly Dolly Dolly)
       note: Freeing the pixie in the Moonlantern grants the party permanent Pixie's Blessing (curse immunity without holding the lantern). Missable.
@@ -339,16 +345,24 @@ loot_guide:
     - name: Coruscation Ring
       for: Gale
       core: true
-      note: Trapped chest in a hidden cellar room. Spell damage while illuminated inflicts Radiating Orb — a Radiating-Orb combo piece.
+      note: 'Trapped chest in a hidden cellar room. THE ILLUMINATION ENGINE: it applies Radiating Orb when the WEARER is illuminated — the target does not need to be lit. Radiating Orb then makes the target Illuminated, which switches on Callous Glow''s +2 radiant, which procs Gloves of Belligerent Skies'' Reverberation. Since only GALE needs light, this never conflicts with Charles standing in a Darkness cloud. Keep Gale lit with the Light cantrip early, then Daylight (Enchant Item) on Bonbon''s weapon from character level 8.'
     - name: Covert Cowl
       wiki: Covert Cowl
       for: Charles
       core: false
       note: Cellar, on a Meenlock. While Obscured, crit threshold −1 — Charles's Act-2 Darkness head after Bonbon replaces the Diadem with the Helmet of Arcane Acuity. The freed Diadem remains his raw-damage alternative once Risky Ring displaces his Act-1 Arcane Synergy Ring.
-    - name: Potent Robe
+    - name: Hat of Fire Acuity
       for: Gale
       core: true
-      note: Alfira hands it over at Last Light in ACT 2 — ONLY if she survived Act 1 (as the Dark Urge, Charles must knock her out before camp, not kill her). Adds CHA mod to cantrip damage.
+      note: '⚠⚠ THE build-defining item — carried by the Strange Ox at Dammon''s blacksmith. Kill it HERE (not in the Act 1 Grove, where it does not yet carry the hat). Dealing Fire damage grants 2 turns of Arcane Acuity: +1 spell attack AND +1 spell save DC per remaining turn, capped at 10, losing 1 per turn and 2 per hit taken. Each Scorching Ray ray deals Fire damage separately, so one level-4 cast (5 rays) takes Gale from 0 to the cap. Missed it? The Ox reappears in Rivington in Act 3.'
+    - name: Evasive Shoes
+      for: Gale
+      core: false
+      note: Sold by Mattis. Damage-focused alternative to Boots of Stormy Clamour for fights where the Reverberation engine is not the plan.
+    - name: Potent Robe
+      for: Gale
+      core: false
+      note: 'Alfira hands it over at Last Light in ACT 2 — ONLY if she survived Act 1 (as the Dark Urge, Charles must knock her out before camp, not kill her). DEMOTED by the Fire Sorlock switch: it adds CHA to CANTRIP damage, and this build stops casting cantrips in combat after character level 3. Keep it as a generic robe until Armour of Landfall in Act 3.'
     events:
     - name: Protect Isobel — DON'T let the inn fall
       note: Stop the assassin Marcus from taking Isobel; if she dies the moonshield drops and the inn (vendors + quests) is lost. Missable.
@@ -365,9 +379,9 @@ loot_guide:
       core: true
       note: Sold by Roah Moonglow at Moonrise. Pair this force-damage hand crossbow with Hellfire Hand Crossbow to produce the multi-hit Arcane Acuity setup as soon as Act 2.
     - name: Spineshudder Amulet
-      for: any
-      core: false
-      note: In a Mimic in Isobel's bedroom (upper floor, Moonrise). Applies Reverberation on your ranged SPELL-ATTACK hits only (not weapon hits or save spells) — good for a spell-attack caster, weak for Gale's save-based nukes.
+      for: Gale
+      core: true
+      note: 'In a Mimic in Isobel''s bedroom (upper floor, Moonrise). Applies Reverberation on ranged SPELL-ATTACK hits only (not weapon hits or save spells). PROMOTED TO CORE by the Fire Sorlock switch — it was near-worthless for the old save-based Storm nukes and is excellent now that Gale''s main spell is 3–7 spell attack rolls per cast. With Boots of Stormy Clamour it reliably stacks Reverberation to Prone.'
     - name: Moonrise Towers vendor & prison loot
       wiki: false
       for: any
@@ -385,7 +399,7 @@ loot_guide:
     - name: Callous Glow Ring
       for: Gale
       core: true
-      note: Vault behind the DC30 door near Balthazar. +2 Radiant vs illuminated creatures — illumination combo piece.
+      note: 'Opulent chest in the vault room near Balthazar. +2 Radiant damage against ILLUMINATED creatures — applied per ray, so up to +14 on a level-6 Scorching Ray, and the radiant damage also procs Gloves of Belligerent Skies. The Coruscation Ring is what makes targets Illuminated in the first place, so wear the pair together. ⚠ Take it off against Shar worshippers and Justiciars.'
     - name: Hellfire Hand Crossbow
       for: Bonbon
       core: true
@@ -470,9 +484,14 @@ loot_guide:
     items:
     - name: Hellrider's Longbow
       wiki: Hellrider Longbow
-      for: Bonbon
+      for: Bonbon (contested with Gale)
       core: true
-      note: Sold by Ferg Drogher in Rivington. +initiative — the Bard controller wants to go first.
+      note: 'Sold by Ferg Drogher in Rivington. +initiative. NEWLY CONTESTED: the Fire Sorlock guide says this should always go to the Sorlock on fire parties, and Gale has no feat left for Alert. Bonbon keeps it by default because she must land the first weapon hit to open the Band of the Mystic Scoundrel loop; Gale keeps Bow of Awareness and drinks an Elixir of Vigilance for fights where he must go first.'
+    - name: Strange Ox (second chance)
+      wiki: false
+      for: Gale
+      core: false
+      note: 'If the Hat of Fire Acuity was missed at Last Light in Act 2, the Strange Ox reappears here on a hill west of the requisitioned barn. This is the last chance at the item Gale''s build depends on.'
     - name: Nyrulna
       for: any
       core: false
@@ -482,9 +501,9 @@ loot_guide:
       core: true
       note: 'Won from AKABI''s wheel game at the Circus of the Last Days (Rivington): hit the jackpot → you''re teleported (ALONE) to a Chult jungle where it sits in a backpack (Nyrulna is in the same jungle). Cast Enchantment/Illusion as a BONUS action after a weapon hit — the Bard''s flourish→Command loop. ⚠ NOT at Sorcerous Sundries; don''t over-spin the wheel (≈16 spins closes it).'
     - name: Spellmight Gloves
-      for: optional spell-attack caster
-      core: false
-      note: Lucretious's reward for Find Dribbles the Clown at the Circus. They add damage to spells requiring attack rolls at a −5 attack penalty; Gale's core lightning AoE is save-based, so he keeps Gloves of Belligerent Skies.
+      for: Gale
+      core: true
+      note: 'Lucretious''s reward for Find Dribbles the Clown at the Circus (also pickpocketable). −5 to spell attack rolls for +1d8 damage. PROMOTED TO CORE by the Fire Sorlock switch — previously rejected because Storm''s nukes were save-based, and now excellent because Scorching Ray is an attack roll firing 3–7 times. MANAGE THEM: first cast of a fight with the gloves OFF to build Arcane Acuity, then switch them ON once Acuity covers the −5.'
     - name: Rivington vendors & Requisitioned Barn
       wiki: false
       for: any
@@ -498,7 +517,11 @@ loot_guide:
     - name: Markoheshkir
       for: Gale
       core: true
-      note: Ramazith's Tower (accessed via Sorcerous Sundries / Lorroakan). Kereska's Favour → free empowered elemental spell — pick Lightning. Gale's endgame staff.
+      note: 'Ramazith''s Tower, inside a Globe of Invulnerability (See Invisibility to spot the lever, then DC 20 Arcana to disable the globe). +1 spell attack and DC, plus Arcane Battery for one free spell of any level. Attune Kereska''s Favour to FLAME OF WRATH (not Bolts of Doom, which was the old Storm pick): Fire resistance, +proficiency bonus to Fire spell damage applied per ray, and Heat generation. ⚠ Heat deals unavoidable self-damage each turn and threatens Twinned Haste — do not attune Flame of Wrath until Armour of Landfall is equipped.'
+    - name: Armour of Landfall
+      for: Gale
+      core: true
+      note: 'Sold by Lorroakan''s Projection or Rolan on the SUNDRIES GROUND FLOOR (1700g). AC 13 + DEX light armour, +1 Spell Save DC, and — the real reason — ADVANTAGE ON CONSTITUTION SAVING THROWS. That advantage replaces the Halfling Luck and the War Caster feat this build cannot have, and it is what makes Markoheshkir''s Heat safe to carry while concentrating on Twinned Haste. Gale''s Human Civil Militia already grants light-armour proficiency, so the Warlock dip is not needed to wear it.'
     - name: Stolen scrolls (Chain Lightning, Freezing Sphere, Cone of Cold)
       wiki:
       - Scroll of Chain Lightning
@@ -526,9 +549,9 @@ loot_guide:
   - area: Stormshore Tabernacle
     items:
     - name: Amulet of the Devout
-      for: Gale
-      core: true
-      note: Main offering chest in the basement. +2 spell save DC + an extra Channel Divinity (extra Destructive Wrath). ⚠️ Looting it inflicts the Castigated By Divinity curse UNLESS Jaheira loots it wearing Khalid's Gift.
+      for: any
+      core: false
+      note: 'Main offering chest in the basement. +2 spell save DC + an extra Channel Divinity. NO LONGER GALE''S — the Fire Sorlock has no Cleric level and therefore no Channel Divinity to recharge, and his amulet slot belongs to Spineshudder. Still a fine +2 DC neck for anyone else. ⚠️ Looting it inflicts the Castigated By Divinity curse UNLESS Jaheira loots it wearing Khalid''s Gift.'
     events:
     - name: The curse trap
       note: Don't brick the amulet — use Jaheira + Khalid's Gift to loot the offering chest cleanly.
@@ -592,9 +615,9 @@ loot_guide:
   - area: Cazador's Palace
     items:
     - name: Rhapsody
-      for: optional weapon/caster setup
-      core: false
-      note: From Cazador. Scarlet Remittance builds bonuses after kills, but Asterion's unarmed Monk cannot use the dagger without giving up Tavern Brawler and unarmed riders.
+      for: Gale
+      core: true
+      note: 'Carried by Cazador Szarr. PROMOTED TO CORE by the Fire Sorlock switch: Scarlet Remittance stacks +1 attack roll, +1 damage, AND +1 spell save DC per kill (max 3), and this build is the rare one that uses all three — the damage applying per Scorching Ray ray. Gale wields it off-hand behind Markoheshkir, which requires Dual Wielder. ⚠ Per the wiki, since Patch 5 it only builds stacks on killing living hostile targets. Asterion''s unarmed Monk still cannot use it.'
     - name: Cazador's palace loot (ritual chamber & kennels)
       wiki: false
       for: any
@@ -619,9 +642,13 @@ loot_guide:
       core: false
       note: Sold by Roah Moonglow, first at Moonrise Towers in Act 2 and again here if missed. Pair with Hellfire Hand Crossbow for Bonbon's multi-hit Arcane Acuity setup; its force damage bypasses many resistances.
     - name: Birthright
+      for: Bonbon
+      core: true
+      note: 'Sold at Sorcerous Sundries by Rolan / Lorroakan''s projection (ground floor). +2 Charisma helm (cap 22). REASSIGNED — Gale''s head slot now belongs permanently to the Hat of Fire Acuity, without which his whole build stops working, so Birthright goes to Bonbon instead.'
+    - name: Cloak of the Weave
       for: Gale
       core: true
-      note: Sold at Sorcerous Sundries by Rolan / Lorroakan's projection (ground floor). +2 Charisma helm (cap 22; stacks with the Mirror's Bard's Memory toward 24) — free CHA for Gale's head slot.
+      note: 'Sold by Helsik at the Devil''s Fee, but ONLY once her special stock is unlocked through dialogue. +1 Spell Save DC and +1 spell attack rolls — Gale''s best-in-slot cloak, and the spell attack applies per ray. ⚠ Per the wiki its Absorb Elements ability is bugged and non-functional; buy it for the flat +1/+1.'
     - name: Helm of Balduran + Wyrmway loot (Ansur)
       wiki:
       - Helm of Balduran

@@ -8,7 +8,7 @@ mechanics:
 - k: The refund = why there are two phases
   v: 'Communing REFUNDS any tadpoles a character already spent on the FIVE inner powers (Psionic Overload, Favourable Beginnings, Force Tunnel, Concentrated Blast, Transfuse Health). It does NOT refund the ten middle-ring powers. Inner powers are eventually free but still tie up specimens until Act 3, so buy only the ones that materially help during Acts 1–2; middle/elite powers remain real spends.'
 - k: Save DC = NEWEST class''s casting stat + Arcane Acuity
-  v: 'Illithid save DCs use the spellcasting-ability modifier of the class you most recently reached LEVEL 1 in — but Fighter and Rogue are IGNORED (no casting stat unless Eldritch Knight / Arcane Trickster). Spell-save-DC bonuses also apply. At level 12: Bonbon = CHA 20 → DC 17 base, then +2 per Helmet-of-Arcane-Acuity weapon hit up to DC 27; Charles = CHA 20 → DC 17, or 18 in Helldusk Gloves; Asterion = WIS 18 because Monk is his newest countable class → DC 17, with nearby enemies disadvantaged by his Resonance Stone; Gale = WIS 12 → DC 13 after the Tempest dip.'
+  v: 'Illithid save DCs use the spellcasting-ability modifier of the class you most recently reached LEVEL 1 in — but Fighter and Rogue are IGNORED (no casting stat unless Eldritch Knight / Arcane Trickster). Spell-save-DC bonuses also apply. At level 12: Bonbon = CHA 20 → DC 17 base, then +2 per Helmet-of-Arcane-Acuity weapon hit up to DC 27; Charles = CHA 20 → DC 17, or 18 in Helldusk Gloves; Asterion = WIS 18 because Monk is his newest countable class → DC 17, with nearby enemies disadvantaged by his Resonance Stone; Gale = CHA 20 → DC 17, because Fiend Warlock at character level 7 is now his newest level-1 class — and his Hat of Fire Acuity pushes that to DC 27, the same ceiling as Bonbon.'
 - k: Awakened (Zaith''isk, Act 1) → give to BONBON
   v: 'The Crèche Zaith''isk grants ONE character the permanent Awakened passive: all Illithid powers cost a BONUS ACTION instead of an Action (mandatory — you can no longer use them as an Action). Give it to Bonbon: weapon attacks stack Arcane Acuity, then his Bonus Action fires Perilous Stakes or Mind Blast at the party''s best DC. Those powers compete with the Band-of-the-Mystic-Scoundrel Command loop, so choose the right control package for the encounter; Mind Sanctuary is the team-scale release valve. NOT Asterion (his bonus actions are Flurries/Step). Grab it in Act 1 (missable): sit in the Zaith''isk, pass INT DC 12 → WIS DC 15 → CON DC 18 (save-scum in non-Honour; a failed save is −2 to that stat but is cured by consuming any tadpole).'
 - k: Eligibility
@@ -138,9 +138,9 @@ characters:
     when: POST (Act 3)
     why: Executes enemies below his evolved-power count and damages nearby enemies. Toggle it OFF when a kill must trigger Deathstalker invisibility.
 - name: Gale
-  short: Freecast battery — free Twinned Haste
-  dc: WIS 12 (+1) → DC ~13 after the Act-3 Tempest dip (CHA while still pure Sorcerer). No Acuity, so he takes ONLY no-save picks — his save-nukes would whiff.
-  note: 'Skips save-based powers and the concentration-risky Psionic Overload; instead builds to Freecast, which is no-save and turns the party''s core buff free. Do not spend a pre-transformation specimen on Favourable Beginnings because its shared-target bonus is likely consumed by an earlier attacker and transformation grants it automatically.'
+  short: Freecast battery — free Twinned Haste (save-based picks now viable too)
+  dc: 'CHA 20 (+5) → DC 17, because the Fiend Warlock level at character 7 is now Gale''s most recently reached level-1 class. The Hat of Fire Acuity then adds up to +10 → DC 27, matching Bonbon''s ceiling.'
+  note: 'CHANGED BY THE FIRE SORLOCK SWITCH: the old plan gave Gale only no-save powers because a WIS-12 Tempest dip left him at DC ~13. He now has the joint-highest illithid save DC in the party, so save-based powers are fully viable for him — the power list below was chosen under the old assumption and is worth revisiting. Freecast remains the standout pick regardless, since it makes Twinned Haste free. Do not spend a pre-transformation specimen on Favourable Beginnings because its shared-target bonus is likely consumed by an earlier attacker and transformation grants it automatically.'
   powers:
   - power: Transfuse Health
     tier: Inner (auto on transform)

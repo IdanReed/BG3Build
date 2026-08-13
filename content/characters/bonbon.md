@@ -461,4 +461,6 @@ builds:
     - **Act 1 alternatives:** use a Hill Giant elixir for a boss with no Bloodlust target; use Adamantine Splint for defence.
     - **Act 2+:** switch to dual hand crossbows and Flourish to stack Arcane Acuity. In Act 3, spend it on a same-turn bonus-action Hold Monster or Command.
     - **Protect concentration:** stay at range. Against undead, use Hypnotic Pattern or Slow instead of Hold Monster/Command.
+    - **Carry the party's Daylight:** Gale casts Daylight (Enchant Item) on Bonbon's main-hand weapon once per long rest — it is bugged to last until the next rest and travels with her, keeping Gale lit for his Coruscation → Callous Glow chain. She is the carrier because the spell requires a main-hand weapon, which rules out Asterion's empty Tavern Brawler hands, and because her mid-range position keeps the 15m radius over the fight. ⚠ Do not swap her main-hand weapon afterwards, and let Gale cast it *before* any Darkness Arrow goes out.
+    - **Division of control with Gale:** Bonbon owns the *Concentration* lane (Hold Person/Hold Monster — the auto-crit setup for Charles); Gale owns the *non-concentration* lane (Extended Command). They stack rather than compete, so do not both spend a turn on the same target. Bonbon also keeps Hellrider's Longbow by default, since she needs to land the first weapon hit to open the Band loop.
 ---

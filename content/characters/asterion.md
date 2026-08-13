@@ -289,7 +289,7 @@ builds:
       item: Resonance Stone (carries it)
       wiki: Resonance Stone
       slot: other
-      note: 'Resonance Stone (Mind Flayer Colony, late Act 2). He places/carries it — Manifestation of Mind psychic + Psionic Overload across 4–6 hits/turn are all doubled. ⚠ Its aura also makes the party (and him — no Gnome Cunning) psychic-vulnerable + disadvantaged on mental saves; keep it inside Charles''s Aura of Protection, or skip it vs psychic/mind enemies.'
+      note: 'Resonance Stone (Mind Flayer Colony, late Act 2). He places/carries it — Manifestation of Mind psychic + Psionic Overload across 4–6 hits/turn are all doubled. NEW SYNERGY since Gale became a Fire Sorlock: the aura also gives enemies disadvantage on mental saving throws, and Command and both Hold spells are WIS saves — so anything standing near Asterion is close to unable to resist Gale''s control on top of an Arcane Acuity DC in the low 30s. Keep the Stone near the enemies Gale intends to Command. ⚠ Its aura also makes the party (and him — no Gnome Cunning) psychic-vulnerable + disadvantaged on mental saves; keep it inside Charles''s Aura of Protection, or skip it vs psychic/mind enemies.'
     - id: eversight-ring
       item: Eversight Ring (Darkness fights)
       wiki: Eversight Ring

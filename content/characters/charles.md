@@ -48,6 +48,13 @@ builds:
       save: None (melee weapon attack roll)
       when: char 4
       why: 'The build''s core. Expend any slot on a melee hit: 2d8 Radiant at L1, +1d8 per slot level above 1st (cap 5d8 at an L4 slot), +1d8 vs Fiends/Undead; dice DOUBLE on a crit. Not a prepared spell and not stopped by Counterspell — set the Critical-Hit Divine Smite reactions to auto-confirm.'
+    - spell: Inquisitor's Might
+      level: Channel Oath (Oath of Vengeance, Paladin 1)
+      guide_level: 3
+      school: Oath action — Radiant
+      save: None (the Daze rider has NO saving throw)
+      when: char 3
+      why: 'THE ACT 1 FIX — available since character level 3 and previously unused by this plan. Bonus Action + the single Channel Oath charge: for 2 turns the target''s weapon attacks deal an additional +CHA modifier RADIANT damage and can Daze enemies for 1 turn, with no save on the Daze. At CHA 17 that is +3 per weapon hit, rising to +5 at CHA 20. Three things make it better than it looks: (1) the radiant damage triggers Luminous Armour''s Radiating Shockwaves and any radiant-keyed rider, (2) it has a 9m range and can target an ALLY — on Asterion''s 4–6 unarmed hits per turn it is worth far more raw damage than on Charles''s 1–2 swings, so decide per fight who gets it, and (3) the Daze has no saving throw at all. ⚠ Only ONE Channel Oath charge per short rest, and from Paladin 3 it competes with Vow of Enmity.'
     - spell: Shadow Blade
       level: '2'
       guide_level: 9
@@ -259,8 +266,8 @@ builds:
     - Temporary Paladin oath
     recommendations:
     - category: Oath
-      recommendation: Oath of Vengeance (keep intact temporarily)
-      note: 'Use the oath''s normal tools during Act 1 and delay becoming an Oathbreaker until after the Resonance Stone respec. This avoids paying to restore the oath before Withers will respec Charles.'
+      recommendation: Oath of Vengeance — and USE it, do not treat it as a placeholder
+      note: 'This level also grants Channel Oath (1 charge, short-rest recharge) and, with Vengeance, INQUISITOR''S MIGHT at Paladin class level 1. That is a real Act 1 damage button, not a formality — see the Inquisitor''s Might entry under mandatory spells. The oath is still broken into Oathbreaker after the Resonance Stone respec, which avoids paying to restore it before Withers will respec Charles; but for the whole of Act 1 it is an active damage source that the earlier version of this plan left unused.'
   - char_level: 4
     class: Paladin 2
     gains:
@@ -269,8 +276,8 @@ builds:
     - Fighting Style selection
     recommendations:
     - category: Fighting style
-      recommendation: Defence
-      note: Always-on AC is the best fit for a two-handed frontliner who already gains damage from Great Weapon Master.
+      recommendation: Defence (KEEP — Duelling is incompatible with this build)
+      note: '⚠ DUELLING WAS CONSIDERED AND REJECTED. Duelling requires "a melee weapon that is not Two-Handed in ONE hand, and no weapon in the other" (a shield is allowed). Great Weapon Master: All In requires "a melee weapon you are Proficient with and are wielding in BOTH hands", and the wiki adds that it applies "when off-hand is empty". The two can never be active on the same attack, so Duelling only makes sense if Charles abandons GWM for a Phalar + shield build — which this plan does not do. Defence''s always-on +1 AC remains the pick. Great Weapon Fighting is the theoretical damage alternative, but BG3 words it as "a Two-Handed melee weapon" and Phalar Aluve is VERSATILE, not Two-Handed, so it may not apply at all — verify in-game before spending the pick on it, and note the gain would only be ~+1.2 per hit on a single 1d10 die.'
     - category: Prepared spells
       recommendation:
       - Bless
@@ -284,16 +291,16 @@ builds:
     - Oath of Vengeance subclass actions
     recommendations:
     - category: Subclass path
-      recommendation: Keep the oath intact through Act 1
-      note: Vow of Enmity supplies a non-consumable advantage option when Darkness Arrows are unnecessary or unavailable. Break the oath only after the planned Act-2 respec.
+      recommendation: Keep the oath intact through Act 1 — but now you must CHOOSE a Channel Oath use
+      note: 'Paladin 3 adds Vow of Enmity (Bonus Action + Channel Oath charge, 3m, advantage on attack rolls against one enemy for 10 turns). ⚠ It draws on the SAME single short-rest Channel Oath charge as Inquisitor''s Might, so from here each short rest buys one or the other. Rough guide: Vow of Enmity for a long boss fight (10 turns of advantage offsets GWM''s −5 and doubles the crit rate that drives the smite nova — and the wiki notes a self-cast bug that extends the advantage to ALL targets), Inquisitor''s Might for a short fight or when you want the radiant rider and the free Daze. Break the oath only after the planned Act-2 respec.'
   - char_level: 6
     class: Paladin 4
     gains:
     - Feat or Ability Score Improvement selection
     recommendations:
     - category: Feat
-      recommendation: Great Weapon Master
-      note: Two-handed Phalar qualifies for All In. Devil's Sight advantage from a Darkness Arrow and Bless offset the −5 attack penalty; the +10 damage is the Act-1 spike.
+      recommendation: Great Weapon Master (SELECTED — the damage pick)
+      note: 'Versatile Phalar Aluve qualifies for All In, but ONLY while wielded in both hands with the OFF-HAND EMPTY — no shield, no off-hand weapon. Devil''s Sight advantage from a Darkness Arrow, Vow of Enmity, and Bless all offset the −5 attack penalty; the +10 damage is the Act-1 spike. Keeping GWM is what rules out the Duelling fighting style and the Adamantine Shield variant of this build.'
   - char_level: 7
     class: Paladin 5
     gains:
@@ -488,6 +495,8 @@ builds:
     - **Pre-cast Shriek for Gale, not just for yourself:** Shriek adds 1d4 Thunder every time an affected enemy takes damage, and Scorching Ray deals damage 3–7 separate times per cast. Activating Shriek before Gale's turn is worth roughly 7d4 on a single level-6 cast.
     - **Gale's light does not affect you:** the Coruscation Ring keys off *Gale* being illuminated, not the target, and Daylight only dispels Darkness at the instant it is cast. Keep using Darkness Arrows freely — just fire them after Gale's once-per-long-rest Daylight is already up.
     - **Late Act 2+ — Shadow + Stone:** on acquiring the Resonance Stone, usually respec at character level 9 to Warlock 5 / Paladin 4, replace GWM with Dual Wielder, summon 3d8 Shadow Blade main hand, and off-hand Phalar. Asterion carries the Stone within 9m to double the Psychic package.
+    - **Act 1 turn structure (this is the fix for feeling weak at char 4):** pre-cast Shriek from stealth → turn 1 open with **Inquisitor's Might** as your bonus action (+CHA radiant on every weapon hit for 2 turns, plus a no-save Daze) → Booming Blade or a Phalar swing → smite only on crits. Hexblade's Curse goes on turn 2, since it competes with Inquisitor's Might for the bonus action. From Paladin 3, decide at the start of each fight whether the one Channel Oath charge buys Inquisitor's Might or Vow of Enmity.
+    - **Give the buff away when it is worth more elsewhere:** Inquisitor's Might reaches 9m and can target an ally. Asterion's 4–6 unarmed hits per turn extract roughly three times the radiant damage Charles's 1–2 swings do, so on adds-heavy turns buff him instead.
     - **Nova:** attack a Held target, spending the largest Divine Smites first. At Paladin 5 after the respec, two three-attack Actions under Haste plus one Phalar off-hand attack reach seven auto-crit swings when the bonus action is free.
     - **Between novas:** fish for crits with advantage and the build's stacked crit-range bonuses; short rest to refill Warlock slots.
   nova:

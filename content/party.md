@@ -160,6 +160,8 @@ synergies:
   how: Boots of Stormy Clamour (condition inflicted), Spineshudder Amulet (ranged spell-attack hits), and Gloves of Belligerent Skies (radiant damage) all stack Reverberation, and Scorching Ray triggers all three several times per cast. Prone enemies then feed Charles's and Asterion's melee advantage.
 - name: Psychic package
   how: Late in Act 2, the Resonance Stone pickup triggers Charles's Shadow Blade respec. Asterion carries it for Manifestation of Mind and Psionic Overload across multiple Flurry hits while keeping Charles in the 9m aura to double Shadow Blade and Strange Conduit; holster it against psychic or mental-save threats.
+- name: Inquisitor's Might onto the Monk
+  how: 'Charles''s Oath of Vengeance Channel Oath (available from character level 3) grants a target +CHA modifier RADIANT damage on every weapon attack for 2 turns, plus a no-save Daze — and it has a 9m range, so it can be cast on an ally. Asterion lands 4–6 unarmed hits per turn against Charles''s 1–2 swings, so buffing the Monk extracts roughly three times the damage. The radiant rider also feeds Charles''s Luminous Armour shockwaves and any radiant-keyed gear. ⚠ One charge per short rest, and from Paladin 3 it competes with Vow of Enmity.'
 - name: Auras
   how: Charles's Aura of Protection protects the frontline's saving throws; Aura of Hate adds his CHA modifier to nearby melee-weapon damage, not to Asterion's unarmed strikes.
 combat_gameplan:

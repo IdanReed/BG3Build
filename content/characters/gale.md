@@ -27,7 +27,7 @@ builds:
     note: 'Unusual for a caster, but this build wields two staves as stat sticks: Spellsparkler + Melf''s in Act 1, then Markoheshkir + Rhapsody in Act 3. Neither pair is Light, so Dual Wielder is mandatory to hold both. COST: Gale gives up the Safeguard Shield (+2 AC, +1 all saves) that previously protected his Haste concentration on the Storm build.'
   - at: Sorc 8 (char 9)
     feat: 'Elemental Adept: Fire'
-    note: 'Effectively mandatory in THIS party. The published guide says to skip Elemental Adept if you have a bow archer who can mass-apply Arsonist''s Oil with Arrows of Many Targets or Volley — Bonbon moves to dual hand crossbows in Act 2 and has no such option, so she can only strip fire resistance one target at a time. Act 3 is dense with fire-resistant enemies. Elemental Adept also removes 1s from every Fire damage die, which is worth more here than usual because Scorching Ray rolls so many dice.'
+    note: 'Effectively mandatory in THIS party, though the tier lists rate the feat only B in general — worth knowing you are spending one of two feats on a B-tier pick while Alert (S+) goes unbought. The published guide says to skip Elemental Adept if you have a bow archer who can mass-apply Arsonist''s Oil with Arrows of Many Targets or Volley; Bonbon moves to dual hand crossbows in Act 2 and has no such option, so she can only strip fire resistance one target at a time, and Act 3 is dense with fire-resistant enemies. ⚠ TWO WORDING CORRECTIONS from the wiki: BG3''s text is "you CANNOT ROLL A 1" on Fire damage dice, not the tabletop "treat 1s as 2s" — still excellent here because Scorching Ray rolls so many dice. And the resistance-piercing is BROADER than usually stated: it applies to "spells you cast AND attacks you make," not spells alone; only the no-1 clause is spell-only.'
   feats_note: 'ONLY TWO FEATS. Sorcerer grants them at Sorc 4 and Sorc 8 = character levels 4 and 9; the Warlock level grants none and Sorc 12 is never reached. Dual Wielder and Elemental Adept consume both, so there is no room for Alert, War Caster, or an ASI — initiative and concentration are gear problems on this build.'
   key_spells:
   - Scorching Ray (the core damage engine — every rider applies per ray)
@@ -58,7 +58,7 @@ builds:
       school: Evocation
       save: Ranged spell attack (one roll per ray)
       when: Sorc 3 (char 3)
-      why: 'THE build. 3 rays at level 2, +1 ray per slot level above 2nd (a level 6 slot fires 7). Each ray is a separate attack roll AND a separate damage instance, so every flat rider applies to EVERY ray — the wiki explicitly lists Elemental Affinity among them. That means +5 CHA, +2 Callous Glow, +3 Rhapsody, +4 Markoheshkir, +1d8 Spellmight, and Charles''s Phalar Shriek 1d4 Thunder all multiply by the ray count. It is also the Hat of Fire Acuity engine: each ray deals Fire damage and grants 2 turns of Arcane Acuity, so one level-4 cast caps Gale at 10 stacks.'
+      why: 'THE build — though note the tier lists rate the spell itself only A, precisely because its value is "multi-hit riders, not efficiency," which is exactly how this build uses it. 3 rays at level 2, +1 ray per slot level above 2nd (a level 6 slot fires 7). Each ray is a separate attack roll AND a separate damage instance, so every flat rider applies to EVERY ray. ⚠ CONFIRMED per-ray by name on the wiki: Elemental Affinity: Damage and the Callous Glow Ring. INFERRED but not individually stated: Rhapsody and Markoheshkir''s +proficiency, which are covered only by the general rule that bonus damage from passives and conditions applies per instance. Spellmight''s +1d8 is NOT addressed anywhere — see the traps. That means +5 CHA, +2 Callous Glow, +3 Rhapsody, +4 Markoheshkir, +1d8 Spellmight, and Charles''s Phalar Shriek 1d4 Thunder all multiply by the ray count. It is also the Hat of Fire Acuity engine: each ray deals Fire damage and grants 2 turns of Arcane Acuity, so one level-4 cast caps Gale at 10 stacks.'
     - spell: Command
       level: '1'
       guide_level: 7
@@ -79,7 +79,7 @@ builds:
       school: Evocation
       save: DEX save
       when: Sorc 6 (char 6)
-      why: 'Primary AoE, and now on-element — Elemental Affinity, Flame of Wrath, and Elemental Adept all apply. ⚠ Careful Spell does not arrive until Sorc 10 (char 11), so for most of the run Fireball is an adds-cluster tool only and must not be dropped on Charles or Asterion.'
+      why: 'Primary AoE, and now on-element — Elemental Affinity, Flame of Wrath, and Elemental Adept all apply. ⚠ The tier lists rate Fireball only B — "do not cast it solely because it is iconic." It is correct to keep here because it is on-element for three separate multipliers, but do not prioritise it over another Scorching Ray on a single target; it earns its slot on clusters of 4+. ⚠ Careful Spell does not arrive until Sorc 10 (char 11), so for most of the run Fireball is an adds-cluster tool only and must not be dropped on Charles or Asterion.'
     - spell: Counterspell
       level: '3'
       guide_level: 6
@@ -135,7 +135,14 @@ builds:
       school: Evocation
       save: Ranged spell attack
       when: Sorc 2 (char 2)
-      why: Early on-element single-target damage before Scorching Ray arrives at char 3, and it creates a fire surface. Becomes a replacement candidate later.
+      why: 'Early on-element single-target damage before Scorching Ray arrives at char 3, and it creates a fire surface. ⚠ Rated S-tier — "exceptionally highly" — so think twice before treating it as a throwaway replacement candidate; its other elemental modes also cover the fire-immune enemies Gale otherwise has no answer to before Chain Lightning at char 12.'
+    - spell: Ice Storm
+      level: '4'
+      guide_level: 9
+      school: Evocation
+      save: DEX save
+      when: Sorc 7+ (char 8+) — optional pick
+      why: 'A-tier and NOT Concentration, which is the whole reason to consider it: Gale can drop it on a cluster while still holding Twinned Haste, unlike every other AoE of its size. It also lays an ice surface for prone control. Off-element, so it gets no Elemental Affinity, Flame of Wrath or Elemental Adept — take it only if the fire-resistance problem in Act 3 turns out worse than Elemental Adept can fix.'
     - spell: Burning Hands
       level: '1'
       guide_level: 1
@@ -239,7 +246,7 @@ builds:
           recommendation:
           - Shield
           - Magic Missile
-          note: Magic Missile is a deliberate placeholder — it gets replaced by Counterspell at Sorc 6.
+          note: 'The plan replaces Magic Missile with Counterspell at Sorc 6 — but the tier lists rate BOTH Shield and Magic Missile S, so reconsider the swap in play. Magic Missile NEVER MISSES, which is a genuinely rare property on a build whose entire damage output is attack rolls; it is the clean answer to a turn where Scorching Ray would whiff, or for finishing a low-HP caster. If you keep it, drop a different flex spell for Counterspell instead.'
       - char_level: 2
         class: Sorcerer 2
         gains:

@@ -51,7 +51,29 @@ These were chosen at the table and are already written into the guide data.
 | **Murder Tribunal items documented but gated** — the Bhaal path stays undecided | `loot.md`, `charles.md` |
 | Missing loot entries added: Soul Catching, Kushigo Boots, Arcane Blessing, Drakethroat, Grymskull | `loot.md` |
 
-Validated: all nine content files still parse, and `GET /api/plan` returns 200 with every new entry present.
+### Second batch — the smaller corrections from Parts 1–2, also applied
+
+| Correction | Where |
+|---|---|
+| Elemental Adept wording: **"cannot roll a 1"**, and it pierces resistance for *attacks as well as spells* | `gale.md` |
+| Scorching Ray per-ray riders: **confirmed** for Elemental Affinity + Callous Glow, **inferred** for Rhapsody + Markoheshkir | `gale.md` |
+| **Fireball is only B** — keep it, but don't prioritise it over another Scorching Ray | `gale.md` |
+| **Magic Missile is S** — reconsider replacing it; it never misses on an all-attack-roll build | `gale.md` |
+| **Ice Storm (A, non-concentration)** added as an optional pick that layers over Haste | `gale.md` |
+| **Command run as an upcast mass disable**, not just single-target (#3 spell overall) | `charles.md` |
+| **Hunger of Hadar is S-tier** and warlock-exclusive — promoted from a bare "alternative" | `charles.md` |
+| **Killer's Sweetheart is weapon-attack-only** — can never move to Gale | `charles.md` |
+| **Tavern Brawler also covers Throw / Improvised**; hands-empty still applies to Asterion | `asterion.md` |
+| **Hypnotic Pattern is A, not S** — damage wakes targets, short duration | `bonbon.md` |
+| **Enhance Ability is only B**; **Greater Invisibility (A)** and **Silence (A)** added as picks | `bonbon.md` |
+| **Background resolved to Guild Artisan** to match `proficiencies.md` | `bonbon.md` |
+| **Fighter 1 vs Fighter 2 rationale recorded** — Bard 11's L6 slot beats Action Surge here | `bonbon.md` |
+| **Initiative is a d4** + the resulting party order, as an explicit watch-out | `party.md` |
+| Gale's two-feat watch-out rewritten — both gaps now closed by Vigilance + Spidersilk | `party.md` |
+| **Boots of Speed location recorded** (Thulla, Ebonlake Grotto) and deliberately not selected | `loot.md` |
+
+Validated: all nine content files still parse, and `GET /api/plan` returns 200 (241 KB) with every new
+entry present.
 
 ---
 

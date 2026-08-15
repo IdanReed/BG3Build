@@ -7,7 +7,7 @@ builds:
   class: Swords Bard 11 / Fighter 1
   build_order: Fighter 1 at character creation → Swords Bard 1–11. No respec, no Wizard dip.
   race: Half-Elf or Human (early shield)
-  background: Entertainer or Guild Artisan (face)
+  background: Guild Artisan (Insight, Persuasion) — RESOLVED; proficiencies.md assumes this one
   starting_stats:
     STR: 8
     DEX:
@@ -45,7 +45,7 @@ builds:
       skills: Fighter 2 + Bard skills; Expertise ×4 (Bard 3 + 10) + Jack of All Trades — the party face.
     starting_cantrips: '2 at Bard 1 (Vicious Mockery, Friends) → 4 by Bard 10.'
     starting_spells: '4 known at Bard 1 → ~14 by Bard 11, plus 2 Magical Secrets at Bard 10. No Wizard dip means no Shield reaction — lean on range, positioning and the Fighter dip''s heavy armour instead.'
-    notes: 'Half-Elf/Human. Fighter 1 at creation → Swords Bard ×11, no respec. Bard 11 = caster level 11 → one L6 slot, so Command still hits up to 6 targets WITHOUT a Wizard dip. Dropping Wizard costs only the Shield reaction and scroll scribing. Feats/ASIs at Bard 4 (char 5) and Bard 8 (char 9).'
+    notes: 'Half-Elf/Human. Fighter 1 at creation → Swords Bard ×11, no respec. Bard 11 = caster level 11 → one L6 slot, so Command still hits up to 6 targets WITHOUT a Wizard dip. Dropping Wizard costs only the Shield reaction and scroll scribing. Feats/ASIs at Bard 4 (char 5) and Bard 8 (char 9). ⚠ WHY NOT FIGHTER 2 (Action Surge)? The multiclass guides list Fighter 2 as a near-universal package and their own party build runs a Swords Bard 6 / Fighter 2 core, so this is a deliberate rejection, not an oversight. Action Surge would give a second Attack action to saturate Arcane Acuity and fire control a full turn earlier — but it costs Bard 11, and with it the LEVEL 6 SLOT that upcasts Command to six targets and unlocks Otto''s Irresistible Dance. Since the six-target Command is this build''s stated payoff and the Acuity engine is gear-gated to Act 2–3 anyway, Fighter 1 wins here. Revisit only if the control loop feels a turn too slow in play.'
   spells:
     note: Bard is a known caster (Always Prepared, replace 1 per level-up). Mandatory = the acuity-control engine; Recommended = the wider control/utility toolbox.
     mandatory:
@@ -97,7 +97,7 @@ builds:
       school: Illusion
       save: WIS save
       when: Bard 5
-      why: Best-in-class AoE lockdown (9m incapacitate) and a superb acuity payoff. Concentration; breaks on damage.
+      why: 'Strong 9m AoE incapacitate and a superb Acuity payoff. ⚠ TEMPERED: the tier lists rate it only A, not S — the duration is short and ANY damage wakes the targets, so it does not survive a party that is already firing into the pack. Treat it as a way to buy one clean turn, not as a lockdown. Concentration.'
     - spell: Globe of Invulnerability
       level: '6'
       guide_level: 11
@@ -160,7 +160,21 @@ builds:
       school: Transmutation
       save: None (Concentration)
       when: Bard 4
-      why: Advantage on checks with one chosen ability. At char 5, replace the redundant Faerie Fire with it for dialogue, theft and exploration — an out-of-combat mode, never held alongside Hold Person.
+      why: 'Advantage on checks with one chosen ability. At char 5, replace the redundant Faerie Fire with it for dialogue, theft and exploration — an out-of-combat mode, never held alongside Hold Person. ⚠ Rated only B: "significant checks are less frequent than players expect," and Bonbon already has Expertise ×4 plus Jack of All Trades. Low stakes either way.'
+    - spell: Greater Invisibility
+      level: '4'
+      guide_level: 8
+      school: Illusion
+      save: None (Concentration)
+      when: Bard 7+ — optional pick
+      why: 'A-tier, and the tier lists note it "anchors an entire party strategy" — the target stays invisible while attacking, giving permanent advantage and imposing disadvantage on attacks against it. Concentration, so it directly competes with Hold Monster: take it as the survivability alternative for fights where nothing worth Holding exists, or on a run where you want the stealth loop.'
+    - spell: Silence
+      level: '2'
+      guide_level: 5
+      school: Illusion
+      save: None (Concentration)
+      when: Bard 3+ — optional pick
+      why: 'A-tier and absent from the plan. A zone that hard-disables enemy spellcasting with no save at all — the answer to the Act 3 caster packs that Counterspell can only handle one at a time, and the reason dropping Counterspell from Magical Secrets costs less than it looks. Concentration.'
     - spell: Dissonant Whispers
       level: '1'
       guide_level: 2

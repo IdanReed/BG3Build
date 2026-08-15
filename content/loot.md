@@ -185,6 +185,11 @@ loot_guide:
       for: Gale
       core: true
       note: Omeluum (Ebonlake Grotto), after his parasite quest. Inflicting a condition → 2 turns of Reverberation.
+    - name: Boots of Speed
+      wiki: Boots of Speed
+      for: Charles
+      core: false
+      note: 'LOCATION RECORDED, deliberately not selected. Worn by Thulla in the Ebonlake Grotto — the same Underdark stop as Omeluum, so it costs no detour. Grants a bonus-action Dash, which the item guides rank #14 of the Act 1 top 20 for giving any character Rogue-grade mobility. Charles is the only fit, but it would displace BOOTS OF STRIDING, whose immunity to Prone and forced movement while concentrating is load-bearing for him. ⚠ The same guide flags Boots of Speed as bugged — the opportunity-attack rider reportedly applies to the WEARER. Pick it up as a situational swap for a fight where reaching the target is the whole problem; do not make it the default.'
     - name: Pearl of Power Amulet
       for: Gale
       core: true

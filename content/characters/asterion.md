@@ -21,7 +21,7 @@ builds:
   feats:
   - at: Monk 4 (char 5)
     feat: Tavern Brawler
-    note: 'The engine — adds your STR modifier to unarmed attack rolls AND damage a second time. Drink Giant Strength each long rest and UNEQUIP Corellon''s Grace so main-action attacks are empty-hand punches. Once STR > DEX it also drives attack rolls and the Stun DC (BG3 monk DCs use the higher of DEX/STR). Cloud Giant (STR 27, +8) is the ceiling.'
+    note: 'The engine, and one of only TWO S+ feats in the tier list (Alert is the other — Asterion takes both, and nobody else in the party takes either). Adds your STR modifier to unarmed attack rolls AND damage a second time. Drink Giant Strength each long rest and UNEQUIP Corellon''s Grace so main-action attacks are empty-hand punches. Once STR > DEX it also drives attack rolls and the Stun DC (BG3 monk DCs use the higher of DEX/STR). Cloud Giant (STR 27, +8) is the ceiling. ⚠ SCOPE CORRECTION: the feat also covers Throw and Improvised Melee Weapon attacks, neither of which requires empty hands — only the base Unarmed Strike action needs "no melee weapons equipped." Asterion''s build is unarmed, so the hands-empty rule still applies to him exactly as written; but it means a thrown consumable is never blocked by it.'
   - at: Monk 8 (char 9)
     feat: Alert
     note: '+5 Initiative and immunity to Surprise — with DEX 20 that is a near-guaranteed first turn to open-strike and Stun the priority target before it acts. (Alternative: +2 WIS for more AC and rider damage.)'

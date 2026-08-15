@@ -118,7 +118,7 @@ builds:
       school: Enchantment
       save: WIS save
       when: char 4 (Paladin 2)
-      why: Cheap single-target control (Drop / Halt / Approach) to open a nova or peel an enemy caster.
+      why: 'Rated the #3 spell in the game — cheap control (Drop / Halt / Approach) to open a nova or peel an enemy caster, and it uses NO Concentration, so it coexists with Bless. ⚠ RUN IT AS A MASS DISABLE, not just single-target: Command gains an extra target per slot level above 1st, so a level 3 or 4 Paladin slot disables a whole cluster for the turn Charles needs to close. That is often worth more than converting the same slot into one Divine Smite. ⚠ Does not work on Undead.'
     - spell: Hellish Rebuke
       level: '1'
       guide_level: 2
@@ -217,7 +217,7 @@ builds:
       school: Conjuration
       save: DEX save (Acid damage)
       when: Warlock 5 alternative
-      why: Large difficult-terrain zone that Blinds, deals Cold at the start of enemy turns and Acid at the end. Excellent group control, but it takes the Darkness concentration slot.
+      why: 'Rated S-tier, warlock-exclusive among this party''s classes, and called one of the best layered-control spells in the game — a stronger pick than its "alternative" placement suggests. Large difficult-terrain zone that Blinds, deals Cold at the start of enemy turns and Acid at the end. The honest cost is that it takes the Darkness concentration slot, so it is a per-fight choice: Hunger of Hadar when the fight is a crowd, Darkness when Charles needs the Devil''s Sight advantage lane for himself.'
     - spell: Blink
       level: '3'
       school: Transmutation
@@ -472,7 +472,7 @@ builds:
     - id: killer-s-sweetheart
       item: Killer's Sweetheart
       slot: rings
-      note: Gauntlet of Shar, Self-Same Trial. Your first attack after a kill is a GUARANTEED crit — a free doubled smite every fight.
+      note: 'Gauntlet of Shar, Self-Same Trial. Your first attack after a kill is a GUARANTEED crit — a free doubled smite every fight. ⚠ Per the wiki it applies to WEAPON attack rolls only, despite a tooltip that reads more broadly; it is perfect on Charles for exactly that reason, but it can never be reassigned to Gale to crit a Scorching Ray.'
     - id: head-slot
       item: Covert Cowl (Darkness option)
       wiki: Covert Cowl

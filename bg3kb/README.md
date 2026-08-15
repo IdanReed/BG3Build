@@ -2,13 +2,16 @@
 
 Scrapes every content page on [bg3.wiki](https://bg3.wiki) (MediaWiki 1.43.9),
 converts each to Markdown (keeping the stat tables), chunks it, embeds the
-chunks on your GPU, and stores them in an embedded **LanceDB** table with both
-a vector index and a BM25 full-text index. Query it from a CLI or from Claude
-Code via an MCP server.
+chunks (on the GPU if you have one), and stores them in an embedded **LanceDB**
+table with both a vector index and a BM25 full-text index. Query it from a CLI
+or from Claude Code via an MCP server.
 
-## Setup (git bash + uv)
+## Setup (uv)
 
-Run everything from **git bash** at the repo root, in a **uv**-managed venv.
+Run everything from the repo root in a **uv**-managed venv. The venv lives at
+`bg3kb/.venv` and is git-ignored, so each machine builds its own.
+
+**Windows (git bash):**
 
 ```bash
 cd /c/EpicSource/Personal/bg3
@@ -19,10 +22,32 @@ uv pip install -r bg3kb/requirements.txt
 uv pip install torch --index-url https://download.pytorch.org/whl/cu124
 ```
 
-Then set a real contact string in `bg3kb/config.py` (`USER_AGENT`).
+**macOS:**
 
-Re-activate in any new git bash shell with `source bg3kb/.venv/Scripts/activate`
-(or prefix commands with `uv run` to skip activation).
+```bash
+cd ~/local/BG3Build
+uv venv bg3kb/.venv
+source bg3kb/.venv/bin/activate
+uv pip install -r bg3kb/requirements.txt   # the default torch wheel is correct here
+```
+
+No extra torch step on macOS. `embedder.py` picks the best device available —
+CUDA, else Apple-Silicon MPS, else CPU — and prints which one it used. Note that
+recent torch wheels require **macOS 14+** for MPS; on older systems torch
+reports MPS unavailable and embedding falls back to CPU. That is fine for
+search (a query is one short string: ~0.2 s warm) but slow for a full
+`embed_index` rebuild.
+
+If you only want to query the existing index, that is all the setup needed —
+`bg3kb/data/` already holds the scraped pages and the built LanceDB table, and
+the embedding model downloads itself on the first query.
+
+Then set a real contact string in `bg3kb/config.py` (`USER_AGENT`) — needed only
+if you are going to **scrape**.
+
+Re-activate in a new shell with `source bg3kb/.venv/bin/activate`
+(`bg3kb/.venv/Scripts/activate` on Windows), or prefix commands with `uv run` to
+skip activation.
 
 ## Run order
 
@@ -72,9 +97,15 @@ python -m bg3kb.chunk "Bhaalist Armour"     # prints the chunk breakdown
 ## MCP server (query from Claude Code)
 
 ```bash
+# Windows
 claude mcp add bg3-wiki -- \
   C:/EpicSource/Personal/bg3/bg3kb/.venv/Scripts/python.exe \
   C:/EpicSource/Personal/bg3/bg3kb/mcp_server.py
+
+# macOS
+claude mcp add bg3-wiki -- \
+  /Users/idanreed/local/BG3Build/bg3kb/.venv/bin/python \
+  /Users/idanreed/local/BG3Build/bg3kb/mcp_server.py
 ```
 
 Use the venv's Python (so the server has torch/lancedb/mcp) and the script's
@@ -82,9 +113,14 @@ absolute path — `mcp_server.py` self-bootstraps `sys.path`, so it works no
 matter which directory Claude Code launches it from. The server exposes one
 tool, `bg3_search(query, k=8, category=None)`.
 
+The registration is per-machine (`claude mcp add` writes to the local config,
+not the repo), so run it once on each. Check it with `claude mcp list`.
+
 ## Notes
 
 - Content is CC BY-SA 4.0; every chunk stores its source `url` for attribution.
+- `mcp_server.py` supports both mcp 1.x (`FastMCP`) and mcp 2.x, which renamed
+  that class to `MCPServer`. The decorator API is the same either way.
 - `robots.txt` disallows `/w/api.php` for crawlers — this tool is a one-time,
   low-rate personal archive that caches to disk and never re-fetches. Keep the
   rate modest and the `USER_AGENT` honest.

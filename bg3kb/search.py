@@ -29,7 +29,11 @@ def _reranker():
 
     if C.RERANKER_MODEL:
         from lancedb.rerankers import CrossEncoderReranker
-        return CrossEncoderReranker(model_name=C.RERANKER_MODEL, device="cuda")
+
+        from bg3kb.embedder import _pick_device
+
+        return CrossEncoderReranker(model_name=C.RERANKER_MODEL,
+                                    device=_pick_device())
     return RRFReranker()
 
 

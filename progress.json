@@ -1,4 +1,30 @@
 {
   "version": 1,
-  "checked": {}
+  "checked": {
+    "item:asterion/the-fist-in-the-dark/act1/bracers-of-defence": true,
+    "item:asterion/the-fist-in-the-dark/act1/corellon-s-grace": true,
+    "item:asterion/the-fist-in-the-dark/act1/crusher-s-ring": true,
+    "item:asterion/the-fist-in-the-dark/act1/deathstalker-mantle": true,
+    "item:asterion/the-fist-in-the-dark/act1/dual-hand-crossbows-plus-one": true,
+    "item:asterion/the-fist-in-the-dark/act1/elixir-of-giant-strength": true,
+    "item:asterion/the-fist-in-the-dark/act1/haste-helm-late-act1": true,
+    "item:bonbon/the-commander/act1/caustic-band": true,
+    "item:bonbon/the-commander/act1/elixir-of-bloodlust": true,
+    "item:bonbon/the-commander/act1/elixir-of-hill-giant-strength": true,
+    "item:bonbon/the-commander/act1/gloves-of-archery": true,
+    "item:bonbon/the-commander/act1/titanstring-bow": true,
+    "item:charles/the-three-booms/act1/amulet-of-misty-step": true,
+    "item:charles/the-three-booms/act1/arrows-of-darkness": true,
+    "item:charles/the-three-booms/act1/boots-of-striding": true,
+    "item:charles/the-three-booms/act1/dual-hand-crossbows-plus-one": true,
+    "item:charles/the-three-booms/act1/gloves-of-the-growling-underdog": true,
+    "item:charles/the-three-booms/act1/haste-helm": true,
+    "item:charles/the-three-booms/act1/luminous-armour": true,
+    "item:charles/the-three-booms/act1/phalar-aluve-two-handed": true,
+    "item:gale/the-powder-keg/act1/bow-of-awareness": true,
+    "item:gale/the-powder-keg/act1/elixir-of-vigilance": true,
+    "item:gale/the-powder-keg/act1/safeguard-shield": true,
+    "item:gale/the-powder-keg/act1/spidersilk-armour": true,
+    "item:gale/the-powder-keg/act1/the-spellsparkler": true
+  }
 }

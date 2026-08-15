@@ -35,13 +35,13 @@ builds:
   combat_style: 'Char 2–4 — Corellon''s Grace improves Flurry punches and saves and gives a stronger pre-feat main attack. Char 5 — Tavern Brawler takes over: unequip every melee weapon, stay unarmoured and shieldless, drink a daily Giant Strength elixir, punch.'
   creation:
     level1_class: Rogue 1 (taken at character creation / first class in the respec)
-    level1_gains: 'Expertise in 2 skills (Sleight of Hand + Stealth) + Sneak Attack 1d6 (vestigial once he punches — it needs a finesse weapon, not fists). MUST be the creation class so Expertise lands on the thief skills.'
+    level1_gains: '4 Rogue skill proficiencies (Stealth, Investigation, Acrobatics, Insight) + Expertise in 2 of them (Sleight of Hand + Stealth) + Sneak Attack 1d6 (vestigial once he punches — it needs a finesse weapon, not fists). MUST be the creation class so Expertise lands on the thief skills.'
     subclass_choice: Open Hand (Monk 3) · Thief (Rogue 3)
     proficiencies:
       armor_weapons: Unarmed and unarmoured — required for Martial Arts / Flurry / Unarmoured Defence.
       saving_throws: DEX + INT (Rogue).
-      skills: 'Expertise: Sleight of Hand + Stealth (Rogue 1). Only Rogue 3, so no second Expertise pair and no Reliable Talent.'
-    starting_cantrips: 'High Elf racial cantrip — take Minor Illusion: no attack roll or save, so his INT does not matter, and it pulls sightlines before sneaking.'
+      skills: 'Charlatan (Deception, Sleight of Hand) + Elf Keen Senses (Perception) + 4 Rogue picks (Stealth, Investigation, Acrobatics, Insight). Expertise: Sleight of Hand + Stealth (Rogue 1). Only Rogue 3, so no second Expertise pair and no Reliable Talent.'
+    starting_cantrips: 'One High Elf racial cantrip, but it is NOT selectable on a recruited companion — race-related choices are fixed and the respec does not re-present them. Read it off the save; nothing in the build depends on it.'
     starting_spells: None — Ki/martial build.
     notes: '2 feats (Monk 4 + Monk 8). Rogue 1 FIRST for Expertise, then Monk 1–9, then Thief. Daily Giant Strength elixir; DEX stays for pickpocketing.'
   spells:
@@ -83,8 +83,8 @@ builds:
       guide_level: 1
       school: Illusion
       save: None
-      when: char 1 (High Elf racial cantrip)
-      why: Pulls nearby creatures toward a distraction before combat — redirects sightlines for stealth and theft without touching his low INT.
+      when: char 1 (High Elf racial cantrip — fixed, not selectable)
+      why: 'Would be the ideal pick — S tier for pulling creatures toward a distraction with no save, redirecting sightlines for stealth and theft without touching his low INT — but a recruited companion''s racial cantrip is locked at creation and the respec does not re-present it. Listed here as the thing to hope for, not a pick to make; check the save for what he actually has.'
     - spell: Ki Resonation (Punch → Blast)
       level: Feature (Open Hand, Monk 9)
       school: Ki — detonate
@@ -132,18 +132,26 @@ builds:
     class: Rogue 1
     gains:
     - Sneak Attack 1d6
+    - Four Rogue skill proficiencies
     - Expertise selections ×2
     - DEX + INT saving-throw proficiency
     - Vampire Bite (Astarion origin action)
     recommendations:
+    - category: Skills
+      recommendation:
+      - Stealth
+      - Investigation
+      - Acrobatics
+      - Insight
+      note: 'SIX picks land on this level, not two — Rogue grants 4 skill proficiencies BEFORE the 2 Expertise picks, and it is easy to click past them. Stealth is mandatory rather than optional: Charlatan supplies Sleight of Hand and Elf Keen Senses supplies Perception, but nothing grants Stealth, so without picking it here the Expertise: Stealth choice below has no valid target. Investigation is the party''s only coverage — Charles, Gale and Bonbon all lack it. Acrobatics rides DEX 17→20 and Insight rides WIS 16→18. ALTERNATIVE worth considering: swap Insight (already covered by Gale and Bonbon) for Athletics — on the daily Giant Strength elixir Asterion hits STR 27, making him the party''s only viable shove/grapple carrier; update proficiencies.md to match if you take it.'
     - category: Expertise
       recommendation:
       - Sleight of Hand
       - Stealth
       note: The reason Rogue must be the first class; these power stealing and scouting for the whole run.
     - category: Racial cantrip
-      recommendation: Minor Illusion
-      note: Utility with no attack roll or saving throw, so the low INT score is irrelevant.
+      recommendation: Fixed — not a choice
+      note: '⚠ NOT a selection. Astarion is a recruited companion, and the wiki is explicit that race-related choices carry over unchanged: "the selectable aspects of any given race, such as a high elf''s choice of cantrip, also remain fixed" (Withers, Services). The Withers respec will not re-present it, so he keeps whatever Larian assigned. Check the cantrip on the save rather than planning around it. If it turns out to be Bone Chill that is a fine outcome — A tier, "targets AC at range, prevents healing, and gives undead disadvantage on attacks" — and nothing in this build depends on the cantrip either way.'
   - char_level: 2
     class: Monk 1
     gains:

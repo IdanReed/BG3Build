@@ -245,12 +245,12 @@ builds:
       recommendation:
       - Hex
       - Armour of Agathys
-      note: Sustained damage when Darkness is unnecessary, and durable non-concentration temp HP.
-    - category: Hexblade spells
+      note: '⚠ CORRECTED — exactly TWO spells known at Warlock 1, not four. Hexblade''s expanded list (Shield, Wrathful Smite) is NOT free: the wiki is explicit that it "is folded into your choosable options — you still spend a spell known pick to learn one." So Shield and Wrathful Smite are two more OPTIONS competing for these same two picks, not bonus grants. Hex and Armour of Agathys win: sustained per-hit damage, and durable non-concentration temp HP. Wrathful Smite is recoverable free later from the Paladin prepared list at char 4, so spending a scarce Warlock pick on it is strictly worse.'
+    - category: Skills
       recommendation:
-      - Shield
-      - Wrathful Smite
-      note: Free at Warlock 1. Shield is the defensive reaction; Wrathful Smite is situational concentration.
+      - Deception
+      - Religion
+      note: 'Two picks that are easy to miss on the creation screen. Do NOT take Intimidation — Half-Orc Menacing and the Haunted One background both grant it and proficiency does not stack. Matches the allocation already recorded in proficiencies.md.'
   - char_level: 2
     class: Warlock 2
     gains:
@@ -290,7 +290,9 @@ builds:
       - Bless
       - Divine Favour
       - Command
-      note: Arrow darkness is concentration-free, so Bless or Divine Favour stays up inside it; the rest of the slots become Divine Smites.
+      - Wrathful Smite
+      - Thunderous Smite
+      note: 'FIVE prepared, not three — the count is Paladin level + CHA modifier (2 + 3 at CHA 17), and it re-opens every time CHA rises. Arrow darkness is concentration-free, so Bless or Divine Favour stays up inside it; the rest of the slots become Divine Smites. Wrathful Smite is the nova''s one prepared rider and is free here, which is why it was not worth a Warlock pick at char 1. Thunderous Smite outranks Searing Smite — "damage plus forced movement and prone, creating environmental kills and advantage" — and prone means melee advantage, feeding the crit-smite nova. Paladin prepared spells swap freely out of combat, so none of this is locked in.'
   - char_level: 5
     class: Paladin 3
     gains:
@@ -300,6 +302,15 @@ builds:
     - category: Subclass path
       recommendation: Keep the oath intact through Act 1 — but now you must CHOOSE a Channel Oath use
       note: 'Paladin 3 adds Vow of Enmity (Bonus Action + Channel Oath charge, 3m, advantage on attack rolls against one enemy for 10 turns). ⚠ It draws on the SAME single short-rest Channel Oath charge as Inquisitor''s Might, so from here each short rest buys one or the other. Rough guide: Vow of Enmity for a long boss fight (10 turns of advantage offsets GWM''s −5 and doubles the crit rate that drives the smite nova — and the wiki notes a self-cast bug that extends the advantage to ALL targets), Inquisitor''s Might for a short fight or when you want the radiant rider and the free Daze. Break the oath only after the planned Act-2 respec.'
+    - category: Prepared spells
+      recommendation:
+      - Bless
+      - Command
+      - Divine Favour
+      - Wrathful Smite
+      - Thunderous Smite
+      - Shield of Faith
+      note: 'The prepared count rises to SIX (3 + CHA 3) — one net new pick, but the whole list re-opens, so it is easy to click through without noticing. Bane and Hunter''s Mark arrive FREE as Vengeance oath spells and do not consume a slot; Hunter''s Mark duplicates Hex''s +1d6-per-hit without spending Warlock concentration.'
   - char_level: 6
     class: Paladin 4
     gains:
@@ -308,15 +319,32 @@ builds:
     - category: Feat
       recommendation: Great Weapon Master (SELECTED — the damage pick)
       note: 'Versatile Phalar Aluve qualifies for All In, but ONLY while wielded in both hands with the OFF-HAND EMPTY — no shield, no off-hand weapon. Devil''s Sight advantage from a Darkness Arrow, Vow of Enmity, and Bless all offset the −5 attack penalty; the +10 damage is the Act-1 spike. Keeping GWM is what rules out the Duelling fighting style and the Adamantine Shield variant of this build.'
+    - category: Prepared spells
+      recommendation:
+      - Bless
+      - Command
+      - Divine Favour
+      - Wrathful Smite
+      - Thunderous Smite
+      - Shield of Faith
+      - Protection from Evil and Good
+      - Compelled Duel
+      note: 'EIGHT prepared (4 + CHA 4 once Hag''s Hair lands) — a second selection on this level that is easy to miss behind the feat. That is 8 of the 11 level-1 Paladin spells that exist, so the real decision is what to leave out: Searing Smite ("worse than other special smites or simply spending the slot on Divine Smite"), Heroism, and Cure Wounds are all bottom-tier and are the three to drop.'
   - char_level: 7
     class: Paladin 5
     gains:
     - Extra Attack
     - Level 2 Paladin spells
+    - 'Oath spells free and always prepared: Hold Person and Misty Step'
     recommendations:
     - category: Rotation
       recommendation: Booming Blade or Phalar attack → Extra Attack
-      note: Two attacks per Action in the two-handed GWM phase; spend Smite reactions on crits and priority hits.
+      note: 'Two attacks per Action in the two-handed GWM phase; spend Smite reactions on crits and priority hits. NOTE the free oath spells: Hold Person is S tier — "completely prevents a humanoid target from acting and causes nearby attacks to critically hit" — so from here Charles can set up his OWN auto-crit nova instead of waiting on Bonbon to supply the Hold.'
+    - category: Prepared spells
+      recommendation:
+      - Aid
+      - Lesser Restoration
+      note: 'NINE prepared (5 + CHA 4), and the level-2 list opens here — add these two on top of the char-6 level-1 core. Aid is S tier ("party-wide scaling") and Charles is the party''s ONLY source, since Aid is Cleric/Paladin-only and there is no Cleric. Skip Branding Smite (D tier — "poor damage or action economy compared with other uses of a second-level slot") and Magic Weapon, which Bind Hexed Weapon already makes redundant.'
   - char_level: 8
     class: Paladin 6 (pre-Stone continuation)
     gains:
@@ -325,6 +353,9 @@ builds:
     - category: Timing
       recommendation: Keep the Act-1 Phalar/GWM package until the Resonance Stone
       note: The Stone normally arrives late enough that char 8 comes first. Aura of Protection is the best interim Paladin level and helps the party inside the later Stone aura.
+    - category: Prepared spells
+      recommendation: Magic Weapon or Protection from Poison
+      note: 'TEN prepared (6 + CHA 4) — one more slot on a level that otherwise presents nothing, so it is the easiest to skip entirely. At 10 of the 16 Paladin spells the list is nearly exhaustive; take whichever of these two the next fight wants.'
   - char_level: 9
     class: RESPEC at the Resonance Stone — Warlock 5 / Paladin 4
     gains:
@@ -336,19 +367,56 @@ builds:
     - Paladin 3 oath features
     - Paladin 4 Savage Attacker
     recommendations:
+    - category: Patron and skills
+      recommendation:
+      - Hexblade
+      - Deception
+      - Religion
+      note: 'A Withers respec rebuilds from scratch and re-presents EVERY earlier choice, including these three. Restated here because a player following the rows literally would otherwise lose them.'
     - category: Warlock feat
       recommendation: Dual Wielder
       note: Required for Shadow Blade main hand + Phalar off-hand; GWM no longer applies and the respec removes it.
     - category: Paladin feat
       recommendation: Savage Attacker
       note: The usual char-9 respec has levels for both feats. If the Stone lands at level 8, take Warlock 5 / Paladin 3 for Dual Wielder and add Paladin 4 / Savage Attacker next level.
+    - category: Pact Boon
+      recommendation: Pact of the Blade
+      note: 'A real three-way choice at Warlock 3 (Blade / Chain / Tome), not an automatic grant, and it is the prerequisite for Deepened Pact''s extra attack. "Blade Warlock can attack with Charisma, reducing Paladin''s multiple-attribute burden, while short-rest Pact slots become renewable smites."'
+    - category: Invocations
+      recommendation:
+      - Devil's Sight
+      - Agonising Blast
+      - Repelling Blast
+      note: 'THREE, not two — Warlock 5 grants 2 at W2 plus 1 at W5, and the third is never picked anywhere in the pre-respec rows. ⚠ Invocations cannot be swapped on level-up, so this respec is the only chance to set all three. Devil''s Sight is essentially mandatory — the entire self-cast-Darkness plan runs on it. Repelling Blast turns the already-Agonising Eldritch Blast fallback into ledge-kill control at no cost to the melee plan. AVOID Fiendish Vigour: its at-will False Life clashes with Armour of Agathys, because temp-HP sources never stack.'
+    - category: Fighting style
+      recommendation: Defence (again)
+      note: 'Re-chosen at Paladin 2 during the respec, and the char-4 reasoning no longer applies now that GWM is gone. Duelling still requires an empty off-hand and he now dual-wields Shadow Blade + Phalar; Great Weapon Fighting still requires a Two-Handed weapon and Shadow Blade is one-handed. Defence''s +1 AC is the only style that actually functions on the post-Stone build.'
+    - category: Warlock cantrips
+      recommendation:
+      - Eldritch Blast
+      - Booming Blade
+      - Mage Hand
+      note: 'THREE cantrips at Warlock 5 (2 at W1, +1 at W4), all re-picked by the respec and none of them named in this row before. Booming Blade is what triggers the Ring of Arcane Synergy. Bone Chill and Minor Illusion are the alternates.'
     - category: Warlock spells
       recommendation:
       - Shadow Blade
       - Darkness
       - Counterspell
       - Misty Step
-      note: Shadow Blade is immediately 3d8 from the level-3 pact slots; Darkness + Devil's Sight replace the Act-1 arrow dependency.
+      - Armour of Agathys
+      - Hunger of Hadar
+      note: 'SIX spells known at Warlock 5, not four. Shadow Blade is immediately 3d8 from the level-3 pact slots; Darkness + Devil''s Sight replace the Act-1 arrow dependency. Armour of Agathys upcast from a level-3 pact slot is 15 temp HP / 15 Cold and costs no concentration. Hunger of Hadar is S tier ("blinds creatures inside, makes the area difficult terrain, and deals cold at the start of turns plus acid at the end") and Charles is the party''s only possible carrier. ⚠ EFFICIENCY FLAG: Darkness becomes a FREE always-prepared Oathbreaker oath spell one level later at char 10, and with no Warlock levels left this pick can never be swapped without a second respec — consider Hex here instead and cover the one-level gap with the Darkness arrows he already carries.'
+    - category: Prepared spells
+      recommendation:
+      - Bless
+      - Command
+      - Divine Favour
+      - Wrathful Smite
+      - Thunderous Smite
+      - Shield of Faith
+      - Protection from Evil and Good
+      - Compelled Duel
+      note: 'EIGHT prepared (Paladin 4 + CHA 4), and LEVEL 1 ONLY — Paladin 4 has no level-2 slots, so Aid is genuinely unavailable until char 10. Bless is the highest-impact level-1 pick ("turns misses into hits… stacks with other accuracy improvements") and Command is ranked the #3 spell in the game — "level-one, non-concentration control that scales by adding targets when upcast" — which is exactly why it coexists with Bless concentration.'
     - category: Subclass path
       recommendation: Break the freshly selected Paladin oath → Oathbreaker
       note: Keeping the Act-1 oath intact makes this free. If he became an Oathbreaker earlier, pay the Oathbreaker Knight to restore the oath before Withers will respec him, then break it again.
@@ -358,14 +426,29 @@ builds:
     - Extra Attack (stacks with Deepened Pact outside Honour Mode for three attacks)
     - Level 2 Paladin spells
     - Oathbreaker spells Darkness and Crown of Madness
+    recommendations:
+    - category: Prepared spells
+      recommendation:
+      - Aid
+      - Lesser Restoration
+      - Magic Weapon
+      note: 'TEN prepared (5 + CHA 5 once Mirror of Loss lands) and the level-2 list finally opens — add these on top of the char-9 level-1 core. Aid is S tier and Charles is the party''s only source. Darkness and Crown of Madness arrive FREE as Oathbreaker oath spells and cost no slot, which is what makes the char-9 Darkness pick redundant.'
   - char_level: 11
     class: Paladin 6
     gains:
     - Aura of Protection
+    recommendations:
+    - category: Prepared spells
+      recommendation: Protection from Poison
+      note: 'ELEVEN prepared (6 + CHA 5) — one more slot on a level whose only headline is the aura, so it is easy to skip. Branding Smite is the alternative if you want a non-radiant bonus-action smite for the radiant-resistant Act 3 enemies.'
   - char_level: 12
     class: Paladin 7
     gains:
     - Aura of Hate
+    recommendations:
+    - category: Prepared spells
+      recommendation: Branding Smite (or any remaining level-1 spell)
+      note: 'TWELVE prepared (7 + CHA 5) — that is 12 of the 16 Paladin spells that exist, so the only real decision left is which four to leave out: Searing Smite, Heroism, Cure Wounds and Branding Smite are the bottom-tier four. Four Oathbreaker oath spells (Hellish Rebuke, Inflict Wounds, Crown of Madness, Darkness) ride free on top of the twelve.'
   itemization:
     act1:
     - id: early-hexed-weapon

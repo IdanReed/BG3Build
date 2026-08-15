@@ -232,10 +232,16 @@ builds:
     - Second Wind
     - STR + CON saving-throw proficiency
     - All armour, shields, and martial-weapon proficiency
+    - Two Fighter skill proficiencies
     recommendations:
     - category: Fighting style
       recommendation: Archery
       note: +2 to ranged attack rolls offsets Sharpshooter and stays essential after the hand-crossbow pivot.
+    - category: Skills
+      recommendation:
+      - Intimidation
+      - Perception
+      note: 'TWO picks, easy to miss behind the Fighting Style — and only because Fighter is the FIRST class here; a Fighter dip taken later grants no skills at all. Intimidation is load-bearing, not flavour: char 11 spends Expertise on it, Expertise requires existing proficiency, and Intimidation appears on neither the Guild Artisan background nor the Swords package — the Fighter list is its only source. Perception is the most-rolled skill in the game. Do NOT take Athletics on a STR 8 character; Jack of All Trades already covers it at half proficiency.'
   - char_level: 2
     class: Bard 1
     gains:
@@ -255,6 +261,9 @@ builds:
       - Dissonant Whispers
       - Faerie Fire
       note: Emergency pickup, ritual party movement, early single-target control, and an early advantage tool.
+    - category: Skill
+      recommendation: Deception
+      note: 'ONE pick, not three — multiclassing into Bard grants a single skill, where a first-class Bard would grant three. It must be Deception: char 4 spends Expertise on it, and Deception appears on neither the Guild Artisan background nor the Fighter list, so this is its only source. Taking it here also makes the build legal on the Half-Elf option, which grants no free skill in BG3 — on Human you could instead put Deception on the racial free skill and spend this pick on Performance.'
   - char_level: 3
     class: Bard 2
     gains:
@@ -336,6 +345,9 @@ builds:
     - category: Spell
       recommendation: Confusion
       note: Wide-area control that scales extremely well with Arcane Acuity.
+    - category: Replacement
+      recommendation: Healing Word or Dissonant Whispers → Greater Invisibility
+      note: 'The free replacement slot every Bard level from 2 onward offers, unused until now. Greater Invisibility is endorsed elsewhere in this build but never actually learned in any row — A tier, "enables repeated attacks or casts while hidden" and "can anchor an entire party strategy." By char 8 the level-1 picks from char 2 are dead weight, so this costs nothing.'
   - char_level: 9
     class: Swords Bard 8
     gains:
@@ -366,20 +378,24 @@ builds:
     - Expertise selections ×2
     - Improved Bardic Inspiration d10
     - Fourth Bard cantrip
+    - One additional Bard spell known (13th)
     recommendations:
     - category: Magical Secrets
       recommendation:
       - Command
-      - Globe of Invulnerability
-      note: 'CHANGED. Command stays — hers is genuinely unique because the Band of the Mystic Scoundrel makes it a BONUS ACTION at the party''s highest Acuity DC, and her level 6 slot upcasts it to six targets, neither of which Gale can replicate. Counterspell is dropped: Gale learns it at Sorc 6 and Charles gets it post-respec, so taking it here would give the party THREE carriers where the guides recommend two. Globe of Invulnerability is rated the #9 spell in the game and is otherwise unreachable by any of the four — the plan previously covered it by buying scrolls, and a Magical Secret makes it repeatable. Heroes'' Feast is the alternative pick if you would rather have a permanent party-wide buff than an emergency dome.'
+      - Conjure Elemental
+      note: '⚠ CORRECTED — Globe of Invulnerability CANNOT be taken here. bg3.wiki: "At level 10, all Bards can learn two spells up to level 5," and the selectable list stops at level 5 (Banishing Smite, Cone of Cold, Conjure Elemental, Contagion, Wall of Stone). Globe is 6th-level and is not on it; Heroes'' Feast is 6th-level too, so the old fallback was equally illegal. With no Wizard dip the scroll-scribing route to Globe is gone as well — buy Globe scrolls and cast them, that is all. Command stays: the Band of the Mystic Scoundrel makes hers a BONUS ACTION at the party''s highest Acuity DC and the level 6 slot upcasts it to six targets, neither of which Gale can replicate. Conjure Elemental replaces Globe — S tier, "a day-long, concentration-free elemental or myrmidon is comparable to adding another character to the party," and being concentration-free it fixes the exact flaw Globe had here, leaving her free to hold Hold Monster. The Water Myrmidon also mass-applies Wet for Gale''s party. Counterspell is the legal runner-up if you would rather have the interrupt.'
     - category: Expertise
       recommendation:
       - Insight
       - Intimidation
       note: Completes face and dialogue coverage; swap one for a campaign-specific skill if preferred.
+    - category: Spell
+      recommendation: Silence
+      note: 'The FOURTH pick on this level and the easiest of all to miss: Bard 10 grants a normal 13th Bard spell known ON TOP of the two Magical Secrets, which the level-up UI presents as a separate step. Silence is A tier for "caster lockdown" and "since dangerous casters appear throughout the game, Silence has frequent opportunities." It is also load-bearing here — the Magical Secrets note above justifies dropping Counterspell partly by pointing at Silence, yet no row ever learned it.'
     - category: Cantrip
-      recommendation: Light
-      note: Reliable illumination without concentration.
+      recommendation: Minor Illusion
+      note: 'S tier — "moves creatures toward a point without a saving throw," which groups enemies for Gale''s Fireball and relocates NPCs for Asterion''s theft routes. Both published Swords Bard guides name it for the face specifically: "Minor Illusion can distract/relocate entire rooms of NPCs to open up some unique thievery options." Light is the A-tier alternative if the party needs another illumination carrier, but Gale already learns Light at char 4 and Daylight at char 8.'
   - char_level: 12
     class: Swords Bard 11
     gains:

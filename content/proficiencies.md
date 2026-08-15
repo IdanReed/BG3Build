@@ -86,12 +86,10 @@ characters:
     expertise:
     - Persuasion
     - Deception
-    - Performance
+    - Insight
     - Intimidation
     proficient:
-    - Insight
     - Perception
-    - Athletics
     jack_of_all_trades: true
-    source: Guild Artisan (Insight, Persuasion) + Human free skill (Deception) + 2 Fighter picks (Perception, Athletics) + Bard picks (Performance, Intimidation). Expertise ×4 (Bard 3 + 10). Jack of All Trades adds half proficiency to every OTHER check — the primary face and skill generalist.
+    source: 'CORRECTED to a legal allocation. Guild Artisan (Insight, Persuasion) + 2 Fighter picks (Intimidation, Perception) + 1 Bard pick (Deception). ⚠ Multiclass Bard grants only ONE skill, not two, so the old Performance + Intimidation pair was impossible; Athletics is also dropped as a wasted pick at STR 8. Every Expertise skill is now backed by an actual proficiency: Persuasion/Insight from the background, Intimidation from Fighter, Deception from the Bard pick. Expertise ×4 (Bard 3: Persuasion + Deception; Bard 10: Insight + Intimidation). Works on Half-Elf as well as Human, since Half-Elf grants no free skill in BG3. Jack of All Trades adds half proficiency to every OTHER check — the primary face and skill generalist.'
 ---

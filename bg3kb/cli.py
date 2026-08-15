@@ -43,14 +43,21 @@ def _print_hits(hits: list[dict], full: bool) -> None:
 
 
 def _start_daemon() -> None:
-    flags = 0
-    if os.name == "nt":  # detach so it outlives this CLI process, no console window
-        flags = subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
+    # Detach so the daemon outlives this CLI process and isn't killed by a
+    # Ctrl-C aimed at the shell: a new process group on Windows (also hiding the
+    # console window), a new session on POSIX.
+    extra: dict = {}
+    if os.name == "nt":
+        extra["creationflags"] = (
+            subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
+        )
+    else:
+        extra["start_new_session"] = True
     subprocess.Popen(
         [sys.executable, "-m", "bg3kb.daemon"],
         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         cwd=str(Path(__file__).resolve().parent.parent),
-        creationflags=flags, close_fds=True,
+        close_fds=True, **extra,
     )
 
 

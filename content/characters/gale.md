@@ -201,11 +201,25 @@ builds:
       why: 'Exploration and object manipulation. It also covers the party''s lost Create Water: drop a water bottle where the Hand can reach and use its Throw for a 2m Wet splash when something needs to be Wet.'
     - spell: Light
       level: Cantrip
-      guide_level: 5
+      guide_level: 4
       school: Evocation
       save: None
       when: Sorc 4 (char 4) — fifth cantrip
       why: 'A free, slot-less way to keep GALE illuminated so the Coruscation Ring works, covering the whole stretch of Act 2 before Daylight is learned at char 8. Cast it on Gale''s own staff or on a nearby ally. ⚠ Worth confirming in play that a Light-lit character registers as Illuminated for Coruscation; if not, use an ordinary torch or Daylight.'
+    - spell: Bone Chill
+      level: Cantrip
+      guide_level: 7
+      school: Necromancy
+      save: Ranged spell attack
+      when: Warlock 1 (char 7) — second Warlock cantrip
+      why: 'A tier — "targets AC at range, prevents healing, and gives undead disadvantage on attacks." Takes the Warlock cantrip slot that the plan previously wasted on Friends, which Gale already knows from Sorcerer 1. Covers the Act 2 Undead that Command cannot touch.'
+    - spell: Ray of Frost
+      level: Cantrip
+      guide_level: 11
+      school: Evocation
+      save: Ranged spell attack
+      when: Sorc 10 (char 11) — sixth cantrip
+      why: 'S tier — "the best broadly available elemental attack: Wet doubles its cold damage, the hit reduces movement without a save, and water can freeze into ice that knocks enemies prone." The sixth cantrip is easy to miss because it is the only one granted after char 4. Off-element on purpose: it is slot-free damage for the fire-immune fights where this build otherwise contributes little until Chain Lightning.'
     - spell: Globe of Invulnerability
       level: '6'
       school: Abjuration
@@ -247,6 +261,12 @@ builds:
           - Shield
           - Magic Missile
           note: 'The plan replaces Magic Missile with Counterspell at Sorc 6 — but the tier lists rate BOTH Shield and Magic Missile S, so reconsider the swap in play. Magic Missile NEVER MISSES, which is a genuinely rare property on a build whose entire damage output is attack rolls; it is the clean answer to a turn where Scorching Ray would whiff, or for finishing a low-HP caster. If you keep it, drop a different flex spell for Counterspell instead.'
+        - category: Skills
+          recommendation:
+          - Persuasion
+          - Insight
+          - Perception
+          note: 'THREE picks, not two: Sorcerer grants 2 and Human Versatility grants 1 more of any kind. Sage already supplies Arcana and History, and proficiency does not stack, so do not re-pick Arcana. Persuasion is the only Sorcerer-list skill that rides the CHA 20 this build targets and makes Gale the fallback face when Bonbon is benched; Perception is the one skill worth duplicating across the party because BG3 rolls passive Perception per member. ⚠ The Human free skill is a character-creation choice — check at the Withers respec screen whether Perception is still re-selectable on the origin Gale or already locked.'
       - char_level: 2
         class: Sorcerer 2
         gains:
@@ -333,8 +353,8 @@ builds:
         - category: Cantrips
           recommendation:
           - Eldritch Blast
-          - Friends
-          note: 'Eldritch Blast is unimpressive here — Agonizing Blast is an invocation at Warlock 2, which Gale never reaches. Take it for the occasional ranged option, not as a plan.'
+          - Bone Chill
+          note: 'Eldritch Blast is unimpressive here — Agonizing Blast is an invocation at Warlock 2, which Gale never reaches. Take it for the occasional ranged option, not as a plan. ⚠ Do NOT take Friends as the second cantrip: Gale already knows it from Sorcerer 1 and the game will not let you re-pick a known cantrip. Bone Chill (A tier — "targets AC at range, prevents healing, and gives undead disadvantage on attacks") is the right second pick because char 7 lands in Act 2, where Command does not work on the Undead. Toll the Dead is the equivalent WIS-save alternative.'
       - char_level: 8
         class: Sorcerer 7
         gains:
@@ -375,6 +395,9 @@ builds:
         - category: Metamagic
           recommendation: Careful Spell
           note: 'Finally lets Gale drop Fireball on a cluster that Charles or Asterion is standing in. Until this level, Fireball is an adds-only tool.'
+        - category: Cantrip
+          recommendation: Ray of Frost
+          note: 'The sixth cantrip — easy to miss, because this is the only level after char 4 that grants one. S tier: "the best broadly available elemental attack — Wet doubles its cold damage, the hit reduces movement without a save, and water can freeze into ice that knocks enemies prone." It patches this build''s one structural hole for free: Gale contributes almost nothing to the fire-immune fights (House of Hope, Raphael, the red dragon, Yurgir) until Chain Lightning at char 12, and a cantrip costs no slot. 3d8 at this level. Bone Chill is already taken at char 7, so Ray of Frost is the non-overlapping pick.'
         - category: Spell
           recommendation: Telekinesis
           note: Situational concentration control; it competes with Haste, so it stays a niche pick.

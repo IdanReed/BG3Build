@@ -15,7 +15,7 @@ builds:
     INT: 8
     WIS: 10
     CHA: 17
-  stats_note: 'Point-buy base 8/15/14/8/10/15 = all 27 points (DEX 15 and CHA 15 cost 9 each, CON 14 costs 7, WIS 10 costs 2). Then Human +2 → CHA 17 and +1 → DEX 16. DEX 16 matters more than on the old Storm build: Draconic Resilience sets unarmoured AC to 13 + DEX, and Armour of Landfall is 13 + DEX light armour, so DEX is Gale''s entire AC. WIS drops to 10 because there is no longer a Cleric dip keying off it.'
+  stats_note: 'Point-buy base 8/15/14/8/10/15 = all 27 points (DEX 15 and CHA 15 cost 9 each, CON 14 costs 7, WIS 10 costs 2). Then Human +2 → CHA 17 and +1 → DEX 16. DEX 16 is load-bearing: Draconic Resilience sets unarmoured AC to 13 + DEX, and both Spidersilk Armour and Armour of Landfall are 13 + DEX light armour, so DEX is Gale''s entire AC. WIS sits at 10 because nothing in the build keys off it.'
   ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss, Cloister of Sombre Embrace in Act 3). CHA 20 is the target and no ASI is needed to reach it, which is what frees both feats for Dual Wielder and Elemental Adept. Birthright (+2 CHA → 22) is NOT usable here: the head slot belongs permanently to the Hat of Fire Acuity, so Birthright goes to Bonbon.'
   metamagic:
   - Twinned + Extended (Sorc 2)
@@ -24,10 +24,10 @@ builds:
   feats:
   - at: Sorc 4 (char 4)
     feat: Dual Wielder
-    note: 'Unusual for a caster, but this build wields two staves as stat sticks: Spellsparkler + Melf''s in Act 1, then Markoheshkir + Rhapsody in Act 3. Neither pair is Light, so Dual Wielder is mandatory to hold both. COST: Gale gives up the Safeguard Shield (+2 AC, +1 all saves) that previously protected his Haste concentration on the Storm build.'
+    note: 'Unusual for a caster, but this build wields two staves as stat sticks: Spellsparkler + Melf''s in Act 1, then Markoheshkir + Rhapsody in Act 3. Neither pair is Light, so Dual Wielder is mandatory to hold both. COST: both hands are full for the whole run, so Gale can never carry a shield — Spidersilk Armour in Act 1 and Armour of Landfall in Act 3 supply the Constitution-save advantage that protects Twinned Haste instead.'
   - at: Sorc 8 (char 9)
     feat: 'Elemental Adept: Fire'
-    note: 'Effectively mandatory in THIS party, though the tier lists rate the feat only B in general — worth knowing you are spending one of two feats on a B-tier pick while Alert (S+) goes unbought. The published guide says to skip Elemental Adept if you have a bow archer who can mass-apply Arsonist''s Oil with Arrows of Many Targets or Volley; Bonbon moves to dual hand crossbows in Act 2 and has no such option, so she can only strip fire resistance one target at a time, and Act 3 is dense with fire-resistant enemies. ⚠ TWO WORDING CORRECTIONS from the wiki: BG3''s text is "you CANNOT ROLL A 1" on Fire damage dice, not the tabletop "treat 1s as 2s" — still excellent here because Scorching Ray rolls so many dice. And the resistance-piercing is BROADER than usually stated: it applies to "spells you cast AND attacks you make," not spells alone; only the no-1 clause is spell-only.'
+    note: 'Effectively mandatory in THIS party, though the tier lists rate the feat only B in general — worth knowing you are spending one of two feats on a B-tier pick while Alert (S+) goes unbought. The published guide says to skip Elemental Adept if you have a bow archer who can mass-apply Arsonist''s Oil with Arrows of Many Targets or Volley; Bonbon moves to dual hand crossbows in Act 2 and has no such option, so she can only strip fire resistance one target at a time, and Act 3 is dense with fire-resistant enemies. ⚠ READ THE WIKI TEXT, NOT THE TABLETOP RULE: in BG3 you "CANNOT ROLL A 1" on Fire damage dice rather than treating 1s as 2s — still excellent here because Scorching Ray rolls so many dice. And the resistance-piercing covers "spells you cast AND attacks you make," not spells alone; only the no-1 clause is spell-only.'
   feats_note: 'ONLY TWO FEATS. Sorcerer grants them at Sorc 4 and Sorc 8 = character levels 4 and 9; the Warlock level grants none and Sorc 12 is never reached. Dual Wielder and Elemental Adept consume both, so there is no room for Alert, War Caster, or an ASI — initiative and concentration are gear problems on this build.'
   key_spells:
   - Scorching Ray (the core damage engine — every rider applies per ray)
@@ -65,14 +65,14 @@ builds:
       school: Enchantment
       save: WIS save
       when: Warlock 1 (char 7)
-      why: 'The single biggest reason to take the Warlock level, and the reason this build beats the old Storm chassis in this party: Command does NOT use Concentration, so Gale can hold Twinned Haste and still control every turn. Extended Spell doubles the condition to two turns. Approach also groups enemies for Fireball. Does not work on Undead.'
+      why: 'The single biggest reason to take the Warlock level: Command does NOT use Concentration, so Gale can hold Twinned Haste and still control every turn. Extended Spell doubles the condition to two turns. Approach also groups enemies for Fireball. Does not work on Undead.'
     - spell: Haste
       level: '3'
       guide_level: 5
       school: Transmutation
       save: None (Concentration)
       when: Sorc 5 (char 5)
-      why: 'Single-target so Twinnable; spend 3 Sorcery Points to Haste two of Charles / Asterion / Gale. Arrives a level EARLIER than on the old Storm build, which needed a char-6 respec. Ending Haste makes both targets Lethargic. NEW TENSION: Gale''s own hasted action is a second Scorching Ray, so self-Haste now genuinely competes with hasting both martials.'
+      why: 'Single-target so Twinnable; spend 3 Sorcery Points to Haste two of Charles / Asterion / Gale, online at character level 5. Ending Haste makes both targets Lethargic. ⚠ WHO GETS IT: Gale''s own hasted action is a second Scorching Ray, so self-Haste genuinely competes with hasting both martials — Charles + Asterion for adds-heavy fights, Gale + Charles for single-boss fights.'
     - spell: Fireball
       level: '3'
       guide_level: 6
@@ -177,7 +177,7 @@ builds:
       school: Evocation
       save: Ranged spell attack
       when: Sorc 1 (char 1)
-      why: 'On-element chip damage for the first three levels. This build stops using cantrips in combat after Scorching Ray arrives, so do not build around it — and note this is why the Potent Robe (CHA to cantrip damage) is a much weaker pickup than it was for the Storm build.'
+      why: 'On-element chip damage for the first three levels. This build stops using cantrips in combat after Scorching Ray arrives, so do not build around it — which is also why the Potent Robe, whose whole effect is CHA to cantrip damage, is not part of this loadout.'
     - spell: Friends
       level: Cantrip
       guide_level: 1
@@ -218,7 +218,7 @@ builds:
       school: Conjuration
       save: None (bonus action)
       when: replacement candidate
-      why: 'Escape mobility. Lower priority than on the Storm build because Gale''s bonus action is usually committed to a Quickened Scorching Ray, and because Draconic Fly arrives at Sorc 11.'
+      why: 'Escape mobility, and a low priority: Gale''s bonus action is normally committed to a Quickened Scorching Ray, and Draconic Fly arrives at Sorc 11.'
   leveling:
     respecs:
     - label: Lv 1–12 · Sorcerer-first, no respec
@@ -246,7 +246,7 @@ builds:
           recommendation:
           - Shield
           - Magic Missile
-          note: 'The plan replaces Magic Missile with Counterspell at Sorc 6 — but the tier lists rate BOTH Shield and Magic Missile S, so reconsider the swap in play. Magic Missile NEVER MISSES, which is a genuinely rare property on a build whose entire damage output is attack rolls; it is the clean answer to a turn where Scorching Ray would whiff, or for finishing a low-HP caster. If you keep it, drop a different flex spell for Counterspell instead.'
+          note: 'Magic Missile gives way to Counterspell at Sorc 6. ⚠ The tier lists rate BOTH Shield and Magic Missile S, so weigh this one in play: Magic Missile NEVER MISSES, a genuinely rare property on a build whose entire damage output is attack rolls, and it is the clean answer to a turn where Scorching Ray would whiff or to finishing a low-HP caster. To keep it, drop a different flex spell for Counterspell instead.'
         - category: Skills
           recommendation:
           - Persuasion
@@ -290,7 +290,7 @@ builds:
         recommendations:
         - category: Feat
           recommendation: Dual Wielder
-          note: 'Lets Gale hold Spellsparkler + Melf''s First Staff together (neither is Light). Later it is what allows Markoheshkir + Rhapsody. He loses the Safeguard Shield permanently.'
+          note: 'Lets Gale hold Spellsparkler + Melf''s First Staff together (neither is Light), and later Markoheshkir + Rhapsody. Both hands are full from here on, so no shield for the rest of the run.'
         - category: Cantrip
           recommendation: Light
           note: Keeps Gale illuminated for the Coruscation Ring without spending a slot, well before Daylight is learned.
@@ -305,7 +305,7 @@ builds:
         recommendations:
         - category: Spell
           recommendation: Haste
-          note: 'The party Haste engine arrives a full level earlier than on the old Storm build. Twinned costs 3 Sorcery Points.'
+          note: The party Haste engine comes online here. Twinned costs 3 Sorcery Points.
       - char_level: 6
         class: Sorcerer 6
         gains:
@@ -512,15 +512,15 @@ builds:
     - **Turn 1 onward:** switch Spellmight Gloves ON. Acuity now covers the −5.
     - **Then pick a job each turn:** more Scorching Ray at a single target, Fireball at a cluster of 4+, or Extended Command at everything you want disabled. Command is not Concentration, so it never costs you Haste.
     - **Grouping:** Command: Approach pulls scattered enemies into one Fireball.
-    - **Fire-immune fights** (House of Hope, Raphael, the red dragon, Yurgir): switch Markoheshkir to a lightning attunement and lead with Chain Lightning. Gale contributes far less to these than the old Storm build did — plan around it.
+    - **Fire-immune fights** (House of Hope, Raphael, the red dragon, Yurgir): switch Markoheshkir to a lightning attunement and lead with Chain Lightning. Gale's damage drops sharply in these — plan on Twinned Haste, Command and Counterspell being his contribution.
     - **Do not** drop Fireball on Charles or Asterion before Careful Spell arrives at character level 11.
   traps:
   - 'Strange Ox: do NOT kill it at the Druid Grove in Act 1. It only carries the Hat of Fire Acuity from Last Light onward, and that hat is the build. Missing it in Act 2 is recoverable — the Ox reappears in Rivington in Act 3 — but killing it early is not.'
-  - 'Heat fights the rest of the Act 3 kit — TREAT FLAME OF WRATH AS A PER-FIGHT TOGGLE, not a permanent attunement. Markoheshkir''s Flame of Wrath deals unavoidable self-damage every turn, and three separate interactions make that worse than the old note implied: (1) Elemental Adept: Fire does NOT protect Gale — it pierces enemy resistance, it does not reduce damage he takes; (2) the Callous Glow Ring adds +2 radiant to Gale''s OWN Heat tick whenever he is Illuminated, and the Coruscation chain keeps him Illuminated on purpose, so his damage ring amplifies his own self-damage; (3) any damage taken strips 2 turns of Arcane Acuity, so every tick chips the exact stat the build exists to stack, on top of forcing a CON save against Twinned Haste. Gale is Human, so there is no Halfling Luck. Do not attune Flame of Wrath until Armour of Landfall is equipped, and consider dropping Coruscation in fights where Acuity uptime matters more than the radiant riders.'
-  - 'Only two feats: Sorc 4 and Sorc 8 (character levels 4 and 9). Dual Wielder and Elemental Adept consume both, so there is no Alert and no War Caster — but BOTH gaps are now solved by consumables and gear rather than left open. Alert is replaced by a standing Elixir of Vigilance (+5 Initiative, Surprise immunity, no competing elixir on Gale). War Caster is replaced by Spidersilk Armour''s CON-save advantage from Act 1, upgraded to Armour of Landfall in Act 3. Note the published tier lists rate Elemental Adept only B while Alert is one of two S+ feats — the Vigilance elixir is what makes spending a feat on Elemental Adept acceptable.'
+  - 'Heat fights the rest of the Act 3 kit — TREAT FLAME OF WRATH AS A PER-FIGHT TOGGLE, not a permanent attunement. Markoheshkir''s Flame of Wrath deals unavoidable self-damage every turn, and three separate interactions compound it: (1) Elemental Adept: Fire does NOT protect Gale — it pierces enemy resistance, it does not reduce damage he takes; (2) the Callous Glow Ring adds +2 radiant to Gale''s OWN Heat tick whenever he is Illuminated, and the Coruscation chain keeps him Illuminated on purpose, so his damage ring amplifies his own self-damage; (3) any damage taken strips 2 turns of Arcane Acuity, so every tick chips the exact stat the build exists to stack, on top of forcing a CON save against Twinned Haste. Gale is Human, so there is no Halfling Luck. Do not attune Flame of Wrath until Armour of Landfall is equipped, and consider dropping Coruscation in fights where Acuity uptime matters more than the radiant riders.'
+  - 'Only two feats: Sorc 4 and Sorc 8 (character levels 4 and 9). Dual Wielder and Elemental Adept consume both, so there is no Alert and no War Caster — both gaps are covered by consumables and gear instead. Alert is replaced by a standing Elixir of Vigilance (+5 Initiative, Surprise immunity, no competing elixir on Gale). War Caster is replaced by Spidersilk Armour''s CON-save advantage from Act 1, upgraded to Armour of Landfall in Act 3. Note the published tier lists rate Elemental Adept only B while Alert is one of two S+ feats — the Vigilance elixir is what makes spending a feat on Elemental Adept acceptable.'
   - 'SPELLMIGHT GLOVES ARE UNTESTED — verify before building around them. The whole case for promoting them to core is that −5 spell attack / +1d8 damage applies to EACH Scorching Ray ray, but the wiki never addresses whether the +1d8 is per attack roll or once per spell, and Spellmight is absent from the per-instance notes that DO explicitly name Elemental Affinity and the Callous Glow Ring. On a 7-ray cast the two readings are +7d8 (~31, best in slot) versus +1d8 (~4.5 for a −5 penalty on all seven rolls, actively harmful). Test it on a single cast the moment they are acquired.'
   - 'Fireball friendly fire: Careful Spell is the fourth metamagic at Sorc 10 (character level 11). For the entire run before that, Fireball is an adds-cluster tool and Scorching Ray is the boss tool.'
-  - 'Long rests: this build burns slots much faster than the Storm chassis, especially if you lean into damage rather than Command. Bank camp supplies and use Potions of Angelic Slumber in Act 3.'
+  - 'Long rests: this build burns spell slots fast, especially if you lean into damage rather than Command. Bank camp supplies and use Potions of Angelic Slumber in Act 3.'
   - 'Command does not work on Undead, and neither Hold spell works on crit-immune enemies — the same gap Bonbon already has. Act 2 has a lot of Undead; lean on Fireball and Scorching Ray there.'
   - 'Warlock slot question: the published Command-spam loop assumes Gale can cast Command from ordinary Sorcerer slots, not only from his single short-rest pact slot. Confirm this in play at character level 7 — if Command is restricted to the pact slot, the control lane is once per short rest and Bonbon stays the primary controller.'
   - 'Respec cost: Gale joins as a Wizard — bank ~100g for the Withers respec into Sorcerer, and re-pick metamagic and spells to match this plan. There are no further respecs.'

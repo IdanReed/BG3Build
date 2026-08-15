@@ -5,9 +5,9 @@ builds:
   is_primary: true
   role: Ranged acuity control + damage + party face
   class: Swords Bard 11 / Fighter 1
-  build_order: Fighter 1 at character creation → Swords Bard 1–11. No respec, no Wizard dip.
+  build_order: Fighter 1 at character creation → Swords Bard 1–11. No respec at any point.
   race: Half-Elf or Human (early shield)
-  background: Guild Artisan (Insight, Persuasion) — RESOLVED; proficiencies.md assumes this one
+  background: Guild Artisan (Insight, Persuasion) — proficiencies.md assumes this one
   starting_stats:
     STR: 8
     DEX:
@@ -18,14 +18,14 @@ builds:
     INT: 8
     WIS: 10
     CHA: 17
-  stats_note: 'Point-buy 8/15/14/8/10/15 = all 27 (DEX 15 + CHA 15 cost 9 each). +2 → CHA 17, +1 → DEX 16; Gloves of Dexterity then set DEX to 18 (Crèche, Act 1). No INT — the Wizard dip is dropped.'
+  stats_note: 'Point-buy 8/15/14/8/10/15 = all 27 (DEX 15 + CHA 15 cost 9 each). +2 → CHA 17, +1 → DEX 16; Gloves of Dexterity then set DEX to 18 (Crèche, Act 1). INT stays at 8 — nothing in the build uses it.'
   ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss). Birthright reaches CHA 22 in Act 3 if Gale is not using it.'
   feats:
   - at: Bard 4 (char 5)
     feat: Sharpshooter
   - at: Bard 8 (char 9)
     feat: War Caster
-    note: Advantage on CON saves to hold Hold Monster — the party's melee auto-crit engine — plus opportunity-spell casting. Chosen over Dual Wielder because hand crossbows are Light and dual-wield without it.
+    note: Advantage on CON saves to hold Hold Monster — the party's melee auto-crit engine — plus opportunity-spell casting. Taken over Dual Wielder because hand crossbows are Light and dual-wield without it.
   fighting_styles:
   - Archery (Fighter)
   - Dueling (Bard)
@@ -44,8 +44,8 @@ builds:
       saving_throws: STR + CON (Fighter-first) — CON guards Hold Monster concentration.
       skills: Fighter 2 + Bard skills; Expertise ×4 (Bard 3 + 10) + Jack of All Trades — the party face.
     starting_cantrips: '2 at Bard 1 (Vicious Mockery, Friends) → 4 by Bard 10.'
-    starting_spells: '4 known at Bard 1 → ~14 by Bard 11, plus 2 Magical Secrets at Bard 10. No Wizard dip means no Shield reaction — lean on range, positioning and the Fighter dip''s heavy armour instead.'
-    notes: 'Half-Elf/Human. Fighter 1 at creation → Swords Bard ×11, no respec. Bard 11 = caster level 11 → one L6 slot, so Command still hits up to 6 targets WITHOUT a Wizard dip. Dropping Wizard costs only the Shield reaction and scroll scribing. Feats/ASIs at Bard 4 (char 5) and Bard 8 (char 9). ⚠ WHY NOT FIGHTER 2 (Action Surge)? The multiclass guides list Fighter 2 as a near-universal package and their own party build runs a Swords Bard 6 / Fighter 2 core, so this is a deliberate rejection, not an oversight. Action Surge would give a second Attack action to saturate Arcane Acuity and fire control a full turn earlier — but it costs Bard 11, and with it the LEVEL 6 SLOT that upcasts Command to six targets and unlocks Otto''s Irresistible Dance. Since the six-target Command is this build''s stated payoff and the Acuity engine is gear-gated to Act 2–3 anyway, Fighter 1 wins here. Revisit only if the control loop feels a turn too slow in play.'
+    starting_spells: '4 known at Bard 1 → ~14 by Bard 11, plus 2 Magical Secrets at Bard 10. She has no Shield reaction — lean on range, positioning and the Fighter dip''s armour proficiency instead.'
+    notes: 'Half-Elf/Human. Fighter 1 at creation → Swords Bard ×11, no respec. Bard 11 = caster level 11 → one L6 slot, so Command hits up to 6 targets on Bard levels alone; the only things a Wizard dip would have added are the Shield reaction and scroll scribing. Feats/ASIs at Bard 4 (char 5) and Bard 8 (char 9). ⚠ WHY NOT FIGHTER 2 (Action Surge)? The multiclass guides list Fighter 2 as a near-universal package and their own party build runs a Swords Bard 6 / Fighter 2 core. Action Surge would give a second Attack action to saturate Arcane Acuity and fire control a full turn earlier — but it costs Bard 11, and with it the LEVEL 6 SLOT that upcasts Command to six targets and unlocks Otto''s Irresistible Dance. Since the six-target Command is this build''s stated payoff and the Acuity engine is gear-gated to Act 2–3 anyway, Fighter 1 wins here. Revisit only if the control loop feels a turn too slow in play.'
   spells:
     note: Bard is a known caster (Always Prepared, replace 1 per level-up). Mandatory = the acuity-control engine; Recommended = the wider control/utility toolbox.
     mandatory:
@@ -97,14 +97,14 @@ builds:
       school: Illusion
       save: WIS save
       when: Bard 5
-      why: 'Strong 9m AoE incapacitate and a superb Acuity payoff. ⚠ TEMPERED: the tier lists rate it only A, not S — the duration is short and ANY damage wakes the targets, so it does not survive a party that is already firing into the pack. Treat it as a way to buy one clean turn, not as a lockdown. Concentration.'
+      why: 'Strong 9m AoE incapacitate and a superb Acuity payoff. ⚠ The tier lists rate it only A, not S — the duration is short and ANY damage wakes the targets, so it does not survive a party that is already firing into the pack. Treat it as a way to buy one clean turn, not as a lockdown. Concentration.'
     - spell: Globe of Invulnerability
       level: '6'
       guide_level: 11
       school: Abjuration
       save: None (Concentration)
       when: Bard 10 (Magical Secrets)
-      why: 'REPLACES Counterspell as the second Magical Secret. Rated the #9 spell in the game and unreachable by any other party member — the plan previously budgeted for scrolls, and this makes it repeatable. A dome that blocks incoming spells outright, which is the answer to the Act 3 caster gauntlets and to the Netherbrain''s area attacks. ⚠ Concentration, so it competes with Hold Monster: use it on the turns where survival beats control. Counterspell is dropped because Gale and Charles already cover that lane and three carriers is one more than the guides advise.'
+      why: 'The second Magical Secret. Rated the #9 spell in the game and unreachable by any other party member, so taking it here is the only way to have it repeatably rather than off scrolls. A dome that blocks incoming spells outright, which is the answer to the Act 3 caster gauntlets and to the Netherbrain''s area attacks. ⚠ Concentration, so it competes with Hold Monster: use it on the turns where survival beats control. Counterspell stays off her list because Gale and Charles already cover that lane, and three carriers is one more than the guides advise.'
     - spell: Hold Person
       level: '2'
       guide_level: 4
@@ -174,7 +174,7 @@ builds:
       school: Illusion
       save: None (Concentration)
       when: Bard 3+ — optional pick
-      why: 'A-tier and absent from the plan. A zone that hard-disables enemy spellcasting with no save at all — the answer to the Act 3 caster packs that Counterspell can only handle one at a time, and the reason dropping Counterspell from Magical Secrets costs less than it looks. Concentration.'
+      why: 'A-tier. A zone that hard-disables enemy spellcasting with no save at all — the answer to the Act 3 caster packs that Counterspell can only handle one at a time, and the reason leaving Counterspell off her list costs less than it looks. Concentration.'
     - spell: Dissonant Whispers
       level: '1'
       guide_level: 2
@@ -371,7 +371,7 @@ builds:
       recommendation:
       - Command
       - Globe of Invulnerability
-      note: 'CHANGED. Command stays — hers is genuinely unique because the Band of the Mystic Scoundrel makes it a BONUS ACTION at the party''s highest Acuity DC, and her level 6 slot upcasts it to six targets, neither of which Gale can replicate. Counterspell is dropped: Gale learns it at Sorc 6 and Charles gets it post-respec, so taking it here would give the party THREE carriers where the guides recommend two. Globe of Invulnerability is rated the #9 spell in the game and is otherwise unreachable by any of the four — the plan previously covered it by buying scrolls, and a Magical Secret makes it repeatable. Heroes'' Feast is the alternative pick if you would rather have a permanent party-wide buff than an emergency dome.'
+      note: 'Command is hers and genuinely unique, because the Band of the Mystic Scoundrel makes it a BONUS ACTION at the party''s highest Acuity DC, and her level 6 slot upcasts it to six targets, neither of which Gale can replicate. Counterspell stays off her list: Gale learns it at Sorc 6 and Charles gets it post-respec, so taking it here would give the party THREE carriers where the guides recommend two. Globe of Invulnerability is rated the #9 spell in the game and is otherwise unreachable by any of the four, and a Magical Secret is what makes it repeatable instead of a scroll purchase. Heroes'' Feast is the alternative pick if you would rather have a permanent party-wide buff than an emergency dome.'
     - category: Expertise
       recommendation:
       - Insight

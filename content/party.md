@@ -28,14 +28,14 @@ act1_coverage:
   note: |-
     This is the party's minimum coverage, not a list of every good spell. "Online" is character level for this exact multiclass order. Darkness Arrows, Phalar Aluve, Command, and the martial control abilities do not use Concentration, so they can coexist with the two combat concentration lanes below.
 
-    Default hard-fight stack from character level 7: Charles holds Bless, Gale holds Twinned Haste AND spams non-concentration Command, Bonbon holds Hold Person/Hypnotic Pattern, and Asterion uses Stunning Strike. Each effect belongs to a different character, so there is no concentration collision — and Gale now covers two lanes at once because Command needs no Concentration.
+    Default hard-fight stack from character level 7: Charles holds Bless, Gale holds Twinned Haste AND spams non-concentration Command, Bonbon holds Hold Person/Hypnotic Pattern, and Asterion uses Stunning Strike. Each effect belongs to a different character, so there is no concentration collision — and Gale covers two lanes at once because Command needs no Concentration.
 
-    NOTE ON THE SWITCH: Gale is now a Fire Sorlock, not a Storm Sorcerer / Tempest Cleric. The party permanently loses Create Water, Destructive Wrath, Guidance, Bless from Gale, Bane, and Healing Word from Gale. Every one of those is reassigned below.
+    The party has no Cleric level anywhere, so it has no Create Water, no Destructive Wrath, no Bane, and no spell-list source of Guidance, Bless or Healing Word beyond what is listed below. Every one of those gaps is covered by a named owner or an item in the rows that follow.
   rows:
   - need: Wet / water setup
     owner: 'Nobody has the spell — thrown bottles only'
     online: 'Any character, any level, using Water Bottles.'
-    backup: 'Gale no longer has Create Water at all. Throw a water bottle for a small splash, or drop one where a Mage Hand (Gale char 1, Bonbon char 5) can reach it and use the Hand''s Throw for a 2m Wet splash. Wet is now a niche tool for enemy fire resistance and the occasional cold/lightning source, not a party engine.'
+    backup: 'Nobody in the party can cast Create Water. Throw a water bottle for a small splash, or drop one where a Mage Hand (Gale char 1, Bonbon char 5) can reach it and use the Hand''s Throw for a 2m Wet splash. Wet is a niche tool for stripping enemy fire resistance and for the occasional cold or lightning source, not a party engine.'
     concentration: None — thrown water and Mage Hand do not compete with Haste.
   - need: Guidance / ability checks
     owner: Silver Pendant, from character level 1
@@ -64,9 +64,9 @@ act1_coverage:
     concentration: 'None from the arrow — Charles remains free to hold Bless, Hex, or Divine Favour. This also does NOT interact with Gale''s illumination package: Coruscation keys off Gale being lit, not the enemy, and Daylight only dispels Darkness at the instant it is cast.'
   - need: Haste
     owner: Gale
-    online: 'Char 5 (Sorcerer 5) — one level earlier than the old Storm build, which needed a char-6 respec.'
-    backup: 'Twinned Spell for 3 Sorcery Points. THE NEW DECISION: Gale''s own hasted action is a second Scorching Ray worth roughly 150 damage, so self-Haste now genuinely competes with hasting both martials. Default to Charles + Asterion for adds-heavy fights and Gale + Charles for single-boss fights. Protect the concentration with CON-save proficiency from level 1, Armour of Landfall''s CON-save advantage in Act 3, positioning, and Shield. ⚠ Gale no longer has the Safeguard Shield or War Caster.'
-    concentration: 'Yes — but Command, Scorching Ray, and Fireball are all non-concentration, so unlike the Storm build Gale can now hold Haste and still control and nuke every turn. Ending Haste makes both targets Lethargic.'
+    online: Char 5 (Sorcerer 5).
+    backup: 'Twinned Spell for 3 Sorcery Points. WHO GETS IT: Gale''s own hasted action is a second Scorching Ray worth roughly 150 damage, so self-Haste genuinely competes with hasting both martials. Default to Charles + Asterion for adds-heavy fights and Gale + Charles for single-boss fights. Protect the concentration with CON-save proficiency from level 1, Spidersilk Armour''s CON-save advantage from Act 1, Armour of Landfall''s from Act 3, positioning, and Shield. ⚠ Gale has neither a shield nor War Caster — Dual Wielder fills both hands and both feats are spent.'
+    concentration: 'Yes — but Command, Scorching Ray, and Fireball are all non-concentration, so Gale holds Haste and still controls and nukes every turn. Ending Haste makes both targets Lethargic.'
   - need: Single-target hard control
     owner: 'Bonbon for Concentration control; Gale for concentration-free Command'
     online: 'Tasha''s Hideous Laughter at char 3; Bonbon Hold Person at char 4; Gale Hold Person at char 4 and Command at char 7. Asterion adds Stunning Strike at char 6.'
@@ -75,12 +75,12 @@ act1_coverage:
   - need: Group control / caster denial
     owner: 'Bonbon for Hypnotic Pattern; Gale for Command and Counterspell'
     online: 'Bonbon gets Hypnotic Pattern at char 6; Gale learns Counterspell at char 6 and Command at char 7.'
-    backup: 'Gale can Extended-Command an arbitrary number of enemies across successive turns without ever dropping Haste, which is a strictly better group-control lane than the old Sleet Storm (which cost him Haste). Command: Approach also pulls scattered enemies into one Fireball. Counterspell is a Reaction and consumes no Concentration.'
+    backup: 'Gale can Extended-Command an arbitrary number of enemies across successive turns without ever dropping Haste — a group-control lane that costs him no Concentration at all. Command: Approach also pulls scattered enemies into one Fireball. Counterspell is a Reaction and consumes no Concentration.'
     concentration: 'Bonbon holds Hypnotic Pattern; Gale holds Haste and controls with Command. Nothing collides.'
   - need: Emergency recovery
     owner: Bonbon
     online: Char 2 (Bard 1).
-    backup: 'Bonbon is now the ONLY healer — Gale''s Healing Word went with the Cleric dip. Stock Healing Potions and Revivify scrolls more aggressively than before; Healing Word is a bonus-action ranged pickup, not sustained healing. Character level 1 has no healing spell at all.'
+    backup: 'Bonbon is the party''s ONLY healer. Stock Healing Potions and Revivify scrolls heavily; her Healing Word is a bonus-action ranged pickup, not sustained healing. Character level 1 has no healing spell at all.'
     concentration: None.
 act1_concentration:
   note: One effect per character — starting another ends the first, and ending Haste inflicts Lethargic. The defaults sit on three different casters.
@@ -96,7 +96,7 @@ act1_concentration:
   - character: Gale
     default: Twinned Haste from char 5 onward.
     alternatives: Hold Person (char 4) or Hold Monster (char 10) in fights where someone else supplies Haste; Telekinesis for repositioning a single dangerous target.
-    rule: 'The big improvement over the old Storm build: Gale''s entire main loop is concentration-free, so he holds Haste permanently and still deals damage and controls. Scorching Ray, Fireball, Command, Counterspell, and Shield are ALL safe to cast while concentrating. Only Hold X, Hex, and Telekinesis would evict Haste.'
+    rule: 'Gale''s entire main loop is concentration-free, so he holds Haste permanently and still deals damage and controls. Scorching Ray, Fireball, Command, Counterspell, and Shield are ALL safe to cast while concentrating. Only Hold X, Hex, and Telekinesis would evict Haste.'
   - character: Bonbon
     default: Hold Person on a priority humanoid; Hypnotic Pattern on a group from char 6.
     alternatives: Tasha's early · Faerie Fire until replaced · Enhance Ability or Invisibility out of combat.
@@ -107,7 +107,7 @@ act1_core_items:
   - item: Silver Pendant
     owner: Shared utility swap
     timing: Ravaged Beach / Harper outpost, before the Grove
-    why: 'MANDATORY from character level 1 now that Gale has no Cleric level at all — this pendant is the party''s only source of Guidance for the entire run. Do not feed it to Gale''s orb.'
+    why: 'MANDATORY from character level 1. With no Cleric level anywhere in the party, this pendant is the only source of Guidance for the entire run. Do not feed it to Gale''s orb.'
   - item: Phalar Aluve
     owner: Charles
     timing: Underdark, near the Selûnite Outpost
@@ -226,10 +226,10 @@ item_allocation:
   why: 'SELECTED DEFAULT from char 5 — empty hands keep Attack/Extra Attack unarmed so Tavern Brawler applies. Corellon''s Grace is a levels 2–4 weapon only. Swap Bracers for Sparkle Hands or Cinder and Sizzle for damage, Graceful Cloth for Kushigo in a Patient-Defence fight. Keep Gloves of Thievery and Smuggler''s Ring as theft swaps.'
 - item: Act 1 — Gale
   to: Bow of Awareness; The Spellsparkler main hand + Melf's First Staff off hand (from char 4); The Shadespell Circlet; Boots of Stormy Clamour; Gloves of Belligerent Skies; Pearl of Power Amulet
-  why: 'SELECTED DEFAULT. Dual Wielder at character level 4 lets Gale hold both staves as stat sticks, so Melf''s +1 spell attack/DC applies to every Scorching Ray ray alongside Spellsparkler''s charge generation. ⚠ This DROPS the Safeguard Shield permanently (+2 AC, +1 all saves) — the main defensive regression of the Fire Sorlock switch; free the shield for someone else. Bow of Awareness holds the unused ranged slot for +1 Initiative, which matters more now that Gale has no feat left for Alert.'
+  why: 'SELECTED DEFAULT. Dual Wielder at character level 4 lets Gale hold both staves as stat sticks, so Melf''s +1 spell attack/DC applies to every Scorching Ray ray alongside Spellsparkler''s charge generation. ⚠ Filling both hands rules out a shield for the rest of the run — Spidersilk Armour''s Constitution-save advantage is the substitute that protects Twinned Haste, and the Safeguard Shield belongs to another party member. Bow of Awareness holds the otherwise-unused ranged slot for +1 Initiative on top of the standing Elixir of Vigilance, because Gale has no feat left for Alert.'
 - item: Act 2 — Gale
   to: Hat of Fire Acuity; Callous Glow Ring + Coruscation Ring (damage) or Ring of Mental Inhibition (control); Spineshudder Amulet; Boots of Stormy Clamour; Gloves of Belligerent Skies
-  why: 'SELECTED DEFAULT once the Strange Ox is killed at Last Light. The Hat is the build. Spineshudder and Spellmight — both previously rejected for Gale because Storm''s nukes were save-based — become core now that his main spell is 3–7 spell attack rolls per cast. Three good rings for two slots: run Callous Glow + Coruscation when nuking, and swap Coruscation for Mental Inhibition when the plan is Command spam.'
+  why: 'SELECTED DEFAULT once the Strange Ox is killed at Last Light. The Hat is the build — each Scorching Ray ray is a separate Fire instance, so one level-4 cast takes Arcane Acuity from 0 to its 10 cap. Spineshudder is core for the same reason: it triggers on ranged spell-ATTACK hits, and Gale makes 3–7 of them per cast. Three good rings for two slots: run Callous Glow + Coruscation when nuking, and swap Coruscation for Mental Inhibition when the plan is Command spam.'
 - item: Act 3 — Gale
   to: Markoheshkir main hand + Rhapsody off hand; Hat of Fire Acuity; Armour of Landfall; Spellmight Gloves; Cloak of the Weave; Spineshudder Amulet; Callous Glow + Coruscation/Mental Inhibition
   why: 'SELECTED DEFAULT. Attune Markoheshkir to FLAME OF WRATH, not Bolts of Doom. Armour of Landfall''s Constitution-save ADVANTAGE is the load-bearing piece: it replaces the Halfling Luck and War Caster this build cannot have, and it is what makes Markoheshkir''s unavoidable Heat self-damage safe while concentrating on Twinned Haste. ⚠ Do not attune Flame of Wrath before Landfall is equipped.'
@@ -250,13 +250,13 @@ item_allocation:
   why: 'Acts 2–3 control engine: weapon hits build spell DC, then the Band turns Enchantment/Illusion spells into bonus actions.'
 - item: Markoheshkir
   to: Gale
-  why: 'Act 3 main hand from Ramazith''s Tower. +1 spell attack/DC, Arcane Battery for a free spell of any level, and Kereska''s Favour attuned to Flame of Wrath for Fire resistance plus a +proficiency Fire damage rider that applies per ray. The Amulet of the Devout is no longer taken — Gale has no Channel Divinity now that the Tempest dip is gone, so it is free for another character or for sale.'
+  why: 'Act 3 main hand from Ramazith''s Tower. +1 spell attack/DC, Arcane Battery for a free spell of any level, and Kereska''s Favour attuned to Flame of Wrath for Fire resistance plus a +proficiency Fire damage rider that applies per ray. ⚠ Attuning also starts unavoidable Heat self-damage each turn, so do not attune until Armour of Landfall is equipped.'
 - item: Spellmight Gloves + Spineshudder Amulet
   wiki:
   - Spellmight Gloves
   - Spineshudder Amulet
   to: Gale
-  why: 'REASSIGNED BY THE SWITCH. Both were previously marked as poor fits for Gale because Storm''s core damage was save-based. Scorching Ray is an attack roll fired 3–7 times per cast, so Spellmight''s −5/+1d8 and Spineshudder''s spell-attack Reverberation are now best-in-slot.'
+  why: 'Both key off spell ATTACK rolls, and Scorching Ray fires 3–7 of them per cast — so Spellmight''s −5/+1d8 and Spineshudder''s spell-attack Reverberation are best-in-slot here. MANAGE SPELLMIGHT: first cast with the gloves OFF to build Arcane Acuity, then switch them ON once Acuity covers the −5.'
 - item: Hellrider's Longbow
   wiki: Hellrider Longbow
   to: 'Bonbon (contested with Gale)'
@@ -292,7 +292,7 @@ watch_outs:
 - watch_out: Markoheshkir Heat vs Twinned Haste
   detail: 'Flame of Wrath generates Heat, which deals unavoidable self-damage every turn and forces a CON save against Haste each time. Gale is Human, so there is no Halfling Luck. Do not attune Flame of Wrath until Armour of Landfall is equipped.'
 - watch_out: Fire resistance and fire immunity
-  detail: 'Fire is the most resisted damage type in Act 3, and Bonbon''s move to dual hand crossbows means the party cannot mass-apply Arsonist''s Oil the way a bow archer with Arrows of Many Targets could — which is why Elemental Adept: Fire is effectively mandatory. Against fire-IMMUNE enemies (House of Hope, Raphael, the red dragon, Yurgir), switch Markoheshkir to a lightning attunement and use Chain Lightning; Gale contributes far less to those fights than the old Storm build did.'
+  detail: 'Fire is the most resisted damage type in Act 3, and Bonbon''s move to dual hand crossbows means the party cannot mass-apply Arsonist''s Oil the way a bow archer with Arrows of Many Targets could — which is why Elemental Adept: Fire is effectively mandatory. Against fire-IMMUNE enemies (House of Hope, Raphael, the red dragon, Yurgir), switch Markoheshkir to a lightning attunement and use Chain Lightning. Gale contributes less damage in those fights; his Twinned Haste, Command and Counterspell are what he brings instead.'
 - watch_out: Fireball before Careful Spell
   detail: 'Careful Spell is Gale''s fourth metamagic at Sorc 10 = character level 11. For the whole run before that, Fireball must go to a separate adds cluster, never onto Charles or Asterion. Scorching Ray is the focus-fire tool.'
 - watch_out: Modded Hag's Hair assumption
@@ -306,7 +306,7 @@ watch_outs:
 - watch_out: Deepened Pact (non-Honour)
   detail: Paladin 5 Extra Attack and Warlock 5 Deepened Pact stack only outside Honour Mode. This guide is explicitly non-Honour.
 - watch_out: Undead / crit-immune bosses
-  detail: 'Hold Monster and Command do not control undead, and crit immunity prevents the held-target plan. This bites harder now that Gale is a second Command caster and Act 2 is full of Undead. Use Hypnotic Pattern/Slow where applicable; Charles still benefits from radiant Divine Smite against Undead/Fiends, while Gale falls back on raw Scorching Ray and Fireball damage and Asterion uses his radiant Manifestation.'
+  detail: 'Hold Monster and Command do not control undead, and crit immunity prevents the held-target plan. That bites hard through Act 2, which is dense with Undead and where both Command casters lose their main lane. Use Hypnotic Pattern/Slow where applicable; Charles still benefits from radiant Divine Smite against Undead/Fiends, Gale falls back on raw Scorching Ray and Fireball damage, and Asterion toggles Manifestation to Soul for radiant.'
 skills_face:
 - duty: Face (Persuasion / Deception / Intimidation)
   who: Bonbon (Expertise + Friends)

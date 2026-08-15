@@ -48,10 +48,10 @@ act1_coverage:
     backup: All four after every long rest — ritual, no slot.
     concentration: None — lasts until long rest.
   - need: Bless
-    owner: Charles at char 4+
-    online: Charles gains Paladin spellcasting at Paladin 2 (char 4).
-    backup: 'Charles is now the ONLY Bless source — Gale has no Cleric level. Character levels 1–3 have no Bless at all; use Phalar Sing once the sword is bound (short-rest, concentration-free accuracy) and rely on Bonbon''s Bardic Inspiration before that.'
-    concentration: 'Yes, on Charles. It competes only with Charles''s Hex, Divine Favour, Wrathful Smite, or later self-cast Darkness.'
+    owner: 'Charles at char 4+ (spell); The Whispering Promise on Bonbon covers char 1–3'
+    online: Charles gains Paladin spellcasting at Paladin 2 (char 4). The Whispering Promise is buyable from Volo or Grat at the Goblin Camp for ~40g, so it covers the gap from the start.
+    backup: 'Charles is the ONLY Bless CASTER — Gale has no Cleric level. The char 1–3 hole is now filled by The Whispering Promise: any healing Bonbon does gives the target +1d4 to attacks and saves for 2 turns with no Concentration, and a THROWN Potion of Healing applies it to everyone it splashes. ⚠ The ring applies the SAME condition as the spell, so the two do NOT stack — the ring is the early-game and off-turn substitute, not an addition. From the Underdark on, Charles should cast Bless while holding the STAFF OF ARCANE BLESSING (Arcane Tower basement), which adds Mystra''s Blessing (+1d4 to spell ATTACK rolls) to everyone he blesses — worth +1d4 accuracy on every one of Gale''s rays. Upcast to a level 2 slot to cover all four party members instead of three.'
+    concentration: 'Yes, on Charles — and it stays that way. It competes with Charles''s Hex, Divine Favour, Wrathful Smite, or later self-cast Darkness; on those turns the Whispering Promise carries Bless instead.'
   - need: Bane / save debuff
     owner: 'Phalar Shriek (Charles) and Gloves of Baneful Striking; Ring of Mental Inhibition (Gale) from Act 2'
     online: 'Phalar Aluve arrives in the Underdark; Gloves of Baneful Striking arrive on the Rosymorn trail; Ring of Mental Inhibition is in the House in Deep Shadows in Act 2.'
@@ -145,6 +145,22 @@ act1_core_items:
     owner: Bonbon
     timing: Grymforge trapped bridge chest
     why: +1 Spell Save DC — the late-Act-1 bridge for Hold Person, Hypnotic Pattern, Fear, Slow and Glyph until Arcane Acuity.
+  - item: The Whispering Promise
+    owner: Bonbon
+    timing: Volo, or Grat at the Goblin Camp — ~40g, available before the Grove resolves
+    why: 'Fills the char 1–3 Bless hole the plan has always admitted to. Healing a creature gives it +1d4 to attacks and saves for 2 turns, no Concentration; a thrown Potion of Healing blesses everyone it splashes, and Bonbon''s bonus-action Healing Word also fires Broodmother''s Revenge at the same time. ⚠ Same condition as the Bless spell, so it does not stack with Charles — it is the early and off-turn substitute.'
+  - item: Staff of Arcane Blessing
+    owner: Charles (pre-combat swap)
+    timing: Arcane Tower BASEMENT, Underdark
+    why: 'Every Bless cast by its wielder also grants Mystra''s Blessing, +1d4 to spell ATTACK rolls. Charles was already spending concentration on Bless, so the routine costs only a weapon swap — and Gale gains +1d4 accuracy on each of his 3–7 Scorching Ray rays.'
+  - item: Spidersilk Armour
+    owner: Gale
+    timing: Worn by Minthara, Shattered Sanctum — the same kill as Charles's Boots of Striding
+    why: 'ADVANTAGE ON CONSTITUTION SAVES from Act 1, which is the only thing protecting Twinned Haste until Armour of Landfall in Act 3. Gale has no War Caster, no feat left for one, and no shield after Dual Wielder. Costs 1 AC versus going unarmoured.'
+  - item: Elixir of Vigilance
+    owner: Gale (standing daily elixir)
+    timing: ~25g from Danthelon's, Kith in Grymforge, or Popper at the Circus
+    why: '+5 Initiative and immunity to Surprise until long rest. BG3 rolls initiative on a d4 + DEX, not a d20, so this is larger than the whole die — it is the Alert feat Gale cannot afford. He is the only party member with no competing elixir, so the slot is free.'
 synergies:
 - name: Haste engine
   how: 'Gale Twinned-Hastes two of Charles / Asterion / himself from character level 5. The extra Actions are strongest on Charles''s three-attack non-Honour turn, Asterion''s Attack action, and Gale''s own second Scorching Ray — which is why the target choice is now a real decision rather than an automatic Charles + Asterion.'

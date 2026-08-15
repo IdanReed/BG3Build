@@ -1,379 +1,720 @@
-# BG3 Party Build Review — Power + Fun/Journey (merged)
+# BG3 Party Build Review — Patch 8 pass
 
-_Two adversarial multi-agent passes over the four `party_plan.json` builds: **Part A** hunts for strictly-stronger options and audits patch state; **Part B** looks for more-fun / earlier-online / smoother-respec variants. Verdicts reconcile both._
+_In-depth review of the four current builds (leveling, spells, itemization, feats, tadpole) against
+the expert Patch 8 video tier lists in `video_summaries/`, cross-checked against a local copy of
+bg3.wiki (`bg3kb/data/chunks.jsonl`)._
 
-## Executive summary
+**Party reviewed:** Charles (Oathbreaker Paladin 7 / Hexblade Warlock 5) · Asterion (Open Hand Monk 9 /
+Thief Rogue 3) · Gale (Draconic-Red Sorcerer 11 / Fiend Warlock 1) · Bonbon (Swords Bard 11 / Fighter 1).
+**Mode:** non-Honour, modded Hag's Hair (one per character), Patch 8 + hotfixes #30–#36.
 
-| Build | Power verdict | Power headline | Most-fun alternative | Earliest-online |
-|---|---|---|---|---|
-| #1 Paladin (Oathbreaker/Hexblade crit-fish) | ✅ KEEP | Every load-bearing mechanic verified live on bg3.wiki and holds in the current patch: (1) Deepened Pact (Pact of the Blade, Warlock 5) Extra Attack ST… | Vengeance Sorcadin — Paladin 6 / Sorcerer 6 (Draconic or Storm). Best match for a caster-leaning player who wants many d… | Take the Hexblade dip at CHARACTER LEVEL 1, then go Paladin. This is the earliest-online AND smoothest approach for the … |
-| #2 Rogue (DEX pickpocket) | 🔧 TUNE | Keep the Gloomstalker archer chassis but retune the multiclass: swap the listed Assassin+Champion for Thief 4 + Battle Master 3. This directly fixes t… | Arcane Trickster (near-pure). For a caster-brained player it wins the fun test on its own terms: it is the single rogue … | On the rogue chassis, Arcane Trickster and Swashbuckler are tied for earliest clean online: both need ZERO multiclass an… |
-| #3 Sorcerer (Wet+Lightning) | ✅ KEEP | Keep the chassis. The build's three load-bearing mechanics all verified INTACT in the current patch state (Patch 8 + Hotfixes #30-#36): Wet still doub… | Storm Sorcery (built as Storm 10 / Tempest Cleric 2). For a caster player who likes many decisions per turn, Tempestuous… | Draconic-Blue Sorcerer. It is the earliest-FUNCTIONAL of the options: Draconic Resilience gives base AC 13 (+Dex) and +1… |
-| #4 Bard (Acuity Commander) | 🔧 TUNE | The build is sound and every load-bearing claim checks out against the current patch: Arcane Acuity is +1 spell-attack/+1 spell-save-DC per remaining … | Ranged Swords Bard "Commander" (the base target build) is the most-fun pick that actually fits this party. Its flourish … | Lore Bard comes online earliest in raw subclass power: it is the ONLY college that gets Magical Secrets at Bard 6 (every… |
+**Source labels used throughout:**
+`[V]` = expert video tier list · `[W]` = verified against local bg3.wiki copy · `[P]` = the plan's own
+claim, neither confirmed nor refuted by the sources read.
 
-## Patch reality check (the load-bearing conclusions)
-
-- **Patch 8 (v4.1.1, 2025-04-15) was the FINAL major patch.** Only hotfixes **#30–#36** followed through 2026; there is **no Patch 9** (the “Patch 9” pages in search are 2020 Early Access).
-- **Your meta staples were untouched.** A full-text search of the official notes returned **zero** balance hits for Divine Smite, Sorcery Points, Metamagic, Bardic Inspiration, Thirsting Blade, Deepened Pact, Pact of the Blade, Risky Ring, Markoheshkir, crit gear, GWM, Sharpshooter, Savage Attacker, or Elixirs.
-- **Deepened Pact + Extra Attack stacking was removed in HONOUR MODE ONLY** — it still works in your **non-Honor** party, so `Pal 7 / Hexblade 5` keeps its 3 attacks. Claims that `11 Pal / 1 Hexblade` is “strictly superior post-Patch 8” are Honour-Mode framing and don’t apply here.
-- **Small relevant deltas:** Mobile Flourish QoL (Swords Bard); **Shadow Blade Ring no longer needs Concentration** + Knife of the Undermountain King advantage fix (relevant to crit builds); Elemental Weapon buffed (all damage types); Glyph of Warding now works with Spellsparkler/Mourning Frost/Winter’s Clutches; Gloves of Battlemage’s Power correctly grant Arcane Acuity. **Bhaalist Armour** got a **tooltip-only** radius fix (3m) — aggregators hallucinated a 2→3m buff; the aura was not changed.
-
-_Patch sources:_ <https://baldursgate3.game/news/the-final-patch-new-subclasses-photo-mode-and-cross-play_138> · <https://www.gameleap.com/articles/bg3-patch-8-full-notes-new-classes-and-all-changes> · <https://bg3.wiki/wiki/Deepened_Pact> · <https://store.steampowered.com/news/app/1086940/view/3347878489035336762> · <https://bg3.wiki/wiki/Patch_Notes> · <https://gamerant.com/baldurs-gate-3-hotfix-update-30-patch-notes-changelog-whats-new/>
-
-> Actionable changes are collected at the end of **Part A** (“Suggested edits to party_plan.json”). Ask and I’ll apply them.
+> ⚠️ **This file replaces an earlier review that described a different party** (a Gloomstalker archer
+> and a Wet/Lightning Storm Sorcerer). That version is preserved in git history at `b45e496~`.
+> One of its claims was wrong and has been corrected below: Arcane Acuity caps at **10** turns, not 7.
 
 ---
 
-# Part A — Power & Patch Adversarial Review
-
-_Verdicts: is each build still optimal, what beats it, and what the current patch changes._
-
-# Adversarial Build Review
-
-*Party context: NON-Honour mode, party of 4. Priorities = fun, comes-online-early, tolerates moderate late-game difficulty mods. Synergy engine: Sorcerer Twinned-Hastes the Paladin and applies Wet to feed its own + the Bard's lightning; the Bard stacks Arcane Acuity to land Command/Hold (paralysis = melee auto-crit within 3m) to set up the Paladin. You personally pilot Build 1 (Paladin) and Build 2 (Rogue); an ally holds the Sorcerer. Every alternative below is judged in THIS party, not in a vacuum. Patch state assessed = Patch 8 (2025-04-15, the final major patch) + Hotfixes #30–#36 (through 2026-03-26).*
-
-## Executive summary
+## Verdict at a glance
 
 | Build | Verdict | Headline |
 |---|---|---|
-| #1 Oathbreaker Paladin 7 / Hexblade Warlock 5, Half-Orc ("Lockadin") | **KEEP** | Near-optimal crit-smite converter for this party; all four load-bearing mechanics verified live. Only clash: comes online late (~L10). |
-| #2 Gloomstalker 5 / Assassin (or Thief) 4 / Champion 3 DEX archer | **TUNE** | Keep the S-tier archer chassis; retune to **Thief 4 / Battle Master 3** to fix the decision-light autopilot and add real Paladin setup. |
-| #3 Draconic-Blue Sorcerer 10 / Tempest Cleric 2 | **KEEP** | Wet-doubling + Destructive-Wrath maximize + Twinned-Haste engine fully intact; only live knobs are subclass flavor and a friendly-fire plan. |
-| #4 Swords Bard 10 / Fighter 1 / Wizard 1 (Arcane Acuity "Commander") | **TUNE** | Right slot, right mechanics; swap **Wizard 1 → Fighter 2 (Action Surge)** to land Command/Hold a full turn earlier. |
+| **Charles** — Oathbreaker Pal 7 / Hexblade 5 | ✅ **KEEP**, 3 additions | Chassis is well-supported. Missing **Aid**, missing the **Murder Tribunal** item cluster he alone unlocks, and **Luck of the Far Realms is at risk of auto-wasting** on his own crit-range stack. |
+| **Asterion** — Open Hand Monk 9 / Thief 3 | ✅ **KEEP**, near-optimal | The single most-endorsed build in the whole source set: Open Hand is the top Monk subclass, a top-5 pure build *and* a "broken build"; Tavern Brawler and Alert are the only two **S+** feats; Monk 8–9 + Rogue 3–4 is named "the defining combination." Two of his Act 3 items are missing from the loot route. |
+| **Gale** — Draconic-Red Sorc 11 / Fiend Warlock 1 | 🔧 **TUNE** | The build works, but its two self-declared structural weaknesses — no Alert, no CON-save protection until Act 3 — are **both solvable in Act 1 with items the plan already passes over**. Also carries a **hidden anti-synergy in its own Act 3 loadout** (Markoheshkir Heat vs Callous Glow vs Arcane Acuity), and rests on **one untested assumption** (Spellmight per ray) that could invert a core item. |
+| **Bonbon** — Swords Bard 11 / Fighter 1 | 🔧 **TUNE** | Correct chassis and correct engine. Two live questions: **Fighter 1 vs Fighter 2** (Action Surge), and whether **Magical Secrets → Command** duplicates Gale rather than adding to him. |
+| **Party** | 🔧 **TUNE** | Strong. The gaps are concentrated in three places: **initiative**, **the Bless economy**, and **a handful of never-routed items**. |
 
-## Patch changes that matter
+---
 
-**The two load-bearing questions, answered first:**
+## Decisions taken — and now applied to `content/`
 
-- **Does Deepened Pact Extra Attack still stack with Paladin Extra Attack? YES — in non-Honour only.** A Warlock 5 (Pact of the Blade / Deepened Pact) + martial-5 multiclass gets **3 attacks per action in Explorer/Balanced/Tactician**, blocked only in Honour Mode. The Honour block is a Patch 5 (Nov 2023) change, **untouched by Patch 8 and hotfixes #30–#36.** Verified live: <https://bg3.wiki/wiki/Extra_Attack>, <https://bg3.wiki/wiki/Deepened_Pact>. Your party is non-Honour, so Build #1's core works. Terminology note: this comes from **Deepened Pact**, not a separate "Thirsting Blade" invocation.
-- **Does Arcane Acuity still work? YES, and it was buffed adjacent to your build.** Arcane Acuity = +1 spell attack AND +1 spell save DC per remaining turn, cap 10 (=+10 DC in non-Honour), −1/turn, **−2 per instance of damage taken** (the real sustain tax, a Patch 5 change, mostly irrelevant to a backline archer). Patch 8 **fixed** Gloves of Battlemage's Power to correctly grant Acuity — a small buff to the Bard's engine. Verified: <https://bg3.wiki/wiki/Arcane_Acuity_(Condition)>.
+These were chosen at the table and are already written into the guide data.
 
-**Other confirmed changes relevant to these four builds:**
+| Decision | Where it landed |
+|---|---|
+| **Gale drinks Elixir of Vigilance every long rest** (+5 initiative, replaces Alert) | `gale.md`, `party.md`, `loot.md` |
+| **Gale wears Spidersilk Armour from Act 1** (CON-save advantage, −1 AC) | `gale.md`, `loot.md`, `party.md` |
+| **Charles takes Aid** at Paladin 5 | `charles.md` |
+| **Charles keeps concentrating on Bless**, cast while holding the Staff of Arcane Blessing | `charles.md`, `party.md`, `loot.md` |
+| **Bonbon wears The Whispering Promise** for the char 1–3 Bless window | `bonbon.md`, `loot.md`, `party.md` |
+| **Luminous Armour stays on Charles**; both ores go to Bonbon (Shield + Splint) | `bonbon.md`, `loot.md` |
+| **Magical Secrets → Command + Globe of Invulnerability** (Counterspell dropped) | `bonbon.md` |
+| **Gale carries both Rhapsody and Staff of Spellpower**, swapping per fight | `gale.md` |
+| **Add Ability Drain** (Charles + Asterion, *not* Gale — it would drain his CHA) | `tadpole.md`, `asterion.md` |
+| **Charles gets Shield of Thralls**; drops Armour of Agathys | `tadpole.md` |
+| **Luck of the Far Realms stays on Charles** *and* is bought for Asterion and Bonbon | `tadpole.md` |
+| **Gale's illithid list rewritten** around his real DC 27 and his reactions | `tadpole.md` |
+| **Murder Tribunal items documented but gated** — the Bhaal path stays undecided | `loot.md`, `charles.md` |
+| Missing loot entries added: Soul Catching, Kushigo Boots, Arcane Blessing, Drakethroat, Grymskull | `loot.md` |
 
-- **Patch 8 (2025-04-15) was the FINAL major patch** — it added 12 subclasses (incl. **Hexblade Warlock**, making Build #1's crit-fish core native, not modded), Photo Mode, cross-play. There is **no Patch 9**; everything after is a hotfix. Source: <https://baldursgate3.game/news/the-final-patch-new-subclasses-photo-mode-and-cross-play_138>.
-- **Hotfix #30 (2025-04-30):** Hexblade chance-to-inflict-Curse no longer stacks per Bind re-use (edge case, does NOT touch the −1 crit-threshold); Paladin auras no longer lost after Long Rest; Rogue **Magical Ambush / Skilled Skullduggery / Lethal Concealment no longer vanish while sneaking** (fixes Arcane Trickster's core loop); Uncanny Dodge fixed. Source: <https://gamerant.com/baldurs-gate-3-hotfix-update-30-patch-notes-changelog-whats-new/>.
-- **Hotfix #31 (2025-05-14):** Hexblade can replace a spell at L2; Swashbuckler Fancy Footwork works even on a miss.
-- **Hotfixes #32–#36 (through 2026-03-26):** platform/stability, crash, and minor tooltip/UI only — **no load-bearing balance changes.** #36 (2026-03-26) is the latest release. Source: <https://bg3.wiki/wiki/Patch_Notes>, <https://larian.com/news/hotfix-36-now-live_149>.
-- **NOT nerfed (full-text search of official notes returned zero hits):** Divine Smite (no per-turn cap; dice still double on crit), Sorcery Points, Metamagic (Twinned/Quicken), Wet+Lightning/Cold doubling, Risky Ring, Markoheshkir, Killer's Sweetheart, Sarevok's Horned Helmet, Half-Orc Savage Attacks, Sharpshooter, GWM. Source: <https://bg3.wiki/wiki/Guide:Undocumented_Patch_5_updates>, <https://bg3.wiki/wiki/Wet_(Condition)>.
-- **DRS caveat (Patch 5, pre-existing, NOT new):** flat per-hit riders do **not** double on crit — only weapon dice, smite dice, and the Half-Orc Savage die double. This corrects any "everything doubles on crit" framing.
-- **Debunked aggregator hallucination:** the "Bhaalist Armour 2m→3m aura radius buff" is a **tooltip-display correction only** in the official Patch 8 notes; no radius increase shipped. Source: <https://comicbook.com/gaming/news/baldurs-gate-3-patch-8-patch-notes/>.
+Validated: all nine content files still parse, and `GET /api/plan` returns 200 with every new entry present.
 
-## Build #1 — Oathbreaker Paladin 7 / Hexblade Warlock 5, Half-Orc ("Lockadin")
+---
 
-**Verdict: KEEP (near-optimal for this party). Confidence: high.**
+# Part 1 — Party-level findings
 
-### Why
-This is the single best converter of the party's manufactured paralysis auto-crits into damage. All four load-bearing claims verified live:
+These matter more than any individual item swap, and three of them are cheap.
 
-| Claim | Status | Source |
+## 1. Initiative is rolled on a **d4**, and the plan is priced as if it were a d20
+
+`[W]` **Initiative in BG3 is `d4 + Dexterity modifier`** — not d20. It is explicitly *not* a Dexterity
+check, so Jack of All Trades and Enhance Ability do nothing for it.
+
+This single fact reprices a lot of the plan. A flat +2 is worth *half the entire die's range*. It is
+also why the feats video rates **Alert as one of only two S+ feats** `[V]` — +5 on a d4 is not a bonus,
+it is a guarantee.
+
+**Verified initiative sources** `[W]` (the complete table):
+
+| Bonus | Sources |
+|---|---|
+| **+5** | Alert (feat) · **Elixir of Vigilance** (consumable) — both also grant immunity to Surprise |
+| **+3** | Hellrider Longbow · Sentinel Shield · Feral Instinct · Dread Ambusher |
+| **+2** | **Bhaalist Armour** · **Assassin of Bhaal Cowl** · Mask of Soul Perception · Elven Chain · Elegant Studded Leather · Flame Enamelled Armour · Soulbreaker Greatsword |
+| **+1** | Bow of Awareness · Fistbreaker Helm · Stalker Gloves · Halberd of Vigilance · Ambusher · +2 armours |
+
+### The fix: Gale's "no feat for Alert" problem is already solved and the plan doesn't notice
+
+`gale.md` lists this under **traps**: _"There is no Alert and no War Caster — initiative and
+concentration are gear problems on this build,"_ and answers it with **Bow of Awareness (+1)**, with
+Elixir of Vigilance mentioned only as a situational fallback "for the fights where he must go first."
+
+But `[W]` **Elixir of Vigilance grants +5 initiative and immunity to Surprise, lasts until long rest,
+costs 25 gp, and is sold by many merchants** (Danthelon's, Kith in Grymforge, Popper at the Circus).
+Its only cost is the one-elixir-per-rest slot — **and Gale is the one party member with no competing
+elixir.** Asterion needs Giant Strength (load-bearing for attack, damage *and* his Stun DC); Bonbon
+wants Bloodlust or Hill Giant.
+
+> **Recommendation:** make **Elixir of Vigilance Gale's standing daily elixir**, exactly as Giant
+> Strength is Asterion's. It converts a +1 item into a +5 permanent effect, replicates the Alert feat
+> he cannot afford, and frees **Bow of Awareness** and the Hellrider's Longbow contest entirely.
+> This is the cheapest high-impact change in the review.
+
+### Resulting party initiative order
+
+| | Roll | Range |
 |---|---|---|
-| Deepened Pact + Paladin Extra Attack = 3 attacks (non-Honour only) | CONFIRMED | <https://bg3.wiki/wiki/Extra_Attack> |
-| Hexblade's Curse: −1 crit threshold, +prof damage, heal on kill | CONFIRMED | <https://bg3.wiki/wiki/The_Hexblade> |
-| Aura of Hate: +CHA melee weapon damage at class level 7 | CONFIRMED | <https://bg3.wiki/wiki/Aura_of_Hate> |
-| Half-Orc Savage Attacks: extra weapon die on crit | CONFIRMED | <https://bg3.wiki/wiki/Half-Orc> |
+| Asterion | d4 + 5 (DEX 20) + 5 (Alert) | **11–14** |
+| Gale | d4 + 3 (DEX 16) + 5 (Vigilance) | **9–12** |
+| Bonbon | d4 + 4 (DEX 18) + 3 (Hellrider's Longbow) | **8–11** |
+| Charles | d4 + 2 (DEX 14) | **3–6** |
 
-In-context: the Bard's Command/Hold paralysis = auto-crit for melee within 3m, and this build turns each into **doubled weapon dice + doubled Divine Smite dice + doubled Half-Orc Savage die**. The Sorcerer's Twinned Haste doubles the 3-attack action to 6 attacks/turn — attack COUNT is exactly the axis this party multiplies. Short-rest Pact Magic slots mean it smites at full power every fight (unlike a Sorcadin nova that runs dry).
-
-### Strongest alternatives
-- **Hexadin 6/6 (Oathbreaker Paladin 6 / Hexblade Warlock 6)** — *viable preference fork, NOT strictly better.* Trades Aura of Hate for a 6th Warlock invocation + marginally better saves (helps offset Risky Ring's save disadvantage). Both keep Aura of Protection. 2026 guides recommend 7/5 for Oathbreaker because +CHA across 3 attacks out-damages the 6th Warlock level. Stay 7/5 for damage; go 6/6 only if you value save-survivability over nova. Source: <https://hacktheminotaur.com/baldurs-gate-3/best-bg3-lockadin-build-multiclass-guide/>.
-- **Champion Fighter 11–12 GWM crit-fisher** — *conditional; only better IF the group switches to Honour Mode.* 3 native attacks + Action Surge, works identically in Honour. But for THIS non-Honour smite party it is WORSE: no Divine Smite means paralysis auto-crits only double weapon dice, wasting the party's biggest payoff. File as the Honour-Mode escape hatch, not an upgrade.
-
-**Debunked as "strictly better here":** Sorcadin (self-Haste is redundant with the party Sorcerer, only 2 base attacks, no short-rest slot recovery); Swords Bardadin (role overlap — you already run a Swords Bard).
-
-### Patch impacts
-Nothing load-bearing was nerfed. Patch 8 made Hexblade native; hotfixes #30/#31 only touched Hexblade edge cases (Curse-stacking, L2 spell swap), not the crit-threshold reduction. Risky Ring / Sarevok's Helmet / Killer's Sweetheart / Savage Attacks / Aura of Hate all verified untouched.
-
-### Recommended changes / expectations
-1. **Stay 7/5** (Oathbreaker Paladin 7 / Hexblade Warlock 5). Half-Orc + Hexblade (Bind Hexed Weapon puts everything on CHA, no STR tax) all check out.
-2. **Set the expectation: comes online LATE (~character level 10).** Before then it's an ordinary 2-attack smiter; the 3-attack nova is an Act 3 thing. This is the one genuine clash with the party's "comes-online-early" priority.
-3. **Gear:** Risky Ring (permanent advantage — but permanent *disadvantage on saves*, a real fragility tax; partly offset by Aura of Protection), Killer's Sweetheart, Sarevok's Horned Helmet (stacking −1 crit threshold), Balduran's Giant Slayer or Helldusk, Amulet of Greater Health, Birthright. If late-game mods lean on Hold/Feeblemind, budget a Freedom of Movement source or consider 6/6.
-4. **Zero migration to Honour Mode** — the stacked 3rd attack is disabled there. Non-issue for this party, but know the build loses its identity if you ever switch modes.
-
-## Build #2 — DEX pickpocket archer (currently Gloomstalker 5 / Assassin (or Thief) 4 / Champion 3)
-
-**Verdict: TUNE (keep the Gloomstalker archer chassis, retune the multiclass). Confidence: high.**
-
-### Why
-The listed brief has two false premises to drop: (1) pickpocket is **not** slot-locked — it's gated by Sleight-of-Hand total + gear + a Darkness-arrow's advantage, not subclass; and (2) **"MAX pickpocket" is impossible on any 5/4/3 archer** because Reliable Talent requires **Rogue 11** (verified: <https://bg3.wiki/wiki/Reliable_Talent>). The real complaint — decision-light autopilot — is fixable at zero cost to the party's priorities.
-
-### Primary recommendation: Gloomstalker Ranger 5 / **Thief Rogue 4 / Battle Master Fighter 3** (DEX bow)
-A strictly-better-for-you retune, not a new class:
-- **Level order:** Ranger 1–5 first (Dread Ambusher + Extra Attack at 5) → Thief 4 (Cunning Action, Sneak Attack, **Fast Hands = 2nd bonus action**, **Sleight-of-Hand Expertise**) → Battle Master 3 (Action Surge + 4 maneuvers).
-- **Stats/race:** DEX 17→20, CON 14, WIS 12. Halfling (Luck rerolls) or Wood Elf. Feats: Sharpshooter (L4), then DEX 20 or Alert.
-- **Combat gear:** Titanstring Bow (Act 1) → The Dead Shot (Act 3); Gloves of Archery, Risky Ring, Killer's Sweetheart, Deathstalker Mantle + Elixir of Bloodlust; Bhaalist Armour later.
-- **Pickpocket kit (swap out of combat):** Graceful Cloth + Gloves of Thievery/Smuggler's Ring + a Darkness arrow for guaranteed advantage. Farm the rare DC-30 checks with a one-off respec or a hireling.
-
-**Why it beats the listed build for you:** same S-tier power and earliest-online curve (Gloomstalker still S-tier: <https://hacktheminotaur.com/baldurs-gate-3/best-bg3-ranger-builds/>); Battle Master maneuvers give a caster-like per-turn menu (Trip, Menacing, Precision, Riposte) that fixes the decision-light fear — Champion adds *zero* choices, and Assassin's auto-crit needs a Surprise opener normal fights rarely grant. Crucially, **Trip Attack (Ranged) exists** (<https://bg3.wiki/wiki/Trip_Attack_(Ranged)>) — you knock a target Prone at range to give your **Paladin** melee advantage. (Caveat: don't shoot the prone target yourself — Prone gives *ranged* attacks disadvantage.)
-
-### The honest SWITCH option (only if caster-fantasy > early-online): Arcane Trickster
-- **Split:** Rogue 11 / Fighter 1 (or Wizard/Trickery Cleric 1), hand-crossbow + scrolls.
-- **Uniquely delivers both** the caster-itch AND literal **max pickpocket**: **Reliable Talent at Rogue 11** (min roll 10, crit-fail immune — VERIFIED) and **Magical Ambush at Rogue 9** (enemies get disadvantage on saves vs your spells while Hidden — a second controller for the Paladin's setups: <https://bg3.wiki/wiki/Magical_Ambush>).
-- **Honest cost:** C-tier damage, no Extra Attack, peaks LATEST (L9/L11) — direct tension with "comes-online-early," weakest exactly when late-game mods bite, and partly redundant with two existing controllers. Its loop is now reliable post-Hotfix #30.
-
-**Debunked for this party:** Swashbuckler (melee, crowds the Paladin, no caster itch — refuted despite the Hotfix #31 buff), Way-of-Shadow Monk (MAD melee, can't use bow gear, online mid), Swarmkeeper (C/B-tier, micro-heavy). **Also honest:** a ranged slot only gets *advantage* from Hold, not the 3m auto-crit double-dip a melee ally would — a genuine limit of any archer here, but the melee alternatives fail on other axes.
-
-### Patch impacts
-No load-bearing nerf. Reliable Talent still Rogue 11. Rogue options got net buffs (Hotfix #30 fixed AT stealth-cast; Patch 8 fixed Uncanny Dodge). Gloomstalker still S-tier, so the retune costs nothing on power. Sources: <https://bg3.wiki/wiki/Fast_Hands>, <https://gamestegy.com/post/bg3/1590/pickpocket-build>.
-
-### Recommended changes
-Swap **Assassin + Champion → Thief 4 + Battle Master 3**. Treat pickpocket as a ride-along (gear + Darkness arrow), not a build tax. Choose Arcane Trickster only if, on reflection, "I miss casting" genuinely outranks "comes online early."
-
-## Build #3 — Draconic-Blue Sorcerer 10 / Tempest Cleric 2 (Wet + Lightning + Twinned Haste engine)
-
-**Verdict: KEEP the chassis (two tuning knobs). Confidence: high.**
-
-### Why
-All three load-bearing mechanics verified INTACT: **Wet still doubles Lightning/Cold** in all modes (<https://bg3.wiki/wiki/Wet_(Condition)>, page updated 2026-06-15), **Destructive Wrath** still maximizes lightning/thunder dice once per short rest, and **Metamagic/Sorcery Points** (Twinned-Haste-the-Paladin) were never touched. The 10/2 split is the correct backbone because it's the only version that keeps the sorcery-point pool large enough to run the Twinned-Haste + Quickened engine the party is built around. **Comes online at char level 7** (Sorc 5 / Cleric 2 = Lightning Bolt + Destructive Wrath + Create/Destroy Water) — meets "comes-online-early."
-
-### Strongest alternatives (all sidegrades, none strictly better)
-- **Storm Sorcery 10 / Tempest 2** — *viable fun/AoE sidegrade.* Heart of the Storm splashes ~5 lightning/thunder to all enemies in 6m per qualifying spell, and that splash **is doubled by Wet** — out-scales Draconic's single-target +CHA on the crowds the Bard's Command/Hold creates; plus bonus-action flight. Correction: it does **not** grant innate Call Lightning — CL is merely added to the learnable list at Sorc 6. Best as an Act-3 respec via the Magic Mirror. Source: <https://bg3.wiki/wiki/Storm_Sorcery>.
-- **Pure Sorcerer 12** — *consistency sidegrade.* Gains native Chain Lightning + a 6th-level slot + most sorcery points + a 3rd feat, removes Markoheshkir reliance — but **gives up Destructive Wrath** (the biggest damage lever) and heavy armor. Not strictly better.
-- **Sorcerer 10 / Wizard 2 (Evocation)** — *party-relevant safety option.* Sculpt Spells makes allies immune to your AoE (directly addresses the friendly-fire problem), but costs Destructive Wrath and only comes online at char level 12. Take only if friendly fire dominates your fights.
-
-**Debunked for this party:** 6 Sorc / 6 Tempest and Tempest-as-main (both gut sorcery points → no Twinned Haste, deleting this seat's whole reason to exist); Shadow Magic Sorcerer (control/survivability, no lightning multiplier — off-thesis).
-
-### Patch impacts
-Wet-doubling, Destructive Wrath, and Metamagic all untouched by Patch 8 / #30–#36. The only Wet-adjacent Patch 8 nerf (Water Myrmidon's Healing Vapours) is irrelevant. Long-standing caveat (not a patch change): Wet only *negates* resistance on already-lightning-resistant enemies (Steel Watchers) to 1x — carry a cold/force backup (Chromatic Orb). Chain Lightning still reachable via Markoheshkir's Bolt of Doom (1x/long rest) + scrolls.
-
-### Recommended changes
-1. Keep **Sorc 10 / Tempest 2**, take the Cleric dip early (levels 2–3) for Wet-on-demand + heavy armor.
-2. **War Caster** (or Resilient: CON) is close to mandatory — you concentrate on Twinned Haste for the Paladin; second feat CHA 20 or Alert.
-3. **Knob #1 (fun, not power):** Blue Draconic default; respec to Storm ~L9 for Act 3 if you value AoE + mobility.
-4. **Knob #2 (real party gap):** friendly-fire plan for Paladin + Bard in the wet — prefer single-line Lightning Bolt geometry over pooled-water AoE when allies are adjacent, use Storm's flight to reposition. BG3 gives Sorcerers no Sculpt/Careful tool; only take the Wizard dip if friendly fire genuinely dominates.
-
-## Build #4 — Swords Bard 10 / Fighter 1 / Wizard 1 (Arcane Acuity "Commander", ranged longbow)
-
-**Verdict: TUNE (keep the build, change the split). Confidence: high.**
-
-### Why
-Every load-bearing mechanic checks out current: Arcane Acuity (+1 spell attack/+1 DC per turn, cap 10 = +10 DC; −2 per damage instance); Helmet of Arcane Acuity grants +2 turns per weapon hit; **Band of the Mystic Scoundrel** casts Enchantment/Illusion (Command/Hold Monster) as a bonus action after a weapon hit with **no spell-level cap**; Ranged Slashing Flourish's two projectiles each stack Acuity. This is the correct safe-backline controller that hard-locks targets for the Paladin's auto-crits, and it doesn't duplicate the Sorcerer's role (different, gear-driven, near-100% DC delivery). Sources: <https://bg3.wiki/wiki/Band_of_the_Mystic_Scoundrel>, <https://bg3.wiki/wiki/Slashing_Flourish_(Ranged)>.
-
-### Strongest alternatives
-- **10 Swords Bard / 2 Fighter (Action Surge)** — *the recommended tune, not a switch.* A second Attack action saturates Acuity to +10 and fires Command/Hold on **turn 1** instead of turn 2 — directly serving "comes-online-early" and "set up the Paladin." Mainstream 2025-2026 consensus. Cost: loses Wizard 1's Shield reaction (+5 AC, which also protects the Acuity stack) and scroll versatility. Sources: <https://gamestegy.com/post/bg3/1543/swords-bard-build>, <https://gamerant.com/baldurs-gate-3-bg3-best-swords-bard-archer-build-guide/>.
-- **Hand-crossbow (dual-wield) variant** — *early-game weapon choice only.* Fastest turn-1 Acuity before you have STR for Titanstring, but once the loop is online the off-hand bonus-action shot **competes with the Band's bonus-action control cast** — longbow is correct in Act 3.
-
-**Debunked for this slot:** Melee Smite SSB (sits in threat range where Acuity bleeds −2/hit taken, crowds the Paladin); Lore Bard (no weapon-attack engine → can't pump the Helmet → *lower* DC ceiling, and can't nuke-and-lock in one turn); Glamour Bard (soft charm control, doesn't scale with Acuity, no guaranteed paralysis); a second dedicated Sorcerer (role overlap).
-
-### Patch impacts
-No load-bearing nerf. Patch 8 only **buffed/fixed** relevant pieces: Mobile Flourish teleport now works on killed targets; Gloves of Battlemage's Power now correctly grant Acuity. Hotfixes #30–#36 don't touch Acuity, the Helmet, the Band, or Slashing Flourish. Sources: <https://bg3.wiki/wiki/Arcane_Acuity_(Condition)>, <https://baldursgate3.game/news/the-final-patch-new-subclasses-photo-mode-and-cross-play_138>.
-
-### Recommended changes
-1. **Wizard 1 → Fighter 2 (Action Surge).** This is your level-12 pick either way, so it doesn't change the early-game power curve (the loop is gear-gated to the Helmet in Act 2 and the Band in early Act 3 regardless). Keep Wizard 1 only if you specifically want the Shield reaction as a defensive/panic button + scroll utility — a legitimate sidegrade toward defense.
-2. **Loop discipline:** weapon-attack FIRST, then the Band's bonus-action cast — once the bonus cast fires, the Quickening Incantation condition blocks casting Enchantment/Illusion as a full action that same turn.
-3. Longbow once the loop is online; Sharpshooter first feat then DEX.
-
-## New sources worth reading
-
-*(Deduped; all post-2023, i.e. reflect Patch 8 / 2025–2026 state — unlikely in a 2023 research set.)*
-
-- <https://bg3.wiki/wiki/The_Hexblade> — Hexblade subclass (added Patch 8, 2025); crit-fish core mechanics.
-- <https://bg3.wiki/wiki/Extra_Attack> — current confirmation that Deepened Pact stacks outside Honour only.
-- <https://bg3.wiki/wiki/Guide:Patch_8_preview> — Patch 8 mechanic/DRS summary (2025).
-- <https://baldursgate3.game/news/the-final-patch-new-subclasses-photo-mode-and-cross-play_138> — official "final patch" announcement (2025-04-15).
-- <https://bg3.wiki/wiki/Patch_Notes> — hotfix index through #36 (2026-03-26).
-- <https://larian.com/news/hotfix-36-now-live_149> — latest release, Hotfix #36 (2026-03-26).
-- <https://hacktheminotaur.com/baldurs-gate-3/best-bg3-lockadin-build-multiclass-guide/> — 2026 Lockadin guide (7/5 vs 6/6 rationale).
-- <https://hacktheminotaur.com/baldurs-gate-3/best-bg3-ranger-builds/> — 2026 Ranger tiers (Gloomstalker S / Swarmkeeper C).
-- <https://gamestegy.com/post/bg3/1543/swords-bard-build> — Swords Bard split, updated 2025-11-06 (recommends 10/2 Fighter).
-- <https://gamerant.com/baldurs-gate-3-bg3-best-swords-bard-archer-build-guide/> — Swords Bard archer, 2025-04-25.
-- <https://bg3.wiki/wiki/Trip_Attack_(Ranged)> — confirms ranged Prone setup for the Paladin.
-- <https://bg3.wiki/wiki/Wet_(Condition)> — Wet-doubling page, updated 2026-06-15.
-- <https://bg3.wiki/wiki/Guide:Book%27s_Guide_to_Crits> — current crit-item reference (Risky Ring / Sarevok's / Killer's Sweetheart).
-
-## Suggested edits to party_plan.json
-
-- **Build #1 (Paladin):** Keep as **Oathbreaker Paladin 7 / Hexblade Warlock 5, Half-Orc**. Add a note: "3-attack nova is Act 3 (~char L10); plays as a 2-attack smiter before then." Add a caveat that Risky Ring gives permanent *disadvantage on saves* — budget Freedom of Movement or consider 6/6 if late-game mods lean on Hold/Feeblemind. Correct any "everything doubles on crit" wording: only weapon + smite + Savage die double (DRS).
-- **Build #2 (Rogue):** Change the split from **Gloomstalker 5 / Assassin 4 / Champion 3** to **Gloomstalker 5 / Thief 4 / Battle Master 3**. Remove the false premise that pickpocket needs a dedicated slot or that a 5/4/3 archer reaches "MAX" pickpocket (Reliable Talent = Rogue 11). Note Arcane Trickster (Rogue 11 / 1-dip) as the *conditional switch* if caster-fantasy outranks early-online. Add: "Trip Attack (Ranged) sets up Prone → melee advantage for the Paladin; don't shoot the prone target yourself."
-- **Build #3 (Sorcerer):** Keep **Sorc 10 / Tempest 2**. Add two knobs: (a) optional Storm Sorcery Act-3 respec for AoE/fun; (b) an explicit friendly-fire plan (Paladin + Bard stand in the wet — favor single-line Lightning Bolt geometry, no Sculpt Spells available without a Wizard dip). Correct the note that Storm grants innate Call Lightning — it only adds CL to the learnable list at Sorc 6.
-- **Build #4 (Bard):** Change split from **10/1/1 (Fighter/Wizard)** to **10 Swords Bard / 2 Fighter (Action Surge)** to land Command/Hold a turn earlier; note Wizard 1 (Shield) as the defensive sidegrade. Add loop rule: weapon-attack before the Band's bonus-action cast (Quickening Incantation).
-- **Global:** Add a "Patch state" line — assessed against Patch 8 (final major patch, 2025-04-15) + Hotfixes #30–#36 (latest 2026-03-26); no load-bearing mechanic for any build was nerfed. Flag the debunked "Bhaalist Armour radius buff" rumor as a tooltip fix only. Note the whole plan is non-Honour-mode dependent (Deepened Pact 3rd attack disabled in Honour).
+Charles going last is **correct and should be stated as deliberate** rather than left as an accident:
+his entire job is to swing at a target the others have already Held, Stunned, or Commanded. The plan's
+`opening_rotation` already sequences him fourth — it just never says that the initiative build supports it.
 
 ---
 
-# Part B — Fun / Early-Online / Respec-Path Review
+## 2. The Bless economy — the plan's tightest bottleneck, with three unused fixes
 
-_Sidegrades and journey: more fun to pilot, faster to come online, smoother leveling/respec._
+The plan flags this twice itself: Charles is **the only Bless source**, Bless **costs him his
+concentration**, and **character levels 1–3 have no Bless at all**. Meanwhile `[V]` rates
+**Bless S-tier** and the Paladin's default early concentration spell.
 
-# Fun / Early-Online / Respec-Path Review
+Three items the plan never assigns break this open:
 
-*NON-Honor · 4 players · priorities: FUN FIRST, come-online-early, tolerates moderate late-game difficulty mods. You play #1 Paladin and #2 Rogue and lean caster (lots of decisions per turn). This pass ranks builds by fun / earliness / smoothness, NOT raw power — sidegrades and slight downgrades are fair game if they play better.*
+**a) The Whispering Promise** `[V]` **#10 of 20 best Act 1 items** — `[W]` _"When you heal a creature,
+it gains a **+1d4 bonus to Attack rolls and Saving throws** for 2 turns."_ That is Bless, **without
+concentration**, from a 40 gp ring sold by Grat at the Goblin Camp and by Volo.
 
-## At a glance
+**b) Hellrider's Pride** `[V]` **#6 of 20** — `[W]` _"When you heal another creature, it gains
+Resistance to Bludgeoning, Piercing, and Slashing damage dealt by weapon attacks for 2 turns."_
+The video names these two as a deliberate package: *the same heal* produces Bless and Blade Ward.
 
-| Slot | Most-fun pick | Earliest-online pick | Respecs to endgame |
-|---|---|---|---|
-| #1 Paladin | Vengeance Sorcadin (Pal 6 / Sorc 6) | Hexblade dip at char level 1, then Paladin | 0 (Hexblade-first) |
-| #2 Rogue | Arcane Trickster (near-pure Rogue 12) | Arcane Trickster or Swashbuckler at L3 | 0 (single-class) |
-| #3 Caster | Storm Sorcery 10 / Tempest 2 | Draconic-Blue 10 / Tempest 2 | 0 (or 1 optional Draconic->Storm) |
-| #4 Support | Ranged Swords "Commander" (Bard 10 / Ftr 1 / Wiz 1) | Lore Bard (Magical Secrets at Bard 6) | 1 (at char level 8) |
+> ⚠️ **CORRECTION — the ring does NOT free Charles's concentration.** An earlier draft of this review
+> claimed it did. `[W]` Blessed Mercy _"applies the same condition as the standard Bless spell, and
+> therefore **cannot stack with it**"_ — and `[W]` _"Despite also being called Bless, this buff is
+> **not** enhanced by the Staff of Arcane Blessing."_ Bless the spell also covers **3 creatures**
+> (4 upcast to L2) for **10 turns**, versus the ring's **one creature per heal for 2 turns**.
+>
+> So **someone still burns concentration on Bless** — Charles, as before. The ring's real jobs are:
+> **(1)** character levels **1–3**, before Charles has Bless at all, which is exactly the hole the plan
+> admits to; **(2)** any fight where Charles concentrates on Hex, Divine Favour or Darkness instead.
+> `[W]` also confirms useful triggers: a **thrown Potion of Healing blesses every creature it splashes**,
+> drinking one self-triggers it, it fires **even on a target at full HP**, and a **Short Rest counts as
+> self-healing**.
 
----
+> ⚠️ **Correction to the video's framing:** the pitch assumes a bonus-action heal. `[W]` **Paladin
+> Lay on Hands costs a full Action**, not a bonus action, at 1.5 m range. So Charles is *not* the
+> cheap trigger the guide imagines.
+>
+> **The right carrier is Bonbon.** She has **Healing Word — a bonus-action ranged heal** — and she is
+> already planned to carry **Broodmother's Revenge**, which triggers on *any* healing. One bonus-action
+> Healing Word would then fire **three** item procs at once: poison coating on her own projectiles,
+> +1d4 attack/saves on the target, and Blade Ward on the target. `[V]` also confirms **thrown healing
+> potion splashes** trigger these, which lets any character apply it to several allies at once.
+>
+> **Cost:** Whispering Promise displaces **Caustic Band**; Hellrider's Pride displaces
+> **Gloves of Dexterity**, which `[V]` calls _"the most impactful equipable item in Act 1 and arguably
+> the entire game."_ So take the ring, **not** the gloves. Best window is **Acts 1–2**, before the Band
+> of the Mystic Scoundrel claims her bonus action.
 
-## #1 Paladin slot (current endpoint: Oathbreaker Pal 7 / Hexblade 5)
+**c) Staff of Arcane Blessing** `[V]` **A-tier**, and the fit is nearly exact — `[W]` _"Creatures you
+Bless also gain Mystra's Blessing for an additional **1d4 bonus to spell attack rolls**."_
 
-**Reality check that reframes this whole slot:** the "post-Patch-8 the 3-attack Deepened-Pact combo is gone, so 11 Pal / 1 Hexblade is strictly superior" claim is TRUE ONLY IN HONOUR MODE. Your party is NON-Honor, so Deepened Pact (Warlock 5) still stacks with Paladin's Extra Attack = 3 attacks/turn. The deep 7/5 Hexblade split is a valid top-end melee nova here, not obsolete. So this pass is genuinely a fun/smoothness choice, not a forced downgrade.
+Gale's entire loop is 3–7 spell attack rolls per cast, so +1d4 (avg 2.5) per ray beats Melf's flat +1.
 
-**Most fun: Vengeance Sorcadin — Paladin 6 / Sorcerer 6 (Draconic or Storm).**
-Best fit for a caster-brained player who wants many decisions per turn. Concrete fun, de-hyped:
-- Metamagic adds real per-turn choices. Quickened Spell lets you cast a leveled spell (Hold Person to guarantee smite-crits, Command, Fireball) AND weapon-attack in the SAME turn — BG3 does not enforce tabletop's one-leveled-spell-per-turn rule.
-- Twinned Haste buffs you plus an ally (feeds the party's existing haste engine).
-- Vow of Enmity (Pal 3) hands you Advantage on demand — crit-fishing without needing the Risky Ring.
-- 6/6 keeps Aura of Protection, a 4th-level slot, extra Metamagic, and has NO Oathbreaker respec tax.
-
-Honest tradeoff: modestly lower single-target DPR than the crit-fish Hexblade nova; long-rest (not short-rest) slots, so you nova then run dry; Concentration juggling on Haste. It changes the fantasy from Half-Orc Oathbreaker to a Vengeance caster-smiter — which is exactly the "lots of decisions" you like.
-
-**Earliest online (also the smoothest): take the Hexblade dip at CHARACTER LEVEL 1, then go Paladin.**
-At level 1 you already attack with CHA (dump STR permanently — no STR elixirs, no respec ever), have Hexblade's Curse (crit range 19-20 + on-kill heal), and wear medium armor + shield. The only cost vs a Paladin-first order: Divine Smite lands one character level later (char 3 vs 2) and Paladin's Extra Attack one level later (char 6 vs 5) — trivial next to zero respecs. Paladin-first reaches raw Divine Smite at char 2 but forces a STR phase and a later STR->CHA respec, which for Oathbreaker triggers the ~1000g oath-reclaim tax.
-
-**Recommended leveling + respec path (7 Pal / 5 Hexblade, ZERO respecs):**
-- Char 1: Warlock 1 (Hexblade) — Bind Hexed Weapon (CHA attacks), Hexblade's Curse, medium armor/shield/martial. STR 8, max CHA.
-- Char 2: Paladin 1 — Lay on Hands, heavy-armor prof.
-- Char 3: Paladin 2 — Divine Smite (nova online).
-- Char 4: Paladin 3 — pick Oath. **Vengeance recommended** (Vow of Enmity = Advantage on demand, no oath-break tax).
-- Char 5: Paladin 4 — Feat (Savage Attacker pairs with Half-Orc Savage Attacks, or +2 CHA).
-- Char 6: Paladin 5 — Extra Attack.
-- Char 7: Paladin 6 — Aura of Protection.
-- Char 8-11: Warlock 2->5 — invocations (Agonizing Blast / Devil's Sight), Pact of the Blade at W3, Deepened Pact at W5 = 3 attacks/turn at char 11.
-- Char 12: Paladin 7 — final aura.
-
-**Oathbreaker-specific warning:** you cannot respec while your oath is broken — you must pay the Oathbreaker Knight ~1000g to reclaim, respec, then re-break. (The "cost escalates each time" claim is unverified — treat as unconfirmed.) Two clean fixes: (1) this Hexblade-first path needs no respec, so just don't respec while broken; (2) staying Vengeance instead of Oathbreaker avoids the mechanic entirely and is arguably more fun. Only Oathbreaker's Aura of Hate (+CHA weapon damage at Pal 7) is the reason to break at all.
-
-*Alternative if you want Extra Attack one level sooner:* Paladin 1-5 first, then Warlock 1-5, then Pal 6-7 — but you run STR (or a Giant Strength elixir) until you rebuild, plus one planned respec around char 8. Only worth it if that single earlier Extra-Attack level matters to you.
-
-**Other fun options and their tradeoffs:**
-- **11 Pal / 1 Hexblade (earliest & smoothest melee):** CHA smiter from char 1, Vow of Enmity char 4, Improved Divine Smite char 12, no respec. Punchy but fewer caster decisions. In non-Honor this is a *sidegrade*, not an upgrade.
-- **Bardadin (Swords Bard 10 / Pal 2):** max decisions — Flourishes, Bardic Inspiration, Magical Secrets at Bard 10 (Haste/Counterspell/Spirit Guardians). Funky curve: Bard to 6 first (Extra Attack ~char 8), then Pal 2, then Bard to 10. Loses Aura of Protection.
-- **Ancients Lockadin (7 Ancients / 5 Hexblade):** same loop plus Aura of Warding (halves spell damage for allies). No oath-break mechanic, smoother than Oathbreaker; lower personal DPR.
-- **Oath of the Crown Hexblade (11/1 novelty tank):** role-flip taunt + Spirit Guardians controller. Strict tenets make accidental oath-break easy.
-- **Pure Paladin 12:** smoothest possible ride, 3 feats, Improved Divine Smite at 11 — but the fewest decisions per turn.
-
-*Verified breakpoints (bg3.wiki): Divine Smite Pal 2 · Extra Attack Pal 5 · Aura of Protection Pal 6 · 2nd oath aura Pal 7 · Improved Divine Smite Pal 11 · Vow of Enmity Pal 3 · CHA attacks + Hexblade's Curse (Bind Hexed Weapon) Warlock 1 · Pact of the Blade W3 · Deepened Pact W5 · Swords Bard Extra Attack Bard 6 · Magical Secrets Bard 10. Hexblade is base-game Patch 8 (Apr 15, 2025) content, not a mod.*
+> ⚠️ **But the obvious version doesn't work.** Mystra's Blessing only applies to creatures blessed by
+> *the staff's wielder*, and Bless is Concentration — so Gale cannot cast it himself without dropping
+> Twinned Haste.
+>
+> **The version that does work:** **Charles** holds the staff, casts Bless (his existing default
+> concentration) on Gale and the party, then swaps to Phalar Aluve. Charles keeps concentration, and
+> Gale gets +1d4 on every single ray. This costs Charles nothing he wasn't already doing.
 
 ---
 
-## #2 Rogue slot (DEX pickpocket)
+## 3. Aid is missing, and Charles is the party's only possible source
 
-**Most fun + top pick: Arcane Trickster (near-pure Rogue 12).**
-It is the one Rogue subclass that adds a real spell/scroll decision layer on top of Sneak Attack, so it scratches the caster itch while being the best pickpocket in the game (Sleight of Hand + Perception Expertise -> Reliable Talent at L11 = minimum-10 on every steal). Fun landmarks (all mechanically confirmed):
-- L3: invisible, permanent Mage Hand Legerdemain + first spells (Disguise Self, Fog Cloud, Tasha's Hideous Laughter, Shield). Build "becomes itself" here.
-- L7: 2nd-level slots — Misty Step, Invisibility, Hold Person, Mirror Image.
-- L9: Magical Ambush — cast while Hiding and the target rolls Disadvantage on the save (applies to pickpocketed SCROLLS too).
-- L11: Reliable Talent.
+`[V]` rates **Aid S-tier** and specifically names it _"the only Aid source in this party pool."_
+`[W]` confirms: **Paladin class level 5**, level-2 slot, self-centred **9 m radius**, **+5 maximum HP**
+(+5 more per slot level above 2nd), **duration Until Long Rest, no concentration**. Downed allies
+return with an extra hit point.
 
-Honest de-hype: L1-3 plays as a plain ranged rogue, so the caster payoff is gradual; and it is genuinely low raw single-target DPS (no Extra Attack, once-per-turn Sneak Attack). Fine here — the party already has Sorc + Paladin for damage.
+Charles hits Paladin 5 at character level 7 and again at 10 post-respec, and the plan lists "Level 2
+Paladin spells" at both — but **Aid appears nowhere in his sheet.** For a party with one healer, no
+Cleric, and no Bless below level 4, a permanent party-wide +5 to +15 max HP for one L2 slot per long
+rest is close to free.
 
-**Earliest online:** Arcane Trickster and Swashbuckler tie — both need zero multiclass and become themselves at L3 (AT: Mage Hand + spells; Swashbuckler: Rakish Audacity 1v1 Sneak Attack + near-auto first turn, Dirty Tricks control at L4). The absolute earliest is the CHA Bard-based gish (spells + Bardic Inspiration from L1-2), but it duplicates the party Bard and sequences awkwardly. **Recommended earliest-that-fits: Arcane Trickster at L3.** Avoid the Gloomstalker/Assassin burst if earliness matters — its nova needs Ranger 5 + Fighter 2 (~char 6-7), and Shadow Monk's signature Shadow Strike is L11.
-
-**Recommended leveling + respec path (default pure Rogue 12).** Stats: DEX primary (16 -> 20), INT 14 (spell DC / Mage Hand), CON 14.
-- L1: Expertise Sleight of Hand + Perception; Thieves' Tools.
-- L2: Cunning Action (feeds Magical Ambush later).
-- L3 -> Arcane Trickster: spellcasting + invisible Mage Hand; learn Mage Hand, cantrips, Disguise Self / Fog Cloud / Tasha's / Shield.
-- L4: Feat #1 — ASI DEX 16->18.
-- L5: Uncanny Dodge; Sneak Attack 3d6.
-- L6: Expertise on 2 more skills (Arcana + Investigation, or Stealth).
-- L7: Evasion; 2nd-level slots — add Misty Step / Invisibility / Hold Person / Mirror Image.
-- L8: Feat #2 — ASI DEX 18->20.
-- L9: Magical Ambush — Cunning Action Hide -> Hold Person / stolen Hypnotic Pattern / Confusion at Disadvantage.
-- L10: 3rd cantrip; Feat #3 (Alert, or ASI INT for DC).
-- L11: Reliable Talent — you essentially never fail a pickpocket/lockpick again.
-- L12: Feat #4 (ASI / Lucky / Resilient CON).
-
-**Respec notes:** single-class = no mid-run Withers juggling; the only real choice is the L3 subclass, so respeccing INTO Arcane Trickster from any other rogue is trivial. If you want rock-solid Concentration for control spells plus a +2 ranged attack, run **Rogue 11 / Fighter 1** — but the Fighter level MUST be taken at character creation (level 1); multiclassing into Fighter later gives armor/weapon profs but NOT the CON saving-throw proficiency. Cost: Reliable Talent one level later (L12) and you give up the 4th Rogue feat. Spice: Rogue 11 / Wizard 1 (Abjuration) as your LAST level adds an Arcane Ward retribution-tank layer without disrupting the curve.
-
-*Note on slots: AT caps at 2nd-level spell slots at level 12 (no 3rd-level slots), so Chain Lightning / Cone of Cold etc. are castable only from pickpocketed scrolls — and Magical Ambush's Disadvantage does apply to those scrolls when cast while Hiding.*
-
-**Other fun options and their tradeoffs:**
-- **CHA Bard/Rogue gish (e.g. 6 Bard / 4 Rogue / 2 Wizard):** most total spellcasting + party Face; earliest online. Fiddly multiclass order, ~1 planned respec near Act 2/3. Redundant with the team's existing Bard.
-- **Swashbuckler (pure 12):** bonus-action Dirty Tricks (disarm/blind/Vicious Mockery) partly scratches the choices-per-turn itch; melee duelist + Face; tied-cleanest single-class. No Extra Attack, C-tier DPS, very smooth ride. (Rakish Audacity's initiative bonus is a flat +2 in BG3, not CHA-scaled.)
-- **Gloomstalker / Assassin burst (Ranger 5 / Fighter 3 / Rogue 4):** highest burst, but spectacle over decisions; strict order, 1 planned Act-3 respec; scripted Act 2-3 fights block Surprise.
-- **Shadow Monk (pure 12, +1 Rogue for pickpocket):** stylish mobility/stun, Ki not spells (least caster-flavored); Cloak of Shadows at L5, Shadow Step L6, spike at L11. Correction: Cloak of Shadows invisibility DOES end the moment you attack/cast/take damage — it's a reposition tool, not attack-from-stealth. MAD (DEX+WIS); wrong fantasy for this player.
-- **Thrown-weapon DEX Rogue:** weakest fit; real throw builds are STR Barbarian/Thief. Skip unless the throw fantasy itself is the whole appeal.
-
-*Verified breakpoints (bg3.wiki): AT spells L3, 2nd-lvl slots L7, Magical Ambush L9, Reliable Talent L11; Swashbuckler Rakish Audacity L3 / Dirty Tricks L4 / Panache L9; Gloom Stalker Dread Ambusher L3, Extra Attack (Ranger) L5; Way of Shadow Cloak of Shadows L5 / Shadow Step L6 / Shadow Strike L11; Rogue feats at 4/8/10/12; throwing scales off STR.*
+`[W]` also settles a related question: **Aid stacks with a single source of temporary HP, but temp HP
+sources never stack with each other** — so Charles's **Armour of Agathys** and the illithid **Shield of
+Thralls** compete, and he should carry only one.
 
 ---
 
-## #3 Caster slot (Wet + Lightning storm-mage)
+## 4. Three Murder Tribunal items are missing — and Charles is the Dark Urge
 
-**Most fun: Storm Sorcery 10 / Tempest Cleric 2.**
-Mechanically identical in power to the baseline Draconic-Blue 10/Tempest 2 (self-Wet via Create/Destroy Water at Storm 6, Destructive Wrath maximize at Cleric 2, Twinned Haste intact for the Paladin) but adds **Tempestuous Magic**: a bonus-action 9m fly with no opportunity attacks after every leveled spell, from character level 1. That layers a kite/reposition/AoE-angle decision onto your metamagic choices every turn, at zero power cost. De-hyped: the "fun" is concretely the positioning micro-decision and the damage you avoid by never being pinned — not a damage increase. (Runner-up novelty is Wild Magic, but it's the latest bloomer and weakest damage — pure fun pick.)
+`loot.md` already routes the Act 3 Murder questline (Sarevok's Horned Helmet, Bloodthirst, Crimson
+Mischief, Ring of Murderous Opportunity). But the **Echo of Abazigal**, unlocked by the same
+*Impress the Murder Tribunal* quest, sells three items that appear in **no** file in the repo:
 
-**Earliest online: Draconic-Blue Sorcerer.** Draconic Resilience gives base AC 13 (+Dex) and +1 HP per Sorcerer level from L1, so Act 1 is survivable; Elemental Affinity adds CHA to every lightning hit at Sorcerer 6. The wet+lightning nuke identity is live for ALL variants at Sorcerer 5 (Lightning Bolt). Early-power order: Draconic (L1 survivability, L6 always-on +CHA) > Storm (L6 Heart of the Storm) > pure Chain-Lightning / Wild Magic (both L11). **Best-of-both:** start Draconic-Blue for Act 1, free-respec to Storm around L6+.
+| Item | Effect `[W]` | Fit |
+|---|---|---|
+| **Craterflesh Gloves** | _"Whenever you score a Critical Hit, deal an additional 1d6 Force"_ — and `[W]` notes it **actually deals 2d6, because the damage is itself doubled by the crit** | **Charles, strong.** On a Held target every swing auto-crits: 7 attacks × 2d6 ≈ **49 extra damage per nova turn**, versus ~17 from the currently-planned Helldusk Gloves (1d4 fire per hit). |
+| **Bhaalist Armour** | Light armour, AC 14 + DEX, **+2 Initiative**, and **Aura of Murder: enemies within 3 m become Vulnerable to Piercing** (radius raised 2 m → 3 m in Patch 8) | **Situational.** Charles's own Shadow Blade is Psychic, so it does nothing for him — but Bonbon's hand crossbows and Titanstring are **Piercing**, so enemies engaged with Charles take double from her. Costs Luminous Armour's Radiating Shockwaves and 1 AC. |
+| **Assassin of Bhaal Cowl** | **+2 Initiative** | Minor, but on a d4 die a +2 head item is real — and Charles has the party's worst initiative. |
 
-**Recommended leveling + respec path — level PURE Sorcerer 1-10, then Tempest Cleric at char 11-12.** (Dipping Cleric early only delays your higher Sorcerer slots; Destructive Wrath is a multiplier you bolt on last.) Stats ~16 CHA / 14-16 CON / 14 DEX.
-- L1 Sorcerer (choose subclass NOW — Storm for fun, Draconic-Blue for a safer Act 1). **Always take Sorcerer at level 1:** the Sorcerer's own saving-throw proficiencies are CON + CHA, so Sorcerer-first gives BOTH CHA scaling AND CON-save proficiency for concentration. Cantrips: Shocking Grasp, Ray of Frost, Firebolt. Spells: Shield, Chromatic Orb (Lightning), Mage Armor (skip if Draconic).
-- L2 Metamagic: Twinned + Careful (or Distant). Early twin nuke = Twinned Chromatic Orb.
-- L3 Metamagic: Quickened.
-- L4 Feat: War Caster (protects Twinned Haste on the Paladin).
-- L5 **Identity online:** Lightning Bolt. Wet a target -> Lightning Bolt doubled. (Line AoE — hits multiple naturally, not via Twinned.)
-- L6 Subclass spike: Storm = Heart of the Storm free AoE + Create/Destroy Water (self-Wet) + resistance; Draconic = Elemental Affinity (+CHA per lightning hit).
-- L7: 4th-level spells (Ice Storm, Dimension Door).
-- L8 Feat: +2 CHA (or Elemental Adept: Lightning to pierce resistance).
-- L9: 5th-level spells (Cone of Cold).
-- L10: 4th Metamagic (Heightened/Distant); biggest sorcery-point pool for Quickened.
-- L11-12: Tempest Cleric 1 -> 2 — heavy armor + Wrath of the Storm, then Destructive Wrath maximize. Signature turn: (Quickened) Create Water -> Lightning Bolt / Cone of Cold + Destructive Wrath = Wet-doubled AND maximized.
-
-**Respec rules:** Withers respecs are free/unlimited. On every respec take Sorcerer at level 1 first, then append the 2 Cleric levels. Subclass is a level-1 choice, so Draconic<->Storm<->Wild is a cheap full-respec test. Amulet of Greater Health (Act 2) frees your CON stat. Dip Cleric LAST (L11-12) for the smoothest climb; if you want Destructive Wrath earlier, the 6 Sorc / 6 Tempest split gets it ~char 6-7 (and Call Lightning at Cleric 5) at the cost of 5th/6th-level slots and metamagic depth.
-
-**Important corrections baked in (both original finders had these backwards):**
-- CON saves: Sorcerer-first is CORRECT for concentration — the Sorcerer's own saves are CON + CHA. Taking Cleric first would instead give WIS + CHA and LOSE the CON proficiency. No CHA-vs-CON tradeoff exists.
-- Twinned Spell CANNOT hit Lightning Bolt (line AoE) or Chain Lightning (multi-target). Valid twins: Chromatic Orb, Haste (the Paladin synergy), Hold Person. Nuance: the Markoheshkir-GRANTED Chain Lightning can still be twinned; the learned class spell cannot (disabled Patch 6).
-- Call Lightning is a Tempest spell at CLERIC level 5 — the 2-level dip does NOT grant it. Only the 6/6 split and the Cleric-9 Thunder Apostle get it.
-- Storm Sorcery grants only Create/Destroy Water (L6) and Fly (L11) off-list — NOT Sleet Storm / Call Lightning / Thunderwave.
-- Draconic-Blue's lightning RESISTANCE is the Elemental Affinity option at Sorc 6 (costs a sorcery point), not innate at L1; Blue ancestry's L1 grant is Witch Bolt.
-
-**Other fun options and their tradeoffs:**
-- **Pure Sorcerer 12 (Chain Lightning):** most decisions/turn, no multiclass to fumble, native Chain Lightning + 6th-level slots; most respec-proof. Loses Destructive Wrath maximize + self-Wet (lateral).
-- **Cold / Draconic-White (ice control):** Ray of Frost as slot-free primary; ice surfaces prone-lock rooms. Gear-gated (Mourning Frost, late Act 1); a few more enemies resist cold. Lateral.
-- **6 Sorc / 6 Tempest "Talos Dragonling":** Thunderbolt Strike knockback pinball, two maximized casts/short rest, tankier; loses 5th/6th Sorc slots + metamagic depth (fewer decisions). Power-competitive.
-- **Thunder Apostle (Cleric 9 / Sorc 3):** frontline storm-priest with Spirit Guardians + healing; durability/utility sidegrade, fewest metamagic decisions, biggest stat re-tune (WIS matters).
-- **Wild Magic 12:** chaos surges make every fight different; truly online only at L11 (Controlled Chaos), weakest damage (B-tier). Pure fun pick, fully respec-friendly.
-
-*Verified breakpoints (bg3.wiki): subclass/domain at L1; Destructive Wrath Cleric 2; Draconic AC13+Dex and +1 HP/level from L1; Elemental Affinity + Heart of the Storm at Sorc 6; Tempestuous Magic 9m fly from L1; metamagic 2/1/1 at L2/3/10; feats 4/8/12; spell slots 3rd@5 / 4th@7 / 5th@9 / 6th@11; native Chain Lightning Sorc 11; Sorcerer saves CON+CHA.*
+> **Recommendation:** add all three to `loot.md` under the Murder Tribunal. **Craterflesh Gloves are a
+> straight upgrade** over Helldusk Gloves for a crit-fisher and should be the Act 3 default. The other
+> two are worth recording as options.
 
 ---
 
-## #4 Support slot (Swords Bard control)
+## 5. Two Adamantine armours are crafted and neither is ever worn
 
-**Most fun that actually fits this party: Ranged Swords Bard "Arcane Acuity Commander" (Bard 10 / Fighter 1 / Wizard 1).**
-Its flourish -> stack Arcane Acuity -> bonus-action Command/Hold/Hypnotic Pattern loop is the most decision-dense turn engine of the options, it stays at range so it does NOT crowd your own melee Paladin (slot #1), and Fighter 1 gives the CON-save proficiency that protects concentration on your control spells. Core loop: ranged Slashing Flourish (two shots per Bardic die) or Arrow of Many Targets stacks Arcane Acuity (Helmet of Arcane Acuity, Act 2), turning a sky-high Spell Save DC into bonus-action Enchantment/Illusion casts via Band of the Mystic Scoundrel (Act 3). Fighter 1 = CON saves + heavy armor/shield + Archery style (cancels Sharpshooter's -5); Wizard 1 = scroll-scribing + completes the 6th spell slot.
+`[V]` ranks **Adamantine Splint #15** and **Adamantine Scale Mail #16**, with the explicit rationale
+that _"Adamantine equipment removes random critical-hit spikes"_ and the advice to
+_"distribute Adamantine crafts to maximise critical immunity across the party."_
 
-Two runner-ups by taste: **Melee Smite "Bardadin" (Bard 10 / Pal 2)** is the highest-dopamine pick — banking fat Bard slots into crit Divine Smites on forced-crit Command targets is the biggest-number fantasy in the game — but it's a distinct melee chassis that overlaps your Paladin frontline and drops the Fighter CON-save. **Lore Bard** is the pick for the most decisions per turn (reactive Cutting Words + double Magical Secrets), de-hyped below.
+The plan spends **both** Mithral ores on those two armours — then equips **Luminous Armour** on Charles
+and **The Protecty Sparkswall** on Bonbon, listing both Adamantine pieces only as "defensive
+alternative." As written, two limited crafting resources buy **zero equipped crit immunity**.
 
-**Earliest online: Lore Bard.** It's the only college that gets Magical Secrets at Bard 6 (all others wait until Bard 10), poaching Counterspell / Command / Hunger of Hadar ~4 levels early, with Cutting Words already live at Bard 3. Caveat: every college is strong from L1 (Expertise + Jack of All Trades face, real spells + Bardic Inspiration) and martial colleges get Extra Attack at Bard 6. For the TARGET ranged Swords build specifically, the martial core is online by Bard 6 but the control engine is gear-gated: partial in Act 2 (Acuity helm), full loop only in Act 3 (Band of the Mystic Scoundrel).
+`[V]` also ranks **Adamantine Shield #13**, but the plan is right to skip it — Asterion must stay
+shieldless, Gale took Dual Wielder, Charles two-hands then dual-wields, and Bonbon is ranged. No legal
+wielder.
 
-**Recommended leveling + respec path (10/1/1 — ONE respec, at char level 8):**
-- Levels 1-7: level PURE Swords Bard (no early dip — Bard has no multiclass tax). L1: CHA 16+ / DEX 16 / CON 14; Vicious Mockery + a damage cantrip; play ranged (Faerie Fire, Dissonant Whispers, Cloud of Daggers). L3: College of Swords, Two-Weapon Fighting (or Dueling+shield for early AC); start using ranged Slashing Flourish. L4: Feat — ASI CHA 18 (or Sharpshooter). L5: Bardic Inspiration -> d8 and short-rest recharge (Font of Inspiration) — the real power jump. L6: Extra Attack. L7: capstone slots.
-- **Level 8 = the single respec.** Rebuild in EXACT class order: **Fighter 1 -> Wizard 1 -> Bard 6** (then Bard to 10 as you level to 12). Fighter FIRST = never lose CON-save concentration protection, plus heavy armor/shield and Archery style. Wizard SECOND = scribe scrolls + completes the 6th slot. Because Fighter+Wizard are first, your two Bard ASIs land at CHARACTER levels 6 (Bard 4) and 10 (Bard 8): take Sharpshooter and +2 CHA (or Dual Wielder).
+### ✅ RESOLVED — both ores go to Bonbon, and the Shield was wrongly written off
 
-**Item timeline:** Helmet of Arcane Acuity (Act 2) turns each flourish hit into +Spell Save DC -> control comes online; Band of the Mystic Scoundrel (Act 3) enables bonus-action Command/Hold after a weapon hit -> full loop. Weapons: dual hand crossbows early (more attacks = faster Acuity stacking) -> Titanstring Bow + Club/Elixir of Hill Giant Strength late.
+Follow-up research settled this. **Bonbon is the party's only legal wearer of anything from the forge:**
+`[W]` multiclassing into Paladin grants no heavy armour (Charles has Hexblade's *medium + shields*
+only), and Charles can never free an off-hand — GWM: All In needs an empty one, and he later
+dual-wields. Asterion must stay unarmoured and shieldless; Gale is light-armour-only with two staves.
 
-**Corrections baked in (finders missed these):**
-- **Arcane Acuity caps at 7 stacks (+7 Spell Save DC)** — NOT the "8-10" / "snap to 8" claimed. One big hit can add several stacks/turn, but +7 is the ceiling.
-- **The 10/1/1 build has only 2 feats** (Bard 4 and Bard 8) vs 3 for a pure Bard 12 — a real cost the finders didn't flag, because Fighter 1 / Wizard 1 grant no feats.
-- **Rogue 11 / Fighter 1 rule applies here too:** the Fighter CON-save only comes if Fighter is taken at char creation OR (as here) as the first class in the respec rebuild — multiclassing into it later gives no saving-throw proficiency.
-- If you run **Bardadin instead:** Paladin **Oath is chosen at Paladin level 1**, not level 2; Fighting Style AND Divine Smite both arrive at Paladin level 2. Level order: Bard 6 FIRST (lock Extra Attack — never dip Paladin before Bard 6), then Pal 1 (Oath + Lay on Hands), then Pal 2 (Fighting Style Defense + Divine Smite + slots), then Bard to 10. No Fighter CON-save on this chassis = more fragile in melee.
+**The Adamantine Shield is the find the plan dismissed.** `[W]`: _"a character **need not to be actively
+holding the equipped shield to get the AC bonus**… a character with a sword and shield in its melee
+weapon slots and a longbow in its ranged weapon slots benefits from the shield's AC bonus **even while
+using the bow**."_ So Bonbon puts it in her **melee off-hand** (replacing the Knife) and keeps shooting
+hand crossbows — **+2 AC and crit immunity from a slot she was barely using**, with no cost to Protecty
+Sparkswall's +1 Spell Save DC.
 
-**Other fun options and their tradeoffs:**
-- **Melee Smite "Bardadin" (10 Bard / 2 Pal):** highest burst ceiling, big novas; more fragile, no Fighter CON-save, DC ramp slightly slower. Overlaps your Paladin frontline.
-- **Lore (pure, or same 1/1 dip):** most decisions/turn (reactive Cutting Words + double Magical Secrets), earliest online. Lower weapon damage, squishy early. De-hype: **Cutting Words is bugged to a flat -1d6 vs all non-bard enemies** (it reads the attacker's bard level), so its reactive nerf never scales past d6.
-- **Valour (pure):** lowest complexity, proactive Combat Inspiration die, only bard with shield prof; stable, lower ceiling, Magical Secrets only at L10.
-- **Glamour (Patch 8 novelty buffer):** Mantle of Inspiration = group temp HP, no concentration, lasts to long rest — genuine set-and-forget team buff. But **Mantle of Majesty (the repeatable-Command feature) is a CONCENTRATION action**, so it competes with holding Hold Person / Hypnotic Pattern — you can't stack both. Weakest per optimizers; not a natural 1/1/10 fit.
+**Why crit immunity belongs on her specifically:** `[W]` a concentration save is _"a Constitution save
+against a **DC equal to half the damage taken, or 10, whichever is higher**"_ — so a crit roughly
+doubles that DC. She is the one holding **Hold Monster**, the party's auto-crit engine. `[W]` it also
+stops Hold Person and Sleeping from granting attackers automatic crits against her.
 
-*Verified breakpoints (bg3.wiki): subclass at Bard 3; Font of Inspiration / short-rest d8 at Bard 5; Extra Attack at Bard 6; Lore Magical Secrets at Bard 6 and 10; Arcane Acuity 7-stack cap; Paladin Oath at level 1, Divine Smite/Fighting Style at level 2; Cutting Words attacker-level bug; Glamour Mantle of Majesty is concentration.*
+> **Applied:** craft **Shield + Splint**, both for Bonbon; **Adamantine Scale Mail is dropped** (its only
+> home was Charles, and Luminous is decided).
+>
+> ⚠️ **Verify in play:** the wiki confirms only the **AC bonus** carries from the inactive melee set — it
+> never says whether **crit immunity** does. Check her sheet with crossbows drawn. If it doesn't carry,
+> fall back to Splint plus the free **Grymskull Helm** (dropped by Grym, whom you kill for the forge
+> anyway; grants crit immunity for zero ore, but is evicted by the Helmet of Arcane Acuity in Act 2).
+>
+> **Charles gets nothing from the forge.** His crit-immunity answer is Act 3 **Helm of Balduran**
+> (medium armour, which he has) — and its **+1 to saving throws** partly offsets the Risky Ring's
+> permanent disadvantage on saves, which matters because he holds concentration on Darkness while
+> wearing it. That is the most fragile concentration in the party and no ore can fix it.
 
 ---
 
-## New sources worth reading
+## 6. Drakethroat Glaive — a free party-wide weapon buff, and Gale can Twin it
 
-- **bg3.wiki — Deepened Pact** — confirms Warlock Extra Attack stacks with Paladin/Fighter Extra Attack in all non-Honour modes (removed only in Honour). Load-bearing for slot #1.
-- **bg3.wiki — The Hexblade** — Bind Hexed Weapon (CHA attacks at Warlock 1) + Hexblade's Curse; base-game Patch 8 (Apr 15, 2025) content, not a mod.
-- **bg3.wiki — Metamagic: Twinned Spell** — eligibility (single-target only); rules out Twinned Lightning Bolt / Chain Lightning.
-- **bg3.wiki — Storm Sorcery / Draconic Bloodline / Tempest Domain** — Tempestuous Magic, Heart of the Storm, Elemental Affinity, Destructive Wrath (Cleric 2), Call Lightning (Cleric 5).
-- **bg3.wiki — Arcane Trickster** — L3/L7/L9/L11 breakpoints and 2nd-level slot cap.
-- **bg3.wiki — Cloak of Shadows** — invisibility ends on attack/cast/damage (corrects the Shadow Monk pitch).
-- **bg3.wiki — Arcane Acuity (Condition) / Helmet of Arcane Acuity** — 7-stack (+7 DC) cap.
-- **bg3.wiki — Cutting Words** — attacker-bard-level scaling bug (flat -1d6 vs non-bards).
-- **bg3.wiki — College of Glamour / Mantle of Majesty** — Mantle of Majesty is a concentration action; Mantle of Inspiration is not.
-- **gamestegy.com — Bardadin, Arcane Trickster, Swashbuckler, Talos Dragonling, Storm/Cold Sorcerer guides** — dated community leveling orders for the runner-up variants.
-- **hacktheminotaur.com — Sorcadin build** and **gamestegy.com — Oath of Vengeance Paladin** — reference paths for the slot #1 most-fun pick.
+Absent from every file in the repo. `[W]` **Drakethroat Glaive** (rare +2 glaive, **sold by Roah
+Moonglow at Moonrise Towers — Act 2**) grants **Draconic Elemental Weapon**, cast as a level-3 spell,
+recharging on long rest.
+
+The mechanics that matter `[W]`:
+- The effect gives **+1 to Attack Rolls and +1d4 elemental damage**, **duration until long rest**.
+- _"This spell can target weapons and non-enemy creatures with a weapon in their main hand."_
+- _"A Sorcerer of level 3 and higher can target **two** weapons using Metamagic: Twinned Spell."_
+- It **stacks with Magic Weapon**, and does not stack with other Elemental Weapon variants.
+
+Gale is a Sorcerer with Twinned Spell, and is **proficient with glaives** via Human Civil Militia. So
+once per long rest, out of combat, he can hold the glaive, Twin the enchant onto **two** party
+main-hand weapons, and swap back to his staves. That is +1 attack and +1d4 damage on two characters,
+all day, for one Act 2 purchase.
+
+> ⚠️ Two caveats to verify in play: the spell details list **Concentration** even though the condition
+> is "until long rest" (the same pattern as `Daylight: Enchant Item`, which the plan already relies on);
+> and Charles's **Shadow Blade is summoned fresh each rest**, so enchant **Phalar Aluve** or Bonbon's
+> crossbows instead. Note `[V]` records that Patch 8 changed Elemental Weapon from a +1 *enchantment*
+> (attack **and** damage) to +1 **attack rolls only**.
+
+---
+
+## 7. What the party structurally cannot have — and where the plan is right
+
+`[V]`'s single strongest structural recommendation is _"at least one reliable source of **Guidance**,
+**Longstrider**, **Create Water**, and **Counterspell**."_ Against a Sorcerer / Swords Bard / Paladin /
+Warlock lineup:
+
+- **Guidance** `[V]` **#2 spell overall** — Cleric/Druid only. **Unavailable.** The plan's insistence
+  that the **Silver Pendant is MANDATORY from level 1** is fully vindicated; if anything it is
+  understated. It is the party's only access to the second-best spell in the game.
+- **Create or Destroy Water** `[V]` **S** — Cleric/Druid only. **Unavailable.** The plan correctly
+  demotes Wet to "a niche tool… not a party engine." Nothing to fix.
+- **Longstrider** `[V]` **#1 spell overall** — Bonbon has it as a ritual. ✅ Correctly prioritised.
+- **Counterspell** `[V]` **#4 overall**, and **no scrolls exist — it must be learned.** The party ends
+  with three carriers (Gale, Bonbon via Magical Secrets, Charles post-respec) against a recommendation
+  of two. Mild over-investment; see Bonbon's Magical Secrets question below.
+
+---
+
+# Part 2 — The four builds
+
+## Charles — Oathbreaker Paladin 7 / Hexblade Warlock 5
+
+### ✅ Verdict: KEEP the chassis. Three additions, one hazard.
+
+**What the sources confirm.** `[V]` ranks **Darkness S-tier** and says its ceiling is _"far higher in
+a party that can see through magical darkness"_ — Devil's Sight makes Charles exactly that character,
+so the Darkness-Arrow plan is not a workaround, it is the endorsed use. **Savage Attacker** and
+**Great Weapon Master** are both **S-tier feats**; **Dual Wielder is A**. **Bless (S)**, **Command (S,
+#3 overall)**, **Hex (S)**, **Shield (S)**, **Booming Blade (S, #6 overall and new in Patch 8)** and
+**Armour of Agathys (A)** are all already on his sheet. The Shadow-Blade-plus-Resonance-Stone package
+appears in `[V]` as one of the seven "broken builds."
+
+**Where the sources push back.** The class video ranks Paladin oaths **Vengeance > Oathbreaker**, and
+the plan keeps Vengeance through Acts 1–2 anyway before breaking for Aura of Hate — which is the right
+reading. Note honestly: **no video in this set gives a Paladin/Warlock split at all** — no 7/5, no 6/6.
+The split is unendorsed rather than contradicted.
+
+### Changes, ranked
+
+1. **Take Aid** at Paladin 5 (see Part 1 §3). Free party-wide +5–15 max HP, no concentration.
+2. **Craterflesh Gloves over Helldusk Gloves** in Act 3 (see Part 1 §4) — roughly +30 damage on a nova turn.
+3. **Hold the Staff of Arcane Blessing to cast Bless**, then swap to Phalar (see Part 1 §2c). Free +1d4
+   to every one of Gale's rays.
+4. **Upcast Command as a mass disable.** `[V]` notes Command _"upcasts to add targets"_ and rates it #3
+   overall; the plan only ever treats it as single-target.
+5. **Consider Hunger of Hadar.** `[V]` rates it **S** and calls it warlock-exclusive and one of the
+   game's best layered-control spells. It is currently filed as an "alternative" on his sheet. It costs
+   the Darkness concentration slot, so it is a per-fight choice, not a replacement.
+
+### ⚠️ Hazard: Luck of the Far Realms will auto-waste itself on Charles
+
+`[W]` _"Due to the way this passive's reaction is coded, it triggers on attacks that are **not natural
+20 rolls but are already critical hits due to Critical Hit Threshold Reductions**."_
+
+Charles is the party's crit-threshold stacker — Hexblade's Curse, Knife of the Undermountain King,
+Sarevok's Horned Helmet, Covert Cowl. `tadpole.md` warns "never on a Held target or an already-critical
+attack," but does not say **the reaction fires on its own**. On Charles specifically, Luck is likely to
+be consumed automatically by a crit he was going to get anyway. Either treat it as unreliable on him,
+or move it to Asterion.
+
+### Minor notes
+- **Death Ward is D-tier** `[V]`, **Banishment B**, **Searing Smite** explicitly _"worse than simply
+  spending the slot on Divine Smite."_ None are in the plan — correctly.
+- `[W]` **Aid stacks with one temp-HP source; temp-HP sources never stack.** Pick either Armour of
+  Agathys or Shield of Thralls, not both.
+- `[W]` **Killer's Sweetheart only applies to *weapon* attack rolls**, despite a tooltip implying
+  otherwise. Harmless here — Charles is a weapon attacker — but it rules out ever moving it to Gale.
+
+---
+
+## Asterion — Open Hand Monk 9 / Thief Rogue 3
+
+### ✅ Verdict: KEEP. This is the most heavily endorsed build in the entire source set.
+
+Every load-bearing choice is independently top-ranked `[V]`:
+
+- **Tavern Brawler and Alert are the only two S+ feats in the tier list.** Asterion takes both. Nobody
+  else in the party takes either.
+- **Open Hand is the best Monk subclass**, a **top-5 pure build to 12**, *and* one of the seven
+  **"broken builds."**
+- **Thief is the 2nd-best Rogue subclass**, and the multiclass video names **Monk 8–9 + Rogue 3–4**
+  _"the defining combination"_ — an exact match for Monk 9 / Thief 3.
+- **Minor Illusion is S-tier** (_no-save forced movement_) — his racial cantrip pick.
+- **Graceful Cloth is #3**, **Disintegrating Night Walkers #11**, **Ring of Protection #20** — all his.
+
+### Changes, ranked
+
+1. **Two of his Act 3 items are missing from the loot route.** `asterion.md` assigns **Gloves of Soul
+   Catching** and **Boots of Uninhibited Kushigo**, but neither appears in `content/loot.md`, so neither
+   will ever show on the loot checklist. Both verified `[W]`:
+   - *Gloves of Soul Catching* — **+1d10 Force per unarmed hit**, +2 CON, House of Hope (Hope's reward).
+   - *Boots of Uninhibited Kushigo* — **adds WIS modifier to unarmed strike damage**, carried by
+     Prelate Lir'i'c in the Astral Plane at the start of Act 3.
+   At 4–6 unarmed hits per turn these are among his largest damage sources; they need routing.
+2. **Give him Luck of the Far Realms instead of Charles** (see the hazard above). He stacks no
+   crit-threshold reduction, so the reaction won't fire early.
+3. **Add Ability Drain.** `[V]` rates it **A-tier** and nobody in the party takes it. `[W]` confirms:
+   passive, **once per turn on an attack roll, reduces the target's corresponding ability by 1**
+   (Strength for melee) — free, and it counts as applying a condition, which his and Gale's gear cares
+   about. One middle-ring tadpole.
+
+### Notes and corrections
+- `[W]` **Cull the Weak is mutually exclusive with Non-Lethal Attacks** — enabling one disables the
+  other. Worth recording alongside the existing Deathstalker warning, and relevant to any non-lethal
+  knockout (e.g. Kagha for Broodmother's Revenge).
+- `[W]` Cull the Weak's splash damage _"only applies to enemies"_ despite the tooltip saying "all
+  nearby creatures." The plan can drop that worry.
+- `[V]` names **Karlach's Soul Coins** as part of the broken Open Hand Monk build. This party has no
+  Karlach — a real but unavoidable gap, worth noting so it isn't mistaken for an oversight.
+- **Tavern Brawler is slightly broader than the plan states** `[W]`: the feat also covers **Throw** and
+  **Improvised Melee Weapon** attacks, neither of which needs empty hands. Only the base **Unarmed
+  Strike** action requires "no melee weapons equipped." Asterion's build is unarmed, so the
+  hands-empty rule still applies to him exactly as written — but the feat's Throw coverage is why
+  `[V]` also builds a Tavern Brawler *thrower*, and it means a thrown consumable is never blocked by
+  the rule.
+- `[W]` **Titanstring's +STR stacks per damage instance** and **ranged Slashing Flourish fires two
+  separate projectiles** — both confirmed individually, though the wiki never states the interaction
+  together. Also flagged as "mostly changed in Honour mode," which does not affect this party.
+- `[W]` **Club of Hill Giant Strength (STR 19) and the Elixir (STR 21) do not stack** — both are
+  "set to X" effects, so the elixir simply overrides. The plan already assumes this correctly.
+- The **Monk 8 / Thief 4** third-feat variant is already noted in his traps; given Alert and Tavern
+  Brawler are the two S+ feats and he already has both, staying Monk 9 for Ki Resonation is right.
+
+---
+
+## Gale — Draconic-Red Sorcerer 11 / Fiend Warlock 1
+
+### 🔧 Verdict: TUNE. The build is sound; both of its self-declared weaknesses are fixable in Act 1.
+
+**What the sources confirm.** `[V]` rates **Dual Wielder A-tier** with the reasoning
+_"chiefly because dual-staff spellcasters can combine two powerful passive items"_ — an unusually exact
+endorsement of Gale's most unorthodox pick. **Haste (S)**, **Counterspell (S, #4)**, **Command (S, #3)**,
+**Shield (S)**, **Hold Person (S)**, **Misty Step (S)**, **Globe of Invulnerability (S)** are all
+correctly identified. Taking **Sorcerer at level 1** for CON+CHA saves matches the multiclass video's
+"universal package" advice. **Melf's + Spellsparkler** is endorsed by name for _"a fire Sorcerer who
+generates many hits."_ **Markoheshkir → Gale** is confirmed.
+
+### The two structural fixes
+
+1. **Elixir of Vigilance as his standing daily elixir** (Part 1 §1) — replaces the Alert feat he cannot
+   afford, +5 initiative instead of +1.
+2. **Spidersilk Armour in Act 1.** The plan treats CON-save protection as an Act 3 problem solved only
+   by Armour of Landfall, and calls losing the Safeguard Shield _"the main defensive regression of the
+   Fire Sorlock switch."_ But `[W]` **Spidersilk Armour** is **light armour, AC 12 + DEX, +1 Stealth,
+   and grants ADVANTAGE ON CONSTITUTION SAVING THROWS** — worn by **Minthara in the Shattered Sanctum**,
+   the same Act 1 kill the plan already makes for Charles's Boots of Striding. Gale has light armour
+   proficiency from Civil Militia and currently has **no chest item assigned at all**.
+   **Trade:** AC 12+3 = 15 versus Draconic Resilience's 13+3 = 16, so it costs exactly 1 AC to protect
+   Twinned Haste — the concentration the entire party plan is built around — from Act 1 rather than Act 3.
+   It is already in `loot.md`, marked `core: false`.
+
+### Spell-list notes `[V]`
+
+- **Fireball is only B-tier** — _"do not cast it solely because it is iconic."_ The plan leans on it as
+  the primary AoE. Not wrong (it is on-element for Elemental Affinity, Flame of Wrath and Elemental
+  Adept), but it should not be prioritised over more Scorching Ray.
+- **Scorching Ray is A, not S** — and the stated reason is precisely that it is _"valued for multi-hit
+  riders, not efficiency."_ That is exactly what this build does with it. Strong validation of the
+  approach rather than the spell.
+- **Magic Missile is S-tier.** The plan calls it _"a deliberate placeholder"_ to be replaced by
+  Counterspell at Sorc 6. Worth re-examining — it is one of the few reliable answers to a missed
+  attack-roll turn on a build made entirely of attack rolls.
+- **Chromatic Orb is S** (currently a "replacement candidate"); **Ice Storm A** and non-concentration,
+  so it layers on top of Haste; **Cloud of Daggers S**; **Enhanced Leap S**.
+- **Elemental Adept is only B-tier** generally `[V]`, and it consumes one of Gale's two feats. The plan's
+  justification (fire is the most-resisted type in Act 3; no bow archer to mass-apply Arsonist's Oil;
+  removes 1s from many dice) is party-specific and holds — but it is worth stating that this is a
+  B-tier feat bought at the cost of never having an S+ one, and that **the Elixir of Vigilance fix above
+  is what makes that acceptable.**
+  Two wording corrections `[W]`: BG3's text is **"you cannot roll a 1"**, not the tabletop "treat 1s as
+  2s"; and the resistance-piercing is **broader than the plan states** — it covers _"spells you cast
+  **and attacks you make**,"_ not spells alone. The no-1 clause is spell-only.
+- **Per-ray riders are confirmed for some, inferred for others** `[W]`. The Scorching Ray page
+  explicitly names **Elemental Affinity: Damage** and the **Callous Glow Ring** as applying to *each*
+  ray. **Rhapsody** and **Markoheshkir's +proficiency** are covered only by the general rule that bonus
+  damage from passives and conditions applies per ray — very likely true, but not individually stated.
+- The Ice Sorcerer video is a direct comparison point: the CHA riders (Elemental Affinity, Potent Robe,
+  Necklace of Elemental Augmentation) are **element-agnostic**; what a fire build gives up is the
+  **cold vulnerability layer** (Chilled + Wet) and the ice control terrain. This party cannot produce
+  Wet reliably anyway (no Cleric/Druid), so **choosing fire is correct here** — the cold build's
+  advantage is unreachable for us.
+
+### ⚠️ Trap the plan misses: Markoheshkir's Heat fights the rest of his own Act 3 kit
+
+The planned Act 3 loadout is **Markoheshkir (Flame of Wrath) + Callous Glow Ring + Coruscation Ring +
+Hat of Fire Acuity**, with Gale deliberately kept **Illuminated** so Coruscation fires. Three verified
+interactions turn that combination against itself `[W]`:
+
+1. **Heat's self-damage is not stopped by Elemental Adept: Fire.** The feat pierces *enemy* resistance;
+   it does not protect Gale.
+2. **Callous Glow adds +2 radiant to Gale's own Heat tick while he is Illuminated** — and the build
+   keeps him Illuminated on purpose. His own damage ring makes his own self-damage worse.
+3. **Any damage taken strips 2 turns of Arcane Acuity.** So every Heat tick chips the very stat the
+   whole build exists to stack, *and* forces a CON save against Twinned Haste.
+
+The plan already warns "do not attune Flame of Wrath until Armour of Landfall is equipped" — that
+addresses the Haste concentration, but **not** the Acuity bleed or the Callous Glow amplification.
+Treat Flame of Wrath as a per-fight toggle rather than a permanent attunement, and consider dropping
+Coruscation (and therefore the illumination) in the fights where Acuity uptime matters more than the
+radiant riders.
+
+### ⚠️ Two unresolved questions that gate his build
+
+**a) Does Spellmight's +1d8 apply per ray, or once per spell?** — **the highest-stakes open question in
+the whole plan.** `gale.md` promotes Spellmight Gloves to CORE precisely because
+_"Scorching Ray is an attack roll fired 3–7 times per cast."_ The fact-check found the −5/+1d8 wording
+confirmed but **the per-ray question never addressed anywhere in the wiki**, and Spellmight is absent
+from the per-instance notes that *do* explicitly name Elemental Affinity and Callous Glow.
+
+The two outcomes are wildly different on a 7-ray cast:
+- **Per ray:** −5 on each roll for **+7d8 ≈ +31** damage. Best-in-slot, as the plan says.
+- **Once per spell:** −5 on *all seven* rolls for **+1d8 ≈ +4.5**. Actively harmful.
+
+Do not treat "+1d8 per ray" as established. Test it on a single cast the moment the gloves are acquired.
+
+**b) Can Gale cast Command from ordinary Sorcerer slots?** `gale.md` already flags this. The fact-check
+leans **yes** — Command is confirmed on the Fiend's level-1 list, and warlock spell access is described
+elsewhere as usable with non-pact slots — but found **no direct multiclass citation**. If it turns out
+to be pact-slot-only, his control lane is **once per short rest**, not every turn, and the Warlock dip
+loses most of its value. Confirm at character level 7.
+
+---
+
+## Bonbon — Swords Bard 11 / Fighter 1
+
+### 🔧 Verdict: TUNE. Right chassis, right engine, two open questions.
+
+**What the sources confirm.** `[V]` ranks **Swords the 2nd-best Bard college**; **Sharpshooter S-tier**;
+**War Caster A**; **Gloves of Dexterity #1 overall** (_"the most impactful equipable item in Act 1 and
+arguably the entire game"_) with the advice to dump DEX and reclaim the points — which the plan does;
+**Protecty Sparkswall #8**; **Caustic Band #12**; **Broodmother's Revenge #17**. **Glyph of Warding (S)**,
+**Hold Person (S)**, **Healing Word (S)**, **Dissonant Whispers (S)** and **Longstrider (S, #1 overall)**
+are all already on her sheet. `[V]` also settles a `loot.md` alternative: **Wondrous Gloves should stay
+benched**, since trading the #1-ranked item for +1 AC and one Bardic Inspiration is a downgrade.
+
+### Open question 1: Fighter 1 vs Fighter 2 (Action Surge)
+
+The multiclass video lists **Fighter (Action Surge)** as a universal package and its own party build
+uses a **Swords Bard 6 / Fighter 2** core `[V]`. Bonbon takes only Fighter 1.
+
+- **Keeping Fighter 1** buys Archery (+2 ranged, offsets Sharpshooter), CON saves (protects Hold
+  Monster) and heavy armour — and preserves **Bard 11**, which is what gives her the **level 6 slot that
+  upcasts Command to six targets** and Otto's Irresistible Dance.
+- **Going Fighter 2** adds a second Attack action to saturate Arcane Acuity and fire control a full turn
+  earlier — at the cost of dropping to Bard 10, losing the L6 slot and the 6-target Command.
+
+Given the L6 slot is explicitly the plan's payoff (_"Bard 11 = caster level 11 → one L6 slot, so Command
+still hits up to 6 targets"_), **Fighter 1 is defensible and probably correct here** — but the plan should
+record *why* it rejects Action Surge rather than leaving it unaddressed.
+
+### Open question 2: does Magical Secrets → Command duplicate Gale?
+
+`[V]` calls **Magical Secrets at Bard 10 the single biggest lever** in this party for reaching otherwise
+unavailable S-tier spells: **Spirit Guardians (S, #10 overall)**, **Globe of Invulnerability (S, #9)**,
+**Heroes' Feast (S)**, **Haste (S)**, **Hunger of Hadar (S)**.
+
+The plan spends both picks on **Command + Counterspell**. But **Gale already spams Command** as his
+non-concentration lane, and the party already has **three** Counterspell carriers against a recommended
+two. Meanwhile:
+
+- **Globe of Invulnerability** is currently planned to be covered by **buying scrolls** — a Magical
+  Secret would make it repeatable, and it is the #9 spell in the game.
+- **Heroes' Feast** is a party-wide permanent buff otherwise unreachable by any of the four.
+- **Spirit Guardians** is #10 overall but is a melee aura, and Bonbon is deliberately backline — a poor
+  fit despite the ranking.
+
+**Bonbon's Command is not fully redundant** — hers is a *bonus action* via the Band of the Mystic
+Scoundrel at the party's highest DC, which Gale cannot replicate. But **Counterspell is** the weaker of
+her two picks. Worth considering **Counterspell → Globe of Invulnerability or Heroes' Feast**.
+
+### Other notes
+- **Take The Whispering Promise** (Part 1 §2) — she is the correct carrier.
+- `[V]` **Hypnotic Pattern is A, not S** — _damage wakes the targets and the duration is short._ The
+  plan calls it "best-in-class AoE lockdown"; that should be tempered.
+- `[V]` **Enhance Ability is only B** — _"significant checks are less frequent than players expect."_
+  The plan trades Faerie Fire for it at char 5; low stakes either way.
+- `[V]` **Greater Invisibility (A)** _"anchors an entire party strategy"_ and **Silence (A)** are both
+  absent from her list. **Cloud of Daggers is S** and also absent.
+- Her background is listed as "Entertainer **or** Guild Artisan" while `proficiencies.md` assumes Guild
+  Artisan. Pick one so the skill table is accurate.
+
+---
+
+# Part 3 — The tadpole plan
+
+**Verdict: ✅ in good shape, and more accurate than the video sources.** Several claims the videos could
+not corroborate were verified directly:
+
+| Plan claim | Status |
+|---|---|
+| Zaith'isk chain is INT 12 → WIS 15 → CON 18; failed save = −2 to that stat, cured by consuming a parasite; Ghustil must be left alive | ✅ **CONFIRMED** `[W]`, exactly as written |
+| Awakened makes all illithid powers cost a Bonus Action | ✅ **CONFIRMED** `[W]` — and note the wiki's warning that use is **_not optional_** and _"could prove disadvantageous"_ for characters that use bonus actions heavily. Bonbon is exactly such a character (Band loop + off-hand crossbow), so this is a real, permanent tradeoff and deserves stronger wording than the plan gives it. |
+| Black Hole: 6 m pull with **no save**, 9 m radius, 18 m range, INT save only for Slow, 5 recasts, short-rest recharge | ✅ **CONFIRMED** `[W]` |
+| Favourable Beginnings: proficiency bonus to the first attack/check; only the first attacker benefits on a shared target | ✅ **CONFIRMED** `[W]` — and `[W]` adds that _"only Deception and Persuasion receive ability check bonuses,"_ which matches the plan's Bonbon note |
+| Freecast waives slot **and** metamagic cost | ✅ **CONFIRMED** `[W]` — _"If an action takes more than one type of resource… both costs are removed"_ |
+| Cull the Weak threshold = number of evolved powers | ✅ **CONFIRMED** `[W]` |
+
+### Corrections and additions
+
+1. **Perilous Stakes is fine — the Honour-mode worry does not apply.** `[W]` _"Outside of Honour mode,
+   this can target any creature including enemies; in Honour mode it can only target allies."_ This
+   party is explicitly **non-Honour**, so casting it on an enemy boss is correct as written. (Flagged
+   because the video source presents the Honour restriction without that qualifier.)
+
+2. **Shield of Thralls is undersold.** The plan describes it as _"10 temp HP to self/ally, and the
+   gateway to Freecast."_ `[W]` confirms the 10 temp HP but adds: _"If these temporary hit points are
+   lost due to incoming damage, the shield **bursts, possibly Stunning nearby foes**"_ — a **3 m**
+   explosion, **recharging on a SHORT rest**, lasting until long rest. That makes it a repeatable
+   precast area-stun, best on a frontliner. **Charles never gets it**, and he is the frontliner.
+   ⚠️ But note `[W]`: _"Can only have temporary hit points from one source"_ — it competes with his
+   Armour of Agathys.
+
+3. **Ability Drain (A-tier) is taken by nobody** — see Asterion above. `[W]` it drains **the ability used
+   for the attack roll**, so it belongs on **Charles and Asterion** (melee → enemy Strength) and is
+   worthless on **Gale**, whose spell attacks would drain Charisma.
+
+4. **Gale's power list was written against an obsolete assumption, and is now rewritten.** `[W]` confirms
+   _"All bonuses to spell save DC such as Arcane Acuity or Arcane Enchantment will also apply to illithid
+   powers"_ — so his **DC 27 is real**, and the old "no save-based powers, his DC is ~13" rule (a relic of
+   the dropped Tempest dip) is void. The rewrite is also built around his action economy: his Action and
+   Bonus Action are both committed to Scorching Ray and he is not taking Awakened, so **reactions and
+   toggles are worth far more to him than Actions**:
+   - **Psionic Dominance** — the best pick in the tree for him, above Freecast. A **Reaction** that
+     nullifies an enemy spell of level ≤ his proficiency bonus, **no roll and no save either side**.
+   - **Freecast** stays core. `[W]` both its caveats confirmed: disabled by equipping/unequipping a
+     **ranged** weapon, and reset by another character applying a condition such as Guidance.
+   - **Black Hole** — the 6 m pull needs no save; the Slow rides his DC 27. Clusters a pack into one Fireball.
+   - **Stage Fright** — WIS save, **enemies only, no friendly fire**: disadvantage on all their attacks.
+   - ⚠️ **Never press Concentrated Blast** — `[W]` it _"ends the caster's active Concentration spell when
+     cast,"_ and it sits free in his bar right next to Twinned Haste.
+
+5. **Two false alarms, checked and cleared:**
+   - **Mind Sanctuary is safe for this party.** The alarming clause — that it grants Hastened instead and
+     _"removes and prevents other sources of Slowed or Hastened,"_ making an already-hasted creature
+     immediately Lethargic — is `[W]` explicitly marked **"(Honour Mode only)"**. This guide is
+     non-Honour, so Bonbon can keep it. It would be a party-breaker in Honour.
+   - `[W]` **Shield of Thralls' burst stun is a flat DC 15 INT save**, *not* scaled by Arcane Acuity — so
+     it is a bonus on Charles, not a plan.
+   - `[W]` **Mind Blast's cone targets all creatures**, friendly fire included, unlike Stage Fright.
+
+4. **Luck of the Far Realms auto-triggers on threshold crits** — see the Charles hazard above. This is
+   the most important correction in the tadpole section.
+
+### Unverified in either source set
+The refund-on-commune structure, the commune-vs-eat mechanic, all tadpole **costs**, and the
+"newest level-1 class casting stat" DC rule are `[P]` — asserted by the plan and confirmed by neither
+the videos (which cover only the inner and middle rings, with no costs at all) nor the wiki pages read.
+They may well be right; they are simply unconfirmed here.
+
+---
+
+# Part 4 — Repo / content fixes
+
+Independent of build decisions, these are content-integrity issues:
+
+1. **Missing loot entries for assigned items.** `Gloves of Soul Catching` and `Boots of Uninhibited
+   Kushigo` are assigned in `asterion.md` but absent from `content/loot.md`, so they never appear on
+   the loot checklist. Add both (locations verified above).
+2. **Add the Echo of Abazigal stock** to the Murder Tribunal area: Craterflesh Gloves, Bhaalist Armour,
+   Assassin of Bhaal Cowl.
+3. **Add Drakethroat Glaive** to Act 2 (Roah Moonglow, Moonrise Towers).
+4. **Promote `Spidersilk Armour`** from `core: false` and assign it to Gale.
+5. **Promote `The Whispering Promise`** from `core: false` and assign it to Bonbon.
+6. **Record a location for Boots of Speed**, or note deliberately that it is skipped — `[V]` ranks it
+   #14 and it is absent from `loot.md` entirely. Note `[V]` also flags it as **bugged** (the
+   opportunity-attack rider reportedly applies to the wearer), so this is a "record it" item, not a
+   "swap to it" item.
+7. **Bonbon's background** — resolve "Entertainer or Guild Artisan" to match `proficiencies.md`.
+8. **This file replaced a stale review** describing an entirely different party. Its Arcane Acuity
+   "7-stack cap" claim was wrong: `[W]` _"Arcane Acuity has a maximum Duration: 10 turns"_ — the
+   current content's cap of 10 is correct.
+
+---
+
+# Part 5 — Where the sources disagree, and what they don't cover
+
+**Honest limits of this review:**
+
+- **No video in the set gives a Paladin/Warlock, Sorcadin, or Sorlock numeric split.** No "7/5", no
+  "6/6". Charles's and Gale's splits are *unendorsed*, not contradicted.
+- **The Hat of Fire Acuity — called "THE build-defining item" twice in our own files — appears in none
+  of the six item/party videos**, nor does the Arcane Acuity mechanic or the Strange Ox. This is not
+  evidence against it (the items guide is Act 1 only), but the plan's central pillar has zero
+  corroboration from this source set. The mechanic itself is confirmed `[W]`.
+- **The class ranking video is explicitly a personal-favourites list** (_"how cool and fun is it?"_),
+  not a balance claim. It ranks Draconic 2nd-worst of four Sorcerer subclasses and Fiend worst of four
+  Warlock patrons — both relevant to Gale, and both to be weighted accordingly. Gale's Fiend pick is
+  for the **Command spell list**, not for the patron's power.
+- **The videos contradict each other** on: Bard college (Valor for fun vs Swords for mechanics),
+  Paladin oath (Vengeance vs Devotion), Elemental Adept (B-tier generally, near-mandatory in the Ice
+  build), and Arcane Archer (last in the class video, a "broken build" in another).
+- **Honour-mode framing** runs through most sources. This party is non-Honour, which is why Deepened
+  Pact + Extra Attack stacking, Perilous Stakes on enemies, and save-scumming the Zaith'isk all remain
+  valid here.
+- **28 load-bearing mechanics were fact-checked against the wiki; 21 came back fully confirmed.** The
+  seven that did not are listed in their character sections above. The most consequential are
+  **Spellmight per ray** (never addressed anywhere) and **Command's spell slots** (implied, uncited) —
+  both flagged in Part 6 as confirm-in-play rather than presented as settled.
+
+---
+
+# Part 6 — Ranked action list
+
+**Do these first — cheap, high impact:**
+
+1. **Gale drinks Elixir of Vigilance every long rest.** +5 initiative, replaces the Alert feat he
+   cannot afford. 25 gp. *(§1)*
+2. **Charles takes Aid** at Paladin 5. Party-wide +5–15 max HP, no concentration, one L2 slot. *(§3)*
+3. **Bonbon wears The Whispering Promise** and uses Healing Word to trigger it — concentration-free
+   Bless for the party, and it frees Charles's concentration lane. *(§2)*
+4. **Gale wears Spidersilk Armour from Act 1** — CON-save advantage protects Twinned Haste 2 acts
+   earlier, for 1 AC. *(Gale)*
+5. **Fix the four missing loot entries** so the checklist is complete. *(§4)*
+
+**Then decide these explicitly:**
+
+6. **Craterflesh Gloves replace Helldusk Gloves** on Charles in Act 3 (~+30 damage per nova turn). *(§4)*
+7. **Move Luck of the Far Realms from Charles to Asterion** — it auto-wastes on crit-threshold builds. *(§3)*
+8. **Add Ability Drain** (A-tier, free passive, taken by nobody). *(Asterion)*
+9. **Charles carries the Staff of Arcane Blessing to cast Bless**, giving Gale +1d4 per ray. *(§2c)*
+10. **Buy the Drakethroat Glaive** in Act 2; Gale Twins the enchant onto two weapons per long rest. *(§6)*
+11. **Reconsider Bonbon's second Magical Secret** — Counterspell is the party's third; Globe of
+    Invulnerability or Heroes' Feast are otherwise unreachable. *(Bonbon)*
+12. **Give Charles Shield of Thralls** for the repeatable short-rest area stun — but drop Armour of
+    Agathys, since temp HP sources do not stack. *(§3)*
+13. **Decide the Adamantine question** — two ores currently buy two benched armours. *(§5)*
+
+14. **Treat Markoheshkir's Flame of Wrath as a per-fight toggle, not a permanent attunement** — its
+    Heat tick is amplified by Gale's own Callous Glow Ring and strips 2 Arcane Acuity turns per hit. *(Gale)*
+
+**Confirm in play — in priority order:**
+
+15. **Does Spellmight Gloves' +1d8 apply per ray or once per spell?** The difference is roughly +31
+    damage versus +4.5 on a 7-ray cast, and decides whether the gloves are best-in-slot or a trap. Test
+    on the first cast after acquiring them.
+16. **Can Gale cast Command from Sorcerer slots, or only the pact slot?** Gates his entire control lane
+    and the value of the Warlock dip. Evidence leans yes, but it is uncited. Check at character level 7.
+17. Whether Drakethroat's Elemental Weapon actually holds concentration (its details say Concentration;
+    its condition says "until long rest").
+18. Whether a `Light`-lit character registers as Illuminated for the Coruscation Ring (already flagged
+    in `gale.md`).

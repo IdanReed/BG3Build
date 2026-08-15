@@ -34,7 +34,7 @@ builds:
   - Hold Monster
   - Confusion
   - Fear
-  - Magical Secrets → Command + Counterspell
+  - Magical Secrets → Command + Globe of Invulnerability
   creation:
     level1_class: Fighter 1 (taken at character creation)
     level1_gains: 'Archery fighting style (+2 ranged), Second Wind, and — because Fighter is taken FIRST — STR + CON saves, all armour (incl. Heavy) + shields + martial weapons, and 2 Fighter skills.'
@@ -98,13 +98,13 @@ builds:
       save: WIS save
       when: Bard 5
       why: Best-in-class AoE lockdown (9m incapacitate) and a superb acuity payoff. Concentration; breaks on damage.
-    - spell: Counterspell
-      level: '3'
+    - spell: Globe of Invulnerability
+      level: '6'
       guide_level: 11
       school: Abjuration
-      save: Reaction (contested by slot level)
+      save: None (Concentration)
       when: Bard 10 (Magical Secrets)
-      why: Shuts off enemy casters as a Reaction.
+      why: 'REPLACES Counterspell as the second Magical Secret. Rated the #9 spell in the game and unreachable by any other party member — the plan previously budgeted for scrolls, and this makes it repeatable. A dome that blocks incoming spells outright, which is the answer to the Act 3 caster gauntlets and to the Netherbrain''s area attacks. ⚠ Concentration, so it competes with Hold Monster: use it on the turns where survival beats control. Counterspell is dropped because Gale and Charles already cover that lane and three carriers is one more than the guides advise.'
     - spell: Hold Person
       level: '2'
       guide_level: 4
@@ -356,8 +356,8 @@ builds:
     - category: Magical Secrets
       recommendation:
       - Command
-      - Counterspell
-      note: Command is the Band-enabled bonus-action control engine; Counterspell supplies the missing reaction defence.
+      - Globe of Invulnerability
+      note: 'CHANGED. Command stays — hers is genuinely unique because the Band of the Mystic Scoundrel makes it a BONUS ACTION at the party''s highest Acuity DC, and her level 6 slot upcasts it to six targets, neither of which Gale can replicate. Counterspell is dropped: Gale learns it at Sorc 6 and Charles gets it post-respec, so taking it here would give the party THREE carriers where the guides recommend two. Globe of Invulnerability is rated the #9 spell in the game and is otherwise unreachable by any of the four — the plan previously covered it by buying scrolls, and a Magical Secret makes it repeatable. Heroes'' Feast is the alternative pick if you would rather have a permanent party-wide buff than an emergency dome.'
     - category: Expertise
       recommendation:
       - Insight
@@ -417,11 +417,19 @@ builds:
     - id: adamantine-scale-mail
       item: Adamantine Splint Armour (defensive alternative)
       slot: armour
-      note: DEFENSIVE ALTERNATIVE — Fighter-first grants proficiency. AC 18, crit immunity, 2 damage reduction, Reeling. Take it when survival beats Protecty's +1 spell DC. (The ID keeps its old scale-mail name so checklist keys survive.)
+      note: DEFENSIVE ALTERNATIVE — Fighter-first grants proficiency. AC 18 flat, crit immunity, all incoming damage reduced by 2, Reeling. Take it when survival beats Protecty's +1 spell DC. (The ID keeps its old scale-mail name so checklist keys survive.)
+    - id: adamantine-shield
+      item: Adamantine Shield (melee off-hand stat stick)
+      slot: off-hand
+      note: 'THE SECOND ORE — replanned. Bonbon is the party''s only legal Adamantine wearer, and this is the piece the old plan wrote off as having "no legal wielder." Per the wiki, "a character need not to be actively holding the equipped shield to get the AC bonus… a character with a sword and shield in its melee weapon slots and a longbow in its ranged weapon slots benefits from the shield''s AC bonus even while using the bow." So it sits in her MELEE off-hand, replacing the Knife of the Undermountain King, while she fights from the ranged set as normal: +2 AC and crit immunity for free. Crit immunity matters most on HER because she holds Hold Monster — a concentration save is DC = half the damage taken or 10, whichever is higher, so a crit roughly doubles that DC — and because it stops Hold Person or Sleeping from handing attackers automatic crits. ⚠ COSTS the Knife''s global crit-threshold reduction, and ⚠ VERIFY IN PLAY that crit immunity (not just AC) carries over from the inactive melee set; the wiki only confirms the AC bonus. If it does not carry, wear the free Grymskull Helm through Act 1 instead and sell the ore.'
+    - id: the-whispering-promise
+      item: The Whispering Promise
+      slot: rings
+      note: 'THE CHAR 1–3 BLESS FIX. Volo, or Grat at the Goblin Camp, for about 40g — so it is available before the Grove is resolved. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration. Bonbon is the carrier because her Healing Word is a BONUS ACTION and because she already runs Broodmother''s Revenge, so a single bonus action fires both riders at once. Best trigger for the whole party is a THROWN Potion of Healing, which blesses every creature it splashes; it also works on targets already at full HP, and drinking a potion self-triggers it. ⚠ It applies the SAME condition as the Bless spell, so it does NOT stack with Charles''s Bless and is NOT boosted by his Staff of Arcane Blessing — its value is levels 1–3 before Charles has Bless, and later any fight where he concentrates on Hex or Darkness instead. Displaces Caustic Band; swap back once Charles''s Bless is reliable.'
     - id: caustic-band
       item: Caustic Band
       slot: rings
-      note: Derryth, Underdark. +2 Acid per weapon hit — the multiple Slashing-Flourish projectiles exploit it better than Charles's smaller Act 1 attack count.
+      note: Derryth, Underdark. +2 Acid per weapon hit — the multiple Slashing-Flourish projectiles exploit it better than Charles's smaller Act 1 attack count. Returns to the ring slot once The Whispering Promise has done its job in the early levels.
     - id: diadem-of-arcane-synergy
       item: Diadem of Arcane Synergy
       slot: head

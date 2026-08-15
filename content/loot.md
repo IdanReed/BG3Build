@@ -43,13 +43,16 @@ loot_guide:
       for: Bonbon
       core: true
       note: Save the Grove, talk Kagha down, then knock her out non-lethally while isolated. Any healing coats Titanstring for +1d6 Poison per projectile, 2 turns — potion up before a Flourish nova. Skip vs poison immunity.
-    - name: Whispering Promise + Hellrider's Pride
-      wiki:
-      - The Whispering Promise
-      - Hellrider's Pride
+    - name: The Whispering Promise
+      wiki: The Whispering Promise
+      for: Bonbon
+      core: true
+      note: 'THE LEVEL 1–3 BLESS FIX. Volo (or Grat at the Goblin Camp), ~40g. Healing a creature gives it +1d4 to attacks and saves for 2 turns, no Concentration. ⚠ It applies the SAME condition as the Bless spell, so it does NOT stack with Charles''s Bless and is NOT enhanced by the Staff of Arcane Blessing — its job is the char 1–3 window before Charles has Bless at all, and later any turn Charles concentrates on Hex or Darkness instead. Best trigger is a THROWN Potion of Healing, which blesses every creature it splashes; Bonbon''s bonus-action Healing Word covers one, and it also fires Broodmother''s Revenge. Works even on a target at full HP. ⚠ Consumable by Gale — do not feed it to the orb.'
+    - name: Hellrider's Pride
+      wiki: Hellrider's Pride
       for: any
       core: false
-      note: Volo / Zevlor-Kagha. Bless-on-heal + resistance-on-heal for a support healer.
+      note: 'Zevlor (loot, steal, or the Kagha quest reward). Healing another creature gives it resistance to weapon Bludgeoning/Piercing/Slashing for 2 turns. Rated #6 of 20 Act 1 items, but the glove slot is contested: Bonbon needs Gloves of Dexterity (the #1 item) and Charles needs Gloves of Baneful Striking. Take it only for a stretch of heavy physical damage.'
     - name: Gloves of Power
       for: any
       core: false
@@ -140,8 +143,8 @@ loot_guide:
       note: Dror Ragzlin's treasure room. Advantage on melee attacks with 2+ enemies within 3m of the target — for when Darkness Arrows run short; redundant once Risky Ring lands.
     - name: Spidersilk Armour
       for: Gale
-      core: false
-      note: Minthara. Light armour, advantage on CON saves — an early concentration bridge until War Caster.
+      core: true
+      note: 'SELECTED Act 1 chest for Gale, and the fix for this build''s biggest structural weakness. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra. AC 12 + DEX and +1 Stealth, but the reason is ADVANTAGE ON CONSTITUTION SAVING THROWS, which protects Twinned Haste from Act 1 instead of waiting for Armour of Landfall in Act 3. Gale has light armour from Human Civil Militia, and this is his only chest item. ⚠ Costs exactly 1 AC versus going unarmoured (Draconic Resilience is 13 + DEX); Gale has no War Caster and no feat left for one, so the advantage is his only concentration protection for two whole acts.'
     - name: Goblin-leader loot (Gut / Ragzlin / Minthara)
       wiki: false
       for: any
@@ -202,6 +205,11 @@ loot_guide:
       for: Charles
       core: true
       note: 'Longsword in stone near the Selûnite Outpost. ACT 1–mid ACT 2: bind, two-hand, GWM at char 6, Darkness Arrows for advantage. LATE ACT 2 after the Resonance Stone: GWM → Dual Wielder, 3d8 Shadow Blade main hand, Phalar off-hand. Pre-cast Shriek and keep it equipped — the 6m aura covers Charles and Asterion.'
+    - name: Staff of Arcane Blessing
+      wiki: Staff of Arcane Blessing
+      for: Charles
+      core: true
+      note: 'Arcane Tower BASEMENT, leaning against a table. A pre-combat swap item, not a weapon: every Bless that ITS WIELDER casts also grants Mystra''s Blessing, +1d4 to spell ATTACK rolls. Charles holds it, casts Bless (upcast to a level 2 slot for all four party members), then swaps back to Phalar Aluve — he was already concentrating on Bless, so the only cost is the swap. Gale is the payoff: +1d4 accuracy on every single Scorching Ray ray. It also self-grants Bless 1/long rest, so any holder can cast it. ⚠ Does NOT enhance the Whispering Promise''s version of Bless.'
     - name: Caustic Band + Club of Hill Giant Strength
       wiki:
       - Caustic Band
@@ -221,17 +229,25 @@ loot_guide:
     - name: Help Omeluum
       note: Myconid Colony. Reward includes the Amulet of Misty Step or a ring, and opens his shop.
     - name: Arcane Tower
-      note: Reactivate the tower; loot the Club of Hill Giant Strength and scrolls.
+      note: Reactivate the tower; loot the Club of Hill Giant Strength, the Staff of Arcane Blessing in the basement, and scrolls.
   - area: Grymforge
     items:
     - name: Disintegrating Night Walkers
       for: Asterion
       core: true
       note: True Soul Nere. Bonus-action Misty Step 1/short rest + immunity to Web, Entangle and grease-slip.
-    - name: Adamantine armour pair (crafted)
-      for: Bonbon + Charles
+    - name: Adamantine Shield + Splint Armour (crafted — REPLANNED)
+      wiki:
+      - Adamantine Shield
+      - Adamantine Splint Armour
+      for: Bonbon
       core: true
-      note: Two Mithral ores → Splint (Bonbon's defensive alternative) and Scale Mail (Charles's). Charles never uses a shield.
+      note: 'BOTH ORES NOW GO TO BONBON. The old plan forged Splint (Bonbon) + Scale Mail (Charles) and then equipped NEITHER — Charles keeps Luminous Armour, so the Scale Mail was a swap nobody ever made. Bonbon is in fact the party''s only legal wearer of anything from this forge: Charles has medium armour only (Hexblade grants medium + shields; multiclassing into Paladin does NOT add heavy) and can never free his off-hand for a shield, since GWM: All In needs an empty off-hand and he later dual-wields; Asterion must stay unarmoured and shieldless; Gale is light-armour-only and holds two staves. ⚠ THE SHIELD IS THE FIND: per the wiki, "a character need not to be actively holding the equipped shield to get the AC bonus… a character with a sword and shield in its melee weapon slots and a longbow in its ranged weapon slots benefits from the shield''s AC bonus even while using the bow." So Bonbon puts it in her MELEE off-hand (in place of the Knife) and keeps shooting hand crossbows — +2 AC and crit immunity from a slot she was barely using, with no cost to Protecty Sparkswall''s +1 Spell Save DC. WHY CRIT IMMUNITY MATTERS ON HER SPECIFICALLY: a concentration save is "DC equal to half the damage taken, or 10, whichever is higher," so a crit roughly doubles the DC — and she is the one holding Hold Monster, the party''s auto-crit engine. It also stops Hold Person and Sleeping from granting attackers automatic crits against her. ⚠ VERIFY IN PLAY: the wiki confirms only the AC bonus carries over from the inactive melee set; it never says whether crit immunity does. Check her sheet with crossbows drawn — if crit immunity does not carry, fall back to Splint plus the free Grymskull Helm and sell the second ore. Splint (AC 18 flat, all incoming damage reduced by 2) stays her swap-in loadout for melee-heavy and boss fights, with Sparkswall as the default control loadout.'
+    - name: Grymskull Helm
+      wiki: Grymskull Helm
+      for: Bonbon
+      core: false
+      note: 'FREE CRIT IMMUNITY — dropped by Grym, the boss you must kill to use the forge anyway, requiring only heavy armour proficiency, which Bonbon has from Fighter 1. Grants "attackers can''t land Critical Hits on the wearer" plus Fire resistance, for zero ore. It is an Act 1-only answer: from Act 2 the Helmet of Arcane Acuity takes her head slot permanently and is worth far more. Worth wearing for the rest of Act 1, and worth knowing about before you decide how many ores to spend.'
     - name: The Protecty Sparkswall
       for: Bonbon
       core: true
@@ -382,6 +398,11 @@ loot_guide:
       for: Gale
       core: true
       note: 'In a Mimic in Isobel''s bedroom (upper floor, Moonrise). Applies Reverberation on ranged SPELL-ATTACK hits only (not weapon hits or save spells). PROMOTED TO CORE by the Fire Sorlock switch — it was near-worthless for the old save-based Storm nukes and is excellent now that Gale''s main spell is 3–7 spell attack rolls per cast. With Boots of Stormy Clamour it reliably stacks Reverberation to Prone.'
+    - name: Drakethroat Glaive
+      wiki: Drakethroat Glaive
+      for: Gale
+      core: true
+      note: 'Sold by Roah Moonglow. NOT a weapon for this party — a once-per-long-rest party buff. It grants Draconic Elemental Weapon (cast as a level 3 spell), which enchants a weapon for +1 Attack Rolls and +1d4 elemental damage UNTIL LONG REST, and it can target an ally''s main-hand weapon or a weapon on the ground. Gale is proficient with glaives (Human Civil Militia) and, per the wiki, "a Sorcerer of level 3 and higher can target TWO weapons using Metamagic: Twinned Spell" — so out of combat he equips the glaive, Twins the enchant onto two party weapons, and swaps back to his staves. Stacks with Magic Weapon; does not stack with other Elemental Weapon variants. ⚠ Charles''s Shadow Blade is re-summoned each rest, so enchant Phalar Aluve or Bonbon''s crossbows instead. ⚠ Patch 8 changed the effect from +1 enchantment (attack AND damage) to +1 attack rolls only; confirm in play whether it actually holds Concentration, since the tooltip and the condition disagree.'
     - name: Moonrise Towers vendor & prison loot
       wiki: false
       for: any
@@ -486,7 +507,12 @@ loot_guide:
       wiki: Hellrider Longbow
       for: Bonbon (contested with Gale)
       core: true
-      note: 'Sold by Ferg Drogher in Rivington. +initiative. NEWLY CONTESTED: the Fire Sorlock guide says this should always go to the Sorlock on fire parties, and Gale has no feat left for Alert. Bonbon keeps it by default because she must land the first weapon hit to open the Band of the Mystic Scoundrel loop; Gale keeps Bow of Awareness and drinks an Elixir of Vigilance for fights where he must go first.'
+      note: 'Sold by Ferg Drogher in Rivington. +3 Initiative — and BG3 rolls initiative on a d4 + DEX, so a flat +3 is worth most of the die. CONTEST RESOLVED: Bonbon keeps it outright. Gale no longer competes, because his standing Elixir of Vigilance already gives +5 and immunity to Surprise — strictly better than this bow, and he is the one party member with no rival elixir. Resulting order is Asterion (d4+10) → Gale (d4+8) → Bonbon (d4+7) → Charles (d4+2), and Charles going last is correct: he wants to swing at a target the others have already Held or Stunned.'
+    - name: Boots of Uninhibited Kushigo
+      wiki: Boots of Uninhibited Kushigo
+      for: Asterion
+      core: true
+      note: 'MISSABLE, and easy to walk past — carried by Prelate Lir''i''c in the ASTRAL PLANE as you enter Act 3, not in Rivington itself. Adds Asterion''s Wisdom modifier to every Unarmed Strike''s damage, so it is flat damage on all 4–6 hits per turn. With the Mirror of Loss taking him to WIS 18 that is +4 a hit. Grab it during the Astral Prism sequence before the act moves on.'
     - name: Strange Ox (second chance)
       wiki: false
       for: Gale
@@ -576,6 +602,14 @@ loot_guide:
       for: any
       core: false
       note: Ring (Orin) — bonus damage and extra reaction attacks, strong for an assassin. Sword of Chaos (Sarevok) — +2 wounding longsword.
+    - name: Echo of Abazigal stock (GATED — Bhaal path only)
+      wiki:
+      - Craterflesh Gloves
+      - Bhaalist Armour
+      - Assassin of Bhaal Cowl
+      for: Charles
+      core: false
+      note: 'UNDECIDED BY DESIGN — these unlock only if Charles completes Impress the Murder Tribunal and becomes an Unholy Assassin of Bhaal, and they arrive late enough in Act 3 that Shadow Blade + Resonance Stone remains comparable. Documented so the cost of resisting the Urge is visible. CRATERFLESH GLOVES are the real prize: +1d6 Force on a critical hit, which the wiki notes actually lands as 2d6 because the crit doubles it — on a Held target where all seven swings auto-crit that is roughly +49 a turn, against about +17 from Helldusk Gloves. BHAALIST ARMOUR gives +2 Initiative and Aura of Murder (enemies within 3m become Vulnerable to Piercing, radius raised from 2m in Patch 8) — worth nothing to Charles''s Psychic Shadow Blade, but it doubles Bonbon''s Piercing crossbow and Titanstring damage against anything engaging him; costs Luminous Armour''s Radiating Shockwaves. ASSASSIN OF BHAAL COWL is +2 Initiative, which matters more than it looks because BG3 rolls initiative on a d4.'
     events:
     - name: Murder questline (Dark Urge)
       note: Charles IS the Dark Urge — this arc and its embrace-or-resist choice are his story climax.
@@ -585,10 +619,15 @@ loot_guide:
       for: Bonbon
       core: true
       note: Pedestal in the Archive. CON 23 + advantage on CON saves. REALLOCATED to the Bard (was Asterion) to armour Hold Monster concentration; stacks with War Caster. Gale keeps the Devout.
+    - name: Gloves of Soul Catching
+      wiki: Gloves of Soul Catching
+      for: Asterion
+      core: true
+      note: 'BEST-IN-SLOT MONK GLOVES — Hope hands these over when freed. +1d10 Force on EVERY unarmed strike, which at 4–6 hits a turn is one of the largest single damage sources in the party, plus Constitution +2 (to 20). Soul Catching also gives, once per turn on an unarmed hit, a free choice of 10 HP of healing OR +5 to one attack roll or saving throw. Replaces Bracers of Defence. ⚠ Per the wiki the tooltip is wrong in several ways: it is a granted free action rather than automatic healing, and it is a flat +5 rather than Advantage. It is also stripped if he takes damage with no temporary HP.'
     - name: Helldusk Gloves
       for: Charles
       core: true
-      note: Fire damage on weapon hits plus better spell attacks and DC — applied on each of Charles's many Shadow Blade hits.
+      note: Fire damage on weapon hits plus better spell attacks and DC — applied on each of Charles's many Shadow Blade hits. ⚠ If the Bhaal path is taken, Craterflesh Gloves beat these substantially on a crit-fishing nova (roughly +49 a turn against +17).
     - name: Helldusk Armour
       for: Charles
       core: false

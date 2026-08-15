@@ -97,7 +97,14 @@ builds:
       school: Enchantment
       save: None (concentration)
       when: char 4 (Paladin 2)
-      why: +1d4 to attack rolls and saves for up to 3 allies. Offsets Great Weapon Master in Act 1 and runs inside concentration-free arrow darkness.
+      why: '+1d4 to attack rolls and saves for up to 3 allies — 4 if upcast to a level 2 slot, which covers the whole party. Rated S-tier and the Paladin''s default early concentration. Offsets Great Weapon Master and runs inside concentration-free arrow darkness. THE ROUTINE: from the Underdark onward, cast it while holding the STAFF OF ARCANE BLESSING, so every target also gets Mystra''s Blessing (+1d4 to spell attack rolls) — that is +1d4 accuracy on each of Gale''s 3–7 Scorching Ray rays. Then swap back to Phalar. ⚠ Charles remains the party''s ONLY Bless caster: the Whispering Promise applies the same condition and therefore does NOT stack with this, and is not enhanced by the staff. The ring covers char 1–3 and any fight where Charles concentrates on Hex or Darkness instead.'
+    - spell: Aid
+      level: '2'
+      guide_level: 7
+      school: Abjuration
+      save: None
+      when: char 7 (Paladin 5), and again from char 10 post-respec
+      why: 'FREE PARTY DURABILITY, and the party''s only source — Aid is Cleric or Paladin only, and this party has no Cleric. Self-centred 9m radius, +5 maximum HP per party member (+5 more per slot level above 2nd), lasting UNTIL LONG REST with NO Concentration. Downed allies also come back with an extra hit point. One level 2 slot per long rest for a permanent +5 to +15 across four characters is close to free on a party with a single healer. ⚠ Cast it AFTER summoning anything you want covered. Aid stacks with one source of temporary HP, but temp-HP sources never stack with each other — so run Armour of Agathys OR the illithid Shield of Thralls, not both.'
     - spell: Divine Favour
       level: '1'
       guide_level: 4
@@ -370,6 +377,10 @@ builds:
       item: Phalar Aluve (selected two-handed weapon)
       slot: weapons
       note: ACT-1 DEFAULT from the Underdark. Bind as the Hexed Weapon, off-hand empty, so the Versatile longsword uses 1d10 and GWM All In adds +10 from char 6. Pre-cast Shriek and keep it equipped — the 6m aura covers Charles and Asterion.
+    - id: staff-of-arcane-blessing
+      item: Staff of Arcane Blessing (pre-combat swap)
+      slot: weapons
+      note: 'Arcane Tower BASEMENT, Underdark. NOT a combat weapon — a buff stick he swaps in before a fight. Every Bless cast by its WIELDER also applies Mystra''s Blessing, +1d4 to spell attack rolls, to each blessed creature. Charles was already spending his concentration on Bless, so the routine costs only the swap: hold staff → upcast Bless to a level 2 slot for all four → swap to Phalar and activate Shriek. Gale is the payoff, gaining +1d4 accuracy on every ray. It also grants its own Bless 1/long rest to any holder. ⚠ Does NOT enhance the Whispering Promise''s version of Bless.'
     - id: arrows-of-darkness
       item: Arrows of Darkness (farm)
       slot: consumables
@@ -480,7 +491,11 @@ builds:
     - id: sarevok-s-horned-helmet
       item: Sarevok's Horned Helmet
       slot: head
-      note: Lowers the critical-hit threshold and grants Darkvision. Stacks with his other crit-range effects on targets that are not already Paralyzed.
+      note: SELECTED OFFENSIVE HEAD. Lowers the critical-hit threshold and grants Darkvision. Stacks with his other crit-range effects on targets that are not already Paralyzed.
+    - id: helm-of-balduran
+      item: Helm of Balduran (defensive alternative)
+      slot: head
+      note: 'THE ANSWER TO CHARLES''S CRIT PROBLEM, since he can use nothing from the Adamantine forge — he has medium armour only and never has a free off-hand for a shield. From the Wyrmway (Ansur), and medium-armour proficiency is all it needs. It grants crit immunity plus +1 AC and +1 to SAVING THROWS, and that last part directly offsets the Risky Ring''s permanent disadvantage on saves. Straight trade against Sarevok''s: this is defence and save-reliability, Sarevok''s is more crits. Take Balduran for long fights where he is holding concentration on Darkness while wearing the Risky Ring — the most fragile concentration in the party.'
     - id: killer-s-sweetheart
       item: Killer's Sweetheart
       slot: rings
@@ -488,13 +503,18 @@ builds:
     - id: helldusk-gloves
       item: Helldusk Gloves
       slot: hands
-      note: Fire damage on weapon attacks plus better spell attacks and save DC. The weapon rider applies on each of his many pact-weapon hits.
+      note: 'SELECTED DEFAULT. Fire damage on weapon attacks plus better spell attacks and save DC. The weapon rider applies on each of his many pact-weapon hits — roughly +17 across a seven-attack nova.'
+    - id: craterflesh-gloves
+      item: Craterflesh Gloves (Bhaal path only)
+      slot: hands
+      note: 'GATED ALTERNATIVE, and a large one. Sold by the Echo of Abazigal, which only opens if Charles completes Impress the Murder Tribunal and becomes an Unholy Assassin of Bhaal. Deals +1d6 Force on a critical hit — and per the wiki it actually lands as 2d6, because the crit doubles it. Charles is the party''s crit engine (Held targets auto-crit, plus Killer''s Sweetheart, Risky Ring, Sarevok''s Helmet and Hexblade''s Curse), so on a full auto-crit nova this is roughly +49 against Helldusk''s +17. ⚠ Arrives late in Act 3, so the Shadow Blade + Resonance Stone package carries the build regardless — treat this as a bonus of the Urge-embracing path, not a reason to choose it.'
   playstyle: |-
     - **Act 1 through most of Act 2 — two-handed Phalar:** bind Phalar Aluve, keep the off-hand empty, pre-cast Shriek, and enter a farmed Darkness Arrow cloud with Devil's Sight. Maintain Bless, Divine Favour, or Hex because the cloud is concentration-free; toggle GWM All In when advantage makes the −5 acceptable.
     - **Darkness placement (matters now that Gale is a Fire Sorlock):** put the cloud so **Charles is inside it and his target is not**. He is then an unseen attacker — advantage in, disadvantage out — while the enemy stays visible and shootable for Gale. A Darkness cloud explicitly blocks ranged attacks *into and out of* itself, so an enemy standing inside it is one Gale cannot touch, and the party loses focus fire. This costs Charles nothing and lets Gale's Scorching Ray land on the same target, inside Phalar Shriek's 6m aura, where each ray picks up an extra 1d4 Thunder.
     - **Pre-cast Shriek for Gale, not just for yourself:** Shriek adds 1d4 Thunder every time an affected enemy takes damage, and Scorching Ray deals damage 3–7 separate times per cast. Activating Shriek before Gale's turn is worth roughly 7d4 on a single level-6 cast.
     - **Gale's light does not affect you:** the Coruscation Ring keys off *Gale* being illuminated, not the target, and Daylight only dispels Darkness at the instant it is cast. Keep using Darkness Arrows freely — just fire them after Gale's once-per-long-rest Daylight is already up.
     - **Late Act 2+ — Shadow + Stone:** on acquiring the Resonance Stone, usually respec at character level 9 to Warlock 5 / Paladin 4, replace GWM with Dual Wielder, summon 3d8 Shadow Blade main hand, and off-hand Phalar. Asterion carries the Stone within 9m to double the Psychic package.
+    - **Once per long rest, out of combat:** cast **Aid** (upcast as high as you can spare) for a permanent party-wide max-HP buff that costs no concentration, and hold the **Staff of Arcane Blessing** when you cast **Bless** so every target also picks up Mystra's Blessing (+1d4 spell attack) — then swap back to Phalar. Charles is the party's only Bless caster and its only Aid caster; both are S-tier and neither was in the original plan.
     - **Act 1 turn structure (this is the fix for feeling weak at char 4):** pre-cast Shriek from stealth → turn 1 open with **Inquisitor's Might** as your bonus action (+CHA radiant on every weapon hit for 2 turns, plus a no-save Daze) → Booming Blade or a Phalar swing → smite only on crits. Hexblade's Curse goes on turn 2, since it competes with Inquisitor's Might for the bonus action. From Paladin 3, decide at the start of each fight whether the one Channel Oath charge buys Inquisitor's Might or Vow of Enmity.
     - **Give the buff away when it is worth more elsewhere:** Inquisitor's Might reaches 9m and can target an ally. Asterion's 4–6 unarmed hits per turn extract roughly three times the radiant damage Charles's 1–2 swings do, so on adds-heavy turns buff him instead.
     - **Nova:** attack a Held target, spending the largest Divine Smites first. At Paladin 5 after the respec, two three-attack Actions under Haste plus one Phalar off-hand attack reach seven auto-crit swings when the bonus action is free.

@@ -407,10 +407,19 @@ builds:
       item: Pearl of Power Amulet
       slot: amulets
       note: 'SELECTED resource neck from Omeluum. Restores one spell slot of level 3 or lower each long rest — normally another Haste or Scorching Ray. This build is famously long-rest hungry, so the free slot matters more than it did before.'
+    - id: spidersilk-armour
+      item: Spidersilk Armour
+      slot: armour
+      note: 'SELECTED Act 1 chest, and the answer to this build''s worst structural problem. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra to acquire. AC 12 + DEX and +1 Stealth, but the reason to wear it is ADVANTAGE ON CONSTITUTION SAVING THROWS. Gale has no War Caster, no feat left to buy one, and no Safeguard Shield after Dual Wielder, so this is his only protection for Twinned Haste — and it arrives in Act 1 rather than waiting for Armour of Landfall in Act 3. ⚠ Costs exactly 1 AC versus going unarmoured, since Draconic Resilience is 13 + DEX; take the trade, because Haste is the concentration the entire party plan is built on.'
+    - id: elixir-of-vigilance
+      item: Elixir of Vigilance (daily)
+      wiki: Elixir of Vigilance
+      slot: consumables
+      note: 'SELECTED standing elixir — drink one every long rest, exactly as Asterion drinks Giant Strength. +5 Initiative AND immunity to Surprise, lasting until long rest, for about 25g from Danthelon''s, Kith in Grymforge, or Popper at the Circus. THIS REPLACES THE ALERT FEAT Gale cannot afford: BG3 rolls initiative on a d4 + DEX, not a d20, so +5 is larger than the entire die. Gale is the only party member with no competing elixir — Asterion needs Giant Strength and Bonbon wants Bloodlust — so the one-elixir-per-rest slot is free for him. This also settles the Hellrider''s Longbow contest in Bonbon''s favour permanently.'
     - id: bow-of-awareness
       item: Bow of Awareness
       slot: ranged weapons
-      note: 'SELECTED ranged stat stick from Roah Moonglow. +1 Initiative in an otherwise unused slot. ⚠ Gale has no feat left for Alert, so gear is his only initiative lever; if Bonbon does not need Hellrider''s Longbow in Act 3, it belongs here instead.'
+      note: 'DEMOTED to a filler stat stick. +1 Initiative in an otherwise unused slot — worth taking because the slot is empty, but no longer the plan for Gale''s initiative. The standing Elixir of Vigilance gives +5 and Surprise immunity, which is strictly better and does not compete with Bonbon for Hellrider''s Longbow.'
     - id: bracers-of-defence
       item: Bracers of Defence (CONTESTED — goes to Asterion)
       slot: hands
@@ -457,6 +466,10 @@ builds:
       item: Rhapsody
       slot: weapons
       note: 'CORE off hand, carried by Cazador Szarr. Scarlet Remittance stacks +1 attack, damage, AND spell save DC per kill, up to 3. This build uses all three, and the damage applies per ray. Requires Dual Wielder to hold alongside Markoheshkir. ⚠ Per the wiki, as of Patch 5 it only builds on killing living hostile targets.'
+    - id: staff-of-spellpower
+      item: Staff of Spellpower (off-hand swap)
+      slot: weapons
+      note: 'CARRY BOTH, SWAP PER FIGHT. Rated S-tier. Gives +1 spell save DC and +1 spell attack IMMEDIATELY, plus its own Arcane Battery — a second free spell of any level per long rest, stacking with Markoheshkir''s. Rhapsody is better in long, adds-heavy fights that actually generate kills, because its damage bonus applies per ray and its stacks reach +3/+3/+3. Spellpower is better in short boss fights and against undead or constructs, where Rhapsody may never build a single stack (since Patch 5 it only stacks on killing LIVING hostile targets). Two free high-level spells per rest is a large swing for a build this long-rest hungry.'
     - id: spellmight-gloves
       item: Spellmight Gloves
       slot: hands
@@ -487,8 +500,9 @@ builds:
     - **Do not** drop Fireball on Charles or Asterion before Careful Spell arrives at character level 11.
   traps:
   - 'Strange Ox: do NOT kill it at the Druid Grove in Act 1. It only carries the Hat of Fire Acuity from Last Light onward, and that hat is the build. Missing it in Act 2 is recoverable — the Ox reappears in Rivington in Act 3 — but killing it early is not.'
-  - 'Heat vs Haste: Markoheshkir''s Flame of Wrath deals unavoidable self-damage every turn, each hit forcing a CON save against Twinned Haste. Gale is Human (no Halfling Luck) and has no feat left for War Caster, so do not attune Flame of Wrath until Armour of Landfall''s CON-save advantage is equipped.'
-  - 'Only two feats: Sorc 4 and Sorc 8 (character levels 4 and 9). Dual Wielder and Elemental Adept consume both. There is no Alert and no War Caster — initiative and concentration are gear problems on this build.'
+  - 'Heat fights the rest of the Act 3 kit — TREAT FLAME OF WRATH AS A PER-FIGHT TOGGLE, not a permanent attunement. Markoheshkir''s Flame of Wrath deals unavoidable self-damage every turn, and three separate interactions make that worse than the old note implied: (1) Elemental Adept: Fire does NOT protect Gale — it pierces enemy resistance, it does not reduce damage he takes; (2) the Callous Glow Ring adds +2 radiant to Gale''s OWN Heat tick whenever he is Illuminated, and the Coruscation chain keeps him Illuminated on purpose, so his damage ring amplifies his own self-damage; (3) any damage taken strips 2 turns of Arcane Acuity, so every tick chips the exact stat the build exists to stack, on top of forcing a CON save against Twinned Haste. Gale is Human, so there is no Halfling Luck. Do not attune Flame of Wrath until Armour of Landfall is equipped, and consider dropping Coruscation in fights where Acuity uptime matters more than the radiant riders.'
+  - 'Only two feats: Sorc 4 and Sorc 8 (character levels 4 and 9). Dual Wielder and Elemental Adept consume both, so there is no Alert and no War Caster — but BOTH gaps are now solved by consumables and gear rather than left open. Alert is replaced by a standing Elixir of Vigilance (+5 Initiative, Surprise immunity, no competing elixir on Gale). War Caster is replaced by Spidersilk Armour''s CON-save advantage from Act 1, upgraded to Armour of Landfall in Act 3. Note the published tier lists rate Elemental Adept only B while Alert is one of two S+ feats — the Vigilance elixir is what makes spending a feat on Elemental Adept acceptable.'
+  - 'SPELLMIGHT GLOVES ARE UNTESTED — verify before building around them. The whole case for promoting them to core is that −5 spell attack / +1d8 damage applies to EACH Scorching Ray ray, but the wiki never addresses whether the +1d8 is per attack roll or once per spell, and Spellmight is absent from the per-instance notes that DO explicitly name Elemental Affinity and the Callous Glow Ring. On a 7-ray cast the two readings are +7d8 (~31, best in slot) versus +1d8 (~4.5 for a −5 penalty on all seven rolls, actively harmful). Test it on a single cast the moment they are acquired.'
   - 'Fireball friendly fire: Careful Spell is the fourth metamagic at Sorc 10 (character level 11). For the entire run before that, Fireball is an adds-cluster tool and Scorching Ray is the boss tool.'
   - 'Long rests: this build burns slots much faster than the Storm chassis, especially if you lean into damage rather than Command. Bank camp supplies and use Potions of Angelic Slumber in Act 3.'
   - 'Command does not work on Undead, and neither Hold spell works on crit-immune enemies — the same gap Bonbon already has. Act 2 has a lot of Undead; lean on Fireball and Scorching Ray there.'

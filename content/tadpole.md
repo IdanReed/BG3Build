@@ -8,7 +8,7 @@ mechanics:
 - k: The refund = why there are two phases
   v: 'Communing REFUNDS any tadpoles a character already spent on the FIVE inner powers (Psionic Overload, Favourable Beginnings, Force Tunnel, Concentrated Blast, Transfuse Health). It does NOT refund the ten middle-ring powers. Inner powers are eventually free but still tie up specimens until Act 3, so buy only the ones that materially help during Acts 1–2; middle/elite powers remain real spends.'
 - k: Save DC = NEWEST class''s casting stat + Arcane Acuity
-  v: 'Illithid save DCs use the spellcasting-ability modifier of the class you most recently reached LEVEL 1 in — but Fighter and Rogue are IGNORED (no casting stat unless Eldritch Knight / Arcane Trickster). Spell-save-DC bonuses also apply. At level 12: Bonbon = CHA 20 → DC 17 base, then +2 per Helmet-of-Arcane-Acuity weapon hit up to DC 27; Charles = CHA 20 → DC 17, or 18 in Helldusk Gloves; Asterion = WIS 18 because Monk is his newest countable class → DC 17, with nearby enemies disadvantaged by his Resonance Stone; Gale = CHA 20 → DC 17, because Fiend Warlock at character level 7 is now his newest level-1 class — and his Hat of Fire Acuity pushes that to DC 27, the same ceiling as Bonbon.'
+  v: '✅ CONFIRMED on the wiki that gear applies: "All bonuses to spell save DC such as Arcane Acuity or Arcane Enchantment will also apply to illithid powers." That is what puts Bonbon and Gale at DC 27 and makes save-based powers worth buying for both. Illithid save DCs use the spellcasting-ability modifier of the class you most recently reached LEVEL 1 in — but Fighter and Rogue are IGNORED (no casting stat unless Eldritch Knight / Arcane Trickster). Spell-save-DC bonuses also apply. At level 12: Bonbon = CHA 20 → DC 17 base, then +2 per Helmet-of-Arcane-Acuity weapon hit up to DC 27; Charles = CHA 20 → DC 17, or 18 in Helldusk Gloves; Asterion = WIS 18 because Monk is his newest countable class → DC 17, with nearby enemies disadvantaged by his Resonance Stone; Gale = CHA 20 → DC 17, because Fiend Warlock at character level 7 is now his newest level-1 class — and his Hat of Fire Acuity pushes that to DC 27, the same ceiling as Bonbon.'
 - k: Awakened (Zaith''isk, Act 1) → give to BONBON
   v: 'The Crèche Zaith''isk grants ONE character the permanent Awakened passive: all Illithid powers cost a BONUS ACTION instead of an Action (mandatory — you can no longer use them as an Action). Give it to Bonbon: weapon attacks stack Arcane Acuity, then his Bonus Action fires Perilous Stakes or Mind Blast at the party''s best DC. Those powers compete with the Band-of-the-Mystic-Scoundrel Command loop, so choose the right control package for the encounter; Mind Sanctuary is the team-scale release valve. NOT Asterion (his bonus actions are Flurries/Step). Grab it in Act 1 (missable): sit in the Zaith''isk, pass INT DC 12 → WIS DC 15 → CON DC 18 (save-scum in non-Honour; a failed save is −2 to that stat but is cured by consuming any tadpole).'
 - k: Eligibility
@@ -64,8 +64,8 @@ order:
 - step: 8
   act: Act 3
   who: Charles
-  power: Keep Luck + Psionic Overload
-  why: Stay attack-focused — pre-cast Psionic Overload, reserve Luck for a successful non-critical hit on a target that is NOT already Held. Perilous Stakes doubles his radiant smites but never re-doubles Stone psychic. Skip Mind Blast; its Action costs three weapon attacks. Fly is automatic.
+  power: Keep Luck + Psionic Overload; ADD Ability Drain and Shield of Thralls
+  why: 'Stay attack-focused — pre-cast Psionic Overload, reserve Luck for a successful non-critical hit on a target that is NOT already Held (and accept that his own crit-threshold gear will sometimes trigger it early). Ability Drain is a free passive that shaves enemy Strength once a turn. Shield of Thralls is the real addition: a short-rest-recharging pre-cast that bursts into a 3m stun when its temp HP break, which is worth most on the character standing in the middle of the enemies — but it forces him to drop Armour of Agathys, since temp HP never stacks. Perilous Stakes doubles his radiant smites but never re-doubles Stone psychic. Skip Mind Blast; its Action costs three weapon attacks. Fly is automatic.'
 - step: 9
   act: Act 3
   who: Asterion
@@ -74,8 +74,8 @@ order:
 - step: 10
   act: Act 3
   who: Gale
-  power: Shield of Thralls → Freecast
-  why: The no-save path dodges his weak post-dip DC. Freecast = a FREE Twinned Haste each long rest, slot AND sorcery points waived, or a free Quickened/upcast nuke. Do not pre-spend on Favourable Beginnings — transformation grants it and only the first attacker benefits. Avoid Psionic Overload (self-damage threatens Haste) and all save-based powers.
+  power: 'REWRITTEN — Charm → Psionic Dominance → Black Hole, plus Shield of Thralls → Freecast, then Stage Fright'
+  why: 'The old "no save-based powers" rule is obsolete: Arcane Acuity is confirmed to apply to illithid DCs, so Gale casts at DC 27 — joint-best in the party. Buy in reaction-first order, because his Action and Bonus Action are already committed to Scorching Ray. PSIONIC DOMINANCE is the best power in the tree for him: a Reaction that nullifies an enemy spell of level ≤ 4 outright, with no roll on either side. FREECAST stays core (free Twinned Haste, both slot and metamagic waived). BLACK HOLE clusters a pack into one Fireball with a no-save pull. STAGE FRIGHT is enemies-only disadvantage on all attacks — his best pure use of DC 27. ⚠ Never press Concentrated Blast (it ends his own Concentration) and never activate Psionic Overload or Transfuse Health (self-damage costs him Haste and 2 turns of Acuity). Skip Ability Drain, which would only drain Charisma from his spell attacks.'
 characters:
 - name: Charles
   short: Crit-smite amplifier + pre-cast psychic rider
@@ -96,7 +96,17 @@ characters:
     tier: Middle
     prereq: Favourable Beginnings
     when: PRE (Act 1–2)
-    why: Turn a SUCCESSFUL hit into a crit for doubled Smite dice. Only when Hold/Paralysis failed and the attack is not already critical.
+    why: 'Turn a SUCCESSFUL hit into a crit for doubled Smite dice — the best single-target payoff in the party, since Charles has the most dice to double. ⚠ BUT IT WILL OFTEN WASTE ITSELF ON HIM: the wiki states the reaction "triggers on attacks that are not natural 20 rolls but are already critical hits due to Critical Hit Threshold Reductions." Charles stacks exactly those — Hexblade''s Curse, Knife of the Undermountain King, Sarevok''s Horned Helmet, Covert Cowl — so it can fire on a hit that was already going to crit. Keep it on him for the big Smite turns, but ALSO buy it for Asterion and Bonbon, who stack no crit-range reduction and therefore get a reliable trigger. Never spend it on a Held target.'
+  - power: Ability Drain
+    tier: Middle
+    prereq: Psionic Overload (refunded)
+    when: PRE (Act 1–2)
+    why: 'A-tier and previously taken by nobody. A free PASSIVE — no action, no toggle cost. Once per turn when he makes an attack roll, the target''s matching ability drops by 1, which for melee weapons is STRENGTH, cutting the enemy''s own attack and damage. It also counts as applying a condition, which feeds condition-keyed gear. Cheap and permanent.'
+  - power: Shield of Thralls
+    tier: Middle
+    prereq: Transfuse Health (refunded)
+    when: POST (Act 3)
+    why: 'ADDED — it is not just temp HP. 10 temp HP to himself or an ally, and when those temp HP are destroyed the shield BURSTS and may Stun every foe within 3m, recharging on a SHORT rest rather than a long one. That makes it a repeatable pre-cast area stun, and Charles is the frontliner standing in the middle of the enemies, so he is the right carrier. ⚠ Two costs: the burst stun is a FLAT DC 15 INT save, not scaled by anything he has; and temp HP sources never stack, so taking this means dropping Armour of Agathys.'
   - power: Fly
     tier: Elite (auto)
     prereq: —
@@ -132,31 +142,62 @@ characters:
     prereq: Displace
     when: POST (Act 3)
     why: 'First-turn Action — auto-pulls enemies 6m across a 9m radius, then tests DC 17 only for Slow, at disadvantage inside the Stone aura. Recasts five more times per short rest.'
+  - power: Ability Drain
+    tier: Middle
+    prereq: Psionic Overload (refunded)
+    when: PRE (Act 1–2)
+    why: 'A-tier, free passive, and Asterion triggers it more reliably than anyone — he attacks first and often. Once per turn on an attack roll the target''s matching ability drops by 1; unarmed strikes key off Strength (or Dexterity), so it degrades the enemy''s own offence. It also counts as inflicting a condition. ⚠ Note it is once per TURN, not once per hit, so it does not scale with his 4–6 strikes.'
   - power: Cull the Weak
     tier: Middle
     prereq: Concentrated Blast (auto on transform)
     when: POST (Act 3)
-    why: Executes enemies below his evolved-power count and splashes nearby ones. OFF when a kill must trigger Deathstalker invisibility.
+    why: 'Executes enemies below his evolved-power count and splashes nearby ones — and per the wiki the splash damage applies to ENEMIES ONLY, despite the tooltip saying "all nearby creatures." OFF when a kill must trigger Deathstalker invisibility. ⚠ It is also mutually exclusive with Non-Lethal Attacks — enabling one disables the other, so toggle it off before any knockout you need alive.'
 - name: Gale
-  short: Freecast battery — free Twinned Haste (save-based picks now viable too)
-  dc: 'CHA 20 (+5) → DC 17, because the Fiend Warlock level at character 7 is now Gale''s most recently reached level-1 class. The Hat of Fire Acuity then adds up to +10 → DC 27, matching Bonbon''s ceiling.'
-  note: 'CHANGED BY THE FIRE SORLOCK SWITCH: the old plan gave Gale only no-save powers because a WIS-12 Tempest dip left him at DC ~13. He now has the joint-highest illithid save DC in the party, so save-based powers are fully viable for him — the power list below was chosen under the old assumption and is worth revisiting. Freecast remains the standout pick regardless, since it makes Twinned Haste free. Do not spend a pre-transformation specimen on Favourable Beginnings because its shared-target bonus is likely consumed by an earlier attacker and transformation grants it automatically.'
+  short: Reaction-based controller + Freecast battery — the DC-27 rewrite
+  dc: 'CHA 20 (+5) → DC 17, because the Fiend Warlock level at character 7 is Gale''s most recently reached level-1 class. The Hat of Fire Acuity then adds up to +10 → DC 27, matching Bonbon''s ceiling. ⚠ CONFIRMED on the wiki: "All bonuses to spell save DC such as Arcane Acuity or Arcane Enchantment will also apply to illithid powers." His DC 27 is real and applies to every INT/WIS-save power below.'
+  note: 'FULLY REWRITTEN. The old list gave Gale only no-save powers because a WIS-12 Tempest dip left him at DC ~13; as a Fire Sorlock he now has the joint-highest illithid DC in the party, so save-based powers are his best picks, not his worst. The new list is also built around his ACTION ECONOMY: his Action is Scorching Ray/Fireball/Command and his Bonus Action is a Quickened Scorching Ray, and he is NOT taking Awakened — so REACTION and TOGGLE powers are worth far more to him than Action powers. Psionic Overload and Transfuse Health are granted free at transformation and are optional to activate, so they are zero-cost prereqs he simply never presses. ⚠ He has ONE reaction per round, and Psionic Dominance, Charm, Luck and Psionic Backlash all compete with each other AND with Counterspell and Shield — take the reaction powers for coverage, not to use every round.'
   powers:
-  - power: Transfuse Health
-    tier: Inner (auto on transform)
-    prereq: —
+  - power: Psionic Dominance
+    tier: Elite
+    prereq: Charm
     when: POST (Act 3)
-    why: Free on transformation; prereq for Shield of Thralls.
-  - power: Shield of Thralls
-    tier: Middle
-    prereq: Transfuse Health (refunded)
-    when: POST (Act 3)
-    why: 10 temp HP to self/ally, and the gateway to Freecast.
+    why: 'THE TOP PICK, above Freecast. A REACTION — costs him nothing he was using — that outright nullifies an enemy spell of level ≤ his proficiency bonus (4) within 18m, with no roll and no save on either side. 1/long rest. It is a free second Counterspell that cannot fail, and it is the best available insurance for Twinned Haste and for his Arcane Acuity stack, since any damage he takes strips 2 turns of Acuity.'
   - power: Freecast
     tier: Elite
     prereq: Shield of Thralls
     when: POST (Act 3)
-    why: 'THE pick — no-save, so his low DC is irrelevant. Waives BOTH the slot AND the metamagic cost of the next spell → a FREE Twinned Haste turn 1 with the whole pool kept for nukes, or a free Quickened Lightning Bolt / upcast 6th. 1/long rest — and an ally casting Guidance on him RESETS it (cheese). ⚠ Disabled by equipping or unequipping a ranged weapon.'
+    why: 'Still core. A TOGGLE, not an action. Waives BOTH the slot AND the metamagic cost of the next spell → a FREE Twinned Haste on turn 1 with the whole sorcery pool kept for nukes, or a free Quickened/upcast level 6. 1/long rest. ⚠ Both caveats CONFIRMED on the wiki: it is disabled by equipping or unequipping a RANGED weapon, and it is reset by another character applying a condition to him such as Guidance or Aura of Protection.'
+  - power: Black Hole
+    tier: Elite
+    prereq: Psionic Dominance (no extra spend once Dominance is bought)
+    when: POST (Act 3)
+    why: 'Now genuinely good on Gale rather than only on Asterion. The 6m pull needs NO saving throw, over an 18m range and a 9m radius, and the secondary Slow tests INT against his DC 27 — the highest in the party. It clusters a scattered pack into exactly one Fireball, which is the setup his own AoE wants, and recasts five more times before needing a short rest.'
+  - power: Charm
+    tier: Middle
+    prereq: Favourable Beginnings (free on transform)
+    when: POST (Act 3)
+    why: 'Primarily the gate to Psionic Dominance, but a real REACTION in its own right — it charms an attacker after its attack resolves. ⚠ The wiki notes its WIS save is always rolled at ADVANTAGE by the target, so do not rely on it landing even at DC 27.'
+  - power: Stage Fright
+    tier: Middle
+    prereq: Psionic Overload (free on transform)
+    when: POST (Act 3)
+    why: 'The best pure use of his DC 27. WIS save against ALL ENEMIES in the radius — and per the wiki it targets enemies only, so there is no friendly fire — giving them disadvantage on every attack. That is both a damage reduction for the party and concentration defence for his own Haste. Costs an Action, so use it on turns where control beats another Scorching Ray.'
+  - power: Shield of Thralls
+    tier: Middle
+    prereq: Transfuse Health (free on transform)
+    when: POST (Act 3)
+    why: '10 temp HP and the mandatory gate to Freecast. The burst-stun on breaking is a bonus, not a plan — ⚠ it is a FLAT DC 15 INT save, NOT scaled by Arcane Acuity, so his DC 27 does not apply to it.'
+  - power: Cull the Weak
+    tier: Middle (optional)
+    prereq: Concentrated Blast (free on transform)
+    when: POST (Act 3)
+    why: A TOGGLE, so it costs him no action economy at all. Executes anything he chips below his evolved-power count and splashes psychic to nearby enemies only.
+  avoid:
+  - 'NEVER PRESS Concentrated Blast — the wiki states it ENDS the caster''s active Concentration spell when cast. It is free on transformation and sits in his bar as a trap next to Twinned Haste.'
+  - 'Do NOT activate Psionic Overload or Transfuse Health. Both deal self-damage, which forces a concentration check against Haste AND strips 2 turns of Arcane Acuity. They are prereq nodes only.'
+  - 'Skip Ability Drain on Gale specifically. It drains the ability used for the attack roll — Charisma for his spells — which does nothing useful. It belongs on Charles and Asterion, whose melee attacks drain enemy Strength.'
+  - 'Skip Mind Blast. It is an Action, 1/long rest, and its cone targets ALL creatures — friendly fire included. Bonbon carries it because Awakened makes it a Bonus Action for her.'
+  - 'Skip Displacer Beast Shape (polymorph blocks spellcasting) and Absorb Intellect (Action-cost heal behind extra prereqs).'
 - name: Bonbon
   short: Awakened Acuity controller + Freecast utility hub
   dc: CHA 20 → DC 17 base; Helmet of Arcane Acuity adds +2 per damaging weapon hit (19 / 21 / 23 / 25), capped at 27.
@@ -176,7 +217,12 @@ characters:
     tier: Elite
     prereq: — (partial-illithid)
     when: POST (Act 3)
-    why: 'Awakened Bonus Action — 4d8 + CHA psychic cone, Acuity-scaled INT save vs Stun. Use over Band control when its area and Stun are better.'
+    why: 'Awakened Bonus Action — 4d8 + CHA psychic cone, Acuity-scaled INT save vs Stun, and confirmed on the wiki that spell-save-DC bonuses like Arcane Acuity DO apply to illithid powers, so this fires at her DC 27. Use over Band control when its area and Stun are better. ⚠ The cone targets ALL creatures, not just enemies — check the line of fire before pressing it, unlike Stage Fright which is enemies-only.'
+  - power: Luck of the Far Realms
+    tier: Middle (optional)
+    prereq: Favourable Beginnings (refunded)
+    when: POST (Act 3)
+    why: 'Worth buying for her as well as Charles. She stacks no crit-threshold reduction, so unlike him the reaction will not fire early on an attack that was already a crit — it converts a chosen hit, reliably. Best spent on a big Slashing Flourish projectile.'
   - power: Shield of Thralls
     tier: Middle
     prereq: Transfuse Health (refunded)
@@ -191,5 +237,5 @@ characters:
     tier: Elite
     prereq: Freecast (or Psionic Backlash)
     when: POST (Act 3)
-    why: Awakened casts the nexus as a Bonus Action; allies inside can exchange Actions and Bonus Actions. For a party-wide action-economy turn, not just Bonbon's rotation.
+    why: 'Awakened casts the nexus as a Bonus Action; allies inside a 3m radius can exchange Actions and Bonus Actions for 3 turns. For a party-wide action-economy turn, not just Bonbon''s rotation — note each creature gets the swap once, then gains Mind Sanctuary: Depleted for that turn. ⚠ CHECKED AND CLEARED FOR THIS PARTY: the wiki''s alarming clause — that Mind Sanctuary grants Hastened instead, and "removes and prevents other sources of Slowed or Hastened," making an already-hasted creature immediately Lethargic — is explicitly marked "(Honour Mode only)". This guide is non-Honour, so it does NOT threaten Gale''s Twinned Haste. If you ever move this party to Honour Mode, drop this power immediately.'
 ---

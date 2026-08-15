@@ -360,6 +360,18 @@
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px; align-items: start;
   }
+  .item-rows { display: grid; gap: 18px; }
+  /* auto-fill (not auto-fit) keeps the two-card weapons row the same column
+     width as the wider worn-gear row above it. */
+  .item-row .item-slot-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .item-row-label {
+    display: flex; align-items: center; gap: 10px; margin: 0 0 9px;
+    color: var(--text-muted); font-size: .68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .08em;
+  }
+  .item-row-label::after {
+    content: ""; flex: 1; height: 1px; background: var(--border);
+  }
   .item-slot {
     min-width: 0; background: var(--surface-2); border: 1px solid var(--border);
     border-radius: 10px; padding: 12px 14px;
@@ -563,7 +575,7 @@
     .level-choice-list { min-width: 0; }
   }
   @media (max-width: 480px) {
-    .item-slot-grid { grid-template-columns: 1fr; }
+    .item-slot-grid, .item-row .item-slot-grid { grid-template-columns: 1fr; }
     .level-choice { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr) 24px; }
     .level-choice:not(.has-detail) { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr); }
     .header-inner { padding: 12px 14px; }
@@ -957,43 +969,90 @@ function renderLeveling(lv, idHint, keyRoot) {
   return h("div");
 }
 
-const ITEM_SLOT_ORDER = ["Weapons", "Shields", "Armour", "Head", "Hands", "Feet", "Cloaks", "Amulets", "Rings", "Consumables", "Other"];
+/* Slot cards are laid out in three fixed rows — worn kit, then weapons, then
+   consumables — so a build's gear reads top-to-bottom instead of as one long
+   alphabetical grid. Rows and slots with no entries are dropped. */
+const ITEM_SLOT_ROWS = [
+  { label: "Worn gear", slots: ["Head", "Armour", "Hands", "Rings", "Boots", "Amulets", "Cloaks"] },
+  { label: "Weapons", slots: ["Melee Weapons", "Ranged Weapons", "Off-hand & Shields"] },
+  { label: "Consumables", slots: ["Elixirs", "Potions & Oils", "Other"] },
+];
 const ITEM_SLOT_ICONS = {
-  Weapons: "⚔",
-  Shields: "⛨",
-  Armour: "🛡",
   Head: "⛑",
+  Armour: "🛡",
   Hands: "🧤",
-  Feet: "🥾",
-  Cloaks: "🧥",
-  Amulets: "♦",
   Rings: "◉",
-  Consumables: "⚗",
+  Boots: "🥾",
+  Amulets: "♦",
+  Cloaks: "🧥",
+  "Melee Weapons": "⚔",
+  "Ranged Weapons": "🏹",
+  "Off-hand & Shields": "⛨",
+  Elixirs: "⚗",
+  "Potions & Oils": "🧪",
   Other: "✦",
 };
 
+/* Content writes slots freely ("feet", "off-hand", "consumables", …); map the
+   spellings that exist onto the card names above. */
+const ITEM_SLOT_ALIASES = {
+  head: "Head", helmet: "Head", helm: "Head", circlet: "Head", hat: "Head",
+  armour: "Armour", armor: "Armour", chest: "Armour", body: "Armour", robes: "Armour",
+  hands: "Hands", gloves: "Hands", bracers: "Hands", gauntlets: "Hands",
+  rings: "Rings", ring: "Rings",
+  feet: "Boots", boots: "Boots", shoes: "Boots",
+  amulets: "Amulets", amulet: "Amulets", neck: "Amulets", necklace: "Amulets",
+  cloaks: "Cloaks", cloak: "Cloaks", back: "Cloaks",
+  weapons: "Melee Weapons", weapon: "Melee Weapons", melee: "Melee Weapons",
+  "melee weapons": "Melee Weapons", "main hand": "Melee Weapons",
+  "ranged weapons": "Ranged Weapons", ranged: "Ranged Weapons", "ranged weapon": "Ranged Weapons",
+  "off-hand": "Off-hand & Shields", "off hand": "Off-hand & Shields", offhand: "Off-hand & Shields",
+  shields: "Off-hand & Shields", shield: "Off-hand & Shields",
+  elixirs: "Elixirs", elixir: "Elixirs",
+  consumables: "Potions & Oils", consumable: "Potions & Oils", potions: "Potions & Oils",
+  potion: "Potions & Oils", oils: "Potions & Oils", coatings: "Potions & Oils", arrows: "Potions & Oils",
+  other: "Other", misc: "Other", "party aura": "Other",
+};
+
+const RANGED_WEAPON_WORDS = ["bow", "crossbow", "sling", "dart", "javelin", "ranged"];
+
 function itemSlotIcon(slot) {
   return ITEM_SLOT_ICONS[slot] || ITEM_SLOT_ICONS.Other;
+}
+
+/* Keyword fallback for entries whose slot is missing or unrecognised. */
+function classifyItemText(text) {
+  const hasAny = (words) => words.some((word) => text.includes(word));
+  if (hasAny(RANGED_WEAPON_WORDS)) return "Ranged Weapons";
+  if (hasAny(["shield", "warboard", "off-hand", "off hand"])) return "Off-hand & Shields";
+  if (hasAny(["blade", "pike", "sword", "staff", "markoheshkir", "phalar", "weapon"])) return "Melee Weapons";
+  if (hasAny(["armour", "armor", "robe", "cloth", "mail"])) return "Armour";
+  if (hasAny(["helmet", "helm", "head", "cowl", "mask", "diadem", "birthright", "hat"])) return "Head";
+  if (hasAny(["glove", "bracer", "gauntlet"])) return "Hands";
+  if (hasAny(["boot", "night walker", "shoes"])) return "Boots";
+  if (hasAny(["cloak", "mantle", "cape"])) return "Cloaks";
+  if (hasAny(["amulet", "neck", "periapt"])) return "Amulets";
+  if (hasAny(["ring", "band"])) return "Rings";
+  if (hasAny(["elixir"])) return "Elixirs";
+  if (hasAny(["potion", "oil", "coating", "arrow", "hair"])) return "Potions & Oils";
+  return "Other";
 }
 
 /* Prefer an explicit content slot, but classify legacy entries so older content
    remains useful. This is intentionally presentation-only; checklist keys still
    derive from the content IDs. */
 function itemSlot(entry) {
-  if (entry && typeof entry === "object" && has(entry.slot)) return humanize(entry.slot);
-  const text = String(entry && typeof entry === "object" ? (entry.item || entry.id || "") : entry).toLowerCase();
-  const hasAny = (words) => words.some((word) => text.includes(word));
-  if (hasAny(["bow", "blade", "pike", "sword", "staff", "markoheshkir", "phalar", "weapon"])) return "Weapons";
-  if (hasAny(["shield", "warboard"])) return "Shields";
-  if (hasAny(["armour", "armor", "robe", "cloth", "mail"])) return "Armour";
-  if (hasAny(["helmet", "helm", "head", "cowl", "mask", "diadem", "birthright", "hat"])) return "Head";
-  if (hasAny(["glove", "bracer", "gauntlet"])) return "Hands";
-  if (hasAny(["boot", "night walker", "shoes"])) return "Feet";
-  if (hasAny(["cloak", "mantle", "cape"])) return "Cloaks";
-  if (hasAny(["amulet", "neck", "periapt"])) return "Amulets";
-  if (hasAny(["ring", "band"])) return "Rings";
-  if (hasAny(["elixir", "potion", "hair"])) return "Consumables";
-  return "Other";
+  const isObj = entry && typeof entry === "object";
+  const text = String(isObj ? entry.item || entry.id || "" : entry).toLowerCase();
+  const declared = isObj && has(entry.slot) ? String(entry.slot).trim().toLowerCase() : "";
+  const slot = declared
+    ? ITEM_SLOT_ALIASES[declared] || classifyItemText(declared + " " + text)
+    : classifyItemText(text);
+  // Content files file bows and crossbows under the generic "weapons" slot, and
+  // elixirs under "consumables"; split both so the narrower cards stay accurate.
+  if (slot === "Melee Weapons" && RANGED_WEAPON_WORDS.some((word) => text.includes(word))) return "Ranged Weapons";
+  if (slot === "Potions & Oils" && text.includes("elixir")) return "Elixirs";
+  return slot;
 }
 
 function tooltipContent(summary, facts) {
@@ -1221,17 +1280,27 @@ function itemActPanel(entries, act, keyRoot) {
     if (!groups.has(slot)) groups.set(slot, []);
     groups.get(slot).push(entry);
   });
-  const slots = Array.from(groups.keys()).sort((a, b) => {
-    const ai = ITEM_SLOT_ORDER.indexOf(a);
-    const bi = ITEM_SLOT_ORDER.indexOf(b);
-    return (ai < 0 ? ITEM_SLOT_ORDER.length : ai) - (bi < 0 ? ITEM_SLOT_ORDER.length : bi) || a.localeCompare(b);
+  const placed = new Set();
+  const rows = ITEM_SLOT_ROWS.map((row) => {
+    const slots = row.slots.filter((slot) => groups.has(slot));
+    slots.forEach((slot) => placed.add(slot));
+    return { label: row.label, slots };
   });
+  // A slot name the rows don't know about still has to render, so it trails the
+  // last row rather than disappearing.
+  const extra = Array.from(groups.keys()).filter((slot) => !placed.has(slot)).sort();
+  rows[rows.length - 1].slots = rows[rows.length - 1].slots.concat(extra);
   return h(
     "div",
-    { class: "item-slot-grid" },
-    slots.map((slot) => h("section", { class: "item-slot" },
-      cardHeading(slot, itemSlotIcon(slot), groups.get(slot).length),
-      itemChecklist(groups.get(slot), act, keyRoot)
+    { class: "item-rows" },
+    rows.filter((row) => row.slots.length).map((row) => h("section", { class: "item-row" },
+      h("h4", { class: "item-row-label" }, row.label),
+      h("div", { class: "item-slot-grid" },
+        row.slots.map((slot) => h("section", { class: "item-slot" },
+          cardHeading(slot, itemSlotIcon(slot), groups.get(slot).length),
+          itemChecklist(groups.get(slot), act, keyRoot)
+        ))
+      )
     ))
   );
 }

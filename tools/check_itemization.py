@@ -53,7 +53,7 @@ RANGED_WORDS = ["bow", "crossbow", "sling", "dart", "javelin", "ranged"]
 ITEM_RE = re.compile(r"^    - id: (?P<id>\S+)\s*$")
 SLOT_RE = re.compile(r"^      slot: (?P<slot>.+?)\s*$")
 NAME_RE = re.compile(r"^      item: (?P<item>.+?)\s*$")
-ACT_RE = re.compile(r"^    (?P<act>act[123]|final):\s*$")
+ACT_RE = re.compile(r"^    (?P<act>act[123]|progression):\s*$")
 ITEMIZATION_RE = re.compile(r"^  itemization:\s*$")
 TOP_RE = re.compile(r"^  [a-z_]+:")
 
@@ -132,8 +132,8 @@ def main() -> int:
         if rings < 2:
             print(f"  !! only {rings} ring entries across all acts; two ring slots exist")
             problems += 1
-        if "final" not in acts:
-            print("  !! no 'final' loadout tab")
+        if "progression" not in acts:
+            print("  !! no progression tab")
             problems += 1
     print(f"\n{'OK' if not problems else str(problems) + ' problem(s)'}")
     return 1 if problems else 0

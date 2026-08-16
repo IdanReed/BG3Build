@@ -351,6 +351,47 @@ builds:
       item: Hand Crossbows +2
       slot: ranged weapons
       note: 'Any +2 pair from an Act 3 vendor. Monk 9 Deft Strikes upgrades hand crossbows he is proficient with to 1d8, so the slot is not wasted, but it stays a fallback for targets he cannot reach. ⚠ The Hellfire Hand Crossbow and Ne''er Misser both go to Bonbon, whose entire engine is hand-crossbow hits.'
+    progression:
+    - id: prog-head
+      item: 'Head: Circlet of Psionic Revenge → Mask of Soul Perception'
+      slot: head
+      note: 'Act 1–2 Circlet (Crèche) → Act 3 Mask (Devil''s Fee). Only two entries because almost every good helmet in the game is tagged Light or Medium armour, and per the wiki those "prevent Unarmoured Defence from working" — that single rule disqualifies Covert Cowl, the Dark Justiciar Helmet and Shadow of Menzoberranzan for him permanently.'
+    - id: prog-armour
+      item: 'Chest: Graceful Cloth → Vest of Soul Rejuvenation'
+      slot: armour
+      note: Act 1–2 Graceful Cloth (Lady Esther) → Act 3 Vest (Sorcerous Sundries). The Cloth is Clothing so Unarmoured Defence survives; keep it bagged after the swap because its advantage on Dexterity checks is his pickpocketing.
+    - id: prog-hands
+      item: 'Hands: Bracers of Defence → Flawed Helldusk Gloves → Gloves of Soul Catching'
+      slot: hands
+      note: Act 1 Bracers (Blighted Village) → Act 2 Flawed Helldusk (Dammon, 3rd Infernal Iron) → Act 3 Soul Catching (House of Hope). Defence first while he is fragile, then damage once five strikes a turn make riders worth more than 2 AC.
+    - id: prog-feet
+      item: 'Boots: Disintegrating Night Walkers → Boots of Uninhibited Kushigo'
+      slot: feet
+      note: Act 1–2 Night Walkers (Nere, Grymforge) → Act 3 Kushigo boots (Astral Plane). Boots are not on the Monk armour-exclusion list, so an armour tag never matters here.
+    - id: prog-cloaks
+      item: 'Cloak: Deathstalker Mantle → Cloak of Displacement'
+      slot: cloaks
+      note: Act 1–2 Deathstalker (Dark Urge reward via Charles) → Act 3 Displacement (Danthelon). Nothing in the Act 2 pool beats invisibility-on-kill for a diver who reliably lands a kill each turn.
+    - id: prog-amulets
+      item: 'Amulet: Sentient Amulet → Amulet of the Harpers'
+      slot: amulets
+      note: Act 1 Sentient (Grymforge) → Act 2–3 Harpers (Talli). The Harpers swap is timed to the Resonance Stone — advantage on Wisdom saves cancels the disadvantage the Stone inflicts on its own carrier.
+    - id: prog-rings
+      item: 'Rings: Bracing Band + Crusher''s Ring → Shadow-Cloaked + Eversight → Shadow-Cloaked + Ring of Free Action'
+      slot: rings
+      note: Act 1 Bracing Band (Thrinn) and Crusher's Ring → Act 2 Shadow-Cloaked (Shadow Mastiff Alpha) and Eversight (House of Healing) → Act 3 Shadow-Cloaked and Free Action (Araj). Eversight stays in the bag for any fight inside Charles's Darkness.
+    - id: prog-weapons
+      item: 'Melee: Corellon''s Grace (levels 2–4) → both hands EMPTY for the rest of the run'
+      slot: weapons
+      note: The only slot that ends the game deliberately empty. From character level 5 a held weapon makes Attack and Extra Attack swing it instead of punching, which loses Tavern Brawler and every unarmed rider.
+    - id: prog-ranged
+      item: 'Ranged: Hand Crossbows +1 → Hand Crossbows +2'
+      slot: ranged weapons
+      note: A fallback slot only, for targets he cannot reach. Monk 9 Deft Strikes upgrades hand crossbows he is proficient with to 1d8, so it is not wasted, but Ne'er Misser and the Hellfire Hand Crossbow both go to Bonbon.
+    - id: prog-elixirs
+      item: 'Elixir: Hill Giant Strength → Cloud Giant Strength'
+      slot: consumables
+      note: One every long rest, all game. It drives attack rolls, damage and the Stunning-Strike DC, and it occupies the one-elixir-per-rest slot so no Bloodlust alongside it.
   playstyle: |-
     - **Prep:** drink Giant Strength, enable Manifestation of Mind, and carry the Resonance Stone from Act 2 onward.
     - **Turn:** Stunning Strike the priority target, then Flurry: Topple (or Stagger against casters). Thief 3 adds a second Flurry.

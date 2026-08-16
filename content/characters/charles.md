@@ -552,6 +552,47 @@ builds:
       item: Bhaalist Armour (unlock it, do not wear it)
       slot: armour
       note: 'Sold by the Echo of Abazigal, and Charles as the Dark Urge is the one who unlocks the Murder Tribunal stock. Aura of Murder makes enemies within 3m Vulnerable to PIERCING damage. ⚠ NOT WORN, and the reason is specific: none of his damage is Piercing. Shadow Blade is Psychic, Phalar Aluve is Slashing, Divine Smite is Radiant. The aura would buff nobody — Asterion''s unarmed strikes are Bludgeoning, and Bonbon''s piercing bolts are fired from range, far outside a 3m aura. It also costs 5–7 AC against Helldusk. Buy it on the Bhaal path for completeness, then leave it in the chest.'
+    progression:
+    - id: prog-head
+      item: 'Head: Haste Helm → Covert Cowl → Sarevok''s Horned Helmet'
+      slot: head
+      note: Act 1 Haste Helm (Blighted Village) → Act 2 Covert Cowl (Last Light) → Act 3 Sarevok's (Murder Tribunal). Momentum while he is slow and far away, then crit-threshold reduction once he lives inside his own Darkness. Helm of Balduran is the defensive swap.
+    - id: prog-armour
+      item: 'Chest: Luminous Armour → Adamantine Scale Mail → Helldusk Armour'
+      slot: armour
+      note: Act 1 Luminous (Selûnite Outpost) → Act 2 Adamantine Scale Mail (second Mithral ore) → Act 3 Helldusk (Raphael). Crit immunity in the middle act protects concentration; Helldusk then gives AC 21 and −3 damage, and is legal because it grants its own proficiency.
+    - id: prog-hands
+      item: 'Hands: Gloves of the Growling Underdog → Gloves of Baneful Striking → Helldusk Gloves'
+      slot: hands
+      note: Act 1 early Growling Underdog (Dror Ragzlin) → Act 1 late and Act 2 Baneful Striking (Lady Esther) → Act 3 Helldusk Gloves (Haarlep). Craterflesh Gloves replace Helldusk only on the Bhaal path.
+    - id: prog-feet
+      item: 'Boots: Boots of Striding → Helldusk Boots'
+      slot: feet
+      note: Act 1–2 Striding (Minthara) → Act 3 Helldusk Boots (Wyrm's Rock). Both protect concentration; Helldusk does it better, because Infernal Evasion turns a failed save into a success once per turn.
+    - id: prog-cloaks
+      item: 'Cloak: none available → Cloak of Protection'
+      slot: cloaks
+      note: Empty through Act 1 because the only Act 1 magical cloak is the Dark Urge Mantle he hands to Asterion. Cloak of Protection (Talli) from Act 2 onward — the only Act 2 cloak that touches saving throws, which is what the Risky Ring costs him.
+    - id: prog-amulets
+      item: 'Amulet: Amulet of Misty Step → Amulet of Greater Health'
+      slot: amulets
+      note: Act 1–2 Misty Step (Priestess Gut) → Act 3 Greater Health (House of Hope Archive). Greater Health is the piece that makes the Risky Ring safe, cancelling its disadvantage on Constitution saves outright.
+    - id: prog-rings
+      item: 'Rings: Arcane Synergy + Strange Conduit → Risky Ring + Killer''s Sweetheart'
+      slot: rings
+      note: Act 1 Arcane Synergy and Strange Conduit (both Crèche) → Act 2–3 Risky Ring (Araj) and Killer's Sweetheart (Self-Same Trial). The Shadow Blade Ring needs no slot — summon, then unequip it.
+    - id: prog-weapons
+      item: 'Melee: bound weapon → two-handed Phalar Aluve + GWM → 3d8 Shadow Blade + Phalar off-hand'
+      slot: weapons
+      note: The build's one real respec. Two-handed Phalar with Great Weapon Master carries Act 1 through most of Act 2; the late-Act-2 Resonance Stone triggers the swap to Dual Wielder, Shadow Blade main hand and Phalar off-hand for Shriek. Staff of Arcane Blessing stays a pre-combat buff swap throughout.
+    - id: prog-ranged
+      item: 'Ranged: Hand Crossbows +1 → Hand Crossbows +2'
+      slot: ranged weapons
+      note: A formality. A Darkness cloud blocks ranged attacks into and out of itself, so on any turn he plays his cloud correctly he cannot shoot out of it.
+    - id: prog-consumables
+      item: 'Consumables: Arrows of Darkness → self-cast Darkness'
+      slot: consumables
+      note: Farmed Darkness Arrows supply the advantage engine for free while he is still Warlock 2, and stop mattering once the respec gives him Darkness on his own spell list. Auntie Ethel's Hair goes to CHA 18.
   playstyle: |-
     - **Act 1 through most of Act 2 — two-handed Phalar:** bind Phalar Aluve, keep the off-hand empty, pre-cast Shriek, and enter a farmed Darkness Arrow cloud with Devil's Sight. Maintain Bless, Divine Favour, or Hex because the cloud is concentration-free; toggle GWM All In when advantage makes the −5 acceptable.
     - **Darkness placement (matters now that Gale is a Fire Sorlock):** put the cloud so **Charles is inside it and his target is not**. He is then an unseen attacker — advantage in, disadvantage out — while the enemy stays visible and shootable for Gale. A Darkness cloud explicitly blocks ranged attacks *into and out of* itself, so an enemy standing inside it is one Gale cannot touch, and the party loses focus fire. This costs Charles nothing and lets Gale's Scorching Ray land on the same target, inside Phalar Shriek's 6m aura, where each ray picks up an extra 1d4 Thunder.

@@ -531,6 +531,47 @@ builds:
       item: Birthright (not taken)
       slot: head
       note: 'Would give +2 Charisma to a maximum of 22, but the head slot belongs permanently to the Hat of Fire Acuity and without Acuity the build stops working. ⚠ It does not go to Bonbon either — her head is locked to the Helmet of Arcane Acuity for the same reason, and +2 Charisma is +1 spell save DC against Acuity''s +10. Keep it bagged as an out-of-combat Charisma swap for dialogue checks on whichever of them is the face.'
+    progression:
+    - id: prog-head
+      item: 'Head: The Shadespell Circlet → Hat of Fire Acuity'
+      slot: head
+      note: Act 1 Shadespell (Omeluum) as a rental → Hat of Fire Acuity (Strange Ox at Last Light) permanently from Act 2. The Hat is the build; do not kill the Strange Ox at the Grove in Act 1, because it does not carry the hat until Last Light.
+    - id: prog-armour
+      item: 'Chest: Spidersilk Armour → Armour of Landfall'
+      slot: armour
+      note: Act 1–2 Spidersilk (Minthara) → Act 3 Armour of Landfall (Sorcerous Sundries). Both are chosen for the same reason and nothing else — ADVANTAGE ON CONSTITUTION SAVING THROWS, which is the only thing protecting Twinned Haste on a build with no War Caster and no shield.
+    - id: prog-hands
+      item: 'Hands: Gloves of Belligerent Skies → Spellmight Gloves'
+      slot: hands
+      note: Act 1–2 Belligerent Skies (Crèche) for the Reverberation engine → Act 3 Spellmight (Circus, Find Dribbles the Clown). Spellmight's −5 to hit needs Arcane Acuity to cover it, so cast the first Scorching Ray with them off.
+    - id: prog-feet
+      item: 'Boots: Boots of Stormy Clamour → Evasive Shoes'
+      slot: feet
+      note: Stormy Clamour (Omeluum) for Acts 1–2, where inflicting any condition adds Reverberation → Evasive Shoes in Act 3. A modest ending forced by a hard rule — Boots of Persistence and Vital Conduit Boots both require Medium Armour proficiency, which Sorcerer/Warlock never grants.
+    - id: prog-cloaks
+      item: 'Cloak: none available → Thunderskin Cloak → Cloak of the Weave'
+      slot: cloaks
+      note: Empty in Act 1 → Thunderskin (Araj) in Act 2, which Dazes anything Reverberating that hits him and he is the party's biggest Reverberation source → Cloak of the Weave (Helsik) in Act 3 for the flat +1 spell save DC and +1 spell attack.
+    - id: prog-amulets
+      item: 'Amulet: Pearl of Power → Spineshudder Amulet'
+      slot: amulets
+      note: Act 1 Pearl (Omeluum) for a free slot each rest → Act 2–3 Spineshudder (Mimic in Isobel's bedroom), which applies Reverberation on ranged spell-attack hits and therefore fires 3–7 times per Scorching Ray.
+    - id: prog-rings
+      item: 'Rings: Ring of Protection + Ring of Mind-Shielding → Callous Glow + Coruscation'
+      slot: rings
+      note: Act 1 Protection (Mol) and Mind-Shielding (Omeluum), both pure concentration insurance → Act 2–3 Callous Glow and Coruscation, which feed each other because Coruscation lights the target that Callous Glow then punishes. Ring of Mental Inhibition is the swap for Command-spam fights.
+    - id: prog-weapons
+      item: 'Staves: Spellsparkler + Melf''s First Staff → Markoheshkir + Rhapsody'
+      slot: weapons
+      note: Dual Wielder at character level 4 is what makes either pair legal, since none of these staves are Light. Spellsparkler and Melf's carry Acts 1–2 — the staves tier list rates Melf's S and says it is often best through Act 2 — then Markoheshkir and Rhapsody take over in Act 3, with Staff of Spellpower as the per-fight off-hand swap.
+    - id: prog-ranged
+      item: 'Ranged: Bow of Awareness → Hellrider Longbow'
+      slot: ranged weapons
+      note: A pure stat-stick slot he never fires. +1 Initiative in Act 1 becomes +3 in Act 3. He wins the Hellrider contest by default because it is Two-Handed and Bonbon's ranged slot is occupied by the hand crossbows that are her whole engine.
+    - id: prog-consumables
+      item: 'Elixir: Elixir of Vigilance, every long rest, all game'
+      slot: consumables
+      note: +5 Initiative and Surprise immunity, and the substitute for the Alert feat this build cannot afford. Initiative in BG3 is d4 + DEX, so +5 is larger than the whole die. He is the only party member with no competing elixir.
   playstyle: |-
     - **Once per long rest:** cast Daylight (Enchant Item) on Bonbon's main-hand weapon. It lasts until the next rest and keeps Gale lit for the Coruscation chain.
     - **Turn 1:** Twinned Haste (Action) if nobody else supplies it, then a Quickened Scorching Ray (bonus action) into a high-HP target with Spellmight Gloves OFF. A level-4 slot fires 5 rays and takes Arcane Acuity to its 10 cap.

@@ -546,6 +546,47 @@ builds:
       item: Boots of Persistence
       slot: feet
       note: 'Sold by Dammon at the Forge of the Nine in the Lower City. Permanent Freedom of Movement and Longstrider — Freedom of Movement makes a Ring of Free Action unnecessary and frees her second ring slot for Caustic Band. Medium armour proficiency is required and Fighter 1 supplies it. ⚠ Helldusk Boots are the better item in the abstract but go to Charles, who has save disadvantage to undo; Gale cannot wear Persistence at all, so this is the allocation that leaves nobody stranded.'
+    progression:
+    - id: prog-head
+      item: 'Head: Grymskull Helm → Diadem of Arcane Synergy → Helmet of Arcane Acuity'
+      slot: head
+      note: Free Grymskull crit immunity as a stopgap → Diadem (Crèche) for CHA on ranged hits → Helmet of Arcane Acuity (Mason's Guild, Act 2) for the rest of the run. The Helmet never comes off again — Birthright's +2 Charisma is +1 spell DC against Acuity's +10.
+    - id: prog-armour
+      item: 'Chest: The Protecty Sparkswall → Adamantine Splint Armour → Armour of Agility'
+      slot: armour
+      note: Act 1 early Protecty (Grymforge) for +1 spell DC → Act 1 late and Act 2 Adamantine Splint (first Mithral ore) for AC 18 and crit immunity → Act 3 Armour of Agility (Stormshore Armoury) for AC 21 and +2 saves. Keep the Splint bagged for fights where crit immunity beats raw AC.
+    - id: prog-hands
+      item: 'Hands: Gloves of Archery → Gloves of Dexterity'
+      slot: hands
+      note: Act 1 early Archery gloves (Grat) → Gloves of Dexterity from the Crèche for the rest of the run. Nothing later beats DEX 18 plus +1 to every attack roll on a character making four attack rolls a turn.
+    - id: prog-feet
+      item: 'Boots: Boots of Speed → Boots of Brilliance → Boots of Persistence'
+      slot: feet
+      note: Act 1 Boots of Speed for a character with no innate mobility → Act 2 Boots of Brilliance (Gauntlet of Shar) once Bardic Inspiration becomes the bottleneck → Act 3 Boots of Persistence (Dammon) for permanent Freedom of Movement, which frees a ring slot.
+    - id: prog-cloaks
+      item: 'Cloak: none available → Cloak of Cunning Brume → Wavemother''s Cloak'
+      slot: cloaks
+      note: Empty in Act 1 because no magical cloak exists then → cheap Cunning Brume (Mattis) as a backline escape → Wavemother's Cloak (Water Queen's House) in Act 3, whose +2 AC and +2 saves refresh every turn she is not hit, which for her is most of them.
+    - id: prog-amulets
+      item: 'Amulet: Broodmother''s Revenge → Spellcrux Amulet'
+      slot: amulets
+      note: Act 1 Broodmother's (Kagha) while her bonus action is free for Healing Word → Act 2–3 Spellcrux (Moonrise Prison Warden), which returns a level-6 slot as a bonus action once per long rest — a second six-target Command.
+    - id: prog-rings
+      item: 'Rings: Whispering Promise + Caustic Band → Band of the Mystic Scoundrel + Caustic Band'
+      slot: rings
+      note: Whispering Promise covers levels 1–3 before Charles has Bless and stays useful in any fight he concentrates elsewhere; Caustic Band runs all game. The Band of the Mystic Scoundrel (Chult jungle, via Akabi's wheel) takes the first slot in Act 3 and turns her control spells into bonus actions.
+    - id: prog-weapons
+      item: 'Melee: Club of Hill Giant Strength + Knife of the Undermountain King, all game'
+      slot: weapons
+      note: A stat-stick set she never actually swings. The Club supplies STR 19 for the Titanstring rider in Act 1, and the Knife's crit-threshold reduction is global — it improves her bolts and spell attacks, which is why it keeps the slot after Titanstring is retired.
+    - id: prog-ranged
+      item: 'Ranged: Titanstring Bow → Ne''er Misser + Hellfire Hand Crossbow'
+      slot: ranged weapons
+      note: THE BUILD'S PIVOT. Titanstring's single big STR-scaled shots carry Act 1; from the Helmet of Arcane Acuity in Act 2 she switches to dual hand crossbows permanently, because three or four smaller hits stack Acuity to its cap far faster than one large one. Gontr Mael is an opening-round swap only, never the default.
+    - id: prog-consumables
+      item: 'Elixir: Bloodlust (default) / Hill Giant Strength (boss fights)'
+      slot: consumables
+      note: Bloodlust whenever the fight has adds she can kill for the extra Action; Hill Giant Strength for a lone boss where no kill is coming. Stock both heavily — Asterion drinks a Giant Strength every single day.
   playstyle: |-
     - **Act 1 default:** equip Titanstring plus the Hill Giant club main hand and Knife of the Undermountain King off-hand, drink Bloodlust, and use Protecty Sparkswall to raise Hold Person/control DC. Use ranged Slashing Flourish for nova damage and trigger Broodmother's Revenge with healing before a multi-projectile turn.
     - **Act 1 alternatives:** use a Hill Giant elixir for a boss with no Bloodlust target; use Adamantine Splint for defence.

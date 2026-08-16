@@ -101,7 +101,7 @@ characters:
     tier: Middle
     prereq: Psionic Overload (refunded)
     when: PRE (Act 1–2)
-    why: 'A-tier and previously taken by nobody. A free PASSIVE — no action, no toggle cost. Once per turn when he makes an attack roll, the target''s matching ability drops by 1, which for melee weapons is STRENGTH, cutting the enemy''s own attack and damage. It also counts as applying a condition, which feeds condition-keyed gear. Cheap and permanent.'
+    why: 'A-tier, and his alone in this party. A free PASSIVE — no action, no toggle cost. Once per turn when he makes an attack roll, the target''s matching ability drops by 1, which for melee weapons is STRENGTH, cutting the enemy''s own attack and damage. It also counts as applying a condition, which feeds condition-keyed gear. Cheap and permanent.'
   - power: Shield of Thralls
     tier: Middle
     prereq: Transfuse Health (refunded)
@@ -155,7 +155,7 @@ characters:
 - name: Gale
   short: Reaction-based controller + Freecast battery — the DC-27 rewrite
   dc: 'CHA 20 (+5) → DC 17, because the Fiend Warlock level at character 7 is Gale''s most recently reached level-1 class. The Hat of Fire Acuity then adds up to +10 → DC 27, matching Bonbon''s ceiling. ⚠ CONFIRMED on the wiki: "All bonuses to spell save DC such as Arcane Acuity or Arcane Enchantment will also apply to illithid powers." His DC 27 is real and applies to every INT/WIS-save power below.'
-  note: 'FULLY REWRITTEN. The old list gave Gale only no-save powers because a WIS-12 Tempest dip left him at DC ~13; as a Fire Sorlock he now has the joint-highest illithid DC in the party, so save-based powers are his best picks, not his worst. The new list is also built around his ACTION ECONOMY: his Action is Scorching Ray/Fireball/Command and his Bonus Action is a Quickened Scorching Ray, and he is NOT taking Awakened — so REACTION and TOGGLE powers are worth far more to him than Action powers. Psionic Overload and Transfuse Health are granted free at transformation and are optional to activate, so they are zero-cost prereqs he simply never presses. ⚠ He has ONE reaction per round, and Psionic Dominance, Charm, Luck and Psionic Backlash all compete with each other AND with Counterspell and Shield — take the reaction powers for coverage, not to use every round.'
+  note: 'Gale has the joint-highest illithid DC in the party, so SAVE-BASED powers are his best picks rather than his worst — do not default him to no-save powers. The list below is built around his ACTION ECONOMY: his Action is Scorching Ray/Fireball/Command and his Bonus Action is a Quickened Scorching Ray, and he is NOT taking Awakened — so REACTION and TOGGLE powers are worth far more to him than Action powers. Psionic Overload and Transfuse Health are granted free at transformation and are optional to activate, so they are zero-cost prereqs he simply never presses. ⚠ He has ONE reaction per round, and Psionic Dominance, Charm, Luck and Psionic Backlash all compete with each other AND with Counterspell and Shield — take the reaction powers for coverage, not to use every round.'
   powers:
   - power: Psionic Dominance
     tier: Elite

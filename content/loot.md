@@ -28,9 +28,9 @@ loot_guide:
   - area: Emerald Grove
     items:
     - name: Ring of Protection
-      for: Asterion
+      for: Gale
       core: true
-      note: Mol's reward for Steal the Sacred Idol, after the Grove resolves (not pickpocketed). +1 AC and all saves → the exposed unarmoured Monk.
+      note: 'Mol''s reward for Steal the Sacred Idol, after the Grove resolves (not pickpocketed). +1 AC and +1 to all saving throws, and the item guides say to put it on the party''s lowest AC — that is Gale, at AC 15 in Spidersilk Armour against Asterion''s 21 unarmoured. The save bonus is also concentration insurance for Twinned Haste, which the whole party plan rests on. Asterion takes the Bracing Band at Grymforge instead and loses nothing.'
     - name: Corellon's Grace
       for: Asterion
       core: true
@@ -38,7 +38,7 @@ loot_guide:
     - name: Safeguard Shield
       for: any
       core: false
-      note: 'Sold by Dammon. +2 AC and +1 to all saving throws. NOT GALE''S — Dual Wielder at character level 4 fills both his hands with staves, so he can never hold a shield. Bonbon is the only other shield-proficient member, and her off-hand goes to the Adamantine Shield; treat this as a sellable or a stopgap for her before Grymforge.'
+      note: 'Sold by Dammon. +2 AC and +1 to all saving throws. NOT GALE''S — Dual Wielder at character level 4 fills both his hands with staves, so he can never hold a shield. Bonbon is the only other shield-proficient member, and both her melee hands hold stat sticks she never swings (Club of Hill Giant Strength and the Knife of the Undermountain King, whose crit-threshold reduction is global); treat this as a sellable or a stopgap for her before the Adamantine Splint at Grymforge.'
     - name: Broodmother's Revenge
       for: Bonbon
       core: true
@@ -187,9 +187,9 @@ loot_guide:
       note: Omeluum (Ebonlake Grotto), after his parasite quest. Inflicting a condition → 2 turns of Reverberation.
     - name: Boots of Speed
       wiki: Boots of Speed
-      for: Charles
-      core: false
-      note: 'LOCATION RECORDED, deliberately not selected. Worn by Thulla in the Ebonlake Grotto — the same Underdark stop as Omeluum, so it costs no detour. Grants a bonus-action Dash, which the item guides rank #14 of the Act 1 top 20 for giving any character Rogue-grade mobility. Charles is the only fit, but it would displace BOOTS OF STRIDING, whose immunity to Prone and forced movement while concentrating is load-bearing for him. ⚠ The same guide flags Boots of Speed as bugged — the opportunity-attack rider reportedly applies to the WEARER. Pick it up as a situational swap for a fight where reaching the target is the whole problem; do not make it the default.'
+      for: Bonbon
+      core: true
+      note: 'Worn by Thulla in the Ebonlake Grotto — the same Underdark stop as Omeluum, so it costs no detour. A bonus-action Dash, ranked #14 of the Act 1 top 20 for handing any character Rogue-grade mobility, and Bonbon is the fit: she has no innate movement of her own and an otherwise-empty Act 1 boot slot, so this is the item that stops her wasting turns out of position. ⚠ NOT ASTERION''S — Step of the Wind already gives him bonus-action Dash and Disengage from Monk 2, so the boots would buy him nothing while displacing the Night Walkers. ⚠ Charles keeps BOOTS OF STRIDING, whose immunity to Prone and forced movement while concentrating is load-bearing for him. ⚠ The item guide flags the opportunity-attack rider as bugged, reportedly applying to the WEARER — take these for the Dash, not the defensive text. Boots of Brilliance take the slot in Act 2.'
     - name: Pearl of Power Amulet
       for: Gale
       core: true
@@ -197,7 +197,7 @@ loot_guide:
     - name: Melf's First Staff
       for: Gale
       core: true
-      note: 'Sold by Blurg. +1 Spell Save DC and +1 spell attacks. NOT a swap any more — with Dual Wielder at character level 4, Gale holds this OFF-HAND alongside Spellsparkler permanently, and the +1 spell attack applies to every individual Scorching Ray ray.'
+      note: 'Sold by Blurg. +1 Spell Save DC and +1 spell attacks. Gale holds it OFF-HAND alongside Spellsparkler permanently from character level 4, once Dual Wielder makes the pair legal — neither staff is Light — and the +1 spell attack applies to every individual Scorching Ray ray.'
     - name: The Shadespell Circlet + The Lifebringer
       for: Gale
       core: true
@@ -227,9 +227,9 @@ loot_guide:
       core: true
       note: Craft from Worg Fangs; check Cyrel, Derryth, Stonemason Kith. Non-Honour, a kill grants an extra Action that benefits from Extra Attack. Hill Giant Strength instead for a lone boss.
     - name: Ring of Mind-Shielding
-      for: any
-      core: false
-      note: Omeluum's parasite-quest reward (persuade, pay or steal). Advantage vs Charmed; cannot be possessed or read.
+      for: Gale
+      core: true
+      note: Omeluum's parasite-quest reward in the Ebonlake Grotto (persuade, intimidate, pay, trade a story or pickpocket). Advantage on saves against Charmed, and the wearer cannot be possessed or read. Gale's second Act 1 ring beside the Ring of Protection — a charmed Gale is a dropped Haste and a Fireball pointed at his own party, so this is concentration insurance as much as a saving throw.
     events:
     - name: Help Omeluum
       note: Myconid Colony. Reward includes the Amulet of Misty Step or a ring, and opens his shop.

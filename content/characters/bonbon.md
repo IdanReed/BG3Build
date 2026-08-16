@@ -475,7 +475,7 @@ builds:
     - id: act2-melee-bonbon
       item: Club of Hill Giant Strength + Knife of the Undermountain King (held over)
       slot: weapons
-      note: 'The melee set stays equipped even though she fights from the ranged set, because the Knife''s crit-threshold reduction is global and applies to her bolts and spell attacks. ⚠ THE ADAMANTINE SHIELD IS NOT PART OF THIS PLAN. It was previously slotted here on the theory that an inactive melee-set shield still grants crit immunity, which the wiki confirms only for the AC bonus. That gamble is unnecessary: both Mithral ores now go to Adamantine Splint Armour for her and Adamantine Scale Mail for Charles, and the Splint gives her the same crit immunity outright while she keeps the Knife.'
+      note: 'The melee set stays equipped even though she fights from the ranged set, because the Knife''s crit-threshold reduction is global and applies to her bolts and spell attacks. ⚠ NO ADAMANTINE SHIELD HERE. The tempting trick is to park one in the inactive melee set for free crit immunity, but the wiki only confirms that the AC bonus carries over from an unheld shield and says nothing about crit immunity. The gamble is unnecessary anyway: both Mithral ores go to Adamantine Splint Armour for her and Adamantine Scale Mail for Charles, and the Splint gives her crit immunity outright while she keeps the Knife.'
     - id: act2-chest-bonbon
       item: Adamantine Splint Armour (held over)
       slot: armour

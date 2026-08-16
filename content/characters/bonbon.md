@@ -34,7 +34,7 @@ builds:
   - Hold Monster
   - Confusion
   - Fear
-  - Magical Secrets → Command + Globe of Invulnerability
+  - Magical Secrets → Command + Conjure Elemental
   creation:
     level1_class: Fighter 1 (taken at character creation)
     level1_gains: 'Archery fighting style (+2 ranged), Second Wind, and — because Fighter is taken FIRST — STR + CON saves, all armour (incl. Heavy) + shields + martial weapons, and 2 Fighter skills.'
@@ -98,13 +98,20 @@ builds:
       save: WIS save
       when: Bard 5
       why: 'Strong 9m AoE incapacitate and a superb Acuity payoff. ⚠ The tier lists rate it only A, not S — the duration is short and ANY damage wakes the targets, so it does not survive a party that is already firing into the pack. Treat it as a way to buy one clean turn, not as a lockdown. Concentration.'
+    - spell: Conjure Elemental
+      level: '5'
+      guide_level: 11
+      school: Conjuration
+      save: None
+      when: Bard 10 (Magical Secrets)
+      why: 'The second Magical Secret. S tier — "a day-long, concentration-free elemental or myrmidon is comparable to adding another character to the party." The concentration-free part is what makes it fit HER specifically: she can field it and still hold Hold Monster, which no other summon of this weight allows. The Water Myrmidon also mass-applies Wet, the party''s only reliable way to strip fire resistance ahead of Gale.'
     - spell: Globe of Invulnerability
       level: '6'
       guide_level: 11
       school: Abjuration
       save: None (Concentration)
-      when: Bard 10 (Magical Secrets)
-      why: 'The second Magical Secret. Rated the #9 spell in the game and unreachable by any other party member, so taking it here is the only way to have it repeatably rather than off scrolls. A dome that blocks incoming spells outright, which is the answer to the Act 3 caster gauntlets and to the Netherbrain''s area attacks. ⚠ Concentration, so it competes with Hold Monster: use it on the turns where survival beats control. Counterspell stays off her list because Gale and Charles already cover that lane, and three carriers is one more than the guides advise.'
+      when: Scroll only — NOT selectable as a Magical Secret
+      why: 'Rated the #9 spell in the game and worth carrying, but she cannot learn it: Magical Secrets at Bard 10 selects from spells up to LEVEL 5 only, and Globe is 6th-level. With no Wizard dip there is no scribing route either, so buy scrolls and cast them for the Act 3 caster gauntlets and the Netherbrain''s area attacks. ⚠ Concentration, so a scroll cast still costs her Hold Monster that turn. Counterspell stays off her list because Gale and Charles already cover that lane, and three carriers is one more than the guides advise.'
     - spell: Hold Person
       level: '2'
       guide_level: 4
@@ -232,10 +239,16 @@ builds:
     - Second Wind
     - STR + CON saving-throw proficiency
     - All armour, shields, and martial-weapon proficiency
+    - Two Fighter skill proficiencies
     recommendations:
     - category: Fighting style
       recommendation: Archery
       note: +2 to ranged attack rolls offsets Sharpshooter and stays essential after the hand-crossbow pivot.
+    - category: Skills
+      recommendation:
+      - Intimidation
+      - Perception
+      note: 'TWO picks, easy to miss behind the Fighting Style — and only because Fighter is the FIRST class here; a Fighter dip taken later grants no skills at all. Intimidation is load-bearing, not flavour: char 11 spends Expertise on it, Expertise requires existing proficiency, and Intimidation appears on neither the Guild Artisan background nor the Swords package — the Fighter list is its only source. Perception is the most-rolled skill in the game. Do NOT take Athletics on a STR 8 character; Jack of All Trades already covers it at half proficiency.'
   - char_level: 2
     class: Bard 1
     gains:
@@ -255,6 +268,9 @@ builds:
       - Dissonant Whispers
       - Faerie Fire
       note: Emergency pickup, ritual party movement, early single-target control, and an early advantage tool.
+    - category: Skill
+      recommendation: Deception
+      note: 'ONE pick, not three — multiclassing into Bard grants a single skill, where a first-class Bard would grant three. It must be Deception: char 4 spends Expertise on it, and Deception appears on neither the Guild Artisan background nor the Fighter list, so this is its only source. Taking it here also makes the build legal on the Half-Elf option, which grants no free skill in BG3 — on Human you could instead put Deception on the racial free skill and spend this pick on Performance.'
   - char_level: 3
     class: Bard 2
     gains:
@@ -336,6 +352,9 @@ builds:
     - category: Spell
       recommendation: Confusion
       note: Wide-area control that scales extremely well with Arcane Acuity.
+    - category: Replacement
+      recommendation: Healing Word or Dissonant Whispers → Greater Invisibility
+      note: 'The free replacement slot every Bard level from 2 onward offers, unused until now. Greater Invisibility is endorsed elsewhere in this build but never actually learned in any row — A tier, "enables repeated attacks or casts while hidden" and "can anchor an entire party strategy." By char 8 the level-1 picks from char 2 are dead weight, so this costs nothing.'
   - char_level: 9
     class: Swords Bard 8
     gains:
@@ -366,20 +385,24 @@ builds:
     - Expertise selections ×2
     - Improved Bardic Inspiration d10
     - Fourth Bard cantrip
+    - One additional Bard spell known (13th)
     recommendations:
     - category: Magical Secrets
       recommendation:
       - Command
-      - Globe of Invulnerability
-      note: 'Command is hers and genuinely unique, because the Band of the Mystic Scoundrel makes it a BONUS ACTION at the party''s highest Acuity DC, and her level 6 slot upcasts it to six targets, neither of which Gale can replicate. Counterspell stays off her list: Gale learns it at Sorc 6 and Charles gets it post-respec, so taking it here would give the party THREE carriers where the guides recommend two. Globe of Invulnerability is rated the #9 spell in the game and is otherwise unreachable by any of the four, and a Magical Secret is what makes it repeatable instead of a scroll purchase. Heroes'' Feast is the alternative pick if you would rather have a permanent party-wide buff than an emergency dome.'
+      - Conjure Elemental
+      note: '⚠ MAGICAL SECRETS STOP AT LEVEL 5, so Globe of Invulnerability is NOT selectable here. bg3.wiki: "At level 10, all Bards can learn two spells up to level 5," and the list is Banishing Smite, Cone of Cold, Conjure Elemental, Contagion, Wall of Stone. Globe and Heroes'' Feast are both 6th-level and neither is on it, and with no Wizard dip there is no scroll-scribing route either — buy Globe scrolls and cast them, that is all. Command takes the first pick: the Band of the Mystic Scoundrel makes hers a BONUS ACTION at the party''s highest Acuity DC and the level 6 slot upcasts it to six targets, neither of which Gale can replicate. Conjure Elemental takes the second — S tier, "a day-long, concentration-free elemental or myrmidon is comparable to adding another character to the party," and because it needs no Concentration she stays free to hold Hold Monster. The Water Myrmidon also mass-applies Wet, which is the party''s only reliable way to strip enemy fire resistance for Gale. Counterspell is the runner-up if you would rather have the interrupt.'
     - category: Expertise
       recommendation:
       - Insight
       - Intimidation
       note: Completes face and dialogue coverage; swap one for a campaign-specific skill if preferred.
+    - category: Spell
+      recommendation: Silence
+      note: 'The FOURTH pick on this level and the easiest of all to miss: Bard 10 grants a normal 13th Bard spell known ON TOP of the two Magical Secrets, which the level-up UI presents as a separate step. Silence is A tier for "caster lockdown" and "since dangerous casters appear throughout the game, Silence has frequent opportunities." It is also load-bearing here — the Magical Secrets note above justifies dropping Counterspell partly by pointing at Silence, yet no row ever learned it.'
     - category: Cantrip
-      recommendation: Light
-      note: Reliable illumination without concentration.
+      recommendation: Minor Illusion
+      note: 'S tier — "moves creatures toward a point without a saving throw," which groups enemies for Gale''s Fireball and relocates NPCs for Asterion''s theft routes. Both published Swords Bard guides name it for the face specifically: "Minor Illusion can distract/relocate entire rooms of NPCs to open up some unique thievery options." Light is the A-tier alternative if the party needs another illumination carrier, but Gale already learns Light at char 4 and Daylight at char 8.'
   - char_level: 12
     class: Swords Bard 11
     gains:

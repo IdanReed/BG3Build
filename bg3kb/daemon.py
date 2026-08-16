@@ -12,6 +12,7 @@ it live (logs to stderr) run it in the foreground:
 from __future__ import annotations
 
 import json
+import os
 import socket
 import sys
 from pathlib import Path
@@ -39,6 +40,14 @@ def _handle(conn: socket.socket) -> None:
 
 def serve() -> None:
     srv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    if os.name != "nt":
+        # Without this, a restart within the TIME_WAIT window of the previous
+        # daemon's client connections fails to bind, this process exits as
+        # "already running", and the CLI waits out its full startup timeout for
+        # a daemon that will never appear. POSIX still refuses the bind while
+        # another daemon actually holds the port, so the check below survives.
+        # Not on Windows, where SO_REUSEADDR would let two daemons bind at once.
+        srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     try:
         srv.bind((C.DAEMON_HOST, C.DAEMON_PORT))
     except OSError:

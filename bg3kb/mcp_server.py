@@ -12,11 +12,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from mcp.server.fastmcp import FastMCP  # noqa: E402
+try:  # mcp >= 2.0 renamed FastMCP to MCPServer; the decorator API is unchanged.
+    from mcp.server.mcpserver import MCPServer as _Server  # noqa: E402
+except ImportError:  # mcp 1.x
+    from mcp.server.fastmcp import FastMCP as _Server  # noqa: E402
 
 from bg3kb.search import search as _search  # noqa: E402
 
-mcp = FastMCP("bg3-wiki")
+mcp = _Server("bg3-wiki")
 
 
 @mcp.tool()

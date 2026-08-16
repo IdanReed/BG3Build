@@ -231,20 +231,24 @@ builds:
     - id: corellon-s-grace
       item: Corellon's Grace (levels 2–4 only)
       slot: weapons
-      note: EARLY ONLY, from Auntie Ethel. Before Tavern Brawler the staff attack is a solid main Action, Natural Pugilist improves bonus-action and Flurry punches, and unarmoured gives +2 saves. ⚠ UNEQUIP at char 5 — Attack/Extra Attack otherwise swing the staff and lose Tavern Brawler, even though Flurry still works.
+      note: 'EARLY ONLY, from Auntie Ethel. Before Tavern Brawler the staff attack is a solid main Action, Natural Pugilist improves bonus-action and Flurry punches, and unarmoured gives +2 saves. ⚠ UNEQUIP at char 5 — Attack/Extra Attack otherwise swing the staff and lose Tavern Brawler, even though Flurry still works. The staves tier list rates it S and says in the same breath that Tavern Brawler monks replace it, so retiring it is the intended arc, not a downgrade.'
     - id: dual-hand-crossbows-plus-one
       item: Dual Hand Crossbows +1
       slot: ranged weapons
-      note: Act-1 weapon traders. Rogue proficiency gives a main-hand shot plus a bonus-action off-hand shot when melee is out of reach. Ranged set only, so the melee hands stay empty for Tavern Brawler.
+      note: Act-1 weapon traders. Rogue proficiency gives a main-hand shot plus a bonus-action off-hand shot when melee is out of reach. The ranged set does not touch the melee hands, so Tavern Brawler stays live.
     - id: graceful-cloth
       item: Graceful Cloth
       wiki: The Graceful Cloth
       slot: armour
-      note: 'Lady Esther, Rosymorn trail. Cat''s Grace = advantage on DEX checks (stealing) plus DEX toward 20. It is Clothing, so Unarmoured Defence still works — worn all game.'
+      note: 'Lady Esther, Rosymorn trail. Clothing, not armour, so Unarmoured Defence still works — worn all game. Cat''s Grace carries DEX to 20 early; once DEX is capped the reason to keep it is ADVANTAGE ON DEXTERITY CHECKS, which is advantage on every Sleight of Hand roll he makes as party thief.'
+    - id: circlet-of-psionic-revenge
+      item: Circlet of Psionic Revenge
+      slot: head
+      note: 'THE ONLY LEGAL HEAD HE HAS IN ACT 1. Carried by Githyanki Inquisitor Ch''r''ai W''wargaz in the Crèche Inquisitor''s Chamber. Succeed a saving throw and the foe that forced it takes 1d4 Psychic. ⚠ THE CONSTRAINT THAT PICKS THIS: per the wiki, "Helmets and Gloves marked as Light, Medium or Heavy Armour count as armour, and prevent Unarmoured Defence from working" — which permanently rules out Covert Cowl (Light) and the Dark Justiciar Helmet (Medium). This circlet carries no proficiency requirement, so it is legal. The +1 mental saves printed on it are Githyanki-only and he does not get them; take it for the retaliation, which the Resonance Stone doubles from Act 2.'
     - id: bracers-of-defence
       item: Bracers of Defence
       slot: hands
-      note: DEFAULT DEFENCE. Blighted Village cellar. +2 AC unarmoured and shieldless. Swap to the offensive gloves below when faster kills beat 2 AC.
+      note: DEFAULT DEFENCE. Blighted Village cellar. +2 AC while unarmoured and shieldless, which with DEX 20 and WIS 18 puts him at AC 21 — the highest no-armour AC in the party. Swap to the offensive gloves below when faster kills beat 2 AC.
     - id: the-sparkle-hands
       item: The Sparkle Hands (offensive alternative)
       slot: hands
@@ -256,7 +260,7 @@ builds:
     - id: gloves-of-thievery
       item: Gloves of Thievery
       slot: hands
-      note: Brem, Zhentarim — pickpocket backup. Keep them bagged once Bracers of Defence take the glove slot, since Graceful Cloth already covers stealing advantage.
+      note: Brem, Zhentarim — pickpocket backup. Keep them bagged, since Graceful Cloth already supplies advantage on the stealing roll and the glove slot is worth more as AC or damage.
     - id: elixir-of-giant-strength
       item: Elixir of Giant Strength (daily)
       wiki: Elixir of Hill Giant Strength
@@ -266,15 +270,15 @@ builds:
       item: Deathstalker Mantle
       wiki: The Deathstalker Mantle
       slot: cloaks
-      note: Dark Urge reward, handed over by Charles. Invisible for 2 turns on a kill — reposition and re-engage, perfect for a diving monk.
+      note: 'Dark Urge reward, handed over by Charles. Invisible for 2 turns on a kill — reposition and re-engage, perfect for a diving monk. ⚠ It is the ONLY magical cloak obtainable in Act 1 by anyone; every other cloak in the game is Act 2 or later, which is why three of the four cloak slots below stay empty until Act 2.'
     - id: disintegrating-night-walkers
       item: Disintegrating Night Walkers
       slot: feet
-      note: Nere, Grymforge. Free Misty Step once per short rest plus immunity to difficult terrain from surfaces, Enwebbed and Entangled — the permanent combat boots over Boots of Speed.
-    - id: ring-of-protection
-      item: Ring of Protection
+      note: Nere, Grymforge. Free Misty Step once per short rest plus immunity to difficult terrain from surfaces, Enwebbed and Entangled — the permanent combat boots. ⚠ They do NOT cover Paralysed or Restrained; the Ring of Free Action closes that in Act 3.
+    - id: bracing-band
+      item: Bracing Band
       slot: rings
-      note: Mol's reward for Steal the Sacred Idol after the Grove resolves. +1 AC and all saving throws — Asterion gets it because he is the exposed unarmoured melee character.
+      note: 'FREE PERMANENT +1 AC, and almost nobody takes it. Sergeant Thrinn''s reward for Find the Missing Boots at Grymforge. "After shoving an enemy, the wearer gains a +1 to their Armour Class until their next turn" — and per the wiki the trigger "is not just Shove", with FLURRY OF BLOWS: PUSH named explicitly on the list. Asterion already throws Push as one of his three Open Hand Flurry variants, so on any turn he pushes something the bonus is simply always up, on the character with no armour to fall back on. ⚠ Thrinn gives ONE of two rewards — take this over Armour of Uninhibited Kushigo, since Graceful Cloth is the standing chest anyway. ⚠ The Ring of Protection goes to Gale, who is the party''s lowest-AC body; Asterion is already at AC 21.'
     - id: crusher-s-ring
       item: Crusher's Ring
       slot: rings
@@ -287,34 +291,66 @@ builds:
       item: Armour of Uninhibited Kushigo (defensive alternative)
       slot: armour
       note: Grymforge, for returning Sergeant Thrinn's boots. During Patient Defence, Kushigo Counter gives a reaction unarmed strike when an attacker misses. Graceful Cloth stays default — use this only for a counter fight.
-    - id: haste-helm-late-act1
-      item: Haste Helm (situational loan)
-      slot: head
-      note: Charles normally keeps it — his Ring frees the head slot. Borrow it when Charles does not need the speed, though Monk movement makes the loan optional.
     act2:
     - id: resonance-stone
       item: Resonance Stone (carries it)
       wiki: Resonance Stone
       slot: other
-      note: 'Resonance Stone (Mind Flayer Colony, late Act 2). He places/carries it — Manifestation of Mind psychic + Psionic Overload across 4–6 hits/turn are all doubled. NEW SYNERGY since Gale became a Fire Sorlock: the aura also gives enemies disadvantage on mental saving throws, and Command and both Hold spells are WIS saves — so anything standing near Asterion is close to unable to resist Gale''s control on top of an Arcane Acuity DC in the low 30s. Keep the Stone near the enemies Gale intends to Command. ⚠ Its aura also makes the party (and him — no Gnome Cunning) psychic-vulnerable + disadvantaged on mental saves; keep it inside Charles''s Aura of Protection, or skip it vs psychic/mind enemies.'
+      note: 'Mind Flayer Colony, late Act 2. He places and carries it: Manifestation of Mind psychic, Psionic Overload and his Circlet''s retaliation are all doubled across 4–6 hits a turn. It also gives enemies disadvantage on mental saving throws, and Command and both Hold spells are WIS saves — so anything standing near Asterion is close to unable to resist Gale''s control. ⚠ IT DOES NOT HELP STUNNING STRIKE: per the wiki the aura''s penalty covers Intelligence, Wisdom and Charisma saves, and Stunning Strike is a CONSTITUTION save. ⚠ The aura also makes the party — and him — psychic-vulnerable and disadvantaged on mental saves; the Amulet of the Harpers below is the counter. Holster it against psychic or mind-affecting enemies, and expect it to stop working once Act 2 ends.'
+    - id: amulet-of-the-harpers
+      item: Amulet of the Harpers
+      slot: amulets
+      note: 'Quartermaster Talli, Last Light Inn. ADVANTAGE ON WISDOM SAVING THROWS, plus Shield 1/long rest. It replaces the Sentient Amulet because it is the direct answer to the Stone he is carrying: the aura hands the whole party disadvantage on mental saves, and advantage cancels that back to a straight roll for the member standing closest to it. It is also the Act 2 answer to Hold Person, Fear and Dominate.'
+    - id: flawed-helldusk-gloves
+      item: Flawed Helldusk Gloves
+      slot: hands
+      note: 'Crafted by Dammon at Last Light Inn once he has been given the THIRD piece of Infernal Iron. Unarmed attacks deal an extra 1d4 Necrotic and can inflict Bleeding, plus +1 STR saves. No armour tag, so Unarmoured Defence survives. Across five strikes a turn that is roughly +12 damage against the +2 AC the Bracers were giving — take the damage while Act 2 enemies are still soft. ⚠ Budget the Infernal Iron deliberately; the same pieces upgrade Karlach''s engine.'
+    - id: shadow-cloaked-ring
+      item: Shadow-Cloaked Ring
+      slot: rings
+      note: 'THE ACT 2 DAMAGE RING. Carried by the Shadow Mastiff Alpha at the Ruined Battlefield — destroy the everburning torches nearby to make it appear. +1d4 against Lightly or Heavily Obscured creatures and creatures made of shadow, and the wiki names weapon AND UNARMED attacks explicitly, which most riders do not. Nearly everything in the Shadow-Cursed Lands qualifies, so it is roughly +12 across a full Flurry turn.'
     - id: eversight-ring
-      item: Eversight Ring (Darkness fights)
+      item: Eversight Ring
       wiki: Eversight Ring
       slot: rings
-      note: House of Healing morgue. Prevents Blindness — equip it when Asterion must fight beside Charles inside magical Darkness; keep Ring of Protection in ordinary encounters.
+      note: 'House of Healing morgue. The wearer cannot be Blinded — and per the wiki that blind immunity "also allows the wearer to see through magical darkness." This is what lets Asterion fight beside Charles inside a Darkness cloud at all; without it he is simply blind in there. It takes the second ring slot from Act 2, displacing Crusher''s Ring.'
+    - id: act2-carryover-asterion
+      item: Held over from Act 1 — Graceful Cloth, Circlet of Psionic Revenge, Night Walkers, Deathstalker Mantle, hand crossbows
+      slot: other
+      note: 'Act 2 offers this build no upgrade in the chest, head, feet, cloak or ranged slots, so those five are settled rather than forgotten. Graceful Cloth stays because it is Clothing and keeps Sleight of Hand advantage. The Circlet stays and gets better under the Stone. Night Walkers stay because nothing in Act 2 beats short-rest Misty Step plus surface immunity. The Deathstalker Mantle stays because the one Act 2 cloak worth having, the Cloak of Protection, goes to Gale.'
     act3:
     - id: gloves-of-soul-catching
       item: Gloves of Soul Catching
       slot: hands
-      note: House of Hope, Hope's reward. +1d10 Force per unarmed hit, +2 CON, and once/turn heal 10 HP OR +5 to an attack or save. Best-in-slot monk gloves; replaces Bracers.
+      note: House of Hope, Hope's reward. +1d10 Force per unarmed hit, +2 CON, and once per turn either heal 10 HP or take +5 to an attack or save. Best-in-slot monk gloves and a clear upgrade on the Flawed Helldusk Gloves.
     - id: mask-of-soul-perception
       item: Mask of Soul Perception
       slot: head
-      note: Devil's Fee — locked chest in Helsik's room, DC 20. +2 to Attack rolls, Initiative and Perception, plus Detect Thoughts.
+      note: Devil's Fee — locked chest in Helsik's room, DC 20. +2 to Attack rolls, Initiative and Perception, plus Detect Thoughts. The first real head upgrade he gets, and it finally retires the Circlet.
     - id: boots-of-uninhibited-kushigo
       item: Boots of Uninhibited Kushigo
       slot: feet
-      note: Astral Plane — Prelate Lir'i'c, at the start of Act 3. Adds his WIS modifier to every unarmed strike, so flat damage on every hit.
+      note: Astral Plane — Prelate Lir'i'c, at the start of Act 3. Adds his WIS modifier to every unarmed strike, so flat damage on every one of 5–6 hits. Boots are not on the Monk armour-exclusion list, so an armour tag on late boots is never a problem for him.
+    - id: vest-of-soul-rejuvenation
+      item: Vest of Soul Rejuvenation
+      slot: armour
+      note: 'ACT 3 CHEST, and the piece that finally beats Graceful Cloth. Sold by Rolan at Sorcerous Sundries, or Lorroakan''s Projection if Rolan is dead. +2 Armour Class on an unarmoured build, 1d4 healing on a successful save against a spell, and Greater Kushigo Counter — a REACTION unarmed strike against any attacker that misses, carrying every one of his riders. It also completes the Soul set beside Gloves of Soul Catching and the Mask of Soul Perception. ⚠ Losing the Cloth costs advantage on Sleight of Hand; keep it bagged and swap back for theft.'
+    - id: cloak-of-displacement
+      item: Cloak of Displacement
+      slot: cloaks
+      note: 'Sold by Entharl Danthelon at Danthelon''s Dancing Axe, Wyrm''s Crossing. At the start of his turn, enemies take DISADVANTAGE on attack rolls against him until he takes damage. He is the only party member with neither armour nor damage reduction, so it is worth more here than on Charles in Helldusk plate. Useful wiki quirk: Displaced is not stripped by anything the game does not count as a hit, including a successful save against a damage-dealing spell.'
+    - id: ring-of-free-action
+      item: Ring of Free Action
+      slot: rings
+      note: 'Araj Oblodra, Crimson Draughts in the Lower City, or from her at Moonrise in Act 2. Ignore difficult terrain and CANNOT BE PARALYSED OR RESTRAINED. His Night Walkers already cover Web, Entangle and Grease but not those two, and Paralysed is what turns a dived monk into a pile of free critical hits.'
+    - id: act3-rings-asterion
+      item: Shadow-Cloaked Ring (second slot, held over)
+      slot: rings
+      note: 'Act 3 still has plenty of obscured interiors and Charles generates his own Darkness, so the +1d4 stays live on most turns. Swap it for the Eversight Ring whenever the plan is to fight inside Charles''s cloud. ⚠ The Callous Glow Ring is NOT his: it needs illuminated targets, which fights both the Shadow-Cursed Lands and Charles''s Darkness, and Gale''s Coruscation chain already lights targets for his own copy.'
+    - id: act3-ranged-asterion
+      item: Hand Crossbows +2
+      slot: ranged weapons
+      note: 'Any +2 pair from an Act 3 vendor. Monk 9 Deft Strikes upgrades hand crossbows he is proficient with to 1d8, so the slot is not wasted, but it stays a fallback for targets he cannot reach. ⚠ The Hellfire Hand Crossbow and Ne''er Misser both go to Bonbon, whose entire engine is hand-crossbow hits.'
   playstyle: |-
     - **Prep:** drink Giant Strength, enable Manifestation of Mind, and carry the Resonance Stone from Act 2 onward.
     - **Turn:** Stunning Strike the priority target, then Flurry: Topple (or Stagger against casters). Thief 3 adds a second Flurry.

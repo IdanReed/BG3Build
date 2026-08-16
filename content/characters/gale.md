@@ -16,7 +16,7 @@ builds:
     WIS: 10
     CHA: 17
   stats_note: 'Point-buy base 8/15/14/8/10/15 = all 27 points (DEX 15 and CHA 15 cost 9 each, CON 14 costs 7, WIS 10 costs 2). Then Human +2 → CHA 17 and +1 → DEX 16. DEX 16 is load-bearing: Draconic Resilience sets unarmoured AC to 13 + DEX, and both Spidersilk Armour and Armour of Landfall are 13 + DEX light armour, so DEX is Gale''s entire AC. WIS sits at 10 because nothing in the build keys off it.'
-  ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss, Cloister of Sombre Embrace in Act 3). CHA 20 is the target and no ASI is needed to reach it, which is what frees both feats for Dual Wielder and Elemental Adept. Birthright (+2 CHA → 22) is NOT usable here: the head slot belongs permanently to the Hat of Fire Acuity, so Birthright goes to Bonbon.'
+  ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss, Cloister of Sombre Embrace in Act 3). CHA 20 is the target and no ASI is needed to reach it, which is what frees both feats for Dual Wielder and Elemental Adept. Birthright (+2 CHA → 22) is NOT worn by anyone in this party: Gale''s head belongs permanently to the Hat of Fire Acuity and Bonbon''s to the Helmet of Arcane Acuity, and +2 Charisma is +1 spell save DC against Acuity''s +10. Keep it bagged as an out-of-combat dialogue swap.'
   metamagic:
   - Twinned + Extended (Sorc 2)
   - Quickened (Sorc 3)
@@ -32,7 +32,7 @@ builds:
   key_spells:
   - Scorching Ray (the core damage engine — every rider applies per ray)
   - Fireball (AoE; Careful Spell only arrives at char 11)
-  - Haste (Twinned — the party engine, now online at char 5)
+  - Haste (Twinned — the party engine, online at char 5)
   - Command (Warlock — NOT Concentration, so it coexists with Haste)
   - Hold Person / Hold Monster (Charles's auto-crit setup)
   - Counterspell
@@ -48,7 +48,7 @@ builds:
       skills: Sage (Arcana, History) + 2 Sorcerer picks + Human extra.
     starting_cantrips: 'Fire Bolt, Friends, Minor Illusion, and Mage Hand. Cantrips are permanent (no replacement), and this build stops using them for damage after character level 3, so pick for utility rather than scaling.'
     starting_spells: 'Shield and Magic Missile, plus the free Burning Hands from Red ancestry. Magic Missile is a placeholder that gets replaced by Counterspell at Sorc 6.'
-    notes: 'CON + CHA saves from level 1 is a real upgrade over the old Cleric-first bridge, and Twinned Haste now lands at character level 5 instead of 6. The cost is that the party loses Gale''s Guidance, Bless, Healing Word, Bane, and Create Water entirely — see the party plan''s Act 1 coverage table for where each of those moves.'
+    notes: 'CON + CHA save proficiency from character level 1, and Twinned Haste online at character level 5. Gale supplies no Guidance, Bless, Healing Word, Bane or Create Water — see the party plan''s Act 1 coverage table for who owns each of those instead.'
   spells:
     note: 'Sorcerer is a KNOWN caster (learn on level-up, replace 1 per level); 12 spells known at Sorc 11, plus the free Burning Hands. The Warlock level adds Command and Hex as separately-known Warlock spells. Mandatory = the Scorching Ray damage engine, Twinned Haste, and Command; Recommended = flex utility.'
     mandatory:
@@ -402,110 +402,135 @@ builds:
     - id: the-spellsparkler
       item: The Spellsparkler
       slot: weapons
-      note: 'SELECTED main hand from Counsellor Florrick at Waukeen''s Rest. Even better on this build than on the Storm one: Scorching Ray''s 3–5 separate damage instances build Lightning Charges extremely fast. ⚠ It is "Consumable by Gale" — wield it, do not feed it to the Netherese orb.'
+      note: 'SELECTED main hand, rewarded by Counsellor Florrick at Waukeen''s Rest for Rescue the Grand Duke. Rated A on the staves tier list, which names Scorching Ray specifically: each of the 3–5 separate damage instances grants 2 Lightning Charges, and charges give +1 to attack rolls and +1 Lightning damage, bursting for 1d8 at five stacks. ⚠ It carries no enchantment bonus, so it is a rider stick, not an accuracy stick — that is Melf''s job. ⚠ It is "Consumable by Gale" — wield it, do not feed it to the Netherese orb.'
     - id: melf-s-first-staff
       item: Melf's First Staff
       slot: weapons
-      note: 'SELECTED off hand from Blurg in the Underdark, equipped from character level 4 once Dual Wielder is taken. +1 Spell Save DC and +1 spell attack rolls. On the Storm build this was an either/or swap with Spellsparkler; on this build Dual Wielder lets Gale hold BOTH, and the +1 spell attack matters on every single ray.'
+      note: 'SELECTED off hand from Blurg in the Underdark, equipped from character level 4 once Dual Wielder is taken. +1 Spell Save DC and +1 spell attack rolls, and the staves tier list rates it S — "the defining early caster bonus… often best through Acts 1 and 2." The +1 spell attack applies to every single ray, and the +1 DC is what carries his Command and Hold Person. ⚠ Neither staff is Light, so Dual Wielder is what makes the pair legal at all; before character level 4 he holds Spellsparkler alone.'
     - id: shadespell-circlet
       item: The Shadespell Circlet
       slot: head
-      note: 'BRIDGE head from Omeluum after Help Omeluum Investigate the Parasite. +1 Spell Save DC while Gale is obscured. It is replaced permanently by the Hat of Fire Acuity in Act 2, so treat it as an Act 1 rental.'
+      note: ACT 1 HEAD, from Omeluum after Help Omeluum Investigate the Parasite. +1 Spell Save DC while Gale is obscured. It is replaced permanently by the Hat of Fire Acuity in Act 2, so treat it as an Act 1 rental.
     - id: boots-of-stormy-clamour
       item: Boots of Stormy Clamour
       slot: feet
-      note: 'SELECTED boots from Omeluum. Inflicting a condition applies 2 turns of Reverberation. Much stronger here than on the Storm build, because Gale now inflicts conditions constantly — Radiating Orb from Coruscation, Mental Fatigue from the Ring of Mental Inhibition, and Command itself.'
+      note: 'SELECTED boots from Omeluum, rated #7 of the 20 best Act 1 items and called "build-defining… later." Inflicting a condition applies 2 turns of Reverberation, and Gale inflicts conditions constantly — Radiating Orb from Coruscation, Mental Fatigue from the Ring of Mental Inhibition, and Command itself.'
     - id: gloves-of-belligerent-skies
       item: Gloves of Belligerent Skies
       slot: hands
-      note: 'SELECTED late-Act-1 gloves from the Crèche Inquisitor''s Chamber. Thunder/Lightning/RADIANT damage applies 2 turns of Reverberation — and once the Callous Glow Ring is online in Act 2, every ray deals 2 radiant, so these proc per ray. They stay competitive until Spellmight Gloves arrive in Act 3, at which point compare raw damage against the Reverberation-to-Prone engine.'
+      note: 'SELECTED late-Act-1 gloves, in the elegant chest in the Crèche Inquisitor''s Chamber. Thunder, Lightning or RADIANT damage applies 2 turns of Reverberation — and once the Callous Glow Ring is online in Act 2 every ray deals 2 radiant, so these proc per ray. ⚠ Charles has a real claim on them (Divine Smite is Radiant, and the wiki notes Phalar Aluve''s Shriek Thunder triggers them correctly in Honour Mode specifically) — they stay with Gale because he applies the rider 5–7 times per cast against Charles''s two swings.'
     - id: pearl-of-power-amulet
       item: Pearl of Power Amulet
       slot: amulets
-      note: 'SELECTED resource neck from Omeluum. Restores one spell slot of level 3 or lower each long rest — normally another Haste or Scorching Ray. This build is famously long-rest hungry, so the free slot matters more than it did before.'
+      note: SELECTED resource neck from Omeluum. Restores one spell slot of level 3 or lower each long rest — normally another Haste or Scorching Ray. This build empties its slots fast, so a free one every rest is real.
     - id: spidersilk-armour
       item: Spidersilk Armour
       slot: armour
-      note: 'SELECTED Act 1 chest, and the answer to this build''s worst structural problem. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra to acquire. AC 12 + DEX and +1 Stealth, but the reason to wear it is ADVANTAGE ON CONSTITUTION SAVING THROWS. Gale has no War Caster, no feat left to buy one, and no Safeguard Shield after Dual Wielder, so this is his only protection for Twinned Haste — and it arrives in Act 1 rather than waiting for Armour of Landfall in Act 3. ⚠ Costs exactly 1 AC versus going unarmoured, since Draconic Resilience is 13 + DEX; take the trade, because Haste is the concentration the entire party plan is built on.'
+      note: 'SELECTED Act 1 chest, and the answer to this build''s worst structural problem. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra to acquire. AC 12 + DEX and +1 Stealth, but the reason to wear it is ADVANTAGE ON CONSTITUTION SAVING THROWS. Gale has no War Caster, no feat left to buy one, and no shield once Dual Wielder fills both hands, so this is his only protection for Twinned Haste — and it arrives in Act 1 rather than waiting for Armour of Landfall in Act 3. ⚠ Costs exactly 1 AC versus going unarmoured, since Draconic Resilience is 13 + DEX; take the trade, because Haste is the concentration the entire party plan is built on.'
     - id: elixir-of-vigilance
       item: Elixir of Vigilance (daily)
       wiki: Elixir of Vigilance
       slot: consumables
-      note: 'SELECTED standing elixir — drink one every long rest, exactly as Asterion drinks Giant Strength. +5 Initiative AND immunity to Surprise, lasting until long rest, for about 25g from Danthelon''s, Kith in Grymforge, or Popper at the Circus. THIS REPLACES THE ALERT FEAT Gale cannot afford: BG3 rolls initiative on a d4 + DEX, not a d20, so +5 is larger than the entire die. Gale is the only party member with no competing elixir — Asterion needs Giant Strength and Bonbon wants Bloodlust — so the one-elixir-per-rest slot is free for him. This also settles the Hellrider''s Longbow contest in Bonbon''s favour permanently.'
+      note: 'SELECTED standing elixir — drink one every long rest, exactly as Asterion drinks Giant Strength. +5 Initiative AND immunity to Surprise, lasting until long rest, for about 25g from Danthelon''s, Kith in Grymforge, or Popper at the Circus. THIS IS WHAT REPLACES THE ALERT FEAT Gale cannot afford: BG3 rolls initiative on a d4 + DEX, not a d20, so +5 is larger than the entire die. Gale is the only party member with no competing elixir — Asterion needs Giant Strength and Bonbon wants Bloodlust — so the one-elixir-per-rest slot is free for him.'
     - id: bow-of-awareness
       item: Bow of Awareness
       slot: ranged weapons
-      note: 'DEMOTED to a filler stat stick. +1 Initiative in an otherwise unused slot — worth taking because the slot is empty, but no longer the plan for Gale''s initiative. The standing Elixir of Vigilance gives +5 and Surprise immunity, which is strictly better and does not compete with Bonbon for Hellrider''s Longbow.'
-    - id: bracers-of-defence
-      item: Bracers of Defence (CONTESTED — goes to Asterion)
-      slot: hands
-      note: 'The published Sorlock guide calls these an early core item, and Gale does qualify (no armour, no shield). This party gives them to Asterion, whose unarmoured AC is doing more work. Gale sits at AC 13 + DEX 3 = 16 from Draconic Resilience through Act 1 and relies on Shield for spikes.'
-    - id: safeguard-shield
-      item: Safeguard Shield (DROPPED from this build)
-      slot: shields
-      note: 'Was core on the Storm build for +2 AC and +1 to all saves protecting Haste concentration. Dual Wielder at character level 4 takes the off-hand permanently, so Gale gives this up. It is the main defensive regression of the switch — free it for another party member.'
+      note: ACT 1 ranged filler. +1 Initiative in a slot he otherwise leaves empty, stacking with the standing Elixir of Vigilance. He never fires it; Hellrider Longbow replaces it in Act 3 for +3.
+    - id: ring-of-protection
+      item: Ring of Protection
+      slot: rings
+      note: 'HIS, not Asterion''s. Mol''s reward for Steal the Sacred Idol once the Grove resolves, and rated #20 of 20 with the note that it should "shore up the party''s lowest AC." That is Gale: Spidersilk puts him at AC 15, against Asterion''s 21 unarmoured. The +1 to all saving throws is also concentration insurance for Twinned Haste, which is what the party plan rests on. Asterion takes the Bracing Band instead and loses nothing.'
+    - id: ring-of-mind-shielding
+      item: Ring of Mind-Shielding
+      slot: rings
+      note: 'Offered by Omeluum in the Ebonlake Grotto after his quest — persuade, intimidate, pay, trade a story, or pickpocket. Advantage on saving throws against Charmed. A charmed Gale is a dropped Haste and a Fireball pointed at his own party, so this is concentration protection as much as it is a save. The wiki calls it "particularly useful in Act One" for the Harpies'' Luring Song.'
+    - id: act1-cloak-gale
+      item: No cloak exists yet
+      slot: cloaks
+      note: Deliberately empty. The only magical cloak obtainable anywhere in Act 1 is the Dark Urge's Deathstalker Mantle, which goes to Asterion. Gale's slot opens at Last Light in Act 2.
     act2:
     - id: hat-of-fire-acuity
       item: Hat of Fire Acuity
       slot: head
       note: 'CORE — the item that turns the build on. Carried by the Strange Ox at Dammon''s blacksmith in Last Light Inn. Dealing Fire damage grants 2 turns of Arcane Acuity, capped at 10; each remaining turn is +1 spell attack AND +1 spell save DC. Because each Scorching Ray ray deals Fire damage separately, one level-4 cast (5 rays) takes Gale from 0 to the 10 cap. ⚠ DO NOT kill the Strange Ox at the Druid Grove in Act 1 — it does not carry the hat until Last Light. If you miss it in Act 2, the Ox reappears in Rivington on a hill west of the requisitioned barn in Act 3.'
-    - id: ring-of-mental-inhibition
-      item: Ring of Mental Inhibition
-      slot: rings
-      note: 'CONTROL ring, in a locked chest in the House in Deep Shadows, just east of the Shadowed Battlefield waypoint. When a foe fails a save against Gale''s spells they gain Mental Fatigue for 2 turns, which stacks the odds on the next Command. ⚠ Per the wiki it does NOT trigger on the saves a creature makes to shake off an existing effect, so it does not extend Hold Person. It also feeds Boots of Stormy Clamour, since applying it is inflicting a condition.'
     - id: callous-glow-ring
       item: Callous Glow Ring
       slot: rings
-      note: 'DAMAGE ring, in the opulent chest in the vault room near Balthazar in the Gauntlet of Shar. +2 Radiant damage against ILLUMINATED targets — applied per ray, so up to +14 on a level-6 Scorching Ray. The radiant damage also procs Gloves of Belligerent Skies. ⚠ Take it off against Shar worshippers and Justiciars.'
+      note: 'DAMAGE ring, in the opulent chest in the vault room near Balthazar in the Gauntlet of Shar. +2 Radiant damage against ILLUMINATED targets — and the wiki names Scorching Ray explicitly among the multi-instance spells that apply it per instance, so up to +14 on a level-6 cast. The radiant damage also procs Gloves of Belligerent Skies. ⚠ Take it off against Shar worshippers and Justiciars. ⚠ It stays with Gale rather than moving to Asterion or Bonbon because his ray count is the highest in the party and his own Coruscation Ring is what illuminates the target in the first place.'
     - id: coruscation-ring
       item: Coruscation Ring
       slot: rings
-      note: 'THE illumination engine, and the reason the light rules do not conflict with Charles. Per the wiki, Coruscation applies Radiating Orb when the WEARER is illuminated — the target does not need to be lit. Radiating Orb then makes the target Illuminated, which is what switches on Callous Glow. So the chain is: light on GALE → ray 1 applies Radiating Orb → the target is now lit → rays 2+ each add Callous Glow''s 2 radiant → which re-procs Belligerent Skies. Charles can stand in his Darkness cloud the entire time; none of this touches him. ⚠ Three good rings for two slots — run Callous Glow + Coruscation for damage fights and swap Coruscation for Mental Inhibition when the plan is Command spam.'
+      note: 'THE illumination engine, in a trapped heavy chest in the Last Light cellar. Per the wiki, Coruscation applies Radiating Orb when the WEARER is illuminated — the target does not need to be lit. Radiating Orb then makes the target Illuminated, which is what switches on Callous Glow. So the chain is: light on GALE → ray 1 applies Radiating Orb → the target is now lit → rays 2+ each add Callous Glow''s 2 radiant → which re-procs Belligerent Skies. Radiating Orb is also −1 to the target''s attack rolls per remaining turn, so it is a party-wide accuracy debuff. Charles can stand in his Darkness cloud the entire time; none of this touches him.'
+    - id: ring-of-mental-inhibition
+      item: Ring of Mental Inhibition (control swap)
+      slot: rings
+      note: 'THIRD RING, SECOND-BEST — the swap, not a standing pick. Locked chest in the House in Deep Shadows, just east of the Shadowed Battlefield waypoint. When a foe fails a save against Gale''s spells they gain Mental Fatigue for 2 turns, stacking the odds on the next Command. Swap Coruscation out for it when the plan is Command spam rather than damage. ⚠ Why it loses by default: Scorching Ray uses spell ATTACK rolls, not saving throws, so it never fires off his main spell. ⚠ The wiki also notes it does not trigger on saves made to shake off an existing effect, so it does not extend Hold Person, and its Bugs section states it applies to ALLIES as well.'
     - id: spineshudder-amulet
       item: Spineshudder Amulet
       slot: amulets
-      note: 'PROMOTED TO CORE by this build. In the Mimic in Isobel''s bedroom on the upper floor of Moonrise. It applies Reverberation on ranged SPELL-ATTACK hits only — which made it near-worthless for the old save-based Storm nukes, and makes it excellent now that Gale''s main spell is 3–7 spell attacks per cast. Combined with Boots of Stormy Clamour it reliably knocks single targets Prone.'
-    - id: evasive-shoes
-      item: Evasive Shoes (damage-focus alternative)
-      slot: feet
-      note: 'Sold by Mattis at Last Light. Swap in over Boots of Stormy Clamour for fights where Gale is purely nuking and the Reverberation engine is not the plan.'
-    - id: potent-robe
-      item: Potent Robe (DEMOTED)
-      slot: armour
-      note: 'Alfira at Last Light, only if she survived Act 1. Adds CHA to CANTRIP damage — which was strong for the old Shocking Grasp turns and is nearly dead here, since this build stops casting cantrips in combat after character level 3. Keep it only as a generic robe until Armour of Landfall.'
+      note: 'CORE neck, in the Mimic in Isobel''s bedroom on the upper floor of Moonrise. It applies Reverberation on ranged SPELL-ATTACK hits only — which is exactly what Gale makes, 3–7 times a cast. Combined with Boots of Stormy Clamour it reliably knocks single targets Prone: five stacks of Reverberation force a Constitution save that the same condition''s own penalty makes effectively DC 15.'
+    - id: cloak-of-protection-gale
+      item: Cloak of Protection (goes to Charles)
+      slot: cloaks
+      note: 'NOT HIS, though he is the obvious candidate. It is the only cloak in the Act 2 pool that touches saving throws, and exactly one exists. Charles gets it because he carries a permanent DISADVANTAGE on every save from the Risky Ring while holding concentration in melee; Gale already has Constitution-save advantage from Spidersilk Armour plus save proficiency from level 1, and can be positioned out of danger. Recorded here so the decision is visible rather than silent.'
+    - id: thunderskin-cloak
+      item: Thunderskin Cloak
+      slot: cloaks
+      note: 'HIS ACT 2 CLOAK, sold by Araj Oblodra at Moonrise. When a creature with Reverberation damages the wearer, it must make a DC 13 Constitution save or be Dazed — no Reactions, disadvantage on Wisdom saves, and it loses its Dexterity bonus to AC. The synergy is real rather than incidental: Gale is the party''s largest source of Reverberation (Spineshudder, Stormy Clamour and Belligerent Skies all stack it), so essentially anything that reaches him is already Reverberating, and the Dazed WIS-save penalty then feeds his own Command.'
+    - id: act2-carryover-gale
+      item: Held over from Act 1 — Spellsparkler + Melf's, Spidersilk Armour, Belligerent Skies, Stormy Clamour, Bow of Awareness
+      slot: other
+      note: 'Act 2 changes his head, neck, rings and cloak and nothing else. ⚠ Spidersilk Armour stays and the Potent Robe is NOT taken: the robe''s whole effect is adding Charisma to CANTRIP damage, and this build stops casting cantrips in combat after character level 3, so wearing it would trade away the Constitution-save advantage protecting Twinned Haste for nothing. ⚠ The staves tier list rates the Incandescent Staff B for Act 2 and it is the most on-theme fire staff in the game, but Melf''s is rated S and gives +1 spell SAVE DC that Incandescent does not — keep Melf''s, and swap only for a fight where fire resistance on Gale matters more than his Command DC.'
     act3:
     - id: markoheshkir
       item: Markoheshkir
       slot: weapons
-      note: 'CORE main hand, in a Globe of Invulnerability in Ramazith''s Tower (See Invisibility + DC 20 Arcana to disable the globe). +1 spell attack and DC, plus Arcane Battery for one free spell of any level. Attune Kereska''s Favour to FLAME OF WRATH (not Bolts of Doom as on the old build): fire resistance, +proficiency bonus to Fire spell damage, and Heat generation. ⚠ Attuning also starts unavoidable Heat self-damage each turn, which threatens Twinned Haste — hold off on attuning until Armour of Landfall is equipped.'
+      note: 'CORE main hand, in a Globe of Invulnerability in Ramazith''s Tower (See Invisibility plus a DC 20 Arcana check to disable the globe). Rated S and called the universal caster best-in-slot. +1 spell attack and DC, plus Arcane Battery for one free spell of any level. Attune Kereska''s Favour to FLAME OF WRATH: fire resistance, +proficiency bonus to Fire spell damage applied per ray, and Heat generation. ⚠ Attuning also starts unavoidable Heat self-damage each turn, which threatens Twinned Haste — do not attune until Armour of Landfall is equipped.'
     - id: rhapsody
       item: Rhapsody
       slot: weapons
-      note: 'CORE off hand, carried by Cazador Szarr. Scarlet Remittance stacks +1 attack, damage, AND spell save DC per kill, up to 3. This build uses all three, and the damage applies per ray. Requires Dual Wielder to hold alongside Markoheshkir. ⚠ Per the wiki, as of Patch 5 it only builds on killing living hostile targets.'
+      note: 'CORE off hand, carried by Cazador Szarr. Scarlet Remittance stacks +1 attack, damage AND spell save DC per kill, up to 3. This build uses all three, and the damage applies per ray. Requires Dual Wielder to hold alongside Markoheshkir. ⚠ Per the wiki, as of Patch 5 it only builds stacks on killing living hostile targets.'
     - id: staff-of-spellpower
       item: Staff of Spellpower (off-hand swap)
       slot: weapons
-      note: 'CARRY BOTH, SWAP PER FIGHT. Rated S-tier. Gives +1 spell save DC and +1 spell attack IMMEDIATELY, plus its own Arcane Battery — a second free spell of any level per long rest, stacking with Markoheshkir''s. Rhapsody is better in long, adds-heavy fights that actually generate kills, because its damage bonus applies per ray and its stacks reach +3/+3/+3. Spellpower is better in short boss fights and against undead or constructs, where Rhapsody may never build a single stack (since Patch 5 it only stacks on killing LIVING hostile targets). Two free high-level spells per rest is a large swing for a build this long-rest hungry.'
+      note: 'CARRY BOTH, SWAP PER FIGHT. Rated S. Gives +1 spell save DC and +1 spell attack IMMEDIATELY, plus its own Arcane Battery — a second free spell of any level per long rest, stacking with Markoheshkir''s. Rhapsody is better in long, adds-heavy fights that actually generate kills; Spellpower is better in short boss fights and against undead or constructs, where Rhapsody may never build a single stack. Two free high-level spells per rest is a large swing for a build this slot-hungry.'
     - id: spellmight-gloves
       item: Spellmight Gloves
       slot: hands
-      note: 'PROMOTED TO CORE by this build. Rewarded by Lucretious for Find Dribbles the Clown at the Circus (pickpocketable). −5 to spell attack rolls for +1d8 damage — previously rejected for Gale because Storm''s core nukes were save-based, and now excellent because Scorching Ray is an attack roll. MANAGE THEM: cast the first Scorching Ray with the gloves OFF to build Arcane Acuity, then switch them ON once Acuity covers the −5.'
+      note: 'ACT 3 HANDS. Rewarded by Lucretious for Find Dribbles the Clown at the Circus, and pickpocketable. −5 to spell attack rolls for +1d8 damage — excellent precisely because Scorching Ray is an attack roll. MANAGE THEM: cast the first Scorching Ray with the gloves OFF to build Arcane Acuity, then switch them ON once Acuity covers the −5. ⚠ VERIFY ON THE FIRST CAST whether the +1d8 applies per ray or once per spell; the traps section explains why the two readings differ by roughly 27 damage.'
     - id: armour-of-landfall
       item: Armour of Landfall
       slot: armour
-      note: 'CORE armour, sold by Lorroakan''s Projection or Rolan on the ground floor of Sorcerous Sundries. AC 13 + DEX light armour, +1 Spell Save DC, and — the real reason — ADVANTAGE ON CONSTITUTION SAVING THROWS. That advantage is what replaces the Halfling Luck and War Caster this build cannot have, and it is what makes Markoheshkir''s Heat damage safe to carry while concentrating on Twinned Haste.'
+      note: 'CORE armour, sold by Lorroakan''s Projection or Rolan on the ground floor of Sorcerous Sundries. AC 13 + DEX light armour, +1 Spell Save DC, and — the real reason — ADVANTAGE ON CONSTITUTION SAVING THROWS. That advantage is what replaces the Halfling Luck and War Caster this build cannot have, and it is what makes Markoheshkir''s Heat damage safe to carry while concentrating on Twinned Haste. Warlock 1 supplies the Light Armour proficiency, and so does Human Civil Militia. ⚠ Robe of the Weave is the pure-damage alternative (+2 AC and +1 spell attack/DC) but has no Constitution-save advantage, so it loses for a Haste-concentration build.'
     - id: cloak-of-the-weave
       item: Cloak of the Weave
       slot: cloaks
-      note: 'Sold by Helsik at the Devil''s Fee once her special stock is unlocked. +1 Spell Save DC and +1 spell attack rolls. ⚠ The wiki notes its Absorb Elements ability is bugged and non-functional; take it for the flat +1/+1, which is what the build actually wants.'
+      note: 'ACT 3 CLOAK, sold by Helsik at the Devil''s Fee once her special stock is unlocked. +1 Spell Save DC and +1 spell attack rolls. ⚠ The wiki notes its Absorb Elements ability lacks the passives needed to function; take it for the flat +1/+1, which is what the build actually wants, and value it at that.'
     - id: hellriders-longbow
-      item: Hellrider's Longbow (CONTESTED with Bonbon)
+      item: Hellrider Longbow
+      wiki: Hellrider Longbow
       slot: ranged weapons
-      note: 'Sold by Ferg Drogher in Rivington. The published guide says it should always go to the Sorlock on fire parties, but this party''s loot plan assigns it to Bonbon, who needs to land the first weapon hit to open her Band of the Mystic Scoundrel loop. Gale has no Alert feat, so whoever loses this keeps Bow of Awareness and drinks an Elixir of Vigilance for the fights where going first is critical.'
+      note: 'HIS — the contest with Bonbon is settled by the item itself. Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 to Initiative and advantage on Perception, and it upgrades the Bow of Awareness he has been carrying since Act 1. ⚠ THE DECIDER: it is TWO-HANDED, so Bonbon physically cannot equip it alongside the dual hand crossbows that are her entire Arcane Acuity engine — she has no free ranged slot, and Gale has one he never otherwise uses. He holds it purely as a stat stick and never fires it; on top of the standing Elixir of Vigilance that is +8 initiative without a feat. ⚠ Ferg Drogher sells nothing if Shadowheart is nearby, unless she killed the Nightsong in Act 2.'
+    - id: helldusk-boots-gale
+      item: Helldusk Boots (go to Charles)
+      slot: feet
+      note: 'NOT HIS, and the call is close. Infernal Evasion — spend a reaction to turn a failed saving throw into a success — is the best concentration insurance in the game and Gale holds the party''s most important concentration. Charles wins it because he is the one carrying permanent save DISADVANTAGE from the Risky Ring, and because Gale already has Constitution-save advantage from Armour of Landfall. Recorded so the trade is visible.'
+    - id: act3-feet-gale
+      item: Evasive Shoes
+      slot: feet
+      note: 'HIS ACT 3 BOOTS, sold by Mattis at Last Light and carried forward. +1 Armour Class and +1 Acrobatics. ⚠ A modest pick forced by a hard constraint worth knowing: Boots of Persistence and Vital Conduit Boots BOTH require Medium Armour proficiency, which Sorcerer 11 / Warlock 1 never grants, so the two obvious caster boots are illegal on him. With Helldusk Boots going to Charles, +1 AC on the party''s lowest-AC body is the best legal option left.'
+    - id: act3-amulet-gale
+      item: Spineshudder Amulet (held over)
+      slot: amulets
+      note: 'Stays for the whole of Act 3. It is his Reverberation engine and nothing replaces it. ⚠ Amulet of Greater Health goes to Charles: its Constitution-save advantage would be redundant on Gale, who already has that from Armour of Landfall, whereas Charles has the Risky Ring''s disadvantage for it to cancel. ⚠ Amulet of the Devout is not taken by anyone — its Channel Divinity charge is dead on a Paladin, who spends Channel OATH, and looting it from the Stormshore Tabernacle offering chest curses the looter with Castigated By Divinity.'
+    - id: act3-rings-gale
+      item: Callous Glow Ring + Coruscation Ring (held over)
+      slot: rings
+      note: 'The damage pair stays for Act 3, and the reasoning is unchanged: both scale per ray, and they feed each other because Coruscation lights the target that Callous Glow then punishes. Swap Coruscation for the Ring of Mental Inhibition on the turns the plan is Command spam rather than damage.'
     - id: birthright
-      item: Birthright (NOT usable on this build)
+      item: Birthright (not taken)
       slot: head
-      note: 'Would give +2 CHA, but the head slot belongs permanently to the Hat of Fire Acuity — without Acuity the whole build stops working. Birthright goes to Bonbon instead.'
+      note: 'Would give +2 Charisma to a maximum of 22, but the head slot belongs permanently to the Hat of Fire Acuity and without Acuity the build stops working. ⚠ It does not go to Bonbon either — her head is locked to the Helmet of Arcane Acuity for the same reason, and +2 Charisma is +1 spell save DC against Acuity''s +10. Keep it bagged as an out-of-combat Charisma swap for dialogue checks on whichever of them is the face.'
   playstyle: |-
     - **Once per long rest:** cast Daylight (Enchant Item) on Bonbon's main-hand weapon. It lasts until the next rest and keeps Gale lit for the Coruscation chain.
     - **Turn 1:** Twinned Haste (Action) if nobody else supplies it, then a Quickened Scorching Ray (bonus action) into a high-HP target with Spellmight Gloves OFF. A level-4 slot fires 5 rays and takes Arcane Acuity to its 10 cap.

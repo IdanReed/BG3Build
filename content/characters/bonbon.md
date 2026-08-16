@@ -403,11 +403,11 @@ builds:
     - id: knife-of-the-undermountain-king-offhand
       item: Knife of the Undermountain King (melee off-hand)
       slot: weapons
-      note: Crèche stat stick beside the Light club, no feat needed. Organ Rearranger lowers the crit threshold on Titanstring and spell attacks — that global crit-range bonus is the reason to carry it. The low-die reroll is melee-only, not ranged.
+      note: 'Crèche stat stick beside the Light club, no feat needed. Organ Rearranger lowers the crit threshold globally, which is the reason to carry it — it improves Titanstring and her spell attacks, not just melee. The low-die reroll is melee-only. She keeps it for the whole run; the Adamantine ore goes into armour instead of the shield, so nothing displaces it.'
     - id: elixir-of-bloodlust
       item: Elixir of Bloodlust (default)
       slot: consumables
-      note: DEFAULT with adds. A kill grants 5 temp HP and another Action once per turn, and non-Honour that Action benefits from Extra Attack. The Club costs only 1 Titanstring damage per projectile versus STR 21 — repaid by one extra Action.
+      note: DEFAULT with adds. A kill grants 5 temp HP and another Action once per turn, and outside Honour that Action benefits from Extra Attack. The Club costs only 1 Titanstring damage per projectile versus STR 21 — repaid by one extra Action.
     - id: elixir-of-hill-giant-strength
       item: Elixir of Hill Giant Strength (boss alternative)
       slot: consumables
@@ -415,69 +415,137 @@ builds:
     - id: gloves-of-archery
       item: Gloves of Archery (early default)
       slot: hands
-      note: Grat at the Goblin Camp. Longbow proficiency is redundant, but +2 damage applies to every ranged weapon hit — the clean early Titanstring glove.
+      note: Grat at the Goblin Camp. Longbow proficiency is redundant, but +2 damage applies to every ranged weapon hit — the clean early Titanstring glove, worn until the Crèche.
+    - id: gloves-of-dexterity
+      item: Gloves of Dexterity
+      slot: hands
+      note: 'LATE-ACT-1 DEFAULT, from the Crèche, and rated the #1 item of the 20 best in Act 1 — "the most impactful equipable item in Act 1, and in the narrator''s view the entire game." DEX 18 plus +1 Attack Rolls is a net +2 ranged accuracy over natural DEX 16, plus initiative, AC, DEX saves and skills. ⚠ The video pitches these at a Sorcerer who respecs DEX to 8 and reclaims the points; that does not work here, because the gloves are a Crèche pickup and the character would spend all of early Act 1 at DEX 8. On Bonbon the +1 Attack Rolls also applies to every projectile of a Slashing Flourish and every hand-crossbow bolt — four or more attack rolls a turn.'
     - id: wondrous-gloves
       item: Wondrous Gloves (Flourish alternative)
       slot: hands
       note: Grymforge Mimic loot. +1 AC and one extra Bardic Inspiration supply another Slashing Flourish — take them for a nova-focused rest cycle when accuracy is already comfortable.
-    - id: gloves-of-dexterity
-      item: Gloves of Dexterity
-      slot: hands
-      note: Crèche. DEX 18 + 1 Attack Rolls = net +2 ranged accuracy over natural DEX 16, plus better initiative, AC, DEX saves and skills. Swap to Wondrous Gloves only when the extra Flourish beats the accuracy.
     - id: the-protecty-sparkswall
       item: The Protecty Sparkswall
       slot: armour
-      note: Grymforge. +1 Spell Save DC improves Hold Person, Hypnotic Pattern, Fear, Slow and Glyph; with Lightning Charges it adds +1 AC and saves. The low clothing AC is the deliberate price of control DC at range.
+      note: 'ACT 1 CHEST, from the gilded chest at the end of the trapped Grymforge bridge, and rated #8 of 20 as "the caster default through much of Act 2." +1 Spell Save DC improves Hold Person, Hypnotic Pattern, Fear, Slow and Glyph. ⚠ Its second effect, +1 AC and saves while carrying Lightning Charges, is dead here — she has no charge generator, since The Spellsparkler is Gale''s. Take it purely for the flat +1 DC, and understand the low clothing AC is the price of control DC at range until the Adamantine Forge.'
     - id: adamantine-scale-mail
-      item: Adamantine Splint Armour (defensive alternative)
+      item: Adamantine Splint Armour (late-Act-1 upgrade)
       slot: armour
-      note: DEFENSIVE ALTERNATIVE — Fighter-first grants proficiency. AC 18 flat, crit immunity, all incoming damage reduced by 2, Reeling. Take it when survival beats Protecty's +1 spell DC. (The ID keeps its old scale-mail name so checklist keys survive.)
-    - id: adamantine-shield
-      item: Adamantine Shield (melee off-hand stat stick)
-      slot: off-hand
-      note: 'THE SECOND ORE — replanned. Bonbon is the party''s only legal Adamantine wearer, and this is the piece the old plan wrote off as having "no legal wielder." Per the wiki, "a character need not to be actively holding the equipped shield to get the AC bonus… a character with a sword and shield in its melee weapon slots and a longbow in its ranged weapon slots benefits from the shield''s AC bonus even while using the bow." So it sits in her MELEE off-hand, replacing the Knife of the Undermountain King, while she fights from the ranged set as normal: +2 AC and crit immunity for free. Crit immunity matters most on HER because she holds Hold Monster — a concentration save is DC = half the damage taken or 10, whichever is higher, so a crit roughly doubles that DC — and because it stops Hold Person or Sleeping from handing attackers automatic crits. ⚠ COSTS the Knife''s global crit-threshold reduction, and ⚠ VERIFY IN PLAY that crit immunity (not just AC) carries over from the inactive melee set; the wiki only confirms the AC bonus. If it does not carry, wear the free Grymskull Helm through Act 1 instead and sell the ore.'
+      note: 'THE FIRST MITHRAL ORE, and the chest she finishes Act 1 in. Fighter-first grants Heavy proficiency and she is the party''s ONLY legal wearer. AC 18 flat, ATTACKERS CANNOT LAND CRITICAL HITS, all incoming damage reduced by 2, and melee attackers sent Reeling. Crit immunity is what protects Hold Monster: a concentration save is DC = half the damage taken or 10, whichever is higher, so a critical hit roughly doubles that DC. Swap off Protecty once she has it and accept losing +1 spell DC for 6 AC and crit immunity. (The ID keeps an older name so existing checkoffs survive.)'
     - id: the-whispering-promise
       item: The Whispering Promise
       slot: rings
-      note: 'THE CHAR 1–3 BLESS FIX. Volo, or Grat at the Goblin Camp, for about 40g — so it is available before the Grove is resolved. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration. Bonbon is the carrier because her Healing Word is a BONUS ACTION and because she already runs Broodmother''s Revenge, so a single bonus action fires both riders at once. Best trigger for the whole party is a THROWN Potion of Healing, which blesses every creature it splashes; it also works on targets already at full HP, and drinking a potion self-triggers it. ⚠ It applies the SAME condition as the Bless spell, so it does NOT stack with Charles''s Bless and is NOT boosted by his Staff of Arcane Blessing — its value is levels 1–3 before Charles has Bless, and later any fight where he concentrates on Hex or Darkness instead. Displaces Caustic Band; swap back once Charles''s Bless is reliable.'
+      note: 'THE CHAR 1–3 BLESS FIX, rated #10 of 20. Volo, or Grat at the Goblin Camp, for about 40g — available before the Grove is resolved. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration. Bonbon is the carrier because her Healing Word is a BONUS ACTION and she already runs Broodmother''s Revenge, so one bonus action fires both riders. Best trigger for the whole party is a THROWN Potion of Healing, which blesses every creature it splashes; it works on targets already at full HP, and drinking a potion self-triggers it. ⚠ It applies the SAME condition as the Bless spell, so it does NOT stack with Charles''s Bless and is NOT boosted by his Staff of Arcane Blessing — its value is levels 1–3 before Charles has Bless, and later any fight where he concentrates on Hex or Darkness instead.'
     - id: caustic-band
       item: Caustic Band
       slot: rings
-      note: Derryth, Underdark. +2 Acid per weapon hit — the multiple Slashing-Flourish projectiles exploit it better than Charles's smaller Act 1 attack count. Returns to the ring slot once The Whispering Promise has done its job in the early levels.
+      note: 'Derryth, Underdark, rated #12 of 20 and explicitly for characters making several attacks per turn. +2 Acid per weapon hit, applied to every Slashing-Flourish projectile. ⚠ Per the wiki it covers melee, ranged and Thrown attacks but NOT Unarmed Strike, which is why it can never move to Asterion despite his higher hit count. She wears it alongside the Whispering Promise — she has two ring slots and the two do not conflict.'
     - id: diadem-of-arcane-synergy
       item: Diadem of Arcane Synergy
       slot: head
-      note: Ardent Jhe'rezath, Crèche. Once a spell condition lands (Hold Person, Fear, Dissonant Whispers), Arcane Synergy adds CHA to each subsequent ranged weapon attack for 2 turns — the many Titanstring and Flourish hits exploit the flat rider best. Replaced by the Helmet of Arcane Acuity in Act 2.
+      note: Ardent Jhe'rezath, Crèche. Once a spell condition lands (Hold Person, Fear, Dissonant Whispers), Arcane Synergy adds CHA to each subsequent ranged weapon attack for 2 turns — the many Titanstring and Flourish hits exploit the flat rider best. It gives way to the Helmet of Arcane Acuity in Act 2.
+    - id: grymskull-helm
+      item: Grymskull Helm (free early head)
+      slot: head
+      note: Free from Grymforge, and worth wearing on the way to the Crèche — crit immunity costs nothing and covers the stretch before either the Diadem or the Adamantine Splint exists. Retire it as soon as the Diadem lands.
     - id: broodmother-s-revenge
       item: Broodmother's Revenge
       slot: amulets
-      note: After saving the Grove — knock the isolated friendly Kagha out non-lethally and loot it. Any healing, even a potion at full HP, coats Titanstring for +1d6 Poison per projectile for 2 turns. Skip vs poison-resistant or immune enemies.
+      note: 'After saving the Grove — talk Kagha down, then knock the isolated friendly Kagha out non-lethally and loot it. Rated #17 of 20. Any healing, even a potion at full HP, coats Titanstring for +1d6 Poison per projectile for 2 turns, and her bonus-action Healing Word fires it alongside the Whispering Promise. Skip against poison-resistant or immune enemies.'
+    - id: boots-of-speed
+      item: Boots of Speed
+      slot: feet
+      note: 'HERS, and rated #14 of 20. Bonus-action Dash for a character with no innate mobility, which is exactly what the video means by giving it to "the character most likely to waste a turn out of position." ⚠ It is NOT Asterion''s: Step of the Wind already gives him bonus-action Dash and Disengage from Monk 2, so the boots would buy him nothing while displacing the Night Walkers. ⚠ The video flags the opportunity-attack rider as bugged — take these for the Dash, not the defensive text.'
+    - id: act1-cloak-bonbon
+      item: No cloak exists yet
+      slot: cloaks
+      note: Deliberately empty. The Deathstalker Mantle is the only magical cloak obtainable in Act 1 and it is a Dark Urge reward that goes to Asterion; every other cloak in the game first appears in Act 2 or later. Her slot opens at Last Light.
     act2:
     - id: helmet-of-arcane-acuity
       item: Helmet of Arcane Acuity
       slot: head
-      note: 'Mason''s Guild — +2 Acuity per hit → higher spell save DC. THE pivot: switch to dual hand crossbows now, since more hits per turn stack Acuity far faster than Titanstring''s single big shots.'
+      note: 'Mason''s Guild in Reithwin Town — an Act 2 pickup, not an Act 3 one. +2 Arcane Acuity per weapon hit, each remaining turn giving +1 spell attack AND +1 spell save DC, capped at 10. THE PIVOT: switch to dual hand crossbows now, because more hits per turn stack Acuity far faster than Titanstring''s single big shots. Extra Attack plus off-hand plus Slashing Flourish is 3–4 hits a turn at 2 turns each, so she reaches the +10 cap inside one round. ⚠ Damage taken strips 2 turns of Acuity, which is why her defensive gear matters more than it looks.'
     - id: dual-hand-crossbows
       item: Ne'er Misser + Hellfire Hand Crossbow
       wiki:
       - Ne'er Misser
       - Hellfire Hand Crossbow
+      slot: ranged weapons
+      note: 'Roah at Moonrise plus Yurgir''s corpse in the Gauntlet of Shar. Both Light, so no Dual Wielder feat. Main-hand, off-hand and Flourish hits stack Acuity fast. ⚠ Both are contested on paper and both stay with her: Charles would like Ne''er Misser''s Magic Missile for shooting out of his own Darkness, and Asterion could use the Hellfire, but neither converts hand-crossbow hits into spell save DC. ⚠ Breaking Yurgir''s contract via Raphael forfeits the Hellfire Hand Crossbow.'
+    - id: act2-melee-bonbon
+      item: Club of Hill Giant Strength + Knife of the Undermountain King (held over)
       slot: weapons
-      note: Roah at Moonrise + Yurgir. Both Light, so no Dual Wielder feat. Main-hand, off-hand and Flourish hits stack Acuity fast; Asterion is unarmed now and needs neither.
+      note: 'The melee set stays equipped even though she fights from the ranged set, because the Knife''s crit-threshold reduction is global and applies to her bolts and spell attacks. ⚠ THE ADAMANTINE SHIELD IS NOT PART OF THIS PLAN. It was previously slotted here on the theory that an inactive melee-set shield still grants crit immunity, which the wiki confirms only for the AC bonus. That gamble is unnecessary: both Mithral ores now go to Adamantine Splint Armour for her and Adamantine Scale Mail for Charles, and the Splint gives her the same crit immunity outright while she keeps the Knife.'
+    - id: act2-chest-bonbon
+      item: Adamantine Splint Armour (held over)
+      slot: armour
+      note: AC 18, crit immunity and −2 to every incoming damage instance carry her through Act 2 unchanged. Crit immunity does double duty here — it protects Hold Monster concentration and it stops Arcane Acuity being stripped two turns at a time by big hits.
+    - id: act2-hands-bonbon
+      item: Gloves of Dexterity (held over)
+      slot: hands
+      note: DEX 18 and +1 Attack Rolls remain the best glove effect available to her, and every hit is now an Acuity stack rather than just damage. Nothing in Act 2 beats it.
+    - id: spellcrux-amulet
+      item: Spellcrux Amulet
+      slot: amulets
+      note: 'ACT 2 NECK, worn by the Warden in the Moonrise Towers Prison. Replenish an expended spell slot of ANY level as a BONUS ACTION, once per long rest. On a Bard 11 with a single level-6 slot that is literally a second six-target Command or a second Hold Monster, recovered mid-fight without spending her action. It replaces Broodmother''s Revenge, whose poison coating needs a per-turn heal she no longer has time for once the Acuity loop starts.'
+    - id: act2-rings-bonbon
+      item: Caustic Band + The Whispering Promise (held over)
+      slot: rings
+      note: 'Both keep working into Act 2 — Caustic Band adds +2 Acid to every bolt, and the Whispering Promise still covers any fight where Charles concentrates on Hex or Darkness instead of Bless. ⚠ The Risky Ring is NOT hers: advantage on attacks would stack Acuity faster, but disadvantage on saving throws lands directly on the Constitution saves protecting Hold Monster, and Charles needs the ring more. The Band of the Mystic Scoundrel takes a slot in Act 3.'
+    - id: cloak-of-cunning-brume
+      item: Cloak of Cunning Brume
+      slot: cloaks
+      note: 'Sold by Mattis at Last Light Inn for about 70g. Disengaging also creates a 2m fog cloud for a turn, which obscures and blinds everything inside it — a genuine backline escape button for the moment something closes on her. ⚠ An honest cheap fill: the Act 2 cloak pool is built for melee characters (Fleshmelter and Thunderskin both trigger on being hit), and the one unconditional cloak, Cloak of Protection, goes to Charles, who has permanent disadvantage on saves. She upgrades properly in Act 3.'
+    - id: act2-feet-bonbon
+      item: Boots of Brilliance
+      slot: feet
+      note: Heavy chest in the room just north of Yurgir, Gauntlet of Shar. Restores one Bardic Inspiration charge per long rest. Slashing Flourish consumes an Inspiration on every multi-target turn and she is Inspiration-starved rather than AC-starved, so this beats keeping Boots of Speed once the Acuity loop replaces raw repositioning.
     act3:
     - id: band-of-the-mystic-scoundrel
       item: Band of the Mystic Scoundrel
       slot: rings
-      note: Akabi's Circus wheel → Chult jungle. Enchantment and Illusion spells become bonus actions after a weapon hit, so Bonbon can build Arcane Acuity and cast Hold Monster or Command in the same turn.
+      note: 'THE ACT 3 ENGINE, in a backpack in the Chult jungle reached through Akabi''s wheel at the Circus — one party member only, so send her. After a weapon hit, Enchantment and Illusion spells become BONUS ACTIONS, so she builds Arcane Acuity with her action and fires Hold Monster or a six-target Command in the same turn. ⚠ Read the wiki caveat before playing it: once Quickening Incantation is active she can no longer cast those spells as an ACTION that turn — only as the bonus action. ⚠ Useful trick: any weapon attack triggers it, even against a world object, so she can prime the loop off a barrel before combat starts.'
+    - id: act3-ring2-bonbon
+      item: Caustic Band (second slot, held over)
+      slot: rings
+      note: +2 Acid on every bolt and every Flourish projectile is still the cleanest flat rider available to her, and it needs no setup. Swap it for the Ring of Free Action in any fight with webs, paralysis or Black Tentacles, since being Paralysed both ends Hold Monster and hands out automatic critical hits.
     - id: bow-alternative
-      item: Hellrider's Longbow (initiative alternative)
-      wiki: Hellrider Longbow
-      slot: weapons
-      note: Rivington. +initiative, handy for a controller who wants to act first. Gontr Mael is the stronger bow but grants NO initiative.
+      item: Gontr Mael (opening-round alternative)
+      wiki: Gontr Mael
+      slot: ranged weapons
+      note: 'Carried by the Steel Watcher Titan in the Steel Watch Foundry. A legendary +3 longbow with Celestial Haste once per long rest. ⚠ NOT the default, and the reason is structural: it is Two-Handed, so equipping it cancels the dual-hand-crossbow set that is the entire Arcane Acuity engine — she would trade three or four Acuity-stacking hits a turn for two. Carry it purely for an opening-round Celestial Haste, then swap back. ⚠ It does not drop if the Titan is killed by the Atrophied condition.'
+    - id: act3-ranged-bonbon
+      item: Ne'er Misser + Hellfire Hand Crossbow (held over)
+      slot: ranged weapons
+      note: 'The standing Act 3 ranged set, unchanged. ⚠ Hellrider''s Longbow is NOT hers — it is Two-Handed, so it cannot coexist with the hand crossbows at all, which settles the initiative contest with Gale in his favour permanently. He has the idle ranged slot; she does not.'
     - id: amulet-of-greater-health
-      item: Amulet of Greater Health
+      item: Amulet of Greater Health (goes to Charles)
       slot: amulets
-      note: Sets CON to 23 and grants advantage on CON saves. Stacks with War Caster to protect Hold Monster concentration, which enables Charles's automatic melee crits.
+      note: 'NOT HERS, on reflection. Setting Constitution to 23 and granting advantage on CON saves is superb, but she already has War Caster''s advantage on those saves, AC 21 in Armour of Agility, and a cloak that gives attackers disadvantage — so the amulet''s advantage half is redundant on her. Charles has a permanent DISADVANTAGE from the Risky Ring for it to cancel, which nothing else in the game does as cleanly. She keeps the Spellcrux Amulet instead, and a free level-6 slot per long rest is worth more to a controller than +6 to saves she is already winning.'
+    - id: act3-amulet-bonbon
+      item: Spellcrux Amulet (held over)
+      slot: amulets
+      note: A bonus-action level-6 spell slot once per long rest is a second six-target Command or a second Hold Monster in the fight that needs it. On a Bard 11 with exactly one slot at that level, this is the highest-leverage neck she can wear.
+    - id: armour-of-agility
+      item: Armour of Agility
+      slot: armour
+      note: 'ACT 3 CHEST, sold by Gloomy Fentonson at the Stormshore Armoury. Medium armour that adds her FULL Dexterity modifier — AC 17 + 4 = 21 at DEX 18 — plus +2 to ALL saving throws and no Stealth penalty. It beats the Adamantine Splint by 3 AC and 2 saves; the trade is losing crit immunity, so keep the Splint bagged for any fight where she is being focused and Arcane Acuity keeps getting stripped. ⚠ Do not take Medium Armour Master or Magic Initiate: Cleric on her — the wiki notes either feat breaks the full-Dexterity passive.'
+    - id: wavemother-s-cloak
+      item: Wavemother's Cloak
+      slot: cloaks
+      note: 'ACT 3 CLOAK, in an opulent chest behind Allandra Grey''s desk on the upper floor of the Water Queen''s House. Once per turn in combat it grants Water Layer Protection until she takes damage: +2 AC, +2 to saving throws, Fire resistance and immunity to Burning. On a backline controller who is rarely hit, that refreshes every turn and effectively never falls off — strictly better than the flat +1/+1 of a Cloak of Protection for her, and it leaves Cloak of Displacement free for Asterion, who has no armour at all.'
+    - id: act3-hands-bonbon
+      item: Gloves of Dexterity (held over)
+      slot: hands
+      note: 'Nothing in Act 3 beats DEX 18 plus +1 to every attack roll for her. ⚠ Bracers of Defence are dead once she wears Armour of Agility, and Craterflesh Gloves want a crit-focused build she is not — she is a controller whose damage comes from volume, not critical hits.'
+    - id: act3-head-bonbon
+      item: Helmet of Arcane Acuity (held over)
+      slot: head
+      note: 'It stays, and it is not close. Three or four weapon hits a turn take her to the +10 Arcane Acuity cap inside one round, which is +10 to spell save DC. ⚠ BIRTHRIGHT IS REJECTED FOR EXACTLY THIS REASON: +2 Charisma is +1 spell save DC. Ten against one. Keep Birthright bagged as an out-of-combat swap for Persuasion, Deception and Intimidation, where the wiki notes it stacks with the Mirror of Loss for Charisma 24.'
+    - id: act3-feet-bonbon
+      item: Boots of Persistence
+      slot: feet
+      note: 'Sold by Dammon at the Forge of the Nine in the Lower City. Permanent Freedom of Movement and Longstrider — Freedom of Movement makes a Ring of Free Action unnecessary and frees her second ring slot for Caustic Band. Medium armour proficiency is required and Fighter 1 supplies it. ⚠ Helldusk Boots are the better item in the abstract but go to Charles, who has save disadvantage to undo; Gale cannot wear Persistence at all, so this is the allocation that leaves nobody stranded.'
   playstyle: |-
     - **Act 1 default:** equip Titanstring plus the Hill Giant club main hand and Knife of the Undermountain King off-hand, drink Bloodlust, and use Protecty Sparkswall to raise Hold Person/control DC. Use ranged Slashing Flourish for nova damage and trigger Broodmother's Revenge with healing before a multi-projectile turn.
     - **Act 1 alternatives:** use a Hill Giant elixir for a boss with no Bloodlust target; use Adamantine Splint for defence.

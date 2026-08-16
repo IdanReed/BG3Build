@@ -14,7 +14,7 @@ loot_guide:
     - name: Silver Pendant
       for: Shared utility swap
       core: true
-      note: 'On a skeleton at the Harper outpost southwest of the Grove (X: 152 Y: 366). Grants Guidance at will. MANDATORY PICKUP: with Gale on the Fire Sorlock build there is no Cleric level anywhere in the party, so this pendant is the ONLY source of Guidance for the whole run. Grab it before the Grove and keep it as a shared exploration swap. Do not feed it to Gale''s orb.'
+      note: 'On a skeleton at the Harper outpost southwest of the Grove (X: 152 Y: 366). Grants Guidance at will. MANDATORY PICKUP: there is no Cleric level anywhere in the party, so this pendant is the ONLY source of Guidance for the whole run. Grab it before the Grove and keep it as a shared exploration swap. Do not feed it to Gale''s orb.'
     - name: Deathstalker Mantle
       wiki: The Deathstalker Mantle
       for: Asterion
@@ -38,7 +38,7 @@ loot_guide:
     - name: Safeguard Shield
       for: any
       core: false
-      note: 'Sold by Dammon. +2 AC and +1 to all saving throws. NO LONGER GALE''S — the Fire Sorlock takes Dual Wielder at character level 4 and fills both hands with staves, so he cannot hold a shield. This is the main defensive regression of the build switch; the shield is free for anyone who can use it.'
+      note: 'Sold by Dammon. +2 AC and +1 to all saving throws. NOT GALE''S — Dual Wielder at character level 4 fills both his hands with staves, so he can never hold a shield. Bonbon is the only other shield-proficient member, and her off-hand goes to the Adamantine Shield; treat this as a sellable or a stopgap for her before Grymforge.'
     - name: Broodmother's Revenge
       for: Bonbon
       core: true
@@ -52,7 +52,7 @@ loot_guide:
       wiki: Hellrider's Pride
       for: any
       core: false
-      note: 'Zevlor (loot, steal, or the Kagha quest reward). Healing another creature gives it resistance to weapon Bludgeoning/Piercing/Slashing for 2 turns. Rated #6 of 20 Act 1 items, but the glove slot is contested: Bonbon needs Gloves of Dexterity (the #1 item) and Charles needs Gloves of Baneful Striking. Take it only for a stretch of heavy physical damage.'
+      note: 'Zevlor (loot, steal, or the Kagha quest reward). Healing another creature gives it resistance to weapon Bludgeoning/Piercing/Slashing for 2 turns. Rated #6 of 20 Act 1 items, and still not a standing pick: the glove slot is spoken for on every member — Bonbon wears Gloves of Dexterity (the #1 item), Charles Gloves of Baneful Striking, Asterion Bracers of Defence, Gale Gloves of Belligerent Skies. Bag it and swap it in for a stretch of heavy physical damage, which is when Blade Ward is worth more than any of those.'
     - name: Gloves of Power
       for: any
       core: false
@@ -90,7 +90,7 @@ loot_guide:
     - name: Haste Helm
       for: Charles
       core: true
-      note: 'Moss-Covered Chest in the Blighted Village. Charles keeps its opening Momentum because the Ring of Arcane Synergy supplies his damage rider without consuming the head slot. Asterion can borrow it when Charles does not need the approach speed. ⚠ Gale no longer has Storm Sorcery''s Tempestuous Magic flight, and does not get Draconic Fly until character level 12 — but his head slot is committed to Shadespell and then the Hat of Fire Acuity, so he still cannot use this.'
+      note: 'Moss-Covered Chest in the Blighted Village. Charles keeps its opening Momentum because the Ring of Arcane Synergy supplies his damage rider without consuming the head slot. Asterion can borrow it when Charles does not need the approach speed. ⚠ Gale has no repositioning of his own until Draconic Fly at character level 12, but his head slot is committed to the Shadespell Circlet and then the Hat of Fire Acuity, so this is never his.'
     - name: Bracers of Defence
       for: Asterion
       core: true
@@ -144,7 +144,7 @@ loot_guide:
     - name: Spidersilk Armour
       for: Gale
       core: true
-      note: 'SELECTED Act 1 chest for Gale, and the fix for this build''s biggest structural weakness. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra. AC 12 + DEX and +1 Stealth, but the reason is ADVANTAGE ON CONSTITUTION SAVING THROWS, which protects Twinned Haste from Act 1 instead of waiting for Armour of Landfall in Act 3. Gale has light armour from Human Civil Militia, and this is his only chest item. ⚠ Costs exactly 1 AC versus going unarmoured (Draconic Resilience is 13 + DEX); Gale has no War Caster and no feat left for one, so the advantage is his only concentration protection for two whole acts.'
+      note: 'Gale''s Act 1 chest, and the answer to his concentration problem. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra. AC 12 + DEX and +1 Stealth, but the reason is ADVANTAGE ON CONSTITUTION SAVING THROWS, which protects Twinned Haste from Act 1 instead of waiting for Armour of Landfall in Act 3. Gale has light armour from Human Civil Militia, and this is his only chest item. ⚠ Costs exactly 1 AC versus going unarmoured (Draconic Resilience is 13 + DEX); Gale has no War Caster and no feat left for one, so the advantage is his only concentration protection for two whole acts.'
     - name: Goblin-leader loot (Gut / Ragzlin / Minthara)
       wiki: false
       for: any

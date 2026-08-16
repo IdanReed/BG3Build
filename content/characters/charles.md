@@ -380,7 +380,7 @@ builds:
     - id: staff-of-arcane-blessing
       item: Staff of Arcane Blessing (pre-combat swap)
       slot: weapons
-      note: 'Arcane Tower BASEMENT, Underdark. NOT a combat weapon — a buff stick he swaps in before a fight. Every Bless cast by its WIELDER also applies Mystra''s Blessing, +1d4 to spell attack rolls, to each blessed creature. Charles was already spending his concentration on Bless, so the routine costs only the swap: hold staff → upcast Bless to a level 2 slot for all four → swap to Phalar and activate Shriek. Gale is the payoff, gaining +1d4 accuracy on every ray. It also grants its own Bless 1/long rest to any holder. ⚠ Does NOT enhance the Whispering Promise''s version of Bless.'
+      note: 'Arcane Tower BASEMENT, Underdark — the elevator buttons only appear if someone carries Bernard''s Guiding Light ring. NOT a combat weapon; a buff stick he swaps in before a fight. Every Bless cast by its WIELDER also applies Mystra''s Blessing, +1d4 to spell attack rolls, to each blessed creature. Charles is already spending his concentration on Bless, so the routine costs only the swap: hold staff → upcast Bless to a level 2 slot for all four → swap to Phalar and activate Shriek. Gale is the payoff, gaining +1d4 accuracy on every ray. Rated A on the staves tier list, which calls it "excellent for Scorching Ray." ⚠ Does NOT enhance the Whispering Promise''s version of Bless.'
     - id: arrows-of-darkness
       item: Arrows of Darkness (farm)
       slot: consumables
@@ -388,27 +388,23 @@ builds:
     - id: dual-hand-crossbows-plus-one
       item: Dual Hand Crossbows +1
       slot: ranged weapons
-      note: SELECTED ranged fallback and Darkness-Arrow launcher. Farm Dammon, Roah, Derryth and Jeera for +1 copies; the ranged set does not interfere with two-handed Phalar.
+      note: 'Ranged fallback and Darkness-Arrow launcher. Farm Dammon, Roah, Derryth and Jeera for +1 copies; the ranged set does not interfere with two-handed Phalar. ⚠ Keep expectations low — once he is standing inside his own Darkness the cloud blocks ranged attacks into and out of itself, so the slot is close to dead on any turn he is using the cloud properly.'
     - id: luminous-armour
       item: Luminous Armour
       slot: armour
-      note: SELECTED chest once Divine Smite arrives at char 4. The Selûnite Outpost medium armour reaches AC 17 with DEX 14, and each Smite's Radiant damage emits a Radiating Shockwave that penalises nearby enemy attacks.
-    - id: adamantine-scale-mail
-      item: Adamantine Scale Mail (defensive alternative)
-      slot: armour
-      note: DEFENSIVE ALTERNATIVE from the party's second Mithral ore. Keeps medium-armour proficiency while adding crit immunity, 1 damage reduction and Reeling when a melee attacker hits. Luminous stays selected for its Radiating Shockwaves.
+      note: 'SELECTED chest once Divine Smite arrives at char 4. The Selûnite Outpost medium armour reaches AC 17 with DEX 14, and each Smite''s Radiant damage emits a Radiating Shockwave that penalises nearby enemy attacks. Rated #2 of the 20 best Act 1 items. ⚠ The video assigns it to a Spirit Guardians Cleric, which this party does not have — it earns its place here because Divine Smite, Inquisitor''s Might and Asterion''s Manifestation of Soul are all radiant, so the Shockwave has three separate triggers.'
     - id: boots-of-striding
       item: Boots of Striding
       slot: feet
-      note: SELECTED boots from Minthara. Concentrating on Bless, Divine Favour or Hex inside an arrow cloud grants Momentum and blocks Prone and forced movement; after the respec, self-cast Darkness supplies the concentration.
+      note: SELECTED boots, worn by Minthara in the Shattered Sanctum. Concentrating on Bless, Divine Favour or Hex grants Momentum and blocks Prone and forced movement — and Prone is the cheapest way a Paladin loses concentration. The same kill yields Gale's Spidersilk Armour.
     - id: amulet-of-misty-step
       item: Amulet of Misty Step
       slot: amulets
-      note: SELECTED neck from Priestess Gut's chambers. Misty Step 1/short rest solves approach and elevation; Asterion already has Monk movement, the Sentient Amulet and later the Night Walkers.
+      note: SELECTED neck from Priestess Gut's chambers. Misty Step 1/short rest solves approach and elevation on a melee gish with no other mobility; Asterion already has Monk movement and the Night Walkers.
     - id: haste-helm
       item: Haste Helm
       slot: head
-      note: SELECTED Act-1 head from the Blighted Village. Three turns of opening Momentum to reach priority targets, and the Ring of Arcane Synergy keeps this slot free. Asterion can borrow it when the speed is not needed.
+      note: 'SELECTED Act-1 head from the Moss-Covered Chest in the Blighted Village. Three turns of opening Momentum, and the Ring of Arcane Synergy keeps this slot free. Rated #19 of 20. ⚠ He keeps it rather than lending it out: he has the party''s worst initiative at d4+2 and the longest distance to close, whereas Asterion has Unarmoured Movement plus Step of the Wind and takes the Circlet of Psionic Revenge instead.'
     - id: gloves-of-the-growling-underdog
       item: Gloves of the Growling Underdog (early alternative)
       slot: hands
@@ -425,29 +421,33 @@ builds:
     - id: ring-of-arcane-synergy
       item: Ring of Arcane Synergy
       slot: rings
-      note: Gish Far'aag, Crèche. Booming Blade damage → Arcane Synergy for 2 turns, adding CHA to subsequent weapon attacks. Pairs with Strange Conduit without duplicating Bonbon's Diadem; Risky Ring replaces it in Act 2.
+      note: 'Gish Far''aag, Crèche. Booming Blade damage → Arcane Synergy for 2 turns, adding CHA to subsequent weapon attacks. Pairs with Strange Conduit; Risky Ring replaces it in Act 2. ⚠ Do not also give him Bonbon''s Diadem of Arcane Synergy — it applies the same condition and will not stack with itself.'
     - id: strange-conduit-ring
       item: Strange Conduit Ring
       slot: rings
-      note: '+1d4 Psychic on weapon attacks while Concentrating (Crèche). Act 1 — hold Bless, Divine Favour or Hex inside concentration-free arrow darkness. After the respec, self-cast Darkness powers it and the Resonance Stone doubles the rider.'
+      note: '+1d4 Psychic on weapon attacks while Concentrating (Crèche), and rated #5 of the 20 best Act 1 items for exactly this kind of multiattacking, concentrating character. Hold Bless, Divine Favour or Hex inside a concentration-free arrow cloud, and self-cast Darkness powers it after the Stone respec while the Resonance Stone doubles the rider. ⚠ Per the wiki it covers melee, ranged and Thrown attacks but NOT Unarmed Strike, which is why it can never move to Asterion.'
+    - id: act1-cloak-charles
+      item: No cloak exists yet
+      slot: cloaks
+      note: 'Deliberately empty, and not an oversight. The Deathstalker Mantle is the ONLY magical cloak obtainable in Act 1 and it goes to Asterion, who converts kills into repositioning; every other cloak in the game — Cloak of Protection, Cunning Brume, Fleshmelter, Thunderskin, Vivacious, Derivation, Elemental Absorption — first appears in Act 2, and Displacement, the Weave, Shade-Slayer and Wavemother''s in Act 3. Charles goes bare-shouldered until Quartermaster Talli at Last Light.'
     act2:
     - id: self-cast-shadow-blade-upcast-to-3d8
       item: Self-cast Shadow Blade upcast to 3d8
       wiki: Shadow Blade (weapon)
       slot: weapons
-      note: 'POST-RESONANCE DEFAULT. Keep two-handed Phalar/GWM until the late-Act-2 Stone pickup. Warlock 5 brings level-3 pact slots — summon 3d8 Shadow Blade and bind THIS main hand to CHA so Deepened Pact applies, leaving Phalar unbound off-hand. Usual char-9 split is Warlock 5 / Paladin 4; Warlock 5 / Paladin 3 is the minimum if the Stone lands at level 8.'
+      note: 'POST-RESONANCE DEFAULT. Keep two-handed Phalar/GWM until the late-Act-2 Stone pickup. Warlock 5 brings level-3 pact slots — summon a 3d8 Shadow Blade and bind THIS main hand to CHA so Deepened Pact applies, leaving Phalar unbound off-hand. Usual char-9 split is Warlock 5 / Paladin 4; Warlock 5 / Paladin 3 is the minimum if the Stone lands at level 8.'
     - id: phalar-aluve-offhand
       item: Phalar Aluve (selected off-hand)
       slot: weapons
-      note: 'PARTY-DAMAGE DEFAULT after the Stone. Dual Wielder replaces GWM so Phalar stays beside the Light Shadow Blade, +1 AC. Pre-cast Shriek and keep Charles and Asterion inside its 6m aura (the Stone reaches 9m). Shriek fires 1d4 Thunder per qualifying party damage instance and −1d4 to enemy attacks and all saves — worth more than a personal-DPR off-hand here. Phalar is unbound and Charles lacks Two-Weapon Fighting, so its bonus-action swing is last priority.'
+      note: 'PARTY-DAMAGE DEFAULT after the Stone. Dual Wielder replaces GWM so Phalar sits beside the Light Shadow Blade, +1 AC. Pre-cast Shriek and keep Charles and Asterion inside its 6m aura (the Stone reaches 9m). Shriek fires 1d4 Thunder per qualifying party damage instance and −1d4 to enemy attacks and all saves — worth more than a personal-DPR off-hand. Phalar is unbound and Charles lacks Two-Weapon Fighting, so its bonus-action swing is last priority.'
     - id: render-of-mind-and-body-personal-alternative
       item: Render of Mind and Body (personal-DPR alternative)
       slot: weapons
-      note: 'PRE-STONE, from Lann Tarv at Moonrise after convincing Z''rell to help. Light, so it pairs with Shadow Blade without Dual Wielder — a personal-only respec could take Savage Attacker + a CHA ASI instead. Its advantaged off-hand hit gains +1d8 Psychic, doubled by the Stone, but buffs nothing else. Keep Phalar unless optimising Charles in isolation.'
+      note: 'PRE-STONE, from Lann Tarv at Moonrise after convincing Z''rell to help. Light, so it pairs with Shadow Blade without Dual Wielder — a personal-only respec could take Savage Attacker plus a CHA ASI instead. Its advantaged off-hand hit gains +1d8 Psychic, doubled by the Stone, but buffs nothing else. Keep Phalar unless optimising Charles in isolation.'
     - id: knife-of-the-undermountain-king-personal-alternative
       item: Knife of the Undermountain King (personal crit alternative)
       slot: weapons
-      note: Act-1 Crèche, and Light enough to pair with Shadow Blade without Dual Wielder. Its global −1 crit threshold and melee-die reroll make it his best crit stat-stick — but Bonbon already uses the unique Knife, and taking it loses Phalar Shriek. Not the party default.
+      note: Act-1 Crèche, and Light enough to pair with Shadow Blade without Dual Wielder. Its global −1 crit threshold and melee-die reroll make it his best crit stat-stick — but Bonbon uses the unique Knife as her melee off-hand stat stick for the same crit-range reason, and taking it costs Phalar Shriek. Not the party default.
     - id: sentinel-shield-defensive-alternative
       item: Sentinel Shield (defensive alternative)
       slot: off-hand
@@ -459,55 +459,99 @@ builds:
     - id: resonance-stone-aura
       item: Resonance Stone aura (carried by Asterion)
       slot: party aura
-      note: LATE ACT 2, Mind Flayer Colony — this pickup triggers the weapon respec. The 9m Steeped in Bliss aura makes eligible creatures Psychic-vulnerable, doubling Shadow Blade and Strange Conduit. ⚠ No effect on Undead or Constructs, and it also gives ALLIES Psychic Vulnerability plus disadvantage on mental saves. Asterion carries it within 9m of Charles, closing to 6m when both need Shriek; holster vs Psychic attackers and dangerous mental-save effects.
+      note: LATE ACT 2, Mind Flayer Colony — this pickup triggers the weapon respec. The 9m Steeped in Bliss aura makes eligible creatures Psychic-vulnerable, doubling Shadow Blade and Strange Conduit. ⚠ No effect on Undead or Constructs, and it also gives ALLIES Psychic Vulnerability plus disadvantage on mental saves. Asterion carries it within 9m of Charles, closing to 6m when both need Shriek; holster it against Psychic attackers and dangerous mental-save effects, and expect it to stop working once Act 2 ends.
+    - id: adamantine-scale-mail
+      item: Adamantine Scale Mail
+      slot: armour
+      note: 'ACT 2 CHEST, and the second Mithral ore. Medium armour, so he is proficient — AC 16 + DEX (max 2) = 18 with DEX 14, ATTACKERS CANNOT LAND CRITICAL HITS, all incoming damage reduced by 1, and melee attackers are sent Reeling. Crit immunity is the point: a critical hit roughly doubles the concentration-save DC, and he is holding Bless, Hex or Darkness in every fight while wearing a ring that gives him disadvantage on that save. ⚠ He CANNOT use Adamantine Splint — that is Heavy armour and multiclassing never grants heavy proficiency. The Splint mould and the other ore go to Bonbon.'
+    - id: cloak-of-protection
+      item: Cloak of Protection
+      slot: cloaks
+      note: 'HIS, not Gale''s. Quartermaster Talli at Last Light Inn. +1 Armour Class and +1 to Saving Throws. ⚠ THE ARBITRATION: exactly one exists, and it is the ONLY cloak in the entire Act 2 pool that touches saving throws at all. Charles is the one party member carrying a permanent, self-inflicted DISADVANTAGE on every save (Risky Ring) while holding the concentration, and he is the one standing in every area attack. Gale can be positioned out of danger and already has Constitution-save advantage from Spidersilk Armour plus save proficiency; Bonbon has War Caster and AC 18. Charles has none of those.'
     - id: risky-ring
       item: Risky Ring
       slot: rings
-      note: Moonrise, from Araj Oblodra. Advantage on ALL attacks, disadvantage on saves — the crit-fishing engine. Keep it behind Aura of Protection to offset the save penalty.
-    - id: ring-slot-2
-      item: Shadow Blade Ring (backup)
-      wiki: Shadow Blade Ring
-      slot: rings
-      note: Summons a 2d8 psychic blade once per short rest. Strange Conduit Ring stays the default second ring for nova turns; carry this as insurance if Charles loses or cannot prepare his class-cast blade.
+      note: 'Moonrise, from Araj Oblodra. Advantage on ALL attacks, disadvantage on saves — the crit-fishing engine. ⚠ Be honest about the cost: disadvantage on saves roughly squares his concentration-failure rate. Mitigate it in order — Aura of Protection at Paladin 6 adds his CHA modifier to his own and nearby allies'' saves, the Cloak of Protection above adds +1, and in Act 3 the Amulet of Greater Health''s advantage on Constitution saves cancels the disadvantage outright and returns those rolls to a straight d20.'
     - id: killer-s-sweetheart
       item: Killer's Sweetheart
       slot: rings
-      note: 'Gauntlet of Shar, Self-Same Trial. Your first attack after a kill is a GUARANTEED crit — a free doubled smite every fight. ⚠ Per the wiki it applies to WEAPON attack rolls only, despite a tooltip that reads more broadly; it is perfect on Charles for exactly that reason, but it can never be reassigned to Gale to crit a Scorching Ray.'
+      note: 'Gauntlet of Shar, Self-Same Trial — on the ground where your shadow copy dies. Your first attack after a kill is a GUARANTEED crit: a free doubled smite every fight. It can be set to "Ask" in the Reactions tab and banked for the right target, and it applies to every target hit by a single AoE attack. ⚠ Per the wiki it applies to WEAPON attack rolls only, despite a broader tooltip, so it can never be reassigned to Gale to crit a Scorching Ray. ⚠ Using Control Undead on the shadow copy of an Oathbreaker Paladin instantly kills it but it will NOT drop the ring — kill the copy normally.'
+    - id: ring-slot-2
+      item: Shadow Blade Ring (costs no ring slot)
+      wiki: Shadow Blade Ring
+      slot: rings
+      note: 'THE REASON THE RING MATH WORKS. As of Patch 8 the ring''s Shadow Blade no longer requires concentration and the blade lasts until long rest, and the wiki states plainly that "the ring can be unequipped after summoning the shadow blade." So it is not a third ring competing for a slot — it is a pre-combat button. Summon, unequip, put Risky Ring and Killer''s Sweetheart back on. Carry it as insurance for any fight where he cannot spend a pact slot on his own Shadow Blade.'
     - id: head-slot
-      item: Covert Cowl (Darkness option)
+      item: Covert Cowl
       wiki: Covert Cowl
       slot: head
-      note: Last Light. −1 crit threshold while Obscured — the Darkness crit-fishing default. Once Bonbon swaps the Diadem for the Helmet of Arcane Acuity, Charles can borrow the Diadem for raw damage after Risky Ring displaces his Arcane Synergy Ring. (The Dark Justiciar Helmet is a second Covert-Critical head for Asterion.)
+      note: 'ACT 2 HEAD, from Last Light. −1 crit threshold while Obscured — and standing inside his own Darkness is Heavily Obscured, so it is live on every turn he plays the cloud correctly. It requires Light Armour proficiency, which he has and which medium-armour characters inherit. ⚠ It is illegal on Asterion, whose Unarmoured Defence breaks on any helmet marked as armour, so there is no contest for it.'
+    - id: act2-hands-charles
+      item: Gloves of Baneful Striking (held over)
+      slot: hands
+      note: 'Act 2 offers him no glove upgrade worth the swap, so the −1d4 to enemy saves stays on. The tempting alternative is Gloves of Belligerent Skies: Divine Smite is Radiant so every smite would Reverberate, and the wiki notes that Phalar Aluve''s Shriek Thunder — which normally fails to trigger them — "is changed in Honour difficulty, and functions as expected." They stay on Gale because he applies the rider 5–7 times a cast against Charles''s two swings.'
     act3:
     - id: shadow-blade-phalar-act3-default
       item: 3d8 Shadow Blade main hand + Phalar Aluve off-hand
       wiki: Shadow Blade (weapon)
       slot: weapons
-      note: 'ACT-3 DEFAULT, unchanged from late Act 2 — bind Shadow Blade for CHA and Deepened Pact, Phalar off-hand for pre-cast Shriek, bonus-action swing only when free. Beats Render or the Knife because the party generates so many Shriek triggers. ⚠ Confirm the Stone aura still works after Act 2, and holster it when the Psychic/mental-save downside is unsafe.'
+      note: 'ACT-3 DEFAULT, carried over unchanged — bind Shadow Blade for CHA and Deepened Pact, Phalar off-hand for pre-cast Shriek, bonus-action swing only when free. Beats Render or the Knife because the party generates so many Shriek triggers. ⚠ Confirm the Stone aura still works after Act 2, and holster it when the Psychic and mental-save downside is unsafe.'
     - id: nyrulna-physical-fallback
       item: Nyrulna + Phalar Aluve (Act-3 physical fallback)
       slot: weapons
       note: 'OPTIONAL, from Akabi''s Chult jungle. Against Psychic-immune targets, bind Nyrulna main hand for +3, 1d6 Thunder, movement and fall-damage immunity, Phalar still off-hand. Charge-Bound Warhammer is the earlier one-handed fallback; neither beats Shadow Blade on targets that can take the Stone''s Psychic Vulnerability.'
+    - id: helldusk-armour
+      item: Helldusk Armour
+      slot: armour
+      note: 'ACT 3 CHEST, and he CAN wear it. Carried by Raphael in the House of Hope. AC 21 flat, Fire resistance, cannot be Burned, ALL INCOMING DAMAGE REDUCED BY 3, Infernal Retribution, a 1/long-rest Fly, and no Stealth penalty. ⚠ It is Heavy armour and multiclassing never grants heavy proficiency — but the wiki is explicit that the armour carries its own passive: "You are considered Proficient with this armour while wearing it." That single line is what lets a medium-armour Paladin/Warlock wear the best chest piece in the game. Flat AC 21 needs no DEX and beats Adamantine Scale Mail by 3 AC and 2 damage reduction.'
+    - id: armour-of-agility-alternative
+      item: Armour of Agility (save-focused alternative)
+      slot: armour
+      note: Sold by Gloomy Fentonson at the Stormshore Armoury. Medium, AC 17 plus his FULL Dexterity modifier and +2 to all Saving Throws, no Stealth penalty. Take it over Helldusk only if you would rather have +2 saves for concentration than flat AC 21 and −3 damage; with DEX 14 it lands at AC 19, so it trades 2 AC for 2 saves.
     - id: sarevok-s-horned-helmet
       item: Sarevok's Horned Helmet
       slot: head
-      note: SELECTED OFFENSIVE HEAD. Lowers the critical-hit threshold and grants Darkvision. Stacks with his other crit-range effects on targets that are not already Paralyzed.
+      note: 'SELECTED OFFENSIVE HEAD, carried by Sarevok Anchev at the Murder Tribunal. Lowers the critical-hit threshold — stacking with Hexblade''s Curse and the Risky Ring''s advantage — and Dauntless makes him immune to Frightened and other emotion-altering conditions, which is a real Honour-Mode save on a frontliner. It requires Medium armour proficiency, which he has.'
     - id: helm-of-balduran
       item: Helm of Balduran (defensive alternative)
       slot: head
-      note: 'THE ANSWER TO CHARLES''S CRIT PROBLEM, since he can use nothing from the Adamantine forge — he has medium armour only and never has a free off-hand for a shield. From the Wyrmway (Ansur), and medium-armour proficiency is all it needs. It grants crit immunity plus +1 AC and +1 to SAVING THROWS, and that last part directly offsets the Risky Ring''s permanent disadvantage on saves. Straight trade against Sarevok''s: this is defence and save-reliability, Sarevok''s is more crits. Take Balduran for long fights where he is holding concentration on Darkness while wearing the Risky Ring — the most fragile concentration in the party.'
+      note: 'From the Wyrmway (Ansur). Crit immunity, +1 AC and +1 to SAVING THROWS, 2 HP a turn and Stun immunity. Straight trade against Sarevok''s: this is defence and save-reliability, Sarevok''s is more crits. Take Balduran for long fights where he is holding concentration in the Risky Ring — though note Helldusk Armour does not give crit immunity the way Adamantine Scale Mail did, so this is the only place he can get it back in Act 3.'
     - id: killer-s-sweetheart
       item: Killer's Sweetheart
       slot: rings
-      note: One guaranteed critical hit after Charles kills a creature. Save it for a high-level Divine Smite to double the smite dice.
+      note: One guaranteed critical hit after Charles kills a creature. Bank it for a high-level Divine Smite to double the smite dice.
+    - id: act3-ring2-charles
+      item: Risky Ring (second slot, held over)
+      slot: rings
+      note: 'Advantage on every attack roll is the single largest crit-rate multiplier available and it is the engine of the whole build, so it keeps the slot. The save penalty is now fully answered: Amulet of Greater Health returns Constitution saves to a straight roll, and Helldusk Boots convert one failed save a turn into a success. Callous Glow Ring is the swap if you ever drop Risky — but it needs illuminated targets, which fights his own Darkness.'
     - id: helldusk-gloves
       item: Helldusk Gloves
       slot: hands
-      note: 'SELECTED DEFAULT. Fire damage on weapon attacks plus better spell attacks and save DC. The weapon rider applies on each of his many pact-weapon hits — roughly +17 across a seven-attack nova.'
+      note: 'SELECTED DEFAULT, from Haarlep in the House of Hope. +1d6 Fire on weapon attacks, and Infernal Acuity — nominally +1 spell attack and save DC, which the wiki notes actually lands as +1 to ALL attack rolls. The weapon rider applies on each of his many pact-weapon hits, roughly +17 across a seven-attack nova.'
     - id: craterflesh-gloves
       item: Craterflesh Gloves (Bhaal path only)
       slot: hands
-      note: 'GATED ALTERNATIVE, and a large one. Sold by the Echo of Abazigal, which only opens if Charles completes Impress the Murder Tribunal and becomes an Unholy Assassin of Bhaal. Deals +1d6 Force on a critical hit — and per the wiki it actually lands as 2d6, because the crit doubles it. Charles is the party''s crit engine (Held targets auto-crit, plus Killer''s Sweetheart, Risky Ring, Sarevok''s Helmet and Hexblade''s Curse), so on a full auto-crit nova this is roughly +49 against Helldusk''s +17. ⚠ Arrives late in Act 3, so the Shadow Blade + Resonance Stone package carries the build regardless — treat this as a bonus of the Urge-embracing path, not a reason to choose it.'
+      note: 'GATED ALTERNATIVE, and a large one. Sold by the Echo of Abazigal, which only opens if Charles completes Impress the Murder Tribunal and becomes an Unholy Assassin of Bhaal. Deals +1d6 Force on a critical hit — and per the wiki it actually lands as 2d6, because the crit doubles it, and it is one of the few damage riders that still works in Honour Mode. Charles is the party''s crit engine, so on a full auto-crit nova this is roughly +49 against Helldusk''s +17. ⚠ Arrives late in Act 3, so the Shadow Blade and Resonance Stone package carries the build regardless — treat this as a bonus of the Urge-embracing path, not a reason to choose it.'
+    - id: helldusk-boots
+      item: Helldusk Boots
+      slot: feet
+      note: 'ACT 3 BOOTS, in a locked Gilded Chest on the top floor of Wyrm''s Rock Fortress. Steadfast stops all forced movement and difficult terrain — replacing what Boots of Striding were doing — and Infernal Evasion lets him use his REACTION TO TURN A FAILED SAVING THROW INTO A SUCCESS. That is the direct answer to the Risky Ring on a concentration holder: one guaranteed save per turn, on the save that matters. ⚠ Contested with Gale, who cannot wear Boots of Persistence at all; Charles wins because he is the one with save disadvantage, and Gale has Armour of Landfall.'
+    - id: amulet-of-greater-health
+      item: Amulet of Greater Health
+      slot: amulets
+      note: 'ACT 3 NECK, on the leftmost pedestal in the House of Hope Archive. Sets Constitution to 23 and grants ADVANTAGE ON CONSTITUTION SAVING THROWS. Both halves matter here and nowhere else: +6 to concentration checks, and the advantage cancels the Risky Ring''s disadvantage so those rolls go back to a straight d20 at +CHA. ⚠ Contested with Gale — Charles wins because Armour of Landfall already gives Gale that same advantage, making it redundant on him, whereas only Charles has a disadvantage to cancel. Steal tip: it can be taken without the fight on a DC 20 Sleight of Hand if the Orphic Hammer, the Soul-Sworn Contract and Hope are left alone — an Asterion job.'
+    - id: act3-cloak-charles
+      item: Cloak of Protection (held over)
+      slot: cloaks
+      note: 'Kept from Act 2. Flat +1 AC and +1 saves never stops applying, and on the character with save disadvantage that is worth more than the conditional Act 3 cloaks. ⚠ Cloak of Displacement goes to Asterion, who has no armour and no damage reduction; Charles is behind AC 21 and −3 damage. ⚠ Mantle of the Holy Warrior looks tempting and is a trap on him — Crusader''s Mantle is CONCENTRATION, so it would evict the Bless, Hex or Darkness that is his actual job.'
+    - id: act3-ranged-charles
+      item: Hand Crossbows +2 (held over role)
+      slot: ranged weapons
+      note: 'Any +2 pair. The slot stays a formality: a Darkness cloud blocks ranged attacks into and out of itself, so on the turns he is playing his own cloud correctly he cannot shoot out of it anyway. Ne''er Misser would be the clever pick here — Magic Missile is not an attack roll and lands regardless — but it goes to Bonbon, whose engine is hand-crossbow hits.'
+    - id: bhaalist-armour-unlock
+      item: Bhaalist Armour (unlock it, do not wear it)
+      slot: armour
+      note: 'Sold by the Echo of Abazigal, and Charles as the Dark Urge is the one who unlocks the Murder Tribunal stock. Aura of Murder makes enemies within 3m Vulnerable to PIERCING damage. ⚠ NOT WORN, and the reason is specific: none of his damage is Piercing. Shadow Blade is Psychic, Phalar Aluve is Slashing, Divine Smite is Radiant. The aura would buff nobody — Asterion''s unarmed strikes are Bludgeoning, and Bonbon''s piercing bolts are fired from range, far outside a 3m aura. It also costs 5–7 AC against Helldusk. Buy it on the Bhaal path for completeness, then leave it in the chest.'
   playstyle: |-
     - **Act 1 through most of Act 2 — two-handed Phalar:** bind Phalar Aluve, keep the off-hand empty, pre-cast Shriek, and enter a farmed Darkness Arrow cloud with Devil's Sight. Maintain Bless, Divine Favour, or Hex because the cloud is concentration-free; toggle GWM All In when advantage makes the −5 acceptable.
     - **Darkness placement (matters now that Gale is a Fire Sorlock):** put the cloud so **Charles is inside it and his target is not**. He is then an unseen attacker — advantage in, disadvantage out — while the enemy stays visible and shootable for Gale. A Darkness cloud explicitly blocks ranged attacks *into and out of* itself, so an enemy standing inside it is one Gale cannot touch, and the party loses focus fire. This costs Charles nothing and lets Gale's Scorching Ray land on the same target, inside Phalar Shriek's 6m aura, where each ray picks up an extra 1d4 Thunder.

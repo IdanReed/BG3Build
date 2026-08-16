@@ -45,6 +45,8 @@ surface to worry about.
 | `progress.json` | Your checkoffs (`{ "checked": { key: true } }`). **Git-tracked** — your playthrough progress shows up as a clean diff. |
 | `index.html` | The UI. Served as a static file by the server. |
 | `src/` | The Rust server (`main.rs`, `content.rs`, `progress.rs`). |
+| `ITEMIZATION-CHANGELOG.md` | Why each gear decision was made, and the defence for every departure from the ranked video guides. Not loaded by the app. |
+| `tools/check_itemization.py` | Slot-coverage check for `content/characters/*.md`. |
 
 ## Editing the guide
 
@@ -77,6 +79,17 @@ Each itemization entry has a stable `id`, display `item`, equipment `slot`, and
 `note`. The UI groups entries by act and slot, showing the note in the item's
 hover/focus tooltip. Keep IDs stable when renaming an item so existing checkoffs
 survive content edits.
+
+Alongside `act1`/`act2`/`act3`, each character carries a `progression` key that lists
+every equipment slot once with its Act 1 → 2 → 3 chain. The UI renders it as a fourth
+tab. After editing itemization, run:
+
+```sh
+python3 tools/check_itemization.py
+```
+
+It mirrors the slot vocabulary in `index.html` and reports any character-act missing a
+slot, plus any `slot:` value the UI would silently bucket under "Other".
 
 ## Checkoffs
 

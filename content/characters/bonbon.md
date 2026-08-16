@@ -77,6 +77,13 @@ builds:
       when: Bard 5
       why: Pre-placed AoE burst (5d8, choose element) set as a ground trap before a fight.
     recommended:
+    - spell: Cloud of Daggers
+      level: '2'
+      guide_level: 4
+      school: Conjuration
+      save: None
+      when: Bard 3+ — optional pick
+      why: 'Rated S-tier, and the fit is better on her than on Gale for one reason: it needs no save, so her Arcane Acuity DC is irrelevant to it and it keeps working against the high-WIS bosses that shrug Hold Person and Fear. A 1.5m cube dealing 4d4 Slashing to anything that starts its turn in it or enters it, +2d4 per slot level above 2nd. Park it in a doorway or on a chokepoint the party is already funnelling enemies through. ⚠ Concentration, so it competes directly with Hold Monster — this is the pick for adds-heavy fights where zoning beats locking one target, not a replacement for the control lane. ⚠ It hits allies too; keep it off Charles''s and Asterion''s melee lane.'
     - spell: Fear
       level: '3'
       guide_level: 9
@@ -615,6 +622,7 @@ builds:
     - **Act 1 alternatives:** use a Hill Giant elixir for a boss with no Bloodlust target; use Adamantine Splint for defence.
     - **Act 2+:** switch to dual hand crossbows and Flourish to stack Arcane Acuity. In Act 3, spend it on a same-turn bonus-action Hold Monster or Command.
     - **Protect concentration:** stay at range. Against undead, use Hypnotic Pattern or Slow instead of Hold Monster/Command.
+    - **Take Gale's Drakethroat enchant, from Act 2:** once per long rest Gale equips the Drakethroat Glaive and Twins **Draconic Elemental Weapon** onto two party weapons — Bonbon's main-hand hand crossbow is one of the two targets, for +1 Attack Rolls and +1d4 elemental damage until the next rest. It stacks with Magic Weapon, and on a character firing three or four crossbow hits a turn the +1d4 is applied to every one of them. ⚠ Same rule as Daylight: do not swap her main-hand weapon afterwards or the enchant is lost.
     - **Carry the party's Daylight:** Gale casts Daylight (Enchant Item) on Bonbon's main-hand weapon once per long rest — it is bugged to last until the next rest and travels with her, keeping Gale lit for his Coruscation → Callous Glow chain. She is the carrier because the spell requires a main-hand weapon, which rules out Asterion's empty Tavern Brawler hands, and because her mid-range position keeps the 15m radius over the fight. ⚠ Do not swap her main-hand weapon afterwards, and let Gale cast it *before* any Darkness Arrow goes out.
     - **Division of control with Gale:** Bonbon owns the *Concentration* lane (Hold Person/Hold Monster — the auto-crit setup for Charles); Gale owns the *non-concentration* lane (Extended Command). They stack rather than compete, so do not both spend a turn on the same target. Bonbon also keeps Hellrider's Longbow by default, since she needs to land the first weapon hit to open the Band loop.
 ---

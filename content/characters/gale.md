@@ -143,6 +143,13 @@ builds:
       save: DEX save
       when: Sorc 7+ (char 8+) — optional pick
       why: 'A-tier and NOT Concentration, which is the whole reason to consider it: Gale can drop it on a cluster while still holding Twinned Haste, unlike every other AoE of its size. It also lays an ice surface for prone control. Off-element, so it gets no Elemental Affinity, Flame of Wrath or Elemental Adept — take it only if the fire-resistance problem in Act 3 turns out worse than Elemental Adept can fix.'
+    - spell: Cloud of Daggers
+      level: '2'
+      guide_level: 3
+      school: Conjuration
+      save: None
+      when: Sorc 3+ (char 3+) — optional pick
+      why: 'Rated S-tier and worth a slot on a build that already wants enemies clustered. A 1.5m cube that deals 4d4 Slashing to anything starting its turn inside it OR entering it, so it collects repeat damage from every enemy Command: Approach drags through it, and it scales +2d4 per slot level above 2nd. ⚠ It IS Concentration, which is the real cost here — Gale cannot hold it and Twinned Haste at once, so it is a pick for the fights where somebody else supplies Haste (Bonbon''s Gontr Mael, or a Haste Helm) and Gale is free to zone instead. Off-element, so no Elemental Affinity, Flame of Wrath or Elemental Adept. ⚠ It damages allies too — same friendly-fire discipline as Fireball.'
     - spell: Burning Hands
       level: '1'
       guide_level: 1
@@ -588,6 +595,7 @@ builds:
       note: +5 Initiative and Surprise immunity, and the substitute for the Alert feat this build cannot afford. Initiative in BG3 is d4 + DEX, so +5 is larger than the whole die. He is the only party member with no competing elixir.
   playstyle: |-
     - **Once per long rest:** cast Daylight (Enchant Item) on Bonbon's main-hand weapon. It lasts until the next rest and keeps Gale lit for the Coruscation chain.
+    - **Once per long rest, from Act 2:** equip the **Drakethroat Glaive** (Roah Moonglow, Moonrise Towers), cast its **Draconic Elemental Weapon** with **Twinned Spell** to enchant *two* party weapons at once, then swap back to the staves. +1 Attack Rolls and +1d4 elemental damage on each, until long rest. Gale is proficient with glaives via Civil Militia and is the only Sorcerer, so he is the only character who can Twin it. Enchant **Charles's Phalar Aluve** and **Bonbon's main-hand hand crossbow** — never Charles's Shadow Blade, which is re-summoned each rest and loses the enchant. It stacks with Magic Weapon; it does not stack with other Elemental Weapon variants. ⚠ Patch 8 cut the effect from a +1 enchantment to +1 attack rolls only, and the tooltip lists Concentration while the condition says "until long rest" — confirm in play which one is true before relying on it.
     - **Turn 1:** Twinned Haste (Action) if nobody else supplies it, then a Quickened Scorching Ray (bonus action) into a high-HP target with Spellmight Gloves OFF. A level-4 slot fires 5 rays and takes Arcane Acuity to its 10 cap.
     - **Turn 1 onward:** switch Spellmight Gloves ON. Acuity now covers the −5.
     - **Then pick a job each turn:** more Scorching Ray at a single target, Fireball at a cluster of 4+, or Extended Command at everything you want disabled. Command is not Concentration, so it never costs you Haste.
@@ -603,5 +611,6 @@ builds:
   - 'Long rests: this build burns spell slots fast, especially if you lean into damage rather than Command. Bank camp supplies and use Potions of Angelic Slumber in Act 3.'
   - 'Command does not work on Undead, and neither Hold spell works on crit-immune enemies — the same gap Bonbon already has. Act 2 has a lot of Undead; lean on Fireball and Scorching Ray there.'
   - 'Warlock slot question: the published Command-spam loop assumes Gale can cast Command from ordinary Sorcerer slots, not only from his single short-rest pact slot. Confirm this in play at character level 7 — if Command is restricted to the pact slot, the control lane is once per short rest and Bonbon stays the primary controller.'
+  - 'CONSIDERED AND DECLINED — Enhanced Leap. The tier lists rate it S, and the omission is deliberate rather than an oversight: its value is exploration mobility, and this party already has Misty Step on Gale, the Amulet of Misty Step on Charles, Step of the Wind on Asterion, and Longstrider on everyone from Bonbon''s ritual. Gale''s spells-known list is the tightest resource in the build — twelve or thirteen picks carrying the entire Scorching Ray, Haste, Command and Counterspell engine — so a utility jump loses to every combat pick competing for the slot. Buy the scroll if a specific map needs it.'
   - 'Respec cost: Gale joins as a Wizard — bank ~100g for the Withers respec into Sorcerer, and re-pick metamagic and spells to match this plan. There are no further respecs.'
 ---

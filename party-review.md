@@ -25,7 +25,7 @@ claim, neither confirmed nor refuted by the sources read.
 | **Charles** — Oathbreaker Pal 7 / Hexblade 5 | ✅ **KEEP**, 3 additions | Chassis is well-supported. Missing **Aid**, missing the **Murder Tribunal** item cluster he alone unlocks, and **Luck of the Far Realms is at risk of auto-wasting** on his own crit-range stack. |
 | **Asterion** — Open Hand Monk 9 / Thief 3 | ✅ **KEEP**, near-optimal | The single most-endorsed build in the whole source set: Open Hand is the top Monk subclass, a top-5 pure build *and* a "broken build"; Tavern Brawler and Alert are the only two **S+** feats; Monk 8–9 + Rogue 3–4 is named "the defining combination." Two of his Act 3 items are missing from the loot route. |
 | **Gale** — Draconic-Red Sorc 11 / Fiend Warlock 1 | 🔧 **TUNE** | The build works, but its two self-declared structural weaknesses — no Alert, no CON-save protection until Act 3 — are **both solvable in Act 1 with items the plan already passes over**. Also carries a **hidden anti-synergy in its own Act 3 loadout** (Markoheshkir Heat vs Callous Glow vs Arcane Acuity), and rests on **one untested assumption** (Spellmight per ray) that could invert a core item. |
-| **Bonbon** — Swords Bard 11 / Fighter 1 | 🔧 **TUNE** | Correct chassis and correct engine. Two live questions: **Fighter 1 vs Fighter 2** (Action Surge), and whether **Magical Secrets → Command** duplicates Gale rather than adding to him. |
+| **Bonbon** — Swords Bard 11 / Fighter 1 | 🔧 **TUNE** | Correct chassis and correct engine. Both open questions are now settled: **Fighter 1 wins** (Bard 11's L6 slot beats Action Surge), and **Magical Secrets are Command + Conjure Elemental** — Counterspell dropped, and Globe/Heroes' Feast turned out to be 6th-level and unselectable. |
 | **Party** | 🔧 **TUNE** | Strong. The gaps are concentrated in three places: **initiative**, **the Bless economy**, and **a handful of never-routed items**. |
 
 ---
@@ -41,8 +41,8 @@ These were chosen at the table and are already written into the guide data.
 | **Charles takes Aid** at Paladin 5 | `charles.md` |
 | **Charles keeps concentrating on Bless**, cast while holding the Staff of Arcane Blessing | `charles.md`, `party.md`, `loot.md` |
 | **Bonbon wears The Whispering Promise** for the char 1–3 Bless window | `bonbon.md`, `loot.md`, `party.md` |
-| **Luminous Armour stays on Charles**; both ores go to Bonbon (Shield + Splint) | `bonbon.md`, `loot.md` |
-| **Magical Secrets → Command + Globe of Invulnerability** (Counterspell dropped) | `bonbon.md` |
+| **Luminous Armour is Charles's Act 1 chest**; the ores split — **Splint → Bonbon, Scale Mail → Charles (Act 2)**, no Shield forged | `bonbon.md`, `charles.md`, `loot.md` |
+| **Magical Secrets → Command + Conjure Elemental** (Counterspell dropped; Globe is 6th-level and cannot be selected) | `bonbon.md` |
 | **Gale carries both Rhapsody and Staff of Spellpower**, swapping per fight | `gale.md` |
 | **Add Ability Drain** (Charles + Asterion, *not* Gale — it would drain his CHA) | `tadpole.md`, `asterion.md` |
 | **Charles gets Shield of Thralls**; drops Armour of Agathys | `tadpole.md` |
@@ -240,37 +240,43 @@ alternative." As written, two limited crafting resources buy **zero equipped cri
 shieldless, Gale took Dual Wielder, Charles two-hands then dual-wields, and Bonbon is ranged. No legal
 wielder.
 
-### ✅ RESOLVED — both ores go to Bonbon, and the Shield was wrongly written off
+### ✅ RESOLVED — **Splint → Bonbon, Scale Mail → Charles, no Shield forged**
 
-Follow-up research settled this. **Bonbon is the party's only legal wearer of anything from the forge:**
-`[W]` multiclassing into Paladin grants no heavy armour (Charles has Hexblade's *medium + shields*
-only), and Charles can never free an off-hand — GWM: All In needs an empty one, and he later
-dual-wields. Asterion must stay unarmoured and shieldless; Gale is light-armour-only with two staves.
+> ⚠️ **This section was rewritten.** An earlier draft concluded "both ores to Bonbon (Shield + Splint),
+> Scale Mail dropped." The content files went the other way, and they are right — see the two reasons below.
 
-**The Adamantine Shield is the find the plan dismissed.** `[W]`: _"a character **need not to be actively
-holding the equipped shield to get the AC bonus**… a character with a sword and shield in its melee
-weapon slots and a longbow in its ranged weapon slots benefits from the shield's AC bonus **even while
-using the bow**."_ So Bonbon puts it in her **melee off-hand** (replacing the Knife) and keeps shooting
-hand crossbows — **+2 AC and crit immunity from a slot she was barely using**, with no cost to Protecty
-Sparkswall's +1 Spell Save DC.
+**Who can legally wear what.** `[W]` multiclassing into Paladin grants no **heavy** armour (Charles has
+Hexblade's *medium + shields* only), so the **Splint is Bonbon's alone** — Fighter 1 taken *first* is the
+party's only source of heavy proficiency. Asterion must stay unarmoured and shieldless; Gale is
+light-armour-only with two staves. But **Charles is proficient with the Scale Mail**, which is *medium* —
+AC 16 + DEX(max 2) = 18 at DEX 14. That is the case the earlier draft missed.
 
-**Why crit immunity belongs on her specifically:** `[W]` a concentration save is _"a Constitution save
-against a **DC equal to half the damage taken, or 10, whichever is higher**"_ — so a crit roughly
-doubles that DC. She is the one holding **Hold Monster**, the party's auto-crit engine. `[W]` it also
-stops Hold Person and Sleeping from granting attackers automatic crits against her.
+**Why crit immunity belongs on Bonbon:** `[W]` a concentration save is _"a Constitution save against a
+**DC equal to half the damage taken, or 10, whichever is higher**"_ — so a crit roughly doubles that DC.
+She holds **Hold Monster**, the party's auto-crit engine. `[W]` it also stops Hold Person and Sleeping
+from granting attackers automatic crits against her.
 
-> **Applied:** craft **Shield + Splint**, both for Bonbon; **Adamantine Scale Mail is dropped** (its only
-> home was Charles, and Luminous is decided).
+**Why Charles takes the second ore rather than Bonbon taking a Shield:** he is the one holding
+concentration on Bless, Hex or Darkness *in melee* while wearing the **Risky Ring**, which gives him
+permanent disadvantage on that very save. Act 2 is the gap in his chest progression — Luminous in Act 1,
+Helldusk in Act 3 — and Scale Mail's crit immunity fills exactly that window.
+
+> **Applied:** craft **Adamantine Splint (Bonbon)** and **Adamantine Scale Mail (Charles, Act 2)**.
+> **No Adamantine Shield is forged.**
 >
-> ⚠️ **Verify in play:** the wiki confirms only the **AC bonus** carries from the inactive melee set — it
-> never says whether **crit immunity** does. Check her sheet with crossbows drawn. If it doesn't carry,
-> fall back to Splint plus the free **Grymskull Helm** (dropped by Grym, whom you kill for the forge
-> anyway; grants crit immunity for zero ore, but is evicted by the Helmet of Arcane Acuity in Act 2).
+> **Why the Shield was dropped.** The tempting trick — park it in Bonbon's inactive melee set for free
+> crit immunity while she shoots — rests on `[W]` _"a character **need not to be actively holding the
+> equipped shield to get the AC bonus**."_ That sentence confirms only the **AC bonus** carries; the wiki
+> never says **crit immunity** does. With only two ores, spending one on an unverified interaction is the
+> wrong bet — and it is unnecessary, because the Splint gives Bonbon crit immunity outright while she
+> keeps the **Knife of the Undermountain King** in the melee off-hand for its *global* crit-threshold
+> reduction, which improves her bolts and spell attacks too.
 >
-> **Charles gets nothing from the forge.** His crit-immunity answer is Act 3 **Helm of Balduran**
-> (medium armour, which he has) — and its **+1 to saving throws** partly offsets the Risky Ring's
-> permanent disadvantage on saves, which matters because he holds concentration on Darkness while
-> wearing it. That is the most fragile concentration in the party and no ore can fix it.
+> **Charles's Act 3 answer** is still the **Helm of Balduran** (medium armour, which he has) — Helldusk
+> Armour does *not* grant crit immunity the way the Scale Mail did, and Balduran's **+1 to saving throws**
+> partly offsets the Risky Ring. **Grymskull Helm** (free from Grym, whom you kill for the forge anyway)
+> covers Bonbon for the stretch before the Splint is poured, and is evicted by the Helmet of Arcane
+> Acuity in Act 2.
 
 ---
 
@@ -549,25 +555,32 @@ Given the L6 slot is explicitly the plan's payoff (_"Bard 11 = caster level 11 �
 still hits up to 6 targets"_), **Fighter 1 is defensible and probably correct here** — but the plan should
 record *why* it rejects Action Surge rather than leaving it unaddressed.
 
-### Open question 2: does Magical Secrets → Command duplicate Gale?
+### ✅ RESOLVED — Magical Secrets are **Command + Conjure Elemental**
+
+> ⚠️ **This section was rewritten.** An earlier draft recommended **Counterspell → Globe of
+> Invulnerability or Heroes' Feast**. Both suggestions are **illegal**, and the content is right to
+> reject them: `[W]` **Magical Secrets at Bard 10 selects from spells of level 5 and below**. Globe of
+> Invulnerability and Heroes' Feast are both **6th-level**, so neither was ever selectable. Globe stays a
+> **scroll-only** item for her, and with no Wizard dip there is no scribing route either.
 
 `[V]` calls **Magical Secrets at Bard 10 the single biggest lever** in this party for reaching otherwise
-unavailable S-tier spells: **Spirit Guardians (S, #10 overall)**, **Globe of Invulnerability (S, #9)**,
-**Heroes' Feast (S)**, **Haste (S)**, **Hunger of Hadar (S)**.
+unavailable spells. The original plan spent both picks on **Command + Counterspell**. **Counterspell was
+correctly dropped** — Gale and Charles already cover that lane, and three carriers is one more than the
+guides advise.
 
-The plan spends both picks on **Command + Counterspell**. But **Gale already spams Command** as his
-non-concentration lane, and the party already has **three** Counterspell carriers against a recommended
-two. Meanwhile:
+**The picks are Command + Conjure Elemental.**
 
-- **Globe of Invulnerability** is currently planned to be covered by **buying scrolls** — a Magical
-  Secret would make it repeatable, and it is the #9 spell in the game.
-- **Heroes' Feast** is a party-wide permanent buff otherwise unreachable by any of the four.
-- **Spirit Guardians** is #10 overall but is a melee aura, and Bonbon is deliberately backline — a poor
-  fit despite the ranking.
-
-**Bonbon's Command is not fully redundant** — hers is a *bonus action* via the Band of the Mystic
-Scoundrel at the party's highest DC, which Gale cannot replicate. But **Counterspell is** the weaker of
-her two picks. Worth considering **Counterspell → Globe of Invulnerability or Heroes' Feast**.
+- **Command stays**, and is *not* redundant with Gale's: hers is a **bonus action** via the Band of the
+  Mystic Scoundrel, at the party's highest DC, upcast from the Bard-11 **level 6 slot to six targets**.
+  Gale can replicate none of that.
+- **Conjure Elemental** replaces Counterspell. `[V]` rates it S — _"a day-long, concentration-free
+  elemental or myrmidon is comparable to adding another character to the party"_ — and the
+  **concentration-free** clause is what makes it hers specifically: she can field it *and* still hold
+  Hold Monster, which no other summon of that weight allows. The **Water Myrmidon** also mass-applies
+  **Wet**, which is this party's only reliable way to strip fire resistance ahead of Gale — the exact gap
+  Part 1 §7 identifies as otherwise unfixable without a Cleric or Druid.
+- **Spirit Guardians** (#10 overall) was considered and declined: it is a melee aura and Bonbon is
+  deliberately backline.
 
 ### Other notes
 - **Take The Whispering Promise** (Part 1 §2) — she is the correct carrier.
@@ -720,11 +733,16 @@ Independent of build decisions, these are content-integrity issues:
 8. **Add Ability Drain** (A-tier, free passive, taken by nobody). *(Asterion)*
 9. **Charles carries the Staff of Arcane Blessing to cast Bless**, giving Gale +1d4 per ray. *(§2c)*
 10. **Buy the Drakethroat Glaive** in Act 2; Gale Twins the enchant onto two weapons per long rest. *(§6)*
-11. **Reconsider Bonbon's second Magical Secret** — Counterspell is the party's third; Globe of
-    Invulnerability or Heroes' Feast are otherwise unreachable. *(Bonbon)*
+11. ✅ **RESOLVED — Bonbon's Magical Secrets are Command + Conjure Elemental.** Counterspell dropped (the
+    party's third carrier); Globe and Heroes' Feast are 6th-level and **not selectable** at Bard 10.
+    Conjure Elemental is concentration-free, so it coexists with Hold Monster, and the Water Myrmidon is
+    the party's only Wet applicator. *(Bonbon)*
 12. **Give Charles Shield of Thralls** for the repeatable short-rest area stun — but drop Armour of
     Agathys, since temp HP sources do not stack. *(§3)*
-13. **Decide the Adamantine question** — two ores currently buy two benched armours. *(§5)*
+13. ✅ **RESOLVED — the Adamantine question.** Splint → Bonbon (her Act 1-late/Act 2 chest), Scale Mail →
+    Charles (his Act 2 chest, medium armour, which he is proficient with). **No Shield is forged** — the
+    wiki confirms only the *AC* bonus carries from an inactive melee set, never crit immunity, and with
+    two ores that gamble is not worth taking. *(§5)*
 
 14. **Treat Markoheshkir's Flame of Wrath as a per-fight toggle, not a permanent attunement** — its
     Heat tick is amplified by Gale's own Callous Glow Ring and strips 2 Arcane Acuity turns per hit. *(Gale)*

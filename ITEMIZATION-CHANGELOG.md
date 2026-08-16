@@ -310,6 +310,30 @@ the "Storm build" / "old plan" / "PROMOTED" / "DEMOTED" / "REASSIGNED" / "CONTES
 RESOLVED" / "previously" framing. Genuine playtest flags ("VERIFY IN PLAY") and genuine
 patch notes were kept, because those describe the game rather than an earlier draft.
 
+### `loot.md` — the acquisition route was realigned to match
+
+The act-by-area loot guide is what you actually follow in play, so it was brought back
+into agreement with the character pages:
+
+- **12 items changed owner**, matching the conflict table above. The reassignments with
+  real consequences are Ring of Protection → Gale, Boots of Speed → Bonbon,
+  Hellrider's Longbow → Gale, Amulet of Greater Health → Charles, Adamantine Scale Mail
+  → Charles, and Cloak of Protection → Charles.
+- **17 items were added** that the character files name but the route did not list —
+  most of Asterion's Act 2–3 kit (Amulet of the Harpers, Shadow-Cloaked Ring, Flawed
+  Helldusk Gloves, Vest of Soul Rejuvenation, Cloak of Displacement, Ring of Free
+  Action), Bonbon's boots and cloaks in every act, and Charles's Helldusk pieces.
+- **The Adamantine Shield was removed from the ore plan** and the two crafted pieces are
+  now separate entries with their owners named.
+- **Two items had contradictory or wrong entries.** The Amulet of the Devout was listed
+  as both "no longer Gale's" and "Gale keeps the Devout" in the same file; it now goes to
+  nobody. Helldusk Boots were filed under the House of Hope — they are in a locked gilded
+  chest on the top floor of **Wyrm's Rock Fortress**, which is now its own area entry.
+- **17 more lines of prior-build-version wording** were rewritten.
+
+The route now carries 136 items across 27 areas, with ownership spread roughly evenly
+(Gale 27, Bonbon 26, Asterion 23, Charles 23, plus 31 marked `any`).
+
 ### Known open questions, deliberately left flagged in the content
 
 - **Spellmight Gloves** — whether the +1d8 applies per ray or once per spell is not

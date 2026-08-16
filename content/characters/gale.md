@@ -201,11 +201,25 @@ builds:
       why: 'Exploration and object manipulation. It also covers the party''s lost Create Water: drop a water bottle where the Hand can reach and use its Throw for a 2m Wet splash when something needs to be Wet.'
     - spell: Light
       level: Cantrip
-      guide_level: 5
+      guide_level: 4
       school: Evocation
       save: None
       when: Sorc 4 (char 4) — fifth cantrip
       why: 'A free, slot-less way to keep GALE illuminated so the Coruscation Ring works, covering the whole stretch of Act 2 before Daylight is learned at char 8. Cast it on Gale''s own staff or on a nearby ally. ⚠ Worth confirming in play that a Light-lit character registers as Illuminated for Coruscation; if not, use an ordinary torch or Daylight.'
+    - spell: Bone Chill
+      level: Cantrip
+      guide_level: 7
+      school: Necromancy
+      save: Ranged spell attack
+      when: Warlock 1 (char 7) — second Warlock cantrip
+      why: 'A tier — "targets AC at range, prevents healing, and gives undead disadvantage on attacks." Take it with the Warlock cantrip slot rather than Friends, which Gale already knows from Sorcerer 1. It covers the Act 2 Undead that Command cannot touch.'
+    - spell: Ray of Frost
+      level: Cantrip
+      guide_level: 11
+      school: Evocation
+      save: Ranged spell attack
+      when: Sorc 10 (char 11) — sixth cantrip
+      why: 'S tier — "the best broadly available elemental attack: Wet doubles its cold damage, the hit reduces movement without a save, and water can freeze into ice that knocks enemies prone." The sixth cantrip is easy to miss because it is the only one granted after char 4. Off-element on purpose: it is slot-free damage for the fire-immune fights where this build otherwise contributes little until Chain Lightning.'
     - spell: Globe of Invulnerability
       level: '6'
       school: Abjuration

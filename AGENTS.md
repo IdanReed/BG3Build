@@ -105,6 +105,16 @@ Changing a character nickname, build name, leveling segment label, loot area,
 or loot item name can orphan existing checkoffs. Itemization display names may
 change safely when their explicit `id` remains unchanged.
 
+A character page and the Loot tab list the same gear, so their two keys are
+linked and a single tick writes both. `index.html` builds the link groups at
+boot by normalising item names — parentheticals, a leading "The", possessive
+`'s`, and everything after the first item of a combined row are all dropped —
+and only links a group that has a member on each side. The key shapes above are
+unchanged; linking is a runtime map, not a stored field, so it needs no
+migration and a name that matches nothing simply stays independent. Groups
+inherited from before linking are completed in memory at boot and are not
+written back; the next real toggle persists the whole group.
+
 ## Frontend conventions
 
 Keep `index.html` dependency-free and consistent with its DOM-helper/render
@@ -112,6 +122,14 @@ function style. The UI intentionally includes accessible ARIA tabs, keyboard
 navigation, focus management after view changes, hover/focus item tooltips, and
 light/dark theme persistence. Preserve those behaviors when changing
 navigation or rendering.
+
+Switching sub-views rebuilds the whole page, so each view key remembers its
+scroll offset and the selected tab in each of its tab groups, and restores them
+on return. That state lives in `sessionStorage` under `bg3-view-state-v1` and is
+disposable. Scroll recording is parked while a view is swapped in, and focus is
+moved with `preventScroll` so the restored offset survives; keep both if you
+touch `renderContent`, and keep tab-group `idBase` values stable per view or
+remembered tabs will not be found again.
 
 The frontend tolerates some legacy scalar/list shapes with `arr()` and `has()`,
 but new content should use the current structured shapes. Keep progress writes

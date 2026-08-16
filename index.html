@@ -644,6 +644,115 @@ const has = (v) => v != null && !(Array.isArray(v) && v.length === 0) && !(typeo
 const humanize = (s) => String(s).replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
+/* ---------------- Linked items (character page ↔ Loot tab) ----------------
+   The same piece of gear is listed twice: once on its owner's Itemization tab
+   and once in the Loot tab's area table. Both tick boxes mean the same thing —
+   "this is in the party's hands" — so they share one state.
+
+   Checkoff keys stay exactly as they were (progress.json needs no migration):
+   instead, every key that names the same item joins a link group, and toggling
+   any member writes all of them. Items are matched by name, normalised to shrug
+   off the guide's annotations: "Corellon's Grace (levels 2–4 only)" on the
+   character page and "Corellon's Grace" in the loot table are one item, as are
+   "Hellrider Longbow" / "Hellrider's Longbow" and the first entry of a combined
+   loot row like "Caustic Band + Club of Hill Giant Strength". A group is only
+   linked if it bridges the two views; a name that appears on one side alone
+   keeps its own independent state. */
+const ITEM_NAME_SPLIT = /\s\+\s|[\/;,:]|[—–]|→|->|\s-\s|\bor\b|\bthen\b/;
+function canonicalItem(label) {
+  let s = String(label == null ? "" : label).toLowerCase().replace(/’/g, "'");
+  s = s.replace(/\([^)]*\)/g, " ");                                  // "(daily)", "(held over)"
+  s = s.split(ITEM_NAME_SPLIT)[0];                                   // combined rows → first item
+  s = s.replace(/'s\b/g, "").trim();                                 // "Crusher's Ring" ≡ "Crusher Ring"
+  s = s.replace(/^(?:the|a|an)\s+/, "");                             // "The Spellsparkler" ≡ "Spellsparkler"
+  s = s.replace(/^(elixirs|arrows|potions|scrolls)\b/, (w) => w.slice(0, -1));
+  return s.replace(/[^a-z0-9+]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+/* Key shapes, shared by the renderers and the link builder so the two can't drift. */
+function buildKeyRoot(charName, build) {
+  return slug(charName || "char") + "/" + slug((build && build.name) || "build");
+}
+function itemLabel(entry) {
+  const isObj = entry && typeof entry === "object";
+  return isObj ? entry.item || entry.note || "" : String(entry);
+}
+function itemEntryId(entry, i) {
+  if (entry && typeof entry === "object" && entry.id) return entry.id;
+  return slug(itemLabel(entry)).slice(0, 60) || "i" + i;
+}
+function charItemKey(keyRoot, act, entry, i) {
+  return keyRoot ? "item:" + keyRoot + "/" + act + "/" + itemEntryId(entry, i) : null;
+}
+function lootAreaKey(act, areaName) {
+  return "loot:" + act + "/" + slug(areaName);
+}
+function lootItemKey(areaKey, itemName) {
+  return areaKey ? areaKey + "/" + slug(itemName) : null;
+}
+
+let ITEM_LINK_OF = Object.create(null);     // checkoff key → canonical item name
+let ITEM_LINK_GROUPS = Object.create(null); // canonical item name → [{ key, where, kind }]
+
+function buildItemLinks(data) {
+  ITEM_LINK_OF = Object.create(null);
+  ITEM_LINK_GROUPS = Object.create(null);
+  const add = (canon, key, where, kind) => {
+    if (!canon || !key) return;
+    const group = ITEM_LINK_GROUPS[canon] || (ITEM_LINK_GROUPS[canon] = []);
+    if (group.some((m) => m.key === key)) return;
+    group.push({ key: key, where: where, kind: kind });
+  };
+
+  const characters = (data && data.characters) || {};
+  Object.keys(characters).forEach((name) => {
+    arr(characters[name]).forEach((build) => {
+      const keyRoot = buildKeyRoot(name, build);
+      const it = build.itemization || {};
+      Object.keys(it).forEach((act) => {
+        arr(it[act]).forEach((entry, i) => {
+          add(canonicalItem(itemLabel(entry)), charItemKey(keyRoot, act, entry, i), name, "char");
+        });
+      });
+    });
+  });
+
+  arr(data && data.loot_guide).forEach((a) => {
+    arr(a.areas).forEach((area) => {
+      const areaKey = lootAreaKey(a.act, area.area);
+      arr(area.items).forEach((item) => {
+        add(canonicalItem(item.name), lootItemKey(areaKey, item.name), "Loot — Act " + a.act, "loot");
+      });
+    });
+  });
+
+  Object.keys(ITEM_LINK_GROUPS).forEach((canon) => {
+    const group = ITEM_LINK_GROUPS[canon];
+    const bridges = group.some((m) => m.kind === "char") && group.some((m) => m.kind === "loot");
+    if (!bridges) { delete ITEM_LINK_GROUPS[canon]; return; }
+    group.forEach((m) => { ITEM_LINK_OF[m.key] = canon; });
+  });
+}
+
+/* Every key that moves together with `key` — itself when it isn't linked. */
+function linkedKeys(key) {
+  const canon = ITEM_LINK_OF[key];
+  const group = canon ? ITEM_LINK_GROUPS[canon] : null;
+  return group ? group.map((m) => m.key) : [key];
+}
+/* Where else this checkoff shows up, for the tick box's tooltip. */
+function linkedPlaces(key) {
+  const canon = ITEM_LINK_OF[key];
+  const group = canon ? ITEM_LINK_GROUPS[canon] : null;
+  if (!group) return [];
+  const places = [];
+  group.forEach((m) => {
+    if (m.key === key) return;
+    if (places.indexOf(m.where) < 0) places.push(m.where);
+  });
+  return places;
+}
+
 /* ---------------- Checkoff state (server-persisted) ----------------
    PROGRESS is a flat { key: true } map mirrored from the server's
    progress.json. Renderers read isChecked(key) at build time (the DOM is
@@ -661,10 +770,8 @@ async function loadProgress() {
   }
 }
 function isChecked(key) { return !!PROGRESS[key]; }
-async function setChecked(key, checked) {
-  const previous = !!PROGRESS[key];
-  if (checked) PROGRESS[key] = true;
-  else delete PROGRESS[key];
+/* One key, one request — the server's POST body carries a single key. */
+async function postProgress(key, checked) {
   try {
     const res = await fetch("/api/progress", {
       method: "POST",
@@ -674,20 +781,146 @@ async function setChecked(key, checked) {
     if (!res.ok) throw new Error("bad status " + res.status);
     return true;
   } catch (e) {
-    if (previous) PROGRESS[key] = true;
-    else delete PROGRESS[key];
     return false;
   }
 }
+/* Toggling a linked item writes every key in its group, so the character page
+   and the Loot tab never disagree. Writes are applied optimistically and each
+   one is rolled back on its own if the server rejects it, so PROGRESS stays in
+   step with what the server actually accepted even on a partial failure. */
+async function setChecked(key, checked) {
+  const keys = linkedKeys(key);
+  const previous = keys.map((k) => !!PROGRESS[k]);
+  keys.forEach((k) => { if (checked) PROGRESS[k] = true; else delete PROGRESS[k]; });
+  syncCheckboxNodes(keys);
+  const results = await Promise.all(keys.map((k) => postProgress(k, checked)));
+  const failed = results.some((ok) => !ok);
+  if (failed) {
+    keys.forEach((k, i) => {
+      if (results[i]) return;
+      if (previous[i]) PROGRESS[k] = true;
+      else delete PROGRESS[k];
+    });
+    syncCheckboxNodes(keys);
+  }
+  return !failed;
+}
+
+/* progress.json predates linking, so a group can arrive with some keys ticked
+   and some not — an item collected before the two views shared a state. Fill the
+   rest of the group in so both views agree from the first paint. This is done in
+   memory only and never written back: a boot has no business rewriting the
+   playthrough file, and the next real toggle of that item persists the whole
+   group anyway. Only ever adds, so nothing already recorded is lost. */
+function reconcileLinkedProgress() {
+  let added = 0;
+  Object.keys(ITEM_LINK_GROUPS).forEach((canon) => {
+    const keys = ITEM_LINK_GROUPS[canon].map((m) => m.key);
+    if (!keys.some(isChecked)) return;
+    keys.forEach((k) => {
+      if (isChecked(k)) return;
+      PROGRESS[k] = true;
+      added++;
+    });
+  });
+  return added;
+}
+
+/* Live tick boxes, so linked items update in place instead of waiting for the
+   next rebuild. Nodes are dropped once their view is torn out of the document. */
+const CHECKBOX_NODES = new Map();
+function registerCheckbox(key, node) {
+  let nodes = CHECKBOX_NODES.get(key);
+  if (!nodes) { nodes = new Set(); CHECKBOX_NODES.set(key, nodes); }
+  nodes.add(node);
+}
+function syncCheckboxNodes(keys) {
+  keys.forEach((k) => {
+    const nodes = CHECKBOX_NODES.get(k);
+    if (!nodes) return;
+    nodes.forEach((node) => {
+      if (node.isConnected) node.checked = isChecked(k);
+      else nodes.delete(node);
+    });
+    if (!nodes.size) CHECKBOX_NODES.delete(k);
+  });
+}
+
 /* A checkbox bound to a checkoff key. */
 function checkbox(key, label) {
-  const cb = h("input", { type: "checkbox", class: "ck", "aria-label": label || "Mark item complete" });
+  const places = linkedPlaces(key);
+  const cb = h("input", {
+    type: "checkbox",
+    class: "ck",
+    "aria-label": label || "Mark item complete",
+    title: places.length ? "Shared checkoff — also ticks " + places.join(", ") : null,
+  });
   cb.checked = isChecked(key);
   cb.addEventListener("change", async () => {
     const ok = await setChecked(key, cb.checked);
     if (!ok) cb.checked = isChecked(key);
   });
+  registerCheckbox(key, cb);
   return cb;
+}
+
+/* ---------------- Per-view UI state (scroll offset + open tabs) ----------------
+   Switching sub-views rebuilds the whole page, which would otherwise dump you
+   back at the top of a long character page every time. Each view key remembers
+   how far it was scrolled and which tab was open inside each of its tab groups,
+   so coming back to a character lands on the section you left. Held in
+   sessionStorage — it survives a reload of the same browser tab and is gone on
+   a fresh one; any storage failure quietly degrades to in-memory only. */
+const VIEW_STATE_STORE = "bg3-view-state-v1";
+const VIEW_STATE = { scroll: {}, tabs: {} };
+(function loadViewState() {
+  try {
+    const raw = window.sessionStorage.getItem(VIEW_STATE_STORE);
+    const saved = raw ? JSON.parse(raw) : null;
+    if (saved && typeof saved === "object") {
+      if (saved.scroll && typeof saved.scroll === "object") VIEW_STATE.scroll = saved.scroll;
+      if (saved.tabs && typeof saved.tabs === "object") VIEW_STATE.tabs = saved.tabs;
+    }
+  } catch (e) { /* private mode, file://, corrupt value — start empty */ }
+})();
+let viewStateWrite = null;
+function saveViewState() {
+  if (viewStateWrite) return;
+  viewStateWrite = setTimeout(() => {
+    viewStateWrite = null;
+    try { window.sessionStorage.setItem(VIEW_STATE_STORE, JSON.stringify(VIEW_STATE)); } catch (e) { /* ignore */ }
+  }, 300);
+}
+
+/* The view currently on screen, or null while one is being swapped in — the
+   scroll churn of a rebuild must not overwrite a remembered offset. */
+let CURRENT_VIEW = null;
+function viewScrollTop(key) {
+  const y = VIEW_STATE.scroll[key];
+  return typeof y === "number" && y > 0 ? y : 0;
+}
+let scrollFrame = false;
+window.addEventListener("scroll", () => {
+  if (scrollFrame || !CURRENT_VIEW) return;
+  scrollFrame = true;
+  window.requestAnimationFrame(() => {
+    scrollFrame = false;
+    if (!CURRENT_VIEW) return;
+    VIEW_STATE.scroll[CURRENT_VIEW] = Math.round(window.scrollY || window.pageYOffset || 0);
+    saveViewState();
+  });
+}, { passive: true });
+
+/* Tab groups restore by index. idBase is stable per view (it is derived from the
+   character/build or the loot act and area), so the stored index outlives the
+   rebuild that discards the DOM. */
+function rememberedTab(idBase, count) {
+  const i = VIEW_STATE.tabs[idBase];
+  return typeof i === "number" && i >= 0 && i < count ? i : 0;
+}
+function rememberTab(idBase, index) {
+  VIEW_STATE.tabs[idBase] = index;
+  saveViewState();
 }
 
 /* Reusable components */
@@ -1252,11 +1485,10 @@ function itemChecklist(entries, act, keyRoot) {
     "ul",
     { class: "clean checklist" },
     entries.map((entry, i) => {
-      const isObj = entry && typeof entry === "object";
-      const label = isObj ? entry.item || entry.note || "" : String(entry);
+      const label = itemLabel(entry);
       const tip = itemTip(entry);
-      const id = isObj && entry.id ? entry.id : (slug(label).slice(0, 60) || "i" + i);
-      const key = keyRoot ? "item:" + keyRoot + "/" + act + "/" + id : null;
+      const id = itemEntryId(entry, i);
+      const key = charItemKey(keyRoot, act, entry, i);
       const tipId = "item-tip-" + slug(keyRoot || "build") + "-" + slug(act) + "-" + slug(id) + "-" + i;
       const nameLink = wikiItemNode(entry, {
         class: "item-name", type: "button",
@@ -1726,7 +1958,7 @@ function addPageOutline(wrap, keyRoot) {
 
 function renderBuild(b, charName) {
   const wrap = h("div", { class: "build" });
-  const keyRoot = slug(charName || "char") + "/" + slug(b.name || "build");
+  const keyRoot = buildKeyRoot(charName, b);
 
   // Put the at-a-glance combat loop first so a character page opens with the
   // decisions the player needs at the table.
@@ -1819,11 +2051,12 @@ function renderCharacter(name, builds) {
   const tablist = h("div", { class: "tabs", role: "tablist", "aria-label": name + " builds" });
   const panels = h("div", null);
   const tabs = [];
+  const startIndex = rememberedTab(baseId, builds.length);
 
   builds.forEach((b, i) => {
     const tabId = baseId + "-tab-" + i;
     const panelId = baseId + "-panel-" + i;
-    const selected = i === 0;
+    const selected = i === startIndex;
     const tab = h(
       "button",
       {
@@ -1853,6 +2086,7 @@ function renderCharacter(name, builds) {
         if (on) t.panel.removeAttribute("hidden");
         else t.panel.setAttribute("hidden", "hidden");
       });
+      rememberTab(baseId, i);
       if (focus) tab.focus();
     };
     tab.addEventListener("click", () => activate(false));
@@ -2160,7 +2394,7 @@ function lootTable(items, keyPrefix) {
       h("th", { scope: "col" }, "Item"), h("th", { scope: "col" }, "For"), h("th", { scope: "col" }, "Notes"))),
     h("tbody", null, items.map((it) =>
       h("tr", { class: it.core ? "loot-core" : null },
-        keyPrefix ? h("td", { class: "ck-col" }, checkbox(keyPrefix + "/" + slug(it.name), "Mark " + it.name + " acquired")) : null,
+        keyPrefix ? h("td", { class: "ck-col" }, checkbox(lootItemKey(keyPrefix, it.name), "Mark " + it.name + " acquired")) : null,
         h("td", { class: "cell-strong" }, it.core ? "★ " : null, wikiItemNode(it) || it.name),
         h("td", null, it.for && it.for !== "any" ? h("span", { class: "who-chip" }, it.for) : h("span", { class: "muted" }, "any")),
         h("td", null, (it.note || "") + (it.verify ? "  ⚠ verify" : ""))
@@ -2175,10 +2409,11 @@ function miniTabs(idBase, entries, ariaLabel) {
   const tablist = h("div", { class: "tabs", role: "tablist", "aria-label": ariaLabel || null });
   const panels = h("div", null);
   const tabs = [];
+  const startIndex = rememberedTab(idBase, entries.length);
   entries.forEach((entry, i) => {
     const tabId = idBase + "-t-" + i;
     const panelId = idBase + "-p-" + i;
-    const selected = i === 0;
+    const selected = i === startIndex;
     const tab = h("button", {
       class: "tab", role: "tab", id: tabId, "aria-controls": panelId,
       "aria-selected": String(selected), tabindex: selected ? "0" : "-1", type: "button",
@@ -2192,6 +2427,7 @@ function miniTabs(idBase, entries, ariaLabel) {
         t.tab.tabIndex = on ? 0 : -1;
         if (on) t.panel.removeAttribute("hidden"); else t.panel.setAttribute("hidden", "hidden");
       });
+      rememberTab(idBase, i);
       if (focus) tab.focus();
     };
     tab.addEventListener("click", () => activate(false));
@@ -2225,7 +2461,7 @@ function renderLoot(a) {
     const mandatory = items.filter((it) => it.core);
     const fyi = items.filter((it) => !it.core);
     if (items.length) {
-      const lootKey = "loot:" + a.act + "/" + slug(area.area);
+      const lootKey = lootAreaKey(a.act, area.area);
       kids.push(miniTabs("loot-a" + a.act + "-" + ai, [
         { label: "Mandatory", count: mandatory.length, content: mandatory.length ? lootTable(mandatory, lootKey) : h("p", { class: "muted" }, "No plan-critical items here.") },
         { label: "FYI", count: fyi.length, content: fyi.length ? lootTable(fyi, lootKey) : h("p", { class: "muted" }, "Nothing extra flagged here.") },
@@ -2528,6 +2764,8 @@ function buildTopTabs(onActivate) {
     return;
   }
   await loadProgress();
+  buildItemLinks(data);
+  reconcileLinkedProgress();
   renderHeader(data.meta || {});
 
   // Keep the sticky-sidebar offset in sync with the real (wrapping) header height.
@@ -2551,6 +2789,9 @@ function buildTopTabs(onActivate) {
 
   function renderContent(key, focusContent) {
     clearPageOutlineObservers();
+    // The teardown and rebuild below scroll the window around on their own; park
+    // the recorder until the new view is in place so it can't clobber an offset.
+    CURRENT_VIEW = null;
     content.innerHTML = "";
     if (key === "__overview__") content.appendChild(renderOverview(data.party || {}));
     else if (key === "__proficiencies__") content.appendChild(renderProficiencies(data.proficiencies || {}));
@@ -2561,15 +2802,19 @@ function buildTopTabs(onActivate) {
       content.appendChild(renderLoot((data.loot_guide || []).find((x) => x.act === act)));
     }
     else content.appendChild(renderCharacter(key, data.characters[key]));
-    window.scrollTo({ top: 0 });
     // Move focus into the freshly rendered view so keyboard/screen-reader users
     // land on (and hear) the new content. Skipped on initial render and when the
     // caller will move focus elsewhere (e.g. onto the just-activated top tab).
     if (booted && focusContent) {
       const title = content.querySelector(".view-title") || content;
       title.setAttribute("tabindex", "-1");
-      title.focus();
+      title.focus({ preventScroll: true });
     }
+    // Land back where this view was left (0 the first time). Recording resumes
+    // here, so the scroll event this fires re-records the offset the browser
+    // actually settled on if the new page is too short for the old one.
+    CURRENT_VIEW = key;
+    window.scrollTo(0, viewScrollTop(key));
     booted = true;
   }
 

@@ -228,6 +228,10 @@ builds:
       note: Fast Hands enables two Flurries per turn — the whole reason for the three-level Rogue tail.
   itemization:
     act1:
+    - id: staff-of-arcane-blessing
+      item: Staff of Arcane Blessing (pre-combat swap — carried all game)
+      slot: weapons
+      note: 'HIS JOB, NOT A WEAPON — and the party''s entire Bless supply. Arcane Tower BASEMENT in the Underdark; the elevator buttons only appear if someone carries Bernard''s Guiding Light ring. The staff GRANTS Bless as a level 1 spell, once per long rest, so Asterion needs no Paladin dip and no class access to cast it — this is why he stays a clean Open Hand Monk 9 / Thief Rogue 3. Every Bless its wielder casts also applies MYSTRA''S BLESSING, a second +1d4 that lands only on SPELL attack rolls, which is worth +1d4 accuracy on each of Gale''s 3–7 Scorching Ray rays. THE ROUTINE: equip the staff out of combat → cast Bless → unequip and fight with empty hands. Concentration then sits on Asterion, who is the only party member with nothing else to concentrate on. ⚠ LIMITS TO PLAN AROUND: the staff''s free cast is ONCE PER LONG REST, and Bless at level 1 hits only THREE creatures — pick Charles, Gale and Bonbon and leave Asterion out, since he benefits least from +1d4 and the other three all key off attack rolls. ⚠ Do NOT let Gale consume it; the wiki flags it as Consumable by Gale. ⚠ Losing concentration drops the regular Bless but the wiki notes Mystra''s Blessing persists on its own, so Gale keeps his spell-attack bonus even if Asterion is hit.'
     - id: corellon-s-grace
       item: Corellon's Grace (levels 2–4 only)
       slot: weapons

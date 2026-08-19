@@ -365,8 +365,8 @@ builds:
       recommendation: War Caster
       note: Advantage on concentration saves protects the later Hold Monster engine.
     - category: Spell
-      recommendation: Fear
-      note: The flexible cone-control option, added without delaying the earlier core picks.
+      recommendation: Hold Person
+      note: 'MORE HOLD, NOT MORE FEAR. A held humanoid takes automatic critical hits from melee within 3m, which is exactly what Charles converts into a doubled-smite nova, so a second Hold is worth more to this party than a cone of Frightened. Upcast Hold Person hits an extra target per slot level, and her Arcane Acuity DC makes it stick. Keep Fear only as a scroll or a swap for a crowd of non-humanoids that Hold Person cannot touch.'
   - char_level: 10
     class: Swords Bard 9
     gains:
@@ -458,7 +458,7 @@ builds:
     - id: the-whispering-promise
       item: The Whispering Promise
       slot: rings
-      note: 'THE CHAR 1–3 BLESS FIX, rated #10 of 20. Volo, or Grat at the Goblin Camp, for about 40g — available before the Grove is resolved. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration. Bonbon is the carrier because her Healing Word is a BONUS ACTION and she already runs Broodmother''s Revenge, so one bonus action fires both riders. Best trigger for the whole party is a THROWN Potion of Healing, which blesses every creature it splashes; it works on targets already at full HP, and drinking a potion self-triggers it. ⚠ It applies the SAME condition as the Bless spell, so it does NOT stack with Charles''s Bless and is NOT boosted by his Staff of Arcane Blessing — its value is levels 1–3 before Charles has Bless, and later any fight where he concentrates on Hex or Darkness instead.'
+      note: 'PRE-UNDERDARK STOPGAP ONLY, and the slot is freed as soon as Asterion picks up the Staff of Arcane Blessing in the Arcane Tower basement. Volo, or Grat at the Goblin Camp, for about 40g. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration, and her Healing Word is a BONUS ACTION, so it costs her nothing. It is the only Bless the party can get before the Underdark, because the staff is an Underdark item. WARNING it applies the SAME condition as the Bless spell, so once Asterion is casting real Bless the two do NOT stack and this ring is pure waste - take it off. WARNING the ring version is also never enhanced by the staff, so it never grants Mystra''s Blessing.'
     - id: caustic-band
       item: Caustic Band
       slot: rings
@@ -474,7 +474,7 @@ builds:
     - id: broodmother-s-revenge
       item: Broodmother's Revenge
       slot: amulets
-      note: 'After saving the Grove — talk Kagha down, then knock the isolated friendly Kagha out non-lethally and loot it. Rated #17 of 20. Any healing, even a potion at full HP, coats Titanstring for +1d6 Poison per projectile for 2 turns, and her bonus-action Healing Word fires it alongside the Whispering Promise. Skip against poison-resistant or immune enemies.'
+      note: 'After saving the Grove — talk Kagha down, then knock the isolated friendly Kagha out non-lethally and loot it. Rated #17 of 20. Any healing, even a potion at full HP, coats Titanstring for +1d6 Poison per projectile for 2 turns, and her bonus-action Healing Word is what triggers it. Skip against poison-resistant or immune enemies.'
     - id: boots-of-speed
       item: Boots of Speed
       slot: feet
@@ -512,9 +512,25 @@ builds:
       slot: amulets
       note: 'ACT 2 NECK, worn by the Warden in the Moonrise Towers Prison. Replenish an expended spell slot of ANY level as a BONUS ACTION, once per long rest. On a Bard 11 with a single level-6 slot that is literally a second six-target Command or a second Hold Monster, recovered mid-fight without spending her action. It replaces Broodmother''s Revenge, whose poison coating needs a per-turn heal she no longer has time for once the Acuity loop starts.'
     - id: act2-rings-bonbon
-      item: Caustic Band + The Whispering Promise (held over)
+      item: Caustic Band
       slot: rings
-      note: 'Both keep working into Act 2 — Caustic Band adds +2 Acid to every bolt, and the Whispering Promise still covers any fight where Charles concentrates on Hex or Darkness instead of Bless. ⚠ The Risky Ring is NOT hers: advantage on attacks would stack Acuity faster, but disadvantage on saving throws lands directly on the Constitution saves protecting Hold Monster, and Charles needs the ring more. The Band of the Mystic Scoundrel takes a slot in Act 3.'
+      bis: true
+      note: 'Caustic Band keeps adding +2 Acid to every bolt and never comes off. Per the wiki it covers melee, ranged and Thrown attacks but NOT Unarmed Strike, which is why it can never move to Asterion despite his higher hit count.'
+    - id: act2-ring2-bonbon
+      item: Second ring
+      slot: rings
+      wiki: false
+      note: 'GENUINELY OPEN until Act 3. The Whispering Promise came off the moment Asterion started casting real Bless off the Staff of Arcane Blessing, because both apply the same condition and do not stack. Nothing in the Act 2 pool is clearly best-in-slot for her, so pick per stretch. WARNING the Risky Ring is NOT a candidate: disadvantage on saving throws lands directly on the Constitution saves protecting Hold Monster.'
+      options:
+      - id: opt-whispering-promise-hold
+        item: The Whispering Promise (only until the staff)
+        note: 'Keep it on ONLY until Asterion reaches the Arcane Tower basement. After that it is pure waste, because its Bless is the same non-stacking condition and it never gets Mystra''s Blessing.'
+      - id: opt-ring-of-mental-inhibition
+        item: Ring of Mental Inhibition
+        note: 'House in Deep Shadows. Applies Mental Fatigue when an enemy fails a save against her — it compounds with her Acuity-inflated DC, so the next control lands more easily.'
+      - id: opt-callous-glow-ring
+        item: Callous Glow Ring (if Gale gives it up)
+        note: '+2 Radiant against ILLUMINATED targets on every projectile. Strong on a multi-hit ranged build, but it is currently Gale''s and it fights Charles''s darkness.'
     - id: cloak-of-cunning-brume
       item: Cloak of Cunning Brume
       slot: cloaks
@@ -595,9 +611,9 @@ builds:
       slot: amulets
       note: Act 1 Broodmother's (Kagha) while her bonus action is free for Healing Word → Act 2–3 Spellcrux (Moonrise Prison Warden), which returns a level-6 slot as a bonus action once per long rest — a second six-target Command.
     - id: prog-rings
-      item: 'Rings: Whispering Promise + Caustic Band → Band of the Mystic Scoundrel + Caustic Band'
+      item: 'Rings: Caustic Band + flex → Band of the Mystic Scoundrel + Caustic Band'
       slot: rings
-      note: Whispering Promise covers levels 1–3 before Charles has Bless and stays useful in any fight he concentrates elsewhere; Caustic Band runs all game. The Band of the Mystic Scoundrel (Chult jungle, via Akabi's wheel) takes the first slot in Act 3 and turns her control spells into bonus actions.
+      note: 'Caustic Band is the constant. The Whispering Promise covers Bless only until Asterion reaches the Staff of Arcane Blessing in the Underdark, then comes off because the ring and the spell apply the same non-stacking condition. The second slot is a flex pick through Act 2 and becomes the Band of the Mystic Scoundrel in Act 3.'
     - id: prog-weapons
       item: 'Melee: Club of Hill Giant Strength + Knife of the Undermountain King, all game'
       slot: weapons

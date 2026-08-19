@@ -13,13 +13,13 @@ use std::sync::Arc;
 use anyhow::{Context, Result};
 use axum::{
     extract::State,
-    http::StatusCode,
+    http::{header, HeaderValue, StatusCode},
     response::{IntoResponse, Response},
     routing::get,
     Json, Router,
 };
 use serde::Deserialize;
-use tower_http::services::ServeDir;
+use tower_http::{services::ServeDir, set_header::SetResponseHeaderLayer};
 
 use crate::progress::{Progress, ProgressStore};
 
@@ -43,6 +43,12 @@ async fn main() -> Result<()> {
         .route("/api/plan", get(get_plan))
         .route("/api/progress", get(get_progress).post(post_progress))
         .fallback_service(ServeDir::new(root.clone()).append_index_html_on_directories(true))
+        // Single-user local tool whose content is edited live: never let the
+        // browser serve a stale index.html or plan from its cache.
+        .layer(SetResponseHeaderLayer::overriding(
+            header::CACHE_CONTROL,
+            HeaderValue::from_static("no-store"),
+        ))
         .with_state(state);
 
     let port: u16 = std::env::var("BG3_PORT")

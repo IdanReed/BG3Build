@@ -360,10 +360,12 @@
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px; align-items: start;
   }
-  .item-rows { display: grid; gap: 18px; }
-  /* auto-fill (not auto-fit) keeps the two-card weapons row the same column
-     width as the wider worn-gear row above it. */
-  .item-row .item-slot-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  /* Three side-by-side columns; each column stacks its slot cards vertically. */
+  .item-rows {
+    display: grid; gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start;
+  }
+  .item-row .item-slot-grid { grid-template-columns: minmax(0, 1fr); }
   .item-row-label {
     display: flex; align-items: center; gap: 10px; margin: 0 0 9px;
     color: var(--text-muted); font-size: .68rem; font-weight: 800;
@@ -377,6 +379,31 @@
     border-radius: 10px; padding: 12px 14px;
     transition: border-color .14s ease, box-shadow .14s ease;
   }
+  /* An item name row plus its badges. */
+  .item-head { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }
+  .item-body { min-width: 0; flex: 1; }
+  .ck-spacer { flex: 0 0 auto; width: 16px; }
+  /* "(held over from Act 1)" renders as a badge rather than prose. */
+  .item-chip {
+    flex: 0 0 auto; font-size: .58rem; font-weight: 800; letter-spacing: .06em;
+    text-transform: uppercase; padding: 1px 6px; border-radius: 999px;
+    color: var(--text-muted); background: var(--surface); border: 1px solid var(--border);
+  }
+  /* Build-defining gear is meant to pop, in every act it appears. */
+  li.ck-li.item-bis { border-left: 3px solid var(--accent); padding-left: 7px; }
+  li.ck-li.item-bis .item-name { font-weight: 700; color: var(--text); }
+  .item-bis-star { flex: 0 0 auto; color: var(--accent); font-size: .72rem; line-height: 1; }
+  .item-chip.flex-chip { border-style: dashed; }
+  /* A flex slot is a heading with small checkable candidates underneath. */
+  .flex-label { font-size: .82rem; font-weight: 700; color: var(--text-muted); }
+  ul.flex-options { list-style: none; padding-left: 10px; margin: 4px 0 0; border-left: 1px dashed var(--border); }
+  ul.flex-options li.ck-li.flex-option { margin: 3px 0; }
+  ul.flex-options .item-name { font-size: .78rem; }
+  /* Slot progression, newest on top. */
+  .prog-steps { margin-top: 3px; }
+  .prog-step { font-size: .8rem; color: var(--text-muted); }
+  .prog-step.prog-latest { font-size: .86rem; font-weight: 700; color: var(--text); }
+  .prog-arrow { font-size: .66rem; line-height: 1.1; color: var(--accent); opacity: .75; }
   .item-slot:hover {
     border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
     box-shadow: 0 7px 20px rgba(28, 24, 44, .08);
@@ -576,6 +603,7 @@
   }
   @media (max-width: 480px) {
     .item-slot-grid, .item-row .item-slot-grid { grid-template-columns: 1fr; }
+    .item-rows { grid-template-columns: 1fr; }
     .level-choice { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr) 24px; }
     .level-choice:not(.has-detail) { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr); }
     .header-inner { padding: 12px 14px; }
@@ -1205,10 +1233,12 @@ function renderLeveling(lv, idHint, keyRoot) {
 /* Slot cards are laid out in three fixed rows — worn kit, then weapons, then
    consumables — so a build's gear reads top-to-bottom instead of as one long
    alphabetical grid. Rows and slots with no entries are dropped. */
+/* Three vertical columns that mirror how the gear actually reads: what he swings,
+   what he wears, what hangs off him. Each column stacks its slot cards. */
 const ITEM_SLOT_ROWS = [
-  { label: "Worn gear", slots: ["Head", "Armour", "Hands", "Rings", "Boots", "Amulets", "Cloaks"] },
-  { label: "Weapons", slots: ["Melee Weapons", "Ranged Weapons", "Off-hand & Shields"] },
-  { label: "Consumables", slots: ["Elixirs", "Potions & Oils", "Other"] },
+  { label: "Weapons & consumables", slots: ["Melee Weapons", "Ranged Weapons", "Off-hand & Shields", "Potions & Oils", "Elixirs", "Other"] },
+  { label: "Worn", slots: ["Head", "Armour", "Hands", "Boots"] },
+  { label: "Accessories", slots: ["Amulets", "Cloaks", "Rings"] },
 ];
 const ITEM_SLOT_ICONS = {
   Head: "⛑",
@@ -1480,26 +1510,129 @@ function linkedNameTip(label, linkedNode, tip, tipId, heading) {
 
 /* A checkable, slot-grouped item list. The visible row is deliberately only the
    item name; effect and build rationale live in an accessible hover/focus bubble. */
+/* "(held over from Act 1)" in a content item name is presentation, not data: strip it
+   from the visible name and show it as an act chip instead. */
+const ITEM_HELD_RE = /\s*\(\s*(?:held|carried)\s+over(?:\s+from\s+act\s*([123]))?\s*\)\s*/i;
+function itemHeldChip(entry) {
+  const m = itemLabel(entry).match(ITEM_HELD_RE);
+  if (!m) return null;
+  return m[1] ? "Act " + m[1] : "Held";
+}
+/* A shallow clone whose visible name has the held-over parenthetical removed. The
+   `wiki` field is untouched, so wiki linking is unaffected. */
+function itemDisplayEntry(entry) {
+  if (!entry || typeof entry !== "object") return entry;
+  const stripped = String(entry.item || "").replace(ITEM_HELD_RE, " ").replace(/\s{2,}/g, " ").trim();
+  if (!stripped || stripped === entry.item) return entry;
+  return Object.assign({}, entry, { item: stripped });
+}
+/* Build-defining gear. Explicit `bis: true` wins; otherwise the existing prose
+   conventions (LOCKED / best-in-slot / BIS) are honoured so old content still pops. */
+function itemIsBis(entry) {
+  if (!entry || typeof entry !== "object") return false;
+  if (entry.bis === true) return true;
+  if (entry.bis === false) return false;
+  return /\bLOCKED\b|\bBIS\b|best[- ]in[- ]slot/i.test(String(entry.item || "") + " " + String(entry.note || ""));
+}
+/* A flex slot: no checkbox of its own, just small checkable candidates. */
+function itemFlexOptions(entry) {
+  if (!entry || typeof entry !== "object") return null;
+  const opts = arr(entry.options);
+  if (!opts.length) return null;
+  return opts;
+}
+/* "Head: Haste Helm -> Covert Cowl -> Helm of Balduran" becomes a vertical list with
+   the latest pick on top, which is the one you actually want to read first. */
+function progressionParts(entry) {
+  const raw = itemLabel(entry);
+  const colon = raw.indexOf(":");
+  const prefix = colon > 0 ? raw.slice(0, colon).trim() : "";
+  const body = colon > 0 ? raw.slice(colon + 1) : raw;
+  const steps = body.split(/\u2192|->/).map((s) => s.trim()).filter(Boolean);
+  return { prefix: prefix, steps: steps };
+}
+function progressionSteps(steps) {
+  const out = [];
+  steps.slice().reverse().forEach((s, i) => {
+    if (i) out.push(h("div", { class: "prog-arrow", "aria-hidden": "true" }, "\u2191"));
+    out.push(h("div", { class: "prog-step" + (i === 0 ? " prog-latest" : "") }, s));
+  });
+  return h("div", { class: "prog-steps" }, out);
+}
+
 function itemChecklist(entries, act, keyRoot) {
+  const isProgression = act === "progression";
   return h(
     "ul",
     { class: "clean checklist" },
     entries.map((entry, i) => {
       const label = itemLabel(entry);
+      const shown = itemDisplayEntry(entry);
+      const chip = itemHeldChip(entry);
+      const bis = itemIsBis(entry);
+      const flex = itemFlexOptions(entry);
       const tip = itemTip(entry);
       const id = itemEntryId(entry, i);
       const key = charItemKey(keyRoot, act, entry, i);
       const tipId = "item-tip-" + slug(keyRoot || "build") + "-" + slug(act) + "-" + slug(id) + "-" + i;
-      const nameLink = wikiItemNode(entry, {
+      const cls = ["ck-li", bis ? "item-bis" : null, flex ? "flex-parent" : null].filter(Boolean).join(" ");
+
+      if (isProgression) {
+        const parts = progressionParts(entry);
+        const heading = parts.prefix || label;
+        const plain = h("span", { class: "item-name", tabindex: tip ? "0" : null, "aria-describedby": tip ? tipId : null }, heading);
+        return h("li", { class: cls },
+          key ? checkbox(key, "Mark " + label + " acquired") : null,
+          h("div", { class: "item-body" },
+            h("div", { class: "item-head" },
+              linkedNameTip(heading, plain, tip, tipId, "How the slot progresses"),
+              bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "\u2605") : null
+            ),
+            parts.steps.length > 1 ? progressionSteps(parts.steps) : null
+          )
+        );
+      }
+
+      if (flex) {
+        return h("li", { class: cls },
+          h("span", { class: "ck-spacer", "aria-hidden": "true" }),
+          h("div", { class: "item-body" },
+            h("div", { class: "item-head" },
+              h("span", { class: "flex-label" }, itemLabel(shown) || "Flex slot"),
+              h("span", { class: "item-chip flex-chip" }, "Flex"),
+              chip ? h("span", { class: "item-chip" }, chip) : null
+            ),
+            h("ul", { class: "clean flex-options" }, flex.map((opt, j) => {
+              const oLabel = itemLabel(opt);
+              const oTip = itemTip(opt);
+              const oTipId = tipId + "-opt-" + j;
+              const oKey = keyRoot ? "item:" + keyRoot + "/" + act + "/" + id + "/" + itemEntryId(opt, j) : null;
+              const oName = wikiItemNode(itemDisplayEntry(opt), {
+                class: "item-name", type: "button",
+                "aria-describedby": oTip ? oTipId : null,
+              });
+              return h("li", { class: "ck-li flex-option" },
+                oKey ? checkbox(oKey, "Mark " + oLabel + " acquired") : null,
+                linkedNameTip(oLabel, oName, oTip, oTipId, "What it does & why it fits")
+              );
+            }))
+          )
+        );
+      }
+
+      const nameLink = wikiItemNode(shown, {
         class: "item-name", type: "button",
         "aria-describedby": tip ? tipId : null,
       });
-      const tipWrap = linkedNameTip(label, nameLink, tip, tipId, "What it does & why it fits");
-      return h(
-        "li",
-        { class: "ck-li" },
+      return h("li", { class: cls },
         key ? checkbox(key, "Mark " + label + " acquired") : null,
-        tipWrap
+        h("div", { class: "item-body" },
+          h("div", { class: "item-head" },
+            linkedNameTip(itemLabel(shown), nameLink, tip, tipId, "What it does & why it fits"),
+            bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "\u2605") : null,
+            chip ? h("span", { class: "item-chip" }, chip) : null
+          )
+        )
       );
     })
   );

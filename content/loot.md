@@ -212,9 +212,9 @@ loot_guide:
       note: 'Longsword in stone near the Selûnite Outpost. ACT 1–mid ACT 2: bind, two-hand, GWM at char 6, Darkness Arrows for advantage. LATE ACT 2 after the Resonance Stone: GWM → Dual Wielder, 3d8 Shadow Blade main hand, Phalar off-hand. Pre-cast Shriek and keep it equipped — the 6m aura covers Charles and Asterion.'
     - name: Staff of Arcane Blessing
       wiki: Staff of Arcane Blessing
-      for: Charles
+      for: Asterion
       core: true
-      note: 'Arcane Tower BASEMENT, leaning against a table. A pre-combat swap item, not a weapon: every Bless that ITS WIELDER casts also grants Mystra''s Blessing, +1d4 to spell ATTACK rolls. Charles holds it, casts Bless (upcast to a level 2 slot for all four party members), then swaps back to Phalar Aluve — he was already concentrating on Bless, so the only cost is the swap. Gale is the payoff: +1d4 accuracy on every single Scorching Ray ray. It also self-grants Bless 1/long rest, so any holder can cast it. ⚠ Does NOT enhance the Whispering Promise''s version of Bless.'
+      note: 'ASTERION''S, not Charles''s. Arcane Tower BASEMENT, leaning against a table; the elevator buttons only appear if someone carries Bernard''s Guiding Light ring. It GRANTS Bless as a level 1 spell once per long rest, so the holder needs no Paladin or Cleric level to cast it, and every Bless its wielder casts also applies Mystra''s Blessing, a second +1d4 that lands only on SPELL attack rolls. Asterion holds it, casts Bless out of combat, then unequips it and fights with empty hands - he is the only member with no other use for Concentration. Charles cannot be the Bless caster because his Concentration is permanently Hold Person, and Gale cannot because his is permanently Twinned Haste. WARNING the free cast is 1/long rest and Bless at level 1 covers only THREE creatures. WARNING do not let Gale consume it.'
     - name: Caustic Band + Club of Hill Giant Strength
       wiki:
       - Caustic Band
@@ -250,7 +250,7 @@ loot_guide:
       wiki: Adamantine Scale Mail
       for: Charles
       core: true
-      note: 'SECOND MITHRAL ORE, and CHARLES''S ACT 2 CHEST. Medium armour, so his Hexblade proficiency covers it: AC 16 + DEX (max 2) = 18 at DEX 14, ATTACKERS CANNOT LAND CRITICAL HITS, all incoming damage reduced by 1, melee attackers Reeling. Crit immunity is the whole point on him — a critical hit roughly doubles a concentration-save DC, and he is holding Bless, Hex or Darkness in every fight while wearing the Risky Ring''s permanent disadvantage on saves. ⚠ He cannot wear the Splint: that is Heavy armour, and multiclassing into Paladin never grants heavy proficiency. Luminous Armour stays the swap when Radiating Shockwaves matter more than crit immunity; Helldusk Armour takes the slot in Act 3.'
+      note: 'SECOND MITHRAL ORE, and NO LONGER CHARLES''S CHEST. Medium armour, AC 16 + DEX (max 2) = 18, attackers cannot land critical hits, all incoming damage reduced by 1, and melee attackers are sent Reeling. Charles is now LOCKED to Luminous Armour in every act for its Radiant Shockwave, so he forgoes this crit immunity - which is why he takes the Helm of Balduran in Act 3 to get it back. The second ore is therefore free for whoever wants durability.'
     - name: Grymskull Helm
       wiki: Grymskull Helm
       for: Bonbon
@@ -460,7 +460,7 @@ loot_guide:
     - name: Killer's Sweetheart
       for: Charles
       core: true
-      note: Self-Same Trial. After a kill, your next attack is a GUARANTEED crit; refreshes on long rest. ⚠ As Oathbreaker, don't kill the clone with Control Undead — it instakills the copy and the ring won't drop.
+      note: 'Self-Same Trial. After a kill, your next attack is a GUARANTEED crit; refreshes on long rest. Charles banks it for the largest Divine Smite, since a crit doubles every smite die. WARNING it applies to WEAPON attack rolls only, so it can never move to a caster. The old Oathbreaker caveat about Control Undead on the clone no longer applies - Charles keeps the Vengeance oath and never becomes an Oathbreaker.'
     - name: Callous Glow Ring
       for: Gale
       core: true
@@ -518,6 +518,11 @@ loot_guide:
       note: A permanent, one-time character change. This plan COMMUNES rather than eats, so all four transform — see the Tadpole tab.
   - area: Reithwin Town — Mason's Guild
     items:
+    - name: Gloves of Battlemage's Power
+      wiki: Gloves of Battlemage's Power
+      for: Charles
+      core: true
+      note: 'REITHWIN TOLLHOUSE, not the Mason''s Guild - a locked opulent chest on the SECOND FLOOR, in the room with two locked doors. THE ITEM CHARLES''S WHOLE BUILD RUNS ON, and it is locked into his hands slot from here to the end of the run. Hitting a target with a spell or cantrip that uses a weapon grants ARCANE ACUITY: +1 spell attack roll and +1 SPELL SAVE DC per remaining turn, up to +10. Confirmed triggers are every Shadow Blade weapon attack, Booming Blade, any smite spell, and Divine Smite - and a smite spell chaining into a Divine Smite reaction triggers it TWICE. That DC is what makes HOLD PERSON land, and Hold Person is what makes every swing an automatic critical hit. It also gives him the party''s best save DC before Bonbon''s Helmet of Arcane Acuity arrives. WARNING Acuity duration drops by 2 every time he takes damage, so build stacks and cast Hold Person before the enemy turn. WARNING taking this forgoes Gloves of Baneful Striking, Helldusk Gloves and Craterflesh Gloves for the rest of the run.'
     - name: Helmet of Arcane Acuity
       for: Bonbon
       core: true
@@ -531,7 +536,7 @@ loot_guide:
     - name: Thorm Mausoleum puzzle
       note: Press the family plaques in mural order → the way to the Gauntlet of Shar.
     - name: Oathbreaker Knight (Charles)
-      note: Keep the Vengeance oath intact through Act 1. At the Stone, respec first, then break the fresh oath. Broke it early? Pay the Knight to restore it before Withers will respec.
+      note: 'NO LONGER RELEVANT - kept only so the old plan is not silently dropped. Charles keeps the Oath of Vengeance permanently and never breaks it, because Inquisitor''s Might is the only non-concentration per-hit Radiant source that feeds Luminous Armour. There is nothing to pay and nothing to restore before Withers will respec him at the Resonance Stone.'
   - area: House of Healing (Reithwin) — MISSABLE
     items:
     - name: Eversight Ring
@@ -553,9 +558,9 @@ loot_guide:
     items:
     - name: Hellrider's Longbow
       wiki: Hellrider Longbow
-      for: Gale
+      for: Charles
       core: true
-      note: 'Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 Initiative and advantage on Perception — and BG3 rolls initiative on a d4 + DEX, so a flat +3 is worth most of the die. THE DECIDER IS THE ITEM ITSELF: it is TWO-HANDED, so Bonbon cannot equip it alongside the dual hand crossbows that are her entire Arcane Acuity engine, and she has no free ranged slot. Gale has one he never otherwise uses; he carries it as a stat stick and never fires it, upgrading the Bow of Awareness he has held since Act 1 and stacking with his standing Elixir of Vigilance for +8 initiative without a feat. Resulting order is Asterion (d4+10) → Gale (d4+8) → Bonbon (d4+4) → Charles (d4+2), and Charles going last is correct: he wants to swing at a target the others have already Held or Stunned. ⚠ Ferg Drogher sells nothing if Shadowheart is nearby, unless she killed the Nightsong in Act 2.'
+      note: 'CONTESTED, and now CHARLES''S. Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 Initiative and advantage on Perception. Charles has the party''s worst initiative at d4+2 and his ranged slot is otherwise dead, because a Darkness cloud blocks ranged attacks into and out of itself - so this converts a wasted slot into the fix for his one structural weakness, and going first is what lets him stack Arcane Acuity and land Hold Person before the enemy acts. WARNING THE COST: this was Gale''s, and Gale acting earlier is what puts Twinned Haste up sooner - which is itself what gives Charles the extra action to build Acuity and Hold in the same turn. If Haste is landing too late in practice, give the bow back to Gale and cover Charles with the Fistbreaker Helm or a Sentinel Shield instead.'
     - name: Boots of Uninhibited Kushigo
       wiki: Boots of Uninhibited Kushigo
       for: Asterion

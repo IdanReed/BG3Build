@@ -17,6 +17,39 @@ builds:
     CHA: 17
   stats_note: 'Point-buy 8/14/15/8/10/15 = all 27 (CON 15 and CHA 15 cost 9 each). Half-Orc +2 → CHA 17, +1 → CON 16. Fully spent, no leftovers.'
   ability_targets: CHA 17 → 18 (Hag's Hair) → 20 (Mirror of Loss); CON stays 16.
+  ability_scores:
+  - ability: STR
+    steps:
+    - score: 8
+      source: 'point-buy'
+  - ability: DEX
+    steps:
+    - score: 14
+      source: 'point-buy'
+  - ability: CON
+    steps:
+    - score: 15
+      source: 'point-buy'
+    - score: 16
+      source: '+1 Racial'
+  - ability: INT
+    steps:
+    - score: 8
+      source: 'point-buy'
+  - ability: WIS
+    steps:
+    - score: 10
+      source: 'point-buy'
+  - ability: CHA
+    steps:
+    - score: 15
+      source: 'point-buy'
+    - score: 17
+      source: '+2 Racial'
+    - score: 18
+      source: '+1 Hag''s Hair'
+    - score: 20
+      source: '+2 Mirror of Loss, Act 3'
   locked_decisions: 'FOUR things are fixed for the whole run and everything else is built around them. (1) GLOVES OF BATTLEMAGE''S POWER from Act 2 onward — the Arcane Acuity engine. (2) LUMINOUS ARMOUR in every act — the Radiant Shockwave engine. (3) OATH OF VENGEANCE, never broken — Inquisitor''s Might is the per-hit radiant that feeds the Shockwave. (4) CONCENTRATION IS HOLD PERSON — he sets up his own auto-crit nova and holds nothing else.'
   feats:
   - at: Act 1 char 6 (Paladin 4)
@@ -411,48 +444,89 @@ builds:
       slot: weapons
       note: Before Phalar, bind the best main-hand weapon so it attacks with CHA. Hexblade can bind Two-Handed or Versatile — keep the off-hand empty so Versatile weapons use the larger die and later qualify for GWM.
     - id: phalar-aluve-two-handed
-      item: Phalar Aluve (selected two-handed weapon)
+      item: Phalar Aluve (two-handed)
+      tier: S
+      tier_note: 'The BEST WEAPON TYPE in BG3 - Versatile Weapons Honor Mode Tier List and Guide - Act 1 (30:10) — one of the best weapons in the game even ignoring the strongest thing it does'
       slot: weapons
       bis: true
       note: ACT-1 DEFAULT from the Underdark. Bind as the Hexed Weapon, off-hand empty, so the Versatile longsword uses 1d10 and GWM All In adds +10 from char 6. Pre-cast Shriek and keep it equipped — the 6m aura covers Charles and Asterion.
     - id: haste-helm
       item: Haste Helm
+      tier: S
+      tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (27:11) — wanted somewhere in just about every party; it opens up combat options'
+      rank: '#19'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #19 of 20 — three turns of Momentum at combat start decides whether a turn matters'
       slot: head
       note: 'ACT-1 HEAD, from the Moss-Covered Chest in the Blighted Village. Three turns of opening Momentum, and the Ring of Arcane Synergy keeps this slot free. ⚠ He keeps it rather than lending it out: he has the party''s worst initiative at d4+2 and the longest distance to close. ⚠ The GRYMSKULL HELM is NOT an option at any point — it requires Heavy Armour proficiency, which a Warlock-first medium-armour build never gets.'
     - id: luminous-armour
-      item: Luminous Armour (LOCKED — worn in all three acts)
+      item: Luminous Armour (LOCKED)
+      tier: S
+      tier_note: 'BG3''S BEST ARMOR - Medium Armor Tier List - Honour Mode Guide - Part 3 (22:22) — a game-winning armour; the list had no S tier until this item was given one'
+      rank: '#2'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #2 of 20 — Radiating Shockwave stacks Radiating Orb across an encounter'
       slot: armour
       bis: true
       note: 'LOCKED CHEST FOR THE WHOLE RUN, from the Selûnite Outpost. Medium armour, AC 15 + DEX (max 2) = 17. Every point of Radiant damage he deals fires a RADIANT SHOCKWAVE, spreading Radiating Orb in a 3m radius: −1 to attack rolls per remaining turn, stacking duration on reapplication up to −10. He has exactly two Radiant sources feeding it — Inquisitor''s Might on every weapon hit, and Divine Smite — which is precisely why the oath is Vengeance and not Oathbreaker. ⚠ The accepted cost: no Adamantine Scale Mail crit immunity in Act 2 and no Helldusk Armour AC 21 in Act 3. Shield, Mirror Image, Helm of Balduran and Aura of Protection are the compensation.'
-    - id: gloves-of-the-growling-underdog
-      item: Gloves of the Growling Underdog (Act 1 only)
+    - id: act1-hands-charles
+      item: Glove slot
       slot: hands
-      note: 'SELECTED ACT-1 GLOVES, from Dror Ragzlin''s treasure room. Advantage on melee attacks when 2+ enemies stand within 3m of the target — a free advantage source while Vow of Enmity is competing with Inquisitor''s Might for the single Channel Oath charge and before the Risky Ring exists. They are a stopgap: the Gloves of Battlemage''s Power take this slot permanently the moment the Reithwin Tollhouse opens in Act 2.'
+      wiki: false
+      note: 'A PLACEHOLDER BY DESIGN. His actual best-in-slot is the Gloves of Battlemage''s Power, and it does not exist until the Reithwin Tollhouse in Act 2, so nothing here is worth committing to. Take whichever of these the next fight wants.'
+      options:
+      - id: gloves-of-the-growling-underdog
+        item: Gloves of the Growling Underdog
+        tier: B
+        tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (32:54) — advantage when surrounded is powerful but the positioning work is punishing'
+        note: 'DEFAULT. Dror Ragzlin''s treasure room. Advantage on melee attacks when 2+ enemies stand within 3m of the target — a free advantage source before the Risky Ring, and while Vow of Enmity is still competing with Inquisitor''s Might for the single Channel Oath charge.'
+      - id: opt-gloves-of-baneful-striking
+        item: Gloves of Baneful Striking
+        tier: A
+        tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (18:20) — strong, but the character has to be built around them'
+        note: 'Lady Esther, late Act 1. A weapon hit gives the target −1d4 to saving throws for 2 turns. Better than Growling Underdog on any turn the party needs a save to land — Asterion''s Stun, or his own Command.'
+      - id: opt-gloves-of-power
+        item: Gloves of Power
+        tier: B
+        tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (31:21) — swapped in and out around Sleight of Hand rather than worn full time'
+        note: "Za'krug at the Grove gate. A branded wearer's hits inflict Absolute's Bane, −1d4 to attacks and saves. Weakest of the three in a fight, but free and early."
     - id: boots-of-striding
       item: Boots of Striding
+      tier: A
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (16:09) — always worth looking at for the characters they suit'
       slot: feet
       bis: true
       note: 'SELECTED boots, worn by Minthara in the Shattered Sanctum. Concentrating grants Momentum and blocks Prone and forced movement — and Prone is the cheapest way a Paladin loses concentration. He is now ALWAYS concentrating (Hold Person), so this is live in every fight. ⚠ Boots of Stormy Clamour would chain Reverberation off his own Radiating Orb, but they stay on GALE, who applies conditions far more often. The same kill yields Gale''s Spidersilk Armour.'
     - id: amulet-of-misty-step
       item: Amulet of Misty Step
+      tier: A
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (10:19) — awesome, because it patches a weakness a party may not otherwise cover'
       slot: amulets
       note: SELECTED neck from Priestess Gut's chambers. Misty Step 1/short rest solves approach and elevation before Paladin 5 grants the spell free. Asterion already has Monk movement and the Night Walkers.
     - id: ring-of-arcane-synergy
       item: Ring of Arcane Synergy
-      slot: rings
+      tier: A
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (21:54) — an extremely powerful effect, but a better source of it exists for most builds'
+      slot: ring 1
       note: 'Gish Far''aag, Crèche. Booming Blade damage → Arcane Synergy for 2 turns, adding CHA to subsequent weapon attacks. ⚠ Do not also give him Bonbon''s Diadem of Arcane Synergy — same condition, will not stack with itself.'
     - id: strange-conduit-ring
       item: Strange Conduit Ring
-      slot: rings
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (44:11) — easy to keep active all the time, and it raises damage output dramatically'
+      rank: '#5'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #5 of 20 — 1d4 psychic on every weapon attack while concentrating'
+      slot: ring 2
       bis: true
       note: '+1d4 Psychic on weapon attacks while Concentrating (Crèche), rated #5 of the 20 best Act 1 items for exactly this kind of multiattacking concentrator. It used to depend on him holding Hex or Bless inside an arrow cloud; now that HOLD PERSON is his permanent Concentration it is simply always on, and the Resonance Stone later doubles the rider. ⚠ Per the wiki it covers melee, ranged and Thrown but NOT Unarmed Strike, which is why it can never move to Asterion.'
     - id: arrows-of-darkness
-      item: Arrows of Darkness (farm — permanent, not a stopgap)
+      item: Arrows of Darkness (permanent)
+      tier: S
+      tier_note: 'ZMCimWeIxCk (28:35) — PLACED IN S+ TIER: concentration-free Darkness cast as an attack; only S tier without warlocks or blind-immunity gear'
       slot: consumables
       bis: true
       note: 'THE DARKNESS SOURCE FOR THE ENTIRE RUN, not just Act 1. 3m cloud, 3 turns, NO Concentration — which is the whole point, because Hold Person owns his Concentration permanently and the Darkness spell was therefore dropped from his Warlock picks. Devil''s Sight does not care what made the cloud. Prefer Bonbon placing it; if Charles fires it, do so before switching to Phalar and activating Shriek. Keep restocking from arrow vendors in every act.'
     - id: dual-hand-crossbows-plus-one
       item: Dual Hand Crossbows +1
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (13:57) — best Act 1 hand crossbow; a pair is the highest damage archer setup'
       slot: ranged weapons
       note: 'ACT 1–2 RANGED, and mainly a Darkness-Arrow launcher. Farm Dammon, Roah, Derryth and Jeera for +1 copies; the ranged set does not interfere with two-handed Phalar. ⚠ Keep expectations low — once he stands inside his own cloud it blocks ranged attacks into and out of itself. Hellrider''s Longbow replaces these in Act 3.'
     - id: auntie-ethel-s-hair-cha-17-18
@@ -472,65 +546,109 @@ builds:
       bis: true
       note: 'POST-RESONANCE DEFAULT. Keep two-handed Phalar/GWM until the late-Act-2 Stone pickup. Warlock 5 brings level-3 pact slots — summon a 3d8 Shadow Blade and bind THIS main hand to CHA so Deepened Pact applies, leaving Phalar unbound off-hand. Costs no Concentration, which is why it suits a build whose Concentration is committed. ⚠ Against Psychic-immune targets, bind Phalar main hand instead.'
     - id: phalar-aluve-offhand
-      item: Phalar Aluve (selected off-hand)
+      item: Phalar Aluve (off-hand)
+      tier: S
+      tier_note: 'The BEST WEAPON TYPE in BG3 - Versatile Weapons Honor Mode Tier List and Guide - Act 1 (30:10) — one of the best weapons in the game even ignoring the strongest thing it does'
       slot: weapons
       bis: true
       note: 'PARTY-DAMAGE DEFAULT after the Stone. Dual Wielder replaces GWM so Phalar sits beside the Light Shadow Blade, +1 AC. Pre-cast Shriek and keep Charles and Asterion inside its 6m aura (the Stone reaches 9m). Shriek fires 1d4 Thunder per qualifying party damage instance and −1d4 to enemy attacks and all saves, with no save and no Concentration — worth more than a personal-DPR off-hand. Phalar is unbound and he lacks Two-Weapon Fighting, so its bonus-action swing is last priority.'
     - id: gloves-of-battlemage-s-power
-      item: Gloves of Battlemage's Power (LOCKED from here on)
+      item: Gloves of Battlemage's Power (LOCKED)
+      tier: D
+      tier_note: 'The BEST GLOVES In Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (18:12) — D only because the Arcane Acuity effect does not function as of recording; stated as A if it worked'
       slot: hands
       bis: true
       note: 'THE ACUITY ENGINE, and a locked slot from the moment it is found: Reithwin Tollhouse, locked opulent chest on the second floor, in the room with two locked doors. Hitting with a spell or cantrip that uses a weapon grants ARCANE ACUITY — +1 spell attack roll and +1 SPELL SAVE DC per remaining turn, up to +10. The confirmed triggers are every Shadow Blade weapon attack, Booming Blade, any smite spell, and Divine Smite — and a smite spell chaining into a Divine Smite reaction triggers it TWICE. This is what makes HOLD PERSON land, and Command with it, and it is why Charles has the party''s best save DC before Bonbon''s Helmet of Arcane Acuity arrives. ⚠ Acuity duration drops by 2 every time he takes damage, so build stacks and cast Hold Person before the enemy''s turn. ⚠ The accepted cost is the whole rest of the glove progression: Baneful Striking, Helldusk Gloves and Craterflesh Gloves (roughly +49 on a full nova, Bhaal path) are all forgone.'
     - id: act2-armour-charles
       item: Luminous Armour (held over from Act 1)
+      tier: S
+      tier_note: 'BG3''S BEST ARMOR - Medium Armor Tier List - Honour Mode Guide - Part 3 (22:22) — a game-winning armour; the list had no S tier until this item was given one'
+      rank: '#2'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #2 of 20 — Radiating Shockwave stacks Radiating Orb across an encounter'
       slot: armour
       bis: true
       note: 'CARRIED OVER — locked. Adamantine Scale Mail is the item this displaces, and its crit immunity was protecting concentration, so the Helm of Balduran becomes the plan for getting that back in Act 3. The Splint mould and both Mithral ores now go elsewhere.'
     - id: act2-head-charles
       item: Covert Cowl
+      tier: A
+      tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (17:07) — shows up in a lot of builds, though some versions of them want something else'
       wiki: Covert Cowl
       slot: head
       note: 'ACT-2 HEAD, from Last Light. −1 crit threshold while Obscured — and standing inside an arrow cloud is Heavily Obscured, so it is live on every turn he plays the cloud correctly. Requires Light Armour proficiency, which medium-armour characters inherit. ⚠ Illegal on Asterion, whose Unarmoured Defence breaks on any helmet marked as armour, so there is no contest.'
     - id: act2-feet-charles
       item: Boots of Striding (held over from Act 1)
+      tier: A
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (16:09) — always worth looking at for the characters they suit'
       slot: feet
       note: CARRIED OVER. Momentum and immunity to Prone and forced movement, live in every fight now that Hold Person keeps him permanently concentrating. Helldusk Boots replace them in Act 3.
     - id: act2-amulet-charles
-      item: Amulet of Misty Step (held over from Act 1)
+      item: Neck slot
       slot: amulets
-      note: CARRIED OVER, and lower value now that Paladin 5 grants Misty Step free from the oath. Treat the slot as available if a better neck appears before the Amulet of Greater Health in Act 3.
+      wiki: false
+      note: 'GENUINELY OPEN IN ACT 2. The Amulet of Misty Step was carrying this slot, and Paladin 5 hands him Misty Step free as a Vengeance oath spell, so its whole reason for being there is gone. Nothing in the Act 2 pool is clearly best for him and the Amulet of Greater Health in Act 3 is the real answer, so treat this as a parking space.'
+      options:
+      - id: amulet-of-misty-step-act2
+        item: Amulet of Misty Step (held over)
+        tier: A
+        tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (10:19) — awesome, because it patches a weakness a party may not otherwise cover'
+        note: 'Simply keeping it costs nothing, and a second Misty Step per short rest is still a second escape.'
+      - id: opt-spineshudder-amulet-charles
+        item: Spineshudder Amulet
+        tier: S
+        tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:42) — busted on multi-hit spells'
+        note: 'Applies Reverberation when he is hit. He is the frontliner who gets hit most, so it turns incoming attacks into a stacking enemy debuff — but Gale wants it too.'
+      - id: opt-amulet-of-restoration
+        item: Amulet of Restoration
+        tier: S
+        tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (23:45) — some character should have this equipped'
+        note: 'Derryth Bonecloak, Underdark. Grants Healing Word and Mass Healing Word once each per long rest. It needs no class access, so on him it is a free party-wide heal — and a Whispering Promise trigger if anyone is wearing one.'
     - id: risky-ring
       item: Risky Ring
-      slot: rings
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:21) — too good to leave at home, given a way to cover the saving-throw downside'
+      slot: ring 1
       bis: true
       note: 'Moonrise, from Araj Oblodra. Advantage on ALL attacks, disadvantage on saves — the crit-fishing engine, and it replaces the Ring of Arcane Synergy. It also makes Vow of Enmity redundant, which is what frees the Channel Oath charge for Inquisitor''s Might every fight. ⚠ Be honest about the cost: disadvantage on saves roughly squares his concentration-failure rate, and he is now ALWAYS holding Hold Person. Mitigate in order — Aura of Protection at Paladin 6, the Cloak of Protection below, Helm of Balduran''s crit immunity in Act 3, and the Amulet of Greater Health, which cancels the disadvantage on Constitution saves outright.'
     - id: act2-ring2-charles
       item: Second ring
-      slot: rings
+      slot: ring 2
       wiki: false
       note: 'A REAL CHOICE, not a default. Risky Ring owns the first slot; this one swings on whether the fight has kills to bank. Both candidates are strong and neither is wrong.'
       options:
       - id: killer-s-sweetheart
         item: Killer's Sweetheart
+        tier: A
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (14:36) — very good for builds rolling a lot of damage dice, but only one encounter per day'
         note: 'Gauntlet of Shar, Self-Same Trial — on the ground where your shadow copy dies. Your first attack after a kill is a GUARANTEED crit, which is a free doubled smite every fight. Set it to Ask in the Reactions tab and bank it for the biggest slot. WARNING weapon attack rolls only. Best in fights with adds to kill first.'
       - id: opt-strange-conduit-act2
-        item: Strange Conduit Ring (long-fight pick)
+        item: Strange Conduit Ring (long-fight)
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (44:11) — easy to keep active all the time, and it raises damage output dramatically'
+        rank: '#5'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #5 of 20 — 1d4 psychic on every weapon attack while concentrating'
         note: 'Now that Hold Person guarantees he is always Concentrating, its +1d4 Psychic is live on every single swing and the Resonance Stone doubles it. Across a seven-attack nova that beats one banked crit, so prefer it in long boss fights with nothing to kill early.'
     - id: shadow-blade-ring
-      item: Shadow Blade Ring (costs no ring slot)
+      item: Shadow Blade Ring (free-slot)
+      tier: B
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (36:56) — better for builds that hold concentration easily; narrower otherwise'
       wiki: Shadow Blade Ring
-      slot: rings
+      slot: other
       note: 'NOT a third ring. As of Patch 8 the ring''s Shadow Blade needs no concentration and lasts until long rest, and the wiki states the ring can be unequipped after summoning. Summon, unequip, put Risky Ring and Killer''s Sweetheart back on. Carry it as insurance for any fight where he cannot spend a pact slot on his own blade.'
     - id: cloak-of-protection
       item: Cloak of Protection
+      tier: S
+      tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (13:30) — excellent, and someone in the party will almost certainly be wearing it'
       slot: cloaks
+      bis: true
       note: 'HIS, not Gale''s. Quartermaster Talli at Last Light Inn. +1 Armour Class and +1 to Saving Throws. ⚠ THE ARBITRATION: exactly one exists, and it is the only cloak in the Act 2 pool that touches saving throws. Charles carries a permanent self-inflicted DISADVANTAGE on every save (Risky Ring) while holding the party''s Hold Person, and he stands in every area attack. Gale can be positioned out of danger and has Constitution-save advantage from Spidersilk plus save proficiency; Bonbon has War Caster and AC 18.'
     - id: act2-ranged-charles
       item: Dual Hand Crossbows +1 (held over from Act 1)
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (13:57) — best Act 1 hand crossbow; a pair is the highest damage archer setup'
       slot: ranged weapons
       note: CARRIED OVER as the Darkness-Arrow launcher. Still close to a dead slot on any turn he is standing in his own cloud, which is most of them.
     - id: resonance-stone-aura
-      item: Resonance Stone aura (carried by Asterion)
+      item: Resonance Stone aura (Asterion)
       slot: other
       note: 'LATE ACT 2, Mind Flayer Colony — this pickup triggers the weapon respec. The 9m Steeped in Bliss aura makes eligible creatures Psychic-vulnerable, doubling Shadow Blade and Strange Conduit. ⚠ No effect on Undead or Constructs, and it also gives ALLIES Psychic Vulnerability plus disadvantage on mental saves — which is a real cost on a party whose Hold Person concentration matters. Asterion carries it within 9m of Charles, closing to 6m when both need Shriek; holster it against Psychic attackers and dangerous mental-save effects, and expect it to stop working once Act 2 ends.'
     act3:
@@ -542,37 +660,77 @@ builds:
       note: 'CARRIED OVER unchanged — bind Shadow Blade for CHA and Deepened Pact, Phalar off-hand for pre-cast Shriek, bonus-action swing only when free. Beats Render of Mind and Body or the Knife of the Undermountain King because the party generates so many Shriek triggers. ⚠ Against Psychic-immune targets, bind Phalar main hand. ⚠ Confirm the Stone aura still works after Act 2, and holster it when the Psychic and mental-save downside is unsafe.'
     - id: act3-head-charles
       item: Helm of Balduran
+      tier: S
+      tier_note: 'Is EVERY Act 3 Helmet Awesome? - BG3 Helmets Tier List and Guide - Act 3 (17:36) — purely defensive, yet any character wanting a defensive option wants this'
       slot: head
       bis: true
       note: 'SELECTED ACT-3 HEAD, from the Wyrmway (Ansur). Attackers cannot land critical hits, +1 AC, +1 to SAVING THROWS, 2 HP per turn and Stun immunity. Requires Medium armour proficiency, which he has. ⚠ This is now the ONLY crit-immunity source left to him, because locking Luminous Armour gave up Adamantine Scale Mail — and a critical hit roughly doubles the concentration save DC on the Hold Person he carries under the Risky Ring. That is why it beats Sarevok''s Horned Helmet, which offers more crits but no protection for the concentration the whole nova depends on.'
     - id: act3-armour-charles
       item: Luminous Armour (held over from Act 1)
+      tier: S
+      tier_note: 'BG3''S BEST ARMOR - Medium Armor Tier List - Honour Mode Guide - Part 3 (22:22) — a game-winning armour; the list had no S tier until this item was given one'
+      rank: '#2'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #2 of 20 — Radiating Shockwave stacks Radiating Orb across an encounter'
       slot: armour
       bis: true
       note: 'CARRIED OVER — locked for the whole run. This is where the cost is largest: Helldusk Armour would have given AC 21 flat and −3 to all incoming damage, and he gives that up to keep the Radiant Shockwave engine. Helm of Balduran, Shield, Mirror Image and Aura of Protection carry the defensive load instead.'
     - id: act3-hands-charles
       item: Gloves of Battlemage's Power (held over from Act 2)
+      tier: D
+      tier_note: 'The BEST GLOVES In Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (18:12) — D only because the Arcane Acuity effect does not function as of recording; stated as A if it worked'
       slot: hands
       bis: true
       note: 'CARRIED OVER — locked. This is the other place the lock costs real damage: Helldusk Gloves (+1d6 Fire per hit, roughly +17 a nova, plus a wiki-confirmed +1 to all attack rolls) and Craterflesh Gloves (+2d6 Force on a crit, roughly +49 on a full auto-crit nova, Bhaal path only) are both forgone. Accepted, because Arcane Acuity is what makes Hold Person land and Hold Person is what makes every swing a crit.'
     - id: act3-feet-charles
       item: Helldusk Boots
+      tier: S
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (1:00:13) — the saving throw makes the wearer extremely safe in almost every circumstance'
       slot: feet
       bis: true
       note: 'ACT-3 BOOTS, in a locked Gilded Chest on the top floor of Wyrm''s Rock Fortress. Steadfast stops all forced movement and difficult terrain — replacing Boots of Striding — and Infernal Evasion lets him use his REACTION TO TURN A FAILED SAVING THROW INTO A SUCCESS. That is the direct answer to the Risky Ring on the character holding the party''s Hold Person. ⚠ Contested with Gale, who cannot wear Boots of Persistence at all; Charles wins because he is the one with save disadvantage.'
     - id: amulet-of-greater-health
       item: Amulet of Greater Health
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 3 (13:32) — the only real decision left is who to put it on'
       slot: amulets
       bis: true
       note: 'ACT-3 NECK, on the leftmost pedestal in the House of Hope Archive. Sets Constitution to 23 and grants ADVANTAGE ON CONSTITUTION SAVING THROWS. Both halves matter only here: +6 to concentration checks, and the advantage cancels the Risky Ring''s disadvantage so those rolls go back to a straight d20. On a build whose entire nova rests on keeping Hold Person up, this is the single most important Act 3 pickup. ⚠ Contested with Gale — Charles wins because Armour of Landfall already gives Gale that advantage. Steal tip: DC 20 Sleight of Hand if the Orphic Hammer, the Soul-Sworn Contract and Hope are left alone — an Asterion job.'
-    - id: act3-rings-charles
-      item: Risky Ring + Killer's Sweetheart (held over from Act 2)
-      slot: rings
+    - id: act3-ring1-charles
+      item: Risky Ring (held over from Act 2)
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:21) — too good to leave at home, given a way to cover the saving-throw downside'
+      slot: ring 1
       bis: true
-      note: 'CARRIED OVER. Advantage on every attack roll is the largest crit-rate multiplier available and it is the engine of the build, so Risky keeps its slot; the save penalty is now fully answered by the Amulet of Greater Health and Helldusk Boots. Killer''s Sweetheart banks one guaranteed crit for the biggest smite. Strange Conduit Ring remains the swap for long fights with no kills to bank.'
+      note: 'CARRIED OVER. Advantage on every attack roll is the largest crit-rate multiplier available and the engine of the build, so it keeps the slot. The save penalty is now fully answered by the Amulet of Greater Health and Helldusk Boots.'
+    - id: act3-ring2-charles
+      item: Second ring
+      slot: ring 2
+      wiki: false
+      note: 'Same choice as Act 2, and still genuinely open. Bank a crit or ride a permanent psychic rider.'
+      options:
+      - id: opt-killers-sweetheart-act3
+        item: Killer's Sweetheart
+        tier: A
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (14:36) — very good for builds rolling a lot of damage dice, but only one encounter per day'
+        note: 'One guaranteed critical hit after a kill. Bank it for the largest Divine Smite, since a crit doubles every smite die. Weapon attack rolls only.'
+      - id: opt-strange-conduit-act3
+        item: Strange Conduit Ring
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (44:11) — easy to keep active all the time, and it raises damage output dramatically'
+        rank: '#5'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #5 of 20 — 1d4 psychic on every weapon attack while concentrating'
+        note: 'Hold Person guarantees he is always Concentrating, so its +1d4 Psychic is live on every swing and the Resonance Stone doubles it. Across a seven-attack nova this beats one banked crit in long fights.'
+      - id: opt-callous-glow-ring-charles
+        item: Callous Glow Ring
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (4:45) — the number of uses is absurd once the wearer is lit'
+        note: '+2 Radiant per hit against ILLUMINATED targets — and Radiant would feed Luminous Armour. The catch is it needs light, which fights his own darkness, and it is currently Gale''s.'
     - id: act3-cloak-charles
       item: Cloak of Protection (held over from Act 2)
+      tier: S
+      tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (13:30) — excellent, and someone in the party will almost certainly be wearing it'
       slot: cloaks
+      bis: true
       note: 'CARRIED OVER. Flat +1 AC and +1 saves never stops applying, and on the character with save disadvantage holding the party''s Hold Person it beats the conditional Act 3 cloaks. ⚠ Cloak of Displacement goes to Asterion. ⚠ Mantle of the Holy Warrior is a trap here — Crusader''s Mantle is CONCENTRATION, so it would evict Hold Person.'
     - id: act3-ranged-charles
       item: Hellrider's Longbow
@@ -581,7 +739,9 @@ builds:
       bis: true
       note: 'ACT-3 RANGED, from Rivington, and the fix for the build''s one structural weakness. Passive +3 INITIATIVE in a slot that is otherwise a formality — a Darkness cloud blocks ranged attacks into and out of itself, so he cannot shoot out of it anyway. He has the party''s worst initiative at d4+2, so +3 is close to doubling it, and going first is what lets him build Acuity and land Hold Person before the enemy acts. ⚠ Bonbon lists this only as an initiative alternative and stays on hand crossbows for her Acuity engine, so there is no real contest.'
     - id: bhaalist-armour-unlock
-      item: Bhaalist Armour (unlock it, do not wear it)
+      item: Bhaalist Armour (unlock)
+      tier: S
+      tier_note: 'ARMOR TIER LIST - Light Armour - Baldur''s Gate 3 Honour Mode Guide - Part 2 (42:20) — piercing vulnerability aura breaks the game; LOCKED BEHIND A STORY EVENT, SOME RUNS ONLY'
       slot: other
       note: 'Sold by the Echo of Abazigal, and Charles as the Dark Urge unlocks the Murder Tribunal stock. Aura of Murder makes enemies within 3m Vulnerable to PIERCING. ⚠ NOT WORN — none of his damage is Piercing (Shadow Blade is Psychic, Phalar is Slashing, Divine Smite is Radiant), it would buff nobody, and the chest slot is locked to Luminous Armour anyway. Buy it on the Bhaal path for completeness and leave it in the chest.'
     progression:
@@ -609,8 +769,14 @@ builds:
       item: 'Amulet: Amulet of Misty Step → Amulet of Greater Health'
       slot: amulets
       note: Act 1–2 Misty Step (Priestess Gut), lower value once Paladin 5 grants the spell free → Act 3 Greater Health (House of Hope Archive), which is what makes the Risky Ring safe on a permanent concentrator.
-    - id: prog-rings
-      item: 'Rings: Arcane Synergy + Strange Conduit → Risky Ring + Killer''s Sweetheart'
+    - id: prog-ring1
+      item: 'Ring 1: Ring of Arcane Synergy → Risky Ring'
+      slot: ring 1
+      note: Ring of Arcane Synergy in Act 1, adding his Charisma modifier to weapon damage once he lands a condition → Risky Ring from Act 2, which is permanent advantage on attack rolls at the cost of saving throws his Paladin aura is best placed in the party to absorb.
+    - id: prog-ring2
+      item: 'Ring 2: Strange Conduit Ring → Killer''s Sweetheart'
+      slot: ring 2
+      note: Strange Conduit Ring while he is holding Concentration on Hold Person, which is nearly every fight → Killer's Sweetheart from Act 2 for a guaranteed critical once per fight, with Strange Conduit kept as the long-fight swap.
       slot: rings
       note: Act 1 Arcane Synergy and Strange Conduit (both Crèche) → Act 2–3 Risky Ring (Araj) and Killer's Sweetheart (Self-Same Trial). Strange Conduit is a live alternative all run, because Hold Person guarantees he is always Concentrating. The Shadow Blade Ring needs no slot — summon, then unequip.
     - id: prog-weapons

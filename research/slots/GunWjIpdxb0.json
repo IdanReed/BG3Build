@@ -1,0 +1,316 @@
+{
+ "source": "GunWjIpdxb0",
+ "label": "Polearms tier list",
+ "slot": "Melee Weapons",
+ "rated_in": "all",
+ "verdicts_in_transcript": 46,
+ "items": [
+  {
+   "item": "Glaive",
+   "tier": "D",
+   "at": "5:12",
+   "act": "act1",
+   "verdict": "d10 reach with brace, but other non-magical polearms have better weapon actions"
+  },
+  {
+   "item": "Halberd",
+   "tier": "D",
+   "at": "6:47",
+   "act": "act1",
+   "verdict": "cleave instead of brace is worse while you are still on non-magical weapons"
+  },
+  {
+   "item": "Pike",
+   "tier": "C",
+   "at": "8:19",
+   "act": "act1",
+   "verdict": "best non-magical weapon actions: rush attack, brace and piercing strike"
+  },
+  {
+   "item": "Spear",
+   "tier": "C",
+   "at": "10:55",
+   "act": "act1",
+   "verdict": "simple-proficiency d8 two-handed and thrown, but no character starts with one"
+  },
+  {
+   "item": "Glaive +1",
+   "tier": "D",
+   "at": "11:25",
+   "act": "act1",
+   "verdict": "no reason to buy it; the Returning Pike is strictly better from the same merchants"
+  },
+  {
+   "item": "Halberd +1",
+   "tier": "D",
+   "at": "11:25",
+   "act": "act1",
+   "verdict": "no reason to buy it; the Returning Pike is strictly better from the same merchants"
+  },
+  {
+   "item": "Pike +1",
+   "tier": "D",
+   "at": "11:25",
+   "act": "act1",
+   "verdict": "strictly worse than the Returning Pike sold at the same point in the game"
+  },
+  {
+   "item": "Spear +1",
+   "tier": "B",
+   "at": "12:26",
+   "act": "act1",
+   "verdict": "thrown property makes it a reasonable stockpile pick, though handaxes are lighter"
+  },
+  {
+   "item": "Jagged Spear",
+   "tier": "C",
+   "at": "13:59",
+   "act": "act1",
+   "verdict": "tortured on a DC10 charisma save gives up too much damage and accuracy"
+  },
+  {
+   "item": "Light of Creation",
+   "tier": "C",
+   "at": "16:03",
+   "act": "act1",
+   "verdict": "+1 halberd with extra d6 lightning, but self-stun on a DC10 constitution save"
+  },
+  {
+   "item": "Lightning Jabber",
+   "tier": "S",
+   "at": "19:09",
+   "act": "act1",
+   "verdict": "best act-one thrown weapon for eldritch knights. ON TACTICIAN OR BELOW ITS BUGGED DAMAGE IS ABSURD"
+  },
+  {
+   "item": "Merregon Halberd",
+   "tier": "D",
+   "at": "19:40",
+   "act": "act1",
+   "verdict": "plain +1 halberd, identical to one you already chose not to buy"
+  },
+  {
+   "item": "Monster Slayer Glaive",
+   "tier": "A",
+   "at": "21:44",
+   "act": "act1",
+   "verdict": "passive +1d4 versus monstrosities applies to an equipped ranged weapon too, plus jump distance"
+  },
+  {
+   "item": "Returning Pike",
+   "tier": "S",
+   "at": "23:18",
+   "act": "act1",
+   "verdict": "first returning weapon; best in slot for any thrower who is not an eldritch knight"
+  },
+  {
+   "item": "Sorrow",
+   "tier": "S",
+   "at": "25:23",
+   "act": "act1",
+   "verdict": "+1 glaive with at-will bonus-action pull; S because it is pickpocketable at game start"
+  },
+  {
+   "item": "The Skinburster",
+   "tier": "S",
+   "at": "29:01",
+   "act": "act1",
+   "verdict": "stacks Force Conduit fast for up to minus seven physical damage plus retaliation"
+  },
+  {
+   "item": "The Watcher's Guide",
+   "tier": "B",
+   "at": "30:34",
+   "act": "act1",
+   "verdict": "true strike after a miss; earliest magical spear, swapped out almost immediately"
+  },
+  {
+   "item": "Unseen Menace",
+   "tier": "S",
+   "at": "33:07",
+   "act": "act1",
+   "verdict": "permanent advantage until you miss, plus crit on 19; best early paladin weapon"
+  },
+  {
+   "item": "Vision of the Absolute",
+   "tier": "A",
+   "at": "35:12",
+   "act": "act1",
+   "verdict": "blind on a weak DC11 dex save plus 2d6 versus many-eyed enemies; A on a few encounters"
+  },
+  {
+   "item": "Drakethroat Glaive",
+   "tier": "S",
+   "at": "39:52",
+   "act": "act2",
+   "verdict": "free daily Elemental Weapon cast onto any weapon without spending your own slot"
+  },
+  {
+   "item": "Halberd of Vigilance",
+   "tier": "S",
+   "at": "41:58",
+   "act": "act2",
+   "verdict": "+2 halberd, extra d4 force, initiative bonus and advantage on reaction attacks"
+  },
+  {
+   "item": "Harmonium Halberd",
+   "tier": "C",
+   "at": "43:31",
+   "act": "act2",
+   "verdict": "+2 strength but minus one to wisdom saves; loses to the strength elixir"
+  },
+  {
+   "item": "Moonlight Glaive",
+   "tier": "B",
+   "at": "45:05",
+   "act": "act2",
+   "verdict": "radiant +2 glaive for radiating-orb builds; outclassed by the Halberd of Vigilance"
+  },
+  {
+   "item": "Selûne's Spear of Night",
+   "tier": "A",
+   "at": "48:10",
+   "act": "act2",
+   "verdict": "Moonmote is strong but once per long rest. MUTUALLY EXCLUSIVE WITH SHAR'S SPEAR OF EVENING"
+  },
+  {
+   "item": "Shar's Spear of Evening",
+   "tier": "S",
+   "at": "50:49",
+   "act": "act2",
+   "verdict": "+3 spear with at-will Darkness and no blindness. MUTUALLY EXCLUSIVE WITH SELUNE'S SPEAR OF NIGHT"
+  },
+  {
+   "item": "Spear of Night",
+   "tier": "D",
+   "at": "51:20",
+   "act": "act2",
+   "verdict": "story weapon; a plain +1 spear when rated purely as a weapon"
+  },
+  {
+   "item": "Spear +2",
+   "tier": "D",
+   "at": "52:22",
+   "act": "act3",
+   "verdict": "act-two story spears are far better; do not buy this from merchants"
+  },
+  {
+   "item": "Breaching Pikestaff",
+   "tier": "D",
+   "at": "52:53",
+   "act": "act3",
+   "verdict": "+2 pike with an extra d4 force and nothing else; letter garbled to \"detail\" in captions"
+  },
+  {
+   "item": "Hellbeard Halberd",
+   "tier": "A",
+   "at": "54:59",
+   "act": "act3",
+   "verdict": "flat six poison and no-save poisoned every hit; low end of A, for boss fights"
+  },
+  {
+   "item": "Infernal Spear",
+   "tier": "D",
+   "at": "56:00",
+   "act": "act3",
+   "verdict": "+1 spear with flat three poison and no poisoned condition; obsolete in act three"
+  },
+  {
+   "item": "Magical Pike",
+   "tier": "D",
+   "at": "56:00",
+   "act": "act3",
+   "verdict": "a renamed plain +1 pike; no use whatsoever in act three"
+  },
+  {
+   "item": "The Dancing Breeze",
+   "tier": "A",
+   "at": "58:04",
+   "act": "act3",
+   "verdict": "finesse two-handed glaive with Whirlwind; enables dexterity polearm and Sentinel builds"
+  }
+ ],
+ "unassigned": [
+  {
+   "at": "6:47",
+   "tier": "D",
+   "why": "back-reference to the Glaive's D while rating the Halberd"
+  },
+  {
+   "at": "25:23",
+   "tier": "S",
+   "why": "restatement of Sorrow's S verdict"
+  },
+  {
+   "at": "25:54",
+   "tier": "A",
+   "why": "conditional: Sorrow would be A if taken later as the Druid Grove quest reward; final call S"
+  },
+  {
+   "at": "25:54",
+   "tier": "S",
+   "why": "restatement of Sorrow's S verdict"
+  },
+  {
+   "at": "29:32",
+   "tier": "S",
+   "why": "restatement of The Skinburster's S verdict"
+  },
+  {
+   "at": "35:12",
+   "tier": "A",
+   "why": "restatement of Vision of the Absolute's A verdict"
+  },
+  {
+   "at": "35:44",
+   "tier": "S",
+   "why": "act-one recap, \"five weapons in S tier\""
+  },
+  {
+   "at": "48:10",
+   "tier": "A",
+   "why": "restatement of Selûne's Spear of Night's A verdict"
+  },
+  {
+   "at": "55:29",
+   "tier": "A",
+   "why": "restatement of the Hellbeard Halberd's A verdict"
+  },
+  {
+   "at": "55:29",
+   "tier": "B",
+   "why": "comparative aside \"A tier rather than B tier\" for the Hellbeard Halberd"
+  },
+  {
+   "at": "55:29",
+   "tier": "A",
+   "why": "restatement, \"the lower end of A tier\", for the Hellbeard Halberd"
+  },
+  {
+   "at": "57:33",
+   "tier": "S",
+   "why": "back-reference: the Dancing Breeze is called weaker than \"the S tier items\""
+  },
+  {
+   "at": "58:35",
+   "tier": "S",
+   "why": "closing recap, \"eight S tier weapons\""
+  },
+  {
+   "at": "58:35",
+   "tier": "A",
+   "why": "closing recap, \"the A tier weapons are also very good\""
+  },
+  {
+   "at": "59:05",
+   "tier": "S",
+   "why": "closing recap answering how eight weapons can be S tier"
+  },
+  {
+   "at": "59:05",
+   "tier": "S",
+   "why": "closing recap, same sentence"
+  }
+ ],
+ "count_note": "Off by +2: one verdict at 11:25 rates Glaive +1, Halberd +1 and Pike +1 together. unassigned is mostly restatements and closing recaps, each labelled."
+}

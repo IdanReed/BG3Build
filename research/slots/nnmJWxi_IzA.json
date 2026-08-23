@@ -1,0 +1,155 @@
+{
+ "source": "nnmJWxi_IzA",
+ "label": "Gloves tier list, Act 1",
+ "slot": "Hands",
+ "rated_in": "act1",
+ "verdicts_in_transcript": 23,
+ "items": [
+  {
+   "item": "Leather Gloves",
+   "tier": "D",
+   "at": "3:09",
+   "verdict": "catch-all for non-magical gloves; purely cosmetic, no effect at all"
+  },
+  {
+   "item": "Metallic Gloves",
+   "tier": "D",
+   "at": "3:39",
+   "verdict": "+1 strength saves is barely a bonus; that save is almost never targeted"
+  },
+  {
+   "item": "Abyss Beckoners",
+   "tier": "B",
+   "at": "7:19",
+   "verdict": "only for summoners who pick mindless summons that ignore the madness downside"
+  },
+  {
+   "item": "Bracers of Defence",
+   "tier": "S",
+   "at": "10:30",
+   "verdict": "best in slot for defensive monks and shield-less casters; +2 AC arrives early"
+  },
+  {
+   "item": "Daredevil Gloves",
+   "tier": "S",
+   "at": "12:03",
+   "verdict": "best act-one gloves for warlocks; +1 spell attack and no melee disadvantage"
+  },
+  {
+   "item": "Fleetfingers",
+   "tier": "C",
+   "at": "14:09",
+   "verdict": "free jump on dash is nice mobility but a waste of a potent glove slot"
+  },
+  {
+   "item": "Gloves of Archery",
+   "tier": "S",
+   "at": "15:11",
+   "verdict": "best in slot for any ranged attacker; flat +2 damage plus bow proficiency"
+  },
+  {
+   "item": "Gloves of Baneful Striking",
+   "tier": "A",
+   "at": "18:20",
+   "verdict": "bugged into a free Bane on hit; strong if you build party around saves"
+  },
+  {
+   "item": "Gloves of Belligerent Skies",
+   "tier": "A",
+   "at": "20:24",
+   "verdict": "key for reverberation builds, though Luminous Gloves often compete for the slot"
+  },
+  {
+   "item": "Gloves of Cinder and Sizzle",
+   "tier": "S",
+   "at": "21:57",
+   "verdict": "first unarmed damage boost; 1d4 fire on every strike makes it monk best in slot"
+  },
+  {
+   "item": "Gloves of Dexterity",
+   "tier": "S",
+   "at": "25:38",
+   "verdict": "best item in the game; sets Dex 18, frees a feat and a pile of stat points"
+  },
+  {
+   "item": "Gloves of Hail of Thorns",
+   "tier": "C",
+   "at": "26:40",
+   "verdict": "free 1d10 AoE once per short rest; fine but nothing to get excited about"
+  },
+  {
+   "item": "Gloves of Heroism",
+   "tier": "B",
+   "at": "28:15",
+   "verdict": "temp HP and fear immunity off channel oath; most paladins want better gloves"
+  },
+  {
+   "item": "Gloves of Missile Snaring",
+   "tier": "C",
+   "at": "29:47",
+   "verdict": "blocks one arrow a turn; duplicated by shield spell and Bracers of Defence"
+  },
+  {
+   "item": "Gloves of Power",
+   "tier": "B",
+   "at": "31:21",
+   "verdict": "+1 sleight of hand stays relevant all game if swapped in for skill checks"
+  },
+  {
+   "item": "Gloves of the Growling Underdog",
+   "tier": "B",
+   "at": "32:54",
+   "verdict": "advantage when surrounded is powerful but the positioning work is punishing"
+  },
+  {
+   "item": "Gloves of Thievery",
+   "tier": "B",
+   "at": "33:57",
+   "verdict": "advantage on sleight of hand; functionally equivalent to the Gloves of Power"
+  },
+  {
+   "item": "Gloves of Uninhibited Kushigo",
+   "tier": "S",
+   "at": "34:28",
+   "verdict": "best act-one damage gloves for a thrown-weapon character; +1d4 per throw"
+  },
+  {
+   "item": "Hellrider's Pride",
+   "tier": "S",
+   "at": "38:36",
+   "verdict": "blade ward on any heal, even thrown potions; free party-wide damage resistance"
+  },
+  {
+   "item": "Reason's Grasp",
+   "tier": "D",
+   "at": "41:11",
+   "verdict": "rewards ending rage early, which no barbarian ever wants to do"
+  },
+  {
+   "item": "The Sparkle Hands",
+   "tier": "A",
+   "at": "43:19",
+   "verdict": "lightning charges for non-Tavern-Brawler monks until Cinder and Sizzle arrives"
+  },
+  {
+   "item": "Winter's Clutches",
+   "tier": "D",
+   "at": "45:53",
+   "verdict": "cold damage is too scarce in act one and enemies pass the freeze save anyway"
+  },
+  {
+   "item": "Wondrous Gloves",
+   "tier": "S",
+   "at": "49:02",
+   "verdict": "+1 AC for anyone plus an extra bardic inspiration; best in slot for most bards"
+  }
+ ],
+ "unassigned": [
+  {
+   "at": "39:37",
+   "tier": null,
+   "why": "Herbalist's Gloves are discussed and dismissed ('safe to get rid of at the earliest opportunity') but the narrator never speaks a letter, so no tier is recorded; this entry is not a verdict, so items+unassigned is 24 against 23 spoken verdicts"
+  }
+ ],
+ "count_note": "Off by +1: Herbalist's Gloves are dismissed at 39:37 without a letter being spoken, so the row is unassigned rather than a verdict."
+}

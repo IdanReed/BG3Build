@@ -94,7 +94,7 @@
     box-shadow: var(--shadow);
   }
   .header-inner {
-    max-width: 1500px; margin: 0 auto; padding: 14px 20px;
+    max-width: 1800px; margin: 0 auto; padding: 14px 20px;
     display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
   }
   .header-titles { flex: 1 1 340px; min-width: 0; }
@@ -140,7 +140,7 @@
   .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   /* ---- Top-level section tabs ---- */
-  .toptabs-bar { max-width: 1500px; margin: 0 auto; padding: 0 20px; }
+  .toptabs-bar { max-width: 1800px; margin: 0 auto; padding: 0 20px; }
   .toptabs { display: flex; gap: 4px; }
   .toptab {
     background: var(--surface-2); border: none; border-bottom: 2px solid transparent;
@@ -165,7 +165,7 @@
 
   /* ---- Layout ---- */
   .layout {
-    max-width: 1500px; margin: 0 auto; padding: 20px;
+    max-width: 1800px; margin: 0 auto; padding: 20px;
     display: grid; grid-template-columns: 250px 1fr; gap: 20px; align-items: start;
   }
   .sidebar {
@@ -380,6 +380,50 @@
     transition: border-color .14s ease, box-shadow .14s ease;
   }
   /* An item name row plus its badges. */
+  /* Six abilities is a known, fixed count, so pin the columns instead of letting
+     auto-fit drop the last card onto a row of its own. */
+  .ability-grid {
+    display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px; align-items: start;
+  }
+  @media (max-width: 1180px) { .ability-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .ability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .ability-card {
+    min-width: 0; background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 9px 11px;
+  }
+  .ability-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 8px; margin-bottom: 5px;
+  }
+  .ability-k {
+    font-size: .68rem; font-weight: 800; letter-spacing: .09em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .ability-final { font-size: .95rem; font-weight: 800; color: var(--accent); }
+  ul.ability-steps { list-style: none; padding-left: 0; margin: 0; }
+  .ability-step {
+    display: flex; align-items: baseline; gap: 6px;
+    font-variant-numeric: tabular-nums; font-size: .8rem;
+    color: var(--text-muted); margin: 2px 0;
+  }
+  .ability-step.ability-latest { color: var(--text); font-weight: 700; }
+  .ability-mod { min-width: 2.1em; text-align: right; font-weight: 700; }
+  .ability-arrow { opacity: .55; }
+  .ability-score { min-width: 1.6em; }
+  .ability-src { font-size: .72rem; opacity: .85; }
+  .title-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .app-version {
+    font-size: .64rem; font-weight: 800; letter-spacing: .07em; padding: 2px 7px;
+    border-radius: 999px; color: var(--text-muted);
+    background: var(--surface-2); border: 1px solid var(--border);
+  }
+  /* A slot with nothing in it yet reads as an explicit empty state, not a missing row. */
+  li.ck-li.item-empty .item-name, li.ck-li.item-empty .flex-label { color: var(--text-muted); font-style: italic; }
+  .item-empty-icon { flex: 0 0 auto; width: 16px; text-align: center; color: var(--text-muted); opacity: .8; }
+  /* A slot that progresses: earliest at the top, best at the bottom. */
+  .slot-arrow { color: var(--accent); opacity: .7; font-size: .7rem; line-height: 1; margin: 1px 0 1px 3px; list-style: none; }
+  .flex-head { margin-bottom: 2px; }
   .item-head { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }
   .item-body { min-width: 0; flex: 1; }
   .ck-spacer { flex: 0 0 auto; width: 16px; }
@@ -394,14 +438,52 @@
   li.ck-li.item-bis .item-name { font-weight: 700; color: var(--text); }
   .item-bis-star { flex: 0 0 auto; color: var(--accent); font-size: .72rem; line-height: 1; }
   .item-chip.flex-chip { border-style: dashed; }
+  /* A published tier-list rating for the item: a letter tier, or "#N" from a ranked
+     best-items list. Hues are mixed against the theme so they read in light and dark. */
+  .item-tier {
+    flex: 0 0 auto; font-size: .58rem; font-weight: 800; letter-spacing: .06em;
+    padding: 1px 6px; border-radius: 999px; cursor: help;
+    color: var(--text-muted); background: var(--surface); border: 1px solid var(--border);
+  }
+  .item-tier.tier-s {
+    color: color-mix(in srgb, #e0a020 62%, var(--text));
+    background: color-mix(in srgb, #e0a020 18%, var(--surface));
+    border-color: color-mix(in srgb, #e0a020 50%, var(--border));
+  }
+  .item-tier.tier-a {
+    color: color-mix(in srgb, var(--good) 78%, var(--text));
+    background: color-mix(in srgb, var(--good) 15%, var(--surface));
+    border-color: color-mix(in srgb, var(--good) 45%, var(--border));
+  }
+  .item-tier.tier-b {
+    color: color-mix(in srgb, #3f7fd0 68%, var(--text));
+    background: color-mix(in srgb, #3f7fd0 15%, var(--surface));
+    border-color: color-mix(in srgb, #3f7fd0 45%, var(--border));
+  }
+  .item-tier.tier-c { color: var(--text-muted); background: var(--surface-2); }
+  .item-tier.tier-d {
+    color: color-mix(in srgb, var(--warn) 78%, var(--text));
+    background: color-mix(in srgb, var(--warn) 14%, var(--surface));
+    border-color: color-mix(in srgb, var(--warn) 45%, var(--border));
+  }
+  /* A rank, not a letter: same weight, deliberately a different shape of badge. */
+  .item-tier.tier-rank {
+    color: color-mix(in srgb, var(--accent) 72%, var(--text));
+    background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  }
   /* A flex slot is a heading with small checkable candidates underneath. */
   .flex-label { font-size: .82rem; font-weight: 700; color: var(--text-muted); }
   ul.flex-options { list-style: none; padding-left: 10px; margin: 4px 0 0; border-left: 1px dashed var(--border); }
   ul.flex-options li.ck-li.flex-option { margin: 3px 0; }
   ul.flex-options .item-name { font-size: .78rem; }
+  ul.flex-options .item-tier { margin-top: 2px; }
   /* Slot progression, newest on top. */
   .prog-steps { margin-top: 3px; }
-  .prog-step { font-size: .8rem; color: var(--text-muted); }
+  .prog-step {
+    font-size: .8rem; color: var(--text-muted);
+    display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
+  }
+  .prog-step .item-tier { font-size: .54rem; }
   .prog-step.prog-latest { font-size: .86rem; font-weight: 700; color: var(--text); }
   .prog-arrow { font-size: .66rem; line-height: 1.1; color: var(--accent); opacity: .75; }
   .item-slot:hover {
@@ -623,7 +705,7 @@
 <header class="app">
   <div class="header-inner" id="app-header"></div>
   <div class="toptabs-bar">
-    <div class="toptabs" role="tablist" aria-label="Party and Loot" id="top-tabs"></div>
+    <div class="toptabs" role="tablist" aria-label="Guide sections" id="top-tabs"></div>
   </div>
 </header>
 
@@ -1028,6 +1110,42 @@ function richText(str, pClass) {
 /* ---------------- Field renderers ---------------- */
 const STAT_ORDER = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
 
+/* An ability's growth as a chain. Each row reads "modifier <- score (what moved it)",
+   base at the top and the final value at the bottom, so the number you actually play
+   with is the last thing you read. */
+function abilityMod(score) {
+  return Math.floor((Number(score) - 10) / 2);
+}
+function signedMod(n) {
+  return (n >= 0 ? "+" : "\u2212") + Math.abs(n);
+}
+function renderAbilityChains(chains) {
+  return h(
+    "div",
+    { class: "ability-grid" },
+    arr(chains).map((ch) => {
+      const steps = arr(ch.steps);
+      const last = steps.length ? steps[steps.length - 1] : null;
+      return h(
+        "section",
+        { class: "ability-card" },
+        h("div", { class: "ability-head" },
+          h("span", { class: "ability-k" }, ch.ability),
+          last ? h("span", { class: "ability-final" }, signedMod(abilityMod(last.score))) : null
+        ),
+        h("ul", { class: "clean ability-steps" }, steps.map((st, i) =>
+          h("li", { class: "ability-step" + (i === steps.length - 1 && steps.length > 1 ? " ability-latest" : "") },
+            h("span", { class: "ability-mod" }, signedMod(abilityMod(st.score))),
+            h("span", { class: "ability-arrow", "aria-hidden": "true" }, "\u2190"),
+            h("span", { class: "ability-score" }, String(st.score)),
+            has(st.source) ? h("span", { class: "ability-src" }, "(" + st.source + ")") : null
+          )
+        ))
+      );
+    })
+  );
+}
+
 function renderStatblock(stats) {
   return h(
     "div",
@@ -1238,13 +1356,15 @@ function renderLeveling(lv, idHint, keyRoot) {
 const ITEM_SLOT_ROWS = [
   { label: "Weapons & consumables", slots: ["Melee Weapons", "Ranged Weapons", "Off-hand & Shields", "Potions & Oils", "Elixirs", "Other"] },
   { label: "Worn", slots: ["Head", "Armour", "Hands", "Boots"] },
-  { label: "Accessories", slots: ["Amulets", "Cloaks", "Rings"] },
+  { label: "Accessories", slots: ["Amulets", "Cloaks", "Ring 1", "Ring 2", "Rings"] },
 ];
 const ITEM_SLOT_ICONS = {
   Head: "⛑",
   Armour: "🛡",
   Hands: "🧤",
   Rings: "◉",
+  "Ring 1": "◉",
+  "Ring 2": "◎",
   Boots: "🥾",
   Amulets: "♦",
   Cloaks: "🧥",
@@ -1263,6 +1383,8 @@ const ITEM_SLOT_ALIASES = {
   armour: "Armour", armor: "Armour", chest: "Armour", body: "Armour", robes: "Armour",
   hands: "Hands", gloves: "Hands", bracers: "Hands", gauntlets: "Hands",
   rings: "Rings", ring: "Rings",
+  "ring 1": "Ring 1", ring1: "Ring 1", "ring one": "Ring 1", "first ring": "Ring 1",
+  "ring 2": "Ring 2", ring2: "Ring 2", "ring two": "Ring 2", "second ring": "Ring 2",
   feet: "Boots", boots: "Boots", shoes: "Boots",
   amulets: "Amulets", amulet: "Amulets", neck: "Amulets", necklace: "Amulets",
   cloaks: "Cloaks", cloak: "Cloaks", back: "Cloaks",
@@ -1336,12 +1458,60 @@ function itemTip(entry) {
   const effect = has(entry.effect) ? String(entry.effect) : null;
   const why = has(entry.why) ? String(entry.why) : null;
   const note = has(entry.note) ? String(entry.note) : null;
+  const tier = itemTier(entry);
+  const rank = itemRank(entry);
   const summary = why || (!effect ? note : null);
   const facts = [
+    ["Tier", tier ? tier.text : null],
+    ["Ranked", rank ? rank.text : null],
     ["Effect", effect],
     ["Note", note && note !== summary && note !== effect ? note : null],
   ];
-  return summary || effect ? tooltipContent(summary, facts) : null;
+  return summary || effect || tier || rank ? tooltipContent(summary, facts) : null;
+}
+
+/* Published ratings carried on the content entry, from the guide corpus. They are
+   independent, and an item often holds both: `tier` is a letter from that slot's tier
+   list, `rank` is a placing such as "#12" in that act's top-20 countdown. The matching
+   `_note` field names the source video, its timestamp, and the verdict. */
+const ITEM_TIER_CLASS = { S: "tier-s", A: "tier-a", B: "tier-b", C: "tier-c", D: "tier-d", F: "tier-d" };
+/* A handful of lists define an "S+" above their S, so colour by the base letter. */
+function itemTierClass(letter) {
+  return ITEM_TIER_CLASS[String(letter || "").charAt(0).toUpperCase()] || "tier-rank";
+}
+function itemTier(entry) {
+  if (!entry || typeof entry !== "object" || !has(entry.tier)) return null;
+  const raw = String(entry.tier).trim();
+  const letter = /^[SABCDF]\+?$/i.test(raw) ? raw.toUpperCase() : null;
+  /* A rank used to live in `tier`; tolerate that shape so old content still renders. */
+  const label = letter || (/^#?\d+$/.test(raw) ? raw.replace(/^#?/, "#") : raw.toUpperCase());
+  const note = has(entry.tier_note) ? String(entry.tier_note) : null;
+  const named = letter ? "Tier " + letter : label;
+  /* A rank note already names its list and repeats the rank, so it stands alone; a
+     letter tier needs the letter spelled out in front of it. */
+  return {
+    label: label,
+    cls: "item-tier " + (letter ? itemTierClass(letter) : "tier-rank"),
+    text: note ? (letter ? named + " — " + note : note) : named + " (guide rating)",
+  };
+}
+function itemRank(entry) {
+  if (!entry || typeof entry !== "object" || !has(entry.rank)) return null;
+  const raw = String(entry.rank).trim();
+  const label = /^#?\d+$/.test(raw) ? raw.replace(/^#?/, "#") : raw.toUpperCase();
+  const note = has(entry.rank_note) ? String(entry.rank_note) : null;
+  return {
+    label: label,
+    cls: "item-tier tier-rank",
+    text: note || (label + " on a best-items list"),
+  };
+}
+/* The letter first, then the placing: the letter says how good the item is in its own
+   slot, the placing how it stacks up against every item in the act. */
+function itemBadges(entry) {
+  return [itemTier(entry), itemRank(entry)]
+    .filter(Boolean)
+    .map((badge) => h("span", { class: badge.cls, title: badge.text }, badge.label));
 }
 
 const BG3_WIKI_ROOT = "https://bg3.wiki/wiki/";
@@ -1534,6 +1704,14 @@ function itemIsBis(entry) {
   if (entry.bis === false) return false;
   return /\bLOCKED\b|\bBIS\b|best[- ]in[- ]slot/i.test(String(entry.item || "") + " " + String(entry.note || ""));
 }
+/* Slots that hold exactly one thing at a time, so several entries in one act read as
+   a progression. Weapons and consumables can hold parallel picks, so they are excluded. */
+const SEQUENTIAL_SLOTS = new Set(["Head", "Armour", "Hands", "Boots", "Amulets", "Cloaks", "Ring 1", "Ring 2", "Ranged Weapons"]);
+/* "No cloak exists yet" is a deliberate empty state in the content, not an item. */
+function itemIsEmpty(entry) {
+  if (entry && typeof entry === "object" && entry.empty === true) return true;
+  return /^\s*(?:no\b[^.]*\b(?:exists|available|option)|none\b|nothing\b|empty\b)/i.test(itemLabel(entry));
+}
 /* A flex slot: no checkbox of its own, just small checkable candidates. */
 function itemFlexOptions(entry) {
   if (!entry || typeof entry !== "object") return null;
@@ -1551,31 +1729,60 @@ function progressionParts(entry) {
   const steps = body.split(/\u2192|->/).map((s) => s.trim()).filter(Boolean);
   return { prefix: prefix, steps: steps };
 }
-function progressionSteps(steps) {
+/* Canonical name -> the rated entry, gathered from every act tab including flex
+   options. The progression tab names the same items in prose, so it can borrow their
+   badges rather than carrying its own copy of the ratings. */
+function itemRatingIndex(it) {
+  const index = Object.create(null);
+  Object.keys(it || {}).forEach((key) => {
+    if (key === "progression") return;
+    arr(it[key]).forEach((entry) => {
+      if (!entry || typeof entry !== "object") return;
+      [entry].concat(arr(entry.options)).forEach((row) => {
+        if (!row || typeof row !== "object") return;
+        if (!has(row.tier) && !has(row.rank)) return;
+        const canon = canonicalItem(row.item);
+        if (canon && !index[canon]) index[canon] = row;
+      });
+    });
+  });
+  return index;
+}
+
+function progressionSteps(steps, rated) {
   const out = [];
-  steps.slice().reverse().forEach((s, i) => {
-    if (i) out.push(h("div", { class: "prog-arrow", "aria-hidden": "true" }, "\u2191"));
-    out.push(h("div", { class: "prog-step" + (i === 0 ? " prog-latest" : "") }, s));
+  steps.forEach((s, i) => {
+    if (i) out.push(h("div", { class: "prog-arrow", "aria-hidden": "true" }, "\u2193"));
+    /* A step is prose, not an entry, so "none available" or "all three acts" simply
+       finds nothing and renders bare. */
+    const match = rated ? rated[canonicalItem(s)] : null;
+    out.push(h("div", { class: "prog-step" + (i === steps.length - 1 ? " prog-latest" : "") },
+      h("span", { class: "prog-step-name" }, s),
+      match ? itemBadges(match) : null));
   });
   return h("div", { class: "prog-steps" }, out);
 }
 
-function itemChecklist(entries, act, keyRoot) {
+function itemChecklist(entries, act, keyRoot, slotName, rated) {
   const isProgression = act === "progression";
-  return h(
-    "ul",
-    { class: "clean checklist" },
-    entries.map((entry, i) => {
+  /* Several entries in a one-at-a-time slot are a progression: arrow each one down to
+     the next thing acquired, so the best pick ends up at the bottom. */
+  const sequential = !isProgression && entries.length > 1 && SEQUENTIAL_SLOTS.has(slotName);
+  const rows = [];
+  const out = entries.map((entry, i) => {
       const label = itemLabel(entry);
       const shown = itemDisplayEntry(entry);
       const chip = itemHeldChip(entry);
       const bis = itemIsBis(entry);
+      const badges = itemBadges(entry);
       const flex = itemFlexOptions(entry);
+      const empty = itemIsEmpty(entry);
       const tip = itemTip(entry);
       const id = itemEntryId(entry, i);
       const key = charItemKey(keyRoot, act, entry, i);
       const tipId = "item-tip-" + slug(keyRoot || "build") + "-" + slug(act) + "-" + slug(id) + "-" + i;
-      const cls = ["ck-li", bis ? "item-bis" : null, flex ? "flex-parent" : null].filter(Boolean).join(" ");
+      const cls = ["ck-li", bis ? "item-bis" : null, flex ? "flex-parent" : null,
+        empty ? "item-empty" : null].filter(Boolean).join(" ");
 
       if (isProgression) {
         const parts = progressionParts(entry);
@@ -1586,36 +1793,59 @@ function itemChecklist(entries, act, keyRoot) {
           h("div", { class: "item-body" },
             h("div", { class: "item-head" },
               linkedNameTip(heading, plain, tip, tipId, "How the slot progresses"),
+              badges,
               bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "\u2605") : null
             ),
-            parts.steps.length > 1 ? progressionSteps(parts.steps) : null
+            parts.steps.length > 1 ? progressionSteps(parts.steps, rated) : null
           )
         );
       }
 
       if (flex) {
+        const flexLabel = h("span", {
+          class: "flex-label", tabindex: tip ? "0" : null,
+          "aria-describedby": tip ? tipId : null,
+        }, "flex");
         return h("li", { class: cls },
           h("span", { class: "ck-spacer", "aria-hidden": "true" }),
           h("div", { class: "item-body" },
-            h("div", { class: "item-head" },
-              h("span", { class: "flex-label" }, itemLabel(shown) || "Flex slot"),
-              h("span", { class: "item-chip flex-chip" }, "Flex"),
+            h("div", { class: "item-head flex-head" },
+              linkedNameTip("flex", flexLabel, tip, tipId, "How to pick this slot"),
+              badges,
               chip ? h("span", { class: "item-chip" }, chip) : null
             ),
             h("ul", { class: "clean flex-options" }, flex.map((opt, j) => {
               const oLabel = itemLabel(opt);
               const oTip = itemTip(opt);
               const oTipId = tipId + "-opt-" + j;
-              const oKey = keyRoot ? "item:" + keyRoot + "/" + act + "/" + id + "/" + itemEntryId(opt, j) : null;
+              /* Flat key, deliberately NOT nested under the parent id: an option is often a
+                 slot's former top-level entry, and nesting would orphan its saved checkoff. */
+              const oKey = charItemKey(keyRoot, act, opt, j);
               const oName = wikiItemNode(itemDisplayEntry(opt), {
                 class: "item-name", type: "button",
                 "aria-describedby": oTip ? oTipId : null,
               });
               return h("li", { class: "ck-li flex-option" },
                 oKey ? checkbox(oKey, "Mark " + oLabel + " acquired") : null,
-                linkedNameTip(oLabel, oName, oTip, oTipId, "What it does & why it fits")
+                linkedNameTip(oLabel, oName, oTip, oTipId, "What it does & why it fits"),
+                itemBadges(opt)
               );
             }))
+          )
+        );
+      }
+
+      if (empty) {
+        const emptyName = h("span", {
+          class: "item-name", tabindex: tip ? "0" : null,
+          "aria-describedby": tip ? tipId : null,
+        }, itemLabel(shown));
+        return h("li", { class: cls },
+          h("span", { class: "item-empty-icon", "aria-hidden": "true" }, "\u2298"),
+          h("div", { class: "item-body" },
+            h("div", { class: "item-head" },
+              linkedNameTip(itemLabel(shown), emptyName, tip, tipId, "Why this slot is empty")
+            )
           )
         );
       }
@@ -1629,16 +1859,21 @@ function itemChecklist(entries, act, keyRoot) {
         h("div", { class: "item-body" },
           h("div", { class: "item-head" },
             linkedNameTip(itemLabel(shown), nameLink, tip, tipId, "What it does & why it fits"),
+            badges,
             bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "\u2605") : null,
             chip ? h("span", { class: "item-chip" }, chip) : null
           )
         )
       );
-    })
-  );
+    });
+  out.forEach((node, i) => {
+    if (sequential && i) rows.push(h("li", { class: "slot-arrow", "aria-hidden": "true" }, "\u2193"));
+    rows.push(node);
+  });
+  return h("ul", { class: "clean checklist" }, rows);
 }
 
-function itemActPanel(entries, act, keyRoot) {
+function itemActPanel(entries, act, keyRoot, rated) {
   const groups = new Map();
   arr(entries).forEach((entry) => {
     const slot = itemSlot(entry);
@@ -1663,7 +1898,7 @@ function itemActPanel(entries, act, keyRoot) {
       h("div", { class: "item-slot-grid" },
         row.slots.map((slot) => h("section", { class: "item-slot" },
           cardHeading(slot, itemSlotIcon(slot), groups.get(slot).length),
-          itemChecklist(groups.get(slot), act, keyRoot)
+          itemChecklist(groups.get(slot), act, keyRoot, slot, rated)
         ))
       )
     ))
@@ -1675,15 +1910,16 @@ function renderItemization(it, keyRoot) {
   const keys = standard.filter((key) => has(it[key])).concat(
     Object.keys(it).filter((key) => !standard.includes(key) && has(it[key]))
   );
+  const rated = itemRatingIndex(it);
   const entries = keys.map((key) => ({
     label: /^act([123])$/.test(key) ? "Act " + key.slice(-1) : humanize(key),
     count: arr(it[key]).length,
-    content: itemActPanel(it[key], key, keyRoot),
+    content: itemActPanel(it[key], key, keyRoot, rated),
   }));
   return h(
     "div",
     { class: "itemization-tabs" },
-    h("p", { class: "muted itemization-note" }, "Each tab shows gear added or changed in that act. Keep earlier items until explicitly replaced; hover or focus a name for its effect and build rationale."),
+    h("p", { class: "muted itemization-note" }, "Each tab shows gear added or changed in that act. Keep earlier items until explicitly replaced; hover or focus a name for its effect and build rationale. Badges are the guide videos' ratings: a letter is the item's tier within its own slot, and a #number is its place on that act's top-20 list. An item can carry both."),
     miniTabs("items-" + slug(keyRoot || "build"), entries, "Itemization by act")
   );
 }
@@ -2110,22 +2346,26 @@ function renderBuild(b, charName) {
   if (facts.children.length) head.appendChild(facts);
   wrap.appendChild(head);
 
-  // Character Creation — race / background / ability scores (these don't change
-  // between respecs). Ability boosts (Hag's Hair / Mirror / ASI / elixirs) show
-  // under the score block.
-  if (has(b.race) || has(b.background) || has(b.starting_stats)) {
+  // Character Creation — identity only. Race and background don't change between
+  // respecs, and ability scores are involved enough to deserve their own card.
+  if (has(b.race) || has(b.background)) {
     const cre = section("Character Creation");
     const idf = h("dl", { class: "facts" });
     if (has(b.race)) idf.appendChild(h("div", { class: "fact" }, h("dt", null, "Race"), h("dd", null, h("span", null, b.race, has(b.race_notes) ? h("span", { class: "note" }, b.race_notes) : null))));
     if (has(b.background)) idf.appendChild(h("div", { class: "fact" }, h("dt", null, "Background"), h("dd", null, b.background)));
     if (idf.children.length) cre.appendChild(idf);
-    if (has(b.starting_stats)) {
-      cre.appendChild(subhead("Ability scores"));
-      cre.appendChild(renderStatblock(b.starting_stats));
-      if (has(b.ability_targets)) cre.appendChild(h("p", { class: "prose muted", style: "margin-top:8px;font-size:.85rem" }, h("span", { class: "li-strong" }, "Boosts: "), b.ability_targets));
-      if (has(b.stats_note)) cre.appendChild(h("p", { class: "prose muted", style: "margin-top:6px;font-size:.85rem" }, b.stats_note));
-    }
     wrap.appendChild(cre);
+  }
+
+  // Ability scores — the growth chain is the point, so it gets its own card.
+  // renderStatblock stays as the fallback for content without a chain.
+  if (has(b.ability_scores) || has(b.starting_stats)) {
+    const sc = section("Ability scores");
+    if (has(b.ability_scores)) sc.appendChild(renderAbilityChains(b.ability_scores));
+    else sc.appendChild(renderStatblock(b.starting_stats));
+    if (has(b.ability_targets)) sc.appendChild(h("p", { class: "prose muted", style: "margin-top:10px;font-size:.85rem" }, h("span", { class: "li-strong" }, "Boosts: "), b.ability_targets));
+    if (has(b.stats_note)) sc.appendChild(h("p", { class: "prose muted", style: "margin-top:6px;font-size:.85rem" }, b.stats_note));
+    wrap.appendChild(sc);
   }
 
   // Build-defining tags not already folded into the Leveling gains.
@@ -2435,7 +2675,10 @@ function renderHeader(meta) {
   host.innerHTML = "";
 
   const titles = h("div", { class: "header-titles" });
-  titles.appendChild(h("h1", null, meta.title || "BG3 Party Plan"));
+  titles.appendChild(h("div", { class: "title-row" },
+    h("h1", null, meta.title || "BG3 Party Plan"),
+    has(meta.version) ? h("span", { class: "app-version", title: "Plan version" }, "v" + meta.version) : null
+  ));
 
   const chips = h("div", { class: "chips" });
   if (has(meta.mode)) chips.appendChild(h("span", { class: "chip accent" }, h("span", { class: "chip-k" }, "Mode"), meta.mode));
@@ -2730,6 +2973,235 @@ function renderTadpoleCharacter(t, name) {
   return frag;
 }
 
+/* ---------------- Ratings (the guide corpus' own tier lists) ----------------
+   `data.ratings` is generated by tools/build_ratings_page.py out of
+   research/item_tiers.json: every item any read list rated, not just the party's,
+   grouped by item type and then by the act whose list rated it. The generator has
+   already sorted each act best-first (letter, then top-20 placing, then name), so
+   the renderer only has to break the run into groups where the letter changes. */
+const RATE_PREFIX = "__rate__";
+
+/* "7:16" / "1:02:33" → seconds, so a verdict can link to the moment it was spoken. */
+function ratingSeconds(at) {
+  const parts = String(at == null ? "" : at).trim().split(":");
+  if (!parts.length || parts.some((p) => !/^\d+$/.test(p))) return null;
+  return parts.reduce((total, p) => total * 60 + parseInt(p, 10), 0);
+}
+function ratingSourceUrl(id, at) {
+  if (!has(id)) return null;
+  const secs = ratingSeconds(at);
+  return "https://www.youtube.com/watch?v=" + encodeURIComponent(id) + (secs == null ? "" : "&t=" + secs + "s");
+}
+function ratingSourceIndex(r) {
+  const byId = Object.create(null);
+  arr(r && r.sources).forEach((s) => { if (s && has(s.id)) byId[s.id] = s; });
+  return byId;
+}
+/* Canonical item name → the characters whose plan names it, so the corpus' verdict
+   sits next to "and we're actually using this". Built from the same normalisation
+   the checkoff link groups use, so the two agree on what counts as one item. */
+function ratingPartyIndex(data) {
+  const index = Object.create(null);
+  Object.keys((data && data.characters) || {}).forEach((name) => {
+    arr(data.characters[name]).forEach((build) => {
+      const it = (build && build.itemization) || {};
+      Object.keys(it).forEach((act) => {
+        if (act === "progression") return;
+        arr(it[act]).forEach((entry) => {
+          [entry].concat(arr(entry && entry.options)).forEach((row) => {
+            const canon = canonicalItem(itemLabel(row));
+            if (!canon) return;
+            if (!index[canon]) index[canon] = [];
+            if (index[canon].indexOf(name) < 0) index[canon].push(name);
+          });
+        });
+      });
+    });
+  });
+  return index;
+}
+
+/* A dataset row rendered through the same badge/tooltip helpers the character
+   pages use, so a rating looks identical wherever it shows up. */
+function ratingEntry(row, sources) {
+  const tierSrc = sources[row.source];
+  const rankSrc = sources[row.rank_source];
+  const entry = {
+    item: row.item,
+    /* The extraction disambiguates same-named drops by rarity; the wiki does not. */
+    wiki: String(row.item).replace(/\s*\((?:common|uncommon|rare|very rare|legendary)\)\s*$/i, ""),
+  };
+  if (has(row.tier)) {
+    entry.tier = row.tier;
+    entry.tier_note = [
+      (tierSrc ? tierSrc.title : row.source) + (has(row.at) ? " (" + row.at + ")" : ""),
+      row.verdict,
+    ].filter(has).join(" — ");
+  }
+  if (has(row.rank)) {
+    entry.rank = row.rank;
+    const place = String(row.rank).toUpperCase() === "HM"
+      ? "honourable mention"
+      : row.rank + " of " + (row.of || 20);
+    entry.rank_note = [(rankSrc ? rankSrc.title : row.rank_source), place].filter(has).join(", ");
+  }
+  return entry;
+}
+
+function ratingRow(row, sources, party) {
+  const entry = ratingEntry(row, sources);
+  const src = sources[row.source];
+  const who = party[canonicalItem(row.item)];
+  const url = ratingSourceUrl(row.source, row.at);
+  return h("li", { class: "rate-row" },
+    h("div", { class: "rate-head" },
+      h("span", { class: "rate-name" }, wikiItemNode(entry) || row.item),
+      itemBadges(entry),
+      who && who.length
+        ? h("span", { class: "item-chip rate-party", title: "In the plan for " + who.join(", ") }, who.join(" · "))
+        : null),
+    has(row.verdict) || url
+      ? h("div", { class: "rate-verdict" },
+          has(row.verdict) ? row.verdict : null,
+          url ? h("a", {
+            class: "rate-at", href: url, target: "_blank", rel: "noopener noreferrer",
+            title: (src ? src.title : row.source) + " — open at " + row.at,
+            "aria-label": "Watch the verdict on " + row.item + " at " + row.at,
+          }, "▸ " + row.at) : null)
+      : null);
+}
+
+/* One block per letter, in the order the generator sorted them. */
+function ratingTierGroups(rows, scale, sources, party) {
+  const out = [];
+  let group = null;
+  rows.forEach((row) => {
+    const letter = has(row.tier) ? String(row.tier).toUpperCase() : "";
+    if (!group || group.letter !== letter) {
+      group = { letter: letter, rows: [] };
+      out.push(group);
+    }
+    group.rows.push(row);
+  });
+  return out.map((g) => h("div", { class: "rate-tier" },
+    h("div", { class: "rate-tier-h" },
+      h("span", { class: "item-tier " + (g.letter ? itemTierClass(g.letter) : "tier-rank") },
+        g.letter || "no letter"),
+      h("span", { class: "rate-tier-what" },
+        g.letter
+          ? (scale[g.letter] || scale[g.letter.charAt(0)] || "")
+          : "on a top-20 countdown, but its own slot's list has not been read yet"),
+      h("span", { class: "badge" }, String(g.rows.length))),
+    h("ul", { class: "rate-list" }, g.rows.map((row) => ratingRow(row, sources, party)))));
+}
+
+function ratingListLinks(ids, sources) {
+  const links = [];
+  arr(ids).forEach((id, i) => {
+    const src = sources[id];
+    if (i) links.push(" · ");
+    links.push(h("a", {
+      href: ratingSourceUrl(id, null), target: "_blank", rel: "noopener noreferrer",
+    }, src ? src.title : id));
+  });
+  return links.length ? h("p", { class: "rate-lists" }, h("span", { class: "li-strong" }, "Rated by: "), links) : null;
+}
+
+function renderRatingsSlot(r, slotName, data) {
+  const frag = document.createDocumentFragment();
+  const slot = arr(r.slots).find((s) => s.slot === slotName);
+  frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" },
+    itemSlotIcon(slotName) + " " + slotName + " — ratings"));
+  if (!slot) {
+    frag.appendChild(h("p", { class: "muted" }, "Nothing rated in this slot yet."));
+    return frag;
+  }
+  const sources = ratingSourceIndex(r);
+  const party = ratingPartyIndex(data);
+  const scale = Object.create(null);
+  arr(r.tier_scale).forEach((row) => { if (row && has(row.tier)) scale[String(row.tier).toUpperCase()] = row.what; });
+  const lists = {};
+  arr(slot.acts).forEach((act) => arr(act.lists).forEach((id) => { lists[id] = true; }));
+  const listCount = Object.keys(lists).length;
+  frag.appendChild(h("p", { class: "view-sub" },
+    slot.count + " ratings from " + listCount + (listCount === 1 ? " list" : " lists") +
+    " · best first inside each letter · a chip marks gear the party already plans"));
+  frag.appendChild(section("By act",
+    miniTabs("rate-" + slug(slotName), slot.acts.map((act) => ({
+      label: act.label,
+      count: act.count,
+      content: h("div", null,
+        ratingListLinks(act.lists, sources),
+        ratingTierGroups(arr(act.items), scale, sources, party)),
+    })), slotName + " ratings by act")));
+  return frag;
+}
+
+function renderRatingsOverview(r) {
+  const frag = document.createDocumentFragment();
+  frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" }, "Ratings"));
+  const totals = r.totals || {};
+  frag.appendChild(h("p", { class: "view-sub" },
+    (totals.entries || 0) + " ratings on " + (totals.items || 0) + " items, read out of " +
+    (totals.lists || 0) + " " + (r.channel || "guide") + " tier lists"));
+  if (has(r.about)) frag.appendChild(section("What this is", h("p", { class: "prose" }, r.about)));
+  if (has(r.note_on_acts)) {
+    frag.appendChild(h("div", { class: "callout" }, h("span", { class: "callout-k" }, "Acts"), r.note_on_acts));
+  }
+  if (has(r.tier_scale)) {
+    frag.appendChild(section("What the letters mean",
+      bulletList(arr(r.tier_scale).map((row) => h("li", null,
+        h("span", { class: "item-tier " + itemTierClass(row.tier) }, row.tier),
+        h("span", { class: "li-meta", style: "display:inline;margin-left:8px" }, row.what))))));
+  }
+  if (has(r.slots)) {
+    frag.appendChild(section("Coverage by item type",
+      tableWrap(h("table", null,
+        h("thead", null, h("tr", null,
+          h("th", { scope: "col" }, "Item type"),
+          h("th", { class: "num", scope: "col" }, "Ratings"),
+          h("th", { scope: "col" }, "Lists it came from"))),
+        h("tbody", null, arr(r.slots).map((slot) => h("tr", null,
+          h("td", { class: "cell-strong" }, itemSlotIcon(slot.slot) + " " + slot.slot),
+          h("td", { class: "num" }, String(slot.count)),
+          h("td", null, arr(slot.acts).map((act) => act.label + " (" + act.count + ")").join(" · ")))))))));
+  }
+  const coverage = r.coverage || {};
+  if (has(coverage.not_yet_read)) {
+    frag.appendChild(section("Not read yet",
+      h("p", { class: "muted" }, "Lists still to work through, so an empty slot here means unread, not unrated."),
+      bulletList(arr(coverage.not_yet_read).map((row) => h("li", null, row)))));
+  }
+  if (has(coverage.unresolved)) {
+    frag.appendChild(section("Discussed but unrated",
+      has(coverage.unresolved_note) ? h("p", { class: "muted" }, coverage.unresolved_note) : null,
+      renderTags(arr(coverage.unresolved))));
+  }
+  if (has(r.sources)) {
+    const sources = arr(r.sources).slice().sort((a, b) => String(a.title).localeCompare(String(b.title)));
+    frag.appendChild(section("Lists read",
+      tableWrap(h("table", null,
+        h("thead", null, h("tr", null,
+          h("th", { scope: "col" }, "List"),
+          h("th", { scope: "col" }, "Slot"),
+          h("th", { scope: "col" }, "Rates"),
+          h("th", { class: "num", scope: "col" }, "Items"))),
+        h("tbody", null, sources.map((src) => h("tr", null,
+          h("td", { class: "cell-strong" }, h("a", {
+            href: ratingSourceUrl(src.id, null), target: "_blank", rel: "noopener noreferrer",
+          }, src.title)),
+          h("td", null, has(src.slot) ? src.slot : h("span", { class: "muted" }, "any")),
+          h("td", null, src.kind === "ranked-20" ? "a top-20 countdown" : ratingActLabel(src.rated_in)),
+          h("td", { class: "num" }, String(src.ratings || 0)))))))));
+  }
+  return frag;
+}
+
+function ratingActLabel(act) {
+  if (act === "all" || !has(act)) return "every act";
+  return humanize(String(act).replace(/^act/, "act "));
+}
+
 /* Sub-nav entries for a given top-level tab. */
 function navEntries(data, tab) {
   if (tab === "loot") {
@@ -2738,6 +3210,17 @@ function navEntries(data, tab) {
       label: "Act " + a.act,
       sub: a.areas.length + " areas",
     }));
+  }
+  if (tab === "ratings") {
+    const r = data.ratings || {};
+    const entries = [{ key: RATE_PREFIX, label: "Overview", sub: "Scale · coverage · lists read" }];
+    arr(r.slots).forEach((slot) => entries.push({
+      key: RATE_PREFIX + slot.slot,
+      label: slot.slot,
+      sub: slot.count + " rated",
+      group: "By item type",
+    }));
+    return entries;
   }
   if (tab === "tadpole") {
     const t = data.tadpole || {};
@@ -2824,14 +3307,12 @@ function buildNav(onSelect) {
   };
 }
 
-/* ---------------- Top-level tabs (Party / Loot) ---------------- */
-function buildTopTabs(onActivate) {
+/* ---------------- Top-level tabs (Party / Tadpole / Loot / Ratings) ----------------
+   `defs` comes from the caller because Ratings only exists once
+   tools/build_ratings_page.py has written content/ratings.md. */
+const TAB_LABELS = { party: "Party", tadpole: "Tadpole", loot: "Loot", ratings: "Ratings" };
+function buildTopTabs(onActivate, defs) {
   const host = document.getElementById("top-tabs");
-  const defs = [
-    { id: "party", label: "Party" },
-    { id: "tadpole", label: "Tadpole" },
-    { id: "loot", label: "Loot" },
-  ];
   const tabs = [];
   defs.forEach((d) => {
     const tab = h(
@@ -2918,7 +3399,7 @@ function buildTopTabs(onActivate) {
   let booted = false;
   let activeTab = "party";
   // Remember the last sub-view visited within each top tab.
-  const lastKey = { party: "__overview__", tadpole: "__tad__", loot: null };
+  const lastKey = { party: "__overview__", tadpole: "__tad__", loot: null, ratings: RATE_PREFIX };
 
   function renderContent(key, focusContent) {
     clearPageOutlineObservers();
@@ -2934,6 +3415,8 @@ function buildTopTabs(onActivate) {
       const act = parseInt(key.replace(/[^0-9]/g, ""), 10);
       content.appendChild(renderLoot((data.loot_guide || []).find((x) => x.act === act)));
     }
+    else if (key === RATE_PREFIX) content.appendChild(renderRatingsOverview(data.ratings || {}));
+    else if (key.indexOf(RATE_PREFIX) === 0) content.appendChild(renderRatingsSlot(data.ratings || {}, key.slice(RATE_PREFIX.length), data));
     else content.appendChild(renderCharacter(key, data.characters[key]));
     // Move focus into the freshly rendered view so keyboard/screen-reader users
     // land on (and hear) the new content. Skipped on initial render and when the
@@ -2965,7 +3448,7 @@ function buildTopTabs(onActivate) {
     activeTab = tab;
     topTabs.setActive(tab);
     const entries = navEntries(data, tab);
-    nav.render(entries, tab === "loot" ? "Loot" : tab === "tadpole" ? "Tadpole" : "Party");
+    nav.render(entries, TAB_LABELS[tab] || "Party");
     let key = lastKey[tab];
     if (!key || !entries.some((e) => e.key === key)) key = entries.length ? entries[0].key : null;
     if (key) select(key, !focusTab);
@@ -2976,8 +3459,16 @@ function buildTopTabs(onActivate) {
     }
   }
 
+  const tabDefs = [
+    { id: "party", label: TAB_LABELS.party },
+    { id: "tadpole", label: TAB_LABELS.tadpole },
+    { id: "loot", label: TAB_LABELS.loot },
+  ];
+  // No generated ratings file, no Ratings tab — the rest of the guide is unaffected.
+  if (data.ratings && arr(data.ratings.slots).length) tabDefs.push({ id: "ratings", label: TAB_LABELS.ratings });
+
   nav = buildNav(select);
-  topTabs = buildTopTabs(activateTab);
+  topTabs = buildTopTabs(activateTab, tabDefs);
   activateTab("party", false);
 })();
 </script>
@@ -3014,6 +3505,31 @@ function buildTopTabs(onActivate) {
   .li-meta ul.prose-list { margin: 5px 0; }
   .callout .prose:first-of-type { margin-top: 6px; }
   .callout .prose:last-child, .callout ul.prose-list:last-child { margin-bottom: 0; }
+  /* Ratings pages: one block per letter, best first, each row a rated item. */
+  .rate-tier { margin: 0 0 16px; }
+  .rate-tier:last-child { margin-bottom: 0; }
+  .rate-tier-h {
+    display: flex; align-items: baseline; gap: 9px; margin: 0 0 7px;
+    padding-bottom: 4px; border-bottom: 1px solid var(--border);
+  }
+  .rate-tier-h .item-tier { font-size: .7rem; padding: 2px 9px; cursor: default; }
+  .rate-tier-what { font-size: .78rem; color: var(--text-muted); flex: 1; min-width: 0; }
+  ul.rate-list { list-style: none; margin: 0; padding: 0; }
+  li.rate-row { margin: 0 0 10px; padding-left: 10px; border-left: 2px solid var(--border); }
+  li.rate-row:last-child { margin-bottom: 0; }
+  li.rate-row:hover { border-left-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+  .rate-head { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .rate-name { font-size: .9rem; font-weight: 700; }
+  .rate-verdict { font-size: .82rem; color: var(--text-muted); line-height: 1.45; margin-top: 1px; }
+  .rate-at { font-size: .72rem; font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; margin-left: 6px; }
+  .rate-at:hover, .rate-at:focus-visible { text-decoration: underline; }
+  /* The party already plans this item, so say who. */
+  .item-chip.rate-party {
+    color: color-mix(in srgb, var(--accent) 75%, var(--text)); background: var(--accent-soft);
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); text-transform: none; letter-spacing: .02em;
+  }
+  .rate-lists { font-size: .76rem; color: var(--text-muted); margin: 10px 0 14px; line-height: 1.5; }
+  .rate-lists a { color: inherit; }
   .pc-block { margin: 0 0 20px; }
   .pc-part { margin: 8px 0 0; }
   .pc-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; margin-bottom: 2px; }

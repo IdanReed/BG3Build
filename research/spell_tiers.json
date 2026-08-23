@@ -1,0 +1,1762 @@
+{
+ "about": "Spell and cantrip tier ratings, read from the [Updated] Patch 8 spell series in playlist PLgTVc5Jd2rrLPuc3vE6XqK65QQboFfolP. One row per spell per source video. Feeds tier/tier_note on the spells blocks in content/characters/*.md.",
+ "playlist": "PLgTVc5Jd2rrLPuc3vE6XqK65QQboFfolP",
+ "channel": "Cephalopocalypse",
+ "method": "tools/dump_tier_verdicts.py lists every spoken verdict; each was read and attributed by hand. The lists state their own totals on camera (\"26 of the 52 first level spells\"), which is the completeness check.",
+ "scale": "S A B C D. This series defines no F tier, so a reported F is a mis-hear.",
+ "sources": {
+  "FVYG4x5HiuM": {
+   "label": "Spells tier list, level 2, part 2 (Knock through Web)",
+   "spell_level": 2,
+   "rated": 21
+  },
+  "jhKY71bMDuw": {
+   "label": "ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5",
+   "spell_level": 5,
+   "rated": 18
+  },
+  "MgHGV4vfKig": {
+   "label": "Level 3 spells tier list, part 2 (H-W)",
+   "spell_level": 3,
+   "rated": 17
+  },
+  "mgqMv2h-0x0": {
+   "label": "Cantrips tier list, [Updated] Patch 8",
+   "spell_level": 0,
+   "rated": 25
+  },
+  "ql_t-8OWHVM": {
+   "label": "Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite)",
+   "spell_level": 1,
+   "rated": 26
+  },
+  "U6s3AsH8Ajw": {
+   "label": "Spells tier list, level 4, part 2 (Freedom of Movement through Wall of Fire)",
+   "spell_level": 4,
+   "rated": 11
+  },
+  "vIGOO9HAv5g": {
+   "label": "Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry)",
+   "spell_level": 1,
+   "rated": 26
+  },
+  "vkcAg7oJ328": {
+   "label": "Spells tier list, level 4, part 1 (Banishment through Fire Shield)",
+   "spell_level": 4,
+   "rated": 10
+  },
+  "xY5hyRLIdxE": {
+   "label": "Spells tier list, level 2, part 1 (Aid through Invisibility)",
+   "spell_level": 2,
+   "rated": 21
+  },
+  "y0rRBZarf2Q": {
+   "label": "Level 3 spells tier list, part 1 (A-G)",
+   "spell_level": 3,
+   "rated": 17
+  },
+  "ZEhzdnk5zGA": {
+   "label": "ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6",
+   "spell_level": 6,
+   "rated": 20
+  }
+ },
+ "spells": [
+  {
+   "spell": "Knock",
+   "level": 2,
+   "tier": "C",
+   "source": "FVYG4x5HiuM",
+   "at": "2:26",
+   "verdict": "a small advantage that any sleight of hand character already gives you for free"
+  },
+  {
+   "spell": "Lesser Restoration",
+   "level": 2,
+   "tier": "B",
+   "source": "FVYG4x5HiuM",
+   "at": "4:34",
+   "verdict": "prepare it and rarely cast it; the action-neutral paralysis cure is an invaluable panic button"
+  },
+  {
+   "spell": "Magic Weapon",
+   "level": 2,
+   "tier": "A",
+   "source": "FVYG4x5HiuM",
+   "at": "7:59",
+   "verdict": "A specifically for Eldritch Knights; weaker for wizards, who want their concentration elsewhere"
+  },
+  {
+   "spell": "Melf's Acid Arrow",
+   "level": 2,
+   "tier": "D",
+   "source": "FVYG4x5HiuM",
+   "at": "9:00",
+   "verdict": "15 single-target damage behind an attack roll; a damage spell that does no damage"
+  },
+  {
+   "spell": "Mirror Image",
+   "level": 2,
+   "tier": "B",
+   "source": "FVYG4x5HiuM",
+   "at": "12:14",
+   "verdict": "+9 AC without concentration makes the AI stop targeting you, but costly every fight"
+  },
+  {
+   "spell": "Misty Step",
+   "level": 2,
+   "tier": "S",
+   "source": "FVYG4x5HiuM",
+   "at": "14:50",
+   "verdict": "top-five spell; bonus-action 60 ft teleport that every honour mode character should have access to"
+  },
+  {
+   "spell": "Moonbeam",
+   "level": 2,
+   "tier": "A",
+   "source": "FVYG4x5HiuM",
+   "at": "18:39",
+   "verdict": "highest average level-two damage and repositionable, but druids have better things to concentrate on"
+  },
+  {
+   "spell": "Pass Without Trace",
+   "level": 2,
+   "tier": "C",
+   "source": "FVYG4x5HiuM",
+   "at": "20:34",
+   "verdict": "useless for most parties, mandatory for the game-breaking greater invisibility stealth-archer strategy"
+  },
+  {
+   "spell": "Phantasmal Force",
+   "level": 2,
+   "tier": "D",
+   "source": "FVYG4x5HiuM",
+   "at": "22:21",
+   "verdict": "1d6 per turn with repeated saves to escape; does less damage than a cantrip"
+  },
+  {
+   "spell": "Prayer of Healing",
+   "level": 2,
+   "tier": "D",
+   "source": "FVYG4x5HiuM",
+   "at": "24:02",
+   "verdict": "the best out-of-combat healing, but out-of-combat healing is worthless when you can rest freely"
+  },
+  {
+   "spell": "Protection from Poison",
+   "level": 2,
+   "tier": "C",
+   "source": "FVYG4x5HiuM",
+   "at": "25:27",
+   "verdict": "low C; no-concentration poison resistance matters in only a few fights, mostly Act 2"
+  },
+  {
+   "spell": "Ray of Enfeeblement",
+   "level": 2,
+   "tier": "C",
+   "source": "FVYG4x5HiuM",
+   "at": "28:24",
+   "verdict": "halves strength-based weapon damage, but concentration is better spent elsewhere; lands on debuff-immune bosses"
+  },
+  {
+   "spell": "Scorching Ray",
+   "level": 2,
+   "tier": "A",
+   "source": "FVYG4x5HiuM",
+   "at": "31:43",
+   "verdict": "each ray applies on-hit riders and stacks fire Arcane Acuity, but not efficient enough to win fights alone"
+  },
+  {
+   "spell": "See Invisibility",
+   "level": 2,
+   "tier": "D",
+   "source": "FVYG4x5HiuM",
+   "at": "33:41",
+   "verdict": "splashing water is more reliable and the game showers you in scrolls of it"
+  },
+  {
+   "spell": "Shadow Blade",
+   "level": 2,
+   "tier": "S",
+   "source": "FVYG4x5HiuM",
+   "at": "38:25",
+   "verdict": "all-day 2d8 finesse psychic weapon with advantage in the dark; broken with the Resonance Stone"
+  },
+  {
+   "spell": "Shatter",
+   "level": 2,
+   "tier": "C",
+   "source": "FVYG4x5HiuM",
+   "at": "40:45",
+   "verdict": "too little damage against a common con save; kept purely for one-shotting scrying eyes"
+  },
+  {
+   "spell": "Silence",
+   "level": 2,
+   "tier": "A",
+   "source": "FVYG4x5HiuM",
+   "at": "43:29",
+   "verdict": "free as a ritual, shuts down enemy casters and noisy legendary actions; needs something holding them inside"
+  },
+  {
+   "spell": "Spike Growth",
+   "level": 2,
+   "tier": "S",
+   "source": "FVYG4x5HiuM",
+   "at": "47:06",
+   "verdict": "wins almost any melee encounter on its own; carries the whole of Act 1"
+  },
+  {
+   "spell": "Spiritual Weapon",
+   "level": 2,
+   "tier": "S",
+   "source": "FVYG4x5HiuM",
+   "at": "51:29",
+   "verdict": "bonus-action, concentration-free crowd control that soaks attacks and blocks doorways; good early and late"
+  },
+  {
+   "spell": "Warding Bond",
+   "level": 2,
+   "tier": "B",
+   "source": "FVYG4x5HiuM",
+   "at": "55:15",
+   "verdict": "B as an active-party spell for a damage-soaking frontliner; S if CAMP-CAST for permanent party-wide resistance"
+  },
+  {
+   "spell": "Web",
+   "level": 2,
+   "tier": "B",
+   "source": "FVYG4x5HiuM",
+   "at": "58:01",
+   "verdict": "Entangle's effect on a dex save with a wider radius, for sorcerers and wizards; flammable"
+  },
+  {
+   "spell": "Banishing Smite",
+   "level": 5,
+   "tier": "B",
+   "source": "jhKY71bMDuw",
+   "at": "4:30",
+   "verdict": "about 100 burst damage on a guaranteed crit; ONLY VIA HEXBLADE WARLOCK OR BARD MAGICAL SECRETS"
+  },
+  {
+   "spell": "Cloudkill",
+   "level": 5,
+   "tier": "C",
+   "source": "jhKY71bMDuw",
+   "at": "8:48",
+   "verdict": "high C; recastable double-dip damage, but half the relevant enemies are poison immune"
+  },
+  {
+   "spell": "Cone of Cold",
+   "level": 5,
+   "tier": "B",
+   "source": "jhKY71bMDuw",
+   "at": "12:02",
+   "verdict": "only worth it doubled up on wet grouped enemies; best AoE burst for hexblade warlocks"
+  },
+  {
+   "spell": "Conjure Elemental",
+   "level": 5,
+   "tier": "S",
+   "source": "jhKY71bMDuw",
+   "at": "15:03",
+   "verdict": "an all-day summon as strong as an extra party member; all eight modes viable"
+  },
+  {
+   "spell": "Contagion",
+   "level": 5,
+   "tier": "C",
+   "source": "jhKY71bMDuw",
+   "at": "19:13",
+   "verdict": "pre-combat disease can end a fight instantly, but Bestow Curse is far cheaper"
+  },
+  {
+   "spell": "Destructive Wave",
+   "level": 5,
+   "tier": "A",
+   "source": "jhKY71bMDuw",
+   "at": "21:45",
+   "verdict": "non-concentration AoE damage plus prone; a free domain spell for Tempest and Light clerics"
+  },
+  {
+   "spell": "Dominate Person",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "25:19",
+   "verdict": "one unreliable temporary ally for a level 5 slot; AoE control is better"
+  },
+  {
+   "spell": "Flame Strike",
+   "level": 5,
+   "tier": "C",
+   "source": "jhKY71bMDuw",
+   "at": "27:03",
+   "verdict": "a cleric's only AoE nuke, but weaker than an upcast Fireball"
+  },
+  {
+   "spell": "Greater Restoration",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "28:20",
+   "verdict": "duplicated by cheaper Freedom of Movement and Remove Curse; petrification never happens"
+  },
+  {
+   "spell": "Hold Monster",
+   "level": 5,
+   "tier": "A",
+   "source": "jhKY71bMDuw",
+   "at": "30:07",
+   "verdict": "paralysis is devastating but costs a level 5 slot and caps at two targets"
+  },
+  {
+   "spell": "Insect Plague",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "32:31",
+   "verdict": "22 damage a turn with no double-dip; barely beats level 2 Cloud of Daggers"
+  },
+  {
+   "spell": "Mass Cure Wounds",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "34:35",
+   "verdict": "reactive healing that Mass Healing Word does with a bonus action and level 3 slot"
+  },
+  {
+   "spell": "Planar Binding",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "36:15",
+   "verdict": "Hold Monster locks the same creatures more reliably; many of these targets are immune"
+  },
+  {
+   "spell": "Seeming",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "38:03",
+   "verdict": "party-wide Disguise Self is pointless when only one character can hold a conversation"
+  },
+  {
+   "spell": "Telekinesis",
+   "level": 5,
+   "tier": "B",
+   "source": "jhKY71bMDuw",
+   "at": "41:29",
+   "verdict": "repeatable no-weight-limit throw for repositioning; BUGGED, a first-cast save cancels concentration"
+  },
+  {
+   "spell": "Wall of Stone",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "44:41",
+   "verdict": "fiddly targeting spawns walls with holes and 30 HP pillars die in one hit"
+  },
+  {
+   "spell": "Curriculum of Strategy: Artistry of War",
+   "level": 5,
+   "tier": "S",
+   "source": "jhKY71bMDuw",
+   "at": "48:40",
+   "verdict": "72 unmissable force damage in six instances; WIZARD-ONLY SECRET SPELL, once per short rest"
+  },
+  {
+   "spell": "Dethrone",
+   "level": 5,
+   "tier": "D",
+   "source": "jhKY71bMDuw",
+   "at": "51:34",
+   "verdict": "BUGGED fixed DC 18 con save plus necrotic resistance; WIZARD-ONLY SECRET SPELL, once per long rest"
+  },
+  {
+   "spell": "Haste",
+   "level": 3,
+   "tier": "S",
+   "source": "MgHGV4vfKig",
+   "at": "6:12",
+   "verdict": "the most direct action-economy buff in the game. ON HONOUR MODE the extra action gives only one attack, not Extra Attack"
+  },
+  {
+   "spell": "Hunger of Hadar",
+   "level": 3,
+   "tier": "S",
+   "source": "MgHGV4vfKig",
+   "at": "9:07",
+   "verdict": "no-save blind plus difficult terrain traps enemies inside; layer over Plant Growth to end fights. Acid save DC bugged to 12"
+  },
+  {
+   "spell": "Hypnotic Pattern",
+   "level": 3,
+   "tier": "A",
+   "source": "MgHGV4vfKig",
+   "at": "10:24",
+   "verdict": "best when it catches the whole encounter; A only because it shares a role with Fear and Sleet Storm, and he would accept S"
+  },
+  {
+   "spell": "Lightning Arrow",
+   "level": 3,
+   "tier": "D",
+   "source": "MgHGV4vfKig",
+   "at": "12:57",
+   "verdict": "Ranger spell attack off low Wisdom; weak, unreliable, worse than just shooting the bow"
+  },
+  {
+   "spell": "Lightning Bolt",
+   "level": 3,
+   "tier": "A",
+   "source": "MgHGV4vfKig",
+   "at": "15:17",
+   "verdict": "the better Fireball: same damage and area, better damage type, doubles on wet, far longer range"
+  },
+  {
+   "spell": "Mass Healing Word",
+   "level": 3,
+   "tier": "A",
+   "source": "MgHGV4vfKig",
+   "at": "17:21",
+   "verdict": "bonus-action AoE that reapplies the buff-on-heal items party-wide; mandatory for any dedicated healer"
+  },
+  {
+   "spell": "Plant Growth",
+   "level": 3,
+   "tier": "B",
+   "source": "MgHGV4vfKig",
+   "at": "20:19",
+   "verdict": "quarter movement, non-concentration, same footprint as Hunger of Hadar; but FLAMMABLE and useless versus ranged enemies"
+  },
+  {
+   "spell": "Protection from Energy",
+   "level": 3,
+   "tier": "C",
+   "source": "MgHGV4vfKig",
+   "at": "22:37",
+   "verdict": "single-target resistance for a slot plus concentration; elixirs and gear do it cheaper, except versus thunder"
+  },
+  {
+   "spell": "Remove Curse",
+   "level": 3,
+   "tier": "C",
+   "source": "MgHGV4vfKig",
+   "at": "23:55",
+   "verdict": "swap it in for the few story curses a long rest will not clear; the hard part is remembering it exists"
+  },
+  {
+   "spell": "Revivify",
+   "level": 3,
+   "tier": "D",
+   "source": "MgHGV4vfKig",
+   "at": "26:16",
+   "verdict": "never cast it: Withers handles it out of combat and scrolls are everywhere, one on every character at start"
+  },
+  {
+   "spell": "Sleet Storm",
+   "level": 3,
+   "tier": "A",
+   "source": "MgHGV4vfKig",
+   "at": "30:13",
+   "verdict": "best of the control trio when you cannot catch the whole encounter; ice refreshes, breaks enemy concentration. He would accept S"
+  },
+  {
+   "spell": "Slow",
+   "level": 3,
+   "tier": "B",
+   "source": "MgHGV4vfKig",
+   "at": "33:15",
+   "verdict": "targets six creatures so it spares allies, and bypasses incapacitation immunity; the reliable second-choice control spell"
+  },
+  {
+   "spell": "Speak with Dead",
+   "level": 3,
+   "tier": "C",
+   "source": "MgHGV4vfKig",
+   "at": "35:04",
+   "verdict": "ritual, so free to cast; roleplay value mainly, and an amulet grants it anyway"
+  },
+  {
+   "spell": "Spirit Guardians",
+   "level": 3,
+   "tier": "S",
+   "source": "MgHGV4vfKig",
+   "at": "39:21",
+   "verdict": "gold standard cleric damage; upcast it, precast it, stack radiating orbs. PATCH 8 added Death cleric necrotic and Oath of Crown paladins"
+  },
+  {
+   "spell": "Stinking Cloud",
+   "level": 3,
+   "tier": "C",
+   "source": "MgHGV4vfKig",
+   "at": "43:03",
+   "verdict": "held back by a Constitution save and by roughly half the game's enemies being POISON IMMUNE; strong when it does land"
+  },
+  {
+   "spell": "Vampiric Touch",
+   "level": 3,
+   "tier": "D",
+   "source": "MgHGV4vfKig",
+   "at": "44:16",
+   "verdict": "3d6 in melee for trivial self-healing; the numbers are simply not there"
+  },
+  {
+   "spell": "Warden of Vitality",
+   "level": 3,
+   "tier": "C",
+   "source": "MgHGV4vfKig",
+   "at": "47:43",
+   "verdict": "C IN GENERAL but excellent on a dedicated-healer Lore Bard with extra bonus actions; Paladins get it too late"
+  },
+  {
+   "spell": "Acid Splash",
+   "level": 0,
+   "tier": "C",
+   "source": "mgqMv2h-0x0",
+   "at": "6:52",
+   "verdict": "only Evocation Wizards want it in combat; for everyone else it is a box-breaking looting convenience"
+  },
+  {
+   "spell": "Blade Ward",
+   "level": 0,
+   "tier": "A",
+   "source": "mgqMv2h-0x0",
+   "at": "10:39",
+   "verdict": "action-neutral alone, but excellent when surrounded, and it doubles temp HP and flat damage reduction"
+  },
+  {
+   "spell": "Bone Chill",
+   "level": 0,
+   "tier": "A",
+   "source": "mgqMv2h-0x0",
+   "at": "12:42",
+   "verdict": "turns off enemy healing with no save and blanks undead attack rolls; not the go-to damage cantrip"
+  },
+  {
+   "spell": "Booming Blade",
+   "level": 0,
+   "tier": "S",
+   "source": "mgqMv2h-0x0",
+   "at": "16:31",
+   "verdict": "free thunder damage riding a normal weapon attack; once per action, so haste and Action Surge multiply it"
+  },
+  {
+   "spell": "Bursting Sinew",
+   "level": 0,
+   "tier": "D",
+   "source": "mgqMv2h-0x0",
+   "at": "18:30",
+   "verdict": "needs a fresh corpse, clustered enemies and a failed DEX save; Acid Splash is usually better"
+  },
+  {
+   "spell": "Dancing Lights",
+   "level": 0,
+   "tier": "D",
+   "source": "mgqMv2h-0x0",
+   "at": "19:48",
+   "verdict": "spends concentration for light; the only real use is weighting poison-gas vents shut"
+  },
+  {
+   "spell": "Eldritch Blast",
+   "level": 0,
+   "tier": "S",
+   "source": "mgqMv2h-0x0",
+   "at": "23:10",
+   "verdict": "best damage cantrip; separate attack rolls give reliability, crit chances and per-beam riders"
+  },
+  {
+   "spell": "Fire Bolt",
+   "level": 0,
+   "tier": "A",
+   "source": "mgqMv2h-0x0",
+   "at": "24:40",
+   "verdict": "highest raw damage for wizards and sorcerers, and it lights fires at 60 feet"
+  },
+  {
+   "spell": "Friends",
+   "level": 0,
+   "tier": "A",
+   "source": "mgqMv2h-0x0",
+   "at": "26:48",
+   "verdict": "advantage on Charisma checks; COUNTS AS A CRIME ON TACTICIAN AND HONOUR MODE, so hide or fast-travel afterwards"
+  },
+  {
+   "spell": "Guidance",
+   "level": 0,
+   "tier": "S",
+   "source": "mgqMv2h-0x0",
+   "at": "28:58",
+   "verdict": "extra d4 on every ability check all game; he calls it the single most impactful spell"
+  },
+  {
+   "spell": "Light",
+   "level": 0,
+   "tier": "A",
+   "source": "mgqMv2h-0x0",
+   "at": "30:38",
+   "verdict": "hands-free, concentration-free light lasting all day; most parties need some light source"
+  },
+  {
+   "spell": "Mage Hand",
+   "level": 0,
+   "tier": "A",
+   "source": "mgqMv2h-0x0",
+   "at": "33:23",
+   "verdict": "costs a short-rest charge, but scouts, triggers traps, throws potions and soaks one enemy attack"
+  },
+  {
+   "spell": "Minor Illusion",
+   "level": 0,
+   "tier": "S",
+   "source": "mgqMv2h-0x0",
+   "at": "35:56",
+   "verdict": "moves NPCs with no save or roll; clusters enemies for AoE, sets ambushes, pulls enemies one at a time"
+  },
+  {
+   "spell": "Poison Spray",
+   "level": 0,
+   "tier": "D",
+   "source": "mgqMv2h-0x0",
+   "at": "37:07",
+   "verdict": "worst damage type, worst save to target, and only 10-foot range; never the right pick"
+  },
+  {
+   "spell": "Produce Flame",
+   "level": 0,
+   "tier": "B",
+   "source": "mgqMv2h-0x0",
+   "at": "39:11",
+   "verdict": "light plus a d8 ranged attack in one spell, but Toll the Dead supersedes it for clerics; CASTING UI BROKEN ON CONSOLE"
+  },
+  {
+   "spell": "Ray of Frost",
+   "level": 0,
+   "tier": "S",
+   "source": "mgqMv2h-0x0",
+   "at": "41:42",
+   "verdict": "movement debuff lets you kite as a stun, doubles on wet enemies, and freezes surfaces"
+  },
+  {
+   "spell": "Resistance",
+   "level": 0,
+   "tier": "B",
+   "source": "mgqMv2h-0x0",
+   "at": "43:17",
+   "verdict": "d4 on saves; value is out of combat, on traps and dialogue saves you can see coming"
+  },
+  {
+   "spell": "Sacred Flame",
+   "level": 0,
+   "tier": "D",
+   "source": "mgqMv2h-0x0",
+   "at": "44:36",
+   "verdict": "Toll the Dead does more damage on a better save, so it has no role left after Patch 8"
+  },
+  {
+   "spell": "Shillelagh",
+   "level": 0,
+   "tier": "S",
+   "source": "mgqMv2h-0x0",
+   "at": "47:07",
+   "verdict": "a d8 wisdom-based melee weapon makes early druids among the strongest melee combatants; he had badly underrated it before"
+  },
+  {
+   "spell": "Shocking Grasp",
+   "level": 0,
+   "tier": "C",
+   "source": "mgqMv2h-0x0",
+   "at": "52:55",
+   "verdict": "melee-only on squishy casters; when you need it you should be spending a real resource instead"
+  },
+  {
+   "spell": "Thaumaturgy",
+   "level": 0,
+   "tier": "C",
+   "source": "mgqMv2h-0x0",
+   "at": "54:57",
+   "verdict": "advantage on Intimidation and Performance only; Friends is better except that Thaumaturgy is not a crime"
+  },
+  {
+   "spell": "Thorn Whip",
+   "level": 0,
+   "tier": "B",
+   "source": "mgqMv2h-0x0",
+   "at": "56:40",
+   "verdict": "no-save 10-foot pull; repositions enemies off cliffs and back into Spike Growth"
+  },
+  {
+   "spell": "Toll the Dead",
+   "level": 0,
+   "tier": "A",
+   "source": "mgqMv2h-0x0",
+   "at": "58:55",
+   "verdict": "d12 on any damaged enemy at a WIS save; fixes early cleric damage, though wizards and warlocks skip it"
+  },
+  {
+   "spell": "True Strike",
+   "level": 0,
+   "tier": "D",
+   "source": "mgqMv2h-0x0",
+   "at": "1:01:49",
+   "verdict": "an action for advantage is worse than attacking twice; only pre-combat or protecting a spent resource"
+  },
+  {
+   "spell": "Vicious Mockery",
+   "level": 0,
+   "tier": "C",
+   "source": "mgqMv2h-0x0",
+   "at": "1:04:16",
+   "verdict": "too little damage to beat firing a bow; a late-game bard filler action only"
+  },
+  {
+   "spell": "Grease",
+   "level": 1,
+   "tier": "A",
+   "source": "ql_t-8OWHVM",
+   "at": "4:27",
+   "verdict": "large concentration-free prone AoE using your save DC; held back only by being flammable"
+  },
+  {
+   "spell": "Guiding Bolt",
+   "level": 1,
+   "tier": "B",
+   "source": "ql_t-8OWHVM",
+   "at": "6:53",
+   "verdict": "decent 4d6 plus advantage on the next attack, but Toll the Dead took over cleric filler damage"
+  },
+  {
+   "spell": "Hail of Thorns",
+   "level": 1,
+   "tier": "D",
+   "source": "ql_t-8OWHVM",
+   "at": "7:44",
+   "verdict": "a bonus action and a spell slot for 1d10 in a tiny radius on a bad save"
+  },
+  {
+   "spell": "Healing Word",
+   "level": 1,
+   "tier": "S",
+   "source": "ql_t-8OWHVM",
+   "at": "10:48",
+   "verdict": "ranged bonus-action revive, and the delivery system for Whispering Promise and Hellrider's Pride buffs"
+  },
+  {
+   "spell": "Hellish Rebuke",
+   "level": 1,
+   "tier": "C",
+   "source": "ql_t-8OWHVM",
+   "at": "13:16",
+   "verdict": "bad damage ratio, but free action economy; retaliation builds and BUGS (works while raging, eats multi-hit spells) redeem it"
+  },
+  {
+   "spell": "Heroism",
+   "level": 1,
+   "tier": "C",
+   "source": "ql_t-8OWHVM",
+   "at": "16:32",
+   "verdict": "5 temp HP per turn plus fear immunity, but needs long fights and no other temp HP source; he admits it is a pet spell"
+  },
+  {
+   "spell": "Hex",
+   "level": 1,
+   "tier": "S",
+   "source": "ql_t-8OWHVM",
+   "at": "21:08",
+   "verdict": "d6 on every attack roll all day, reapplied free on kills; enormous on multi-attack casters"
+  },
+  {
+   "spell": "Hunter's Mark",
+   "level": 1,
+   "tier": "S",
+   "source": "ql_t-8OWHVM",
+   "at": "22:04",
+   "verdict": "the ranger's Hex; weapon attacks only, but the damage matches your weapon type"
+  },
+  {
+   "spell": "Ice Knife",
+   "level": 1,
+   "tier": "A",
+   "source": "ql_t-8OWHVM",
+   "at": "23:45",
+   "verdict": "slightly more damage than cold Chromatic Orb with an ice surface; the pick for druids, who lack Chromatic Orb"
+  },
+  {
+   "spell": "Inflict Wounds",
+   "level": 1,
+   "tier": "B",
+   "source": "ql_t-8OWHVM",
+   "at": "25:49",
+   "verdict": "highest single-target level 1 damage, effectively a cleric smite, but melee range is risky"
+  },
+  {
+   "spell": "Longstrider",
+   "level": 1,
+   "tier": "S",
+   "source": "ql_t-8OWHVM",
+   "at": "27:03",
+   "verdict": "free all-day +10 movement on everyone including summons; he would put it in S+ if that existed"
+  },
+  {
+   "spell": "Mage Armour",
+   "level": 1,
+   "tier": "A",
+   "source": "ql_t-8OWHVM",
+   "at": "28:55",
+   "verdict": "+3 AC all day for unarmoured casters; useless early, near-mandatory once you want robes"
+  },
+  {
+   "spell": "Magic Missile",
+   "level": 1,
+   "tier": "S",
+   "source": "ql_t-8OWHVM",
+   "at": "32:13",
+   "verdict": "cannot miss, ignores line of sight, splits across targets, and every flat rider applies per missile"
+  },
+  {
+   "spell": "Protection from Evil and Good",
+   "level": 1,
+   "tier": "C",
+   "source": "ql_t-8OWHVM",
+   "at": "34:45",
+   "verdict": "disadvantage for aberrations and undead plus BROKEN TOOLTIP (real effect is blanket Frightened immunity, no charm protection); costs concentration"
+  },
+  {
+   "spell": "Ray of Sickness",
+   "level": 1,
+   "tier": "D",
+   "source": "ql_t-8OWHVM",
+   "at": "35:47",
+   "verdict": "small poison damage on the worst save, with a weak and unreliable debuff attached"
+  },
+  {
+   "spell": "Sanctuary",
+   "level": 1,
+   "tier": "S",
+   "source": "ql_t-8OWHVM",
+   "at": "38:30",
+   "verdict": "bonus-action untargetability; protects healers, haste concentration holders and low-health allies, and blocks doorways"
+  },
+  {
+   "spell": "Searing Smite",
+   "level": 1,
+   "tier": "D",
+   "source": "ql_t-8OWHVM",
+   "at": "40:16",
+   "verdict": "less damage than plain Divine Smite and slower; worst of the smite spells, free only for Zariel tieflings"
+  },
+  {
+   "spell": "Shield",
+   "level": 1,
+   "tier": "S",
+   "source": "ql_t-8OWHVM",
+   "at": "43:07",
+   "verdict": "reaction +5 AC that only prompts when it turns a hit into a miss; worth a class dip on its own"
+  },
+  {
+   "spell": "Shield of Faith",
+   "level": 1,
+   "tier": "B",
+   "source": "ql_t-8OWHVM",
+   "at": "45:33",
+   "verdict": "+2 AC with no armour restriction, but costs concentration; best on one-level cleric dips"
+  },
+  {
+   "spell": "Sleep",
+   "level": 1,
+   "tier": "B",
+   "source": "ql_t-8OWHVM",
+   "at": "47:54",
+   "verdict": "no-save disable that can end early encounters, then falls off a cliff past level three"
+  },
+  {
+   "spell": "Speak with Animals",
+   "level": 1,
+   "tier": "C",
+   "source": "ql_t-8OWHVM",
+   "at": "49:45",
+   "verdict": "real benefit, but the game hands out so many potions that taking the spell is redundant"
+  },
+  {
+   "spell": "Tasha's Hideous Laughter",
+   "level": 1,
+   "tier": "A",
+   "source": "ql_t-8OWHVM",
+   "at": "52:09",
+   "verdict": "weak early because damage grants extra saves; late, a 10-turn disable that bypasses boss incapacitation immunities"
+  },
+  {
+   "spell": "Thunderous Smite",
+   "level": 1,
+   "tier": "A",
+   "source": "ql_t-8OWHVM",
+   "at": "53:56",
+   "verdict": "no concentration; 2d6 plus prone and knockback breaks caster concentration, and stacks with Divine Smite"
+  },
+  {
+   "spell": "Thunderwave",
+   "level": 1,
+   "tier": "B",
+   "source": "ql_t-8OWHVM",
+   "at": "56:09",
+   "verdict": "panic-button push for cliffs and hazards, but a CON save and awkward 17-foot square limit it"
+  },
+  {
+   "spell": "Witch Bolt",
+   "level": 1,
+   "tier": "C",
+   "source": "ql_t-8OWHVM",
+   "at": "57:31",
+   "verdict": "useless normally; carried entirely by one upcast Tempest Cleric wet-crit build doing 300+ guaranteed damage"
+  },
+  {
+   "spell": "Wrathful Smite",
+   "level": 1,
+   "tier": "B",
+   "source": "ql_t-8OWHVM",
+   "at": "59:16",
+   "verdict": "1d6 plus two turns of Frightened on a WIS save; now also a Hexblade spell after Patch 8"
+  },
+  {
+   "spell": "Freedom of Movement",
+   "level": 4,
+   "tier": "B",
+   "source": "U6s3AsH8Ajw",
+   "at": "4:42",
+   "verdict": "a panic button to break an ally out of a stun; far stronger for solo runs and camp casters"
+  },
+  {
+   "spell": "Grasping Vine",
+   "level": 4,
+   "tier": "C",
+   "source": "U6s3AsH8Ajw",
+   "at": "8:04",
+   "verdict": "bonus-action Entangle plus a puller, but druid fourth-level slots have much better competition"
+  },
+  {
+   "spell": "Greater Invisibility",
+   "level": 4,
+   "tier": "A",
+   "source": "U6s3AsH8Ajw",
+   "at": "13:18",
+   "verdict": "A for ordinary parties: free attacks then a surprise round; broken if built around stealth checks"
+  },
+  {
+   "spell": "Guardian of Faith",
+   "level": 4,
+   "tier": "B",
+   "source": "U6s3AsH8Ajw",
+   "at": "17:00",
+   "verdict": "60 HP, 20 AC body that plugs a doorway and deals up to 60 radiant, no concentration"
+  },
+  {
+   "spell": "Ice Storm",
+   "level": 4,
+   "tier": "A",
+   "source": "U6s3AsH8Ajw",
+   "at": "20:00",
+   "verdict": "A because the 20 ft ice surface costs NO CONCENTRATION; the best follow-up after a control spell"
+  },
+  {
+   "spell": "Otiluke's Resilient Sphere",
+   "level": 4,
+   "tier": "C",
+   "source": "U6s3AsH8Ajw",
+   "at": "23:17",
+   "verdict": "mainly to hamster-ball a dying NPC ally; comes up two or three times a playthrough"
+  },
+  {
+   "spell": "Phantasmal Killer",
+   "level": 4,
+   "tier": "C",
+   "source": "U6s3AsH8Ajw",
+   "at": "26:46",
+   "verdict": "wizards will never cast it; Hexblade warlocks with arcane acuity get psychic damage over time"
+  },
+  {
+   "spell": "Polymorph",
+   "level": 4,
+   "tier": "C",
+   "source": "U6s3AsH8Ajw",
+   "at": "30:33",
+   "verdict": "sheep pops after 3 damage; real use is shoving otherwise-immovable enemies off cliffs, at the cost of loot"
+  },
+  {
+   "spell": "Staggering Smite",
+   "level": 4,
+   "tier": "B",
+   "source": "U6s3AsH8Ajw",
+   "at": "33:23",
+   "verdict": "HEXBLADE ONLY; burst psychic damage that turns off boss reactions, but eats your concentration"
+  },
+  {
+   "spell": "Stoneskin",
+   "level": 4,
+   "tier": "D",
+   "source": "U6s3AsH8Ajw",
+   "at": "35:22",
+   "verdict": "most enemy damage is magical by this level, and it does not stack with Blade Ward"
+  },
+  {
+   "spell": "Wall of Fire",
+   "level": 4,
+   "tier": "A",
+   "source": "U6s3AsH8Ajw",
+   "at": "40:47",
+   "verdict": "single-handedly wins any encounter where melee enemies must run at you; great thing to concentrate on"
+  },
+  {
+   "spell": "Animal Friendship",
+   "level": 1,
+   "tier": "D",
+   "source": "vIGOO9HAv5g",
+   "at": "5:11",
+   "verdict": "weakest crowd control in the game, and only usable in the easiest encounters"
+  },
+  {
+   "spell": "Armour of Agathys",
+   "level": 1,
+   "tier": "A",
+   "source": "vIGOO9HAv5g",
+   "at": "7:37",
+   "verdict": "solid for any warlock, game-breaking on an Abjuration Wizard whose Arcane Ward preserves the temp HP"
+  },
+  {
+   "spell": "Arms of Hadar",
+   "level": 1,
+   "tier": "D",
+   "source": "vIGOO9HAv5g",
+   "at": "9:45",
+   "verdict": "too little damage, scales badly, and forces a squishy warlock into the middle of enemies"
+  },
+  {
+   "spell": "Bane",
+   "level": 1,
+   "tier": "B",
+   "source": "vIGOO9HAv5g",
+   "at": "12:55",
+   "verdict": "never worth a slot early; good late against bosses immune to stronger control, since few resist it"
+  },
+  {
+   "spell": "Bless",
+   "level": 1,
+   "tier": "S",
+   "source": "vIGOO9HAv5g",
+   "at": "16:23",
+   "verdict": "d4 to attacks and saves for 10 turns; the spell beats the Whispering Promise ring on duration"
+  },
+  {
+   "spell": "Burning Hands",
+   "level": 1,
+   "tier": "C",
+   "source": "vIGOO9HAv5g",
+   "at": "18:26",
+   "verdict": "weak damage on a bad save; only Light Domain clerics, who get it free, will cast it"
+  },
+  {
+   "spell": "Charm Person",
+   "level": 1,
+   "tier": "D",
+   "source": "vIGOO9HAv5g",
+   "at": "20:08",
+   "verdict": "unreliable and low impact in combat, and cantrips already cover the dialogue use"
+  },
+  {
+   "spell": "Chromatic Orb",
+   "level": 1,
+   "tier": "S",
+   "source": "vIGOO9HAv5g",
+   "at": "23:44",
+   "verdict": "damage plus a chosen surface with no concentration; ice surfaces are near-stuns and it bypasses immunities"
+  },
+  {
+   "spell": "Colour Spray",
+   "level": 1,
+   "tier": "D",
+   "source": "vIGOO9HAv5g",
+   "at": "25:10",
+   "verdict": "HP-capped so it fails against dangerous enemies, and Fog Cloud blinds without that limit"
+  },
+  {
+   "spell": "Command",
+   "level": 1,
+   "tier": "S",
+   "source": "vIGOO9HAv5g",
+   "at": "28:37",
+   "verdict": "concentration-free turn denial that upcasts to multiple enemies; every higher-level slot competes with it"
+  },
+  {
+   "spell": "Compelled Duel",
+   "level": 1,
+   "tier": "D",
+   "source": "vIGOO9HAv5g",
+   "at": "30:10",
+   "verdict": "BUGGED — the forced-attack effect is not implemented when you cast it, so it only grants disadvantage"
+  },
+  {
+   "spell": "Create or Destroy Water",
+   "level": 1,
+   "tier": "S",
+   "source": "vIGOO9HAv5g",
+   "at": "33:39",
+   "verdict": "applies wet for doubled cold and lightning damage, and saves scarce water bottles in Honour mode"
+  },
+  {
+   "spell": "Cure Wounds",
+   "level": 1,
+   "tier": "C",
+   "source": "vIGOO9HAv5g",
+   "at": "36:22",
+   "verdict": "healing numbers never keep up; saved only by Star Druid chalice triggers and free Life Cleric access"
+  },
+  {
+   "spell": "Disguise Self",
+   "level": 1,
+   "tier": "A",
+   "source": "vIGOO9HAv5g",
+   "at": "40:13",
+   "verdict": "free ritual; dodges crimes, gains race dialogue and prices, and unlocks race-locked items and shapeshift gear"
+  },
+  {
+   "spell": "Dissonant Whispers",
+   "level": 1,
+   "tier": "S",
+   "source": "vIGOO9HAv5g",
+   "at": "42:35",
+   "verdict": "concentration-free damage plus two turns of Frightened on a WIS save; effectively stuns melee enemies"
+  },
+  {
+   "spell": "Divine Favour",
+   "level": 1,
+   "tier": "C",
+   "source": "vIGOO9HAv5g",
+   "at": "44:53",
+   "verdict": "loses to just using the slot on a smite; only for War Cleric dips stacking radiant riders"
+  },
+  {
+   "spell": "Enhance Leap",
+   "level": 1,
+   "tier": "S",
+   "source": "vIGOO9HAv5g",
+   "at": "47:17",
+   "verdict": "free ritual giving the whole party a bonus-action teleport; cannot be upcast, so cast it per character"
+  },
+  {
+   "spell": "Ensnaring Strike",
+   "level": 1,
+   "tier": "A",
+   "source": "vIGOO9HAv5g",
+   "at": "49:33",
+   "verdict": "bonus action on top of a normal attack; Bounty Hunter's disadvantage fixes the STR save"
+  },
+  {
+   "spell": "Entangle",
+   "level": 1,
+   "tier": "B",
+   "source": "vIGOO9HAv5g",
+   "at": "52:23",
+   "verdict": "big no-move AoE, but it is flammable and druids get free spider webs from Wild Shape"
+  },
+  {
+   "spell": "Expeditious Retreat",
+   "level": 1,
+   "tier": "C",
+   "source": "vIGOO9HAv5g",
+   "at": "55:03",
+   "verdict": "all-day bonus-action dash, mostly superseded by Enhance Leap; take it for dash and concentration item synergies"
+  },
+  {
+   "spell": "Faerie Fire",
+   "level": 1,
+   "tier": "C",
+   "source": "vIGOO9HAv5g",
+   "at": "57:53",
+   "verdict": "huge radius, but other spells grant advantage and do more; outclassed at its own job"
+  },
+  {
+   "spell": "False Life",
+   "level": 1,
+   "tier": "D",
+   "source": "vIGOO9HAv5g",
+   "at": "58:46",
+   "verdict": "seven temp HP for a slot, and it blocks better temp HP sources since they do not stack"
+  },
+  {
+   "spell": "Feather Fall",
+   "level": 1,
+   "tier": "B",
+   "source": "vIGOO9HAv5g",
+   "at": "1:00:17",
+   "verdict": "free ritual traversal; must be cast before falling in BG3, not as a reaction"
+  },
+  {
+   "spell": "Find Familiar",
+   "level": 1,
+   "tier": "A",
+   "source": "vIGOO9HAv5g",
+   "at": "1:02:43",
+   "verdict": "free raven that scouts, blinds and soaks a hit; heavy micromanagement, and the Cheeky Quasit competes"
+  },
+  {
+   "spell": "Fog Cloud",
+   "level": 1,
+   "tier": "A",
+   "source": "vIGOO9HAv5g",
+   "at": "1:06:40",
+   "verdict": "no-save blind in a big AoE plus a guaranteed hiding spot; can win fights against immobile enemies"
+  },
+  {
+   "spell": "Goodberry",
+   "level": 1,
+   "tier": "D",
+   "source": "vIGOO9HAv5g",
+   "at": "1:08:44",
+   "verdict": "healing potions are more plentiful and heal more; only real use is infinite camp supplies"
+  },
+  {
+   "spell": "Banishment",
+   "level": 4,
+   "tier": "B",
+   "source": "vkcAg7oJ328",
+   "at": "5:08",
+   "verdict": "targets charisma, which many dangerous bosses save terribly; niche but the most reliable disable when it applies"
+  },
+  {
+   "spell": "Blight",
+   "level": 4,
+   "tier": "C",
+   "source": "vkcAg7oJ328",
+   "at": "9:00",
+   "verdict": "begrudging C; only Death Domain clerics on Act 2 plants or Staff of Cherished Necromancy builds"
+  },
+  {
+   "spell": "Confusion",
+   "level": 4,
+   "tier": "B",
+   "source": "vkcAg7oJ328",
+   "at": "13:24",
+   "verdict": "hits enemies only, not allies; unreliable, but shut a door and the encounter kills itself"
+  },
+  {
+   "spell": "Conjure Minor Elemental",
+   "level": 4,
+   "tier": "A",
+   "source": "vkcAg7oJ328",
+   "at": "18:26",
+   "verdict": "ice mephits give all-day damage, free ice surfaces, and a sacrificial cold fireball on demand"
+  },
+  {
+   "spell": "Conjure Woodland Being",
+   "level": 4,
+   "tier": "S",
+   "source": "vkcAg7oJ328",
+   "at": "20:57",
+   "verdict": "DRUID ONLY; dryad is a whole extra party member with at-will Entangle and Spike Growth"
+  },
+  {
+   "spell": "Death Ward",
+   "level": 4,
+   "tier": "D",
+   "source": "vkcAg7oJ328",
+   "at": "23:51",
+   "verdict": "multi-instance damage bypasses it; only worth casting from a camp caster, and Freedom of Movement is better"
+  },
+  {
+   "spell": "Dimension Door",
+   "level": 4,
+   "tier": "C",
+   "source": "vkcAg7oJ328",
+   "at": "25:57",
+   "verdict": "good in roughly three timed traversal encounters; jumping or Misty Step covers everything else"
+  },
+  {
+   "spell": "Dominate Beast",
+   "level": 4,
+   "tier": "D",
+   "source": "vkcAg7oJ328",
+   "at": "27:49",
+   "verdict": "strong effect, but no dangerous beast fights are left by the time you reach level seven"
+  },
+  {
+   "spell": "Evard's Black Tentacles",
+   "level": 4,
+   "tier": "B",
+   "source": "vkcAg7oJ328",
+   "at": "32:31",
+   "verdict": "B for Great Old One warlocks (no slot premium); C for wizards stacking it with Wall of Fire"
+  },
+  {
+   "spell": "Fire Shield",
+   "level": 4,
+   "tier": "C",
+   "source": "vkcAg7oJ328",
+   "at": "36:37",
+   "verdict": "resistance plus melee retaliation mostly just redirects aggro; fine on Abjuration wizards and barbarians"
+  },
+  {
+   "spell": "Aid",
+   "level": 2,
+   "tier": "S",
+   "source": "xY5hyRLIdxE",
+   "at": "4:52",
+   "verdict": "party-wide max HP for the whole day, no concentration; multiplies summon survivability when upcast"
+  },
+  {
+   "spell": "Arcane Lock",
+   "level": 2,
+   "tier": "C",
+   "source": "xY5hyRLIdxE",
+   "at": "6:30",
+   "verdict": "situational door-locking to split an encounter; enemies now break the door down"
+  },
+  {
+   "spell": "Barkskin",
+   "level": 2,
+   "tier": "D",
+   "source": "xY5hyRLIdxE",
+   "at": "8:38",
+   "verdict": "concentration plus a slot for only 16 AC; never worth casting"
+  },
+  {
+   "spell": "Blindness",
+   "level": 2,
+   "tier": "B",
+   "source": "xY5hyRLIdxE",
+   "at": "11:35",
+   "verdict": "high B; non-concentration 10-turn debuff, but fog cloud, darkness and Hold Person outclass it"
+  },
+  {
+   "spell": "Blur",
+   "level": 2,
+   "tier": "B",
+   "source": "xY5hyRLIdxE",
+   "at": "13:57",
+   "verdict": "self-only disadvantage on attacks; good on Eldritch Knights and Hexblades, never wizards or sorcerers"
+  },
+  {
+   "spell": "Branding Smite",
+   "level": 2,
+   "tier": "D",
+   "source": "xY5hyRLIdxE",
+   "at": "15:43",
+   "verdict": "half Divine Smite's damage for the same slot, plus your concentration and bonus action"
+  },
+  {
+   "spell": "Calm Emotions",
+   "level": 2,
+   "tier": "B",
+   "source": "xY5hyRLIdxE",
+   "at": "18:03",
+   "verdict": "party-wide charm, fear and rage immunity; the right answer to specific puzzle fights"
+  },
+  {
+   "spell": "Cloud of Daggers",
+   "level": 2,
+   "tier": "S",
+   "source": "xY5hyRLIdxE",
+   "at": "21:07",
+   "verdict": "no save and no attack roll; ~20 guaranteed damage per target before enemies act"
+  },
+  {
+   "spell": "Crown of Madness",
+   "level": 2,
+   "tier": "B",
+   "source": "xY5hyRLIdxE",
+   "at": "25:30",
+   "verdict": "powerful but unreliable; enemies turn on each other best when you break line of sight"
+  },
+  {
+   "spell": "Darkness",
+   "level": 2,
+   "tier": "S",
+   "source": "xY5hyRLIdxE",
+   "at": "29:56",
+   "verdict": "blocks ranged attacks both ways; core of the devil's sight darkness strategy"
+  },
+  {
+   "spell": "Darkvision",
+   "level": 2,
+   "tier": "D",
+   "source": "xY5hyRLIdxE",
+   "at": "30:59",
+   "verdict": "40 ft only and useless against magical darkness; use a light source or scroll"
+  },
+  {
+   "spell": "Detect Thoughts",
+   "level": 2,
+   "tier": "B",
+   "source": "xY5hyRLIdxE",
+   "at": "33:34",
+   "verdict": "C for dialogue use, bumped to B as free all-day concentration for Concentrated Blast"
+  },
+  {
+   "spell": "Enhance Ability",
+   "level": 2,
+   "tier": "B",
+   "source": "xY5hyRLIdxE",
+   "at": "36:31",
+   "verdict": "cast a couple of times a run; worth preparing for the few unavoidable skill checks"
+  },
+  {
+   "spell": "Enlarge/Reduce",
+   "level": 2,
+   "tier": "C",
+   "source": "xY5hyRLIdxE",
+   "at": "39:57",
+   "verdict": "modest 1d4 buff, or shrink enemies to throw them off cliffs; rewards creative use"
+  },
+  {
+   "spell": "Enthrall",
+   "level": 2,
+   "tier": "D",
+   "source": "xY5hyRLIdxE",
+   "at": "40:50",
+   "verdict": "almost no mechanical effect; fog cloud and minor illusion do the job better"
+  },
+  {
+   "spell": "Flame Blade",
+   "level": 2,
+   "tier": "D",
+   "source": "xY5hyRLIdxE",
+   "at": "42:49",
+   "verdict": "3d6 with no ability modifier added; the same slot on Spike Growth does far more"
+  },
+  {
+   "spell": "Flaming Sphere",
+   "level": 2,
+   "tier": "A",
+   "source": "xY5hyRLIdxE",
+   "at": "45:37",
+   "verdict": "resistant 20 HP summon soaks attacks while dealing bonus-action damage; save DC bugged for wizards"
+  },
+  {
+   "spell": "Gust of Wind",
+   "level": 2,
+   "tier": "D",
+   "source": "xY5hyRLIdxE",
+   "at": "47:37",
+   "verdict": "a ranged push you can mostly get for free as a bonus action"
+  },
+  {
+   "spell": "Heat Metal",
+   "level": 2,
+   "tier": "A",
+   "source": "xY5hyRLIdxE",
+   "at": "51:25",
+   "verdict": "guaranteed damage plus disarm or attack disadvantage, but VERY BUGGY; needs metal armour or weapon"
+  },
+  {
+   "spell": "Hold Person",
+   "level": 2,
+   "tier": "S",
+   "source": "xY5hyRLIdxE",
+   "at": "55:42",
+   "verdict": "paralysis costs turns and gives automatic crits within 10 ft; humanoids only, best with high save DC"
+  },
+  {
+   "spell": "Invisibility",
+   "level": 2,
+   "tier": "A",
+   "source": "xY5hyRLIdxE",
+   "at": "58:48",
+   "verdict": "wins no fights alone but invaluable for scouting and as a panic button; potions compete"
+  },
+  {
+   "spell": "Animate Dead",
+   "level": 3,
+   "tier": "A",
+   "source": "y0rRBZarf2Q",
+   "at": "5:46",
+   "verdict": "summons are always good; cast at level 4 for three skeletons, +1 more per level as necromancer wizard"
+  },
+  {
+   "spell": "Beacon of Hope",
+   "level": 3,
+   "tier": "D",
+   "source": "y0rRBZarf2Q",
+   "at": "8:27",
+   "verdict": "maximised healing adds only ~3 HP; does nothing on its own for a level 3 slot plus concentration"
+  },
+  {
+   "spell": "Bestow Curse",
+   "level": 3,
+   "tier": "B",
+   "source": "y0rRBZarf2Q",
+   "at": "12:03",
+   "verdict": "only worth pre-combat: does not start combat, so the Dread lockdown is action-free and bypasses boss CC immunity"
+  },
+  {
+   "spell": "Blinding Smite",
+   "level": 3,
+   "tier": "B",
+   "source": "y0rRBZarf2Q",
+   "at": "14:05",
+   "verdict": "trades 1d8 off Divine Smite for a blind; no concentration; Paladin-only so never before character level 9"
+  },
+  {
+   "spell": "Blink",
+   "level": 3,
+   "tier": "C",
+   "source": "y0rRBZarf2Q",
+   "at": "16:31",
+   "verdict": "C ONLY FOR SOLO PLAY; in a party it just redirects aggro to allies and he says do not cast it"
+  },
+  {
+   "spell": "Call Lightning",
+   "level": 3,
+   "tier": "A",
+   "source": "y0rRBZarf2Q",
+   "at": "19:22",
+   "verdict": "efficient in long fights: recast free each turn, doubles on wet, guaranteed 30 on a Tempest cleric"
+  },
+  {
+   "spell": "Conjure Barrage",
+   "level": 3,
+   "tier": "D",
+   "source": "y0rRBZarf2Q",
+   "at": "20:57",
+   "verdict": "costs a Ranger's whole action for less damage than just shooting; no on-hit effects, Dex save for half"
+  },
+  {
+   "spell": "Counterspell",
+   "level": 3,
+   "tier": "S",
+   "source": "y0rRBZarf2Q",
+   "at": "25:08",
+   "verdict": "top-five spell; trades a reaction for an enemy turn. NO SCROLLS EXIST, so it must be learnt on level-up"
+  },
+  {
+   "spell": "Crusader's Mantle",
+   "level": 3,
+   "tier": "C",
+   "source": "y0rRBZarf2Q",
+   "at": "27:40",
+   "verdict": "1d4 radiant per weapon attack; only pays off in summon-heavy parties, and War clerics get it far earlier"
+  },
+  {
+   "spell": "Daylight",
+   "level": 3,
+   "tier": "C",
+   "source": "y0rRBZarf2Q",
+   "at": "29:44",
+   "verdict": "a bigger Light cantrip for a level 3 slot; worth it mainly against Act 3 vampires, who are vulnerable to it"
+  },
+  {
+   "spell": "Elemental Weapon",
+   "level": 3,
+   "tier": "B",
+   "source": "y0rRBZarf2Q",
+   "at": "33:07",
+   "verdict": "B FOR HEXBLADE WARLOCKS SPECIFICALLY, who upcast it free; Paladins will rarely cast it over a smite"
+  },
+  {
+   "spell": "Fear",
+   "level": 3,
+   "tier": "A",
+   "source": "y0rRBZarf2Q",
+   "at": "35:36",
+   "verdict": "strongest of the three encounter-ending control spells, but a 30ft cone, so hardest to land"
+  },
+  {
+   "spell": "Feign Death",
+   "level": 3,
+   "tier": "D",
+   "source": "y0rRBZarf2Q",
+   "at": "36:58",
+   "verdict": "useless since PATCH 7 restricted it to party members, killing the merchant-theft and NPC-babysitting tricks"
+  },
+  {
+   "spell": "Fireball",
+   "level": 3,
+   "tier": "B",
+   "source": "y0rRBZarf2Q",
+   "at": "38:58",
+   "verdict": "B not S: 13ft radius not 20ft, fire is widely resisted, Dex save for half. Do not cast it just because it is iconic"
+  },
+  {
+   "spell": "Gaseous Form",
+   "level": 3,
+   "tier": "C",
+   "source": "y0rRBZarf2Q",
+   "at": "41:30",
+   "verdict": "exploration only, never combat; the potion usually replaces the cast"
+  },
+  {
+   "spell": "Glyph of Warding",
+   "level": 3,
+   "tier": "S",
+   "source": "y0rRBZarf2Q",
+   "at": "45:04",
+   "verdict": "cast it directly on an enemy like a Fireball; non-concentration, six damage types, plus an AoE Dex-save sleep"
+  },
+  {
+   "spell": "Grant Flight",
+   "level": 3,
+   "tier": "D",
+   "source": "y0rRBZarf2Q",
+   "at": "48:05",
+   "verdict": "there is no real flight in BG3, only hops; jumping or Misty Step covers it, and potions exist"
+  },
+  {
+   "spell": "Arcane Gate",
+   "level": 6,
+   "tier": "C",
+   "source": "ZEhzdnk5zGA",
+   "at": "5:19",
+   "verdict": "very low C; a mobility link that only matters in one or two NPC-escort encounters"
+  },
+  {
+   "spell": "Blade Barrier",
+   "level": 6,
+   "tier": "D",
+   "source": "ZEhzdnk5zGA",
+   "at": "7:33",
+   "verdict": "BUGGED save DC fixed at 15 then 3, so enemies always halve the damage"
+  },
+  {
+   "spell": "Chain Lightning",
+   "level": 6,
+   "tier": "A",
+   "source": "ZEhzdnk5zGA",
+   "at": "9:31",
+   "verdict": "360 average damage on four wet enemies, but often needs two casts to end a fight"
+  },
+  {
+   "spell": "Circle of Death",
+   "level": 6,
+   "tier": "D",
+   "source": "ZEhzdnk5zGA",
+   "at": "12:27",
+   "verdict": "huge 30 ft radius but only Fireball's 8d6 for a level 6 slot"
+  },
+  {
+   "spell": "Create Undead",
+   "level": 6,
+   "tier": "B",
+   "source": "ZEhzdnk5zGA",
+   "at": "14:02",
+   "verdict": "a mummy that dies fast and cannot be healed; best warlock Mystic Arcanum pick"
+  },
+  {
+   "spell": "Disintegrate",
+   "level": 6,
+   "tier": "D",
+   "source": "ZEhzdnk5zGA",
+   "at": "17:03",
+   "verdict": "30 ft range and a Dex save that negates it entirely; single target only"
+  },
+  {
+   "spell": "Eyebite",
+   "level": 6,
+   "tier": "B",
+   "source": "ZEhzdnk5zGA",
+   "at": "21:23",
+   "verdict": "10-turn Fearful lockdown, recastable and doubled when hasted; powerful but slow to pay off"
+  },
+  {
+   "spell": "Flesh to Stone",
+   "level": 6,
+   "tier": "D",
+   "source": "ZEhzdnk5zGA",
+   "at": "23:27",
+   "verdict": "four failed con saves to kill one enemy; Entangle restrains for a level 1 slot"
+  },
+  {
+   "spell": "Globe of Invulnerability",
+   "level": 6,
+   "tier": "S",
+   "source": "ZEhzdnk5zGA",
+   "at": "26:18",
+   "verdict": "total damage immunity wins most boss fights outright; get one cast into every Honour party"
+  },
+  {
+   "spell": "Harm",
+   "level": 6,
+   "tier": "D",
+   "source": "ZEhzdnk5zGA",
+   "at": "27:30",
+   "verdict": "a damage spell that cannot reduce an enemy below one hit point"
+  },
+  {
+   "spell": "Heal",
+   "level": 6,
+   "tier": "D",
+   "source": "ZEhzdnk5zGA",
+   "at": "29:38",
+   "verdict": "70 reactive healing for a level 6 slot when you should be swimming in potions"
+  },
+  {
+   "spell": "Heroes' Feast",
+   "level": 6,
+   "tier": "S",
+   "source": "ZEhzdnk5zGA",
+   "at": "34:15",
+   "verdict": "day-long non-concentration +12 max HP, fear and poison immunity, Wis save advantage; castable by a camp caster"
+  },
+  {
+   "spell": "Otiluke's Freezing Sphere",
+   "level": 6,
+   "tier": "B",
+   "source": "ZEhzdnk5zGA",
+   "at": "38:22",
+   "verdict": "grenade mode costs only part of a multi-attacker's action and leaves ice surface"
+  },
+  {
+   "spell": "Otto's Irresistible Dance",
+   "level": 6,
+   "tier": "A",
+   "source": "ZEhzdnk5zGA",
+   "at": "41:05",
+   "verdict": "no-save lockdown that bypasses legendary resistance; only for fights with one main enemy"
+  },
+  {
+   "spell": "Planar Ally",
+   "level": 6,
+   "tier": "A",
+   "source": "ZEhzdnk5zGA",
+   "at": "44:43",
+   "verdict": "a healable 160 HP extra party member; only behind Heroes' Feast for cleric slots"
+  },
+  {
+   "spell": "Sunbeam",
+   "level": 6,
+   "tier": "B",
+   "source": "ZEhzdnk5zGA",
+   "at": "48:14",
+   "verdict": "playable hasted or with Radiating Orbs; its one-turn blind never actually lands on enemies"
+  },
+  {
+   "spell": "Wall of Ice",
+   "level": 6,
+   "tier": "A",
+   "source": "ZEhzdnk5zGA",
+   "at": "53:00",
+   "verdict": "cast-and-cancel triples cold damage over a huge AoE; BUGGED fixed save DCs, S tier if fixed"
+  },
+  {
+   "spell": "Wall of Thorns",
+   "level": 6,
+   "tier": "B",
+   "source": "ZEhzdnk5zGA",
+   "at": "56:47",
+   "verdict": "Wall of Fire, Plant Growth and Entangle in one; BUGGED DC 3 and DC 12 saves"
+  },
+  {
+   "spell": "Wind Walk",
+   "level": 6,
+   "tier": "D",
+   "source": "ZEhzdnk5zGA",
+   "at": "58:14",
+   "verdict": "a level 6 slot for party-wide Gaseous Form, already marginal as a level 3 spell"
+  },
+  {
+   "spell": "Sights of the Seelie: Summon Deva",
+   "level": 6,
+   "tier": "B",
+   "source": "ZEhzdnk5zGA",
+   "at": "1:00:26",
+   "verdict": "Planar Ally's Deva only, on a wizard whose level 6 slots are far more contested"
+  }
+ ]
+}

@@ -22,6 +22,10 @@ ALIASES = {
     "robes": "Armour",
     "hands": "Hands", "gloves": "Hands", "bracers": "Hands", "gauntlets": "Hands",
     "rings": "Rings", "ring": "Rings",
+    "ring 1": "Ring 1", "ring1": "Ring 1", "ring one": "Ring 1",
+    "first ring": "Ring 1",
+    "ring 2": "Ring 2", "ring2": "Ring 2", "ring two": "Ring 2",
+    "second ring": "Ring 2",
     "feet": "Boots", "boots": "Boots", "shoes": "Boots",
     "amulets": "Amulets", "amulet": "Amulets", "neck": "Amulets", "necklace": "Amulets",
     "cloaks": "Cloaks", "cloak": "Cloaks", "back": "Cloaks",
@@ -42,7 +46,7 @@ ALIASES = {
 # The slots a complete loadout must name. "Off-hand & Shields" is excluded because a
 # two-handed or unarmed build legitimately leaves it empty; the guide says so in prose.
 REQUIRED = [
-    "Head", "Armour", "Hands", "Rings", "Boots", "Amulets", "Cloaks",
+    "Head", "Armour", "Hands", "Ring 1", "Ring 2", "Boots", "Amulets", "Cloaks",
     "Melee Weapons", "Ranged Weapons",
 ]
 
@@ -121,6 +125,11 @@ def main() -> int:
                     canon = "Elixirs"
                 filled.setdefault(canon, []).append(e["item"] or e["id"])
                 cumulative.setdefault(canon, []).append(f"{act}:{e['item'] or e['id']}")
+            # Cumulative coverage alone would hide an act that lost all its rows, so
+            # an empty act is called out on its own.
+            if not entries:
+                print(f"  !! {act}: no entries at all")
+                problems += 1
             missing = [s for s in REQUIRED if s not in cumulative]
             if missing:
                 print(f"  {act}: MISSING {', '.join(missing)}")
@@ -128,9 +137,10 @@ def main() -> int:
             else:
                 print(f"  {act}: all {len(REQUIRED)} slots covered "
                       f"({len(entries)} entries, {len(filled)} slots touched)")
-        rings = len([x for x in cumulative.get("Rings", [])])
-        if rings < 2:
-            print(f"  !! only {rings} ring entries across all acts; two ring slots exist")
+        legacy = cumulative.get("Rings", [])
+        if legacy:
+            print(f"  !! {len(legacy)} entries still use the old combined 'rings' slot; "
+                  f"split them into 'ring 1' / 'ring 2'")
             problems += 1
         if "progression" not in acts:
             print("  !! no progression tab")

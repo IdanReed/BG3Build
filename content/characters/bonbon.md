@@ -20,6 +20,43 @@ builds:
     CHA: 17
   stats_note: 'Point-buy 8/15/14/8/10/15 = all 27 (DEX 15 + CHA 15 cost 9 each). +2 → CHA 17, +1 → DEX 16; Gloves of Dexterity then set DEX to 18 (Crèche, Act 1). INT stays at 8 — nothing in the build uses it.'
   ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss). Birthright reaches CHA 22 in Act 3 if Gale is not using it.'
+  ability_scores:
+  - ability: STR
+    steps:
+    - score: 8
+      source: 'point-buy'
+    - score: 19
+      source: 'SET by Club of Hill Giant Strength'
+  - ability: DEX
+    steps:
+    - score: 15
+      source: 'point-buy'
+    - score: 16
+      source: '+1 Racial'
+    - score: 18
+      source: 'SET by Gloves of Dexterity, Act 1'
+  - ability: CON
+    steps:
+    - score: 14
+      source: 'point-buy'
+  - ability: INT
+    steps:
+    - score: 8
+      source: 'point-buy'
+  - ability: WIS
+    steps:
+    - score: 10
+      source: 'point-buy'
+  - ability: CHA
+    steps:
+    - score: 15
+      source: 'point-buy'
+    - score: 17
+      source: '+2 Racial'
+    - score: 18
+      source: '+1 Hag''s Hair'
+    - score: 20
+      source: '+2 Mirror of Loss, Act 3'
   feats:
   - at: Bard 4 (char 5)
     feat: Sharpshooter
@@ -417,66 +454,141 @@ builds:
     act1:
     - id: titanstring-bow
       item: Titanstring Bow
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (32:39) — adds your strength modifier; best in slot Act 1 damage with a giant strength elixir'
       slot: weapons
+      bis: true
       note: Brem, after Find the Missing Shipment. Archery + Sharpshooter + ranged Slashing Flourish apply its STR rider to large, accurate nova shots. Default to the STR 19 Club + Knife + Bloodlust package; Hill Giant elixir for a boss where Bloodlust cannot trigger.
     - id: club-of-hill-giant-strength
-      item: Club of Hill Giant Strength (melee main hand)
+      item: Club of Hill Giant Strength (main-hand)
+      tier: A
+      tier_note: 'nmFK4uJQfC8 (17:42) — sets strength to 19, freeing the elixir slot for monks and Titanstring archers'
       slot: weapons
       note: Titanstring stat stick, from the Arcane Tower. Light club main hand, Knife off-hand, Titanstring in the ranged slot — STR 19 adds +4 damage per projectile and keeps the elixir slot free for Bloodlust.
     - id: knife-of-the-undermountain-king-offhand
-      item: Knife of the Undermountain King (melee off-hand)
+      item: Knife of the Undermountain King (off-hand)
+      tier: S
+      tier_note: 'jeSeVkmqmuc (21:07) — +2 shortsword; wider crit range, damage-dice rerolls, advantage in darkness; stat stick for anyone'
       slot: weapons
       note: 'Crèche stat stick beside the Light club, no feat needed. Organ Rearranger lowers the crit threshold globally, which is the reason to carry it — it improves Titanstring and her spell attacks, not just melee. The low-die reroll is melee-only. She keeps it for the whole run; the Adamantine ore goes into armour instead of the shield, so nothing displaces it.'
     - id: elixir-of-bloodlust
       item: Elixir of Bloodlust (default)
+      tier: S
+      tier_note: '9BcQXb37Bik (22:44) — extra action per kill; on Honour that action gets no Extra Attack, on Tactician or below it does'
       slot: consumables
       note: DEFAULT with adds. A kill grants 5 temp HP and another Action once per turn, and outside Honour that Action benefits from Extra Attack. The Club costs only 1 Titanstring damage per projectile versus STR 21 — repaid by one extra Action.
     - id: elixir-of-hill-giant-strength
-      item: Elixir of Hill Giant Strength (boss alternative)
+      item: Elixir of Hill Giant Strength (boss)
+      tier: S
+      tier_note: '9BcQXb37Bik (30:26) — sets Strength to 21; S used normally, and S+ ABOVE THE SCALE if drunk daily to skip strength investment'
       slot: consumables
       note: For a lone boss or any fight with no dependable Bloodlust kill. STR 21 raises the Titanstring rider from +4 to +5. Keep a big stock — Asterion needs one daily too.
     - id: gloves-of-archery
-      item: Gloves of Archery (early default)
+      item: Gloves of Archery (default)
+      tier: S
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (15:11) — best in slot for any ranged attacker; flat +2 damage plus bow proficiency'
       slot: hands
       note: Grat at the Goblin Camp. Longbow proficiency is redundant, but +2 damage applies to every ranged weapon hit — the clean early Titanstring glove, worn until the Crèche.
     - id: gloves-of-dexterity
       item: Gloves of Dexterity
+      tier: S
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (25:38) — called the best item in the game for what it enables'
+      rank: '#1'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #1 of 20 — sets Dexterity to 18 and adds +1 attacks, freeing ability points and feats'
       slot: hands
+      bis: true
       note: 'LATE-ACT-1 DEFAULT, from the Crèche, and rated the #1 item of the 20 best in Act 1 — "the most impactful equipable item in Act 1, and in the narrator''s view the entire game." DEX 18 plus +1 Attack Rolls is a net +2 ranged accuracy over natural DEX 16, plus initiative, AC, DEX saves and skills. ⚠ The video pitches these at a Sorcerer who respecs DEX to 8 and reclaims the points; that does not work here, because the gloves are a Crèche pickup and the character would spend all of early Act 1 at DEX 8. On Bonbon the +1 Attack Rolls also applies to every projectile of a Slashing Flourish and every hand-crossbow bolt — four or more attack rolls a turn.'
     - id: wondrous-gloves
-      item: Wondrous Gloves (Flourish alternative)
+      item: Wondrous Gloves (Flourish)
+      tier: S
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (49:02) — best in slot for many bards and good enough on other characters too'
       slot: hands
       note: Grymforge Mimic loot. +1 AC and one extra Bardic Inspiration supply another Slashing Flourish — take them for a nova-focused rest cycle when accuracy is already comfortable.
     - id: the-protecty-sparkswall
       item: The Protecty Sparkswall
+      tier: S
+      tier_note: 'TwFGCc8OOfw (16:41) — earliest chest slot +1 spell save DC; best in slot for casters through acts 1-2'
+      rank: '#8'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #8 of 20 — +1 spell save DC on clothing makes it the caster default well into Act 2'
       slot: armour
       note: 'ACT 1 CHEST, from the gilded chest at the end of the trapped Grymforge bridge, and rated #8 of 20 as "the caster default through much of Act 2." +1 Spell Save DC improves Hold Person, Hypnotic Pattern, Fear, Slow and Glyph. ⚠ Its second effect, +1 AC and saves while carrying Lightning Charges, is dead here — she has no charge generator, since The Spellsparkler is Gale''s. Take it purely for the flat +1 DC, and understand the low clothing AC is the price of control DC at range until the Adamantine Forge.'
     - id: adamantine-scale-mail
-      item: Adamantine Splint Armour (late-Act-1 upgrade)
+      item: Adamantine Splint Armour (upgrade)
+      tier: S
+      tier_note: 'VjmWkRCoDWE (19:03) — 18 AC, crit immunity, 2 damage reduction and 3 turns of reeling; STORY EVENT LATE IN ACT 1'
+      rank: '#15'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #15 of 20 — stronger damage reduction than the scale mail, and fewer serious alternatives'
       slot: armour
+      bis: true
       note: 'THE FIRST MITHRAL ORE, and the chest she finishes Act 1 in. Fighter-first grants Heavy proficiency and she is the party''s ONLY legal wearer. AC 18 flat, ATTACKERS CANNOT LAND CRITICAL HITS, all incoming damage reduced by 2, and melee attackers sent Reeling. Crit immunity is what protects Hold Monster: a concentration save is DC = half the damage taken or 10, whichever is higher, so a critical hit roughly doubles that DC. Swap off Protecty once she has it and accept losing +1 spell DC for 6 AC and crit immunity. (The ID keeps an older name so existing checkoffs survive.)'
-    - id: the-whispering-promise
-      item: The Whispering Promise
-      slot: rings
-      note: 'PRE-UNDERDARK STOPGAP ONLY, and the slot is freed as soon as Asterion picks up the Staff of Arcane Blessing in the Arcane Tower basement. Volo, or Grat at the Goblin Camp, for about 40g. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration, and her Healing Word is a BONUS ACTION, so it costs her nothing. It is the only Bless the party can get before the Underdark, because the staff is an Underdark item. WARNING it applies the SAME condition as the Bless spell, so once Asterion is casting real Bless the two do NOT stack and this ring is pure waste - take it off. WARNING the ring version is also never enhanced by the staff, so it never grants Mystra''s Blessing.'
+    - id: act1-ring2-bonbon
+      item: Second ring
+      slot: ring 2
+      wiki: false
+      note: 'OPEN, and it changes hands mid-act. The Whispering Promise is the only Bless the party can get before the Underdark, so it starts here and comes off the moment Asterion picks up the Staff of Arcane Blessing — after that its Bless is the same non-stacking condition and it is pure waste.'
+      options:
+      - id: opt-whispering-promise
+        item: The Whispering Promise (interim)
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (49:20) — a mainstay through Acts 1 and 2; very few parties would not benefit strongly'
+        rank: '#10'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #10 of 20 — healing grants two turns of Bless, with no concentration or dedicated action'
+        note: 'Volo, or Grat at the Goblin Camp, ~40g. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration, and her Healing Word is a bonus action so it costs her nothing. Take it off once Asterion is casting real Bless.'
+      - id: opt-crushers-ring
+        item: Crusher's Ring
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (9:50) — movement speed is universally applicable; an extremely rare party leaves it on the table'
+        note: 'Crusher at the Goblin Camp. +3m movement, stacks with Longstrider. Not build-defining for anyone, but good on ANY character who needs to close distance without spending a bonus action.'
+      - id: opt-ring-of-protection
+        item: Ring of Protection
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (34:55) — raises the party''s average AC; give it to the easiest-to-hit member'
+        rank: '#20'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #20 of 20 — +1 AC and all saves fits almost anyone, for the whole game'
+        note: "Mol's reward for Steal the Sacred Idol. +1 AC and +1 to ALL saving throws — the generically best defensive ring in Act 1, and the item guides say to put it on the lowest-AC body."
+      - id: opt-bracing-band
+        item: Bracing Band
+        tier: A
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (6:13) — good for a lot of characters, though there are often better options'
+        note: "Sergeant Thrinn at Grymforge, for Find the Missing Boots. A free permanent +1 AC after shoving — almost nobody takes it, and it is fine on anyone."
     - id: caustic-band
       item: Caustic Band
-      slot: rings
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (7:16) — for almost every party; goes on whoever makes the most attacks in a round'
+      rank: '#12'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #12 of 20 — a passive 2 acid on every weapon attack, which adds up on multiattackers'
+      slot: ring 1
       note: 'Derryth, Underdark, rated #12 of 20 and explicitly for characters making several attacks per turn. +2 Acid per weapon hit, applied to every Slashing-Flourish projectile. ⚠ Per the wiki it covers melee, ranged and Thrown attacks but NOT Unarmed Strike, which is why it can never move to Asterion despite his higher hit count. She wears it alongside the Whispering Promise — she has two ring slots and the two do not conflict.'
-    - id: diadem-of-arcane-synergy
-      item: Diadem of Arcane Synergy
+    - id: act1-head-bonbon
+      item: Head slot
       slot: head
-      note: Ardent Jhe'rezath, Crèche. Once a spell condition lands (Hold Person, Fear, Dissonant Whispers), Arcane Synergy adds CHA to each subsequent ranged weapon attack for 2 turns — the many Titanstring and Flourish hits exploit the flat rider best. It gives way to the Helmet of Arcane Acuity in Act 2.
-    - id: grymskull-helm
-      item: Grymskull Helm (free early head)
-      slot: head
-      note: Free from Grymforge, and worth wearing on the way to the Crèche — crit immunity costs nothing and covers the stretch before either the Diadem or the Adamantine Splint exists. Retire it as soon as the Diadem lands.
+      wiki: false
+      note: 'A REAL COIN-FLIP FOR ACT 1, which is why it is not a single pick: one of these is damage and the other is what keeps Hold Monster from breaking. Both get replaced by the Helmet of Arcane Acuity in Act 2 regardless.'
+      options:
+      - id: diadem-of-arcane-synergy
+        item: Diadem of Arcane Synergy
+        tier: S
+        tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (21:57) — a huge damage boost even for characters outside the builds designed around it'
+        note: 'Ardent Jhe''rezath, Crèche. Once she lands a condition — Hold Person, Fear, Dissonant Whispers — Arcane Synergy adds her Charisma to every subsequent ranged weapon hit. The damage pick.'
+      - id: grymskull-helm
+        item: Grymskull Helm
+        tier: S
+        tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (25:05) — features in most parties and makes a playthrough much safer'
+        note: 'Free from Grym at the Adamantine Forge. Attackers cannot land critical hits, plus Fire resistance. She is the party''s ONLY character with Heavy Armour proficiency, so she is the only one who can legally wear it — and crit immunity blunts the worst concentration-save spikes on her Hold Monster. The safety pick.'
     - id: broodmother-s-revenge
       item: Broodmother's Revenge
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (21:11) — free to trigger, which is what pushes it to the top'
+      rank: '#17'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #17 of 20 — the largest early per-hit damage die, but it needs a healing trigger'
       slot: amulets
       note: 'After saving the Grove — talk Kagha down, then knock the isolated friendly Kagha out non-lethally and loot it. Rated #17 of 20. Any healing, even a potion at full HP, coats Titanstring for +1d6 Poison per projectile for 2 turns, and her bonus-action Healing Word is what triggers it. Skip against poison-resistant or immune enemies.'
     - id: boots-of-speed
       item: Boots of Speed
+      tier: A
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (11:29) — bonus-action double move; some party member almost always wants it (captions garble the letter)'
+      rank: '#14'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #14 of 20 — bonus-action Dash gives anyone Rogue-grade mobility'
       slot: feet
       note: 'HERS, and rated #14 of 20. Bonus-action Dash for a character with no innate mobility, which is exactly what the video means by giving it to "the character most likely to waste a turn out of position." ⚠ It is NOT Asterion''s: Step of the Wind already gives him bonus-action Dash and Disengage from Monk 2, so the boots would buy him nothing while displacing the Night Walkers. ⚠ The video flags the opportunity-attack rider as bugged — take these for the Dash, not the defensive text.'
     - id: act1-cloak-bonbon
@@ -486,7 +598,10 @@ builds:
     act2:
     - id: helmet-of-arcane-acuity
       item: Helmet of Arcane Acuity
+      tier: S
+      tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (35:18) — broken like all the Arcane Acuity items, and one of the easiest to use'
       slot: head
+      bis: true
       note: 'Mason''s Guild in Reithwin Town — an Act 2 pickup, not an Act 3 one. +2 Arcane Acuity per weapon hit, each remaining turn giving +1 spell attack AND +1 spell save DC, capped at 10. THE PIVOT: switch to dual hand crossbows now, because more hits per turn stack Acuity far faster than Titanstring''s single big shots. Extra Attack plus off-hand plus Slashing Flourish is 3–4 hits a turn at 2 turns each, so she reaches the +10 cap inside one round. ⚠ Damage taken strips 2 turns of Acuity, which is why her defensive gear matters more than it looks.'
     - id: dual-hand-crossbows
       item: Ne'er Misser + Hellfire Hand Crossbow
@@ -494,6 +609,7 @@ builds:
       - Ne'er Misser
       - Hellfire Hand Crossbow
       slot: ranged weapons
+      bis: true
       note: 'Roah at Moonrise plus Yurgir''s corpse in the Gauntlet of Shar. Both Light, so no Dual Wielder feat. Main-hand, off-hand and Flourish hits stack Acuity fast. ⚠ Both are contested on paper and both stay with her: Charles would like Ne''er Misser''s Magic Missile for shooting out of his own Darkness, and Asterion could use the Hellfire, but neither converts hand-crossbow hits into spell save DC. ⚠ Breaking Yurgir''s contract via Raphael forfeits the Hellfire Hand Crossbow.'
     - id: act2-melee-bonbon
       item: Club of Hill Giant Strength + Knife of the Undermountain King (held over)
@@ -501,88 +617,144 @@ builds:
       note: 'The melee set stays equipped even though she fights from the ranged set, because the Knife''s crit-threshold reduction is global and applies to her bolts and spell attacks. ⚠ NO ADAMANTINE SHIELD HERE. The tempting trick is to park one in the inactive melee set for free crit immunity, but the wiki only confirms that the AC bonus carries over from an unheld shield and says nothing about crit immunity. The gamble is unnecessary anyway: both Mithral ores go to Adamantine Splint Armour for her and Adamantine Scale Mail for Charles, and the Splint gives her crit immunity outright while she keeps the Knife.'
     - id: act2-chest-bonbon
       item: Adamantine Splint Armour (held over)
+      tier: S
+      tier_note: 'VjmWkRCoDWE (19:03) — 18 AC, crit immunity, 2 damage reduction and 3 turns of reeling; STORY EVENT LATE IN ACT 1'
+      rank: '#15'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #15 of 20 — stronger damage reduction than the scale mail, and fewer serious alternatives'
       slot: armour
+      bis: true
       note: AC 18, crit immunity and −2 to every incoming damage instance carry her through Act 2 unchanged. Crit immunity does double duty here — it protects Hold Monster concentration and it stops Arcane Acuity being stripped two turns at a time by big hits.
     - id: act2-hands-bonbon
       item: Gloves of Dexterity (held over)
+      tier: S
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (25:38) — called the best item in the game for what it enables'
+      rank: '#1'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #1 of 20 — sets Dexterity to 18 and adds +1 attacks, freeing ability points and feats'
       slot: hands
+      bis: true
       note: DEX 18 and +1 Attack Rolls remain the best glove effect available to her, and every hit is now an Acuity stack rather than just damage. Nothing in Act 2 beats it.
     - id: spellcrux-amulet
       item: Spellcrux Amulet
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (33:07) — plainly incredible'
       slot: amulets
       note: 'ACT 2 NECK, worn by the Warden in the Moonrise Towers Prison. Replenish an expended spell slot of ANY level as a BONUS ACTION, once per long rest. On a Bard 11 with a single level-6 slot that is literally a second six-target Command or a second Hold Monster, recovered mid-fight without spending her action. It replaces Broodmother''s Revenge, whose poison coating needs a per-turn heal she no longer has time for once the Acuity loop starts.'
     - id: act2-rings-bonbon
       item: Caustic Band
-      slot: rings
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (7:16) — for almost every party; goes on whoever makes the most attacks in a round'
+      rank: '#12'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #12 of 20 — a passive 2 acid on every weapon attack, which adds up on multiattackers'
+      slot: ring 1
       bis: true
       note: 'Caustic Band keeps adding +2 Acid to every bolt and never comes off. Per the wiki it covers melee, ranged and Thrown attacks but NOT Unarmed Strike, which is why it can never move to Asterion despite his higher hit count.'
     - id: act2-ring2-bonbon
       item: Second ring
-      slot: rings
+      slot: ring 2
       wiki: false
       note: 'GENUINELY OPEN until Act 3. The Whispering Promise came off the moment Asterion started casting real Bless off the Staff of Arcane Blessing, because both apply the same condition and do not stack. Nothing in the Act 2 pool is clearly best-in-slot for her, so pick per stretch. WARNING the Risky Ring is NOT a candidate: disadvantage on saving throws lands directly on the Constitution saves protecting Hold Monster.'
       options:
       - id: opt-whispering-promise-hold
-        item: The Whispering Promise (only until the staff)
+        item: The Whispering Promise (interim)
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (49:20) — a mainstay through Acts 1 and 2; very few parties would not benefit strongly'
+        rank: '#10'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #10 of 20 — healing grants two turns of Bless, with no concentration or dedicated action'
         note: 'Keep it on ONLY until Asterion reaches the Arcane Tower basement. After that it is pure waste, because its Bless is the same non-stacking condition and it never gets Mystra''s Blessing.'
       - id: opt-ring-of-mental-inhibition
         item: Ring of Mental Inhibition
+        tier: B
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (24:59) — powerful if the party is carefully built around it, but it needs very specific builds'
         note: 'House in Deep Shadows. Applies Mental Fatigue when an enemy fails a save against her — it compounds with her Acuity-inflated DC, so the next control lands more easily.'
       - id: opt-callous-glow-ring
-        item: Callous Glow Ring (if Gale gives it up)
+        item: Callous Glow Ring (conditional)
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (4:45) — the number of uses is absurd once the wearer is lit'
         note: '+2 Radiant against ILLUMINATED targets on every projectile. Strong on a multi-hit ranged build, but it is currently Gale''s and it fights Charles''s darkness.'
     - id: cloak-of-cunning-brume
       item: Cloak of Cunning Brume
+      tier: A
+      tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (9:53) — best for certain strategies rather than universally good'
       slot: cloaks
       note: 'Sold by Mattis at Last Light Inn for about 70g. Disengaging also creates a 2m fog cloud for a turn, which obscures and blinds everything inside it — a genuine backline escape button for the moment something closes on her. ⚠ An honest cheap fill: the Act 2 cloak pool is built for melee characters (Fleshmelter and Thunderskin both trigger on being hit), and the one unconditional cloak, Cloak of Protection, goes to Charles, who has permanent disadvantage on saves. She upgrades properly in Act 3.'
     - id: act2-feet-bonbon
       item: Boots of Brilliance
+      tier: B
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (42:08) — regains one Bardic Inspiration but needs fiddly swapping (captions garble the letter)'
       slot: feet
       note: Heavy chest in the room just north of Yurgir, Gauntlet of Shar. Restores one Bardic Inspiration charge per long rest. Slashing Flourish consumes an Inspiration on every multi-target turn and she is Inspiration-starved rather than AC-starved, so this beats keeping Boots of Speed once the Acuity loop replaces raw repositioning.
     act3:
     - id: band-of-the-mystic-scoundrel
       item: Band of the Mystic Scoundrel
-      slot: rings
+      tier: S
+      tier_note: 'ULTIMATE Guide to Rings - BG3 Honor Mode Tier List and Guide - Act 3 (8:21) — tons of builds are built around maximising it; locks enemies down'
+      slot: ring 1
+      bis: true
       note: 'THE ACT 3 ENGINE, in a backpack in the Chult jungle reached through Akabi''s wheel at the Circus — one party member only, so send her. After a weapon hit, Enchantment and Illusion spells become BONUS ACTIONS, so she builds Arcane Acuity with her action and fires Hold Monster or a six-target Command in the same turn. ⚠ Read the wiki caveat before playing it: once Quickening Incantation is active she can no longer cast those spells as an ACTION that turn — only as the bonus action. ⚠ Useful trick: any weapon attack triggers it, even against a world object, so she can prime the loop off a barrel before combat starts.'
     - id: act3-ring2-bonbon
-      item: Caustic Band (second slot, held over)
-      slot: rings
+      item: Caustic Band (held over)
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (7:16) — for almost every party; goes on whoever makes the most attacks in a round'
+      rank: '#12'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #12 of 20 — a passive 2 acid on every weapon attack, which adds up on multiattackers'
+      slot: ring 2
       note: +2 Acid on every bolt and every Flourish projectile is still the cleanest flat rider available to her, and it needs no setup. Swap it for the Ring of Free Action in any fight with webs, paralysis or Black Tentacles, since being Paralysed both ends Hold Monster and hands out automatic critical hits.
     - id: bow-alternative
-      item: Gontr Mael (opening-round alternative)
+      item: Gontr Mael (opener)
+      tier: A
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (50:53) — at-will Celestial Haste is nice, but only the third best two-handed bow for damage'
       wiki: Gontr Mael
       slot: ranged weapons
       note: 'Carried by the Steel Watcher Titan in the Steel Watch Foundry. A legendary +3 longbow with Celestial Haste once per long rest. ⚠ NOT the default, and the reason is structural: it is Two-Handed, so equipping it cancels the dual-hand-crossbow set that is the entire Arcane Acuity engine — she would trade three or four Acuity-stacking hits a turn for two. Carry it purely for an opening-round Celestial Haste, then swap back. ⚠ It does not drop if the Titan is killed by the Atrophied condition.'
     - id: act3-ranged-bonbon
       item: Ne'er Misser + Hellfire Hand Crossbow (held over)
       slot: ranged weapons
+      bis: true
       note: 'The standing Act 3 ranged set, unchanged. ⚠ Hellrider''s Longbow is NOT hers — it is Two-Handed, so it cannot coexist with the hand crossbows at all, which settles the initiative contest with Gale in his favour permanently. He has the idle ranged slot; she does not.'
     - id: amulet-of-greater-health
-      item: Amulet of Greater Health (goes to Charles)
+      item: Amulet of Greater Health (Charles)
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 3 (13:32) — the only real decision left is who to put it on'
       slot: amulets
       note: 'NOT HERS, on reflection. Setting Constitution to 23 and granting advantage on CON saves is superb, but she already has War Caster''s advantage on those saves, AC 21 in Armour of Agility, and a cloak that gives attackers disadvantage — so the amulet''s advantage half is redundant on her. Charles has a permanent DISADVANTAGE from the Risky Ring for it to cancel, which nothing else in the game does as cleanly. She keeps the Spellcrux Amulet instead, and a free level-6 slot per long rest is worth more to a controller than +6 to saves she is already winning.'
     - id: act3-amulet-bonbon
       item: Spellcrux Amulet (held over)
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (33:07) — plainly incredible'
       slot: amulets
       note: A bonus-action level-6 spell slot once per long rest is a second six-target Command or a second Hold Monster in the fight that needs it. On a Bard 11 with exactly one slot at that level, this is the highest-leverage neck she can wear.
     - id: armour-of-agility
       item: Armour of Agility
+      tier: S
+      tier_note: 'BG3''S BEST ARMOR - Medium Armor Tier List - Honour Mode Guide - Part 3 (1:00:01) — 17 AC uncapped by Dex and +2 saves; the highest AC setup in the game'
       slot: armour
       note: 'ACT 3 CHEST, sold by Gloomy Fentonson at the Stormshore Armoury. Medium armour that adds her FULL Dexterity modifier — AC 17 + 4 = 21 at DEX 18 — plus +2 to ALL saving throws and no Stealth penalty. It beats the Adamantine Splint by 3 AC and 2 saves; the trade is losing crit immunity, so keep the Splint bagged for any fight where she is being focused and Arcane Acuity keeps getting stripped. ⚠ Do not take Medium Armour Master or Magic Initiate: Cleric on her — the wiki notes either feat breaks the full-Dexterity passive.'
     - id: wavemother-s-cloak
       item: Wavemother's Cloak
+      tier: D
+      tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (38:55) — a worse duplicate of another cloak''s effect, and combat-only'
       slot: cloaks
       note: 'ACT 3 CLOAK, in an opulent chest behind Allandra Grey''s desk on the upper floor of the Water Queen''s House. Once per turn in combat it grants Water Layer Protection until she takes damage: +2 AC, +2 to saving throws, Fire resistance and immunity to Burning. On a backline controller who is rarely hit, that refreshes every turn and effectively never falls off — strictly better than the flat +1/+1 of a Cloak of Protection for her, and it leaves Cloak of Displacement free for Asterion, who has no armour at all.'
     - id: act3-hands-bonbon
       item: Gloves of Dexterity (held over)
+      tier: S
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (25:38) — called the best item in the game for what it enables'
+      rank: '#1'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #1 of 20 — sets Dexterity to 18 and adds +1 attacks, freeing ability points and feats'
       slot: hands
+      bis: true
       note: 'Nothing in Act 3 beats DEX 18 plus +1 to every attack roll for her. ⚠ Bracers of Defence are dead once she wears Armour of Agility, and Craterflesh Gloves want a crit-focused build she is not — she is a controller whose damage comes from volume, not critical hits.'
     - id: act3-head-bonbon
       item: Helmet of Arcane Acuity (held over)
+      tier: S
+      tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (35:18) — broken like all the Arcane Acuity items, and one of the easiest to use'
       slot: head
+      bis: true
       note: 'It stays, and it is not close. Three or four weapon hits a turn take her to the +10 Arcane Acuity cap inside one round, which is +10 to spell save DC. ⚠ BIRTHRIGHT IS REJECTED FOR EXACTLY THIS REASON: +2 Charisma is +1 spell save DC. Ten against one. Keep Birthright bagged as an out-of-combat swap for Persuasion, Deception and Intimidation, where the wiki notes it stacks with the Mirror of Loss for Charisma 24.'
     - id: act3-feet-bonbon
       item: Boots of Persistence
+      tier: B
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (51:25) — reasonable, though Freedom of Movement on one character is not a tremendous effect'
       slot: feet
       note: 'Sold by Dammon at the Forge of the Nine in the Lower City. Permanent Freedom of Movement and Longstrider — Freedom of Movement makes a Ring of Free Action unnecessary and frees her second ring slot for Caustic Band. Medium armour proficiency is required and Fighter 1 supplies it. ⚠ Helldusk Boots are the better item in the abstract but go to Charles, who has save disadvantage to undo; Gale cannot wear Persistence at all, so this is the allocation that leaves nobody stranded.'
     progression:
@@ -610,8 +782,14 @@ builds:
       item: 'Amulet: Broodmother''s Revenge → Spellcrux Amulet'
       slot: amulets
       note: Act 1 Broodmother's (Kagha) while her bonus action is free for Healing Word → Act 2–3 Spellcrux (Moonrise Prison Warden), which returns a level-6 slot as a bonus action once per long rest — a second six-target Command.
-    - id: prog-rings
-      item: 'Rings: Caustic Band + flex → Band of the Mystic Scoundrel + Caustic Band'
+    - id: prog-ring1
+      item: 'Ring 1: Caustic Band → Band of the Mystic Scoundrel'
+      slot: ring 1
+      note: Caustic Band holds this hand through Acts 1 and 2 — a flat 2 acid on every attack, which is worth most on the character making the most attacks → Band of the Mystic Scoundrel in Act 3, which turns her Command into a bonus action at the party's highest Arcane Acuity DC.
+    - id: prog-ring2
+      item: 'Ring 2: The Whispering Promise → flex → Caustic Band'
+      slot: ring 2
+      note: The Whispering Promise until Asterion's Staff of Arcane Blessing takes over Bless duty, then a flex slot per fight, then Caustic Band moves across to this hand once the Band of the Mystic Scoundrel claims ring 1.
       slot: rings
       note: 'Caustic Band is the constant. The Whispering Promise covers Bless only until Asterion reaches the Staff of Arcane Blessing in the Underdark, then comes off because the ring and the spell apply the same non-stacking condition. The second slot is a flex pick through Act 2 and becomes the Band of the Mystic Scoundrel in Act 3.'
     - id: prog-weapons

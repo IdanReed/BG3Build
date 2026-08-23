@@ -1,0 +1,133 @@
+{
+  "source": "MbZ0r-Tfixg",
+  "label": "Cloaks tier list",
+  "slot": "Cloaks",
+  "rated_in": "all",
+  "verdicts_in_transcript": 21,
+  "items": [
+    {
+      "item": "Cloak",
+      "tier": "D",
+      "at": "2:35",
+      "verdict": "all non-magical variants; no effect and no easter eggs, so pure Gale food"
+    },
+    {
+      "item": "The Deathstalker Mantle",
+      "tier": "S",
+      "at": "6:44",
+      "verdict": "DARK URGE ORIGIN ONLY; free invisibility on a kill, broken, and the only act one magic cloak"
+    },
+    {
+      "item": "Cloak of Cunning Brume",
+      "tier": "A",
+      "at": "9:53",
+      "verdict": "free Fog Cloud on disengage; huge ceiling for rogues and crime, but needs player patience"
+    },
+    {
+      "item": "Cloak of Elemental Absorption",
+      "tier": "B",
+      "at": "12:28",
+      "verdict": "reaction halves one elemental hit and adds 1d6 to a weapon attack; a decent panic button"
+    },
+    {
+      "item": "Cloak of Protection",
+      "tier": "S",
+      "at": "13:30",
+      "verdict": "+1 AC and +1 saving throws permanently; ONLY ONE EXISTS and someone wears it all game"
+    },
+    {
+      "item": "Derivation Cloak",
+      "tier": "C",
+      "at": "15:33",
+      "verdict": "1d4 heal on poisoning; needs Broodmother's Revenge and Poisoner's Gloves for a weak three-slot combo"
+    },
+    {
+      "item": "Fleshmelter Cloak",
+      "tier": "B",
+      "at": "17:37",
+      "verdict": "1d4 acid on melee hits taken; ON TACTICIAN OR BELOW bugged damage riders make it far stronger"
+    },
+    {
+      "item": "Thunderskin Cloak",
+      "tier": "D",
+      "at": "19:42",
+      "verdict": "needs a reverberation build and a fixed DC13 Constitution save; will practically never trigger"
+    },
+    {
+      "item": "Vivacious Cloak",
+      "tier": "A",
+      "at": "21:46",
+      "verdict": "8 temporary HP when casting in melee; next best caster cloak after the Cloak of Protection"
+    },
+    {
+      "item": "Cindermoth Cloak",
+      "tier": "D",
+      "at": "24:51",
+      "verdict": "burning on a trivial DC12 Dexterity save; a strictly worse Fleshmelter Cloak"
+    },
+    {
+      "item": "Cloak of Displacement",
+      "tier": "S",
+      "at": "26:56",
+      "verdict": "disadvantage on attacks against you every turn until hit; also steers enemy AI away"
+    },
+    {
+      "item": "Cloak of the Weave",
+      "tier": "S",
+      "at": "28:30",
+      "verdict": "+1 spell save DC and spell attack plus elemental absorption; best in slot for casters"
+    },
+    {
+      "item": "Mantle of the Holy Warrior",
+      "tier": "A",
+      "at": "29:32",
+      "verdict": "free Crusader's Mantle per short rest; scales hard with summons and multiattackers"
+    },
+    {
+      "item": "Nymph Cloak",
+      "tier": "B",
+      "at": "31:37",
+      "verdict": "Dominate Person once per long rest, but uses item save DC so mono-class casters only"
+    },
+    {
+      "item": "Reverse Rain Cloak",
+      "tier": "C",
+      "at": "36:18",
+      "verdict": "permanent wet; vulnerability outweighs resistance except in the Pyroquickness Hat sorcerer combo"
+    },
+    {
+      "item": "Shade-Slayer Cloak",
+      "tier": "A",
+      "at": "37:21",
+      "verdict": "lower crit threshold while hiding; excellent for stealth archers and crit builds"
+    },
+    {
+      "item": "Wavemother's Cloak",
+      "tier": "D",
+      "at": "38:55",
+      "verdict": "in-combat-only wet, so a worse Reverse Rain Cloak; equip it for the joke"
+    }
+  ],
+  "unassigned": [
+    {
+      "at": "10:24",
+      "tier": "A",
+      "why": "restatement of the Cloak of Cunning Brume verdict already given at 9:53"
+    },
+    {
+      "at": "22:48",
+      "tier": "B",
+      "why": "end-of-act-two summary referring back to 'the two B tier cloaks', not a new verdict"
+    },
+    {
+      "at": "27:27",
+      "tier": "S",
+      "why": "restatement of the Cloak of Displacement verdict already given at 26:56"
+    },
+    {
+      "at": "31:37",
+      "tier": "C",
+      "why": "the alternative considered and rejected for the Nymph Cloak ('I think C tier would also be fine')"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source": "vkcAg7oJ328",
+  "label": "Spells tier list, level 4, part 1 (Banishment through Fire Shield)",
+  "spell_level": 4,
+  "verdicts_in_transcript": 11,
+  "items": [
+    { "item": "Banishment", "tier": "B", "at": "5:08",
+      "verdict": "targets charisma, which many dangerous bosses save terribly; niche but the most reliable disable when it applies" },
+    { "item": "Blight", "tier": "C", "at": "9:00",
+      "verdict": "begrudging C; only Death Domain clerics on Act 2 plants or Staff of Cherished Necromancy builds" },
+    { "item": "Confusion", "tier": "B", "at": "13:24",
+      "verdict": "hits enemies only, not allies; unreliable, but shut a door and the encounter kills itself" },
+    { "item": "Conjure Minor Elemental", "tier": "A", "at": "18:26",
+      "verdict": "ice mephits give all-day damage, free ice surfaces, and a sacrificial cold fireball on demand" },
+    { "item": "Conjure Woodland Being", "tier": "S", "at": "20:57",
+      "verdict": "DRUID ONLY; dryad is a whole extra party member with at-will Entangle and Spike Growth" },
+    { "item": "Death Ward", "tier": "D", "at": "23:51",
+      "verdict": "multi-instance damage bypasses it; only worth casting from a camp caster, and Freedom of Movement is better" },
+    { "item": "Dimension Door", "tier": "C", "at": "25:57",
+      "verdict": "good in roughly three timed traversal encounters; jumping or Misty Step covers everything else" },
+    { "item": "Dominate Beast", "tier": "D", "at": "27:49",
+      "verdict": "strong effect, but no dangerous beast fights are left by the time you reach level seven" },
+    { "item": "Evard's Black Tentacles", "tier": "B", "at": "32:31",
+      "verdict": "B for Great Old One warlocks (no slot premium); C for wizards stacking it with Wall of Fire" },
+    { "item": "Fire Shield", "tier": "C", "at": "36:37",
+      "verdict": "resistance plus melee retaliation mostly just redirects aggro; fine on Abjuration wizards and barbarians" }
+  ],
+  "unassigned": [
+    { "at": "32:33", "tier": "C",
+      "why": "the second half of the Evard's Black Tentacles per-class split ('C tier for wizards'), spoken two seconds after the 'B tier for Great Old One warlocks' headline; the spell is already recorded once in items, so this letter is not a separate spell" }
+  ]
+}

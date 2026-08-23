@@ -1,0 +1,221 @@
+{
+ "source": "otTGzNc4xXw",
+ "label": "Bows tier list, all acts",
+ "slot": "Ranged Weapons",
+ "rated_in": "all",
+ "verdicts_in_transcript": 31,
+ "items": [
+  {
+   "item": "Shortbow",
+   "tier": "D",
+   "at": "5:11",
+   "verdict": "weakest damage and weakest weapon action; light crossbows are also simple weapons"
+  },
+  {
+   "item": "Longbow",
+   "tier": "C",
+   "at": "6:43",
+   "verdict": "d8 plus Brace, worth using very early until something magical appears"
+  },
+  {
+   "item": "Light Crossbow",
+   "tier": "B",
+   "at": "8:46",
+   "verdict": "simple d8 with Piercing Shot; most characters carry one for the first few levels"
+  },
+  {
+   "item": "Heavy Crossbow",
+   "tier": "D",
+   "at": "9:48",
+   "verdict": "best non-magical stats, but it only appears late in Act 1"
+  },
+  {
+   "item": "Hand Crossbow",
+   "tier": "B",
+   "at": "11:52",
+   "verdict": "dual-wielded d6 with Piercing Shot; used a long time because so few exist"
+  },
+  {
+   "item": "Shortbow +1",
+   "tier": "D",
+   "at": "12:55",
+   "verdict": "merchants sell strictly better magical shortbows in the same place"
+  },
+  {
+   "item": "Longbow +1",
+   "tier": "D",
+   "at": "12:55",
+   "verdict": "merchants sell strictly better magical longbows in the same place"
+  },
+  {
+   "item": "Light Crossbow +1",
+   "tier": "D",
+   "at": "12:55",
+   "verdict": "merchants sell strictly better magical light crossbows in the same place"
+  },
+  {
+   "item": "Heavy Crossbow +1",
+   "tier": "D",
+   "at": "12:55",
+   "verdict": "merchants sell strictly better magical heavy crossbows in the same place"
+  },
+  {
+   "item": "Hand Crossbow +1",
+   "tier": "S",
+   "at": "13:57",
+   "verdict": "best Act 1 hand crossbow; a pair is the highest damage archer setup"
+  },
+  {
+   "item": "Bow of Awareness",
+   "tier": "S",
+   "at": "16:30",
+   "verdict": "+1 initiative from an unused weapon slot; a mainstay for Honour mode parties"
+  },
+  {
+   "item": "Bow of the Banshee",
+   "tier": "A",
+   "at": "18:03",
+   "verdict": "passive fear plus bonus damage against frightened; enables melee fear builds"
+  },
+  {
+   "item": "Crossbow of Arcane Force",
+   "tier": "C",
+   "at": "19:36",
+   "verdict": "an acceptable third damaging bow for unusual party compositions"
+  },
+  {
+   "item": "Gandrel's Aspiration",
+   "tier": "B",
+   "at": "20:38",
+   "verdict": "advantage against monstrosities plus Turn Undead; swap in for those fights"
+  },
+  {
+   "item": "Giantbreaker",
+   "tier": "B",
+   "at": "23:13",
+   "verdict": "Reeling on hit, but it resets when the enemy misses; good against single-attack bosses"
+  },
+  {
+   "item": "Harold",
+   "tier": "A",
+   "at": "24:17",
+   "verdict": "passive Bane on hit sets up your party's save-targeting spells"
+  },
+  {
+   "item": "Hunting Shortbow",
+   "tier": "B",
+   "at": "26:24",
+   "verdict": "free Hunter's Mark; sometimes your best magical bow before merchants restock"
+  },
+  {
+   "item": "Spellthief",
+   "tier": "D",
+   "at": "27:27",
+   "verdict": "a spell slot on a lucky crit, on a bow with no enhancement bonus"
+  },
+  {
+   "item": "The Joltshooter",
+   "tier": "D",
+   "at": "30:05",
+   "verdict": "outcompeted on damage and hit chance in Honour mode. LIGHTNING-CHARGE BUGS MAKE IT BETTER BELOW HONOUR MODE"
+  },
+  {
+   "item": "Titanstring Bow",
+   "tier": "S",
+   "at": "32:39",
+   "verdict": "adds your strength modifier; best in slot Act 1 damage with a giant strength elixir"
+  },
+  {
+   "item": "Firestoker",
+   "tier": "C",
+   "at": "34:11",
+   "verdict": "only for a hand crossbow build that skips Sharpshooter; otherwise worse than +1"
+  },
+  {
+   "item": "Hellfire Hand Crossbow",
+   "tier": "S",
+   "at": "37:47",
+   "verdict": "a reluctant S: dull effects, but the best stats in a weapon type with no later upgrade"
+  },
+  {
+   "item": "Least Expected",
+   "tier": "A",
+   "at": "39:24",
+   "verdict": "a bless-like d4 to hit while obscured; the best fix for a character who misses"
+  },
+  {
+   "item": "Ne'er Misser",
+   "tier": "S",
+   "at": "41:32",
+   "verdict": "a reluctant S: force damage on every rider makes it the endgame hand crossbow"
+  },
+  {
+   "item": "Longbow +2",
+   "tier": "D",
+   "at": "42:02",
+   "verdict": "Titanstring beats it for damage and Least Expected beats it for hit chance"
+  },
+  {
+   "item": "Hand Crossbow +2",
+   "tier": "A",
+   "at": "43:35",
+   "verdict": "the pick over Ne'er Misser only when Ballistic Armour doubles your piercing damage"
+  },
+  {
+   "item": "Blightbringer",
+   "tier": "A",
+   "at": "45:37",
+   "verdict": "crits slow the target with no saving throw; strong in crit builds against bosses"
+  },
+  {
+   "item": "Fabricated Arbalest",
+   "tier": "C",
+   "at": "46:40",
+   "verdict": "a bonus-action d4 that adds a turn of Radiating Orb; for orb-stacking parties only"
+  },
+  {
+   "item": "Gontr Mael",
+   "tier": "A",
+   "at": "50:53",
+   "verdict": "at-will Celestial Haste is nice, but only the third best two-handed bow for damage"
+  },
+  {
+   "item": "Hellfire Engine Crossbow",
+   "tier": "B",
+   "at": "52:30",
+   "verdict": "a no-cooldown pull effect, but the DC 15 does not scale and rarely lands"
+  },
+  {
+   "item": "Hellrider Longbow",
+   "tier": "S",
+   "at": "53:35",
+   "verdict": "+3 initiative from an unused slot; he would put it in S+ if it existed"
+  },
+  {
+   "item": "The Dead Shot",
+   "tier": "S",
+   "at": "55:41",
+   "verdict": "improved crit and double proficiency to hit; his pick for endgame two-handed bow"
+  },
+  {
+   "item": "The Long Arm of the Gur",
+   "tier": "D",
+   "at": "56:13",
+   "verdict": "even against undead it does less damage than bows you already have"
+  },
+  {
+   "item": "Vicious Shortbow",
+   "tier": "S",
+   "at": "57:48",
+   "verdict": "+7 on crits works passively, so any melee crit build gets it free"
+  }
+ ],
+ "unassigned": [
+  {
+   "at": "36:45",
+   "tier": null,
+   "why": "the Darkfire Shortbow is discussed at length and praised, but no letter is ever spoken for it"
+  }
+ ],
+ "count_note": "Off by +4: one verdict at 12:55 rates the four generic +1 bows and crossbows together, and Darkfire Shortbow is discussed positively but never given a letter."
+}

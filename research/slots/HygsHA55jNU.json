@@ -1,0 +1,149 @@
+{
+ "source": "HygsHA55jNU",
+ "label": "Potions tier list",
+ "slot": "Potions & Oils",
+ "rated_in": "all",
+ "verdicts_in_transcript": 22,
+ "items": [
+  {
+   "item": "Potion of Animal Speaking",
+   "tier": "B",
+   "at": "6:42",
+   "verdict": "day-long speak with animals; saves a spell known or prepared, mostly roleplay value"
+  },
+  {
+   "item": "Antidote",
+   "tier": "B",
+   "at": "8:16",
+   "verdict": "clears poisoned and poison-inflicted conditions; carry one or two as a panic button"
+  },
+  {
+   "item": "Basilisk Oil",
+   "tier": "C",
+   "at": "9:50",
+   "verdict": "un-petrifies; effectively story-only, almost no mechanical payoff"
+  },
+  {
+   "item": "Potion of Feather Fall",
+   "tier": "B",
+   "at": "12:56",
+   "verdict": "bonus-action cost blocks in-combat use; good for traversal if no one prepares the ritual"
+  },
+  {
+   "item": "Potion of Gaseous Form",
+   "tier": "A",
+   "at": "16:04",
+   "verdict": "resistance to all damage, hovering and squeezing through grates for a bonus action"
+  },
+  {
+   "item": "Potion of Glorious Vaulting",
+   "tier": "A",
+   "at": "19:09",
+   "verdict": "tripled jump for 10 turns; pre-combat repositioning, close to free Misty Step"
+  },
+  {
+   "item": "Potion of Healing",
+   "tier": "S",
+   "at": "22:16",
+   "verdict": "7 healing for a bonus action, and the cheapest way to throw a downed ally back up"
+  },
+  {
+   "item": "Potion of Greater Healing",
+   "tier": "A",
+   "at": "23:48",
+   "verdict": "strictly better than the basic potion, but 14 vs 7 rarely changes the outcome; not worth upgrading to"
+  },
+  {
+   "item": "Potion of Superior Healing",
+   "tier": "S",
+   "at": "26:52",
+   "verdict": "28 average healing is more than most healers give with an action; real in-combat healing"
+  },
+  {
+   "item": "Potion of Supreme Healing",
+   "tier": "S",
+   "at": "28:57",
+   "verdict": "rated S+ ABOVE THE SCALE: 45 reliable healing for a bonus action breaks the hit point economy"
+  },
+  {
+   "item": "Potion of Mind Reading",
+   "tier": "B",
+   "at": "31:32",
+   "verdict": "detect thoughts without concentration; bypasses some dialogue checks, no combat use"
+  },
+  {
+   "item": "Potion of Vitality",
+   "tier": "B",
+   "at": "32:34",
+   "verdict": "antidote plus disease cure; diseases are rare, so no reason to seek it out"
+  },
+  {
+   "item": "Potion of Speed",
+   "tier": "S",
+   "at": "35:44",
+   "verdict": "rated S+ ABOVE THE SCALE: 3 turns of haste, no concentration; on Honour the extra action loses Extra Attack"
+  },
+  {
+   "item": "Remedial Potion",
+   "tier": "A",
+   "at": "37:51",
+   "verdict": "clears blinded, silenced, paralysed and poisoned; the best of the three cure potions to carry"
+  },
+  {
+   "item": "Potion of Angelic Reprieve",
+   "tier": "A",
+   "at": "40:29",
+   "verdict": "short rest if you sleep two turns; longevity tool, best on warlocks and sorlocks"
+  },
+  {
+   "item": "Potion of Angelic Slumber",
+   "tier": "S",
+   "at": "43:36",
+   "verdict": "a full long rest in two turns; extends the day and skips camp-triggered story events"
+  },
+  {
+   "item": "Potion of Flying",
+   "tier": "S",
+   "at": "46:12",
+   "verdict": "10 turns of flight with no slot or concentration; the king of mobility"
+  },
+  {
+   "item": "Potion of Invisibility",
+   "tier": "A",
+   "at": "48:16",
+   "verdict": "bonus-action escape or advantage on the next attack; also opens story routes"
+  },
+  {
+   "item": "Dream Mist",
+   "tier": "F",
+   "at": "49:18",
+   "verdict": "a Con save or you are knocked out three rounds; pure downside"
+  },
+  {
+   "item": "Essence of Ether",
+   "tier": "F",
+   "at": "49:48",
+   "verdict": "puts you to sleep two rounds with no upside; an Angelic Reprieve without the benefit"
+  },
+  {
+   "item": "Silkroot",
+   "tier": "F",
+   "at": "50:19",
+   "verdict": "disadvantage on Dexterity and Charisma checks for three rounds; roleplay only"
+  },
+  {
+   "item": "Elixir of Universal Resistance",
+   "tier": "S",
+   "at": "54:32",
+   "verdict": "resistance to ALL damage for 10 turns; counted here as a potion because it uses no elixir slot"
+  }
+ ],
+ "unassigned": [
+  {
+   "at": "52:28",
+   "tier": null,
+   "why": "Terazul (the fourth drug) is discussed at length as busted -- stacking haste for two turns, free to consume -- but no letter is ever spoken, so no tier is recorded"
+  }
+ ],
+ "count_note": "Off by +1: Terazul is discussed at length but never given a letter, so it sits in unassigned without being a verdict."
+}

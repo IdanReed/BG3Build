@@ -17,6 +17,39 @@ builds:
     CHA: 17
   stats_note: 'Point-buy base 8/15/14/8/10/15 = all 27 points (DEX 15 and CHA 15 cost 9 each, CON 14 costs 7, WIS 10 costs 2). Then Human +2 → CHA 17 and +1 → DEX 16. DEX 16 is load-bearing: Draconic Resilience sets unarmoured AC to 13 + DEX, and both Spidersilk Armour and Armour of Landfall are 13 + DEX light armour, so DEX is Gale''s entire AC. WIS sits at 10 because nothing in the build keys off it.'
   ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss, Cloister of Sombre Embrace in Act 3). CHA 20 is the target and no ASI is needed to reach it, which is what frees both feats for Dual Wielder and Elemental Adept. Birthright (+2 CHA → 22) is NOT worn by anyone in this party: Gale''s head belongs permanently to the Hat of Fire Acuity and Bonbon''s to the Helmet of Arcane Acuity, and +2 Charisma is +1 spell save DC against Acuity''s +10. Keep it bagged as an out-of-combat dialogue swap.'
+  ability_scores:
+  - ability: STR
+    steps:
+    - score: 8
+      source: 'point-buy'
+  - ability: DEX
+    steps:
+    - score: 15
+      source: 'point-buy'
+    - score: 16
+      source: '+1 Racial'
+  - ability: CON
+    steps:
+    - score: 14
+      source: 'point-buy'
+  - ability: INT
+    steps:
+    - score: 8
+      source: 'point-buy'
+  - ability: WIS
+    steps:
+    - score: 10
+      source: 'point-buy'
+  - ability: CHA
+    steps:
+    - score: 15
+      source: 'point-buy'
+    - score: 17
+      source: '+2 Racial'
+    - score: 18
+      source: '+1 Hag''s Hair'
+    - score: 20
+      source: '+2 Mirror of Loss, Act 3'
   metamagic:
   - Twinned + Extended (Sorc 2)
   - Quickened (Sorc 3)
@@ -415,48 +448,77 @@ builds:
     act1:
     - id: the-spellsparkler
       item: The Spellsparkler
+      tier: A
+      tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (26:53) — stacks Lightning Charges fast on multi-hit casters, though Melf''s is broader'
       slot: weapons
       note: 'SELECTED main hand, rewarded by Counsellor Florrick at Waukeen''s Rest for Rescue the Grand Duke. Rated A on the staves tier list, which names Scorching Ray specifically: each of the 3–5 separate damage instances grants 2 Lightning Charges, and charges give +1 to attack rolls and +1 Lightning damage, bursting for 1d8 at five stacks. ⚠ It carries no enchantment bonus, so it is a rider stick, not an accuracy stick — that is Melf''s job. ⚠ It is "Consumable by Gale" — wield it, do not feed it to the Netherese orb.'
     - id: melf-s-first-staff
       item: Melf's First Staff
+      tier: S
+      tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (15:30) — probably best in slot for most spellcasters for all of Act 1'
       slot: weapons
       note: 'SELECTED off hand from Blurg in the Underdark, equipped from character level 4 once Dual Wielder is taken. +1 Spell Save DC and +1 spell attack rolls, and the staves tier list rates it S — "the defining early caster bonus… often best through Acts 1 and 2." The +1 spell attack applies to every single ray, and the +1 DC is what carries his Command and Hold Person. ⚠ Neither staff is Light, so Dual Wielder is what makes the pair legal at all; before character level 4 he holds Spellsparkler alone.'
     - id: shadespell-circlet
       item: The Shadespell Circlet
+      tier: S
+      tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (41:43) — needs setup to get value, but spell save DC increases are that powerful'
       slot: head
       note: ACT 1 HEAD, from Omeluum after Help Omeluum Investigate the Parasite. +1 Spell Save DC while Gale is obscured. It is replaced permanently by the Hat of Fire Acuity in Act 2, so treat it as an Act 1 rental.
     - id: boots-of-stormy-clamour
       item: Boots of Stormy Clamour
+      tier: S
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
+      rank: '#7'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
       slot: feet
+      bis: true
       note: 'SELECTED boots from Omeluum, rated #7 of the 20 best Act 1 items and called "build-defining… later." Inflicting a condition applies 2 turns of Reverberation, and Gale inflicts conditions constantly — Radiating Orb from Coruscation, Mental Fatigue from the Ring of Mental Inhibition, and Command itself.'
     - id: gloves-of-belligerent-skies
       item: Gloves of Belligerent Skies
+      tier: A
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (20:24) — excellent for specific builds and decent across a wide variety of them'
       slot: hands
+      bis: true
       note: 'SELECTED late-Act-1 gloves, in the elegant chest in the Crèche Inquisitor''s Chamber. Thunder, Lightning or RADIANT damage applies 2 turns of Reverberation — and once the Callous Glow Ring is online in Act 2 every ray deals 2 radiant, so these proc per ray. ⚠ Charles has a real claim on them (Divine Smite is Radiant, and the wiki notes Phalar Aluve''s Shriek Thunder triggers them correctly in Honour Mode specifically) — they stay with Gale because he applies the rider 5–7 times per cast against Charles''s two swings.'
     - id: pearl-of-power-amulet
       item: Pearl of Power Amulet
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (35:16) — a mainstay once acquired'
       slot: amulets
       note: SELECTED resource neck from Omeluum. Restores one spell slot of level 3 or lower each long rest — normally another Haste or Scorching Ray. This build empties its slots fast, so a free one every rest is real.
     - id: spidersilk-armour
       item: Spidersilk Armour
+      tier: S
+      tier_note: 'ARMOR TIER LIST - Light Armour - Baldur''s Gate 3 Honour Mode Guide - Part 2 (16:13) — S specifically for light-armour casters, which is not what it looks designed for'
       slot: armour
+      bis: true
       note: 'SELECTED Act 1 chest, and the answer to this build''s worst structural problem. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra to acquire. AC 12 + DEX and +1 Stealth, but the reason to wear it is ADVANTAGE ON CONSTITUTION SAVING THROWS. Gale has no War Caster, no feat left to buy one, and no shield once Dual Wielder fills both hands, so this is his only protection for Twinned Haste — and it arrives in Act 1 rather than waiting for Armour of Landfall in Act 3. ⚠ Costs exactly 1 AC versus going unarmoured, since Draconic Resilience is 13 + DEX; take the trade, because Haste is the concentration the entire party plan is built on.'
     - id: elixir-of-vigilance
       item: Elixir of Vigilance (daily)
+      tier: S
+      tier_note: '9BcQXb37Bik (57:59) — rated S+ ABOVE THE SCALE: a free Alert feat, and +5 on a d4 initiative roll means going first'
       wiki: Elixir of Vigilance
       slot: consumables
       note: 'SELECTED standing elixir — drink one every long rest, exactly as Asterion drinks Giant Strength. +5 Initiative AND immunity to Surprise, lasting until long rest, for about 25g from Danthelon''s, Kith in Grymforge, or Popper at the Circus. THIS IS WHAT REPLACES THE ALERT FEAT Gale cannot afford: BG3 rolls initiative on a d4 + DEX, not a d20, so +5 is larger than the entire die. Gale is the only party member with no competing elixir — Asterion needs Giant Strength and Bonbon wants Bloodlust — so the one-elixir-per-rest slot is free for him.'
     - id: bow-of-awareness
       item: Bow of Awareness
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (16:30) — going first is among the best things you can do in an Honour run'
       slot: ranged weapons
       note: ACT 1 ranged filler. +1 Initiative in a slot he otherwise leaves empty, stacking with the standing Elixir of Vigilance. He never fires it; Hellrider Longbow replaces it in Act 3 for +3.
     - id: ring-of-protection
       item: Ring of Protection
-      slot: rings
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (34:55) — raises the party''s average AC; give it to the easiest-to-hit member'
+      rank: '#20'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #20 of 20 — +1 AC and all saves fits almost anyone, for the whole game'
+      slot: ring 1
       note: 'HIS, not Asterion''s. Mol''s reward for Steal the Sacred Idol once the Grove resolves, and rated #20 of 20 with the note that it should "shore up the party''s lowest AC." That is Gale: Spidersilk puts him at AC 15, against Asterion''s 21 unarmoured. The +1 to all saving throws is also concentration insurance for Twinned Haste, which is what the party plan rests on. Asterion takes the Bracing Band instead and loses nothing.'
     - id: ring-of-mind-shielding
       item: Ring of Mind-Shielding
-      slot: rings
+      tier: D
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (32:22) — a weak situational effect by the point in the game where you get it'
+      slot: ring 2
       note: 'Offered by Omeluum in the Ebonlake Grotto after his quest — persuade, intimidate, pay, trade a story, or pickpocket. Advantage on saving throws against Charmed. A charmed Gale is a dropped Haste and a Fireball pointed at his own party, so this is concentration protection as much as it is a save. The wiki calls it "particularly useful in Act One" for the Harpies'' Luring Song.'
     - id: act1-cloak-gale
       item: No cloak exists yet
@@ -465,84 +527,205 @@ builds:
     act2:
     - id: hat-of-fire-acuity
       item: Hat of Fire Acuity
+      tier: S
+      tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (28:32) — removes enemies as threats almost instantly with a lot of builds'
       slot: head
+      bis: true
       note: 'CORE — the item that turns the build on. Carried by the Strange Ox at Dammon''s blacksmith in Last Light Inn. Dealing Fire damage grants 2 turns of Arcane Acuity, capped at 10; each remaining turn is +1 spell attack AND +1 spell save DC. Because each Scorching Ray ray deals Fire damage separately, one level-4 cast (5 rays) takes Gale from 0 to the 10 cap. ⚠ DO NOT kill the Strange Ox at the Druid Grove in Act 1 — it does not carry the hat until Last Light. If you miss it in Act 2, the Ox reappears in Rivington on a hill west of the requisitioned barn in Act 3.'
     - id: callous-glow-ring
       item: Callous Glow Ring
-      slot: rings
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (4:45) — the number of uses is absurd once the wearer is lit'
+      slot: ring 1
+      bis: true
       note: 'DAMAGE ring, in the opulent chest in the vault room near Balthazar in the Gauntlet of Shar. +2 Radiant damage against ILLUMINATED targets — and the wiki names Scorching Ray explicitly among the multi-instance spells that apply it per instance, so up to +14 on a level-6 cast. The radiant damage also procs Gloves of Belligerent Skies. ⚠ Take it off against Shar worshippers and Justiciars. ⚠ It stays with Gale rather than moving to Asterion or Bonbon because his ray count is the highest in the party and his own Coruscation Ring is what illuminates the target in the first place.'
     - id: coruscation-ring
       item: Coruscation Ring
-      slot: rings
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (6:49) — good even outside Radiating Orb builds, and incredible inside them'
+      slot: ring 2
+      bis: true
       note: 'THE illumination engine, in a trapped heavy chest in the Last Light cellar. Per the wiki, Coruscation applies Radiating Orb when the WEARER is illuminated — the target does not need to be lit. Radiating Orb then makes the target Illuminated, which is what switches on Callous Glow. So the chain is: light on GALE → ray 1 applies Radiating Orb → the target is now lit → rays 2+ each add Callous Glow''s 2 radiant → which re-procs Belligerent Skies. Radiating Orb is also −1 to the target''s attack rolls per remaining turn, so it is a party-wide accuracy debuff. Charles can stand in his Darkness cloud the entire time; none of this touches him.'
-    - id: ring-of-mental-inhibition
-      item: Ring of Mental Inhibition (control swap)
-      slot: rings
-      note: 'THIRD RING, SECOND-BEST — the swap, not a standing pick. Locked chest in the House in Deep Shadows, just east of the Shadowed Battlefield waypoint. When a foe fails a save against Gale''s spells they gain Mental Fatigue for 2 turns, stacking the odds on the next Command. Swap Coruscation out for it when the plan is Command spam rather than damage. ⚠ Why it loses by default: Scorching Ray uses spell ATTACK rolls, not saving throws, so it never fires off his main spell. ⚠ The wiki also notes it does not trigger on saves made to shake off an existing effect, so it does not extend Hold Person, and its Bugs section states it applies to ALLIES as well.'
+    - id: act2-ring2-gale-flex
+      item: Second ring alternatives
+      slot: ring 2
+      wiki: false
+      note: 'Coruscation Ring is the default because it converts his illuminated spell damage into Radiating Orb. These are the swaps worth knowing.'
+      options:
+      - id: ring-of-mental-inhibition
+        item: Ring of Mental Inhibition (control)
+        tier: B
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (24:59) — powerful if the party is carefully built around it, but it needs very specific builds'
+        note: 'House in Deep Shadows. Applies Mental Fatigue whenever an enemy fails a save against him, compounding with his own DC. Take it in fights where his Command matters more than his rider damage.'
+      - id: opt-ring-of-free-action-gale
+        item: Ring of Free Action
+        tier: C
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (21:55) — some minor uses; a swap-in against enemies that paralyse or Hold Person'
+        note: 'Ignore difficult terrain and immunity to Paralysed and Restrained. Broadly good on anyone, and it protects the Twinned Haste concentration he can never afford to drop.'
     - id: spineshudder-amulet
       item: Spineshudder Amulet
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:42) — busted on multi-hit spells'
       slot: amulets
       note: 'CORE neck, in the Mimic in Isobel''s bedroom on the upper floor of Moonrise. It applies Reverberation on ranged SPELL-ATTACK hits only — which is exactly what Gale makes, 3–7 times a cast. Combined with Boots of Stormy Clamour it reliably knocks single targets Prone: five stacks of Reverberation force a Constitution save that the same condition''s own penalty makes effectively DC 15.'
     - id: cloak-of-protection-gale
-      item: Cloak of Protection (goes to Charles)
+      item: Cloak of Protection (Charles)
+      tier: S
+      tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (13:30) — excellent, and someone in the party will almost certainly be wearing it'
       slot: cloaks
       note: 'NOT HIS, though he is the obvious candidate. It is the only cloak in the Act 2 pool that touches saving throws, and exactly one exists. Charles gets it because he carries a permanent DISADVANTAGE on every save from the Risky Ring while holding concentration in melee; Gale already has Constitution-save advantage from Spidersilk Armour plus save proficiency from level 1, and can be positioned out of danger. Recorded here so the decision is visible rather than silent.'
     - id: thunderskin-cloak
       item: Thunderskin Cloak
+      tier: D
+      tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (19:42) — needs a reverberation build and a fixed DC13 Constitution save; will practically never trigger'
       slot: cloaks
       note: 'HIS ACT 2 CLOAK, sold by Araj Oblodra at Moonrise. When a creature with Reverberation damages the wearer, it must make a DC 13 Constitution save or be Dazed — no Reactions, disadvantage on Wisdom saves, and it loses its Dexterity bonus to AC. The synergy is real rather than incidental: Gale is the party''s largest source of Reverberation (Spineshudder, Stormy Clamour and Belligerent Skies all stack it), so essentially anything that reaches him is already Reverberating, and the Dazed WIS-save penalty then feeds his own Command.'
-    - id: act2-carryover-gale
-      item: Held over from Act 1 — Spellsparkler + Melf's, Spidersilk Armour, Belligerent Skies, Stormy Clamour, Bow of Awareness
-      slot: other
-      note: 'Act 2 changes his head, neck, rings and cloak and nothing else. ⚠ Spidersilk Armour stays and the Potent Robe is NOT taken: the robe''s whole effect is adding Charisma to CANTRIP damage, and this build stops casting cantrips in combat after character level 3, so wearing it would trade away the Constitution-save advantage protecting Twinned Haste for nothing. ⚠ The staves tier list rates the Incandescent Staff B for Act 2 and it is the most on-theme fire staff in the game, but Melf''s is rated S and gives +1 spell SAVE DC that Incandescent does not — keep Melf''s, and swap only for a fight where fire resistance on Gale matters more than his Command DC.'
+    - id: act2-armour-gale
+      item: Spidersilk Armour (held over from Act 1)
+      tier: S
+      tier_note: 'ARMOR TIER LIST - Light Armour - Baldur''s Gate 3 Honour Mode Guide - Part 2 (16:13) — S specifically for light-armour casters, which is not what it looks designed for'
+      slot: armour
+      bis: true
+      note: 'CARRIED OVER, and never swapped. Advantage on Constitution saving throws is what protects Twinned Haste, the single effect this party is built around. It is also why the Potent Robe is refused.'
+    - id: act2-hands-gale
+      item: Gloves of Belligerent Skies (held over from Act 1)
+      tier: A
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (20:24) — excellent for specific builds and decent across a wide variety of them'
+      slot: hands
+      bis: true
+      note: 'CARRIED OVER. Thunder, Lightning or Radiant damage applies Reverberation — and a multi-ray cast applies it 3-7 times, which is why these live on him rather than on Charles.'
+    - id: act2-feet-gale
+      item: Boots of Stormy Clamour (held over from Act 1)
+      tier: S
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
+      rank: '#7'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
+      slot: feet
+      bis: true
+      note: 'CARRIED OVER. Inflicting any condition applies 2 turns of Reverberation, and he inflicts conditions constantly — the other half of the Reverberation engine. Charles wanted these and does not get them.'
+    - id: act2-weapons-gale
+      item: The Spellsparkler (held over from Act 1)
+      tier: A
+      tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (26:53) — stacks Lightning Charges fast on multi-hit casters, though Melf''s is broader'
+      slot: weapons
+      note: 'CARRIED OVER main hand. Lightning Charges off every separate Scorching Ray instance. It carries no enchantment bonus, so it is a rider stick rather than an accuracy stick.'
+    - id: act2-offhand-gale
+      item: Melf's First Staff (held over from Act 1)
+      tier: S
+      tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (15:30) — probably best in slot for most spellcasters for all of Act 1'
+      slot: weapons
+      note: 'CARRIED OVER off hand, legal only because Dual Wielder was taken at character level 4 — neither staff is Light. This is the +1 Spell Save DC and +1 spell attack rolls that the Incandescent Staff does not give.'
+    - id: act2-ranged-gale
+      item: Bow of Awareness (held over from Act 1)
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (16:30) — going first is among the best things you can do in an Honour run'
+      slot: ranged weapons
+      note: 'CARRIED OVER, and purely for the passive initiative. He never fires it.'
     act3:
     - id: markoheshkir
       item: Markoheshkir
+      tier: S
+      tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (44:41) — universal caster best in slot: +1 DC and attacks, Arcane Battery, elemental attunement'
       slot: weapons
+      bis: true
       note: 'CORE main hand, in a Globe of Invulnerability in Ramazith''s Tower (See Invisibility plus a DC 20 Arcana check to disable the globe). Rated S and called the universal caster best-in-slot. +1 spell attack and DC, plus Arcane Battery for one free spell of any level. Attune Kereska''s Favour to FLAME OF WRATH: fire resistance, +proficiency bonus to Fire spell damage applied per ray, and Heat generation. ⚠ Attuning also starts unavoidable Heat self-damage each turn, which threatens Twinned Haste — do not attune until Armour of Landfall is equipped.'
     - id: rhapsody
       item: Rhapsody
+      tier: S
+      tier_note: 'The BEST ROGUE WEAPONS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Part 2 (43:01) — +3 to everything, and best in slot as a stat stick even for characters not swinging it'
       slot: weapons
       note: 'CORE off hand, carried by Cazador Szarr. Scarlet Remittance stacks +1 attack, damage AND spell save DC per kill, up to 3. This build uses all three, and the damage applies per ray. Requires Dual Wielder to hold alongside Markoheshkir. ⚠ Per the wiki, as of Patch 5 it only builds stacks on killing living hostile targets.'
     - id: staff-of-spellpower
-      item: Staff of Spellpower (off-hand swap)
+      item: Staff of Spellpower (off-hand)
+      tier: S
+      tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (48:32) — a mainstay; refreshing a spell slot on any slot for any purpose is that good'
       slot: weapons
       note: 'CARRY BOTH, SWAP PER FIGHT. Rated S. Gives +1 spell save DC and +1 spell attack IMMEDIATELY, plus its own Arcane Battery — a second free spell of any level per long rest, stacking with Markoheshkir''s. Rhapsody is better in long, adds-heavy fights that actually generate kills; Spellpower is better in short boss fights and against undead or constructs, where Rhapsody may never build a single stack. Two free high-level spells per rest is a large swing for a build this slot-hungry.'
     - id: spellmight-gloves
       item: Spellmight Gloves
+      tier: B
+      tier_note: 'The BEST GLOVES In BG3 COMPLETE - Honor Mode Tier List and Guide - Act 3 (38:34) — B for Honour mode specifically; called absolutely busted for critical-hit warlocks on Tactician or below'
       slot: hands
       note: 'ACT 3 HANDS. Rewarded by Lucretious for Find Dribbles the Clown at the Circus, and pickpocketable. −5 to spell attack rolls for +1d8 damage — excellent precisely because Scorching Ray is an attack roll. MANAGE THEM: cast the first Scorching Ray with the gloves OFF to build Arcane Acuity, then switch them ON once Acuity covers the −5. ⚠ VERIFY ON THE FIRST CAST whether the +1d8 applies per ray or once per spell; the traps section explains why the two readings differ by roughly 27 damage.'
     - id: armour-of-landfall
       item: Armour of Landfall
+      tier: A
+      tier_note: 'ARMOR TIER LIST - Light Armour - Baldur''s Gate 3 Honour Mode Guide - Part 2 (31:23) — +1 save DC, Con save advantage and Plant Growth per short rest; only 13 AC'
       slot: armour
       note: 'CORE armour, sold by Lorroakan''s Projection or Rolan on the ground floor of Sorcerous Sundries. AC 13 + DEX light armour, +1 Spell Save DC, and — the real reason — ADVANTAGE ON CONSTITUTION SAVING THROWS. That advantage is what replaces the Halfling Luck and War Caster this build cannot have, and it is what makes Markoheshkir''s Heat damage safe to carry while concentrating on Twinned Haste. Warlock 1 supplies the Light Armour proficiency, and so does Human Civil Militia. ⚠ Robe of the Weave is the pure-damage alternative (+2 AC and +1 spell attack/DC) but has no Constitution-save advantage, so it loses for a Haste-concentration build.'
     - id: cloak-of-the-weave
       item: Cloak of the Weave
+      tier: S
+      tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (28:30) — best in slot for any caster'
       slot: cloaks
       note: 'ACT 3 CLOAK, sold by Helsik at the Devil''s Fee once her special stock is unlocked. +1 Spell Save DC and +1 spell attack rolls. ⚠ The wiki notes its Absorb Elements ability lacks the passives needed to function; take it for the flat +1/+1, which is what the build actually wants, and value it at that.'
     - id: hellriders-longbow
       item: Hellrider Longbow
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (53:35) — +3 initiative from an unused slot; he would put it in S+ if it existed'
       wiki: Hellrider Longbow
       slot: ranged weapons
       note: 'HIS — the contest with Bonbon is settled by the item itself. Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 to Initiative and advantage on Perception, and it upgrades the Bow of Awareness he has been carrying since Act 1. ⚠ THE DECIDER: it is TWO-HANDED, so Bonbon physically cannot equip it alongside the dual hand crossbows that are her entire Arcane Acuity engine — she has no free ranged slot, and Gale has one he never otherwise uses. He holds it purely as a stat stick and never fires it; on top of the standing Elixir of Vigilance that is +8 initiative without a feat. ⚠ Ferg Drogher sells nothing if Shadowheart is nearby, unless she killed the Nightsong in Act 2.'
     - id: helldusk-boots-gale
-      item: Helldusk Boots (go to Charles)
+      item: Helldusk Boots (Charles)
+      tier: S
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (1:00:13) — the saving throw makes the wearer extremely safe in almost every circumstance'
       slot: feet
       note: 'NOT HIS, and the call is close. Infernal Evasion — spend a reaction to turn a failed saving throw into a success — is the best concentration insurance in the game and Gale holds the party''s most important concentration. Charles wins it because he is the one carrying permanent save DISADVANTAGE from the Risky Ring, and because Gale already has Constitution-save advantage from Armour of Landfall. Recorded so the trade is visible.'
     - id: act3-feet-gale
-      item: Evasive Shoes
+      item: Boot slot
       slot: feet
-      note: 'HIS ACT 3 BOOTS, sold by Mattis at Last Light and carried forward. +1 Armour Class and +1 Acrobatics. ⚠ A modest pick forced by a hard constraint worth knowing: Boots of Persistence and Vital Conduit Boots BOTH require Medium Armour proficiency, which Sorcerer 11 / Warlock 1 never grants, so the two obvious caster boots are illegal on him. With Helldusk Boots going to Charles, +1 AC on the party''s lowest-AC body is the best legal option left.'
+      wiki: false
+      note: 'NO BEST-IN-SLOT LEFT. Boots of Stormy Clamour carried him through Acts 1-2, and the Act 3 boots he would actually want are spoken for — Helldusk Boots go to Charles, who is the one with save disadvantage. Any of these is fine.'
+      options:
+      - id: opt-boots-of-stormy-clamour-a3
+        item: Boots of Stormy Clamour (keep)
+        tier: S
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
+        rank: '#7'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
+        note: 'The honest default. The Reverberation engine still works in Act 3 and nothing below clearly beats it.'
+      - id: opt-evasive-shoes
+        item: Evasive Shoes
+        tier: S
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (46:17) — a lot of parties will simply use them'
+        note: '+1 AC and advantage on Dexterity saving throws — the defensive pick for a caster standing near his own fire.'
+      - id: opt-boots-of-speed-gale
+        item: Boots of Speed
+        tier: A
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (11:29) — bonus-action double move; some party member almost always wants it (captions garble the letter)'
+        rank: '#14'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #14 of 20 — bonus-action Dash gives anyone Rogue-grade mobility'
+        note: 'Doubling movement as a bonus action is never wasted on a caster who wants to leave a melee lane.'
     - id: act3-amulet-gale
       item: Spineshudder Amulet (held over)
+      tier: S
+      tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:42) — busted on multi-hit spells'
       slot: amulets
       note: 'Stays for the whole of Act 3. It is his Reverberation engine and nothing replaces it. ⚠ Amulet of Greater Health goes to Charles: its Constitution-save advantage would be redundant on Gale, who already has that from Armour of Landfall, whereas Charles has the Risky Ring''s disadvantage for it to cancel. ⚠ Amulet of the Devout is not taken by anyone — its Channel Divinity charge is dead on a Paladin, who spends Channel OATH, and looting it from the Stormshore Tabernacle offering chest curses the looter with Castigated By Divinity.'
-    - id: act3-rings-gale
-      item: Callous Glow Ring + Coruscation Ring (held over)
-      slot: rings
-      note: 'The damage pair stays for Act 3, and the reasoning is unchanged: both scale per ray, and they feed each other because Coruscation lights the target that Callous Glow then punishes. Swap Coruscation for the Ring of Mental Inhibition on the turns the plan is Command spam rather than damage.'
+    - id: act3-ring1-gale
+      item: Callous Glow Ring (held over from Act 2)
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (4:45) — the number of uses is absurd once the wearer is lit'
+      slot: ring 1
+      note: 'CARRIED OVER. +2 Radiant on every damage instance against an ILLUMINATED target, which on a multi-ray build is applied 3-7 times a cast.'
+    - id: act3-ring2-gale
+      item: Coruscation Ring (held over from Act 2)
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (6:49) — good even outside Radiating Orb builds, and incredible inside them'
+      slot: ring 2
+      note: 'CARRIED OVER. Inflicts Radiating Orb whenever he deals spell damage while illuminated — the reason he keeps a light source on himself rather than on the target.'
+    - id: act3-head-gale
+      item: Hat of Fire Acuity (held over from Act 2)
+      tier: S
+      tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (28:32) — removes enemies as threats almost instantly with a lot of builds'
+      slot: head
+      bis: true
+      note: 'CARRIED OVER, and it stays to the end. Every instance of Fire damage grants Arcane Acuity, up to +10 spell save DC — on a Fire Sorlock throwing 3-7 fire instances a cast it caps almost immediately, and it is what makes his Command stick.'
     - id: birthright
-      item: Birthright (not taken)
+      item: Birthright (skipped)
+      tier: A
+      tier_note: 'Is EVERY Act 3 Helmet Awesome? - BG3 Helmets Tier List and Guide - Act 3 (4:42) — +2 Charisma is powerful, but narrowly beaten by the other Act 3 options'
       slot: head
       note: 'Would give +2 Charisma to a maximum of 22, but the head slot belongs permanently to the Hat of Fire Acuity and without Acuity the build stops working. ⚠ It does not go to Bonbon either — her head is locked to the Helmet of Arcane Acuity for the same reason, and +2 Charisma is +1 spell save DC against Acuity''s +10. Keep it bagged as an out-of-combat Charisma swap for dialogue checks on whichever of them is the face.'
     progression:
@@ -570,14 +753,24 @@ builds:
       item: 'Amulet: Pearl of Power → Spineshudder Amulet'
       slot: amulets
       note: Act 1 Pearl (Omeluum) for a free slot each rest → Act 2–3 Spineshudder (Mimic in Isobel's bedroom), which applies Reverberation on ranged spell-attack hits and therefore fires 3–7 times per Scorching Ray.
-    - id: prog-rings
-      item: 'Rings: Ring of Protection + Ring of Mind-Shielding → Callous Glow + Coruscation'
+    - id: prog-ring1
+      item: 'Ring 1: Ring of Protection → Callous Glow Ring'
+      slot: ring 1
+      note: Ring of Protection from Mol in Act 1, because he is the party's lowest-AC body → Callous Glow Ring from Act 2, whose +2 radiant applies to every single Scorching Ray ray while he is lit.
+    - id: prog-ring2
+      item: 'Ring 2: Ring of Mind-Shielding → Coruscation Ring'
+      slot: ring 2
+      note: Ring of Mind-Shielding from Omeluum in Act 1 as concentration insurance on the Twinned Haste carrier → Coruscation Ring from Act 2, which pairs with Callous Glow because it lights the target that Callous Glow then punishes.
       slot: rings
       note: Act 1 Protection (Mol) and Mind-Shielding (Omeluum), both pure concentration insurance → Act 2–3 Callous Glow and Coruscation, which feed each other because Coruscation lights the target that Callous Glow then punishes. Ring of Mental Inhibition is the swap for Command-spam fights.
     - id: prog-weapons
-      item: 'Staves: Spellsparkler + Melf''s First Staff → Markoheshkir + Rhapsody'
+      item: 'Main hand: The Spellsparkler → Markoheshkir'
       slot: weapons
-      note: Dual Wielder at character level 4 is what makes either pair legal, since none of these staves are Light. Spellsparkler and Melf's carry Acts 1–2 — the staves tier list rates Melf's S and says it is often best through Act 2 — then Markoheshkir and Rhapsody take over in Act 3, with Staff of Spellpower as the per-fight off-hand swap.
+      note: The Spellsparkler builds Lightning Charges off every separate Scorching Ray instance but carries no enchantment bonus → Markoheshkir from Act 3 is the universal caster best in slot, adding +1 spell save DC and spell attacks, Arcane Battery, and an elemental attunement. Staff of Spellpower is the per-fight swap when a second sixth-level slot matters more.
+    - id: prog-offhand
+      item: 'Off hand: Melf''s First Staff → Rhapsody'
+      slot: weapons
+      note: Dual Wielder at character level 4 is what makes either pair legal, since none of these staves are Light. Melf's First Staff carries Acts 1–2 for its +1 spell save DC and +1 spell attack rolls → Rhapsody takes over in Act 3, where its +3 to everything applies to every ray.
     - id: prog-ranged
       item: 'Ranged: Bow of Awareness → Hellrider Longbow'
       slot: ranged weapons

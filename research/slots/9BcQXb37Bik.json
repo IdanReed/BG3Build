@@ -1,0 +1,178 @@
+{
+  "source": "9BcQXb37Bik",
+  "label": "Elixirs tier list",
+  "slot": "Elixirs",
+  "rated_in": "all",
+  "verdicts_in_transcript": 28,
+  "items": [
+    {
+      "item": "Elixir of Arcane Cultivation",
+      "tier": "C",
+      "at": "6:44",
+      "verdict": "one extra level 1 slot; at best a free Mage Armour or one more low-level combat spell"
+    },
+    {
+      "item": "Greater Elixir of Arcane Cultivation",
+      "tier": "C",
+      "at": "8:19",
+      "verdict": "a level 2 slot is clearly better but still too minor a benefit to leave C"
+    },
+    {
+      "item": "Superior Elixir of Arcane Cultivation",
+      "tier": "B",
+      "at": "9:51",
+      "verdict": "a level 3 slot usually buys the party one more fight that day"
+    },
+    {
+      "item": "Supreme Elixir of Arcane Cultivation",
+      "tier": "A",
+      "at": "11:54",
+      "verdict": "level 4 slot, bought from merchants at level 9; cast a day-long buff then swap"
+    },
+    {
+      "item": "Elixir of Barkskin",
+      "tier": "C",
+      "at": "14:29",
+      "verdict": "only sets AC to 16; worth a look on wild-shaping druids, who still have better options"
+    },
+    {
+      "item": "Elixir of Battlemage's Power",
+      "tier": "S",
+      "at": "17:34",
+      "verdict": "rated S+ ABOVE THE SCALE: permanent 3 Arcane Acuity, i.e. +3 spell save DC all day"
+    },
+    {
+      "item": "Elixir of Bloodlust",
+      "tier": "S",
+      "at": "22:44",
+      "verdict": "extra action per kill; on Honour that action gets no Extra Attack, on Tactician or below it does"
+    },
+    {
+      "item": "Elixir of the Colossus",
+      "tier": "A",
+      "at": "25:20",
+      "verdict": "+1d4 damage per attack plus battlefield space; overlooked, but trails bloodlust"
+    },
+    {
+      "item": "Elixir of Darkvision",
+      "tier": "C",
+      "at": "25:50",
+      "verdict": "darkvision is useless in this game; bottom of C, and would be D if the list had one"
+    },
+    {
+      "item": "Elixir of Hill Giant Strength",
+      "tier": "S",
+      "at": "30:26",
+      "verdict": "sets Strength to 21; S used normally, and S+ ABOVE THE SCALE if drunk daily to skip strength investment"
+    },
+    {
+      "item": "Elixir of Cloud Giant Strength",
+      "tier": "S",
+      "at": "32:28",
+      "verdict": "sets Strength to 27; S used normally, S+ ABOVE THE SCALE if drunk daily; also enormous jump distance"
+    },
+    {
+      "item": "Elixir of Guileful Movement",
+      "tier": "B",
+      "at": "40:12",
+      "verdict": "day-long freedom of movement; solid defensive package, but offence beats defence"
+    },
+    {
+      "item": "Elixir of Heroism",
+      "tier": "A",
+      "at": "41:48",
+      "verdict": "day-long bless that stacks with the real spell; very top of A, nearly S"
+    },
+    {
+      "item": "Elixir of Peerless Focus",
+      "tier": "B",
+      "at": "44:24",
+      "verdict": "advantage on concentration saves like War Caster; high B, but easy to get elsewhere"
+    },
+    {
+      "item": "Elixir of Acid Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Cold Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Fire Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Force Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Lightning Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Necrotic Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Poison Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Psychic Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Radiant Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of Thunder Resistance",
+      "tier": "B",
+      "at": "49:05",
+      "verdict": "all 10 resistance elixirs rated as one entry; fight-winning if you know the damage type in advance"
+    },
+    {
+      "item": "Elixir of See Invisibility",
+      "tier": "C",
+      "at": "50:08",
+      "verdict": "weak effect keyed to your item save DC; better sold to merchants"
+    },
+    {
+      "item": "Tadpole Elixir",
+      "tier": "F",
+      "at": "53:17",
+      "verdict": "advantage on attacks but disadvantage on Con, Wis and Int saves; take heroism or bloodlust instead"
+    },
+    {
+      "item": "Elixir of Viciousness",
+      "tier": "A",
+      "at": "56:58",
+      "verdict": "crit threshold down by one; minor for most, but crit-focused builds want it over the generic elixirs"
+    },
+    {
+      "item": "Elixir of Vigilance",
+      "tier": "S",
+      "at": "57:59",
+      "verdict": "rated S+ ABOVE THE SCALE: a free Alert feat, and +5 on a d4 initiative roll means going first"
+    }
+  ],
+  "unassigned": []
+}

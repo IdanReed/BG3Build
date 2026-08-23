@@ -1,0 +1,184 @@
+{
+  "source": "_yHOS55NOjY",
+  "label": "Gloves tier list, Act 3",
+  "slot": "Hands",
+  "rated_in": "act3",
+  "verdicts_in_transcript": 29,
+  "items": [
+    {
+      "item": "Gloves of the Growling Underdog",
+      "tier": "A",
+      "at": "0:30",
+      "verdict": "REVISION of the part-one B rating for this Act 1 item; situational advantage suits most fighters"
+    },
+    {
+      "item": "Bhaalist Gloves",
+      "tier": "C",
+      "at": "3:36",
+      "verdict": "garrotte costs your whole action on a DC 14 save and concentration; +1 attack is weak"
+    },
+    {
+      "item": "Blackguard's Gauntlets",
+      "tier": "D",
+      "at": "5:42",
+      "verdict": "once-daily inflict wounds is less damage than attacking; the two bonuses fight each other"
+    },
+    {
+      "item": "Bonespike Gloves",
+      "tier": "B",
+      "at": "6:45",
+      "verdict": "ignore physical resistance; a back-pocket swap for the many act three resistant enemies"
+    },
+    {
+      "item": "Cerebral Citadel Gloves",
+      "tier": "D",
+      "at": "8:51",
+      "verdict": "bless on charm or fear is situational and you have better bless sources by act three"
+    },
+    {
+      "item": "Craterflesh Gloves",
+      "tier": "A",
+      "at": "9:52",
+      "verdict": "2d6 force on crits and works on spell attacks; built for crit-focused warlocks"
+    },
+    {
+      "item": "Dark Displacement Gloves",
+      "tier": "A",
+      "at": "12:27",
+      "verdict": "position swap on thrown hits enables wild strategies but is risky for dedicated throwers"
+    },
+    {
+      "item": "Gauntlet of the Tyrant",
+      "tier": "S",
+      "at": "14:30",
+      "verdict": "+1 spell save DC plus free level-three command; best endgame gloves for control casters"
+    },
+    {
+      "item": "Gauntlets of Hill Giant Strength",
+      "tier": "A",
+      "at": "17:06",
+      "verdict": "excellent on a non-elixir run, but the cloud giant elixir does it better in a cheaper slot"
+    },
+    {
+      "item": "Gauntlets of the Warmaster",
+      "tier": "B",
+      "at": "19:13",
+      "verdict": "disadvantage on maneuver saves serves only a battlemaster with strong weapon actions"
+    },
+    {
+      "item": "Gemini Gloves",
+      "tier": "C",
+      "at": "20:49",
+      "verdict": "extra cantrip target once per short rest; only worth it for a dedicated cantrip build"
+    },
+    {
+      "item": "Gloves of Soul Catching",
+      "tier": "S",
+      "at": "22:25",
+      "verdict": "endgame monk gloves; +1d10 force, near-permanent advantage or healing, and +2 Constitution"
+    },
+    {
+      "item": "Helldusk Gloves",
+      "tier": "S",
+      "at": "24:29",
+      "verdict": "best in slot for almost anyone; +1d6 damage, +1 attack rolls and +1 spell save DC"
+    },
+    {
+      "item": "Knock Knuckle Gloves",
+      "tier": "C",
+      "at": "25:00",
+      "verdict": "saves a knock scroll for a party with no sleight of hand character; little else"
+    },
+    {
+      "item": "Legacy of the Masters",
+      "tier": "S",
+      "at": "26:01",
+      "verdict": "+2 attack and damage on melee and ranged; arrives earlier than the Helldusk Gloves"
+    },
+    {
+      "item": "Martial Exertion Gloves",
+      "tier": "A",
+      "at": "29:08",
+      "verdict": "extra attack per short rest for 6d6 self-damage; superb with volley or cleave (HONOUR MODE GRANTS ONLY ONE EXTRA ATTACK)"
+    },
+    {
+      "item": "Nimblefinger Gloves",
+      "tier": "A",
+      "at": "31:44",
+      "verdict": "up to +2 Dexterity, uncapped, but ONLY FOR GNOMES, HALFLINGS AND DWARVES OR VIA DISGUISE SELF"
+    },
+    {
+      "item": "Quickspell Gloves",
+      "tier": "C",
+      "at": "32:50",
+      "verdict": "bonus-action cantrip only really helps an abjuration wizard re-upping blade ward"
+    },
+    {
+      "item": "Seraphic Pugilist Gloves",
+      "tier": "B",
+      "at": "34:25",
+      "verdict": "+1d4 radiant unarmed; enables the niche radiant orb open-hand monk build"
+    },
+    {
+      "item": "Servitor of the Black Hand Gloves",
+      "tier": "A",
+      "at": "35:28",
+      "verdict": "best of the +1d4 unarmed damage gloves since force is the best generic damage type"
+    },
+    {
+      "item": "Snow-Dusted Monastery Gloves",
+      "tier": "B",
+      "at": "36:30",
+      "verdict": "+1d4 cold unarmed with wet and Snowburst Ring synergy; otherwise outclassed endgame"
+    },
+    {
+      "item": "Spellmight Gloves",
+      "tier": "B",
+      "at": "38:34",
+      "verdict": "B FOR HONOUR MODE ONLY; ABSOLUTELY S TIER ON TACTICIAN OR BELOW, where it fires per beam"
+    },
+    {
+      "item": "Spellseeking Gloves",
+      "tier": "D",
+      "at": "41:11",
+      "verdict": "advantage on spell attacks costs far too many sorcery points; avoid entirely"
+    },
+    {
+      "item": "Stalker Gloves",
+      "tier": "B",
+      "at": "42:42",
+      "verdict": "+1 initiative and sneak attack damage; a big DPS sacrifice unless a slow character needs initiative"
+    },
+    {
+      "item": "The Reviving Hands",
+      "tier": "S",
+      "at": "44:47",
+      "verdict": "Hellrider's Pride effect that still works on self-healing, so blade ward can be permanent"
+    },
+    {
+      "item": "Thunderpalm Strikers",
+      "tier": "C",
+      "at": "45:50",
+      "verdict": "thunder unarmed damage cannot pair with Gloves of Belligerent Skies, killing the reverberation monk"
+    },
+    {
+      "item": "Unlucky Thief's Gloves",
+      "tier": "B",
+      "at": "47:25",
+      "verdict": "biggest sleight of hand bonus on any gloves; swap in for the hardest locks"
+    },
+    {
+      "item": "Unwanted Masterwork Gauntlets",
+      "tier": "D",
+      "at": "48:25",
+      "verdict": "+1 attack rolls is duplicated far better elsewhere; will never see play"
+    },
+    {
+      "item": "Winkling Gloves",
+      "tier": "B",
+      "at": "48:56",
+      "verdict": "same as Unwanted Masterwork plus sleight of hand; caption says B though he calls them never-played"
+    }
+  ],
+  "unassigned": []
+}

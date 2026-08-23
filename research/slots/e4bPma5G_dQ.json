@@ -1,0 +1,124 @@
+{
+  "source": "e4bPma5G_dQ",
+  "label": "Gloves tier list, Act 2",
+  "slot": "Hands",
+  "rated_in": "act2",
+  "verdicts_in_transcript": 19,
+  "items": [
+    {
+      "item": "Braindrain Gloves",
+      "tier": "B",
+      "at": "3:09",
+      "verdict": "poor man's Arcane Acuity via psychic damage; most such characters prefer other gloves"
+    },
+    {
+      "item": "Cindersnap Gloves",
+      "tier": "C",
+      "at": "5:12",
+      "verdict": "protection from missiles once per short rest; purely defensive band-aid for archer fights"
+    },
+    {
+      "item": "Dark Justiciar Gauntlets (Uncommon)",
+      "tier": "S",
+      "at": "8:50",
+      "verdict": "+1d4 necrotic on every weapon attack; held back only by act-two necrotic resistances"
+    },
+    {
+      "item": "Dark Justiciar Gauntlets (Rare)",
+      "tier": "S",
+      "at": "9:52",
+      "verdict": "upgrade on an S tier item adding free Beckoning Darkness; REQUIRES A SPECIFIC STORY CHOICE"
+    },
+    {
+      "item": "Flawed Helldusk Gloves",
+      "tier": "S",
+      "at": "11:57",
+      "verdict": "+1d4 fire on weapon and necrotic on unarmed attacks; almost no party cannot use them"
+    },
+    {
+      "item": "Gauntlets of Surging Accuracy",
+      "tier": "B",
+      "at": "15:04",
+      "verdict": "+1d4 to hit only on action surge turns, which rarely need the help"
+    },
+    {
+      "item": "Gloves of the Automaton",
+      "tier": "S",
+      "at": "17:10",
+      "verdict": "ten turns of advantage per short rest as a bonus action; effectively free permanent advantage"
+    },
+    {
+      "item": "Gloves of Battlemage's Power",
+      "tier": "D",
+      "at": "18:12",
+      "verdict": "D ONLY BECAUSE BUGGED: the Arcane Acuity effect does not function; he says A tier if it worked"
+    },
+    {
+      "item": "Gloves of Crushing",
+      "tier": "C",
+      "at": "19:14",
+      "verdict": "raw unarmed stat bonus slightly worse than the many other monk gloves available by now"
+    },
+    {
+      "item": "Gloves of the Balanced Hands",
+      "tier": "A",
+      "at": "21:20",
+      "verdict": "two-weapon fighting style; best in slot for a single-class thief rogue dual-wielding"
+    },
+    {
+      "item": "Gloves of The Duellist",
+      "tier": "B",
+      "at": "23:26",
+      "verdict": "+2 melee hit is real but outdone by the Automaton's advantage or flat damage gloves"
+    },
+    {
+      "item": "Ichorous Gloves",
+      "tier": "D",
+      "at": "24:57",
+      "verdict": "needs regular acid damage and a save enemies pass, for a trivial payoff"
+    },
+    {
+      "item": "Hr'a'cknir Bracers",
+      "tier": "A",
+      "at": "27:05",
+      "verdict": "free telekinesis and quickened mage hand per short rest; great creative and utility options"
+    },
+    {
+      "item": "Jhannyl's Gloves",
+      "tier": "C",
+      "at": "29:41",
+      "verdict": "+1 saves and one lesser restoration; too defensive for so valuable a slot"
+    },
+    {
+      "item": "Luminous Gloves",
+      "tier": "S",
+      "at": "31:14",
+      "verdict": "two radiating orb stacks per radiant hit; core to the broken radiating orb strategy"
+    },
+    {
+      "item": "Poisoner's Gloves",
+      "tier": "C",
+      "at": "32:47",
+      "verdict": "begrudging rating; poisoner set costs many slots and act two enemies resist poison"
+    },
+    {
+      "item": "Raven Gloves",
+      "tier": "D",
+      "at": "33:49",
+      "verdict": "find familiar once per short rest wastes a critical slot on a first-level spell"
+    },
+    {
+      "item": "Swordmaster Gloves",
+      "tier": "C",
+      "at": "35:23",
+      "verdict": "sword proficiency and +1 melee hit; most characters already have both, better elsewhere"
+    },
+    {
+      "item": "Thermoarcanic Gloves",
+      "tier": "C",
+      "at": "38:26",
+      "verdict": "heat stacking boosts AoE late in a fight, which is not when you need it"
+    }
+  ],
+  "unassigned": []
+}

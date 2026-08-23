@@ -1,0 +1,129 @@
+{
+ "source": "jeSeVkmqmuc",
+ "label": "Stabbing weapons tier list, part 1",
+ "slot": "Melee Weapons",
+ "rated_in": "all",
+ "verdicts_in_transcript": 16,
+ "items": [
+  {
+   "item": "Dagger",
+   "tier": "B",
+   "at": "6:09",
+   "act": "act1",
+   "verdict": "worst base damage, but stockpile non-magical ones for throwers lacking a returning weapon"
+  },
+  {
+   "item": "Scimitar",
+   "tier": "D",
+   "at": "8:41",
+   "act": "act1",
+   "verdict": "identical to the shortsword but trades piercing strike for the weaker lacerate"
+  },
+  {
+   "item": "Shortsword",
+   "tier": "A",
+   "at": "9:13",
+   "act": "act1",
+   "verdict": "best non-magical light finesse weapon; you dual-wield two before magic ones appear"
+  },
+  {
+   "item": "Dagger +1",
+   "tier": "C",
+   "at": "10:46",
+   "act": "act1",
+   "verdict": "only useful if merchant rolls left you without a +1 shortsword or scimitar"
+  },
+  {
+   "item": "Scimitar +1",
+   "tier": "A",
+   "at": "10:46",
+   "act": "act1",
+   "verdict": "basically identical to the +1 shortsword; buy whichever a merchant rolls first"
+  },
+  {
+   "item": "Adamantine Scimitar",
+   "tier": "D",
+   "at": "13:51",
+   "act": "act1",
+   "verdict": "barely better than a +1 scimitar; the mould is far better spent on armour"
+  },
+  {
+   "item": "Assassin's Touch",
+   "tier": "C",
+   "at": "15:23",
+   "act": "act1",
+   "verdict": "guaranteed early +1 dagger, but extra necrotic on sleeping enemies is nearly irrelevant"
+  },
+  {
+   "item": "Hunter's Dagger",
+   "tier": "A",
+   "at": "17:59",
+   "act": "act1",
+   "verdict": "BUGGED to apply ruptured on every hit, pass or fail; fun condition alternative"
+  },
+  {
+   "item": "Knife of the Undermountain King",
+   "tier": "S",
+   "at": "21:07",
+   "act": "act1",
+   "verdict": "+2 shortsword; wider crit range, damage-dice rerolls, advantage in darkness; stat stick for anyone"
+  },
+  {
+   "item": "Ritual Dagger",
+   "tier": "C",
+   "at": "23:42",
+   "act": "act1",
+   "verdict": "one turn of bless conflicts with the party's other bless sources and costs enhancement"
+  },
+  {
+   "item": "Shortsword of First Blood",
+   "tier": "S",
+   "at": "26:19",
+   "act": "act1",
+   "verdict": "extra d8 versus full-health targets, doubled on crits; huge for assassins and fast characters"
+  },
+  {
+   "item": "Speedy Reply",
+   "tier": "B",
+   "at": "27:52",
+   "act": "act1",
+   "verdict": "momentum arrives only after you have already closed; quickly replaced by +1 weapons"
+  },
+  {
+   "item": "Steelforged Sword",
+   "tier": "B",
+   "at": "28:24",
+   "act": "act1",
+   "verdict": "an ordinary +1 shortsword, but GUARANTEED IN THE BLIGHTED VILLAGE instead of a merchant roll"
+  },
+  {
+   "item": "Sussur Dagger",
+   "tier": "A",
+   "at": "30:58",
+   "act": "act1",
+   "verdict": "silence shuts down casters and honour-mode legendary actions; A not S because encounter-specific swap"
+  },
+  {
+   "item": "The Baneful",
+   "tier": "A",
+   "at": "33:33",
+   "act": "act1",
+   "verdict": "always +1; becomes a +2 bane-applying blade when bound as a pact or bound weapon"
+  },
+  {
+   "item": "Worgfang",
+   "tier": "B",
+   "at": "36:39",
+   "act": "act1",
+   "verdict": "goblins attack the wielder at disadvantage; underrated off-hand for squishy characters in goblin fights"
+  }
+ ],
+ "unassigned": [
+  {
+   "at": "11:16",
+   "tier": null,
+   "why": "Shortsword +1 is discussed and called the best of the three +1 versions, but NO LETTER IS EVER SPOKEN for it; the neighbouring A tier belongs to Scimitar +1. Not a stray verdict, so it is excluded from verdicts_in_transcript."
+  }
+ ],
+ "count_note": "Off by +1: Shortsword +1 is discussed at 11:16 and called the best of the three +1 versions, but no letter is ever spoken for it."
+}

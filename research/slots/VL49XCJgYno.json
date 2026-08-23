@@ -1,0 +1,136 @@
+{
+  "source": "VL49XCJgYno",
+  "label": "Grenades tier list",
+  "slot": "Potions & Oils",
+  "rated_in": "all",
+  "verdicts_in_transcript": 21,
+  "items": [
+    {
+      "item": "Acid Vial",
+      "tier": "B",
+      "at": "6:40",
+      "verdict": "acid surface gives -2 enemy AC with no save; the 2d6 rarely lands on a DC 13 Dex save"
+    },
+    {
+      "item": "Alchemist's Fire",
+      "tier": "A",
+      "at": "8:45",
+      "verdict": "about 3d4 fire with no save at all; kills the low-HP crowds of the early game"
+    },
+    {
+      "item": "Caustic Bulb",
+      "tier": "C",
+      "at": "10:49",
+      "verdict": "1d4 per turn surface and nothing else; a strictly worse Alchemist's Fire"
+    },
+    {
+      "item": "Grease Bottle",
+      "tier": "A",
+      "at": "13:26",
+      "verdict": "the grease spell for a consumable; one prone enemy already trades your action for theirs"
+    },
+    {
+      "item": "Hearthlight Bomb",
+      "tier": "D",
+      "at": "15:30",
+      "verdict": "Dancing Lights without concentration; a torch or the Light cantrip does the job"
+    },
+    {
+      "item": "Holy Water",
+      "tier": "C",
+      "at": "18:37",
+      "verdict": "3d6 radiant to fiends and undead only, and outpaced by the time you meet them"
+    },
+    {
+      "item": "Oil Flask",
+      "tier": "D",
+      "at": "19:38",
+      "verdict": "an inert surface that only matters if you set it alight; Act 3 arrival makes it pointless"
+    },
+    {
+      "item": "Scrap and Shrapnel Grenade",
+      "tier": "B",
+      "at": "22:44",
+      "verdict": "rated jointly with Spiked Bulb; fireball-sized no-save bleed, so disadvantage on enemy Con saves"
+    },
+    {
+      "item": "Spiked Bulb",
+      "tier": "B",
+      "at": "22:44",
+      "verdict": "a functional reprint of the Scrap and Shrapnel Grenade, rated with it and available from the start"
+    },
+    {
+      "item": "Smokepowder Bomb",
+      "tier": "S",
+      "at": "27:23",
+      "verdict": "about 16 reliable force damage in a fireball radius, buyable in early Act 1; also detonates repeatedly when damaged"
+    },
+    {
+      "item": "Void Bulb",
+      "tier": "A",
+      "at": "31:03",
+      "verdict": "DC 18 Strength save to resist a 20 ft pull; groups enemies for real AoE damage"
+    },
+    {
+      "item": "Cup of Water",
+      "tier": "S",
+      "at": "34:38",
+      "verdict": "all thrown water containers rated as one entry; wet doubles cold and lightning damage and makes ice surfaces"
+    },
+    {
+      "item": "Jug of Water",
+      "tier": "S",
+      "at": "34:38",
+      "verdict": "all thrown water containers rated as one entry; wet doubles cold and lightning damage and makes ice surfaces"
+    },
+    {
+      "item": "Web Grenade",
+      "tier": "A",
+      "at": "36:12",
+      "verdict": "plays out identically to the Grease Bottle; low DC but webbed is a strong condition"
+    },
+    {
+      "item": "Fungal Bamboozler",
+      "tier": "C",
+      "at": "38:17",
+      "verdict": "a stun in effect, but a DC 10 Con save that enemies almost never fail without heavy setup"
+    },
+    {
+      "item": "Haste Spore Grenade",
+      "tier": "S",
+      "at": "40:52",
+      "verdict": "AoE haste with no lethargy; action-neutral at your own feet, and stacks with Terazul"
+    },
+    {
+      "item": "Haste Spore Flask",
+      "tier": "S",
+      "at": "42:25",
+      "verdict": "the haste spore grenade with a bigger, permanent cloud; UNIQUE QUEST REWARD, not covered as a normal grenade"
+    },
+    {
+      "item": "Noxious Spore Grenade",
+      "tier": "C",
+      "at": "44:28",
+      "verdict": "1d4 to 3d4 poison per turn in a small radius; the only grenade using your own save DC"
+    },
+    {
+      "item": "Sanguine Explosive",
+      "tier": "S",
+      "at": "47:34",
+      "verdict": "better than fireball in twice the radius; LOCKED BEHIND ACT 2 AND ACT 3 STORY CHOICES, two purchasable per day"
+    },
+    {
+      "item": "Flashblinder",
+      "tier": "S",
+      "at": "49:40",
+      "verdict": "no-save stun on Steel Watchers only, 2 turns on Tactician or below and 1 on Honour; wins those fights"
+    },
+    {
+      "item": "Potion of Sleep",
+      "tier": "D",
+      "at": "51:47",
+      "verdict": "a grenade, not a potion; tiny radius, DC 11 Con save, and allies wake the sleeper as a bonus action"
+    }
+  ],
+  "unassigned": []
+}

@@ -1,0 +1,207 @@
+{
+ "source": "hhbxLbwDenw",
+ "label": "Versatile weapons tier list, Acts 2-3",
+ "slot": "Melee Weapons",
+ "rated_in": "act2",
+ "verdicts_in_transcript": 31,
+ "note": "Part 2 skips the tier-scale definition (given in part 1), so all 31 dumped '<letter> tier' passages are candidates. 20 are the first statement of a rating and become the item rows; the other 11 are in `unassigned` -- 9 immediate restatements or qualifiers of a rating already recorded, and 2 that are not ratings. The `act` field says which half of the video an item came from; `rated_in` is act2 for the file as a whole.",
+ "items": [
+  {
+   "item": "Azer Warhammer",
+   "act": "act2",
+   "tier": "A",
+   "at": "3:37",
+   "verdict": "at-will bonus-action 2d10 fire AoE, no enhancement bonus; OBTAINABLE ONLY THROUGH AN EXPLOIT"
+  },
+  {
+   "item": "Blade of Oppressed Souls",
+   "act": "act2",
+   "tier": "B",
+   "at": "7:14",
+   "verdict": "+1 longsword with a Crown of Madness action; fun but situational, and low B at that"
+  },
+  {
+   "item": "Charge-Bound Warhammer",
+   "act": "act2",
+   "tier": "S",
+   "at": "8:17",
+   "verdict": "becomes +2 with 1d6 lightning ONLY IF BOUND by a pact-of-the-blade warlock or eldritch knight"
+  },
+  {
+   "item": "Cruel Sting",
+   "act": "act2",
+   "tier": "C",
+   "at": "11:25",
+   "verdict": "a once-per-short-rest Ensnaring Strands plus a drow-only poison rider; both weak by Act 2"
+  },
+  {
+   "item": "Ketheric's Warhammer",
+   "act": "act2",
+   "tier": "D",
+   "at": "12:27",
+   "verdict": "plain +1 warhammer with 1d4 psychic; the Blade of Oppressed Souls nearby is strictly better"
+  },
+  {
+   "item": "Thermodynamo Axe",
+   "act": "act2",
+   "tier": "B",
+   "at": "15:04",
+   "verdict": "generates heat stacks; only worth it for an off-meta heat-convergence AoE build"
+  },
+  {
+   "item": "Longsword +2",
+   "act": "act2",
+   "tier": "D",
+   "at": "15:34",
+   "verdict": "a generic +2 weapon; by this point far better options exist"
+  },
+  {
+   "item": "Blackguard's Sword",
+   "act": "act3",
+   "tier": "B",
+   "at": "17:42",
+   "verdict": "+2 longsword that dazes on Smite hits, but the DC 13 save is unreliable"
+  },
+  {
+   "item": "Clown Hammer",
+   "act": "act3",
+   "tier": "A",
+   "at": "21:22",
+   "verdict": "stuns on every crit via Hideous Laughter; needs clown face paint for immunity, great on GOO warlocks"
+  },
+  {
+   "item": "Duke Ravengard's Longsword",
+   "act": "act3",
+   "tier": "A",
+   "at": "24:27",
+   "verdict": "+2 Charisma is worth the weapon slot by itself; the rest of it does nothing"
+  },
+  {
+   "item": "Dwarven Thrower",
+   "act": "act3",
+   "tier": "S",
+   "at": "27:00",
+   "verdict": "best single-target throwing damage in the game, but ONLY AS A DWARF OR DISGUISED AS ONE"
+  },
+  {
+   "item": "Hammer of the Just",
+   "act": "act3",
+   "tier": "A",
+   "at": "29:08",
+   "verdict": "+2 warhammer with radiant damage and bonus damage to fiends and undead; strong for radiating orb"
+  },
+  {
+   "item": "Katana",
+   "act": "act3",
+   "tier": "D",
+   "at": "29:39",
+   "verdict": "an Easter-egg reskin of a +1 longsword, found in Act 3"
+  },
+  {
+   "item": "Nyrulna",
+   "act": "act3",
+   "tier": "S",
+   "at": "33:14",
+   "verdict": "+3 trident with thunder AoE, mobility and spells; a contender for best weapon in the game"
+  },
+  {
+   "item": "Orphic Hammer",
+   "act": "act3",
+   "tier": "A",
+   "at": "34:48",
+   "verdict": "+3 warhammer that unstuns allies at will; defensive, so it costs you damage"
+  },
+  {
+   "item": "Sword of the Emperor",
+   "act": "act3",
+   "tier": "B",
+   "at": "36:53",
+   "verdict": "+2 to saves against spells and bonus damage to shapeshifters; purely defensive in a weapon slot"
+  },
+  {
+   "item": "Trident of the Depths",
+   "act": "act3",
+   "tier": "S",
+   "at": "39:29",
+   "verdict": "+3 trident, at-will chilling strike; huge without Extra Attack; OBTAINABLE ONLY THROUGH AN EXPLOIT"
+  },
+  {
+   "item": "Trident of the Waves",
+   "act": "act3",
+   "tier": "B",
+   "at": "42:04",
+   "verdict": "applies wet on hit but not when thrown; niche and low-damage, called low B on balance"
+  },
+  {
+   "item": "Vicious Battleaxe",
+   "act": "act3",
+   "tier": "B",
+   "at": "45:41",
+   "verdict": "+7 damage on any crit, even with other weapons; wants a dual-wielding crit archer"
+  },
+  {
+   "item": "Voss' Silver Sword",
+   "act": "act3",
+   "tier": "A",
+   "at": "47:46",
+   "verdict": "still a fine archer's stat stick against githyanki, aberrations, fiends and elementals; much better acquired in Act 1"
+  }
+ ],
+ "unassigned": [
+  {
+   "at": "4:07",
+   "tier": "A",
+   "why": "restatement of the Azer Warhammer verdict at 3:37"
+  },
+  {
+   "at": "7:14",
+   "tier": "B",
+   "why": "qualifier on the Blade of Oppressed Souls verdict ('lower end of B tier')"
+  },
+  {
+   "at": "7:14",
+   "tier": "B",
+   "why": "second restatement of the Blade of Oppressed Souls verdict"
+  },
+  {
+   "at": "15:04",
+   "tier": "B",
+   "why": "restatement of the Thermodynamo Axe verdict"
+  },
+  {
+   "at": "18:14",
+   "tier": "B",
+   "why": "restatement of the Blackguard's Sword verdict at 17:42"
+  },
+  {
+   "at": "21:22",
+   "tier": "A",
+   "why": "restatement of the Clown Hammer verdict (spoken across 21:22-21:54)"
+  },
+  {
+   "at": "40:30",
+   "tier": "S",
+   "why": "restatement of the Trident of the Depths verdict at 39:29"
+  },
+  {
+   "at": "42:35",
+   "tier": "B",
+   "why": "restatement of the Trident of the Waves verdict at 42:04"
+  },
+  {
+   "at": "46:12",
+   "tier": "A",
+   "why": "hypothetical only: he invites comments that would justify bumping the Vicious Battleaxe from B to A, and does not move it"
+  },
+  {
+   "at": "48:18",
+   "tier": "A",
+   "why": "restatement of the Act 3 Voss' Silver Sword verdict at 47:46"
+  },
+  {
+   "at": "49:20",
+   "tier": "B",
+   "why": "wrap-up remark that B tier for versatile weapons is deep; not a rating"
+  }
+ ]
+}

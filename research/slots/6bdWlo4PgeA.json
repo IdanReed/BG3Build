@@ -1,0 +1,157 @@
+{
+ "source": "6bdWlo4PgeA",
+ "label": "Versatile weapons tier list, Act 1",
+ "slot": "Melee Weapons",
+ "rated_in": "act1",
+ "verdicts_in_transcript": 20,
+ "note": "The dump finds 26 '<letter> tier' passages; the first 6 (1:02-1:33) are the tier-scale definition and are dropped. Item rows outnumber verdicts because three verdicts each cover several weapons (the three +1 weapons at 15:35, the three ceremonial weapons at 18:13, both Githyanki longswords at 20:49) and because the Warhammer +1 is revised at 38:02 from D to C, so its D verdict adds no separate row.",
+ "items": [
+  {
+   "item": "Longsword",
+   "tier": "C",
+   "at": "8:19",
+   "verdict": "great weapon actions and action economy, but non-magical; a fighter's starting weapon"
+  },
+  {
+   "item": "Trident",
+   "tier": "C",
+   "at": "11:28",
+   "verdict": "disarming strike is powerful in early fights, and it can be thrown; non-magical"
+  },
+  {
+   "item": "Warhammer",
+   "tier": "C",
+   "at": "14:02",
+   "verdict": "best chassis of the four thanks to daze, disadvantage and prone actions; non-magical"
+  },
+  {
+   "item": "Trident +1",
+   "tier": "A",
+   "at": "15:04",
+   "verdict": "worth collecting for thrown attacks plus the disarming strike weapon action"
+  },
+  {
+   "item": "Battleaxe +1",
+   "tier": "D",
+   "at": "15:35",
+   "verdict": "outclassed by a +1 Morningstar one-handed and by great weapons two-handed"
+  },
+  {
+   "item": "Longsword +1",
+   "tier": "D",
+   "at": "15:35",
+   "verdict": "outclassed by a +1 Morningstar one-handed and by great weapons two-handed"
+  },
+  {
+   "item": "Warhammer +1",
+   "tier": "C",
+   "at": "38:02",
+   "verdict": "revised up from D at the end: best of the three +1s and buyable from an early merchant"
+  },
+  {
+   "item": "Adamantine Longsword",
+   "tier": "D",
+   "at": "17:40",
+   "verdict": "costs an Adamantine shield or armour, and the Adamantine scimitar or sickle does the same job better"
+  },
+  {
+   "item": "Ceremonial Battleaxe",
+   "tier": "D",
+   "at": "18:13",
+   "verdict": "a late Act 1 story-puzzle item; otherwise a plain +1 weapon you have outgrown"
+  },
+  {
+   "item": "Ceremonial Longsword",
+   "tier": "D",
+   "at": "18:13",
+   "verdict": "a late Act 1 story-puzzle item; otherwise a plain +1 weapon you have outgrown"
+  },
+  {
+   "item": "Ceremonial Warhammer",
+   "tier": "D",
+   "at": "18:13",
+   "verdict": "a late Act 1 story-puzzle item; otherwise a plain +1 weapon you have outgrown"
+  },
+  {
+   "item": "Faithbreaker",
+   "tier": "A",
+   "at": "20:18",
+   "verdict": "four weapon actions including a damaging push; best early one-hander for a shield user"
+  },
+  {
+   "item": "Githyanki Longsword",
+   "tier": "D",
+   "at": "20:49",
+   "verdict": "shows up only after you already have the ordinary equivalent"
+  },
+  {
+   "item": "Githyanki Longsword (+1)",
+   "tier": "D",
+   "at": "20:49",
+   "verdict": "rated together with the non-magical version; arrives after you already have a +1 longsword"
+  },
+  {
+   "item": "Intransigent Warhammer",
+   "tier": "A",
+   "at": "24:25",
+   "verdict": "AoE prone on crit or kill; superb for a great old one pact-of-the-blade warlock despite no enhancement bonus"
+  },
+  {
+   "item": "Larethian's Wrath",
+   "tier": "S",
+   "at": "26:30",
+   "verdict": "+1 finesse longsword with a wide cone attack that still deals half damage on a miss"
+  },
+  {
+   "item": "Phalar Aluve",
+   "tier": "S",
+   "at": "30:10",
+   "verdict": "Sing stacks with Bless; Shriek adds enormous damage but is BUGGED; no proficiency needed to activate either"
+  },
+  {
+   "item": "The Sparky Points",
+   "tier": "C",
+   "at": "31:44",
+   "verdict": "lightning charges on hit, but the quest choice costs you the Spellsparkler"
+  },
+  {
+   "item": "Voss' Silver Sword",
+   "tier": "S",
+   "at": "34:22",
+   "verdict": "+2 longsword, psychic rider and +1d4 against half the game's enemies; ACT 1 ONLY VIA AN UNUSUAL STORY CHOICE"
+  },
+  {
+   "item": "Witchbreaker",
+   "tier": "B",
+   "at": "36:30",
+   "verdict": "advantage against concentrating enemies plus a silence action; useful in only some encounters"
+  }
+ ],
+ "unassigned": [
+  {
+   "at": "5:41",
+   "tier": null,
+   "why": "the base Battleaxe: the captions drop the letter ('we're going to put these in tier'), so no rating is recorded and this is not one of the 20 counted verdicts"
+  },
+  {
+   "at": "18:13",
+   "tier": "D",
+   "why": "back-reference to the +1 weapons already rated at 15:35 ('I put their counterparts in D tier'), not a new verdict"
+  },
+  {
+   "at": "24:56",
+   "tier": "A",
+   "why": "restatement of the Intransigent Warhammer verdict at 24:25"
+  },
+  {
+   "at": "37:31",
+   "tier": "S",
+   "why": "wrap-up phrase 'you're going to be using the S tier weapons', not a rating"
+  },
+  {
+   "at": "38:33",
+   "tier": "C",
+   "why": "restatement of the Warhammer +1 revision at 38:02"
+  }
+ ]
+}

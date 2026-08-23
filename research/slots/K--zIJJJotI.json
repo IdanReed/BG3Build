@@ -1,0 +1,269 @@
+{
+  "source": "K--zIJJJotI",
+  "label": "Boots tier list, all acts",
+  "slot": "Boots",
+  "rated_in": "all",
+  "verdicts_in_transcript": 37,
+  "items": [
+    {
+      "item": "Leather Boots",
+      "tier": "D",
+      "at": "2:05",
+      "act": "act1",
+      "verdict": "non-magical and mechanically empty; safe to ignore"
+    },
+    {
+      "item": "Metallic Boots",
+      "tier": "D",
+      "at": "2:36",
+      "act": "act1",
+      "verdict": "+1 Athletics is far too small to spend the slot on"
+    },
+    {
+      "item": "Boots of Aid and Comfort",
+      "tier": "S",
+      "at": "4:11",
+      "act": "act1",
+      "verdict": "3 temp HP on every heal; combines with Hellrider's Pride and Whispering Promise"
+    },
+    {
+      "item": "Boots of Elemental Momentum",
+      "tier": "B",
+      "at": "6:50",
+      "act": "act1",
+      "verdict": "momentum from elemental spells, but medium armour locks out most casters"
+    },
+    {
+      "item": "Boots of Genial Striding",
+      "tier": "D",
+      "at": "8:23",
+      "act": "act1",
+      "verdict": "immunity to difficult-terrain slowing is not worth building around"
+    },
+    {
+      "item": "Boots of Speed",
+      "tier": "A",
+      "at": "11:29",
+      "act": "act1",
+      "verdict": "bonus-action double move; some party member almost always wants it (captions garble the letter)"
+    },
+    {
+      "item": "Boots of Stormy Clamour",
+      "tier": "S",
+      "at": "12:32",
+      "act": "act1",
+      "verdict": "the best way to apply Reverberation; many builds exist purely for it"
+    },
+    {
+      "item": "Boots of Striding",
+      "tier": "A",
+      "at": "16:09",
+      "act": "act1",
+      "verdict": "no prone or push while concentrating, but mobility boots often win the slot"
+    },
+    {
+      "item": "Cinder Shoes",
+      "tier": "C",
+      "at": "17:44",
+      "act": "act1",
+      "verdict": "heat stacks off burning; only for Alchemist's Fire or fire-arrow builds"
+    },
+    {
+      "item": "Disintegrating Night Walkers",
+      "tier": "S",
+      "at": "19:19",
+      "act": "act1",
+      "verdict": "probably the best boots in the game; Misty Step plus every movement immunity"
+    },
+    {
+      "item": "Hoarfrost Boots",
+      "tier": "B",
+      "at": "20:22",
+      "act": "act1",
+      "verdict": "a third copy of the anti-prone effect; only for ice-surface parties"
+    },
+    {
+      "item": "Linebreaker Boots",
+      "tier": "A",
+      "at": "22:25",
+      "act": "act1",
+      "verdict": "Wrath on dash for melee attackers; requires a bonus-action dash"
+    },
+    {
+      "item": "Mystra's Grace",
+      "tier": "C",
+      "at": "23:27",
+      "act": "act1",
+      "verdict": "at-will Feather Fall, an effect scrolls already duplicate cheaply"
+    },
+    {
+      "item": "Spiderstep Boots",
+      "tier": "C",
+      "at": "23:59",
+      "act": "act1",
+      "verdict": "web immunity for roughly the one encounter that needs it"
+    },
+    {
+      "item": "Springstep Boots",
+      "tier": "B",
+      "at": "25:00",
+      "act": "act1",
+      "verdict": "momentum on dash, but Linebreaker's damage is usually the better choice"
+    },
+    {
+      "item": "Swiresy Shoes",
+      "tier": "C",
+      "at": "27:03",
+      "act": "act1",
+      "verdict": "+5ft jump; only meaningful with Enhanced Leap and constant jumping"
+    },
+    {
+      "item": "The Speedy Lightfeet",
+      "tier": "B",
+      "at": "29:10",
+      "act": "act1",
+      "verdict": "lightning charges on dash, and unlike Wrath they work on ranged attacks"
+    },
+    {
+      "item": "Varsh Ko'kuu's Boots",
+      "tier": "C",
+      "at": "30:12",
+      "act": "act1",
+      "verdict": "acid resistance worth swapping in for one or two fights"
+    },
+    {
+      "item": "Vital Conduit Boots",
+      "tier": "S",
+      "at": "32:49",
+      "act": "act1",
+      "verdict": "S for spore druids via the infinite-shield bug; only A tier for other casters"
+    },
+    {
+      "item": "The Watersparkers",
+      "tier": "A",
+      "at": "35:24",
+      "act": "act1",
+      "verdict": "core item for lightning-charge builds; needs water and the Sparkswall ring"
+    },
+    {
+      "item": "Acrobat Shoes",
+      "tier": "D",
+      "at": "36:55",
+      "act": "act2",
+      "verdict": "advantage on Dex saves is available elsewhere; not worth the boot slot"
+    },
+    {
+      "item": "Boots of Apparent Death",
+      "tier": "C",
+      "at": "39:00",
+      "act": "act2",
+      "verdict": "free Feign Death keeps key NPCs out of fights; better if abusing the theft bug"
+    },
+    {
+      "item": "Boots of Arcane Bolstering",
+      "tier": "C",
+      "at": "41:37",
+      "act": "act2",
+      "verdict": "only a magic missile evocation wizard with a rogue dip can use it"
+    },
+    {
+      "item": "Boots of Brilliance",
+      "tier": "B",
+      "at": "42:08",
+      "act": "act2",
+      "verdict": "regains one Bardic Inspiration but needs fiddly swapping (captions garble the letter)"
+    },
+    {
+      "item": "Dark Justiciar Boots",
+      "tier": "D",
+      "at": "43:42",
+      "act": "act2",
+      "verdict": "an action to teleport 60ft once per short rest is outclassed by Night Walkers"
+    },
+    {
+      "item": "Evasive Shoes",
+      "tier": "S",
+      "at": "46:17",
+      "act": "act2",
+      "verdict": "+1 AC lifts your weakest-AC character; many parties simply equip them"
+    },
+    {
+      "item": "Blackguard's Greaves",
+      "tier": "D",
+      "at": "47:49",
+      "act": "act3",
+      "verdict": "Longstrider does not stack and your party should already have it"
+    },
+    {
+      "item": "Bonespike Boots",
+      "tier": "A",
+      "at": "49:23",
+      "act": "act3",
+      "verdict": "brutal leap knocks enemies prone; best for unarmoured barbarians"
+    },
+    {
+      "item": "Boots of Persistence",
+      "tier": "B",
+      "at": "51:25",
+      "act": "act3",
+      "verdict": "Freedom of Movement plus paralysis and restrained immunity for fights you can predict"
+    },
+    {
+      "item": "Boots of Psionic Movement",
+      "tier": "A",
+      "at": "54:03",
+      "act": "act3",
+      "verdict": "bonus-action Fly once per long rest; strong for parties skipping illithid powers"
+    },
+    {
+      "item": "Boots of Uninhibited Kushigo",
+      "tier": "S",
+      "at": "55:34",
+      "act": "act3",
+      "verdict": "wisdom to unarmed damage; best in slot for pretty much every monk"
+    },
+    {
+      "item": "Boots of Very Fast Blinking",
+      "tier": "B",
+      "at": "57:37",
+      "act": "act3",
+      "verdict": "at-will Misty Step but you drop all armour; great out-of-combat travel"
+    },
+    {
+      "item": "Helldusk Boots",
+      "tier": "S",
+      "at": "1:00:13",
+      "act": "act3",
+      "verdict": "teleport plus one guaranteed saving throw makes the wearer extremely safe"
+    },
+    {
+      "item": "Slinging Shoes",
+      "tier": "D",
+      "at": "1:01:14",
+      "act": "act3",
+      "verdict": "a joke item; thrown damage is far worse than a real throwing weapon"
+    },
+    {
+      "item": "Spaceshunt Boots",
+      "tier": "B",
+      "at": "1:01:47",
+      "act": "act3",
+      "verdict": "free Dimension Door to swap in for specific late Act 3 encounters"
+    },
+    {
+      "item": "Tyrannical Jackboots",
+      "tier": "C",
+      "at": "1:02:48",
+      "act": "act3",
+      "verdict": "+1 to Charisma checks for a handful of late dialogue rolls; heavy micro"
+    },
+    {
+      "item": "Unwanted Masterwork Greaves",
+      "tier": "D",
+      "at": "1:03:21",
+      "act": "act3",
+      "verdict": "mechanically identical to the Metallic Boots; no reason to pick them up"
+    }
+  ],
+  "unassigned": []
+}

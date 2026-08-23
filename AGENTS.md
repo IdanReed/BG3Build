@@ -58,6 +58,11 @@ closing `---` fence. A leading BOM and CRLF are accepted. The Markdown body is
 parsed but currently not rendered, so user-visible guide data belongs in the
 frontmatter.
 
+`content/meta.md` carries a `version` field, which `index.html` renders as the
+version chip in the header. Bump it for every distinct set of changes — a minor
+bump for a feature or a broad content sweep, a patch bump for a fix — so the chip
+never claims a state the guide has moved past.
+
 `src/content.rs` assembles exactly these top-level API fields:
 
 - `meta` from `content/meta.md`
@@ -66,6 +71,9 @@ frontmatter.
 - `loot_guide` from the `loot_guide` field in `content/loot.md`
 - `tadpole` from `content/tadpole.md`
 - `characters` from every Markdown file in `content/characters/`
+- `ratings` from the `ratings` field in `content/ratings.md`, and only when that
+  file exists — it is generated, so a checkout that has not run the generator
+  simply serves no `ratings` and the frontend hides the Ratings tab
 
 Each character file requires a unique string `nickname` and a `builds` value.
 Characters are ordered by `party.roster[].nickname`; characters absent from the
@@ -77,6 +85,57 @@ For character itemization, prefer objects with stable `id`, display `item`,
 `slot`, and explanatory `note`, `effect`, or `why`. Keep `id` stable when
 renaming display text. The UI recognizes `act1`, `act2`, and `act3` specially
 and renders other populated itemization keys afterward.
+
+An itemization entry, or one of its `options`, may also carry an external rating
+from the guide corpus in `video_summaries/`:
+
+- `tier` / `tier_note`: a letter tier (`S`, `A`, `B`, `C`, `D`, `F`) from that
+  slot's tier list, plus the source video, timestamp and verdict.
+- `rank` / `rank_note`: a placing such as `'#12'` (or `HM`) in that act's top-20
+  countdown, plus the same provenance.
+
+The two are independent and an item often holds both, which is the point: the
+letter says how good it is inside its own slot, the number how it stands against
+every item in the act.
+
+These fields are generated. `research/item_tiers.json` is the source of truth;
+`tools/apply_item_tiers.py` writes it into the content and is idempotent, so edit
+the dataset and re-run rather than hand-editing a rating. Only record a rating the
+corpus actually states -- never convert a rank into a letter, and never carry a
+rating over from a spell, feat, or class tier list.
+
+## Guide ratings
+
+`research/item_tiers.json` and `research/spell_tiers.json` hold every rating read out
+of the tier-list corpus — 823 item ratings across 35 lists and 212 spell ratings across
+11. They are the source of truth for the `tier`/`rank` fields in the content, and are
+regenerated, not hand-edited:
+
+```sh
+python tools/fetch_transcripts.py <playlist>     # transcripts
+python tools/dump_tier_verdicts.py --source <id> # verdicts, in order, with context
+python tools/merge_slot_tiers.py                 # research/slots/*.json  -> item_tiers
+python tools/merge_spell_tiers.py                # research/spells/*.json -> spell_tiers
+python tools/apply_item_tiers.py                 # dataset -> content/characters/*.md
+python tools/build_ratings_page.py               # dataset -> content/ratings.md
+```
+
+The last two write the two places a rating surfaces, and both are overwritten wholesale
+on every run: `apply_item_tiers.py` badges the party's own gear on the character pages,
+and `build_ratings_page.py` writes the Ratings tab, which shows every rated item in the
+corpus rather than only the party's. Re-run both after a merge; never hand-edit
+`content/ratings.md`.
+
+Read `research/EXTRACTION-BRIEF.md` before touching any of it. Attributing a spoken
+verdict to the right item is the whole difficulty, and the brief records the failure
+modes that cost accuracy: the narrator introduces the *next* item immediately after a
+verdict, the captions mangle the word "tier" a dozen different ways, one verdict can
+rate several items, and later lists revise earlier ones. Automated attribution was
+tried and rejected — it scored 7 right, 0 wrong, 22 missed against known answers.
+
+Both mergers report anything that needs a human look: an item rated differently by two
+lists, a file whose rated-plus-unassigned count does not reconcile with the verdicts it
+saw, and any rating a complete re-read has corrected.
 
 ## Progress compatibility
 
@@ -134,6 +193,12 @@ remembered tabs will not be found again.
 The frontend tolerates some legacy scalar/list shapes with `arr()` and `has()`,
 but new content should use the current structured shapes. Keep progress writes
 optimistic with rollback on failed POSTs.
+
+Top-level tabs are built from a list passed into `buildTopTabs`, so a tab whose
+data is absent is never rendered; Ratings is the one that works this way. The
+Ratings views are pure reference — no checkboxes, no progress keys — and the
+generator has already sorted each act's items, so `ratingTierGroups` only breaks
+the run where the letter changes rather than re-deriving an order of its own.
 
 ## Rust commands and validation
 

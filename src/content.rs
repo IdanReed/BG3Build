@@ -72,6 +72,23 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
         .cloned()
         .ok_or_else(|| anyhow!("loot.md front matter is missing `loot_guide`"))?;
 
+    // ratings.md is generated from the guide corpus by
+    // `tools/build_ratings_page.py`, so it is optional: a checkout that has not run
+    // the generator simply gets no Ratings tab. A file that exists must still be
+    // well formed, which catches a half-written generator run.
+    let ratings_path = dir.join("ratings.md");
+    let ratings = if ratings_path.exists() {
+        Some(
+            read_doc(&ratings_path)?
+                .data
+                .get("ratings")
+                .cloned()
+                .ok_or_else(|| anyhow!("ratings.md front matter is missing `ratings`"))?,
+        )
+    } else {
+        None
+    };
+
     // Characters: one file each under content/characters/, keyed by `nickname`.
     let mut chars: Vec<(String, Value)> = Vec::new();
     let mut nicknames = HashSet::new();
@@ -140,6 +157,9 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
     root.insert("characters".into(), Value::Object(characters));
     root.insert("loot_guide".into(), loot_guide);
     root.insert("tadpole".into(), tadpole);
+    if let Some(ratings) = ratings {
+        root.insert("ratings".into(), ratings);
+    }
     Ok(Value::Object(root))
 }
 

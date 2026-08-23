@@ -1,0 +1,43 @@
+{
+ "source": "FqDSlLv9HkQ",
+ "label": "Rings tier list, Act 3",
+ "slot": "Rings",
+ "rated_in": "act3",
+ "verdicts_in_transcript": 18,
+ "items": [
+  { "item": "After Death Do Us Part", "tier": "C", "at": "5:46",
+    "verdict": "BUGGED so Shadow possession drops instantly, giving a free extra life; still purely defensive" },
+  { "item": "Band of the Mystic Scoundrel", "tier": "S", "at": "8:21",
+    "verdict": "effectively permanent haste for attacker-casters; tons of builds maximise it alongside Arcane Acuity" },
+  { "item": "Burnished Ring", "tier": "B", "at": "10:57",
+    "verdict": "concentration-free paralysis on a Constitution save; needs reverberation and bleeding to land reliably" },
+  { "item": "Crypt Lord Ring", "tier": "S", "at": "14:05",
+    "verdict": "a free sixth-level spell slot and a mummy every long rest; the only Create Undead outside Wizard 11" },
+  { "item": "Djinni Ring", "tier": "B", "at": "15:37",
+    "verdict": "extra Mage Hand casts for water and potion throwing; the very lowest end of B in Act 3" },
+  { "item": "Guild Ring", "tier": "D", "at": "16:10",
+    "verdict": "a quest item with no mechanical effect at all" },
+  { "item": "Keepsake Ring", "tier": "D", "at": "17:42",
+    "verdict": "Dominate Beast is weak and Act 3 has almost no beasts left to use it on" },
+  { "item": "Orphic Ring", "tier": "D", "at": "19:47",
+    "verdict": "upcast Confusion is too unreliable and situational to hold a ring slot in advance" },
+  { "item": "Ring of Blink", "tier": "C", "at": "21:20",
+    "verdict": "a 50 percent chance each turn is unplannable for a party; more interesting in solo play" },
+  { "item": "Ring of Feywild Sparks", "tier": "S", "at": "23:24",
+    "verdict": "an UNLISTED plus one spell save DC on any caster, the only ring that grants it" },
+  { "item": "Ring of Regeneration", "tier": "S", "at": "26:32",
+    "verdict": "a synergy engine: permanent Bless and Blade Ward with Whispering Promise and Reviving Hands" },
+  { "item": "Ring of Truthfulness", "tier": "B", "at": "27:35",
+    "verdict": "advantage on hidden Insight checks, called generous because few remain this late" },
+  { "item": "Seemingly Gleaming Ring", "tier": "F", "at": "28:36",
+    "verdict": "explicit joke F placement: minus one Wisdom saves for a Charisma save bonus that never comes up" },
+  { "item": "Till Death Do Us Part", "tier": "C", "at": "31:11",
+    "verdict": "free Beacon of Hope off the cleric's concentration, but Heroes' Feast usually covers it" }
+ ],
+ "unassigned": [
+  { "at": "15:37", "tier": "B", "why": "restates the Djinni Ring's B tier as the lowest end of the tier" },
+  { "at": "31:11", "tier": "C", "why": "restates the C tier just given to Till Death Do Us Part" },
+  { "at": "32:42", "tier": "S", "why": "closing summary of which S tier rings to prioritise, not a verdict" },
+  { "at": "32:42", "tier": "S", "why": "closing remark that Act 2 and 3 S tier picks are all safe, not a verdict" }
+ ]
+}

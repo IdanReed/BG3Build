@@ -1,0 +1,36 @@
+{
+  "source": "U6s3AsH8Ajw",
+  "label": "Spells tier list, level 4, part 2 (Freedom of Movement through Wall of Fire)",
+  "spell_level": 4,
+  "verdicts_in_transcript": 13,
+  "items": [
+    { "item": "Freedom of Movement", "tier": "B", "at": "4:42",
+      "verdict": "a panic button to break an ally out of a stun; far stronger for solo runs and camp casters" },
+    { "item": "Grasping Vine", "tier": "C", "at": "8:04",
+      "verdict": "bonus-action Entangle plus a puller, but druid fourth-level slots have much better competition" },
+    { "item": "Greater Invisibility", "tier": "A", "at": "13:18",
+      "verdict": "A for ordinary parties: free attacks then a surprise round; broken if built around stealth checks" },
+    { "item": "Guardian of Faith", "tier": "B", "at": "17:00",
+      "verdict": "60 HP, 20 AC body that plugs a doorway and deals up to 60 radiant, no concentration" },
+    { "item": "Ice Storm", "tier": "A", "at": "20:00",
+      "verdict": "A because the 20 ft ice surface costs NO CONCENTRATION; the best follow-up after a control spell" },
+    { "item": "Otiluke's Resilient Sphere", "tier": "C", "at": "23:17",
+      "verdict": "mainly to hamster-ball a dying NPC ally; comes up two or three times a playthrough" },
+    { "item": "Phantasmal Killer", "tier": "C", "at": "26:46",
+      "verdict": "wizards will never cast it; Hexblade warlocks with arcane acuity get psychic damage over time" },
+    { "item": "Polymorph", "tier": "C", "at": "30:33",
+      "verdict": "sheep pops after 3 damage; real use is shoving otherwise-immovable enemies off cliffs, at the cost of loot" },
+    { "item": "Staggering Smite", "tier": "B", "at": "33:23",
+      "verdict": "HEXBLADE ONLY; burst psychic damage that turns off boss reactions, but eats your concentration" },
+    { "item": "Stoneskin", "tier": "D", "at": "35:22",
+      "verdict": "most enemy damage is magical by this level, and it does not stack with Blade Ward" },
+    { "item": "Wall of Fire", "tier": "A", "at": "40:47",
+      "verdict": "single-handedly wins any encounter where melee enemies must run at you; great thing to concentrate on" }
+  ],
+  "unassigned": [
+    { "at": "41:30", "tier": null,
+      "why": "closing recap of the tier scale ('especially in C tier, there's a lot of spells here that are only good for some builds'), not a verdict on any spell" },
+    { "at": "41:37", "tier": null,
+      "why": "closing recap of the tier scale ('and in B tier, there's a lot of spells that you're going to sub in'), not a verdict on any spell" }
+  ]
+}

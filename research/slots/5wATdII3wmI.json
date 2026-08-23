@@ -1,0 +1,154 @@
+{
+  "source": "5wATdII3wmI",
+  "label": "Shields tier list",
+  "slot": "Off-hand & Shields",
+  "rated_in": "all",
+  "verdicts_in_transcript": 24,
+  "items": [
+    {
+      "item": "Broken Shield",
+      "tier": "D",
+      "at": "4:05",
+      "verdict": "rated together with the Training Shield; only +1 AC, pure set dressing, safely ignored"
+    },
+    {
+      "item": "Shield (item)",
+      "tier": "S",
+      "at": "7:41",
+      "verdict": "all non-magical variants combined; +2 AC in the early game is a huge snowballing bonus"
+    },
+    {
+      "item": "Absolute's Warboard",
+      "tier": "A",
+      "at": "8:44",
+      "verdict": "+1 saving throws (REQUIRES BRAND OF THE ABSOLUTE) plus free Heroism; first real shield upgrade"
+    },
+    {
+      "item": "Adamantine Shield",
+      "tier": "S",
+      "at": "11:49",
+      "verdict": "best defensive shield all game: Shield Bash, Reeling on misses, no critical hits against you"
+    },
+    {
+      "item": "Glowing Shield",
+      "tier": "B",
+      "at": "12:52",
+      "verdict": "8 temporary HP once per short rest; free early value that is obsoleted quickly"
+    },
+    {
+      "item": "Safeguard Shield",
+      "tier": "A",
+      "at": "13:55",
+      "verdict": "+1 saving throws with no story requirement; usually the earliest upgrade over a plain shield"
+    },
+    {
+      "item": "The Real Sparky Sparkswall",
+      "tier": "C",
+      "at": "16:30",
+      "verdict": "lightning aura blocks enemy reactions but costs charges a Lightning build would rather spend attacking"
+    },
+    {
+      "item": "Wood Woad Shield",
+      "tier": "A",
+      "at": "19:07",
+      "verdict": "bonus-action Ensnaring Strike off spell save DC; excellent on melee casters hunting ranged enemies"
+    },
+    {
+      "item": "Shield +1",
+      "tier": "B",
+      "at": "20:39",
+      "verdict": "+3 AC and nothing else; solid but outclassed by the Adamantine Shield and effect shields"
+    },
+    {
+      "item": "Absolute's Protector",
+      "tier": "B",
+      "at": "21:42",
+      "verdict": "Shield Bash plus Fire Shield once per long rest; mainly for retaliation builds with the Brand"
+    },
+    {
+      "item": "Gloomstrand Shield",
+      "tier": "C",
+      "at": "23:17",
+      "verdict": "only shield with a Stealth bonus (+2 with expertise); niche stealth-archer pick"
+    },
+    {
+      "item": "Ironvine Shield",
+      "tier": "D",
+      "at": "24:51",
+      "verdict": "needs Shillelagh and to be hit; arrives in act two, far too late for that build"
+    },
+    {
+      "item": "Justiciar's Greatshield",
+      "tier": "S",
+      "at": "28:28",
+      "verdict": "bonus-action Darkness plus Hide, Shield Bash and Perception advantage; an abusable panic button"
+    },
+    {
+      "item": "Ketheric's Shield",
+      "tier": "S",
+      "at": "30:04",
+      "verdict": "+1 spell save DC and spell attack in a slot that never gets it; also boosts Shield Bash"
+    },
+    {
+      "item": "Sentinel Shield",
+      "tier": "S",
+      "at": "31:06",
+      "verdict": "+3 initiative replaces Alert entirely; only downside is that ONLY ONE EXISTS"
+    },
+    {
+      "item": "Shield of Devotion",
+      "tier": "B",
+      "at": "33:10",
+      "verdict": "extra level-one slot and Aid; fine but weaker than the top shields (exploits ignored)"
+    },
+    {
+      "item": "Shield of Scorching Reprisal",
+      "tier": "A",
+      "at": "35:47",
+      "verdict": "strictly better than Shield +1: fire resistance, Shield Bash and an activated third AC"
+    },
+    {
+      "item": "Watcher's Shield",
+      "tier": "D",
+      "at": "36:18",
+      "verdict": "Perception advantage only, and two S-tier shields already grant it"
+    },
+    {
+      "item": "Abdel's Trusted Shield",
+      "tier": "D",
+      "at": "38:22",
+      "verdict": "Protection from Missiles costs action and concentration; Darkness does the job far better"
+    },
+    {
+      "item": "Shield of Shielding",
+      "tier": "C",
+      "at": "39:22",
+      "verdict": "Shield spell once per long rest; only worth it if you micro-swap after being hit"
+    },
+    {
+      "item": "Swires' Sledboard",
+      "tier": "A",
+      "at": "42:01",
+      "verdict": "stacks Force Conduit every turn; strong for damage-reduction and Arcane Ward builds in long fights"
+    },
+    {
+      "item": "Shield of the Undevout",
+      "tier": "B",
+      "at": "43:32",
+      "verdict": "fear saves at disadvantage, best for Great Old One warlocks, but most act three enemies resist fear"
+    },
+    {
+      "item": "Viconia's Walking Fortress",
+      "tier": "S",
+      "at": "47:46",
+      "verdict": "+3 AC, upgraded Shield Bash, spell defences and Reflective Shell; the legendary shield earns it"
+    }
+  ],
+  "unassigned": [
+    {
+      "at": "35:47",
+      "tier": "S",
+      "why": "back-reference to the S-tier shields while rating the Shield of Scorching Reprisal, not a verdict"
+    }
+  ]
+}

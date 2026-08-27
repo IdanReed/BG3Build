@@ -310,8 +310,37 @@
     font-size: .66rem; line-height: 1.3; font-weight: 700;
     text-transform: uppercase; letter-spacing: .05em;
   }
-  .level-choice-body { display: flex; align-items: center; min-width: 0; padding: 5px 8px; }
+  .level-choice-body { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; padding: 5px 8px; }
   .level-choice-recommendation { font-weight: 600; overflow-wrap: anywhere; }
+  /* A level's picks and its free class grants read differently, so they are
+     badged differently: the pick badge counts the selections the level opens,
+     including any the guide has not filled yet; the grant badge marks what the
+     class or subclass hands over for free. */
+  .pick-badge {
+    display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;
+    padding: 1px 7px; border-radius: 999px; white-space: nowrap;
+    border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+    background: var(--accent-soft); color: var(--accent);
+    font-size: .62rem; line-height: 1.5; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .04em;
+  }
+  .pick-badge.is-grant {
+    border-color: color-mix(in srgb, var(--good) 45%, var(--border));
+    background: color-mix(in srgb, var(--good) 15%, var(--surface));
+    color: color-mix(in srgb, var(--good) 78%, var(--text));
+  }
+  .open-pick {
+    display: inline-flex; align-items: center; padding: 1px 7px; border-radius: 999px;
+    border: 1px dashed color-mix(in srgb, var(--accent) 50%, var(--border));
+    color: var(--text-muted); font-size: .7rem; font-weight: 700; white-space: nowrap;
+  }
+  .level-choice.is-grant { background: color-mix(in srgb, var(--good) 8%, var(--surface)); }
+  .level-choice.is-grant .level-choice-category { color: color-mix(in srgb, var(--good) 78%, var(--text)); }
+  .level-legend {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 7px 14px;
+    margin: -4px 0 13px; color: var(--text-muted); font-size: .78rem;
+  }
+  .level-legend-item { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
   .detail-cue {
     align-self: center; display: inline-grid; place-items: center; width: 18px; height: 18px;
     border: 1px solid var(--border); border-radius: 999px; color: var(--accent);
@@ -438,8 +467,9 @@
   li.ck-li.item-bis .item-name { font-weight: 700; color: var(--text); }
   .item-bis-star { flex: 0 0 auto; color: var(--accent); font-size: .72rem; line-height: 1; }
   .item-chip.flex-chip { border-style: dashed; }
-  /* A published tier-list rating for the item: a letter tier, or "#N" from a ranked
-     best-items list. Hues are mixed against the theme so they read in light and dark. */
+  /* A published tier-list rating for an item or a spell: a letter tier, or "#N" from a
+     ranked best-items list. Hues are mixed against the theme so they read in light and
+     dark. */
   .item-tier {
     flex: 0 0 auto; font-size: .58rem; font-weight: 800; letter-spacing: .06em;
     padding: 1px 6px; border-radius: 999px; cursor: help;
@@ -627,12 +657,19 @@
     display: flex; align-items: center; flex-wrap: wrap; gap: 7px;
     margin: -4px 0 14px; color: var(--text-muted); font-size: .78rem;
   }
+  .spell-plan-legend + .spell-plan-legend { margin-top: -8px; }
+  .spell-plan-legend .item-tier { cursor: default; }
   .spell-entry-main { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; min-width: 0; }
   .spell-plan-badge {
     display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;
     padding: 2px 6px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
     border-radius: 999px; background: var(--accent-soft); color: var(--accent);
     font-size: .64rem; line-height: 1.2; font-weight: 700; white-space: nowrap;
+  }
+  .spell-plan-badge.is-grant {
+    border-color: color-mix(in srgb, var(--good) 45%, var(--border));
+    background: color-mix(in srgb, var(--good) 15%, var(--surface));
+    color: color-mix(in srgb, var(--good) 78%, var(--text));
   }
   .spell-level-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   .spell-level .item-name { font-weight: 600; }
@@ -1243,11 +1280,55 @@ function renderLevelGains(gains) {
   );
 }
 
+/* `granted: true` marks an entry the class, subclass or race supplies for free
+   -- it spends no pick and no prepared slot. `picks: N` is how many selections
+   the level opens for that category; when the guide names fewer than N, the
+   remainder render as explicit "open pick" placeholders so an unspent choice is
+   never invisible. `optional: true` is the level-up replacement swap. */
+function pickBadge(rec, namedCount) {
+  const granted = rec.granted === true || /^(granted|grant|class|free|fixed)$/i.test(String(rec.source || ""));
+  if (granted) {
+    const fixed = /^fixed$/i.test(String(rec.source || "")) || rec.fixed === true;
+    return {
+      granted: true,
+      open: 0,
+      node: h("span", {
+        class: "pick-badge is-grant",
+        title: fixed
+          ? "Fixed by the class, subclass or race — not a selection you make"
+          : "Granted by the class, subclass or race — costs no pick and no prepared slot",
+      }, h("span", { "aria-hidden": "true" }, "✦"), fixed ? "Fixed" : "Free · no pick"),
+    };
+  }
+  const raw = Number(rec.picks);
+  if (!has(rec.picks) || !isFinite(raw) || raw <= 0) return { granted: false, open: 0, node: null };
+  const picks = Math.trunc(raw);
+  const open = Math.max(0, picks - namedCount);
+  const parts = [picks === 1 ? "1 pick" : picks + " picks"];
+  if (rec.optional === true) parts.push("optional");
+  if (namedCount > picks) parts.push(namedCount + " listed");
+  else if (open) parts.push(open + " open");
+  return {
+    granted: false,
+    open,
+    node: h("span", {
+      class: "pick-badge",
+      title: picks === 1
+        ? "This level grants one selection in this category"
+        : "This level grants " + picks + " selections in this category",
+    }, parts.join(" · ")),
+  };
+}
+
 function renderLevelRecommendation(rec) {
   const category = String(rec.category || "Choice");
   const values = arr(rec.recommendation).filter(has).map(String);
-  const wikiTitles = arr(rec.wiki).filter(has).map(String);
-  const spellRecommendations = /spell|cantrip|magical secrets/i.test(category);
+  /* `wiki: false` opts a row out of linking, same as an itemization entry --
+     a row whose recommendation is prose rather than a spell name would
+     otherwise auto-link to a page that does not exist. */
+  const noWiki = rec.wiki === false;
+  const wikiTitles = noWiki ? [] : arr(rec.wiki).filter(has).map(String);
+  const spellRecommendations = !noWiki && /spell|cantrip|magical secrets/i.test(category);
   const recommendation = [];
   values.forEach((value, index) => {
     if (index) recommendation.push(" · ");
@@ -1260,14 +1341,24 @@ function renderLevelRecommendation(rec) {
           : value
     );
   });
+  const badge = pickBadge(rec, values.length);
+  for (let i = 0; i < badge.open; i++) {
+    /* One separator between the named picks and the placeholders, then plain
+       spaces -- a chain of dot-separated chips reads as a wrapped orphan. */
+    if (recommendation.length) recommendation.push(i === 0 ? " · " : " ");
+    recommendation.push(h("span", {
+      class: "open-pick",
+      title: "A selection this level grants that the guide has not assigned — pick it in play",
+    }, "open pick"));
+  }
   const hasNote = has(rec.note);
   const tipId = hasNote ? "level-tip-" + (++LEVEL_TIP_SERIAL) : null;
   const tipNode = hasNote ? h("span", { class: "item-tip", id: tipId, role: "tooltip" },
-    h("span", { class: "item-tip-k" }, "Why this pick"),
+    h("span", { class: "item-tip-k" }, badge.granted ? "Why it matters" : "Why this pick"),
     h("span", { class: "tip-content" }, h("span", { class: "tip-summary" }, rec.note))
   ) : null;
   const choice = h("div", {
-    class: "level-choice" + (hasNote ? " has-detail" : ""),
+    class: "level-choice" + (hasNote ? " has-detail" : "") + (badge.granted ? " is-grant" : ""),
     tabindex: hasNote ? "0" : null,
     "aria-describedby": tipId,
   },
@@ -1276,6 +1367,7 @@ function renderLevelRecommendation(rec) {
       h("span", null, category)
     ),
     h("div", { class: "level-choice-body" },
+      badge.node,
       h("div", { class: "level-choice-recommendation" }, recommendation.length ? recommendation : "—")
     ),
     hasNote ? h("span", { class: "detail-cue", "aria-hidden": "true" }, "i") : null,
@@ -1303,7 +1395,7 @@ function renderLevelingTable(rows, keyPrefix) {
         h("th", { scope: "col" }, "Lvl"),
         h("th", { scope: "col" }, "Class"),
         h("th", { scope: "col" }, "Automatic gains"),
-        h("th", { scope: "col" }, "Recommended choices"))),
+        h("th", { scope: "col" }, "Picks & class grants"))),
       h(
         "tbody",
         null,
@@ -1315,7 +1407,7 @@ function renderLevelingTable(rows, keyPrefix) {
             h("td", { class: "num cell-strong level-number-cell" }, h("span", { class: "level-number" }, r.char_level)),
             h("td", { class: "cell-strong level-class-cell" }, renderClass(r.class)),
             h("td", { class: "level-gains-cell", "data-label": "Automatic gains" }, renderLevelGains(r.gains)),
-            h("td", { class: "level-recommendations-cell", "data-label": "Recommended choices" }, renderLevelRecommendations(r.recommendations))
+            h("td", { class: "level-recommendations-cell", "data-label": "Picks & class grants" }, renderLevelRecommendations(r.recommendations))
           )
         )
       )
@@ -1680,10 +1772,14 @@ function linkedNameTip(label, linkedNode, tip, tipId, heading) {
 
 /* A checkable, slot-grouped item list. The visible row is deliberately only the
    item name; effect and build rationale live in an accessible hover/focus bubble. */
-/* "(held over from Act 1)" in a content item name is presentation, not data: strip it
-   from the visible name and show it as an act chip instead. */
+/* Carrying gear over from an earlier act is presentation, not part of the item's name:
+   it renders as an act chip beside the name. Content states it as `held: 1|2|3`, or
+   `held: true` when the act is not worth naming. The older "(held over from Act 1)"
+   parenthetical is still read out of the name so legacy content keeps its chip. */
 const ITEM_HELD_RE = /\s*\(\s*(?:held|carried)\s+over(?:\s+from\s+act\s*([123]))?\s*\)\s*/i;
 function itemHeldChip(entry) {
+  const held = entry && typeof entry === "object" ? entry.held : null;
+  if (has(held) && held !== false) return /^[123]$/.test(String(held)) ? "Act " + held : "Held";
   const m = itemLabel(entry).match(ITEM_HELD_RE);
   if (!m) return null;
   return m[1] ? "Act " + m[1] : "Held";
@@ -2038,11 +2134,21 @@ function wikiSpellNode(spell, attrs) {
 
 /* Itemization-style spell lists. Class features with non-numeric levels stay
    out of this view because they already appear in Leveling. */
+/* `source: granted` means the class, subclass or race supplies the spell for
+   free -- it spends no spell-known pick and no prepared slot. Everything else is
+   a pick, which the "Lv N" badge already places in the leveling order. */
+function isGrantedSpell(s) {
+  return /^(granted|grant|class|free|fixed)$/i.test(String((s && s.source) || ""));
+}
+
 function spellTip(s) {
+  const tier = itemTier(s);
   return tooltipContent(has(s.why) ? String(s.why) : null, [
+    ["Tier", tier ? tier.text : null],
     ["School", has(s.school) ? String(s.school) : null],
     ["Save / roll", has(s.save) ? String(s.save) : null],
     ["Available", has(s.when) ? String(s.when) : null],
+    ["Costs a pick", isGrantedSpell(s) ? "No — free class grant" : null],
   ]);
 }
 
@@ -2068,12 +2174,20 @@ function spellChecklist(entries) {
       return h("li", { class: "ck-li " + (planLevel != null ? "spell-planned" : "spell-alternative") },
         h("span", { class: "spell-entry-main" },
           linkedNameTip(label, nameLink, tip, tipId, "Spell details & build use"),
+          itemBadges(s),
           planLevel != null
             ? h("span", {
                 class: "spell-plan-badge",
                 title: "Included in the leveling guide at character level " + planLevel,
                 "aria-label": "Leveling-guide pick at character level " + planLevel,
               }, h("span", { "aria-hidden": "true" }, "◆"), "Lv " + planLevel)
+            : null,
+          isGrantedSpell(s)
+            ? h("span", {
+                class: "spell-plan-badge is-grant",
+                title: "Granted by the class, subclass or race — costs no spell pick and no prepared slot",
+                "aria-label": "Free class grant, costs no pick",
+              }, h("span", { "aria-hidden": "true" }, "✦"), "Free")
             : null
         )
       );
@@ -2123,6 +2237,21 @@ function renderSpellsByLevel(sp) {
       h("span", { class: "spell-plan-badge", "aria-hidden": "true" }, "◆", "Lv N"),
       h("span", null, "Included in the leveling guide at that character level; unmarked entries are other good choices. Use the info button for details.")
     ),
+    /* Only builds that actually own a free grant get its legend line. */
+    entries.some(isGrantedSpell)
+      ? h("div", { class: "spell-plan-legend" },
+          h("span", { class: "spell-plan-badge is-grant", "aria-hidden": "true" }, "✦", "Free"),
+          h("span", null, "Handed over by the class, subclass or race — it spends no spell pick and no prepared slot.")
+        )
+      : null,
+    /* Class-feature entries carry no rating, so a build made only of those says nothing
+       about tiers rather than advertising a legend for badges it never shows. */
+    entries.some(itemTier)
+      ? h("div", { class: "spell-plan-legend" },
+          h("span", { class: "item-tier tier-s", "aria-hidden": "true" }, "S"),
+          h("span", null, "The guide videos' tier for the spell inside its own spell-level list. Hover the badge, or the info button, for the source and verdict.")
+        )
+      : null,
     spellLevelPanel(entries)
   );
 }
@@ -2380,7 +2509,18 @@ function renderBuild(b, charName) {
   // recommendations directly in every row.
   const levelMain = h("div", { class: "lvl-main" },
     h("h3", { class: "section-title" }, "Leveling"),
-    h("p", { class: "section-hint" }, "Automatic gains are fixed; recommended choices are the picks to make. Hover or focus a choice to see why it fits.")
+    h("p", { class: "section-hint" }, "Automatic gains are fixed; the third column is what you actually choose. Hover or focus a row to see why it fits."),
+    h("div", { class: "level-legend" },
+      h("span", { class: "level-legend-item" },
+        h("span", { class: "pick-badge" }, "2 picks"),
+        h("span", null, "selections this level grants")),
+      h("span", { class: "level-legend-item" },
+        h("span", { class: "open-pick" }, "open pick"),
+        h("span", null, "granted but not yet assigned")),
+      h("span", { class: "level-legend-item" },
+        h("span", { class: "pick-badge is-grant" }, h("span", { "aria-hidden": "true" }, "✦"), "Free · no pick"),
+        h("span", null, "handed over by the class or subclass"))
+    )
   );
   if (has(b.leveling)) {
     let lv = b.leveling;

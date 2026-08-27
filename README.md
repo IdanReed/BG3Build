@@ -49,6 +49,7 @@ surface to worry about.
 | `ITEMIZATION-CHANGELOG.md` | Why each gear decision was made, and the defence for every departure from the ranked video guides. Not loaded by the app. |
 | `tools/check_itemization.py` | Slot-coverage check for `content/characters/*.md`. |
 | `tools/build_ratings_page.py` | Rebuilds `content/ratings.md` from `research/item_tiers.json`. |
+| `tools/apply_spell_tiers.py` | Writes `research/spell_tiers.json` into the `spells` blocks of `content/characters/*.md`. |
 
 ## Editing the guide
 
@@ -77,6 +78,14 @@ builds:
 ---
 ```
 
+Each leveling row separates what the level hands over from what you choose:
+`gains` is automatic, and a `recommendations` entry can carry `picks: N` (how
+many selections that level opens — the UI renders an "open pick" placeholder for
+any the guide has not assigned yet), `granted: true` (supplied free by the class,
+subclass or race, spending no pick and no prepared slot), and `optional: true`
+(the level-up replacement swap). A spell in the `spells` panel can carry
+`source: granted` to earn the same "Free" badge there.
+
 Each itemization entry has a stable `id`, display `item`, equipment `slot`, and
 `note`. The UI groups entries by act and slot, showing the note in the item's
 hover/focus tooltip. Keep IDs stable when renaming an item so existing checkoffs
@@ -96,6 +105,21 @@ python tools/apply_item_tiers.py                                      # write to
 Edit the dataset and re-run the applier rather than hand-editing a badge — it
 strips and rewrites every field it manages. See `AGENTS.md` for the rules on what
 may be recorded.
+
+Spells and cantrips carry the same `tier`/`tier_note` pair, read from the spell
+tier lists instead of the gear ones, and every card in the Spells panel badges its
+entries the same way. There is no `rank` on a spell: that series runs no top-20
+countdown. They are generated from `research/spell_tiers.json`:
+
+```sh
+python tools/merge_spell_tiers.py   # research/spells/*.json → research/spell_tiers.json
+python tools/apply_spell_tiers.py   # write to content
+```
+
+The two appliers own different regions of the same files — `apply_spell_tiers.py`
+only touches lines inside a build's `spells:` block and `apply_item_tiers.py` only
+touches lines outside it — so either can be re-run alone without dropping the
+other's ratings.
 
 ## The Ratings tab
 

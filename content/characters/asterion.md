@@ -118,6 +118,9 @@ builds:
       why: Daily Elixir of Giant Strength. TB adds that STR mod to every unarmed attack AND damage a second time, and once STR > DEX it drives attack rolls and the Stun DC. The accuracy and damage backbone.
     recommended:
     - spell: Minor Illusion
+      source: granted
+      tier: S
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (35:56) — moves NPCs with no save or roll; clusters enemies for AoE, sets ambushes, pulls enemies one at a time'
       level: Cantrip
       guide_level: 1
       school: Illusion
@@ -177,6 +180,7 @@ builds:
     - Vampire Bite (Astarion origin action)
     recommendations:
     - category: Skills
+      picks: 4
       recommendation:
       - Stealth
       - Investigation
@@ -184,13 +188,17 @@ builds:
       - Insight
       note: 'SIX picks land on this level, not two — Rogue grants 4 skill proficiencies BEFORE the 2 Expertise picks, and it is easy to click past them. Stealth is mandatory rather than optional: Charlatan supplies Sleight of Hand and Elf Keen Senses supplies Perception, but nothing grants Stealth, so without picking it here the Expertise: Stealth choice below has no valid target. Investigation is the party''s only coverage — Charles, Gale and Bonbon all lack it. Acrobatics rides DEX 17→20 and Insight rides WIS 16→18. ALTERNATIVE worth considering: swap Insight (already covered by Gale and Bonbon) for Athletics — on the daily Giant Strength elixir Asterion hits STR 27, making him the party''s only viable shove/grapple carrier; update proficiencies.md to match if you take it.'
     - category: Expertise
+      picks: 2
       recommendation:
       - Sleight of Hand
       - Stealth
       note: The reason Rogue must be the first class; these power stealing and scouting for the whole run.
     - category: Racial cantrip
-      recommendation: Fixed — not a choice
-      note: '⚠ NOT a selection. Astarion is a recruited companion, and the wiki is explicit that race-related choices carry over unchanged: "the selectable aspects of any given race, such as a high elf''s choice of cantrip, also remain fixed" (Withers, Services). The Withers respec will not re-present it, so he keeps whatever Larian assigned. Check the cantrip on the save rather than planning around it. If it turns out to be Bone Chill that is a fine outcome — A tier, "targets AC at range, prevents healing, and gives undead disadvantage on attacks" — and nothing in this build depends on the cantrip either way.'
+      wiki: false
+      granted: true
+      fixed: true
+      recommendation: Whatever Larian assigned him (one High Elf wizard cantrip)
+      note: '⚠ NOT a selection, and not a grant you get to steer. Astarion is a recruited companion, and the wiki is explicit that race-related choices carry over unchanged: "the selectable aspects of any given race, such as a high elf''s choice of cantrip, also remain fixed" (Withers, Services). The Withers respec will not re-present it, so he keeps whatever Larian assigned. Check the cantrip on the save rather than planning around it. If it turns out to be Bone Chill that is a fine outcome — A tier, "targets AC at range, prevents healing, and gives undead disadvantage on attacks" — and nothing in this build depends on the cantrip either way.'
   - char_level: 2
     class: Monk 1
     gains:
@@ -211,6 +219,7 @@ builds:
     - Martial Arts die 1d6
     recommendations:
     - category: Subclass
+      picks: 1
       recommendation: Way of the Open Hand
       note: Adds Topple, Stagger and Push variants to Flurry of Blows.
   - char_level: 5
@@ -220,6 +229,7 @@ builds:
     - Feat or Ability Score Improvement selection
     recommendations:
     - category: Feat
+      picks: 1
       recommendation: Tavern Brawler
       note: Adds the Giant-Strength modifier to unarmed attack and damage rolls a second time — the build's accuracy and damage engine.
   - char_level: 6
@@ -244,6 +254,7 @@ builds:
     - Feat or Ability Score Improvement selection
     recommendations:
     - category: Feat
+      picks: 1
       recommendation: Alert
       note: +5 Initiative and immunity to Surprise let him disable a priority target before it acts. A +2 WIS ASI is the defensive alternative.
   - char_level: 10
@@ -263,28 +274,29 @@ builds:
     - Second-Story Work
     recommendations:
     - category: Subclass
+      picks: 1
       recommendation: Thief
       note: Fast Hands enables two Flurries per turn — the whole reason for the three-level Rogue tail.
   itemization:
     act1:
     - id: staff-of-arcane-blessing
-      item: Staff of Arcane Blessing (swap)
+      item: Staff of Arcane Blessing
       tier: A
       tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (24:19) — incredible for a party making frequent spell attack rolls, and does less than the tooltip implies'
       slot: weapons
       note: 'HIS JOB, NOT A WEAPON — and the party''s entire Bless supply. Arcane Tower BASEMENT in the Underdark; the elevator buttons only appear if someone carries Bernard''s Guiding Light ring. The staff GRANTS Bless as a level 1 spell, once per long rest, so Asterion needs no Paladin dip and no class access to cast it — this is why he stays a clean Open Hand Monk 9 / Thief Rogue 3. Every Bless its wielder casts also applies MYSTRA''S BLESSING, a second +1d4 that lands only on SPELL attack rolls, which is worth +1d4 accuracy on each of Gale''s 3–7 Scorching Ray rays. THE ROUTINE: equip the staff out of combat → cast Bless → unequip and fight with empty hands. Concentration then sits on Asterion, who is the only party member with nothing else to concentrate on. ⚠ LIMITS TO PLAN AROUND: the staff''s free cast is ONCE PER LONG REST, and Bless at level 1 hits only THREE creatures — pick Charles, Gale and Bonbon and leave Asterion out, since he benefits least from +1d4 and the other three all key off attack rolls. ⚠ Do NOT let Gale consume it; the wiki flags it as Consumable by Gale. ⚠ Losing concentration drops the regular Bless but the wiki notes Mystra''s Blessing persists on its own, so Gale keeps his spell-attack bonus even if Asterion is hit.'
     - id: corellon-s-grace
-      item: Corellon's Grace (early)
+      item: Corellon's Grace
       tier: S
       tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (10:19) — great for a Tavern Brawler Monk defensively and offensively, but early-game only'
       slot: weapons
       note: 'EARLY ONLY, from Auntie Ethel. Before Tavern Brawler the staff attack is a solid main Action, Natural Pugilist improves bonus-action and Flurry punches, and unarmoured gives +2 saves. ⚠ UNEQUIP at char 5 — Attack/Extra Attack otherwise swing the staff and lose Tavern Brawler, even though Flurry still works. The staves tier list rates it S and says in the same breath that Tavern Brawler monks replace it, so retiring it is the intended arc, not a downgrade.'
     - id: dual-hand-crossbows-plus-one
-      item: Dual Hand Crossbows +1
+      item: Hand Crossbow +1
       tier: S
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (13:57) — best Act 1 hand crossbow; a pair is the highest damage archer setup'
       slot: ranged weapons
-      note: Act-1 weapon traders. Rogue proficiency gives a main-hand shot plus a bonus-action off-hand shot when melee is out of reach. The ranged set does not touch the melee hands, so Tavern Brawler stays live.
+      note: A PAIR, one in each hand, from Act-1 weapon traders. Rogue proficiency gives a main-hand shot plus a bonus-action off-hand shot when melee is out of reach. The ranged set does not touch the melee hands, so Tavern Brawler stays live.
     - id: graceful-cloth
       item: Graceful Cloth
       tier: S
@@ -328,8 +340,9 @@ builds:
         tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (33:57) — functionally equivalent to the Gloves of Power for the same job'
         note: 'Brem, Zhentarim. Advantage on Sleight of Hand — and unlike Guidance this actually shows up in the pickpocket window. Keep them bagged and swap in only to steal, since the slot is worth more as AC or damage in a fight.'
     - id: elixir-of-giant-strength
-      item: Elixir of Giant Strength (daily)
-      wiki: Elixir of Hill Giant Strength
+      item: Elixir of Hill Giant Strength
+      tier: S
+      tier_note: '9BcQXb37Bik (30:26) — sets Strength to 21; S used normally, and S+ ABOVE THE SCALE if drunk daily to skip strength investment'
       slot: consumables
       note: Hill Giant (STR 21) early → Cloud Giant (STR 27) later. Powers Tavern Brawler damage and, since STR > DEX, his attack rolls and Stunning-Strike DC. Occupies the one-elixir-per-rest slot.
     - id: deathstalker-mantle
@@ -387,15 +400,14 @@ builds:
       slot: amulets
       note: Grymforge, Adamantine chest. Ki Restoration (2 Ki, 1/long rest) plus Shatter — a cheap early neck that refuels Flurries. Mind the WIS-save Hysterical side effect on the rare version.
     - id: armour-of-uninhibited-kushigo
-      item: Armour of Uninhibited Kushigo (defensive)
+      item: Armour of Uninhibited Kushigo
       tier: C
       tier_note: 'TwFGCc8OOfw (5:09) — monk-only; Kushigo Counter needs Patient Defense, the weakest monk bonus action'
       slot: armour
       note: Grymforge, for returning Sergeant Thrinn's boots. During Patient Defence, Kushigo Counter gives a reaction unarmed strike when an attacker misses. Graceful Cloth stays default — use this only for a counter fight.
     act2:
     - id: resonance-stone
-      item: Resonance Stone (carrier)
-      wiki: Resonance Stone
+      item: Resonance Stone
       slot: other
       note: 'Mind Flayer Colony, late Act 2. He places and carries it: Manifestation of Mind psychic, Psionic Overload and his Circlet''s retaliation are all doubled across 4–6 hits a turn. It also gives enemies disadvantage on mental saving throws, and Command and both Hold spells are WIS saves — so anything standing near Asterion is close to unable to resist Gale''s control. ⚠ IT DOES NOT HELP STUNNING STRIKE: per the wiki the aura''s penalty covers Intelligence, Wisdom and Charisma saves, and Stunning Strike is a CONSTITUTION save. ⚠ The aura also makes the party — and him — psychic-vulnerable and disadvantaged on mental saves; the Amulet of the Harpers below is the counter. Holster it against psychic or mind-affecting enemies, and expect it to stop working once Act 2 ends.'
     - id: amulet-of-the-harpers
@@ -424,46 +436,54 @@ builds:
       slot: ring 2
       note: 'House of Healing morgue. The wearer cannot be Blinded — and per the wiki that blind immunity "also allows the wearer to see through magical darkness." This is what lets Asterion fight beside Charles inside a Darkness cloud at all; without it he is simply blind in there. It takes the second ring slot from Act 2, displacing Crusher''s Ring.'
     - id: act2-armour-asterion
-      item: Graceful Cloth (held over from Act 1)
+      item: Graceful Cloth
       tier: S
       tier_note: 'TwFGCc8OOfw (10:24) — +2 Dexterity is the strongest effect on the list; initiative, AC and damage in one'
       rank: '#3'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #3 of 20 — +2 Dexterity and advantage on Dexterity checks; acts like a free feat'
+      held: 1
+      wiki: The Graceful Cloth
       slot: armour
       bis: true
       note: 'CARRIED OVER, and worn all game. Clothing rather than armour, so Unarmoured Defence still applies, and it gives +2 Dexterity plus advantage on all Dexterity ability checks — which doubles as his pickpocket bonus.'
     - id: act2-head-asterion
-      item: Circlet of Psionic Revenge (held over from Act 1)
+      item: Circlet of Psionic Revenge
       tier: B
       tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (13:02) — a small amount of damage that is not always triggered, but it will see play in some compositions'
+      held: 1
       slot: head
       note: 'CARRIED OVER. No armour tag, so Unarmoured Defence survives it.'
     - id: act2-feet-asterion
-      item: Disintegrating Night Walkers (held over from Act 1)
+      item: Disintegrating Night Walkers
       tier: S
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (19:19) — probably the best boots in the game'
       rank: '#11'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #11 of 20 — short-rest Misty Step plus immunity to most movement-restricting surfaces'
+      held: 1
       slot: feet
       bis: true
       note: 'CARRIED OVER. Misty Step once per short rest plus immunity to being knocked Prone and to Web, Entangle and Grease — mobility and safety in one slot.'
     - id: act2-cloak-asterion
-      item: Deathstalker Mantle (held over from Act 1)
+      item: Deathstalker Mantle
       tier: S
       tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (6:44) — DARK URGE ORIGIN ONLY; free invisibility on a kill, broken, and the only act one magic cloak'
       rank: '#4'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #4 of 20 — invisibility after a kill, in a slot with no early competition'
+      held: 1
+      wiki: The Deathstalker Mantle
       slot: cloaks
       bis: true
       note: 'CARRIED OVER. The Dark Urge cloak: a kill grants Greater Invisibility, which on the party thief is both an escape and a repositioning tool.'
     - id: act2-ranged-asterion
-      item: Dual Hand Crossbows +1 (held over from Act 1)
+      item: Hand Crossbow +1
       tier: S
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (13:57) — best Act 1 hand crossbow; a pair is the highest damage archer setup'
+      held: 1
       slot: ranged weapons
-      note: 'CARRIED OVER. Rogue proficiency gives a main-hand shot plus a bonus-action off-hand shot for turns melee cannot reach.'
+      note: 'CARRIED OVER, still a pair. Rogue proficiency gives a main-hand shot plus a bonus-action off-hand shot for turns melee cannot reach.'
     - id: act2-weapons-asterion
-      item: Empty hands (held over from Act 1)
+      item: Empty hands
+      held: 1
       slot: weapons
       wiki: false
       note: 'CARRIED OVER, and deliberately empty: after Tavern Brawler both melee hands stay free so Attack and Extra Attack resolve as unarmed strikes. The Staff of Arcane Blessing is still carried purely as a pre-combat Bless swap.'
@@ -508,13 +528,14 @@ builds:
       slot: ring 1
       note: 'Araj Oblodra, Crimson Draughts in the Lower City, or from her at Moonrise in Act 2. Ignore difficult terrain and CANNOT BE PARALYSED OR RESTRAINED. His Night Walkers already cover Web, Entangle and Grease but not those two, and Paralysed is what turns a dived monk into a pile of free critical hits.'
     - id: act3-rings-asterion
-      item: Shadow-Cloaked Ring (held over)
+      item: Shadow-Cloaked Ring
       tier: S
       tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (38:32) — bonus damage is always among the best things an item can give, and this is no exception'
+      held: true
       slot: ring 2
       note: 'Act 3 still has plenty of obscured interiors and Charles generates his own Darkness, so the +1d4 stays live on most turns. Swap it for the Eversight Ring whenever the plan is to fight inside Charles''s cloud. ⚠ The Callous Glow Ring is NOT his: it needs illuminated targets, which fights both the Shadow-Cursed Lands and Charles''s Darkness, and Gale''s Coruscation chain already lights targets for his own copy.'
     - id: act3-ranged-asterion
-      item: Hand Crossbows +2
+      item: Hand Crossbow +2
       tier: A
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (43:35) — the pick over Ne''er Misser only when Ballistic Armour doubles your piercing damage'
       slot: ranged weapons

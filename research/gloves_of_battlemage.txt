@@ -1,0 +1,542 @@
+Understanding the Gloves of Battlemage’s Power: Notes from a Journey Into Madness
+Recently, u/JRandall0308, u/LostAccount2099, and I have been on a quest to understand how the Gloves of Battlemage’s Power actually work. As part of that quest, we delved deep into the BG3 game code, ran tests with more spreadsheets and save files than we care to admit, and variously smacked, burned, electrocuted, and irradiated countless enemies, objects, and companions.
+
+At long last, we’ve reached a point where we understand how to reliably trigger the Gloves of Battlemage’s Power (henceforth, The Gloves). Among other things, we have discovered:
+
+How to get full Acuity just by holding a Flame Blade
+
+Why Spirit Guardians sometimes gives full Acuity, and sometimes does not
+
+Why dropping consumables into a damaging surface sometimes gives Acuity, and sometimes does not
+
+Over 40 effects confirmed to trigger The Gloves (Did you know Encrusted with Frost will do it? What about the self-damage from Heat?)
+
+In this post, I’m going to share all that we’ve learned. Although we’re still a little unsure why they work the way they work, we can with confidence tell you when they will trigger. Anything more than that requires access to forbidden knowledge locked in the secret sage’s vault at Larian studios.
+
+This guide is specific to Honor mode, but most of this material still applies on lower difficulties.
+
+If you don’t care how The Gloves work and just want to know what triggers them, skip to the Appendix. And here's the TL;DR:
+
+The Gloves of Battlemage’s Power trigger off smite spells, spells that use a weapon, throw and fall damage, and from all game effects that deal damage via a status, such as “burning” and “Cloudkill” (yes, all of them—or all we have tested). Additionally, they have a hidden “once per attack” limitation that affects how often they will trigger. Between that limitation and the unintuitive way the game defines things like “attack,” “spell,” and “status,” The Gloves can feel inconsistent. But their behavior is predictable.
+
+That may sound simple enough, but trust me: the devil’s in the details. As such, the rest of this post is a one-stop shop for everything we’ve learned. I’ve tried to keep it as succinct as possible, but fair warning… it’s kind of a lot. Peering into the BG3 code is not unlike opening a dusty old spellbook that you found in the abandoned cellar of a dubious alchemist. You’ll achieve power, but, well—you might go a little crazy, too.
+
+Many Bothans Stone Lord Thugs died to bring you this information.
+
+Also Astarion. RIP.
+
+A NOTE TO LARIAN STUDIOS
+We’re about 98% sure we’ve identified the bug that causes the The Gloves to trigger when they shouldn’t. I’m going to talk about it here, because it’s interesting.
+
+But if you’re reading this, I’m begging you: please don’t fix it! I love The Gloves so much, and they’re no more overpowered than the other Acuity items. I want everyone to understand how to use them, but it’d be a damn shame if all our hard work just led to them getting patched into irrelevance.
+
+You can fix the Flame Blade bug if you want, because you already fixed the same bug with Shadow Blade. Just please leave the rest of The Gloves’ functionality untouched.
+
+That is all.
+
+TABLE OF CONTENTS
+Quickstart Guide
+“Normal” Triggers
+Hard-Coded Spells
+
+Flame Blade Abuse
+
+Special Case: Reaction Smite
+
+“Variant” Triggers
+The Mysterious Function
+
+Damage from Statuses
+
+Hidden Statuses
+
+Retaliation Doesn’t Work (Usually)
+
+Throwing and Falling
+
+Bypassing the OncePerAttack Restriction
+Multiple Triggers from Surfaces
+
+Free Actions
+
+How Does Spirit Guardians Work?
+
+CreateExplosion()
+
+Grenades
+
+Putting it all Together: Six Sample Methods for Stacking Acuity
+Appendix: Known Triggers
+Credits
+Quickstart Guide
+You can trigger The Gloves by fulfilling three not-so-simple conditions.
+
+You need to deal damage, and that damage needs to be attributed to you. This means the damage needs to accept YOUR damage bonuses. Put simply, it needs to be damage that will add your Lightning Charges and Callous Glow Ring. Wall of Fire triggers both The Gloves and Callous Glow. By contrast, Cloud of Daggers triggers neither.
+
+The Gloves have a OncePerAttack limitation, so you can only trigger them once per damaging event. But the game has an odd definition of what counts as an “attack,” so there are ways to get around this limit, especially when it comes to persistent area effects like Wall of Fire and Spirit Guardians.
+
+Your damage needs to pass a special in-game check, controlled by the function ArcaneAcuityGlovesCondition(). If you want to see it for yourself, the function is defined in the CommonCondition script in the game files (Ctrl-F for it—it’s at the very bottom).
+
+The code for that final in-game check is deceptively complicated. Damage can pass the check by coming from one of several different sources. Valid damage sources include:
+
+A hard-coded list of smite spells (Thunderous Smite, etc)
+
+A hard-coded list of weapon attack spells (Booming Blade, etc)
+
+Any attack with a conjured, NON-permanent Shadow Blade
+
+All damage dealt while holding (yes, just holding) a conjured, NON-permanent Flame Blade
+
+Damage from certain indirect sources, including statuses and fall damage
+
+That last condition is the most bizarre, but also the most important, because it controls almost every one of the weird triggers for The Gloves. We call these the “Variant” triggers, after the function that makes them act the way they do. More about this function below.
+
+Damage attributed to you that fulfills the above conditions will trigger The Gloves, and grant you +2 Acuity.
+
+Let’s go through what that looks like in practice…
+
+The “Normal” Triggers
+The ArcaneAcuityGlovesCondition() has a list of spells that have been hard-coded to trigger The Gloves. The function is a series of OR statements. Whenever you deal damage, the game checks each of those statements to see if your damage qualifies. If ANY of them return true, The Gloves will trigger and you’ll get the Acuity.
+
+It doesn’t matter how many of the OR statements you pass: the result is true or false. Casting Booming Blade with a Shadow Blade in your hand will still only give +2 Acuity.
+
+Hard-Coded Spells
+The hard-coded spells include:
+
+Most Smite spells (full list in the Appendix)
+
+Booming Blade
+
+Ensnaring Strike
+
+Hail of Thorns
+
+Shadow Blade (but not the permanent version)
+
+Flame Blade (but not the permanent version)
+
+If it’s not on that list, dealing damage with it won’t pass the hard-coded conditions.
+
+For the smite spells, the function checks for an exact name match. Because upcasted and racial-variant spells have their own ID in the code, anything the devs forgot to add won’t trigger. For example, the ranged version of Branding Smite won’t trigger The Gloves when cast at spell level 4 or higher.
+
+For Ensnaring Strike and Hail of Thorns, the function checks for “child or variant” versions of the spells, so upcasted versions should work with The Gloves as expected.
+
+Flame Blade Abuse
+When Patch 8 was released, there was a bug that caused all damage dealt by your attacks to trigger the gloves, so long as you were holding a Shadow Blade. Larian fixed that in a hotfix, but they didn’t make the same fix for Flame Blade.
+
+For Flame Blade, the condition only checks whether one of your active weapons was a Flame Blade when you made the attack. Your active weapons are the ones your character has out: either melee or ranged. When you make a melee or a ranged attack, your character will switch active weapons, as appropriate.
+
+But when you make a throw, unarmed, or spell attack, you can choose which weapon-set to have active. As long as your active main hand weapon is a Flame Blade, all damage you deal will trigger the The Gloves, once per attack.
+
+This includes:
+
+Every missile of a Magic Missile
+
+Every beam of an Eldritch Blast
+
+Throw damage
+
+Unarmed attacks
+
+Try it yourself! Find your nearest druid, conjure a flame blade in your main hand, and do basically anything that deals damage. Acuity—acuity everywhere!
+
+There are some caveats:
+
+Ranged weapon attacks don't work, because they change your active weapons.
+
+It must be the Druid version of FB, not the tiefling version, which won’t trigger The Gloves at all.
+
+If FB is in your main hand, then your offhand attacks won’t trigger The Gloves.
+
+If FB is in your offhand, only attacks with FB will work, or other melee spell attacks (Inflict Wounds, Shocking Grasp, etc)
+
+Note that The Gloves do not work with the permanent versions of Shadow Blade or Flame Blade acquired by recruiting then dismissing a hireling. This is because the game checks your active weapon for the FLAME_BLADE and SHADOW_BLADE statuses, which the permanent versions do not have. This is also why the permanent Flame Blade always uses Strength, rather than your casting stat, and why it doesn’t count as a melee spell attack for the purposes of the Pyroquickness Hat.
+
+Special Case: Reaction Smite
+When used as a reaction, Divine Smite will not trigger The Gloves on its own, because it will inherit the properties of the triggering attack. If the triggering attack doesn’t get Acuity, neither will the added-on smite. However, if the source attack does trigger the gloves, reaction smite will trigger them a second time, for a total of +4 Acuity.
+
+So, a divine smite can give you between 0 and 4 Acuity, depending on how you use it:
+
+Reaction smite from a standard melee attack: +0 Acuity
+
+Divine smite directly from the action bar: +2 Acuity
+
+Booming blade (for example) into a reaction smite: +4 Acuity
+
+The reason for this has to do with DRS. Most DRS effects that work in Honor mode—the Rat Bat, for instance—will NOT double-trigger The Gloves, even if the source attack does, because of The Gloves’ hidden “once per attack” limitation. But reaction smite is a special case. Because it is an entirely separate game event, it will trigger The Gloves an additional time.
+
+To our knowledge, the only other effect that works this way in Honor mode is Valiant Damage from Valor Bard. Valiant Damage triggered off of a qualifying attack like Booming Blade will give an additional +2 Acuity. But this is a complicated topic, beyond the scope of this post. I plan to write a future post that explains in detail how DRS works in Honor mode.
+
+The “Variant” Triggers
+If you’ve used The Gloves at all, then you’ll know they trigger from all sorts of things that don’t fit any of the above categories.
+
+Some examples:
+
+Throwing anything with a health bar, from potions to chairs to goblins
+
+Persistent AoE spell effects like Cloudkill and Wall of Fire
+
+Status damage like Burning and Electrocuted
+
+Fall damage caused by you
+
+Some miscellaneous effects like the Holy Lance Helm
+
+All of these triggers are due to the same bit of code in the ArcaneAcuityGlovesCondition() function. Care to try and guess which one it is?
+
+Maybe you think it’s that last line: isSpell() & isWeaponAttack(). The BG3 code is infamously weird—who knows, maybe Wall of Fire is a weapon attack?
+
+That’s a good guess, but it’s wrong. In fact, Wall of Fire damage doesn’t pass the isSpell() check either, because the damage gets dealt by the area of effect, not by the actual spell (that’s why it doesn’t charge the Ring of Elemental Infusion).
+
+Wall of Fire actually triggers the Gloves because it returns true on every line of the condition check that uses this function:
+
+isSpellChildorVariantfromContext(‘Spell_ID’)
+
+The Mysterious Function
+Figuring this out required modding the game, removing lines from ArcaneAcuityGlovesCondition() line by line until we could isolate what was causing these triggers. Without a doubt, they’re caused by isSpellChildorVariantfromContext(). As long as that function is there, the Variant triggers will work. We call them “Variant” triggers because of the name of this function.
+
+It doesn’t even matter what Spell ID you put in the function to check against, as long as it’s a real spell (the string “Larian_Please_Explain” doesn’t work).
+
+Unfortunately, that function isn’t defined in any of the code visible to players, so we can’t say for sure what’s happening. Our best theory is that the function returns true when it’s checking against certain effects that aren’t spells at all, such as damage from a status like “burning,” or fall damage. Those damage sources break the function in some way that tricks it into returning true.
+
+Let’s look at the known effects that cause this behavior.
+
+Damage from Statuses
+Any effect that deals damage by means of a status rather than a direct effect will trigger The Gloves, provided the damage from that status gets attributed to the player.
+
+Here’s a partial list of effects that deal damage in this way, all of which work with The Gloves. For the full list, check out the Appendix.
+
+Black Tentacles
+
+Burning
+
+Caustic Brine
+
+Cloudkill
+
+Electrocuted
+
+Ensnared (the damage over time, whether from Ensnaring Strike or Nature’s Snare)
+
+Spike Growth
+
+Spirit Guardians
+
+Phantasmal Killer
+
+Psionic Overload (the self damage)
+
+Toxins (the end-of-turn damage from Simple, Serpent Fang, Wyvern, and Purple Worm Toxins)
+
+Wall of Fire
+
+All of those effects apply a status, and that status deals damage either when the status is applied, when a character moves through the area, and/or at the start or end of the affected character’s turn.
+
+In order for these effects to trigger The Gloves, the damage needs to be attributed to you, so you need to be the one to create the electrified water or pop the Caustic Bulb. As always, an easy way to check if the damage is yours is to see if it gets your damage bonuses. If your Lightning Charges get applied, it’s yours.
+
+Some effects will deal damage via a status like these do, but won’t attribute that damage to the character that created the effect. None of these effects trigger The Gloves. They include:
+
+Cloud of Daggers
+
+Hunger of Hadar
+
+Insect Plague
+
+Moonbeam
+
+Spreading Spores (level 10 Spore Druid ability)
+
+These effects don’t add Lightning Charge damage, either. This is because they actually summon an invisible entity that emits the status via an aura. That hidden little guy takes credit for your damage, so no Acuity for you (that little shit). These are the only effects we know of that deal damage with an invisible helper in this way.
+
+Hidden Statuses
+Sometimes the game applies a hidden status that interacts with game effects despite not being visible to the player. You may have noticed that casting Sanctuary while wearing the Boots of Stormy Clamour will hit a nearby enemy with 2 Reverb. That’s because the enemy receives a hidden status that helps the game keep track of valid targets.
+
+A few game effects use a hidden status like this to deal damage. One of these effects is a well-known trigger for The Gloves: the retaliation damage from the Holy Lance Helm. This effect applies a hidden status when it deals damage, so it fits the pattern.
+
+As far as we can tell, every status in the game that deals damage attributed to the player will trigger the The Gloves.
+
+If you’ve found a status that doesn’t fit this pattern, or a hidden status we haven’t found, please, let us know!
+
+Note that the status itself has to deal the damage. Whether or not this is the case may not be obvious without looking at the code. For example, Armor of Agathys is a status, but it deals damage by means of a passive that is granted by the status. Passives don’t seem to work as “variant” triggers, by our testing, so it doesn’t work.
+
+Feeling crazy, yet?
+
+Retaliation Doesn’t Work (Usually)
+On that topic, we’ve seen some people claim that The Gloves trigger off retaliation damage. With the notable exception of the Holy Lance Helm, that doesn’t seem to be true.
+
+Let us know if you’ve been able to get it to work, but we haven’t been able to build Acuity off any of the following effects:
+
+Armor of Agathys
+
+Fire Shield
+
+Fleshmelter Cloak
+
+Hellish Rebuke
+
+Shield of Scorching Reprisal
+
+Stage Fright
+
+Like Agathys, most of the above abilities deal damage by means of a passive that is granted by the associated status or equipment.
+
+Throwing and Falling
+We don’t know why, but two other damage sources trigger The Gloves by way of the Variant function:
+
+Fall damage caused by your actions
+
+The damage dealt to the thing you’re throwing when you use the Throw or Improvised Weapon actions
+
+Fall damage is straightforward. If someone takes fall damage from an effect caused by you, you’ll get +2 Acuity. You can do this to anybody—goblins, Astarion, hapless citizens of Baldur’s Gate… all will trigger The Gloves.
+
+You can even do it to yourself! But the fall damage has to be caused by one of your actions, and jumping off a cliff doesn’t count as “causing” yourself to fall. However, if you stand at the edge of a cliff and blow yourself up with a Smokepowder barrel, you will get +2 Acuity. Yes, I did test this, and yes, I am insane.
+
+You can also get Acuity from the Throw and Improvised Weapon actions. This is distinct from fall damage. When you throw something with a healthbar, whether it’s a goblin, a potion, or a crate, the object itself will take 1d4 bludgeoning damage. This is true even if it didn’t fall far enough to take fall damage. In fact, that’s why potions break when thrown.
+
+This bludgeoning damage is attributed to you, so it receives universal damage bonuses like Callous Glow. It also triggers The Gloves. For whatever reason, both fall damage and throw damage trip up the function in the same way that statuses do.
+
+Unfortunately, you’ll only get +2 Acuity when you throw a goblin off a cliff, even though the combat log will display that 1d4 bludgeoning damage separately from the fall damage. That’s because The Gloves only trigger OncePerAttack.
+
+Bypassing the OncePerAttack Restriction
+No matter what source of damage you use to trigger The Gloves, you’ll only trigger them a single time per damaging event. If you cast Wall of Fire on four enemies, you’ll only get +2 Acuity, even though all four of them will take damage right away. Similarly, if you cast Spirit Guardians and run into a group of enemies, you’ll only get one trigger (but more on that below).
+
+This is because The Gloves have a OncePerAttack restriction, which is the same restriction that causes the Hat of Fire Acuity to only give you +2 Acuity for a single cast of Fireball. But the game has a very loose definition of what counts as an “attack” for the purposes of that restriction.
+
+The OncePerAttack limit gets reset every time your character performs any effect that targets any in-game entity, whether that entity is an enemy, an ally, or yourself.
+
+Getting into what this means is worth a post of its own, so I won’t get bogged down in the details. You can reset the limit by:
+
+Using a targetable ability on anyone, whether a Ranged Attack on a goblin or Help on Astarion
+
+Using an area of effect ability, whether Aid on allies or Fireball on enemies, provided someone gets hit by it (they do NOT need to be damaged by it—only affected by it)
+
+Using a self-target ability, which includes everything from Dash to Rage (but not drinking a potion, for some reason)
+
+Multiple Triggers from Surfaces
+If you use one of these targeted abilities between each damage instance, you can trigger The Gloves multiple times in the same turn with the same damaging effect.
+
+For example, Tav casts Cloudkill on three enemies, getting +2 Acuity. Then, he walks up to a fourth enemy and shoves them in. He gets +2 Acuity when that enemy takes poison damage, because Shove resets the OncePerAttack limit on The Gloves.
+
+Alternatively, Tav shares a turn with Gale and Wyll. Tav casts Wall of Fire on three enemies, getting +2 Acuity. Then, he uses Action Surge, which resets the OncePerAttack limit. Gale then walks into the fire, which gives Tav +2 Acuity. Tav then casts Cure Wounds on Gale, resetting the limit again. Wyll then walks into the fire for yet another trigger, for a total of +6.
+
+Free Actions
+You don’t need to spend a real action to reset The Gloves. Some effects count as an “attack” because they target someone, even though they don’t use your Action, Bonus Action, or Reaction.
+
+For example, you can:
+
+Attempt to speak with the Sentient Amulet while in combat
+
+Use the Perform action to start playing a song
+
+Target someone with the ability check version of Bend Luck
+
+Provoke an attack of opportunity (but if you take damage from it, you’ll lose 2 Acuity)
+
+Trigger a CreateExplosion event—see below for what this means
+
+All of these effects reset the OncePerAttack limitation without costing you any action economy whatsoever. This is why you can use the Sentient Amulet to enable an infinite combo with the Reverb boots. The Boots have that same OncePerAttack limit.
+
+The Perform action is worth flagging in particular, as it is the only one of these effects that’s truly costless. It doesn’t require action economy, class resources, or even move speed, and unlike the Sentient Amulet, it doesn’t use an equipment slot. All classes can get access to this action by playing music with Alfira in Act 1 and succeeding on two Performance checks. Alfira truly is the best NPC in the game.
+
+How Does Spirit Guardians Work?
+In my Death Cleric guide, I mentioned that Spirit Guardians will sometimes trigger The Gloves every time it does damage, and sometimes won’t. I now know this is because of the OncePerAttack limit.
+
+When you damage an enemy with Spirit Guardians, you get +2 Acuity. If you then walk up to another enemy and damage them, The Gloves won’t trigger a second time, because of that OncePerAttack limit. But if you reset the per-attack limit before you damage that second enemy, you will get another +2 Acuity. So, to stack Acuity with SG, you need a way to reset that limit during your turn.
+
+Both the Sentient Amulet and Perform give you a tedious but action-efficient method for stacking Acuity with SG. Perform is especially flavorful for a Death cleric using the necrotic variant of SG: it’s a Death Metal build! You’re running around the battlefield jamming out on your lute while surrounded by demonic specters. Hell yeah.
+
+But if that sounds too burdensome to you, there’s an easier method. In fact, you may have already used it before, without realizing it.
+
+CreateExplosion()
+Many game effects work by means of the CreateExplosion() function, which casts an AoE “spell” when triggered. This is how Hamarhraft works, for example. While wielding the hammer, the game will “cast” the thunder AoE effect at the spot you land, whenever you jump. If at least one character or object gets hit by this AoE, the game will reset the OncePerAttack limit.
+
+Guess what else uses CreateExplosion? The Luminous Armor.
+
+When the Armor triggers, the resulting radiant shockwave behaves like an area of effect “spell” cast on the ground. When that shockwave hits an enemy, it resets the per-attack limit on The Gloves!
+
+So, as long as you’re wearing the Luminous Armor, every instance of radiant Spirit Guardians damage will trigger The Gloves. This is why players have reported inconsistent results with SG. Luminous Armor is so popular on SG builds that many people didn’t realize how it contributes to the interaction—myself included.
+
+But there are other AoE effects that reset the per-attack limit in the same way, provided they hit at least one target. Some examples:
+
+Grenades, including both Alchemist Fire and Caustic Bulb
+
+Elemental arrows
+
+Shield of Thralls
+
+Cull the Weak
+
+All on-jump shockwaves (Brutal Leap, Hellcrawler, Hamarhraft)
+
+The AoE heal from a Blood of Lathander resurrection
+
+None of these explosions trigger The Gloves on their own (not even Alchemist’s Fire, which gives Acuity from the Burn damage and the Throw damage, not the explosion itself). But they can be combined with one of the Variant triggers to stack Acuity. For example, if your Spirit Guardians damage triggers Cull the Weak, you can then go damage another enemy and get +2 Acuity again.
+
+Grenades
+You can also use CreateExplosion to get full Acuity by dropping potions or grenades straight from your inventory into a damaging surface that you created.
+
+Players have reported inconsistent results when trying to stack Acuity this way. The reason is simple: a character or object has to be inside the grenade’s explosion in order for The Gloves to trigger again.
+
+The simplest way to do this is with Caustic Bulbs. The Caustic Brine condition deals damage when the status is applied and at the start of your turn. If you’re standing in the Brine when you drop another Bulb into it, you won’t take damage again, because you already have the status—but this will reset the per-turn limit.
+
+Try it yourself! Stand in some Caustic Brine with The Gloves equipped, enter turn-based mode, and drop Bulbs at your feet one-by-one until you have max Acuity. Each time a Bulb bursts, your character will flinch, despite not taking damage. This is because they were targeted by the CreateExplosion event. If you try to do this with your character standing outside the explosion, it won’t work, unless the explosion hits someone (or something) else.
+
+You can do something similar by placing Alchemist Fire or Caustic Bulbs on the ground in a line, spaced out so that each explosion will trigger the next grenade in the line like falling dominoes. When the first grenade explodes, the status damage will trigger The Gloves, and the CreateExplosion event will reset the limit. With 4 grenades lined up like this, you then can throw a 5th to start the chain and get a full 10 Acuity with a single toss.
+
+Putting it all Together: Six Sample Methods for Stacking Acuity
+If you read through this whole post, you should have a good understanding of how to consistently activate The Gloves. But it’s a lot of information, so in this section, we’ll summarize a few of the easiest, most action-efficient methods to stack Acuity that we’ve found. Some of these were already known, but now we have a better understanding of how they work.
+
+Smite while you smite. A Paladin with Extra Attack can get +8 Acuity from a single action by attacking with Shadow Blade (available to all classes with Arabella's ring) and smiting as a reaction off both the regular attack and the extra attack. Oddly, reaction smite does not reset the OncePerAttack limit on its own, so to get the full +8, you’ll need to reset the limit between your first and second attacks.
+
+Fun with Flame Blade. Any multi-hit damaging effect will grant +2 Acuity per hit while you have a Flame Blade in your main hand and The Gloves equipped. This makes Stars 3 a very attractive multiclass for spellcasters: you get Dragon Form to protect concentration and Flame Blade for Acuity. Every missile of Magic Missile, every blast of Eldritch Blast... the possibilities are endless.
+
+Radorbs, Redux. Play Cleric, wear the Luminous Armor and the Holy Lance Helm, and cast Spirit Guardians in every fight. That's it. That's the build. I know, I know—that was already a thing. But at least you now know that if you ever take off the Luminous Armor, you’ll need another way to reset the per-turn limit.
+
+The Checkmate. Some damage-over-time spells both immobilize the target and trigger The Gloves when they deal damage: Ensnaring Strike, Phantasmal Killer, Black Tentacles. So, they sustain Acuity on their own, allowing you to trap enemies and sit back while they slowly die. Checkmate.
+
+Caustic Bulbs. Omeluum sells 3-5 Caustic Bulbs per vendor refresh. You need 5 of them to get full Acuity, and you can do this at any time, inside or outside of combat, provided someone or something is standing in the Bulb explosion each time. You can even hit yourself. This is the most efficient way to build Acuity, by far.
+
+Chain Reactions. A less cheesy version of the above is to line up grenades in a "chain reaction," such that blowing one up will blow up another. For instance, you can place a Caustic Bulb next to an enemy, then shoot that enemy with an elemental arrow, for +4 Acuity. This is a useful strategy that plays into the "alchemist" character fantasy without totally breaking action economy.
+
+I fully anticipate that somebody reading this post will think of some way to use The Gloves that we haven't considered. If that's the case, please share! Testing this bizarre item has been hilarious and fun; I'm sure we still haven't discovered all the strange, powerful, and surprising ways they can be used.
+
+Appendix: Known Triggers
+Below, you’ll find a list of every method to trigger The Gloves that we have found and confirmed so far. I’ll update this list as we find more.
+
+Smite Spells
+valid spell levels in parentheses
+
+Divine Smite*
+
+Searing Smite
+
+Thunderous Smite
+
+Wrathful Smite
+
+Melee Branding Smite
+
+Ranged Branding Smite (levels 2 and 3)
+
+Blinding Smite (level 3)
+
+Staggering Smite (level 4)
+
+Melee Banishing Smite (level 5)
+
+Ranged Banishing Smite
+
+* When used as a reaction, Divine Smite will only trigger The Gloves if the source attack triggers them as well.
+
+Other Spells
+Booming Blade
+
+Ensnaring Strike
+
+Hail of Thorns
+
+Shadow Blade (temporary version only)
+
+Flame Blade* (temporary version only)
+
+* The Gloves trigger from all damage when Flame Blade is the active main hand weapon.
+
+Damaging Conditions
+Beckoning Darkness (from Dark Justiciar Gauntlets)
+
+Bibberbang Fumes (from Noxious Spore Grenade)
+
+Black Tentacles
+
+Bleeding
+
+Burning
+
+Caustic Brine
+
+Cloudkill
+
+Electrocuted
+
+Ensnared (damage over time)
+
+Heat (self-damage)
+
+Melf’s Acid Arrow (damage over time)
+
+Noxious Fumes
+
+Phantasmal Force
+
+Phantasmal Killer
+
+Psionic Overload (self-damage)
+
+Roiling Hellfire
+
+Searing Smite (damage over time)
+
+Spike Growth
+
+Spirit Guardians
+
+Toxins (Simple, Serpent, Wyvern, Purple worm)
+
+Wall of Fire
+
+Wall of Ice (ice cloud)
+
+Miscellaneous
+Throw and Improvised Weapon (the projectile must take damage)
+
+Fall damage caused by you
+
+Crushing damage caused by you (such as when jumping on somebody from a great enough height while enlarged)
+
+Smokepowder explosion (barrel or surface)
+
+Holy Lance Helm retaliation damage
+
+Nyrulna thunder damage explosion when thrown
+
+Frost discharge (1d4 Cold damage from 7+ stacks of Encrusted with Frost)
+
+Force Conduit discharge (1d4 Force damage from +5 stacks of Force Conduit)
+
+Untested Effects Likely to Work
+The following effects have not been tested, but may work based on their similarity in the code to known triggers.
+
+Nebulous Black Hole (full-Illithid power)
+
+Blade Barrier
+
+Blood Thirst (Horns of the Berserker self damage)
+
+Spiteful Suffering
+
+Prey’s Scent (Swarmkeeper bonus damage against targets marked by Hunter’s Mark)
+
+Wall of Thorns
+
+Credits
+Writing: u/t-slothrop, u/JRandall0308
+
+Testing: u/t-slothrop, u/JRandall0308, u/LostAccount99, u/Remus71, u/Captain_ET
+
+Feedback: u/Remus71, u/Captain_ET
+
+I also want to give a shout out to Twitch streamer soblakismyself, whose own experiments with The Gloves inspired some of my early testing. Check out his channel—he’s an extremely knowledgeable player who comes up with very fun and creative builds.
+
+None of this would have been possible without the amazing BG3 Search Tool by Norbyte. This is what allows us to inspect spells and game scripts.
+
+The testing of various item combinations was facilitated by the mod [Cheater’s Spell Scroll] (https://mod.io/g/baldursgate3/m/cheaters-ring#description) by Xelphos.
+
+This post builds on previous Reddit threads about the Gloves of Battlemage’s Power. For example:
+
+I tested Gloves of Battlemage’s Power so you don’t have to by u/LesbianTrashPrincess
+
+Pro-tip: Any class or build can now use the Gloves of Battlemage's Power, since they trigger on thrown potions
+
+Spikes and Tentacles and Flasks, Oh My! Some unexpected triggers for the Gloves of Battlemage's Power
+
+Glove of the battlemage - more broken interactions by u/CrownWBG

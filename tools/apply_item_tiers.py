@@ -12,6 +12,10 @@ placing belongs now that letter tiers occupy `tier`.
 Idempotent: every managed field is stripped and rewritten on each run, so editing
 the dataset and re-running is the way to change a rating.
 
+Scope is gear only. A build's `spells:` block carries the same tier/tier_note pair,
+written from a different dataset by `tools/apply_spell_tiers.py`, so those lines are
+left alone here instead of being stripped as stale.
+
     python tools/apply_item_tiers.py --dry-run
     python tools/apply_item_tiers.py
 """
@@ -38,6 +42,42 @@ def norm(name):
 
 def yq(text):
     return "'" + str(text).replace("'", "''") + "'"
+
+
+SPELLS_KEY = re.compile(r"^(?P<ind>[ ]*)spells:[ ]*$")
+
+
+def spell_spans(text):
+    """Offset ranges of every `spells:` block — the region this applier does not own.
+
+    A block runs from its `spells:` line to the next non-blank line indented no deeper
+    than that key, which is either a sibling field of the build or the next build."""
+    spans, pos, open_at, open_ind = [], 0, None, 0
+    for line in text.split("\n"):
+        if open_at is not None and line.strip():
+            if len(line) - len(line.lstrip(" ")) <= open_ind:
+                spans.append((open_at, pos))
+                open_at = None
+        if open_at is None:
+            key = SPELLS_KEY.match(line)
+            if key:
+                open_at, open_ind = pos, len(key.group("ind"))
+        pos += len(line) + 1
+    if open_at is not None:
+        spans.append((open_at, len(text)))
+    return spans
+
+
+def strip_managed(text, strip_re):
+    """Strip the managed fields everywhere except inside a `spells:` block. Each span
+    boundary sits at the start of a line, so a match can never straddle one."""
+    out, cursor = [], 0
+    for start, end in spell_spans(text):
+        out.append(strip_re.sub("", text[cursor:start]))
+        out.append(text[start:end])
+        cursor = end
+    out.append(strip_re.sub("", text[cursor:]))
+    return "".join(out)
 
 
 def variants(key):
@@ -114,7 +154,7 @@ def main():
     total_tier = total_rank = 0
     for path in sorted(CHARACTERS.glob("*.md")):
         text = path.read_text(encoding="utf-8")
-        text = strip_re.sub("", text)
+        text = strip_managed(text, strip_re)
 
         # Which act does each offset fall in, so a rating can prefer that act's list.
         acts = [(m.start(), m.group("act")) for m in act_re.finditer(text)]

@@ -57,8 +57,7 @@ loot_guide:
       for: any
       core: false
       note: 'Za''krug at the Grove gate. +1 Sleight of Hand; a branded wearer''s hits inflict Absolute''s Bane (−1d4 attacks and saves). Pickpocket helper, not a +attack/DC item.'
-    - name: Sorrow (glaive)
-      wiki: Sorrow
+    - name: Sorrow
       for: any
       core: false
       note: Hidden Vault at the Wolf altar (Enclave Library puzzle). +1 reach glaive with Sorrowful Lash — decent early reach weapon.
@@ -75,8 +74,7 @@ loot_guide:
       for: Asterion
       core: true
       note: Chest under the giant tree, Decrepit Sanctuary. Lightning Charges per unarmed hit → advantage vs metal armour and constructs. Offensive Bracers alternative.
-    - name: Auntie Ethel's Hair (Hag's Hair)
-      wiki: Auntie Ethel's Hair
+    - name: Auntie Ethel's Hair
       for: any
       core: true
       note: 'Vanilla: one permanent +1, uncapped. Modded run: one per member — Charles/Bonbon/Gale CHA 17→18, Asterion DEX 17→18.'
@@ -125,11 +123,12 @@ loot_guide:
       for: Gale
       core: true
       note: Roah Moonglow, Shattered Sanctum. Fills Gale's unused ranged slot purely for +1 Initiative, to land Haste or Wet first.
-    - name: Dual Hand Crossbows +1 — two sets
+    - name: Hand Crossbow +1
       for: Charles + Asterion
       core: true
       note: Farm four copies — Dammon, Roah Moonglow, Derryth Bonecloak, A'jak'nir Jeera. A pair each for Charles and Asterion as ranged fallback.
-    - name: Arrows of Darkness — farmed supply
+    - name: Arrows of Darkness
+      wiki: Arrow of Darkness
       for: Charles
       core: true
       note: 'Restock from arrow vendors after rests and level-ups. 3m cloud, 3 turns, no Concentration: Bonbon places it, Charles swaps to Phalar and activates Shriek, and Devil''s Sight grants advantage while he holds Bless, Divine Favour or Hex.'
@@ -199,6 +198,9 @@ loot_guide:
       core: true
       note: 'Sold by Blurg. +1 Spell Save DC and +1 spell attacks. Gale holds it OFF-HAND alongside Spellsparkler permanently from character level 4, once Dual Wielder makes the pair legal — neither staff is Light — and the +1 spell attack applies to every individual Scorching Ray ray.'
     - name: The Shadespell Circlet + The Lifebringer
+      wiki:
+      - The Shadespell Circlet
+      - The Lifebringer
       for: Gale
       core: true
       note: Omeluum sells Shadespell (+1 Spell Save DC while obscured — Gale's head). Blurg sells Lifebringer (3 temp HP on gaining Lightning Charges — the defensive alternative).
@@ -223,6 +225,7 @@ loot_guide:
       core: true
       note: Caustic Band (Derryth) — +2 Acid per weapon hit, scaling with Flourish projectiles. Club from the broken Arcane Tower stool — Light main hand beside the Knife, and STR 19 frees the elixir slot for Bloodlust.
     - name: Elixirs of Bloodlust
+      wiki: Elixir of Bloodlust
       for: Bonbon
       core: true
       note: Craft from Worg Fangs; check Cyrel, Derryth, Stonemason Kith. Non-Honour, a kill grants an extra Action that benefits from Extra Attack. Hill Giant Strength instead for a lone boss.
@@ -241,13 +244,11 @@ loot_guide:
       for: Asterion
       core: true
       note: True Soul Nere. Bonus-action Misty Step 1/short rest + immunity to Web, Entangle and grease-slip.
-    - name: Adamantine Splint Armour (crafted)
-      wiki: Adamantine Splint Armour
+    - name: Adamantine Splint Armour
       for: Bonbon
       core: true
       note: 'FIRST MITHRAL ORE, poured with the Splint mould. AC 18 flat, ATTACKERS CANNOT LAND CRITICAL HITS, all incoming damage reduced by 2, and melee attackers are sent Reeling. Bonbon is the party''s only Heavy-armour wearer — Fighter 1 taken first grants it, Charles has medium only, Asterion must stay unarmoured and Gale is light-armour-only. Crit immunity is what protects Hold Monster: a concentration save is "DC equal to half the damage taken, or 10, whichever is higher," so a crit roughly doubles the DC, and it also stops Hold Person and Sleeping from handing attackers automatic crits against her. ⚠ NO ADAMANTINE SHIELD IS FORGED. The wiki confirms only the AC BONUS carries over from an inactive melee set, so a shield parked behind her hand crossbows would not bring crit immunity with it — the Splint gives her that outright, and she keeps the Knife of the Undermountain King in her melee off-hand for its global crit-threshold reduction. Protecty Sparkswall stays the swap-in for fights where +1 spell save DC beats 6 AC.'
-    - name: Adamantine Scale Mail (crafted)
-      wiki: Adamantine Scale Mail
+    - name: Adamantine Scale Mail
       for: Charles
       core: true
       note: 'SECOND MITHRAL ORE, and NO LONGER CHARLES''S CHEST. Medium armour, AC 16 + DEX (max 2) = 18, attackers cannot land critical hits, all incoming damage reduced by 1, and melee attackers are sent Reeling. Charles is now LOCKED to Luminous Armour in every act for its Radiant Shockwave, so he forgoes this crit immunity - which is why he takes the Helm of Balduran in Act 3 to get it back. The second ore is therefore free for whoever wants durability.'

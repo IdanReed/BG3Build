@@ -1243,6 +1243,11 @@ ratings:
               verdict: 'two radiating orb stacks per radiant hit; core to the broken radiating orb strategy'
               source: 'e4bPma5G_dQ'
               at: '31:14'
+            - item: Gloves of Battlemage's Power
+              tier: A
+              verdict: 'A on the list''s own terms: he says A tier if the Arcane Acuity effect worked, and placed it in D only because it was bugged when he recorded. This run treats the effect as working, so the A stands'
+              source: 'e4bPma5G_dQ'
+              at: '18:12'
             - item: Gloves of the Balanced Hands
               tier: A
               verdict: 'two-weapon fighting style; best in slot for a single-class thief rogue dual-wielding'
@@ -1303,11 +1308,6 @@ ratings:
               verdict: heat stacking boosts AoE late in a fight, which is not when you need it
               source: 'e4bPma5G_dQ'
               at: '38:26'
-            - item: Gloves of Battlemage's Power
-              tier: D
-              verdict: 'D only because the Arcane Acuity effect does not function as of recording; stated as A if it worked'
-              source: 'e4bPma5G_dQ'
-              at: '18:12'
             - item: Ichorous Gloves
               tier: D
               verdict: needs regular acid damage and a save enemies pass, for a trivial payoff

@@ -86,6 +86,8 @@ builds:
     note: 'Sorcerer is a KNOWN caster (learn on level-up, replace 1 per level); 12 spells known at Sorc 11, plus the free Burning Hands. The Warlock level adds Command and Hex as separately-known Warlock spells. Mandatory = the Scorching Ray damage engine, Twinned Haste, and Command; Recommended = flex utility.'
     mandatory:
     - spell: Scorching Ray
+      tier: A
+      tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (31:43) — each ray applies on-hit riders and stacks fire Arcane Acuity, but not efficient enough to win fights alone'
       level: '2'
       guide_level: 3
       school: Evocation
@@ -93,6 +95,8 @@ builds:
       when: Sorc 3 (char 3)
       why: 'THE build — though note the tier lists rate the spell itself only A, precisely because its value is "multi-hit riders, not efficiency," which is exactly how this build uses it. 3 rays at level 2, +1 ray per slot level above 2nd (a level 6 slot fires 7). Each ray is a separate attack roll AND a separate damage instance, so every flat rider applies to EVERY ray. ⚠ CONFIRMED per-ray by name on the wiki: Elemental Affinity: Damage and the Callous Glow Ring. INFERRED but not individually stated: Rhapsody and Markoheshkir''s +proficiency, which are covered only by the general rule that bonus damage from passives and conditions applies per instance. Spellmight''s +1d8 is NOT addressed anywhere — see the traps. That means +5 CHA, +2 Callous Glow, +3 Rhapsody, +4 Markoheshkir, +1d8 Spellmight, and Charles''s Phalar Shriek 1d4 Thunder all multiply by the ray count. It is also the Hat of Fire Acuity engine: each ray deals Fire damage and grants 2 turns of Arcane Acuity, so one level-4 cast caps Gale at 10 stacks.'
     - spell: Command
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (28:37) — concentration-free turn denial that upcasts to multiple enemies; every higher-level slot competes with it'
       level: '1'
       guide_level: 7
       school: Enchantment
@@ -100,6 +104,8 @@ builds:
       when: Warlock 1 (char 7)
       why: 'The single biggest reason to take the Warlock level: Command does NOT use Concentration, so Gale can hold Twinned Haste and still control every turn. Extended Spell doubles the condition to two turns. Approach also groups enemies for Fireball. Does not work on Undead.'
     - spell: Haste
+      tier: S
+      tier_note: 'Level 3 spells tier list, part 2 (H-W) (6:12) — the most direct action-economy buff in the game. ON HONOUR MODE the extra action gives only one attack, not Extra Attack'
       level: '3'
       guide_level: 5
       school: Transmutation
@@ -107,6 +113,8 @@ builds:
       when: Sorc 5 (char 5)
       why: 'Single-target so Twinnable; spend 3 Sorcery Points to Haste two of Charles / Asterion / Gale, online at character level 5. Ending Haste makes both targets Lethargic. ⚠ WHO GETS IT: Gale''s own hasted action is a second Scorching Ray, so self-Haste genuinely competes with hasting both martials — Charles + Asterion for adds-heavy fights, Gale + Charles for single-boss fights.'
     - spell: Fireball
+      tier: B
+      tier_note: 'Level 3 spells tier list, part 1 (A-G) (38:58) — B not S: 13ft radius not 20ft, fire is widely resisted, Dex save for half. Do not cast it just because it is iconic'
       level: '3'
       guide_level: 6
       school: Evocation
@@ -114,6 +122,8 @@ builds:
       when: Sorc 6 (char 6)
       why: 'Primary AoE, and now on-element — Elemental Affinity, Flame of Wrath, and Elemental Adept all apply. ⚠ The tier lists rate Fireball only B — "do not cast it solely because it is iconic." It is correct to keep here because it is on-element for three separate multipliers, but do not prioritise it over another Scorching Ray on a single target; it earns its slot on clusters of 4+. ⚠ Careful Spell does not arrive until Sorc 10 (char 11), so for most of the run Fireball is an adds-cluster tool only and must not be dropped on Charles or Asterion.'
     - spell: Counterspell
+      tier: S
+      tier_note: 'Level 3 spells tier list, part 1 (A-G) (25:08) — top-five spell; trades a reaction for an enemy turn. NO SCROLLS EXIST, so it must be learnt on level-up'
       level: '3'
       guide_level: 6
       school: Abjuration
@@ -121,6 +131,8 @@ builds:
       when: Sorc 6 (char 6) — replaces Magic Missile
       why: Shuts down enemy casters without using Concentration or an Action; competes with Shield for the Reaction, and both are worth keeping.
     - spell: Hold Person
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (55:42) — paralysis costs turns and gives automatic crits within 10 ft; humanoids only, best with high save DC'
       level: '2'
       guide_level: 4
       school: Enchantment
@@ -128,6 +140,8 @@ builds:
       when: Sorc 4 (char 4)
       why: 'Paralysed humanoids take automatic critical hits from melee within 3m — Charles''s smite setup. Concentration, so Gale can only hold this INSTEAD of Haste; usually Bonbon owns the Hold lane and Gale owns Haste + Command. Take Hold Monster at Sorc 9 for non-humanoids.'
     - spell: 'Daylight: Enchant Item'
+      tier: C
+      tier_note: 'Level 3 spells tier list, part 1 (A-G) (29:44) — a bigger Light cantrip for a level 3 slot; worth it mainly against Act 3 vampires, who are vulnerable to it'
       level: '3'
       guide_level: 8
       school: Evocation
@@ -135,6 +149,8 @@ builds:
       when: Sorc 7 (char 8)
       why: 'Cast on an ally''s main-hand weapon out of combat; it is bugged to last until long rest, so this is a once-per-rest chore rather than a combat action. 15m radius that travels with the carrier. Its purpose is to keep GALE illuminated so the Coruscation Ring fires — see the illumination chain in the itemization notes. ⚠ Requires the target to hold a main-hand weapon, which rules out Asterion (empty hands for Tavern Brawler); Bonbon''s hand crossbows are the clean carrier. Darkness is only dispelled at the moment of casting, so Charles''s Darkness Arrows fired afterwards are unaffected.'
     - spell: Chain Lightning
+      tier: A
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6 (9:31) — 360 average damage on four wet enemies, but often needs two casts to end a fight'
       level: '6'
       guide_level: 12
       school: Evocation
@@ -143,6 +159,8 @@ builds:
       why: 'The answer to fire-immune enemies, which is a real gap now that the party has no lightning caster. Reserved for the House of Hope, Raphael, and the red dragon. Buy Globe of Invulnerability scrolls for the fights where you would rather have that instead.'
     recommended:
     - spell: Shield
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (43:07) — reaction +5 AC that only prompts when it turns a hit into a miss; worth a class dip on its own'
       level: '1'
       guide_level: 1
       school: Abjuration
@@ -150,6 +168,8 @@ builds:
       when: Sorc 1 (char 1)
       why: Gives Gale's otherwise-dead level-1 slots a job in the late game and sharply improves survival without touching Concentration.
     - spell: Hold Monster
+      tier: A
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (30:07) — paralysis is devastating but costs a level 5 slot and caps at two targets'
       level: '5'
       guide_level: 10
       school: Enchantment
@@ -157,12 +177,16 @@ builds:
       when: Sorc 9 (char 10)
       why: The non-humanoid version of the auto-crit setup. Concentration, so use it only in fights where someone else supplies Haste.
     - spell: Hex
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (21:08) — d6 on every attack roll all day, reapplied free on kills; enormous on multi-attack casters'
       level: '1'
       school: Enchantment
       save: None (Concentration)
       when: Warlock 1 (char 7)
       why: 'The second Warlock spell known. A per-ray damage rider in theory, but it uses Concentration and therefore competes with Haste — effectively a modded-difficulty option only. Armour of Agathys is the defensive alternative pick.'
     - spell: 'Chromatic Orb: Fire'
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (23:44) — damage plus a chosen surface with no concentration; ice surfaces are near-stuns and it bypasses immunities'
       level: '1'
       guide_level: 2
       school: Evocation
@@ -170,6 +194,8 @@ builds:
       when: Sorc 2 (char 2)
       why: 'Early on-element single-target damage before Scorching Ray arrives at char 3, and it creates a fire surface. ⚠ Rated S-tier — "exceptionally highly" — so think twice before treating it as a throwaway replacement candidate; its other elemental modes also cover the fire-immune enemies Gale otherwise has no answer to before Chain Lightning at char 12.'
     - spell: Ice Storm
+      tier: A
+      tier_note: 'Spells tier list, level 4, part 2 (Freedom of Movement through Wall of Fire) (20:00) — A because the 20 ft ice surface costs NO CONCENTRATION; the best follow-up after a control spell'
       level: '4'
       guide_level: 9
       school: Evocation
@@ -177,6 +203,9 @@ builds:
       when: Sorc 7+ (char 8+) — optional pick
       why: 'A-tier and NOT Concentration, which is the whole reason to consider it: Gale can drop it on a cluster while still holding Twinned Haste, unlike every other AoE of its size. It also lays an ice surface for prone control. Off-element, so it gets no Elemental Affinity, Flame of Wrath or Elemental Adept — take it only if the fire-resistance problem in Act 3 turns out worse than Elemental Adept can fix.'
     - spell: Burning Hands
+      source: granted
+      tier: C
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (18:26) — weak damage on a bad save; only Light Domain clerics, who get it free, will cast it'
       level: '1'
       guide_level: 1
       school: Evocation
@@ -184,6 +213,8 @@ builds:
       when: Sorc 1 (char 1) — FREE from Red ancestry
       why: Does not consume a spell-known pick. Genuinely useful for the first few levels as on-element AoE, and it is the reason to pick Red over Gold or Brass.
     - spell: Enhance Ability
+      tier: B
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (36:31) — cast a couple of times a run; worth preparing for the few unavoidable skill checks'
       level: '2'
       guide_level: 3
       school: Transmutation
@@ -191,6 +222,8 @@ builds:
       when: Sorc 3+ (replacement candidate)
       why: Out-of-combat advantage on a chosen ability check. Concentration, so treat it as an exploration mode only.
     - spell: Dimension Door
+      tier: C
+      tier_note: 'Spells tier list, level 4, part 1 (Banishment through Fire Shield) (25:57) — good in roughly three timed traversal encounters; jumping or Misty Step covers everything else'
       level: '4'
       guide_level: 9
       school: Conjuration
@@ -198,6 +231,8 @@ builds:
       when: Sorc 8 (char 9)
       why: Repositions Gale and one ally out of a collapsing fight; also solves several Act 3 traversal problems.
     - spell: Telekinesis
+      tier: B
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (41:29) — repeatable no-weight-limit throw for repositioning; BUGGED, a first-cast save cancels concentration'
       level: '5'
       guide_level: 11
       school: Transmutation
@@ -205,6 +240,8 @@ builds:
       when: Sorc 10 (char 11)
       why: Concentration control that can repeatedly reposition a dangerous target or throw it from height. Competes with Haste, so it is a situational pick.
     - spell: Fire Bolt
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (24:40) — highest raw damage for wizards and sorcerers, and it lights fires at 60 feet'
       level: Cantrip
       guide_level: 1
       school: Evocation
@@ -212,6 +249,8 @@ builds:
       when: Sorc 1 (char 1)
       why: 'On-element chip damage for the first three levels. This build stops using cantrips in combat after Scorching Ray arrives, so do not build around it — which is also why the Potent Robe, whose whole effect is CHA to cantrip damage, is not part of this loadout.'
     - spell: Friends
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (26:48) — advantage on Charisma checks; COUNTS AS A CRIME ON TACTICIAN AND HONOUR MODE, so hide or fast-travel afterwards'
       level: Cantrip
       guide_level: 1
       school: Enchantment
@@ -219,6 +258,8 @@ builds:
       when: Sorc 1 (char 1)
       why: 'Advantage on Charisma checks. Bonbon is the party face, so this is a backup rather than a plan; the target turns hostile when it ends, so never use it somewhere you intend to stay.'
     - spell: Minor Illusion
+      tier: S
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (35:56) — moves NPCs with no save or roll; clusters enemies for AoE, sets ambushes, pulls enemies one at a time'
       level: Cantrip
       guide_level: 1
       school: Illusion
@@ -226,6 +267,8 @@ builds:
       when: Sorc 1 (char 1)
       why: Groups enemies before combat starts, which sets up a bigger opening Fireball and relocates NPCs for Asterion's theft routes.
     - spell: Mage Hand
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (33:23) — costs a short-rest charge, but scouts, triggers traps, throws potions and soaks one enemy attack'
       level: Cantrip
       guide_level: 1
       school: Conjuration
@@ -233,6 +276,8 @@ builds:
       when: Sorc 1 (char 1)
       why: 'Exploration and object manipulation. It also covers the party''s lost Create Water: drop a water bottle where the Hand can reach and use its Throw for a 2m Wet splash when something needs to be Wet.'
     - spell: Light
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (30:38) — hands-free, concentration-free light lasting all day; most parties need some light source'
       level: Cantrip
       guide_level: 4
       school: Evocation
@@ -240,6 +285,8 @@ builds:
       when: Sorc 4 (char 4) — fifth cantrip
       why: 'A free, slot-less way to keep GALE illuminated so the Coruscation Ring works, covering the whole stretch of Act 2 before Daylight is learned at char 8. Cast it on Gale''s own staff or on a nearby ally. ⚠ Worth confirming in play that a Light-lit character registers as Illuminated for Coruscation; if not, use an ordinary torch or Daylight.'
     - spell: Bone Chill
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (12:42) — turns off enemy healing with no save and blanks undead attack rolls; not the go-to damage cantrip'
       level: Cantrip
       guide_level: 7
       school: Necromancy
@@ -247,6 +294,8 @@ builds:
       when: Warlock 1 (char 7) — second Warlock cantrip
       why: 'A tier — "targets AC at range, prevents healing, and gives undead disadvantage on attacks." Take it with the Warlock cantrip slot rather than Friends, which Gale already knows from Sorcerer 1. It covers the Act 2 Undead that Command cannot touch.'
     - spell: Ray of Frost
+      tier: S
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (41:42) — movement debuff lets you kite as a stun, doubles on wet enemies, and freezes surfaces'
       level: Cantrip
       guide_level: 11
       school: Evocation
@@ -254,12 +303,16 @@ builds:
       when: Sorc 10 (char 11) — sixth cantrip
       why: 'S tier — "the best broadly available elemental attack: Wet doubles its cold damage, the hit reduces movement without a save, and water can freeze into ice that knocks enemies prone." The sixth cantrip is easy to miss because it is the only one granted after char 4. Off-element on purpose: it is slot-free damage for the fire-immune fights where this build otherwise contributes little until Chain Lightning.'
     - spell: Globe of Invulnerability
+      tier: S
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6 (26:18) — total damage immunity wins most boss fights outright; get one cast into every Honour party'
       level: '6'
       school: Abjuration
       save: None (Concentration)
       when: scroll only in this build
       why: 'Chain Lightning takes the single level-6 spell known, so buy Globe scrolls in Act 3 for the two or three fights that want it instead.'
     - spell: Misty Step
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (14:50) — top-five spell; bonus-action 60 ft teleport that every honour mode character should have access to'
       level: '2'
       guide_level: 4
       school: Conjuration
@@ -276,13 +329,19 @@ builds:
         gains:
         - Sorcerer Spellcasting (Charisma)
         - Draconic Resilience (unarmoured AC 13 + DEX, +1 HP per Sorcerer level)
-        - Draconic Ancestry (Red) — free Burning Hands
+        - Draconic Ancestry (Red) — Fire becomes his ancestry damage type
         - CON + CHA saving-throw proficiency
         recommendations:
         - category: Subclass
+          picks: 1
           recommendation: Draconic Bloodline — Red (Fire)
           note: 'Fire ancestry is what makes Elemental Affinity add CHA to Scorching Ray and Fireball at Sorc 6. Red grants Burning Hands free; Gold and Brass are also Fire but grant Disguise Self and Sleep instead.'
+        - category: Ancestry spell
+          granted: true
+          recommendation: Burning Hands
+          note: 'FREE, and it does not consume one of the two spell-known picks — Red ancestry simply grants it at Sorcerer 1. That is the reason to take Red over Gold or Brass, which grant Disguise Self and Sleep instead. Genuinely useful on-element AoE for the first few levels, and it stays known for the whole run at no cost.'
         - category: Cantrips
+          picks: 4
           recommendation:
           - Fire Bolt
           - Friends
@@ -290,11 +349,13 @@ builds:
           - Mage Hand
           note: Cantrips are permanent and this build stops using them in combat after char 3, so choose utility over damage scaling.
         - category: Spells
+          picks: 2
           recommendation:
           - Shield
           - Magic Missile
           note: 'Magic Missile gives way to Counterspell at Sorc 6. ⚠ The tier lists rate BOTH Shield and Magic Missile S, so weigh this one in play: Magic Missile NEVER MISSES, a genuinely rare property on a build whose entire damage output is attack rolls, and it is the clean answer to a turn where Scorching Ray would whiff or to finishing a low-HP caster. To keep it, drop a different flex spell for Counterspell instead.'
         - category: Skills
+          picks: 3
           recommendation:
           - Persuasion
           - Insight
@@ -308,11 +369,13 @@ builds:
         - Two Metamagic selections
         recommendations:
         - category: Metamagic
+          picks: 2
           recommendation:
           - Twinned Spell
           - Extended Spell
           note: 'Quickened is not selectable until Sorcerer 3. Twinned carries the Haste engine; Extended is what turns Command into a two-turn lockdown later.'
         - category: Spell
+          picks: 1
           recommendation: 'Chromatic Orb: Fire'
           note: On-element single-target damage to bridge the two levels before Scorching Ray.
       - char_level: 3
@@ -323,9 +386,11 @@ builds:
         - Three Sorcery Points
         recommendations:
         - category: Metamagic
+          picks: 1
           recommendation: Quickened Spell
           note: 'Converts Scorching Ray into a bonus action, which is the whole gameplay loop: Quickened damage with the bonus action, then Extended Command or a second spell with the Action.'
         - category: Spell
+          picks: 1
           recommendation: Scorching Ray
           note: The build's core spell. From here Gale's damage comes almost entirely from this one card.
       - char_level: 4
@@ -336,12 +401,15 @@ builds:
         - Feat or Ability Score Improvement selection
         recommendations:
         - category: Feat
+          picks: 1
           recommendation: Dual Wielder
           note: 'Lets Gale hold Spellsparkler + Melf''s First Staff together (neither is Light), and later Markoheshkir + Rhapsody. Both hands are full from here on, so no shield for the rest of the run.'
         - category: Cantrip
+          picks: 1
           recommendation: Light
           note: Keeps Gale illuminated for the Coruscation Ring without spending a slot, well before Daylight is learned.
         - category: Spell
+          picks: 1
           recommendation: Hold Person
           note: A second source of the paralysis that turns Charles's smites into automatic critical hits.
       - char_level: 5
@@ -351,6 +419,7 @@ builds:
         - Five Sorcery Points
         recommendations:
         - category: Spell
+          picks: 1
           recommendation: Haste
           note: The party Haste engine comes online here. Twinned costs 3 Sorcery Points.
       - char_level: 6
@@ -361,29 +430,35 @@ builds:
         - Six Sorcery Points
         recommendations:
         - category: Spell
+          picks: 1
           recommendation: Fireball
           note: Primary AoE, now boosted by Elemental Affinity.
         - category: Replacement
+          picks: 1
+          optional: true
           recommendation: Magic Missile → Counterspell
           note: 'Use the level-up replacement slot here. Elemental Affinity is the single biggest power spike in the build: +5 damage per ray at CHA 20.'
       - char_level: 7
         class: Fiend Warlock 1
         gains:
-        - Command and Hex as Warlock spells known
-        - Eldritch Blast and one more Warlock cantrip
+        - 'Pact Magic: 2 Warlock cantrips and 2 Warlock spells known — all four are picks'
+        - 'Fiend Expanded Spell List: Burning Hands and Command become choosable options'
         - One level-1 pact slot (recharges on SHORT rest)
         - Dark One's Blessing (temporary HP on a kill)
         - Light armour proficiency (redundant — Gale already has it from Civil Militia)
         recommendations:
         - category: Patron
+          picks: 1
           recommendation: The Fiend
           note: Fiend is what puts Command on the Warlock list. This is the only Warlock level Gale ever takes.
         - category: Spells
+          picks: 2
           recommendation:
           - Command
           - Hex
           note: 'Command is the pickup. Hex is a concentration-competing damage rider that is mostly for modded difficulty; Armour of Agathys is the defensive alternative.'
         - category: Cantrips
+          picks: 2
           recommendation:
           - Eldritch Blast
           - Bone Chill
@@ -395,6 +470,7 @@ builds:
         - Seven Sorcery Points
         recommendations:
         - category: Spell
+          picks: 1
           recommendation: 'Daylight'
           note: 'Take the Enchant Item variant in play. Level 4 slots also mean a 5-ray Scorching Ray, which is exactly the cast that caps Arcane Acuity at 10 stacks.'
       - char_level: 9
@@ -404,9 +480,11 @@ builds:
         - Feat or Ability Score Improvement selection
         recommendations:
         - category: Feat
+          picks: 1
           recommendation: 'Elemental Adept: Fire'
           note: 'Fire is the most resisted damage type in Act 3 and this party has no bow archer to mass-apply Arsonist''s Oil. Also removes 1s from every Fire damage die.'
         - category: Spell
+          picks: 1
           recommendation: Dimension Door
           note: Escape and traversal utility.
       - char_level: 10
@@ -416,6 +494,7 @@ builds:
         - Nine Sorcery Points
         recommendations:
         - category: Spell
+          picks: 1
           recommendation: Hold Monster
           note: Extends the auto-crit setup to non-humanoids for the fights where Bonbon is already concentrating on something else.
       - char_level: 11
@@ -426,12 +505,15 @@ builds:
         - Ten Sorcery Points
         recommendations:
         - category: Metamagic
+          picks: 1
           recommendation: Careful Spell
           note: 'Finally lets Gale drop Fireball on a cluster that Charles or Asterion is standing in. Until this level, Fireball is an adds-only tool.'
         - category: Cantrip
+          picks: 1
           recommendation: Ray of Frost
           note: 'The sixth cantrip — easy to miss, because this is the only level after char 4 that grants one. S tier: "the best broadly available elemental attack — Wet doubles its cold damage, the hit reduces movement without a save, and water can freeze into ice that knocks enemies prone." It patches this build''s one structural hole for free: Gale contributes almost nothing to the fire-immune fights (House of Hope, Raphael, the red dragon, Yurgir) until Chain Lightning at char 12, and a cantrip costs no slot. 3d8 at this level. Bone Chill is already taken at char 7, so Ray of Frost is the non-overlapping pick.'
         - category: Spell
+          picks: 1
           recommendation: Telekinesis
           note: Situational concentration control; it competes with Haste, so it stays a niche pick.
       - char_level: 12
@@ -442,6 +524,7 @@ builds:
         - Eleven Sorcery Points
         recommendations:
         - category: Spell
+          picks: 1
           recommendation: Chain Lightning
           note: 'The fire-immune answer for the House of Hope and Raphael. A level-6 Scorching Ray also fires 7 rays, which is the build''s single biggest turn.'
   itemization:
@@ -494,10 +577,9 @@ builds:
       bis: true
       note: 'SELECTED Act 1 chest, and the answer to this build''s worst structural problem. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra to acquire. AC 12 + DEX and +1 Stealth, but the reason to wear it is ADVANTAGE ON CONSTITUTION SAVING THROWS. Gale has no War Caster, no feat left to buy one, and no shield once Dual Wielder fills both hands, so this is his only protection for Twinned Haste — and it arrives in Act 1 rather than waiting for Armour of Landfall in Act 3. ⚠ Costs exactly 1 AC versus going unarmoured, since Draconic Resilience is 13 + DEX; take the trade, because Haste is the concentration the entire party plan is built on.'
     - id: elixir-of-vigilance
-      item: Elixir of Vigilance (daily)
+      item: Elixir of Vigilance
       tier: S
       tier_note: '9BcQXb37Bik (57:59) — rated S+ ABOVE THE SCALE: a free Alert feat, and +5 on a d4 initiative roll means going first'
-      wiki: Elixir of Vigilance
       slot: consumables
       note: 'SELECTED standing elixir — drink one every long rest, exactly as Asterion drinks Giant Strength. +5 Initiative AND immunity to Surprise, lasting until long rest, for about 25g from Danthelon''s, Kith in Grymforge, or Popper at the Circus. THIS IS WHAT REPLACES THE ALERT FEAT Gale cannot afford: BG3 rolls initiative on a d4 + DEX, not a d20, so +5 is larger than the entire die. Gale is the only party member with no competing elixir — Asterion needs Giant Strength and Bonbon wants Bloodlust — so the one-elixir-per-rest slot is free for him.'
     - id: bow-of-awareness
@@ -553,7 +635,7 @@ builds:
       note: 'Coruscation Ring is the default because it converts his illuminated spell damage into Radiating Orb. These are the swaps worth knowing.'
       options:
       - id: ring-of-mental-inhibition
-        item: Ring of Mental Inhibition (control)
+        item: Ring of Mental Inhibition
         tier: B
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (24:59) — powerful if the party is carefully built around it, but it needs very specific builds'
         note: 'House in Deep Shadows. Applies Mental Fatigue whenever an enemy fails a save against him, compounding with his own DC. Take it in fights where his Command matters more than his rider damage.'
@@ -569,7 +651,7 @@ builds:
       slot: amulets
       note: 'CORE neck, in the Mimic in Isobel''s bedroom on the upper floor of Moonrise. It applies Reverberation on ranged SPELL-ATTACK hits only — which is exactly what Gale makes, 3–7 times a cast. Combined with Boots of Stormy Clamour it reliably knocks single targets Prone: five stacks of Reverberation force a Constitution save that the same condition''s own penalty makes effectively DC 15.'
     - id: cloak-of-protection-gale
-      item: Cloak of Protection (Charles)
+      item: Cloak of Protection
       tier: S
       tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (13:30) — excellent, and someone in the party will almost certainly be wearing it'
       slot: cloaks
@@ -581,44 +663,50 @@ builds:
       slot: cloaks
       note: 'HIS ACT 2 CLOAK, sold by Araj Oblodra at Moonrise. When a creature with Reverberation damages the wearer, it must make a DC 13 Constitution save or be Dazed — no Reactions, disadvantage on Wisdom saves, and it loses its Dexterity bonus to AC. The synergy is real rather than incidental: Gale is the party''s largest source of Reverberation (Spineshudder, Stormy Clamour and Belligerent Skies all stack it), so essentially anything that reaches him is already Reverberating, and the Dazed WIS-save penalty then feeds his own Command.'
     - id: act2-armour-gale
-      item: Spidersilk Armour (held over from Act 1)
+      item: Spidersilk Armour
       tier: S
       tier_note: 'ARMOR TIER LIST - Light Armour - Baldur''s Gate 3 Honour Mode Guide - Part 2 (16:13) — S specifically for light-armour casters, which is not what it looks designed for'
+      held: 1
       slot: armour
       bis: true
       note: 'CARRIED OVER, and never swapped. Advantage on Constitution saving throws is what protects Twinned Haste, the single effect this party is built around. It is also why the Potent Robe is refused.'
     - id: act2-hands-gale
-      item: Gloves of Belligerent Skies (held over from Act 1)
+      item: Gloves of Belligerent Skies
       tier: A
       tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (20:24) — excellent for specific builds and decent across a wide variety of them'
+      held: 1
       slot: hands
       bis: true
       note: 'CARRIED OVER. Thunder, Lightning or Radiant damage applies Reverberation — and a multi-ray cast applies it 3-7 times, which is why these live on him rather than on Charles.'
     - id: act2-feet-gale
-      item: Boots of Stormy Clamour (held over from Act 1)
+      item: Boots of Stormy Clamour
       tier: S
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
       rank: '#7'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
+      held: 1
       slot: feet
       bis: true
       note: 'CARRIED OVER. Inflicting any condition applies 2 turns of Reverberation, and he inflicts conditions constantly — the other half of the Reverberation engine. Charles wanted these and does not get them.'
     - id: act2-weapons-gale
-      item: The Spellsparkler (held over from Act 1)
+      item: The Spellsparkler
       tier: A
       tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (26:53) — stacks Lightning Charges fast on multi-hit casters, though Melf''s is broader'
+      held: 1
       slot: weapons
       note: 'CARRIED OVER main hand. Lightning Charges off every separate Scorching Ray instance. It carries no enchantment bonus, so it is a rider stick rather than an accuracy stick.'
     - id: act2-offhand-gale
-      item: Melf's First Staff (held over from Act 1)
+      item: Melf's First Staff
       tier: S
       tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (15:30) — probably best in slot for most spellcasters for all of Act 1'
+      held: 1
       slot: weapons
       note: 'CARRIED OVER off hand, legal only because Dual Wielder was taken at character level 4 — neither staff is Light. This is the +1 Spell Save DC and +1 spell attack rolls that the Incandescent Staff does not give.'
     - id: act2-ranged-gale
-      item: Bow of Awareness (held over from Act 1)
+      item: Bow of Awareness
       tier: S
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (16:30) — going first is among the best things you can do in an Honour run'
+      held: 1
       slot: ranged weapons
       note: 'CARRIED OVER, and purely for the passive initiative. He never fires it.'
     act3:
@@ -636,7 +724,7 @@ builds:
       slot: weapons
       note: 'CORE off hand, carried by Cazador Szarr. Scarlet Remittance stacks +1 attack, damage AND spell save DC per kill, up to 3. This build uses all three, and the damage applies per ray. Requires Dual Wielder to hold alongside Markoheshkir. ⚠ Per the wiki, as of Patch 5 it only builds stacks on killing living hostile targets.'
     - id: staff-of-spellpower
-      item: Staff of Spellpower (off-hand)
+      item: Staff of Spellpower
       tier: S
       tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (48:32) — a mainstay; refreshing a spell slot on any slot for any purpose is that good'
       slot: weapons
@@ -667,7 +755,7 @@ builds:
       slot: ranged weapons
       note: 'HIS — the contest with Bonbon is settled by the item itself. Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 to Initiative and advantage on Perception, and it upgrades the Bow of Awareness he has been carrying since Act 1. ⚠ THE DECIDER: it is TWO-HANDED, so Bonbon physically cannot equip it alongside the dual hand crossbows that are her entire Arcane Acuity engine — she has no free ranged slot, and Gale has one he never otherwise uses. He holds it purely as a stat stick and never fires it; on top of the standing Elixir of Vigilance that is +8 initiative without a feat. ⚠ Ferg Drogher sells nothing if Shadowheart is nearby, unless she killed the Nightsong in Act 2.'
     - id: helldusk-boots-gale
-      item: Helldusk Boots (Charles)
+      item: Helldusk Boots
       tier: S
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (1:00:13) — the saving throw makes the wearer extremely safe in almost every circumstance'
       slot: feet
@@ -679,7 +767,7 @@ builds:
       note: 'NO BEST-IN-SLOT LEFT. Boots of Stormy Clamour carried him through Acts 1-2, and the Act 3 boots he would actually want are spoken for — Helldusk Boots go to Charles, who is the one with save disadvantage. Any of these is fine.'
       options:
       - id: opt-boots-of-stormy-clamour-a3
-        item: Boots of Stormy Clamour (keep)
+        item: Boots of Stormy Clamour
         tier: S
         tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
         rank: '#7'
@@ -698,32 +786,36 @@ builds:
         rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #14 of 20 — bonus-action Dash gives anyone Rogue-grade mobility'
         note: 'Doubling movement as a bonus action is never wasted on a caster who wants to leave a melee lane.'
     - id: act3-amulet-gale
-      item: Spineshudder Amulet (held over)
+      item: Spineshudder Amulet
       tier: S
       tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:42) — busted on multi-hit spells'
+      held: true
       slot: amulets
       note: 'Stays for the whole of Act 3. It is his Reverberation engine and nothing replaces it. ⚠ Amulet of Greater Health goes to Charles: its Constitution-save advantage would be redundant on Gale, who already has that from Armour of Landfall, whereas Charles has the Risky Ring''s disadvantage for it to cancel. ⚠ Amulet of the Devout is not taken by anyone — its Channel Divinity charge is dead on a Paladin, who spends Channel OATH, and looting it from the Stormshore Tabernacle offering chest curses the looter with Castigated By Divinity.'
     - id: act3-ring1-gale
-      item: Callous Glow Ring (held over from Act 2)
+      item: Callous Glow Ring
       tier: S
       tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (4:45) — the number of uses is absurd once the wearer is lit'
+      held: 2
       slot: ring 1
       note: 'CARRIED OVER. +2 Radiant on every damage instance against an ILLUMINATED target, which on a multi-ray build is applied 3-7 times a cast.'
     - id: act3-ring2-gale
-      item: Coruscation Ring (held over from Act 2)
+      item: Coruscation Ring
       tier: S
       tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (6:49) — good even outside Radiating Orb builds, and incredible inside them'
+      held: 2
       slot: ring 2
       note: 'CARRIED OVER. Inflicts Radiating Orb whenever he deals spell damage while illuminated — the reason he keeps a light source on himself rather than on the target.'
     - id: act3-head-gale
-      item: Hat of Fire Acuity (held over from Act 2)
+      item: Hat of Fire Acuity
       tier: S
       tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (28:32) — removes enemies as threats almost instantly with a lot of builds'
+      held: 2
       slot: head
       bis: true
       note: 'CARRIED OVER, and it stays to the end. Every instance of Fire damage grants Arcane Acuity, up to +10 spell save DC — on a Fire Sorlock throwing 3-7 fire instances a cast it caps almost immediately, and it is what makes his Command stick.'
     - id: birthright
-      item: Birthright (skipped)
+      item: Birthright
       tier: A
       tier_note: 'Is EVERY Act 3 Helmet Awesome? - BG3 Helmets Tier List and Guide - Act 3 (4:42) — +2 Charisma is powerful, but narrowly beaten by the other Act 3 options'
       slot: head

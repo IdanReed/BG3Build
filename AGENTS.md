@@ -86,6 +86,47 @@ For character itemization, prefer objects with stable `id`, display `item`,
 renaming display text. The UI recognizes `act1`, `act2`, and `act3` specially
 and renders other populated itemization keys afterward.
 
+`item` (and a loot row's `name`) is the item's name and nothing else, because it
+doubles as the bg3.wiki page title whenever `wiki` is absent. Anything else the
+row wants to say belongs in the `note`, or in a field of its own:
+
+- `held: 1|2|3` marks gear carried over from that act and renders as an "Act N"
+  chip; `held: true` renders a bare "Held" when the act is not worth naming.
+- `wiki:` overrides the page title when the display name legitimately differs
+  ("Deathstalker Mantle" -> `The Deathstalker Mantle`), takes a list for a row
+  that names two items, and takes `false` for a slot placeholder or a vendor
+  rollup that is not an item at all.
+
+Place `held` after `rank_note` and before `wiki`, which is where
+`apply_item_tiers.py` leaves it; anywhere earlier and every regen reshuffles the
+file. Do not single-quote a name just because it contains an apostrophe -- that
+applier matches the raw line, so `'Melf''s First Staff'` stops resolving.
+
+A `leveling` row separates what the class hands over from what the player
+chooses, and each `recommendations` entry says which it is:
+
+- `picks: N` -- how many selections that level opens for the category. When the
+  entry names fewer than `N`, the frontend renders the remainder as explicit
+  "open pick" placeholders, so a granted-but-unassigned choice stays visible
+  instead of disappearing. Naming more than `N` is allowed and badges as
+  "N picks · M listed" for a pick-one-of-these row.
+- `granted: true` -- the class, subclass or race supplies this for free: no
+  spell-known pick and no prepared slot. Add `fixed: true` when it is not even
+  steerable, like a recruited companion's racial cantrip.
+- `optional: true` -- the level-up replacement swap rather than a new pick.
+
+For prepared casters the count is a capacity, not an increment, because the list
+re-opens on every level and swaps freely out of combat: give the row that level's
+whole prepared loadout with `picks` set to Paladin level + CHA modifier, and let
+the unnamed remainder show as open slots. For known casters `picks` is the number
+of new spells that level adds.
+
+A `spells` entry may carry `source: granted` for the same distinction in the
+spell panel, where it badges "Free" beside the `Lv N` guide badge. Only mark
+spells the game actually hands over -- oath spells, a draconic ancestry spell, a
+racial cantrip -- never an expanded spell list, which widens the options a pick
+may choose from without granting anything.
+
 An itemization entry, or one of its `options`, may also carry an external rating
 from the guide corpus in `video_summaries/`:
 
@@ -104,6 +145,20 @@ the dataset and re-run rather than hand-editing a rating. Only record a rating t
 corpus actually states -- never convert a rank into a letter, and never carry a
 rating over from a spell, feat, or class tier list.
 
+An entry in a build's `spells` block carries the same `tier` / `tier_note` pair,
+read from the spell and cantrip tier lists instead of the gear ones, and the Spells
+panel badges every level card the same way it badges itemization. A spell never
+carries `rank`, because that series runs no top-20 countdown. The source of truth is
+`research/spell_tiers.json` and the applier is `tools/apply_spell_tiers.py`.
+
+The two appliers own different regions of the same files: `apply_spell_tiers.py` only
+touches lines inside a `spells:` block and `apply_item_tiers.py` only touches lines
+outside it. Keep that split if you change either one — both strip their managed fields
+wholesale before rewriting, so a widened region silently deletes the other's ratings.
+Entries that the spell series does not rate (class features such as Extra Attack, which
+share the `- spell:` shape) stay unbadged; the applier reports any entry with a real
+spell level that it could not match.
+
 ## Guide ratings
 
 `research/item_tiers.json` and `research/spell_tiers.json` hold every rating read out
@@ -117,14 +172,16 @@ python tools/dump_tier_verdicts.py --source <id> # verdicts, in order, with cont
 python tools/merge_slot_tiers.py                 # research/slots/*.json  -> item_tiers
 python tools/merge_spell_tiers.py                # research/spells/*.json -> spell_tiers
 python tools/apply_item_tiers.py                 # dataset -> content/characters/*.md
+python tools/apply_spell_tiers.py                # dataset -> the spells blocks
 python tools/build_ratings_page.py               # dataset -> content/ratings.md
 ```
 
-The last two write the two places a rating surfaces, and both are overwritten wholesale
+The last three write the places a rating surfaces, and all are overwritten wholesale
 on every run: `apply_item_tiers.py` badges the party's own gear on the character pages,
-and `build_ratings_page.py` writes the Ratings tab, which shows every rated item in the
-corpus rather than only the party's. Re-run both after a merge; never hand-edit
-`content/ratings.md`.
+`apply_spell_tiers.py` badges the spells and cantrips in each build, and
+`build_ratings_page.py` writes the Ratings tab, which shows every rated item in the
+corpus rather than only the party's. Re-run the relevant ones after a merge; never
+hand-edit `content/ratings.md`.
 
 Read `research/EXTRACTION-BRIEF.md` before touching any of it. Attributing a spoken
 verdict to the right item is the whole difficulty, and the brief records the failure

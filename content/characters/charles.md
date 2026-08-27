@@ -601,6 +601,7 @@ builds:
       - **Divine Smite (reaction) costs no Reaction resource** and can fire on every melee hit, limited only by spell slots. Set the L2 Critical Hit entry to auto-confirm and leave L1/L3 on Ask, so auto-confirm cannot quietly eat a pact slot mid-nova.
       - Smite fuel is the SEVEN Paladin slots (4 × L1, 3 × L2). ⚠ Leave both L3 pact slots alone — they are also Counterspell and Shield. Upgrading three L2 smites to L3 buys only +23 damage and costs both.
       - **Luminous Armour is what makes the Gloves work.** Radiant Shockwave uses CreateExplosion, which resets the Gloves' once-per-attack limit, and Inquisitor's Might makes every swing deal Radiant — so the limit resets on every single hit, with none of the Perform/grenade tricks other builds need. Arcane Acuity caps at +10 (Hold Person DC 27) and Radiating Orb caps at −10 on any full nova.
+      - **Vicious Shortbow parked in the ranged slot** — Dolor Amarus is a holder passive, not a main-hand one, so its +7 per critical hit applies to every melee swing. He never fires the bow.
       - **Arcane Acuity buys no damage.** It is +1 to SPELL attack rolls and spell save DC only, it never touches weapon swings, and he is already at the cap. A second Acuity source is insurance against the −2 duration he loses per hit taken, not throughput.
     configs:
     - name: 'Standard nova — Hasted, Held target'
@@ -621,11 +622,15 @@ builds:
         count: 1
         each: 68
         total: 68
+      - line: 'Dolor Amarus (Vicious Shortbow held in the ranged slot) — +7 flat on every critical hit, and every swing crits'
+        count: 4
+        each: 7
+        total: 28
       - line: 'Haste action — Hold Person at DC 27, or Command, or Hunger of Hadar. No damage, but it sets up the next nova.'
         count: 1
         each: 0
         total: 0
-      turn_total: 547
+      turn_total: 575
     - name: 'Ceiling — Haste + Terazul + Elixir of Bloodlust'
       lines:
       - line: 'PREP — Hexblade''s Curse and Inquisitor''s Might on the two prior turns (one bonus action each); Elixir of Bloodlust drunk out of combat. Terazul needs NO bonus action to swallow and stacks with Hastened.'
@@ -652,11 +657,15 @@ builds:
         count: 10
         each: 8
         total: 80
+      - line: 'Dolor Amarus (Vicious Shortbow held in the ranged slot) — +7 flat per critical hit across all ten swings'
+        count: 10
+        each: 7
+        total: 70
       - line: 'Fourth action, granted by Bloodlust on the kill — Hold Person / Command'
         count: 1
         each: 0
         total: 0
-      turn_total: 1481
+      turn_total: 1551
     caveats: |
       - **The spread is tight, not swingy.** The standard nova runs 366–429 across the 5th–95th percentile, with an absolute floor of 146 and a ceiling of 731. The Terazul build averages 1,481 (floor 462, ceiling 1,949). With roughly 25 dice all rolled twice, σ is only about 20 — treat the averages as what actually happens.
       - ⚠ **VERIFY THIS IN YOUR INSTALL: do extra actions get Extra Attack?** The wiki's Extra Attack page says plainly that Hastened and Elixir of Bloodlust actions do, outside Honour, with a worked Tactician example. The Hastened and Terazul Jitters condition pages both carry a flat note saying the opposite. If the condition pages win, every extra action is a SINGLE attack, the ceiling turn collapses to roughly 700, and spending the Haste action on Hold Person costs nothing instead of costing a whole attack chain. Nothing else here swings this hard on one unknown.
@@ -664,6 +673,7 @@ builds:
       - ⚠ **Enemy crit immunity deletes the entire plan.** Adamantine Scale Mail, Adamantine Splint Armour, the Grymskull Helm, the Helldusk Helmet and the Helm of Balduran all cancel Hold Person's guaranteed critical hits. Check the target before committing eight spell slots.
       - ⚠ **Terazul and Haste both end in Lethargic** — a full turn unable to move or act. Terazul only runs 2 turns, so that bill arrives immediately. Elixir of Bloodlust also replaces any other elixir, which costs Charles nothing since he attacks with CHA.
       - **Wrathful Smite is not a legal lead.** Smite SPELLS cost Action + Bonus Action on hit, and Inquisitor's Might already spent the bonus action. It is also Concentration, so casting it would drop the Hold that makes every swing a crit. Booming Blade simply hits harder anyway: 23.2 from a crit-doubled 4d8 Thunder against 17.9 from a Stone-doubled 2d6 Psychic. The same reasoning rules out Thunderous Smite.
+      - **Dolor Amarus may be much larger than modelled.** The wiki adds that it "stacks on multiple damage riders, which could potentially lead to massive bonuses from different damage sources." If that means +7 per RIDER rather than per attack, a swing carrying weapon damage, a smite, Strange Conduit and Inquisitor's Might would collect it several times over. The tables use the conservative +7 per attack — worth one combat-log check to settle.
       - **Risky Ring and Killer's Sweetheart both contribute exactly ZERO against a Held target** — advantage and a guaranteed crit are worth nothing when attacks already auto-hit and auto-crit. That is why ring 1 is now the Strange Conduit Ring and both of those dropped to the flex slot.
   itemization:
     act1:
@@ -799,12 +809,19 @@ builds:
       bis: true
       note: 'CARRIED OVER — locked. Adamantine Scale Mail is the item this displaces, and its crit immunity was protecting concentration, so the Helm of Balduran becomes the plan for getting that back in Act 3. The Splint mould and both Mithral ores now go elsewhere.'
     - id: act2-head-charles
-      item: Covert Cowl
-      tier: A
-      tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (17:07) — shows up in a lot of builds, though some versions of them want something else'
-      wiki: Covert Cowl
+      item: Holy Lance Helm
+      tier: S
+      tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (33:55) — radiant retaliation with no cooldown; chains with radiating orb and reverberation gear'
       slot: head
-      note: 'ACT-2 HEAD, from Last Light. −1 crit threshold while Obscured — and standing inside an arrow cloud is Heavily Obscured, so it is live on every turn he plays the cloud correctly. Requires Light Armour proficiency, which medium-armour characters inherit. ⚠ Illegal on Asterion, whose Unarmoured Defence breaks on any helmet marked as armour, so there is no contest.'
+      bis: true
+      note: 'ACT-2 HEAD, from a painted chest on the top level of Rosymorn Monastery, and it REPLACES the Covert Cowl. Ignore the damage — Smite the Graceless is 1d4 on a fixed DC 14 Dexterity save and will not matter. Take it for what that Radiant tick plugs into: it is RADIANT, so it fires a Luminous Armour shockwave and spreads Radiating Orb ON ENEMY TURNS, and the Gloves research confirms it as a Battlemage''s Power trigger, so it also refills ARCANE ACUITY between his turns. That is the direct answer to Acuity decaying by 2 every time he is hit. It is self-reinforcing too — it only fires when an attack MISSES, and Radiating Orb at −10 plus Mirror Image makes enemies miss constantly. Requires Medium Armour proficiency, which Hexblade grants. ⚠ Act 3 keeps the Helm of Balduran instead: crit immunity protecting the Hold Person concentration is worth more than an off-turn Acuity trickle.'
+      options:
+      - id: opt-covert-cowl-act2
+        item: Covert Cowl
+        tier: A
+        tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (17:07) — shows up in a lot of builds, though some versions of them want something else'
+        wiki: Covert Cowl
+        note: 'THE NON-HELD ALTERNATIVE, from Last Light. −1 crit threshold while Obscured, and standing inside an arrow cloud is Heavily Obscured. ⚠ Same redundancy that demoted Risky Ring and Killer''s Sweetheart: you cannot improve on a guaranteed crit, so a lowered crit threshold is worth nothing on a turn the target is Held. Swap it in for fights with nothing Holdable. ⚠ Illegal on Asterion, whose Unarmoured Defence breaks on any helmet marked as armour, so there is no contest for it.'
     - id: act2-feet-charles
       item: Boots of Striding
       tier: A
@@ -981,20 +998,27 @@ builds:
       bis: true
       note: 'CARRIED OVER. Flat +1 AC and +1 saves never stops applying, and on the character with save disadvantage holding the party''s Hold Person it beats the conditional Act 3 cloaks. ⚠ Cloak of Displacement goes to Asterion. ⚠ Mantle of the Holy Warrior is a trap here — Crusader''s Mantle is CONCENTRATION, so it would evict Hold Person.'
     - id: act3-ranged-charles
-      item: Hellrider's Longbow
-      wiki: Hellrider Longbow
+      item: Vicious Shortbow
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (57:48) — +7 on crits works passively, so any melee crit build gets it free'
       slot: ranged weapons
       bis: true
-      note: 'ACT-3 RANGED, from Rivington, and the fix for the build''s one structural weakness. Passive +3 INITIATIVE in a slot that is otherwise a formality — a Darkness cloud blocks ranged attacks into and out of itself, so he cannot shoot out of it anyway. He has the party''s worst initiative at d4+2, so +3 is close to doubling it, and going first is what lets him build Acuity and land Hold Person before the enemy acts. ⚠ Bonbon lists this only as an initiative alternative and stays on hand crossbows for her Acuity engine, so there is no real contest.'
+      note: 'ACT-3 RANGED, and he never fires it — it is a melee damage stick. Dolor Amarus is listed on THE HOLDER, not the main hand, and the wiki states it applies to ALL weapon attacks while a weapon carrying the feature is equipped: +7 flat on every critical hit. Every swing against a Held target crits, so that is +28 on the standard nova and +70 on the Terazul turn, out of a slot that was otherwise dead — a Darkness cloud blocks ranged attacks both ways, so he could never shoot from it anyway. Ranged and melee weapon sets are separate, so it does not touch Shadow Blade or Phalar. ⚠ BHAAL PATH ONLY: the Echo of Abazigal at the Murder Tribunal will only sell it to a player character who accepts becoming an Unholy Assassin of Bhaal. On any other route take the Hellrider Longbow below. ⚠ Taking this also settles the Hellrider Longbow, which GALE and Charles both used to claim — Gale keeps it, and his Elixir of Vigilance stacks it to +8 initiative.'
+      options:
+      - id: opt-hellriders-longbow-charles
+        item: Hellrider Longbow
+        tier: S
+        tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (53:35) — +3 initiative from an unused slot; he would put it in S+ if it existed'
+        note: 'THE NON-BHAAL FALLBACK, from Ferg Drogher in Rivington. Passive +3 INITIATIVE from the same dead slot, and he has the party''s worst initiative at d4+2. ⚠ It is GALE''S by default — he holds it purely as a stat stick on top of Elixir of Vigilance — so only take it here on a run where the Vicious Shortbow is unavailable and Gale can spare it.'
     - id: bhaalist-armour-unlock
       item: Bhaalist Armour
       tier: S
       tier_note: 'ARMOR TIER LIST - Light Armour - Baldur''s Gate 3 Honour Mode Guide - Part 2 (42:20) — piercing vulnerability aura breaks the game; LOCKED BEHIND A STORY EVENT, SOME RUNS ONLY'
       slot: other
-      note: 'Sold by the Echo of Abazigal, and Charles as the Dark Urge unlocks the Murder Tribunal stock. Aura of Murder makes enemies within 3m Vulnerable to PIERCING. ⚠ NOT WORN — none of his damage is Piercing (Shadow Blade is Psychic, Phalar is Slashing, Divine Smite is Radiant), it would buff nobody, and the chest slot is locked to Luminous Armour anyway. Buy it on the Bhaal path for completeness and leave it in the chest.'
+      note: 'Sold by the Echo of Abazigal — the same Bhaal-path vendor as the VICIOUS SHORTBOW above, so one Unholy Assassin decision buys both. Charles as the Dark Urge unlocks the Murder Tribunal stock. Aura of Murder makes enemies within 3m Vulnerable to PIERCING. ⚠ NOT WORN — none of his damage is Piercing (Shadow Blade is Psychic, Phalar is Slashing, Divine Smite is Radiant), it would buff nobody, and the chest slot is locked to Luminous Armour anyway. Buy it on the Bhaal path for completeness and leave it in the chest.'
     progression:
     - id: prog-head
-      item: 'Head: Haste Helm → Covert Cowl → Helm of Balduran'
+      item: 'Head: Haste Helm → Holy Lance Helm → Helm of Balduran'
       slot: head
       note: 'Act 1 Haste Helm (Blighted Village) → Act 2 Covert Cowl (Last Light) → Act 3 Helm of Balduran (Ansur). Momentum while he is slow and far away, then crit-threshold reduction once he lives inside a cloud, then crit IMMUNITY — which is the only way back to the protection Adamantine Scale Mail would have given. ⚠ Grymskull Helm is illegal all run: Heavy Armour proficiency.'
     - id: prog-armour
@@ -1030,9 +1054,9 @@ builds:
       slot: weapons
       note: The build's one real respec. Two-handed Phalar with Great Weapon Master carries Act 1 through most of Act 2; the late-Act-2 Resonance Stone triggers the swap to Dual Wielder, Shadow Blade main hand and Phalar off-hand for Shriek.
     - id: prog-ranged
-      item: 'Ranged: Dual Hand Crossbows +1 → Hellrider''s Longbow'
+      item: 'Ranged: Dual Hand Crossbows +1 → Vicious Shortbow'
       slot: ranged weapons
-      note: Acts 1–2 the crossbows exist to launch Darkness Arrows. Act 3 Hellrider's Longbow (Rivington) converts a dead slot into +3 initiative, which is the build's one real structural weakness.
+      note: Acts 1–2 the crossbows exist to launch Darkness Arrows. Act 3 the Vicious Shortbow (Echo of Abazigal, Bhaal path) turns the same dead slot into +7 damage on every critical hit, which on an auto-crit build is worth more than the Hellrider Longbow's +3 initiative — and it hands that bow back to Gale.
     - id: prog-consumables
       item: 'Consumables: Arrows of Darkness, all three acts'
       slot: consumables

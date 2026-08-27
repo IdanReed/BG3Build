@@ -284,6 +284,10 @@ loot_guide:
       note: Free the deep gnomes or side with the duergar; loot Nere for the Night Walkers.
   - area: Mountain Pass / Rosymorn Monastery / Crèche Y'llek
     items:
+    - name: Holy Lance Helm
+      for: Charles
+      core: true
+      note: 'Painted chest on the top level of Rosymorn Monastery. CHARLES''S ACT 2 HEAD, replacing the Covert Cowl. Ignore the printed damage — Smite the Graceless is 1d4 on a fixed DC 14 Dexterity save. Take it for what the Radiant tick plugs into: Radiant damage fires a Luminous Armour shockwave, so it spreads Radiating Orb ON ENEMY TURNS, and the Gloves of Battlemage''s Power research confirms it as a trigger, so it refills Arcane Acuity between his turns — the direct answer to Acuity decaying by 2 every time he is hit. Self-reinforcing, because it only fires when an attack MISSES and Radiating Orb at −10 makes enemies miss constantly. Requires Medium Armour proficiency, which Hexblade grants.'
     - name: Graceful Cloth
       wiki: The Graceful Cloth
       for: Asterion
@@ -403,7 +407,7 @@ loot_guide:
       wiki: Covert Cowl
       for: Charles
       core: true
-      note: 'Cellar, on a Meenlock. CHARLES''S ACT 2 HEAD: −1 crit threshold while Obscured, and standing inside his own Darkness is Heavily Obscured, so it is live on every turn he plays the cloud correctly. It requires Light Armour proficiency, which medium-armour characters inherit. ⚠ It is illegal on Asterion, whose Unarmoured Defence breaks on any helmet tagged as armour, so there is no contest for it. Sarevok''s Horned Helmet takes over in Act 3.'
+      note: 'Cellar, on a Meenlock. NOW THE ALTERNATE ACT 2 HEAD, behind the Holy Lance Helm: −1 crit threshold while Obscured, and standing inside his own Darkness is Heavily Obscured. ⚠ Same redundancy that demoted Risky Ring and Killer''s Sweetheart — you cannot improve on a guaranteed crit, so a lowered crit threshold is worth nothing on any turn the target is Held. Keep it bagged for fights with nothing Holdable. It requires Light Armour proficiency, which medium-armour characters inherit. ⚠ Illegal on Asterion, whose Unarmoured Defence breaks on any helmet tagged as armour, so there is no contest for it.'
     - name: Hat of Fire Acuity
       for: Gale
       core: true
@@ -559,9 +563,9 @@ loot_guide:
     items:
     - name: Hellrider's Longbow
       wiki: Hellrider Longbow
-      for: Charles
+      for: Gale
       core: true
-      note: 'CONTESTED, and now CHARLES''S. Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 Initiative and advantage on Perception. Charles has the party''s worst initiative at d4+2 and his ranged slot is otherwise dead, because a Darkness cloud blocks ranged attacks into and out of itself - so this converts a wasted slot into the fix for his one structural weakness, and going first is what lets him stack Arcane Acuity and land Hold Person before the enemy acts. WARNING THE COST: this was Gale''s, and Gale acting earlier is what puts Twinned Haste up sooner - which is itself what gives Charles the extra action to build Acuity and Hold in the same turn. If Haste is landing too late in practice, give the bow back to Gale and cover Charles with the Fistbreaker Helm or a Sentinel Shield instead.'
+      note: 'RESOLVED — IT IS GALE''S. Charles takes the Vicious Shortbow instead, whose Dolor Amarus is worth about +28 a nova turn to an auto-crit build, so he no longer needs this and Gale keeps +3 Initiative on top of Elixir of Vigilance. The original arbitration is kept below in case the Bhaal path is not taken, in which case this comes back to Charles. FORMERLY CHARLES''S: Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 Initiative and advantage on Perception. Charles has the party''s worst initiative at d4+2 and his ranged slot is otherwise dead, because a Darkness cloud blocks ranged attacks into and out of itself - so this converts a wasted slot into the fix for his one structural weakness, and going first is what lets him stack Arcane Acuity and land Hold Person before the enemy acts. WARNING THE COST: this was Gale''s, and Gale acting earlier is what puts Twinned Haste up sooner - which is itself what gives Charles the extra action to build Acuity and Hold in the same turn. If Haste is landing too late in practice, give the bow back to Gale and cover Charles with the Fistbreaker Helm or a Sentinel Shield instead.'
     - name: Boots of Uninhibited Kushigo
       wiki: Boots of Uninhibited Kushigo
       for: Asterion
@@ -677,6 +681,10 @@ loot_guide:
       for: any
       core: false
       note: Ring (Orin) — bonus damage and extra reaction attacks, strong for an assassin. Sword of Chaos (Sarevok) — +2 wounding longsword.
+    - name: Vicious Shortbow
+      for: Charles
+      core: true
+      note: 'GATED — BHAAL PATH ONLY, sold by the Echo of Abazigal, and he never fires it. Dolor Amarus is listed on THE HOLDER rather than the main hand, and the wiki states it applies to ALL weapon attacks while a weapon carrying the feature is equipped: +7 flat on every critical hit. Every swing against a Held target crits, so that is about +28 on the standard nova and +70 on the Terazul turn, out of a ranged slot that was dead anyway because a Darkness cloud blocks ranged attacks both ways. Ranged and melee weapon sets are separate, so it costs nothing off Shadow Blade or Phalar. ⚠ Taking this hands the Hellrider Longbow back to Gale. ⚠ No Bhaal path means no bow — fall back to the Hellrider Longbow in Rivington.'
     - name: Echo of Abazigal stock (GATED — Bhaal path only)
       wiki:
       - Craterflesh Gloves
@@ -684,7 +692,7 @@ loot_guide:
       - Assassin of Bhaal Cowl
       for: Charles
       core: false
-      note: 'GATED BONUS, not a plan dependency — these unlock only if Charles completes Impress the Murder Tribunal and becomes an Unholy Assassin of Bhaal, and they arrive late enough in Act 3 that the Shadow Blade + Resonance Stone package carries the build either way. Documented so the cost of resisting the Urge is visible. CRATERFLESH GLOVES are the real prize: +1d6 Force on a critical hit, which the wiki notes actually lands as 2d6 because the crit doubles it — on a Held target where all seven swings auto-crit that is roughly +49 a turn, against about +17 from Helldusk Gloves. BHAALIST ARMOUR gives +2 Initiative and Aura of Murder (enemies within 3m become Vulnerable to Piercing, radius raised from 2m in Patch 8) — worth nothing to Charles''s Psychic Shadow Blade, but it doubles Bonbon''s Piercing crossbow and Titanstring damage against anything engaging him; costs Luminous Armour''s Radiating Shockwaves. ASSASSIN OF BHAAL COWL is +2 Initiative, which matters more than it looks because BG3 rolls initiative on a d4.'
+      note: 'GATED BONUS, not a plan dependency — these unlock only if Charles completes Impress the Murder Tribunal and becomes an Unholy Assassin of Bhaal (the VICIOUS SHORTBOW above is the same vendor behind the same gate, and is the one item here the plan now actually commits to), and they arrive late enough in Act 3 that the Shadow Blade + Resonance Stone package carries the build either way. Documented so the cost of resisting the Urge is visible. CRATERFLESH GLOVES are the real prize: +1d6 Force on a critical hit, which the wiki notes actually lands as 2d6 because the crit doubles it — on a Held target where all seven swings auto-crit that is roughly +49 a turn, against about +17 from Helldusk Gloves. BHAALIST ARMOUR gives +2 Initiative and Aura of Murder (enemies within 3m become Vulnerable to Piercing, radius raised from 2m in Patch 8) — worth nothing to Charles''s Psychic Shadow Blade, but it doubles Bonbon''s Piercing crossbow and Titanstring damage against anything engaging him; costs Luminous Armour''s Radiating Shockwaves. ASSASSIN OF BHAAL COWL is +2 Initiative, which matters more than it looks because BG3 rolls initiative on a d4.'
     events:
     - name: Murder questline (Dark Urge)
       note: Charles IS the Dark Urge — this arc and its embrace-or-resist choice are his story climax.

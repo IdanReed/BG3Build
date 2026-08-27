@@ -1,3 +1,5 @@
+https://www.reddit.com/r/BG3Builds/comments/1nchxz7/understanding_the_gloves_of_battlemages_power/
+
 Understanding the Gloves of Battlemage’s Power: Notes from a Journey Into Madness
 Recently, u/JRandall0308, u/LostAccount2099, and I have been on a quest to understand how the Gloves of Battlemage’s Power actually work. As part of that quest, we delved deep into the BG3 game code, ran tests with more spreadsheets and save files than we care to admit, and variously smacked, burned, electrocuted, and irradiated countless enemies, objects, and companions.
 

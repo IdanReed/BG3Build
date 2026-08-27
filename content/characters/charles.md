@@ -592,6 +592,79 @@ builds:
       - Bless
       - Magic Weapon
       note: 'TWELVE prepared (7 + CHA 5) — 12 of the 16 Paladin spells that exist, so the list finally fills with nothing left open. The four left out are Searing Smite, Heroism, Cure Wounds and Branding Smite. ⚠ The last four ON the list are seat-fillers, not rotation: Divine Favour, Shield of Faith and Bless are Concentration and lose to Hold Person every time, and Magic Weapon is redundant with Bind Hexed Weapon — prepared spells cost nothing to hold, so they ride along. Four Vengeance oath spells (Bane, Hunter''s Mark, Hold Person, Misty Step) are free on top of the twelve.'
+  nova:
+    assumptions: |
+      Level 12 (Paladin 7 / Warlock 5), CHA 20, proficiency +4, **non-Honour rules**. Every number assumes the target is a HELD humanoid and Charles is within 3m, so every melee attack auto-hits and is an automatic critical hit.
+      - **Resonance Stone** within 9m — the target is Steeped in Bliss and therefore Vulnerable to Psychic, which doubles Shadow Blade, the pact-weapon CHA modifier and the Strange Conduit Ring. Worth about 156 damage a turn. ⚠ The wiki notes the Stone often stops working once Act 2 ends, and level 12 is Act 3 — confirm it still fires before planning around it. Without it the standard nova drops from 547 to 348.
+      - **Phalar Aluve: Shriek** pre-cast — 1d4 Thunder per damage instance plus −1d4 to the target's saving throws AND attack rolls. Modelled at one proc per attack, which is the conservative reading; it may fire again off each smite. ⚠ Shriek lasts only 5 turns and recharges on short rest, so casting it too early out of combat burns duration.
+      - **Savage Attacker** rerolls every damage die and the wiki confirms it covers damage riders, so Shadow Blade, Booming Blade's Thunder, Strange Conduit and Divine Smite all roll twice. **Half-Orc Savage Attacks** adds an extra weapon die AND a second extra die to Divine Smite on every crit — that second die is disabled in Honour mode only.
+      - **Divine Smite (reaction) costs no Reaction resource** and can fire on every melee hit, limited only by spell slots. Set the L2 Critical Hit entry to auto-confirm and leave L1/L3 on Ask, so auto-confirm cannot quietly eat a pact slot mid-nova.
+      - Smite fuel is the SEVEN Paladin slots (4 × L1, 3 × L2). ⚠ Leave both L3 pact slots alone — they are also Counterspell and Shield. Upgrading three L2 smites to L3 buys only +23 damage and costs both.
+      - **Luminous Armour is what makes the Gloves work.** Radiant Shockwave uses CreateExplosion, which resets the Gloves' once-per-attack limit, and Inquisitor's Might makes every swing deal Radiant — so the limit resets on every single hit, with none of the Perform/grenade tricks other builds need. Arcane Acuity caps at +10 (Hold Person DC 27) and Radiating Orb caps at −10 on any full nova.
+      - **Arcane Acuity buys no damage.** It is +1 to SPELL attack rolls and spell save DC only, it never touches weapon swings, and he is already at the cap. A second Acuity source is insurance against the −2 duration he loses per hit taken, not throughput.
+    configs:
+    - name: 'Standard nova — Hasted, Held target'
+      lines:
+      - line: 'PREP, previous turn — Inquisitor''s Might (bonus action + Channel Oath). It lasts 2 turns, so casting it a turn early frees the nova turn''s bonus action.'
+        count: '—'
+        each: '—'
+        total: '—'
+      - line: 'Booming Blade lead + L2 Divine Smite. At char 11+ Booming Blade adds 2d8 Thunder on impact, doubled to 4d8 by the crit.'
+        count: 1
+        each: 175
+        total: 175
+      - line: 'Extra Attack ×2 — Paladin 5 and Deepened Pact stack outside Honour — each + L2 Divine Smite'
+        count: 2
+        each: 152
+        total: 304
+      - line: 'Off-hand Phalar Aluve (bonus action, Dual Wielder) + L1 Divine Smite'
+        count: 1
+        each: 68
+        total: 68
+      - line: 'Haste action — Hold Person at DC 27, or Command, or Hunger of Hadar. No damage, but it sets up the next nova.'
+        count: 1
+        each: 0
+        total: 0
+      turn_total: 547
+    - name: 'Ceiling — Haste + Terazul + Elixir of Bloodlust'
+      lines:
+      - line: 'PREP — Hexblade''s Curse and Inquisitor''s Might on the two prior turns (one bonus action each); Elixir of Bloodlust drunk out of combat. Terazul needs NO bonus action to swallow and stacks with Hastened.'
+        count: '—'
+        each: '—'
+        total: '—'
+      - line: 'Booming Blade lead — it recharges per Action, so once in each of the three attack actions (base + Haste + Terazul)'
+        count: 3
+        each: 135
+        total: 404
+      - line: 'Extra Attack ×2 inside each of those three actions — outside Honour the Hastened and Bloodlust actions do get Extra Attack'
+        count: 6
+        each: 111
+        total: 668
+      - line: 'Off-hand Phalar Aluve (bonus action)'
+        count: 1
+        each: 38
+        total: 38
+      - line: 'Divine Smite on 8 of the 10 attacks — literally every slot he owns (1 × L3 pact, 3 × L2, 4 × L1)'
+        count: 8
+        each: '29–52'
+        total: 291
+      - line: 'Hexblade''s Curse — +proficiency per damage roll, weapon-typed and so doubled by the Stone'
+        count: 10
+        each: 8
+        total: 80
+      - line: 'Fourth action, granted by Bloodlust on the kill — Hold Person / Command'
+        count: 1
+        each: 0
+        total: 0
+      turn_total: 1481
+    caveats: |
+      - **The spread is tight, not swingy.** The standard nova runs 366–429 across the 5th–95th percentile, with an absolute floor of 146 and a ceiling of 731. The Terazul build averages 1,481 (floor 462, ceiling 1,949). With roughly 25 dice all rolled twice, σ is only about 20 — treat the averages as what actually happens.
+      - ⚠ **VERIFY THIS IN YOUR INSTALL: do extra actions get Extra Attack?** The wiki's Extra Attack page says plainly that Hastened and Elixir of Bloodlust actions do, outside Honour, with a worked Tactician example. The Hastened and Terazul Jitters condition pages both carry a flat note saying the opposite. If the condition pages win, every extra action is a SINGLE attack, the ceiling turn collapses to roughly 700, and spending the Haste action on Hold Person costs nothing instead of costing a whole attack chain. Nothing else here swings this hard on one unknown.
+      - ⚠ **Bloodlust's extra action needs a kill that turn**, and if the thing that dies is the Held target then everything after it lands on something un-Held — no auto-crit, roughly half value. The clean version is a Held add dying to the first chain while the boss stays Held.
+      - ⚠ **Enemy crit immunity deletes the entire plan.** Adamantine Scale Mail, Adamantine Splint Armour, the Grymskull Helm, the Helldusk Helmet and the Helm of Balduran all cancel Hold Person's guaranteed critical hits. Check the target before committing eight spell slots.
+      - ⚠ **Terazul and Haste both end in Lethargic** — a full turn unable to move or act. Terazul only runs 2 turns, so that bill arrives immediately. Elixir of Bloodlust also replaces any other elixir, which costs Charles nothing since he attacks with CHA.
+      - **Wrathful Smite is not a legal lead.** Smite SPELLS cost Action + Bonus Action on hit, and Inquisitor's Might already spent the bonus action. It is also Concentration, so casting it would drop the Hold that makes every swing a crit. Booming Blade simply hits harder anyway: 23.2 from a crit-doubled 4d8 Thunder against 17.9 from a Stone-doubled 2d6 Psychic. The same reasoning rules out Thunderous Smite.
+      - **Risky Ring and Killer's Sweetheart both contribute exactly ZERO against a Held target** — advantage and a guaranteed crit are worth nothing when attacks already auto-hit and auto-crit. That is why ring 1 is now the Strange Conduit Ring and both of those dropped to the flex slot.
   itemization:
     act1:
     - id: early-hexed-weapon
@@ -761,31 +834,36 @@ builds:
         tier: S
         tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (23:45) — some character should have this equipped'
         note: 'Derryth Bonecloak, Underdark. Grants Healing Word and Mass Healing Word once each per long rest. It needs no class access, so on him it is a free party-wide heal — and a Whispering Promise trigger if anyone is wearing one.'
-    - id: risky-ring
-      item: Risky Ring
+    - id: strange-conduit-act2
+      item: Strange Conduit Ring
       tier: S
-      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:21) — too good to leave at home, given a way to cover the saving-throw downside'
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (44:11) — easy to keep active all the time, and it raises damage output dramatically'
+      rank: '#5'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #5 of 20 — 1d4 psychic on every weapon attack while concentrating'
       slot: ring 1
       bis: true
-      note: 'Moonrise, from Araj Oblodra. Advantage on ALL attacks, disadvantage on saves — the crit-fishing engine, and it replaces the Ring of Arcane Synergy. It also makes Vow of Enmity redundant, which is what frees the Channel Oath charge for Inquisitor''s Might every fight. ⚠ Be honest about the cost: disadvantage on saves roughly squares his concentration-failure rate, and he is now ALWAYS holding Hold Person. Mitigate in order — Aura of Protection at Paladin 6, the Cloak of Protection below, Helm of Balduran''s crit immunity in Act 3, and the Amulet of Greater Health, which cancels the disadvantage on Constitution saves outright.'
+      note: 'LOCKED RING FROM ACT 2, promoted out of the flex slot. Hold Person guarantees he is always Concentrating, so its +1d4 Psychic is live on every swing and the Resonance Stone doubles it — 37.5 damage across a four-attack nova, and it scales with every extra attack the turn adds. It is the only ring he owns whose value does NOT collapse against a Held target, which is exactly why it stopped being a coin-flip with Killer''s Sweetheart.'
     - id: act2-ring2-charles
       item: Second ring
       slot: ring 2
       wiki: false
-      note: 'A REAL CHOICE, not a default. Risky Ring owns the first slot; this one swings on whether the fight has kills to bank. Both candidates are strong and neither is wrong.'
+      note: 'THE FLEX SLOT, and the choice is really one question: is the target Held? Against a Held target both Risky Ring and Killer''s Sweetheart contribute exactly ZERO — advantage and a guaranteed crit are worth nothing when attacks already auto-hit and auto-crit — so Arcane Synergy wins outright. Against anything he cannot Hold, Risky Ring is still the strongest ring he can wear.'
       options:
+      - id: risky-ring
+        item: Risky Ring
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:21) — too good to leave at home, given a way to cover the saving-throw downside'
+        note: 'THE DEFAULT UNTIL HOLD PERSON IS RELIABLE. Moonrise, from Araj Oblodra. Advantage on ALL attacks, disadvantage on saves. It makes Vow of Enmity redundant, which is what frees the Channel Oath charge for Inquisitor''s Might every fight. ⚠ Two costs, not one: disadvantage on saves roughly squares his concentration-failure rate while he permanently holds Hold Person, and the advantage itself is dead weight on any turn the target is already Held. Mitigate in order — Aura of Protection at Paladin 6, the Cloak of Protection, Helm of Balduran''s crit immunity and the Amulet of Greater Health.'
+      - id: ring-of-arcane-synergy-act2
+        item: Ring of Arcane Synergy
+        tier: A
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (21:54) — an extremely powerful effect, but a better source of it exists for most builds'
+        note: 'THE HELD-TARGET PICK, and it costs the party nothing because nobody else wants it after Act 1. Booming Blade is a damage-dealing cantrip, so the lead attack switches Arcane Synergy on for 2 turns: +CHA to every subsequent weapon attack, ON TOP of the pact weapon''s own CHA modifier, and the Resonance Stone doubles it. Worth about +20 on the turn it switches on and +30 on every turn after. ⚠ Never pair it with Bonbon''s Diadem of Arcane Synergy — same condition, will not stack with itself.'
       - id: killer-s-sweetheart
         item: Killer's Sweetheart
         tier: A
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (14:36) — very good for builds rolling a lot of damage dice, but only one encounter per day'
-        note: 'Gauntlet of Shar, Self-Same Trial — on the ground where your shadow copy dies. Your first attack after a kill is a GUARANTEED crit, which is a free doubled smite every fight. Set it to Ask in the Reactions tab and bank it for the biggest slot. WARNING weapon attack rolls only. Best in fights with adds to kill first.'
-      - id: opt-strange-conduit-act2
-        item: Strange Conduit Ring
-        tier: S
-        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (44:11) — easy to keep active all the time, and it raises damage output dramatically'
-        rank: '#5'
-        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #5 of 20 — 1d4 psychic on every weapon attack while concentrating'
-        note: 'Now that Hold Person guarantees he is always Concentrating, its +1d4 Psychic is live on every single swing and the Resonance Stone doubles it. Across a seven-attack nova that beats one banked crit, so prefer it in long boss fights with nothing to kill early.'
+        note: 'Gauntlet of Shar, Self-Same Trial — on the ground where your shadow copy dies. Your first attack after a kill is a GUARANTEED crit. Set it to Ask in the Reactions tab and bank it for the biggest slot. ⚠ Weapon attack rolls only, once per long rest, and worth NOTHING on a turn the target is already Held. It has dropped to a fallback for fights with nothing Holdable.'
     - id: shadow-blade-ring
       item: Shadow Blade Ring
       tier: B
@@ -858,36 +936,42 @@ builds:
       bis: true
       note: 'ACT-3 NECK, on the leftmost pedestal in the House of Hope Archive. Sets Constitution to 23 and grants ADVANTAGE ON CONSTITUTION SAVING THROWS. Both halves matter only here: +6 to concentration checks, and the advantage cancels the Risky Ring''s disadvantage so those rolls go back to a straight d20. On a build whose entire nova rests on keeping Hold Person up, this is the single most important Act 3 pickup. ⚠ Contested with Gale — Charles wins because Armour of Landfall already gives Gale that advantage. Steal tip: DC 20 Sleight of Hand if the Orphic Hammer, the Soul-Sworn Contract and Hope are left alone — an Asterion job.'
     - id: act3-ring1-charles
-      item: Risky Ring
+      item: Strange Conduit Ring
       tier: S
-      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:21) — too good to leave at home, given a way to cover the saving-throw downside'
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (44:11) — easy to keep active all the time, and it raises damage output dramatically'
+      rank: '#5'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #5 of 20 — 1d4 psychic on every weapon attack while concentrating'
       held: 2
       slot: ring 1
       bis: true
-      note: 'CARRIED OVER. Advantage on every attack roll is the largest crit-rate multiplier available and the engine of the build, so it keeps the slot. The save penalty is now fully answered by the Amulet of Greater Health and Helldusk Boots.'
+      note: 'CARRIED OVER and still locked. Every attack the nova adds multiplies it, so it only gets better as the turn gets longer: 37.5 damage across the four-attack standard nova and more than 60 across the Terazul ceiling turn. ⚠ It is Psychic, so it is the single line most exposed to the Resonance Stone failing after Act 2 — verify the Stone before assuming these numbers.'
     - id: act3-ring2-charles
       item: Second ring
       slot: ring 2
       wiki: false
-      note: 'Same choice as Act 2, and still genuinely open. Bank a crit or ride a permanent psychic rider.'
+      note: 'Same flex slot as Act 2. Expect to run Arcane Synergy here for most of Act 3, because by now Hold Person lands on essentially every humanoid at DC 27 and the two crit-fishing rings are dead weight on a Held target. Keep Risky Ring in the bag for boss fights that cannot be Held.'
       options:
+      - id: opt-arcane-synergy-act3
+        item: Ring of Arcane Synergy
+        tier: A
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (21:54) — an extremely powerful effect, but a better source of it exists for most builds'
+        note: 'THE DEFAULT ONCE HOLD PERSON IS RELIABLE. Booming Blade triggers it, so it is live from the second attack onward: +CHA per weapon hit, stacking on top of the pact weapon''s CHA, doubled by the Stone. Roughly +20 on the turn it switches on and +30 on every turn after — the only one of these three rings that pays out during an auto-crit nova. ⚠ Do not run it alongside Bonbon''s Diadem.'
+      - id: opt-risky-ring-act3
+        item: Risky Ring
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:21) — too good to leave at home, given a way to cover the saving-throw downside'
+        held: 2
+        note: 'THE NON-HELD ANSWER, and still excellent there — advantage on every attack roll is the largest crit-rate multiplier in the game. But it does nothing whatsoever against a Held target, and the save disadvantage is a permanent tax on the character carrying the party''s Concentration. The Amulet of Greater Health and Helldusk Boots cover the downside when he does wear it.'
       - id: opt-killers-sweetheart-act3
         item: Killer's Sweetheart
         tier: A
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (14:36) — very good for builds rolling a lot of damage dice, but only one encounter per day'
-        note: 'One guaranteed critical hit after a kill. Bank it for the largest Divine Smite, since a crit doubles every smite die. Weapon attack rolls only.'
-      - id: opt-strange-conduit-act3
-        item: Strange Conduit Ring
-        tier: S
-        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (44:11) — easy to keep active all the time, and it raises damage output dramatically'
-        rank: '#5'
-        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #5 of 20 — 1d4 psychic on every weapon attack while concentrating'
-        note: 'Hold Person guarantees he is always Concentrating, so its +1d4 Psychic is live on every swing and the Resonance Stone doubles it. Across a seven-attack nova this beats one banked crit in long fights.'
+        note: 'One guaranteed critical hit after a kill, once per long rest. ⚠ Redundant on any turn the target is Held, and this build Holds its targets — bank it only for fights where the nova has to land on something un-Holdable.'
       - id: opt-callous-glow-ring-charles
         item: Callous Glow Ring
         tier: S
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (4:45) — the number of uses is absurd once the wearer is lit'
-        note: '+2 Radiant per hit against ILLUMINATED targets — and Radiant would feed Luminous Armour. The catch is it needs light, which fights his own darkness, and it is currently Gale''s.'
+        note: '+2 Radiant per hit against ILLUMINATED targets — and Radiant would feed another Luminous Armour shockwave. The catch is it needs light, which fights his own darkness plan, and it is currently Gale''s.'
     - id: act3-cloak-charles
       item: Cloak of Protection
       tier: S
@@ -934,15 +1018,13 @@ builds:
       slot: amulets
       note: Act 1–2 Misty Step (Priestess Gut), lower value once Paladin 5 grants the spell free → Act 3 Greater Health (House of Hope Archive), which is what makes the Risky Ring safe on a permanent concentrator.
     - id: prog-ring1
-      item: 'Ring 1: Ring of Arcane Synergy → Risky Ring'
+      item: 'Ring 1: Ring of Arcane Synergy → Strange Conduit Ring'
       slot: ring 1
-      note: Ring of Arcane Synergy in Act 1, adding his Charisma modifier to weapon damage once he lands a condition → Risky Ring from Act 2, which is permanent advantage on attack rolls at the cost of saving throws his Paladin aura is best placed in the party to absorb.
+      note: Ring of Arcane Synergy in Act 1, adding his Charisma modifier to weapon damage once he lands a condition → Strange Conduit Ring locked in from Act 2, because Hold Person makes him a permanent concentrator and the Resonance Stone doubles the Psychic rider on every swing.
     - id: prog-ring2
-      item: 'Ring 2: Strange Conduit Ring → Killer''s Sweetheart'
+      item: 'Ring 2: Strange Conduit Ring → flex (Arcane Synergy / Risky / Killer''s Sweetheart)'
       slot: ring 2
-      note: Strange Conduit Ring while he is holding Concentration on Hold Person, which is nearly every fight → Killer's Sweetheart from Act 2 for a guaranteed critical once per fight, with Strange Conduit kept as the long-fight swap.
-      slot: rings
-      note: Act 1 Arcane Synergy and Strange Conduit (both Crèche) → Act 2–3 Risky Ring (Araj) and Killer's Sweetheart (Self-Same Trial). Strange Conduit is a live alternative all run, because Hold Person guarantees he is always Concentrating. The Shadow Blade Ring needs no slot — summon, then unequip.
+      note: Strange Conduit Ring in Act 1 → a genuine flex slot from Act 2, decided by whether the target can be Held. Held means Ring of Arcane Synergy, because advantage and banked crits are worth nothing against something that is already auto-hit and auto-crit; un-Holdable means Risky Ring. The Shadow Blade Ring needs no slot at all — summon, then unequip.
     - id: prog-weapons
       item: 'Melee: bound weapon → two-handed Phalar Aluve + GWM → 3d8 Shadow Blade + Phalar off-hand'
       slot: weapons

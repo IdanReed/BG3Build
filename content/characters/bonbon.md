@@ -93,6 +93,8 @@ builds:
       when: char 1 (Fighter 1)
       why: +2 ranged attack — offsets Sharpshooter's −5 and lands the big Titanstring shots in Act 1; later carries the dual hand-crossbow Arcane-Acuity engine.
     - spell: Hold Monster
+      tier: A
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (30:07) — paralysis is devastating but costs a level 5 slot and caps at two targets'
       level: '5'
       guide_level: 10
       school: Enchantment
@@ -100,6 +102,8 @@ builds:
       when: Bard 9
       why: Paralyse — attacks within 3m auto-crit, the melee auto-crit engine for Charles's smites. Upcast adds +1 target per slot above 5th. Concentration.
     - spell: Command
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (28:37) — concentration-free turn denial that upcasts to multiple enemies; every higher-level slot competes with it'
       level: '1'
       guide_level: 11
       school: Enchantment
@@ -107,6 +111,8 @@ builds:
       when: Bard 10 (Magical Secrets)
       why: The bonus-action loop via the Band of the Mystic Scoundrel. +1 target per slot above 1st, so the Bard-11 L6 slot hits up to 6. DC uses CHA + Arcane Acuity.
     - spell: Glyph of Warding
+      tier: S
+      tier_note: 'Level 3 spells tier list, part 1 (A-G) (45:04) — cast it directly on an enemy like a Fireball; non-concentration, six damage types, plus an AoE Dex-save sleep'
       level: '3'
       guide_level: 6
       school: Abjuration
@@ -115,6 +121,8 @@ builds:
       why: Pre-placed AoE burst (5d8, choose element) set as a ground trap before a fight.
     recommended:
     - spell: Fear
+      tier: A
+      tier_note: 'Level 3 spells tier list, part 1 (A-G) (35:36) — strongest of the three encounter-ending control spells, but a 30ft cone, so hardest to land'
       level: '3'
       guide_level: 9
       school: Illusion
@@ -122,6 +130,8 @@ builds:
       when: Bard 5
       why: 9m cone — frightened enemies drop weapons and cannot act or approach; scales with CHA + Arcane Acuity. Concentration.
     - spell: Confusion
+      tier: B
+      tier_note: 'Spells tier list, level 4, part 1 (Banishment through Fire Shield) (13:24) — hits enemies only, not allies; unreliable, but shut a door and the encounter kills itself'
       level: '4'
       guide_level: 8
       school: Enchantment
@@ -129,6 +139,8 @@ builds:
       when: Bard 7
       why: 6m scramble — enemies attack randomly or skip turns. Concentration.
     - spell: Hypnotic Pattern
+      tier: A
+      tier_note: 'Level 3 spells tier list, part 2 (H-W) (10:24) — best when it catches the whole encounter; A only because it shares a role with Fear and Sleet Storm, and he would accept S'
       level: '3'
       guide_level: 6
       school: Illusion
@@ -136,6 +148,8 @@ builds:
       when: Bard 5
       why: 'Strong 9m AoE incapacitate and a superb Acuity payoff. ⚠ The tier lists rate it only A, not S — the duration is short and ANY damage wakes the targets, so it does not survive a party that is already firing into the pack. Treat it as a way to buy one clean turn, not as a lockdown. Concentration.'
     - spell: Conjure Elemental
+      tier: S
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (15:03) — an all-day summon as strong as an extra party member; all eight modes viable'
       level: '5'
       guide_level: 11
       school: Conjuration
@@ -143,6 +157,8 @@ builds:
       when: Bard 10 (Magical Secrets)
       why: 'The second Magical Secret. S tier — "a day-long, concentration-free elemental or myrmidon is comparable to adding another character to the party." The concentration-free part is what makes it fit HER specifically: she can field it and still hold Hold Monster, which no other summon of this weight allows. The Water Myrmidon also mass-applies Wet, the party''s only reliable way to strip fire resistance ahead of Gale.'
     - spell: Globe of Invulnerability
+      tier: S
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6 (26:18) — total damage immunity wins most boss fights outright; get one cast into every Honour party'
       level: '6'
       guide_level: 11
       school: Abjuration
@@ -150,6 +166,8 @@ builds:
       when: Scroll only — NOT selectable as a Magical Secret
       why: 'Rated the #9 spell in the game and worth carrying, but she cannot learn it: Magical Secrets at Bard 10 selects from spells up to LEVEL 5 only, and Globe is 6th-level. With no Wizard dip there is no scribing route either, so buy scrolls and cast them for the Act 3 caster gauntlets and the Netherbrain''s area attacks. ⚠ Concentration, so a scroll cast still costs her Hold Monster that turn. Counterspell stays off her list because Gale and Charles already cover that lane, and three carriers is one more than the guides advise.'
     - spell: Hold Person
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (55:42) — paralysis costs turns and gives automatic crits within 10 ft; humanoids only, best with high save DC'
       level: '2'
       guide_level: 4
       school: Enchantment
@@ -157,6 +175,8 @@ builds:
       when: Bard 3
       why: Cheaper single-target paralyse (auto-crit within 3m), far earlier than Hold Monster — the early-game stand-in. Concentration.
     - spell: Dominate Person
+      tier: D
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (25:19) — one unreliable temporary ally for a level 5 slot; AoE control is better'
       level: '5'
       guide_level: 10
       school: Enchantment
@@ -164,6 +184,8 @@ builds:
       when: Bard 9
       why: Turn a humanoid against its allies — a flex 5th-level pick alongside Hold Monster. Concentration.
     - spell: Vicious Mockery
+      tier: C
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (1:04:16) — too little damage to beat firing a bow; a late-game bard filler action only'
       level: Cantrip
       guide_level: 2
       school: Enchantment
@@ -171,6 +193,8 @@ builds:
       when: Bard 1
       why: Psychic damage plus disadvantage on the target's next attack — free ranged control that feeds acuity.
     - spell: Friends
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (26:48) — advantage on Charisma checks; COUNTS AS A CRIME ON TACTICIAN AND HONOUR MODE, so hide or fast-travel afterwards'
       level: Cantrip
       guide_level: 2
       school: Enchantment
@@ -178,6 +202,8 @@ builds:
       when: Bard 1
       why: Advantage on Charisma checks against a non-hostile creature — the face enabler. Never cast it on companions (approval loss when it ends).
     - spell: Slow
+      tier: B
+      tier_note: 'Level 3 spells tier list, part 2 (H-W) (33:15) — targets six creatures so it spares allies, and bypasses incapacitation immunity; the reliable second-choice control spell'
       level: '3'
       guide_level: 7
       school: Transmutation
@@ -185,6 +211,8 @@ builds:
       when: Bard 5
       why: UNDEAD-PROOF control, unlike Hold Monster/Command — half speed, −2 AC and DEX saves, one action only, ~50% chance to fizzle a cast. Bank it for the Act-2 undead and construct fights where paralysis fails. Concentration.
     - spell: Healing Word
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (10:48) — ranged bonus-action revive, and the delivery system for Whispering Promise and Hellrider''s Pride buffs'
       level: '1'
       guide_level: 2
       school: Evocation
@@ -192,6 +220,8 @@ builds:
       when: Bard 1
       why: The no-healer party's emergency pickup — a bonus-action ranged revive so a downed ally does not cost a full turn. Cheap to keep known; pairs with stocked Revivify scrolls.
     - spell: Longstrider
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (27:03) — free all-day +10 movement on everyone including summons; he would put it in S+ if that existed'
       level: '1'
       guide_level: 2
       school: Transmutation
@@ -199,6 +229,8 @@ builds:
       when: Bard 1
       why: Free out-of-combat party movement buff lasting until long rest, with no Concentration.
     - spell: Enhance Ability
+      tier: B
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (36:31) — cast a couple of times a run; worth preparing for the few unavoidable skill checks'
       level: '2'
       guide_level: 5
       school: Transmutation
@@ -206,6 +238,8 @@ builds:
       when: Bard 4
       why: 'Advantage on checks with one chosen ability. At char 5, replace the redundant Faerie Fire with it for dialogue, theft and exploration — an out-of-combat mode, never held alongside Hold Person. ⚠ Rated only B: "significant checks are less frequent than players expect," and Bonbon already has Expertise ×4 plus Jack of All Trades. Low stakes either way.'
     - spell: Greater Invisibility
+      tier: A
+      tier_note: 'Spells tier list, level 4, part 2 (Freedom of Movement through Wall of Fire) (13:18) — A for ordinary parties: free attacks then a surprise round; broken if built around stealth checks'
       level: '4'
       guide_level: 8
       school: Illusion
@@ -213,6 +247,8 @@ builds:
       when: Bard 7+ — optional pick
       why: 'A-tier, and the tier lists note it "anchors an entire party strategy" — the target stays invisible while attacking, giving permanent advantage and imposing disadvantage on attacks against it. Concentration, so it directly competes with Hold Monster: take it as the survivability alternative for fights where nothing worth Holding exists, or on a run where you want the stealth loop.'
     - spell: Silence
+      tier: A
+      tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (43:29) — free as a ritual, shuts down enemy casters and noisy legendary actions; needs something holding them inside'
       level: '2'
       guide_level: 5
       school: Illusion
@@ -220,6 +256,8 @@ builds:
       when: Bard 3+ — optional pick
       why: 'A-tier. A zone that hard-disables enemy spellcasting with no save at all — the answer to the Act 3 caster packs that Counterspell can only handle one at a time, and the reason leaving Counterspell off her list costs less than it looks. Concentration.'
     - spell: Dissonant Whispers
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (42:35) — concentration-free damage plus two turns of Frightened on a WIS save; effectively stuns melee enemies'
       level: '1'
       guide_level: 2
       school: Enchantment
@@ -227,6 +265,8 @@ builds:
       when: Bard 1
       why: Early psychic damage plus Frightened — useful single-target control before the Acuity engine.
     - spell: Faerie Fire
+      tier: C
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (57:53) — huge radius, but other spells grant advantage and do more; outclassed at its own job'
       level: '1'
       guide_level: 2
       school: Evocation
@@ -234,6 +274,8 @@ builds:
       when: Bard 1
       why: Early area advantage and anti-invisibility. Concentration, so replace it once stronger control arrives.
     - spell: Tasha's Hideous Laughter
+      tier: A
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (52:09) — weak early because damage grants extra saves; late, a 10-turn disable that bypasses boss incapacitation immunities'
       level: '1'
       guide_level: 3
       school: Enchantment
@@ -241,6 +283,8 @@ builds:
       when: Bard 2
       why: Cheap early single-target incapacitation — a bridge to Hold Person that can be replaced later.
     - spell: Invisibility
+      tier: A
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (58:48) — wins no fights alone but invaluable for scouting and as a panic button; potions compete'
       level: '2'
       guide_level: 5
       wiki: Invisibility (spell)
@@ -249,6 +293,8 @@ builds:
       when: Bard 4
       why: Scouting, theft setup and an emergency escape — strong out-of-combat utility.
     - spell: Otto's Irresistible Dance
+      tier: A
+      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6 (41:05) — no-save lockdown that bypasses legendary resistance; only for fights with one main enemy'
       level: '6'
       guide_level: 12
       school: Enchantment
@@ -256,6 +302,8 @@ builds:
       when: Bard 11
       why: Immediate single-target shutdown when the level 6 slot is not reserved for an upcast Command.
     - spell: Mage Hand
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (33:23) — costs a short-rest charge, but scouts, triggers traps, throws potions and soaks one enemy attack'
       level: Cantrip
       guide_level: 5
       school: Conjuration
@@ -263,6 +311,8 @@ builds:
       when: Bard 4
       why: 'Exploration and object manipulation with no attack roll, save or Concentration. For a no-slot Wet setup, drop a water bottle in reach and use the Hand''s Throw for a 2m splash.'
     - spell: Light
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (30:38) — hands-free, concentration-free light lasting all day; most parties need some light source'
       level: Cantrip
       guide_level: 11
       school: Evocation

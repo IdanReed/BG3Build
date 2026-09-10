@@ -77,6 +77,8 @@ builds:
     note: 'A smite platform that sets up its own nova. HIS CONCENTRATION IS HOLD PERSON AND NOTHING ELSE — Bless, Divine Favour, Hex, Darkness, Branding Smite and Wrathful Smite are all Concentration and are therefore out of the rotation. Darkness comes from farmed arrows instead, which costs no Concentration; Bless comes from Asterion. Hunger of Hadar is the one deliberate exception, swapped in only for fights where nothing is Holdable.'
     mandatory:
     - spell: Hold Person
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (55:42) — paralysis costs turns and gives automatic crits within 10 ft; humanoids only, best with high save DC'
       level: '2'
       guide_level: 7
       school: Enchantment
@@ -97,6 +99,8 @@ builds:
       when: char 4
       why: 'The build''s core, and the second Radiant Shockwave trigger. Expend any slot on a melee hit: 2d8 Radiant at L1, +1d8 per slot level above 1st (cap 5d8 at an L4 slot), +1d8 vs Fiends/Undead; dice DOUBLE on a crit. Not a prepared spell and not stopped by Counterspell — set the Critical-Hit Divine Smite reactions to auto-confirm. Paladin 7 plus Warlock 5 is roughly nine slots per rest cycle, which is the whole reason this build novas harder than a shallow Paladin dip.'
     - spell: Shadow Blade
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (38:25) — all-day 2d8 finesse psychic weapon with advantage in the dark; broken with the Resonance Stone'
       level: '2'
       guide_level: 9
       school: Illusion
@@ -105,6 +109,8 @@ builds:
       why: 'POST-STONE core weapon. Level-3 pact slots start it at 3d8 Psychic, lasting until long rest with NO Concentration — which is exactly why it fits a build whose Concentration is spoken for. The Stone doubles the Psychic; Devil''s Sight plus an arrow cloud supplies advantage and defence.'
     recommended:
     - spell: Shield
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (43:07) — reaction +5 AC that only prompts when it turns a hit into a miss; worth a class dip on its own'
       level: '1'
       guide_level: 9
       school: Abjuration
@@ -112,6 +118,8 @@ builds:
       when: Late Act 2 Resonance Stone respec (Warlock 5)
       why: 'NEW PICK, and it matters more than it used to. Locking Luminous Armour means he never gets Adamantine Scale Mail''s crit immunity or Helldusk''s AC 21, so he stands at AC 17–18 all game. Shield is a reaction, costs no Concentration, and is the cheapest way to turn a hit that would break Hold Person into a miss.'
     - spell: Mirror Image
+      tier: B
+      tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (12:14) — +9 AC without concentration makes the AI stop targeting you, but costly every fight'
       level: '2'
       guide_level: 9
       school: Illusion
@@ -119,6 +127,8 @@ builds:
       when: Late Act 2 Resonance Stone respec (Warlock 5)
       why: 'NEW PICK. Three duplicates give +9 AC and cost NO Concentration — the best non-concentration defence available to him, and the direct answer to a locked AC 17 chest. Each miss removes one duplicate. Pre-cast it in any fight where he expects to be the target.'
     - spell: Armour of Agathys
+      tier: A
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (7:37) — solid for any warlock, game-breaking on an Abjuration Wizard whose Arcane Ward preserves the temp HP'
       level: '1'
       guide_level: 1
       school: Abjuration
@@ -126,6 +136,8 @@ builds:
       when: char 1, and re-picked at the respec
       why: 'Temp HP plus Cold retaliation scaling with the pact slot — 15 temp HP / 15 Cold from a Warlock-5 L3 slot, with no Concentration. ⚠ Temp-HP sources never stack with each other, so run this OR the illithid Shield of Thralls, and cast Aid after it rather than before.'
     - spell: Aid
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (4:52) — party-wide max HP for the whole day, no concentration; multiplies summon survivability when upcast'
       level: '2'
       guide_level: 7
       school: Abjuration
@@ -133,6 +145,8 @@ builds:
       when: char 7 (Paladin 5), and again from char 10 post-respec
       why: 'FREE PARTY DURABILITY and the party''s only source — Aid is Cleric or Paladin only and there is no Cleric. Self-centred 9m radius, +5 maximum HP per member (+5 more per slot level above 2nd), lasting UNTIL LONG REST with NO Concentration. Downed allies come back with an extra hit point. ⚠ Cast it AFTER summoning anything you want covered.'
     - spell: Command
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (28:37) — concentration-free turn denial that upcasts to multiple enemies; every higher-level slot competes with it'
       level: '1'
       guide_level: 4
       school: Enchantment
@@ -140,6 +154,8 @@ builds:
       when: char 4 (Paladin 2)
       why: 'Rated the #3 spell in the game and it uses NO Concentration, so it coexists with Hold Person. ⚠ RUN IT AS A MASS DISABLE: Command gains an extra target per slot level above 1st, so a level 2 Paladin slot disables a cluster for the turn he needs to close. Its DC rides Arcane Acuity from the gloves, same as Hold Person. ⚠ Does not work on Undead.'
     - spell: Counterspell
+      tier: S
+      tier_note: 'Level 3 spells tier list, part 1 (A-G) (25:08) — top-five spell; trades a reaction for an enemy turn. NO SCROLLS EXIST, so it must be learnt on level-up'
       level: '3'
       guide_level: 9
       school: Abjuration
@@ -147,6 +163,8 @@ builds:
       when: Late Act 2 Resonance Stone respec (Warlock 5)
       why: Pact-slot reaction for enemy spells dangerous enough to justify delaying a Smite or a Shadow Blade recast. No Concentration.
     - spell: Hunger of Hadar
+      tier: S
+      tier_note: 'Level 3 spells tier list, part 2 (H-W) (9:07) — no-save blind plus difficult terrain traps enemies inside; layer over Plant Growth to end fights. Acid save DC bugged to 12'
       level: '3'
       guide_level: 9
       school: Conjuration
@@ -154,6 +172,8 @@ builds:
       when: Late Act 2 Resonance Stone respec (Warlock 5)
       why: 'THE DELIBERATE CONCENTRATION EXCEPTION, and the answer to Hold Person''s humanoid-only limit. Rated S tier, warlock-exclusive in this party, and the only thing he can do with his Concentration when nothing is Holdable — non-humanoid bosses, Undead, Constructs. Large difficult-terrain zone that Blinds, deals Cold at the start of enemy turns and Acid at the end, and pairs with Repelling Blast to shove escapers back in. ⚠ It is Hold Person OR this, never both; on non-humanoid fights Bonbon attempts Hold Monster instead and Charles takes the zone.'
     - spell: Misty Step
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (14:50) — top-five spell; bonus-action 60 ft teleport that every honour mode character should have access to'
       level: '2'
       guide_level: 7
       school: Conjuration
@@ -161,6 +181,8 @@ builds:
       when: char 7 (Paladin 5) — FREE always-prepared Oath of Vengeance spell
       why: 'FREE from the oath, which is why it no longer costs a Warlock pick. Bonus-action mobility to reach a priority target, cross hazards or leave a bad melee position.'
     - spell: Wrathful Smite
+      tier: B
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (59:16) — 1d6 plus two turns of Frightened on a WIS save; now also a Hexblade spell after Patch 8'
       level: '1'
       guide_level: 4
       school: Evocation
@@ -168,6 +190,8 @@ builds:
       when: char 4 (Paladin 2) — prepared, but rarely cast
       why: '⚠ KEPT PREPARED, NOT IN THE ROTATION. It is Concentration, so casting it drops Hold Person and the auto-crit nova with it. Free from the Paladin list, so it costs nothing to keep prepared for fights where nothing is Holdable and Hunger of Hadar is not worth the slot. Same logic rules out BRANDING SMITE: it is Radiant and would feed the Shockwave, but it is Concentration, so Booming Blade plus Divine Smite remains the rider package.'
     - spell: Eldritch Blast
+      tier: S
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (23:10) — best damage cantrip; separate attack rolls give reliability, crit chances and per-beam riders'
       level: Cantrip
       guide_level: 1
       school: Evocation
@@ -175,6 +199,8 @@ builds:
       when: char 1 (Warlock 1)
       why: 'Ranged fallback for turns he cannot reach melee (2 beams at char 5, 3 at char 10). Real damage with Agonising Blast plus CHA 20, and Repelling Blast turns it into ledge control. Its attack rolls also ride Arcane Acuity, unlike his weapon swings.'
     - spell: Booming Blade
+      tier: S
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (16:31) — free thunder damage riding a normal weapon attack; once per action, so haste and Action Surge multiply it'
       level: Cantrip
       guide_level: 1
       school: Evocation
@@ -182,6 +208,8 @@ builds:
       when: char 1 (Warlock 1)
       why: 'The melee cantrip — Phalar in Act 1, Shadow Blade after the respec. Adds Thunder from char 5, once per Action even with Extra Attack, triggers the Ring of Arcane Synergy for 2 turns, AND triggers the Gloves of Battlemage''s Power. It is the cheapest way to put the first Arcane Acuity stacks up before casting Hold Person.'
     - spell: Bane
+      tier: B
+      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (12:55) — never worth a slot early; good late against bosses immune to stronger control, since few resist it'
       level: '1'
       guide_level: 5
       school: Enchantment
@@ -189,6 +217,8 @@ builds:
       when: char 5 (Paladin 3) — FREE always-prepared Oath of Vengeance spell
       why: Free from the oath and costs no slot, but it is Concentration and therefore never cast. Listed only so the oath grant is on the record; Phalar Shriek covers the save-debuff role without Concentration.
     - spell: Hunter's Mark
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (22:04) — the ranger''s Hex; weapon attacks only, but the damage matches your weapon type'
       level: '1'
       guide_level: 5
       school: Divination
@@ -196,6 +226,8 @@ builds:
       when: char 5 (Paladin 3) — FREE always-prepared Oath of Vengeance spell
       why: Free from the oath. Duplicates Hex's +1d6-per-hit, but it is Concentration, so it is off the table for the same reason. On the record only.
     - spell: Mage Hand
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (33:23) — costs a short-rest charge, but scouts, triggers traps, throws potions and soaks one enemy attack'
       level: Cantrip
       guide_level: 9
       school: Conjuration
@@ -204,30 +236,40 @@ builds:
       why: Third-cantrip exploration and object manipulation with no attack roll or saving throw. Also throws water bottles and potions without spending his own action.
     alternatives:
     - spell: Hex
+      tier: S
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (21:08) — d6 on every attack roll all day, reapplied free on kills; enormous on multi-attack casters'
       level: '1'
       school: Enchantment
       save: None (Concentration)
       when: char 1 pick, dropped at the respec
       why: '+1d6 Necrotic per hit and disadvantage on an ability. Correct in Act 1 while arrow darkness keeps Concentration free, and it also powers the Strange Conduit Ring — but Hold Person takes the slot permanently from char 7, so it does not survive into the post-respec list.'
     - spell: Darkness
+      tier: S
+      tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (29:56) — blocks ranged attacks both ways; core of the devil''s sight darkness strategy'
       level: '2'
       school: Evocation
       save: None (Concentration)
       when: Deliberately NOT picked
       why: '⚠ DROPPED ON PURPOSE, and this frees a Warlock pick. Self-cast Darkness would compete with Hold Person for Concentration, and farmed ARROWS OF DARKNESS produce the same 3m cloud with none of that cost. Devil''s Sight does not care which source made the cloud. Keep buying arrows all game rather than spending an unswappable pick here.'
     - spell: Bone Chill
+      tier: A
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (12:42) — turns off enemy healing with no save and blanks undead attack rolls; not the go-to damage cantrip'
       level: Cantrip
       school: Necromancy
       save: Ranged spell attack
       when: Warlock cantrip alternative
       why: Ranged anti-healing and advantage against Undead — take it over Mage Hand when that niche beats exploration utility.
     - spell: Blink
+      tier: C
+      tier_note: 'Level 3 spells tier list, part 1 (A-G) (16:31) — C ONLY FOR SOLO PLAY; in a party it just redirects aggro to allies and he says do not cast it'
       level: '3'
       school: Transmutation
       save: None
       when: Hexblade expanded spell at Warlock 5
       why: Non-concentration defence — a chance to go Ethereal at the end of each turn, untargetable until his next. The third contender alongside Shield and Mirror Image if he wants pure evasion instead of AC.
     - spell: Protection from Evil and Good
+      tier: C
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (34:45) — disadvantage for aberrations and undead plus BROKEN TOOLTIP (real effect is blanket Frightened immunity, no charm protection); costs concentration'
       level: '1'
       school: Abjuration
       save: None (Concentration)

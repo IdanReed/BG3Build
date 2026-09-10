@@ -12,3 +12,7 @@ Thumbs.db
 
 # Python
 __pycache__/
+
+# Screenshot tool output
+_shot.html
+shot.png

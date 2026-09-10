@@ -3,7 +3,7 @@
 - Playlist index: 74
 - Video ID: `XepUM_mU1qY`
 - Source: https://www.youtube.com/watch?v=XepUM_mU1qY
-- Transcript: `video_transcripts/XepUM_mU1qY.md`
+- Transcript: `resources/videos/transcripts/XepUM_mU1qY.md`
 - Channel: Cephalopocalypse · Duration: 45:10
 - Scope: Patch 8 Honour Mode "Lockadin" build, complete level-by-level and itemization walkthrough, plus a Tactician-or-lower variant
 

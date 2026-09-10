@@ -4,8 +4,8 @@ Comparison of the Patch 8 Paladin/Warlock guide against the Charles build, plus 
 
 - Video: EVEN MORE BROKEN — [Re-Updated] BG3 Minthara / Wyll Paladin / Warlock Honour Build Guide
 - Video ID: `XepUM_mU1qY` · Channel: Cephalopocalypse · Duration: 45:10
-- Transcript: `video_transcripts/XepUM_mU1qY.md`
-- Structured summary: `video_summaries/EVENMOREBROKEN-[Re-Updated]BG3Minthara-WyllPaladin-WarlockHonourBuildGuide.md`
+- Transcript: `resources/videos/transcripts/XepUM_mU1qY.md`
+- Structured summary: `resources/videos/summaries/EVENMOREBROKEN-[Re-Updated]BG3Minthara-WyllPaladin-WarlockHonourBuildGuide.md`
 - Build under review: `content/characters/charles.md` (717 lines, post-itemization-rebuild)
 - Status: **analysis only — no build changes applied**
 

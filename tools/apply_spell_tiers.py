@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write the ratings in `research/spell_tiers.json` into `content/characters/*.md`.
+"""Write the ratings in `resources/tiers/spell_tiers.json` into `content/characters/*.md`.
 
 One managed pair, because the spell series runs no ranked countdown:
 
@@ -27,7 +27,7 @@ import pathlib
 import re
 import sys
 
-DATA = pathlib.Path("research/spell_tiers.json")
+DATA = pathlib.Path("resources/tiers/spell_tiers.json")
 CHARACTERS = pathlib.Path("content/characters")
 MANAGED = ("tier", "tier_note")
 

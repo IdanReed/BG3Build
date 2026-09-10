@@ -19,7 +19,7 @@ For a faster binary: `cargo run --release` (or `cargo build --release` then run
 ## How it fits together
 
 ```
-Browser (index.html — vanilla JS, accessible tabs and item tooltips)
+Browser (src/ui/index.html — vanilla JS, accessible tabs and item tooltips)
    │  GET  /api/plan      → merged guide JSON
    │  GET  /api/progress  → checkoff state
    │  POST /api/progress  → toggle one checkoff → written to disk
@@ -44,12 +44,12 @@ surface to worry about.
 | `content/ratings.md` | **Generated.** Every item rating read out of the guide corpus, behind the Ratings tab. Rebuilt by `tools/build_ratings_page.py`; delete it and the tab disappears. |
 | `content/characters/*.md` | One file per character (`charles`, `asterion`, `gale`, `bonbon`). Each holds `nickname` + a `builds` array. |
 | `progress.json` | Your checkoffs (`{ "checked": { key: true } }`). **Git-tracked** — your playthrough progress shows up as a clean diff. |
-| `index.html` | The UI. Served as a static file by the server. |
-| `src/` | The Rust server (`main.rs`, `content.rs`, `progress.rs`). |
-| `ITEMIZATION-CHANGELOG.md` | Why each gear decision was made, and the defence for every departure from the ranked video guides. Not loaded by the app. |
+| `src/` | All application source: the Rust server (`main.rs`, `content.rs`, `progress.rs`) and the UI at `src/ui/index.html`. |
+| `resources/` | Raw source material — `videos/{transcripts,summaries}/`, `reddit/`, `wiki/`, and the extracted `tiers/` datasets the tools read. |
+| `docs/` | Reasoning and decisions. Never displayed by the app. `itemization-changelog.md` defends every gear choice and every departure from the ranked video guides; `goals.md` holds the party goals; `extraction-brief.md` explains how a transcript becomes a tier table. |
 | `tools/check_itemization.py` | Slot-coverage check for `content/characters/*.md`. |
-| `tools/build_ratings_page.py` | Rebuilds `content/ratings.md` from `research/item_tiers.json`. |
-| `tools/apply_spell_tiers.py` | Writes `research/spell_tiers.json` into the `spells` blocks of `content/characters/*.md`. |
+| `tools/build_ratings_page.py` | Rebuilds `content/ratings.md` from `resources/tiers/item_tiers.json`. |
+| `tools/apply_spell_tiers.py` | Writes `resources/tiers/spell_tiers.json` into the `spells` blocks of `content/characters/*.md`. |
 
 ## Editing the guide
 
@@ -94,7 +94,7 @@ survive content edits.
 An entry may also carry ratings from the guide corpus, which render as coloured
 badges next to the item name: `tier`/`tier_note` for its letter tier within its
 own slot, and `rank`/`rank_note` for its placing in that act's top-20 countdown.
-An item often has both. These are generated from `research/item_tiers.json`:
+An item often has both. These are generated from `resources/tiers/item_tiers.json`:
 
 ```sh
 python tools/fetch_transcripts.py PLgTVc5Jd2rrLPuc3vE6XqK65QQboFfolP  # get transcripts
@@ -109,10 +109,10 @@ may be recorded.
 Spells and cantrips carry the same `tier`/`tier_note` pair, read from the spell
 tier lists instead of the gear ones, and every card in the Spells panel badges its
 entries the same way. There is no `rank` on a spell: that series runs no top-20
-countdown. They are generated from `research/spell_tiers.json`:
+countdown. They are generated from `resources/tiers/spell_tiers.json`:
 
 ```sh
-python tools/merge_spell_tiers.py   # research/spells/*.json → research/spell_tiers.json
+python tools/merge_spell_tiers.py   # resources/tiers/spells/*.json → resources/tiers/spell_tiers.json
 python tools/apply_spell_tiers.py   # write to content
 ```
 
@@ -133,8 +133,8 @@ tracks what has and has not been read yet.
 It is generated, so rebuild it whenever the dataset grows:
 
 ```sh
-python tools/merge_slot_tiers.py        # research/slots/*.json → research/item_tiers.json
-python tools/build_ratings_page.py      # research/item_tiers.json → content/ratings.md
+python tools/merge_slot_tiers.py        # resources/tiers/slots/*.json → resources/tiers/item_tiers.json
+python tools/build_ratings_page.py      # resources/tiers/item_tiers.json → content/ratings.md
 ```
 
 Without `content/ratings.md` the server serves no `ratings` and the tab is simply
@@ -148,7 +148,7 @@ tab. After editing itemization, run:
 python3 tools/check_itemization.py
 ```
 
-It mirrors the slot vocabulary in `index.html` and reports any character-act missing a
+It mirrors the slot vocabulary in `src/ui/index.html` and reports any character-act missing a
 slot, plus any `slot:` value the UI would silently bucket under "Other".
 
 ## Checkoffs

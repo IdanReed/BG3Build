@@ -7,7 +7,7 @@ are all real and all cost accuracy.
 ## The job
 
 For ONE video id, produce a rating for **every item the video rates**, not just items
-some party uses. Write the result to `research/slots/<videoid>.json`.
+some party uses. Write the result to `resources/tiers/slots/<videoid>.json`.
 
 ## Step 1 — dump the verdicts
 
@@ -71,11 +71,11 @@ it gets its own verdict later. Rules that work:
   "mel's first staff" = Melf's First Staff, "costic band" = Caustic Band, "rap city" =
   Rhapsody, "F Lou" = Phalar Aluve, "the ciret of" = Circlet of, "bird band" = Spurred
   Band, "ma's friend" = Mage's Friend. Use the item's described effect to identify it, and
-  check the name against `research/item_vocab.json`, which lists real item names per slot.
+  check the name against `resources/tiers/item_vocab.json`, which lists real item names per slot.
 
 ## Step 3 — write the file
 
-`research/slots/<videoid>.json`, exactly this shape:
+`resources/tiers/slots/<videoid>.json`, exactly this shape:
 
 ```json
 {
@@ -94,7 +94,7 @@ it gets its own verdict later. Rules that work:
 }
 ```
 
-- `item` — the real name, spelled as `research/item_vocab.json` spells it.
+- `item` — the real name, spelled as `resources/tiers/item_vocab.json` spells it.
 - `tier` — one of `S A B C D F`.
 - `verdict` — one clause, your own words, ≤ 20 words. Do not paste transcript text.
 - `unassigned` — every verdict you could NOT confidently attribute. Do not guess to
@@ -107,7 +107,7 @@ it gets its own verdict later. Rules that work:
 - Never invent a rating. If the narrator never gives an item a letter, leave it out and
   say so in `unassigned`.
 - Never convert a rank into a letter, or carry a rating across from another video.
-- Do not edit any file other than your own `research/slots/<videoid>.json`.
+- Do not edit any file other than your own `resources/tiers/slots/<videoid>.json`.
 - Report back only: the video id, the item count, and anything you could not resolve.
 
 ## Variant: spell and cantrip lists
@@ -118,7 +118,7 @@ Same method, three differences.
    older one predates Patch 8 and this run is on Patch 8, so the updated videos supersede
    it. The updated cantrip list is `mgqMv2h-0x0`; the updated spell lists are titled
    "ULTIMATE SPELLS GUIDE - [Updated]".
-2. **Write to `research/spells/<videoid>.json`**, not `research/slots/`. Same shape, but
+2. **Write to `resources/tiers/spells/<videoid>.json`**, not `resources/tiers/slots/`. Same shape, but
    replace `slot` with `spell_level` (0 for cantrips, 1-6 otherwise) and drop `rated_in`.
 3. **Names are spells, not gear**, so check spellings against the spell names used in
    `content/characters/*.md` (each build has a `spells` block with `mandatory` and

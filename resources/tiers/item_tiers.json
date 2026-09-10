@@ -1,5 +1,5 @@
 {
- "about": "Tier ratings for the party's gear, read out of the transcripts in video_transcripts/. Two rating kinds: a letter tier from a per-slot tier list, and a rank from a per-act top-20 countdown. An item can carry both. Feeds the tier/tier_note fields in content/characters/*.md.",
+ "about": "Tier ratings for the party's gear, read out of the transcripts in resources/videos/transcripts/. Two rating kinds: a letter tier from a per-slot tier list, and a rank from a per-act top-20 countdown. An item can carry both. Feeds the tier/tier_note fields in content/characters/*.md.",
  "playlist": "PLgTVc5Jd2rrLPuc3vE6XqK65QQboFfolP",
  "channel": "Cephalopocalypse",
  "method": "tools/dump_tier_verdicts.py prints every spoken '<letter> tier' with its run-up; each verdict was then read and attributed by hand. Automatic attribution was tried and rejected: measured against 29 known staff ratings it scored 7 right, 0 wrong, 22 missed.",

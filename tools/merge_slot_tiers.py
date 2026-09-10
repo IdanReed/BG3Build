@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Fold the per-video tables in `research/slots/*.json` into `research/item_tiers.json`.
+"""Fold the per-video tables in `resources/tiers/slots/*.json` into `resources/tiers/item_tiers.json`.
 
 Each slot file is one tier-list video read end to end, in the shape described by
-`research/EXTRACTION-BRIEF.md`. This merges them into the single dataset the content
+`docs/extraction-brief.md`. This merges them into the single dataset the content
 applier reads, and reports anything that needs a human look:
 
 - a slot file whose item count plus unassigned count does not match the verdicts it saw
@@ -22,8 +22,8 @@ import json
 import pathlib
 import sys
 
-DATA = pathlib.Path("research/item_tiers.json")
-SLOTS = pathlib.Path("research/slots")
+DATA = pathlib.Path("resources/tiers/item_tiers.json")
+SLOTS = pathlib.Path("resources/tiers/slots")
 LETTERS = {"S+", "S", "A+", "A", "B", "C", "D", "F"}
 
 

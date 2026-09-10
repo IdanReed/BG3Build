@@ -1,6 +1,6 @@
 # Arcane Trickster Rogue — BG3 progression & spell reference
 
-> Sources: bg3.wiki (Rogue, Arcane Trickster, Mage Hand Legerdemain, Magical Ambush, Reliable Talent, Uncanny Dodge, Scrolls, individual spell pages) + local KB (`party_plan.json`, `research/trickster_*.txt`). Patch 8, non-Honour. Used by **Batman** (Astarion) — Arcane Trickster Rogue 11 / 1-level dip (War Cleric = Config A melee, or Fighter = Config B ranged).
+> Sources: bg3.wiki (Rogue, Arcane Trickster, Mage Hand Legerdemain, Magical Ambush, Reliable Talent, Uncanny Dodge, Scrolls, individual spell pages) + local KB (`party_plan.json`, `resources/notes/trickster_*.txt`). Patch 8, non-Honour. Used by **Batman** (Astarion) — Arcane Trickster Rogue 11 / 1-level dip (War Cleric = Config A melee, or Fighter = Config B ranged).
 
 ## Spellcasting
 

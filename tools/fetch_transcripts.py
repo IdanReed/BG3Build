@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch YouTube auto-caption transcripts for a playlist into `video_transcripts/`.
+"""Fetch YouTube auto-caption transcripts for a playlist into `resources/videos/transcripts/`.
 
 One Markdown file per video, named `<videoId>.md`, skipped if it already exists.
 Text comes from yt-dlp's json3 auto-captions. json3 repeats each caption line as a
@@ -24,7 +24,7 @@ import subprocess
 import sys
 import tempfile
 
-OUT = pathlib.Path("video_transcripts")
+OUT = pathlib.Path("resources/videos/transcripts")
 BLOCK_SECONDS = 30
 FIELDS = ["playlist_index", "id", "duration", "channel", "title"]
 SEP = "\t"

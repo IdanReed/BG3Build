@@ -11,7 +11,7 @@ and why.
 
 ## Reference: what the videos actually rate
 
-`video_summaries/` contains exactly two ranked gear sources. Everything else names gear
+`resources/videos/summaries/` contains exactly two ranked gear sources. Everything else names gear
 only incidentally inside a build guide. This matters because it bounds what "deviating
 from the videos" can even mean.
 
@@ -207,7 +207,7 @@ gives him +1 AC for free on any turn he uses Flurry of Blows: Push.
 entry and the build's nova reasoning rests on it.
 
 The guide listed "any smite spell, and Divine Smite" as flat triggers. Per
-`research/gloves_of_battlemage.txt` (community code-dive, Appendix and "Special Case: Reaction
+`resources/notes/gloves_of_battlemage.txt` (community code-dive, Appendix and "Special Case: Reaction
 Smite"), reaction Divine Smite **inherits the attack it rides on** and triggers nothing by
 itself: +0 off a plain weapon swing, +4 chained off an attack that already triggered, +2 only
 when Divine Smite is cast directly from the action bar.

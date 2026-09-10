@@ -28,7 +28,7 @@ unless the task explicitly requests that scope.
 - `bg3kb/`: separate Python knowledge-base implementation and its own README.
 - `bg3kb/data/`: large scraped/chunked/indexed artifacts. Treat these as
   generated pipeline outputs even though many are tracked.
-- `research/`, `wiki_extractions/`, `party-review.md`, and `ideas.md`: research
+- `research/`, `wiki_extractions/`, and `ideas.md`: research
   and planning inputs; they are not loaded by the web application.
 
 ## Web application behavior

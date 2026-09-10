@@ -7,6 +7,5 @@ stat_assumption: 'MODDED RUN — the Hag''s Hair mod gives every party member on
 patch: 'Patch 8 (2025-04-15) + hotfixes #30–#36 — the final major patch.'
 data_model: 'content/ is the single source of truth — one Markdown+YAML file per section (meta, party, proficiencies, loot, tadpole) plus one per character. The Rust server assembles /api/plan and serves index.html on 127.0.0.1:8787; checkoffs persist to git-tracked progress.json. Edit and refresh — no build step.'
 companion_docs:
-- party-review.md
 - research/research.md
 ---

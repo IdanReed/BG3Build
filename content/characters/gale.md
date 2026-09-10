@@ -203,9 +203,9 @@ builds:
       when: Sorc 7+ (char 8+) — optional pick
       why: 'A-tier and NOT Concentration, which is the whole reason to consider it: Gale can drop it on a cluster while still holding Twinned Haste, unlike every other AoE of its size. It also lays an ice surface for prone control. Off-element, so it gets no Elemental Affinity, Flame of Wrath or Elemental Adept — take it only if the fire-resistance problem in Act 3 turns out worse than Elemental Adept can fix.'
     - spell: Burning Hands
-      source: granted
       tier: C
       tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (18:26) — weak damage on a bad save; only Light Domain clerics, who get it free, will cast it'
+      source: granted
       level: '1'
       guide_level: 1
       school: Evocation

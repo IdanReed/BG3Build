@@ -77,9 +77,9 @@ builds:
     note: 'A smite platform that sets up its own nova. HIS CONCENTRATION IS HOLD PERSON AND NOTHING ELSE — Bless, Divine Favour, Hex, Darkness, Branding Smite and Wrathful Smite are all Concentration and are therefore out of the rotation. Darkness comes from farmed arrows instead, which costs no Concentration; Bless comes from Asterion. Hunger of Hadar is the one deliberate exception, swapped in only for fights where nothing is Holdable.'
     mandatory:
     - spell: Hold Person
-      source: granted
       tier: S
       tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (55:42) — paralysis costs turns and gives automatic crits within 10 ft; humanoids only, best with high save DC'
+      source: granted
       level: '2'
       guide_level: 7
       school: Enchantment
@@ -173,9 +173,9 @@ builds:
       when: Late Act 2 Resonance Stone respec (Warlock 5)
       why: 'THE DELIBERATE CONCENTRATION EXCEPTION, and the answer to Hold Person''s humanoid-only limit. Rated S tier, warlock-exclusive in this party, and the only thing he can do with his Concentration when nothing is Holdable — non-humanoid bosses, Undead, Constructs. Large difficult-terrain zone that Blinds, deals Cold at the start of enemy turns and Acid at the end, and pairs with Repelling Blast to shove escapers back in. ⚠ It is Hold Person OR this, never both; on non-humanoid fights Bonbon attempts Hold Monster instead and Charles takes the zone.'
     - spell: Misty Step
-      source: granted
       tier: S
       tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (14:50) — top-five spell; bonus-action 60 ft teleport that every honour mode character should have access to'
+      source: granted
       level: '2'
       guide_level: 7
       school: Conjuration
@@ -210,9 +210,9 @@ builds:
       when: char 1 (Warlock 1)
       why: 'The melee cantrip — Phalar in Act 1, Shadow Blade after the respec. Adds Thunder from char 5, once per Action even with Extra Attack, triggers the Ring of Arcane Synergy for 2 turns, AND triggers the Gloves of Battlemage''s Power. It is the cheapest way to put the first Arcane Acuity stacks up before casting Hold Person.'
     - spell: Bane
-      source: granted
       tier: B
       tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (12:55) — never worth a slot early; good late against bosses immune to stronger control, since few resist it'
+      source: granted
       level: '1'
       guide_level: 5
       school: Enchantment
@@ -220,9 +220,9 @@ builds:
       when: char 5 (Paladin 3) — FREE always-prepared Oath of Vengeance spell
       why: Free from the oath and costs no slot, but it is Concentration and therefore never cast. Listed only so the oath grant is on the record; Phalar Shriek covers the save-debuff role without Concentration.
     - spell: Hunter's Mark
-      source: granted
       tier: S
       tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (22:04) — the ranger''s Hex; weapon attacks only, but the damage matches your weapon type'
+      source: granted
       level: '1'
       guide_level: 5
       school: Divination

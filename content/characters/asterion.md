@@ -118,9 +118,9 @@ builds:
       why: Daily Elixir of Giant Strength. TB adds that STR mod to every unarmed attack AND damage a second time, and once STR > DEX it drives attack rolls and the Stun DC. The accuracy and damage backbone.
     recommended:
     - spell: Minor Illusion
-      source: granted
       tier: S
       tier_note: 'Cantrips tier list, [Updated] Patch 8 (35:56) — moves NPCs with no save or roll; clusters enemies for AoE, sets ambushes, pulls enemies one at a time'
+      source: granted
       level: Cantrip
       guide_level: 1
       school: Illusion

@@ -201,6 +201,32 @@ gives him +1 AC for free on any turn he uses Flurry of Blows: Push.
 
 ---
 
+## 2026-09-10 — Gloves of Battlemage's Power, reaction-smite correction
+
+**Charles, Acts 2-3, hands.** No loadout change. The stated trigger list was wrong about one
+entry and the build's nova reasoning rests on it.
+
+The guide listed "any smite spell, and Divine Smite" as flat triggers. Per
+`research/gloves_of_battlemage.txt` (community code-dive, Appendix and "Special Case: Reaction
+Smite"), reaction Divine Smite **inherits the attack it rides on** and triggers nothing by
+itself: +0 off a plain weapon swing, +4 chained off an attack that already triggered, +2 only
+when Divine Smite is cast directly from the action bar.
+
+This costs Charles nothing as built — he leads with Booming Blade or a smite, and every Shadow
+Blade swing is itself a trigger, so each attack-plus-reaction-smite is +4, with the Luminous
+Armour shockwave resetting the once-per-attack limit between attacks. It does bite in one
+contingency the guide already recommends: **binding Phalar Aluve main hand against
+Psychic-immune targets** removes the Shadow Blade trigger, so ordinary Phalar swings and the
+reaction smites hanging off them give no Acuity. Both `charles.md` and `loot.md` now say so.
+
+Also confirmed, against an earlier reading of the bg3.wiki Bugs section: **Shadow Blade weapon
+attacks still trigger the Gloves post-Patch-8.** The hotfix removed only the broader bug where
+*any* damage triggered them while a Shadow Blade was held; the narrow weapon-attack trigger
+(`HasStatus('SHADOW_BLADE', GetActiveWeapon())`) is intact. The permanent hireling-exploit
+Shadow Blade does **not** carry that status and does not work.
+
+---
+
 ## 2026-08-15 — full itemization review, all four characters, all three acts
 
 ### Summary

@@ -1,5 +1,10 @@
 # Cephalopocalypse videos relevant to this party
 
+> **2026-09-11:** every video shortlisted below has since been fetched as a transcript
+> (`resources/videos/transcripts/`) and summarised (`resources/videos/summaries/`), so the
+> "In corpus" columns are stale; `cephalopocalypse_channel.tsv` is the current flag. The
+> comparison against the builds is `cephalopocalypse-build-review-2026-09-11.md`.
+
 Reviewed 2026-09-10 from a `yt-dlp --flat-playlist` listing of
 https://www.youtube.com/@Cephalopocalypse/videos: 1,556 videos, of which 336 are
 about Baldur's Gate 3. The full BG3 manifest, with an `in_corpus` flag, is

@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import pathlib
 import shutil
 import subprocess
@@ -34,7 +35,12 @@ def yt_dlp(args: list[str]) -> str:
     exe = shutil.which("yt-dlp")
     if not exe:
         sys.exit("yt-dlp not found on PATH")
-    done = subprocess.run([exe] + args, capture_output=True, text=True, encoding="utf-8")
+    # yt-dlp is a Python program: force its stdout to UTF-8 so a non-ASCII title
+    # cannot arrive in the console code page, and never let a stray byte kill the run.
+    env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
+    done = subprocess.run(
+        [exe] + args, capture_output=True, text=True, encoding="utf-8", errors="replace", env=env
+    )
     if done.returncode:
         sys.exit("yt-dlp failed: " + (done.stderr or "").strip()[:2000])
     return done.stdout

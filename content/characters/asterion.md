@@ -196,7 +196,7 @@ builds:
       - Investigation
       - Acrobatics
       - Insight
-      note: 'SIX picks land on this level, not two — Rogue grants 4 skill proficiencies BEFORE the 2 Expertise picks, and it is easy to click past them. Stealth is mandatory rather than optional: Charlatan supplies Sleight of Hand and Elf Keen Senses supplies Perception, but nothing grants Stealth, so without picking it here the Expertise: Stealth choice below has no valid target. Investigation is the party''s only coverage — Charles, Gale and Bonbon all lack it. Acrobatics rides DEX 17→20 and Insight rides WIS 16→18. ALTERNATIVE worth considering: swap Insight (already covered by Gale and Bonbon) for Athletics — on the daily Giant Strength elixir Asterion hits STR 27, making him the party''s only viable shove/grapple carrier; update proficiencies.md to match if you take it.'
+      note: 'SIX picks land on this level, not two — Rogue grants 4 skill proficiencies BEFORE the 2 Expertise picks, and it is easy to click past them. Stealth is mandatory rather than optional: Charlatan supplies Sleight of Hand and Elf Keen Senses supplies Perception, but nothing grants Stealth, so without picking it here the Expertise: Stealth choice below has no valid target. Investigation is the party''s only coverage — Charles, Gale and Bonbon all lack it. Acrobatics rides DEX 17→20 and Insight rides WIS 16→18. ALTERNATIVE worth considering: swap Insight (already covered by Gale and Bonbon) for Athletics — on the daily Giant Strength elixir Asterion hits STR 27, a second shove/grapple carrier beside Bonbon, who drinks the same elixir and already has Athletics from Fighter 1; update proficiencies.md to match if you take it.'
     - category: Expertise
       picks: 2
       recommendation:

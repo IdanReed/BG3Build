@@ -54,7 +54,7 @@ builds:
       source: '+1 Hag''s Hair'
     - score: 20
       source: '+2 Mirror of Loss, Act 3'
-  locked_decisions: 'FIVE things are fixed for the whole run and everything else is built around them. (1) GLOVES OF BATTLEMAGE''S POWER from Act 2 onward — the Arcane Acuity engine. (2) LUMINOUS ARMOUR in every act — the Radiant Shockwave engine. (3) OATH OF VENGEANCE, never broken — Inquisitor''s Might is the per-hit radiant that feeds the Shockwave. (4) CONCENTRATION IS HOLD PERSON — he sets up his own auto-crit nova and holds nothing else. (5) A SHIELD IN THE OFF-HAND from the Grove onward — Safeguard, then the Adamantine Shield for crit immunity, then Viconia''s Walking Fortress — so he never two-hands or dual-wields and never takes Great Weapon Master or Dual Wielder.'
+  locked_decisions: 'FIVE things are fixed for the whole run and everything else is built around them. (1) GLOVES OF BATTLEMAGE''S POWER from Act 2 onward — the Arcane Acuity engine. (2) LUMINOUS ARMOUR in every act — the Radiant Shockwave engine. (3) OATH OF VENGEANCE, never broken — Inquisitor''s Might is the per-hit radiant that feeds the Shockwave. (4) CONCENTRATION IS HOLD PERSON — he sets up his own auto-crit nova and holds nothing else. (5) A SHIELD IN THE OFF-HAND from the Grove onward — a plain +2 AC Shield from any vendor (the Safeguard Shield is Bonbon''s), then the Adamantine Shield for crit immunity, then Viconia''s Walking Fortress — so he never two-hands or dual-wields and never takes Great Weapon Master or Dual Wielder.'
   feats:
   - at: Act 1 char 6 (Paladin 4)
     feat: Alert
@@ -65,7 +65,7 @@ builds:
   - at: Late Act 2 Resonance Stone respec (Paladin 4 feat; usually char 9)
     feat: Savage Attacker
     note: Rerolls Shadow Blade, Booming Blade and Divine Smite damage dice on every one of the six auto-crit swings.
-  weapon_plan: 'ACT 1 — bind a one-handed weapon, then Phalar Aluve from the Underdark, always with a SHIELD in the off-hand: the Safeguard Shield from Dammon at the Grove, then the ADAMANTINE SHIELD (second Mithral ore) from the Forge for crit immunity. Duelling from char 4, Darkness Arrows for advantage. LATE ACT 2 — respec at char 9 to Warlock 5 / Paladin 4: 3d8 Shadow Blade main hand, shield unchanged, and Phalar Aluve goes to Bonbon, who carries Shriek from her melee set. ACT 3 — Viconia''s Walking Fortress once the Helm of Balduran covers crit immunity. ⚠ Against Psychic-immune targets, bind the Knife of the Undermountain King (freed from Bonbon) main hand instead of Shadow Blade.'
+  weapon_plan: 'ACT 1 — bind a one-handed weapon, then Phalar Aluve from the Underdark, always with a SHIELD in the off-hand: a plain +2 AC Shield from any Grove vendor (the Safeguard Shield is Bonbon''s), then the ADAMANTINE SHIELD (second Mithral ore) from the Forge for crit immunity. Duelling from char 4, Darkness Arrows for advantage. LATE ACT 2 — respec at char 9 to Warlock 5 / Paladin 4: 3d8 Shadow Blade main hand, shield unchanged, and Phalar Aluve goes to Bonbon, who carries Shriek from her melee set. ACT 3 — Viconia''s Walking Fortress once the Helm of Balduran covers crit immunity. ⚠ Against Psychic-immune targets, bind the Knife of the Undermountain King (freed from Bonbon) main hand instead of Shadow Blade.'
   creation:
     level1_class: Warlock 1 (Hexblade patron)
     level1_gains: 'Pact Magic (1 × L1 short-rest slot), Hexblade''s Curse (bonus action), Bind Hexed Weapon (attack with CHA). Pact of the Blade waits until Warlock 3.'
@@ -685,7 +685,7 @@ builds:
       item: Early pact-bound weapon (temporary)
       wiki: false
       slot: weapons
-      note: Before Phalar, bind the best one-handed weapon so it attacks with CHA, and put the Safeguard Shield in the other hand as soon as Dammon sells it. Hexblade can bind anything; a shield's +2 AC is worth more than a Versatile weapon's larger die.
+      note: Before Phalar, bind the best one-handed weapon so it attacks with CHA, and put a plain Shield in the other hand from the first Grove vendor that stocks one. Hexblade can bind anything; a shield's +2 AC is worth more than a Versatile weapon's larger die.
     - id: phalar-aluve-two-handed
       item: Phalar Aluve
       tier: S
@@ -693,12 +693,13 @@ builds:
       slot: weapons
       bis: true
       note: ACT-1 DEFAULT from the Underdark. Bind it as the Hexed Weapon and one-hand it behind the shield — the d8 instead of the Versatile d10 costs one point of average damage, and Duelling gives two back from char 4. Pre-cast Shriek and keep it equipped — the 6m aura covers Charles and Asterion. At the Resonance Stone it goes to Bonbon's melee set for good, and she carries Shriek from then on.
-    - id: safeguard-shield
-      item: Safeguard Shield
-      tier: A
-      tier_note: '5wATdII3wmI (13:55) — +1 saving throws with no story requirement; usually the earliest upgrade over a plain shield'
+    - id: plain-shield-charles
+      item: Shield
+      tier: S
+      tier_note: '5wATdII3wmI (7:41) — all non-magical variants combined; +2 AC in the early game is a huge snowballing bonus'
+      wiki: Shield (item)
       slot: off-hand
-      note: 'HIS FIRST SHIELD, sold by Dammon at the Grove: +2 AC and +1 to all saving throws, and Hexblade grants shield proficiency. One-handing the bound weapon costs a point of average damage and buys +2 AC and +1 saves from level 1 on the body that will carry Hold Person. Retired the moment the Adamantine Shield is poured.'
+      note: 'HIS FIRST SHIELD, a plain +2 AC Shield from any vendor at the Grove — Hexblade grants shield proficiency. One-handing the bound weapon costs a point of average damage and buys +2 AC from level 1 on the body that will carry Hold Person. It holds the slot until the Adamantine Shield is poured at the Forge. ⚠ The Safeguard Shield from Dammon is BONBON''S off-hand, not his.'
     - id: adamantine-shield
       item: Adamantine Shield
       tier: S
@@ -707,7 +708,7 @@ builds:
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #13 of 20 — critical-hit immunity without needing medium or heavy armour proficiency'
       slot: off-hand
       bis: true
-      note: 'THE SECOND MITHRAL ORE, poured with the Shield mould at the Forge — it used to buy an Adamantine Scale Mail that nobody wears now that Luminous Armour is locked. +2 AC, ATTACKERS CANNOT LAND CRITICAL HITS, and a melee miss sends the attacker Reeling. This is the crit immunity the guide gave up by locking Luminous Armour, back on the body that needs it most: a critical hit roughly doubles a concentration save DC, and from char 7 he is concentrating on Hold Person in every fight. His melee set is the ACTIVE set, so the shield''s crit immunity is live — the inactive-set caveat that stopped Bonbon parking one behind her bow does not apply to him. Worn until the Helm of Balduran covers crits in Act 3.'
+      note: 'THE SECOND MITHRAL ORE, poured with the Shield mould at the Forge — it used to buy an Adamantine Scale Mail that nobody wears now that Luminous Armour is locked. +2 AC, ATTACKERS CANNOT LAND CRITICAL HITS, and a melee miss sends the attacker Reeling. This is the crit immunity the guide gave up by locking Luminous Armour, back on the body that needs it most: a critical hit roughly doubles a concentration save DC, and from char 7 he is concentrating on Hold Person in every fight. His melee set is the ACTIVE set, so the shield''s crit immunity is live — the inactive-set caveat that stopped Bonbon parking one behind her bow does not apply to him. It replaces the plain Grove shield and is worn until the Helm of Balduran covers crits in Act 3.'
     - id: haste-helm
       item: Haste Helm
       tier: S
@@ -724,7 +725,7 @@ builds:
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #2 of 20 — Radiating Shockwave stacks Radiating Orb across an encounter'
       slot: armour
       bis: true
-      note: 'LOCKED CHEST FOR THE WHOLE RUN, from the Selûnite Outpost. Medium armour, AC 15 + DEX (max 2) = 17. Every point of Radiant damage he deals fires a RADIANT SHOCKWAVE, spreading Radiating Orb in a 3m radius: −1 to attack rolls per remaining turn, stacking duration on reapplication up to −10. He has exactly two Radiant sources feeding it — Inquisitor''s Might on every weapon hit, and Divine Smite — which is precisely why the oath is Vengeance and not Oathbreaker. ⚠ The accepted cost: no Adamantine Scale Mail crit immunity in Act 2 and no Helldusk Armour AC 21 in Act 3. Shield, Mirror Image, Helm of Balduran and Aura of Protection are the compensation.'
+      note: 'LOCKED CHEST FOR THE WHOLE RUN, from the Selûnite Outpost. Medium armour, AC 15 + DEX (max 2) = 17. Every point of Radiant damage he deals fires a RADIANT SHOCKWAVE, spreading Radiating Orb in a 3m radius: −1 to attack rolls per remaining turn, stacking duration on reapplication up to −10. He has exactly two Radiant sources feeding it — Inquisitor''s Might on every weapon hit, and Divine Smite — which is precisely why the oath is Vengeance and not Oathbreaker. ⚠ The accepted cost: AC 17 all run and no Helldusk Armour AC 21 in Act 3. The crit immunity the Adamantine Scale Mail would have given comes from the Adamantine Shield instead; Shield, Mirror Image, Helm of Balduran and Aura of Protection are the rest of the compensation.'
     - id: act1-hands-charles
       item: Glove slot
       slot: hands
@@ -752,7 +753,15 @@ builds:
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (16:09) — always worth looking at for the characters they suit'
       slot: feet
       bis: true
-      note: 'SELECTED boots, worn by Minthara in the Shattered Sanctum. Concentrating grants Momentum and blocks Prone and forced movement — and Prone is the cheapest way a Paladin loses concentration. He is now ALWAYS concentrating (Hold Person), so this is live in every fight. ⚠ Boots of Stormy Clamour would chain Reverberation off his own Radiating Orb, but they stay on GALE, who applies conditions far more often. The same kill yields Gale''s Spidersilk Armour.'
+      note: 'FLEX SLOT FROM ACT 1, and in Act 1 the default is the OTHER pair. Striding is Minthara''s: Focused Stride grants Momentum on casting a Concentration spell and blocks Prone and forced movement while it holds. That matters enormously from char 7, when Hold Person becomes his permanent Concentration — falling Prone ends Concentration outright, with no save. Before char 7 the only thing Focused Stride protects is HEX, which is cheap to lose, so wear the Boots of Stormy Clamour for that whole stretch and switch back when Hold Person arrives. The same kill yields Gale''s Spidersilk Armour.'
+      options:
+      - id: opt-boots-of-stormy-clamour-charles-a1
+        item: Boots of Stormy Clamour
+        tier: S
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
+        rank: '#7'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
+        note: 'THE ACT 1 DEFAULT, from Omeluum in the Ebonlake Grotto. Inflicting a condition on a hostile also inflicts 2 turns of Reverberation, and Luminous Armour is what turns that into an engine: Inquisitor''s Might puts Radiant on every weapon hit from char 3, each hit fires a Radiant Shockwave, and each Shockwave applies Radiating Orb — a condition. The boots carry a hidden OncePerAttack limit, but the Shockwave is a CreateExplosion event, which RESETS that limit, so every swing procs rather than only the first. Reverberation is −1 to Strength, Dexterity and Constitution saves per turn, and at 5 turns it forces a Prone save the condition''s own penalty drops to an effective DC 15. ⚠ One target per trigger — the Shockwave spreads Radiating Orb to everything in 3m but only the first creature gets the Reverberation, so this is single-target pressure, not an AoE lock. ⚠ Gale gives them up because his Reverberation payload is EMPTY in Act 1: Belligerent Skies needs Thunder, Lightning or Radiant and he casts fire, and Coruscation, Callous Glow and Spineshudder are all Act 2.'
     - id: amulet-of-misty-step
       item: Amulet of Misty Step
       tier: A
@@ -787,7 +796,7 @@ builds:
       tier: S
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (13:57) — best Act 1 hand crossbow; a pair is the highest damage archer setup'
       slot: ranged weapons
-      note: 'ACT 1–2 RANGED, a pair, and mainly a Darkness-Arrow launcher. Farm Dammon, Roah, Derryth and Jeera for +1 copies; the ranged set does not touch the melee set. ⚠ Keep expectations low — once he stands inside his own cloud it blocks ranged attacks into and out of itself. Hellrider''s Longbow replaces these in Act 3.'
+      note: 'ACT 1–2 RANGED, a pair, and mainly a Darkness-Arrow launcher. Farm Dammon, Roah, Derryth and Jeera for +1 copies; the ranged set does not touch the melee set. ⚠ Keep expectations low — once he stands inside his own cloud it blocks ranged attacks into and out of itself. The Vicious Shortbow (or the Hellrider Longbow on a non-Bhaal route) replaces these in Act 3.'
     - id: auntie-ethel-s-hair-cha-17-18
       item: Auntie Ethel's Hair
       slot: consumables
@@ -850,7 +859,16 @@ builds:
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (16:09) — always worth looking at for the characters they suit'
       held: 1
       slot: feet
-      note: CARRIED OVER. Momentum and immunity to Prone and forced movement, live in every fight now that Hold Person keeps him permanently concentrating. Helldusk Boots replace them in Act 3.
+      note: 'CARRIED OVER, and now the default half of the flex. Hold Person is permanent from char 7 and Prone ends Concentration with no save, so immunity to Prone and forced movement is doing the most important defensive job on the character. Swap to the Boots of Stormy Clamour only in fights with no reliable knockdown or Shove pressure. Helldusk Boots take over in Act 3.'
+      options:
+      - id: opt-boots-of-stormy-clamour-charles-a2
+        item: Boots of Stormy Clamour
+        tier: S
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
+        rank: '#7'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
+        held: 1
+        note: 'THE FLEX, and Act 2 is where it peaks. The HOLY LANCE HELM is the reason: its Radiant retaliation fires whenever an attack MISSES him, which at Radiating Orb −10 plus Mirror Image is constantly, and every one of those is another Radiant Shockwave, another Radiating Orb, another Reverberation proc — on ENEMY turns, and on whichever creature missed, so this is the one channel that does spread Reverberation across a pack. On his own turn it is one proc per attack, three or four with Haste. ⚠ The cost is exactly what Striding was buying: a single successful knockdown drops Hold Person and the nova with it, and the Risky Ring gives him disadvantage on the save. ⚠ Reverberation feeds NOTHING this party controls with — Hold Person, Hold Monster, Command and Fear are all Wisdom saves. It buys the Prone pop and Asterion''s Stunning Strike, which is a Constitution save.'
     - id: act2-amulet-charles
       item: Neck slot
       slot: amulets
@@ -867,7 +885,7 @@ builds:
         item: Spineshudder Amulet
         tier: S
         tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:42) — busted on multi-hit spells'
-        note: 'Applies Reverberation when he is hit. He is the frontliner who gets hit most, so it turns incoming attacks into a stacking enemy debuff — but Gale wants it too.'
+        note: '⚠ DO NOT TAKE IT — recorded as a correction. Crackling Resonance fires on the wearer''s own RANGED SPELL ATTACKS, not when the wearer is hit; the on-being-hit effect is the Thunderskin Cloak. Charles''s only ranged spell attack is Eldritch Blast, cast only to Repel escapers back into Hunger of Hadar, so on him it does almost nothing. It is Gale''s. Charles''s Reverberation comes off the Boots of Stormy Clamour.'
       - id: opt-amulet-of-restoration
         item: Amulet of Restoration
         tier: S
@@ -934,7 +952,7 @@ builds:
       wiki: Shadow Blade (weapon)
       slot: weapons
       bis: true
-      note: 'CARRIED OVER unchanged — a 3d8 Shadow Blade in the main hand, bound for CHA and Deepened Pact, with a shield in the off-hand. ⚠ Against Psychic-immune targets, bind the Knife of the Undermountain King main hand. ⚠ Confirm the Stone aura still works after Act 2, and holster it when the Psychic and mental-save downside is unsafe.'
+      note: 'CARRIED OVER unchanged — a 3d8 Shadow Blade in the main hand, bound for CHA and Deepened Pact, with a shield in the off-hand. ⚠ Against Psychic-immune targets, bind the Knife of the Undermountain King main hand. ⚠ Confirm the Stone aura still works after Act 2, and holster it when the Psychic and mental-save downside is unsafe. ⚠ TWO SHADOW BLADES IS NOT AN OPTION: the wiki''s only route to a second one is a hireling soul-recall exploit, and the copies it makes use the spell''s base damage rather than the upcast, and are called out as not working properly with Battlemage''s Power — which is the locked glove this build is built on.'
     - id: viconias-walking-fortress
       item: Viconia's Walking Fortress
       tier: S
@@ -973,7 +991,16 @@ builds:
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (1:00:13) — the saving throw makes the wearer extremely safe in almost every circumstance'
       slot: feet
       bis: true
-      note: 'ACT-3 BOOTS, in a locked Gilded Chest on the top floor of Wyrm''s Rock Fortress. Steadfast stops all forced movement and difficult terrain — replacing Boots of Striding — and Infernal Evasion lets him use his REACTION TO TURN A FAILED SAVING THROW INTO A SUCCESS. That is the direct answer to the Risky Ring on the character holding the party''s Hold Person. ⚠ Contested with Gale, who cannot wear Boots of Persistence at all; Charles wins because he is the one with save disadvantage.'
+      note: 'ACT-3 BOOTS, in a locked Gilded Chest on the top floor of Wyrm''s Rock Fortress, and the default half of the flex. They inherit what Striding was doing: immunity to Prone, which is the whole reason the slot is defensive, plus Steadfast against forced movement and difficult terrain, plus a bonus-action Hellcrawler teleport that deals 2d8 Fire on landing. Infernal Evasion turns one failed saving throw into a success for a Reaction — ⚠ ONCE PER LONG REST per the wiki, not once per turn, so it is an emergency button and not the answer to the Risky Ring. The Amulet of Greater Health is what actually cancels that disadvantage. ⚠ Contested with Gale, who cannot wear Boots of Persistence at all; Charles wins on the Prone immunity.'
+      options:
+      - id: opt-boots-of-stormy-clamour-charles-a3
+        item: Boots of Stormy Clamour
+        tier: S
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
+        rank: '#7'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
+        held: 1
+        note: 'THE FLEX, carried the whole run. Same engine as Act 2 and Gale has no claim left on it, so the only question each fight is whether he can afford to lose Prone immunity. Against casters, ranged packs and anything without a Shove or a knockdown, take the Reverberation. Against giants, ogres and boss melee, keep the Helldusk.'
     - id: amulet-of-greater-health
       item: Amulet of Greater Health
       tier: S
@@ -1061,7 +1088,7 @@ builds:
     - id: prog-feet
       item: 'Boots: Boots of Striding → Helldusk Boots'
       slot: feet
-      note: Act 1–2 Striding (Minthara) → Act 3 Helldusk Boots (Wyrm's Rock). Both protect the Hold Person concentration; Helldusk does it better, turning one failed save per turn into a success. Boots of Stormy Clamour stay on Gale.
+      note: 'A FLEX SLOT ALL RUN, sharing Boots of Stormy Clamour with the defensive pick. Act 1–2 Striding (Minthara) → Act 3 Helldusk (Wyrm''s Rock); both grant immunity to Prone, and Prone ends Concentration outright, so they are what keeps Hold Person up. Stormy Clamour (Omeluum) is the alternative: Luminous Armour''s Radiant Shockwave resets the boots'' OncePerAttack limit, so every Radiant swing applies Reverberation. Default to Stormy Clamour through Act 1, when his Concentration is only Hex, and to the defensive boot from char 7 onward.'
     - id: prog-cloaks
       item: 'Cloak: none available → Cloak of Protection'
       slot: cloaks
@@ -1083,9 +1110,9 @@ builds:
       slot: weapons
       note: One respec, at the Stone. Phalar Aluve behind a shield carries Act 1 through most of Act 2 with Duelling; the late-Act-2 Resonance Stone triggers the swap to a 3d8 Shadow Blade in the main hand, and Phalar leaves for Bonbon's melee set, where she carries Shriek.
     - id: prog-offhand
-      item: 'Off-hand: Safeguard Shield → Adamantine Shield → Viconia''s Walking Fortress'
+      item: 'Off-hand: Shield → Adamantine Shield → Viconia''s Walking Fortress'
       slot: off-hand
-      note: Dammon's Safeguard Shield (+2 AC, +1 saves) from the Grove → the Adamantine Shield (second Mithral ore) from the Forge for crit immunity on the Hold Person carrier → Viconia's Walking Fortress in Act 3 once the Helm of Balduran covers crits. He never two-hands or dual-wields after the Grove, which is why neither Great Weapon Master nor Dual Wielder is ever taken.
+      note: A plain +2 AC Shield from any Grove vendor (the Safeguard Shield is Bonbon's) → the Adamantine Shield (second Mithral ore) from the Forge for crit immunity on the Hold Person carrier → Viconia's Walking Fortress in Act 3 once the Helm of Balduran covers crits. He never two-hands or dual-wields after the Grove, which is why neither Great Weapon Master nor Dual Wielder is ever taken.
     - id: prog-ranged
       item: 'Ranged: Dual Hand Crossbows +1 → Vicious Shortbow'
       slot: ranged weapons
@@ -1104,6 +1131,7 @@ builds:
     - **Darkness placement:** put the cloud so **Charles is inside it and his target is not**. He is an unseen attacker — advantage in, disadvantage out — while the enemy stays visible for Gale. A cloud blocks ranged attacks *into and out of* itself, so an enemy standing inside it is one Gale cannot touch.
     - **Shriek is for Gale, not just the melee:** it adds 1d4 Thunder every time an affected enemy takes damage, and Scorching Ray damages 3–7 separate times per cast. Activating it before Gale's turn is worth roughly 7d4 on a single level-6 cast — from the Stone onward that is Bonbon's call to make, from 3–6 m of the cluster.
     - **Late Act 2+ — Shadow + Stone:** on acquiring the Resonance Stone, respec at character level 9 to Warlock 5 / Paladin 4 (Alert and Savage Attacker), summon a 3d8 Shadow Blade main hand and keep the Adamantine Shield. Hand Phalar Aluve to Bonbon, who carries Shriek from her melee set. Asterion carries the Stone within 9m. Re-select Oath of Vengeance; do not break it.
+    - **Once per long rest, out of combat:** stand next to Gale so he can Twin **Draconic Elemental Weapon** off the Drakethroat Glaive onto Charles and onto Bonbon's Titanstring Bow, dropped on the ground next to him. Targeting Charles hits his MAIN HAND — the one-handed Phalar Aluve behind the shield until the Resonance Stone respec, the 3d8 Shadow Blade after it — for +1 Attack Rolls and +1d4 elemental until long rest. ⚠ From the Stone onward, summon the Shadow Blade FIRST: a blade re-summoned after the cast comes back unenchanted, and the glaive's cast is gone until the next long rest.
     - **Once per long rest, out of combat:** cast **Aid** (upcast as high as you can spare) for a permanent party-wide max-HP buff that costs no concentration. Charles is the party's only Aid source.
     - **Nova:** Hold a humanoid, then spend the largest Divine Smites first into guaranteed crits. At Paladin 5 after the respec, two three-attack Actions under Haste are six auto-crit swings, each carrying Duelling's +2.
     - **Defensive reads:** he is AC 19–20 behind a shield, crit-immune from the Forge (Adamantine Shield) and again from the Helm of Balduran. Pre-cast Mirror Image in fights where he expects to be focused, keep Shield for the reaction that would otherwise break Hold Person, and stay inside Aura of Protection range of the party rather than running ahead.

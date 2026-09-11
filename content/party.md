@@ -38,7 +38,7 @@ combat_gameplan:
   - character: Charles — the nova
     role: Melee crit-smite frontline that sets up its own auto-crits
     priority_actions: |-
-      - **Build-defining gear:** Gloves of Battlemage's Power (Arcane Acuity → the Hold Person DC) · Luminous Armour (Radiant Shockwave → party-wide Radiating Orb) · a shield in the off-hand from the Grove (Safeguard → Adamantine for crit immunity → Walking Fortress) · Alert. The first two are LOCKED for the whole run; he never two-hands or dual-wields after the Grove.
+      - **Build-defining gear:** Gloves of Battlemage's Power (Arcane Acuity → the Hold Person DC) · Luminous Armour (Radiant Shockwave → party-wide Radiating Orb) · a shield in the off-hand from the Grove (a plain +2 Shield → Adamantine for crit immunity → Walking Fortress) · Alert. The first two are LOCKED for the whole run; he never two-hands or dual-wields after the Grove.
       - **Build-defining spell:** Hold Person, free from the Vengeance oath at Paladin 5. Divine Smite is the payload; Inquisitor's Might is the per-hit Radiant that feeds the armour.
       - **Concentration:** Hold Person, always. Hunger of Hadar is the only substitute, and only when nothing is Holdable.
       - **Each round:** Inquisitor's Might (bonus action) → Booming Blade to build Acuity → Hold Person → dump the largest smites into guaranteed crits.
@@ -52,14 +52,14 @@ combat_gameplan:
   - character: Gale — the engine
     role: Fire striker, non-concentration control, party Haste
     priority_actions: |-
-      - **Build-defining gear:** Boots of Stormy Clamour + Gloves of Belligerent Skies (the Reverberation engine, 5–7 applications per Scorching Ray) · Hat of Fire Acuity · Markoheshkir + Rhapsody.
+      - **Build-defining gear:** Gloves of Belligerent Skies + Spineshudder Amulet (the Reverberation engine, 5–7 applications per Scorching Ray) · Hat of Fire Acuity · Markoheshkir + Rhapsody. Boots of Stormy Clamour go to Charles.
       - **Build-defining spell:** Twinned Haste, online at char 5. Scorching Ray is the damage; Command is the control that costs no concentration.
       - **Concentration:** Twinned Haste, permanently, on **Charles and Bonbon**.
       - **Each round:** keep Haste up, then Scorching Ray into a target inside Phalar Shriek's aura; Command when control beats damage.
   - character: Bonbon — the controller and face
     role: Ranged Acuity control, damage, all social checks
     priority_actions: |-
-      - **Build-defining gear:** Helmet of Arcane Acuity + Band of the Mystic Scoundrel (bonus-action control) · Titanstring Bow all game, with a daily Giant Strength elixir once the Club is gone · Phalar Aluve + a shield in the never-swung melee set (she carries Shriek from the Stone) · Adamantine Splint, then Helldusk Armour and Helldusk Gloves in Act 3.
+      - **Build-defining gear:** Helmet of Arcane Acuity + Band of the Mystic Scoundrel (bonus-action control) · Titanstring Bow all game, with a Giant Strength elixir every long rest from day one (the Club is skipped) · Knife of the Undermountain King + Safeguard Shield, then Phalar Aluve + Ketheric's Shield from the Stone, in the never-swung melee set (she carries Shriek from the Stone) · Adamantine Splint, then Helldusk Armour and Helldusk Gloves in Act 3.
       - **Build-defining spell:** Hold Monster — the answer to every non-humanoid Charles cannot Hold. Command and Conjure Elemental are her non-concentration options.
       - **Concentration:** Hold Monster, or Hold Person on humanoids Charles is not already holding. MORE HOLD IS BETTER — a held target auto-crits and simply gets deleted, so prefer a second Hold over Fear in almost every fight.
       - **Each round:** open with a ranged **Slashing Flourish** to stack Arcane Acuity across multiple targets at once, then spend the bonus action on a control spell through the Band. From the Stone, turn 1 is Shriek with the Haste action from 3–6 m of the melee cluster, then the Flourish.
@@ -77,7 +77,7 @@ watch_outs:
 - watch_out: Temporary HP never stacks
   detail: Armour of Agathys, illithid Shield of Thralls and Fiendish Vigour's False Life all overwrite each other. Pick one, and cast Aid after it rather than before.
 - watch_out: Charles is AC 19–20 behind a shield
-  detail: Locking Luminous Armour caps the chest at 17, so the off-hand shield carries the rest — Safeguard Shield from the Grove, the Adamantine Shield from the Forge for crit immunity, Viconia's Walking Fortress once the Helm of Balduran covers crits. Mirror Image, Shield and Aura of Protection sit on top. A crit roughly doubles a concentration save DC, which is why the second Mithral ore is a shield for him and not a Scale Mail he would never wear.
+  detail: Locking Luminous Armour caps the chest at 17, so the off-hand shield carries the rest — a plain +2 Shield from the Grove, the Adamantine Shield from the Forge for crit immunity, Viconia's Walking Fortress once the Helm of Balduran covers crits. Mirror Image, Shield and Aura of Protection sit on top. A crit roughly doubles a concentration save DC, which is why the second Mithral ore is a shield for him and not a Scale Mail he would never wear.
 - watch_out: Shriek is Bonbon's job from the Stone
   detail: Phalar Aluve moves to her melee set at the Resonance Stone respec. The aura is 6 m around the WIELDER and ends if the sword is unequipped, so she stands 3–6 m from the enemies she wants debuffed — outside the 3 m ranged-disadvantage band. It costs an Action; use the Haste action on turn 1 or pre-cast from stealth.
 skills_face:

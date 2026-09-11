@@ -40,7 +40,7 @@ the source material, not an unexplained deviation.
 | #4 | Deathstalker Mantle | Asterion | Taken (Dark Urge reward, via Charles) |
 | #5 | Strange Conduit Ring | Charles | Taken |
 | #6 | Hellrider's Pride | — | **Skipped — see D2** |
-| #7 | Boots of Stormy Clamour | Gale | Taken |
+| #7 | Boots of Stormy Clamour | Charles | Taken — moved from Gale, see 2026-09-11 §3 |
 | #8 | The Protecty Sparkswall | Bonbon | Taken |
 | #9 | Shapeshifter's Boon Ring | — | **Skipped — see D3** |
 | #10 | The Whispering Promise | Bonbon | Taken |
@@ -200,6 +200,94 @@ gives him +1 AC for free on any turn he uses Flurry of Blows: Push.
 
 ---
 
+**D17 — Club of Hill Giant Strength (A tier, weapons list) is skipped.**
+The video's case is that it sets STR 19 and "frees the elixir slot for monks and
+Titanstring archers." This party pays the elixir anyway: Bonbon drinks Giant Strength
+every long rest from Act 1 (Hill 21 beats the Club's 19 by +1 a projectile, Cloud 27 in
+Act 3), and Bloodlust was already retired from her plan. With no Strength job left, the
+Club only occupies the melee main hand that lets a shield into her off-hand — the Knife
+of the Undermountain King is a stat stick with no Light partner requirement once the
+other hand holds a shield rather than a second weapon. Skipping it is what makes the
+Safeguard Shield hers from the Grove. Asterion already drinks one Giant Strength a day,
+so the cost is stocking two.
+
+---
+
+## 2026-09-11 — Club skipped, Bonbon shield rack from Act 1, Stormy Clamour to Charles, Gale's boots, Drakethroat Glaive
+
+A reconciliation of two edit sets made after the 2026-09-10 review: one kept the Club and
+moved Phalar to Bonbon, the other dropped the Club and built Bonbon a shield rack. Both
+survive where they agree; where they did not, the decisions below were taken (player
+direction). Version 1.18.0.
+
+### 1. Club of Hill Giant Strength is skipped; Bonbon drinks Giant Strength from day one
+
+**Bonbon, all acts, melee main hand and elixir.** The 2026-09-10 review already moved her
+Strength to a daily Elixir of Hill Giant Strength from the Stone. That now starts at the
+first long rest: Hill Giant sets 21 against the Club's 19, so Titanstring's Titan Weapon
+rider is +1 a projectile better, and she never drinks Bloodlust at any point. The Club is
+left on the Arcane Tower stool (deviation D17). Her Act 1 melee set becomes the **Knife of
+the Undermountain King main hand + Safeguard Shield off-hand**: without Dual Wielder a
+second weapon would need both to be Light, a shield needs nothing, and the rule-changes
+page confirms a shield's AC carries over to the ranged set. From the Stone the set is
+**Phalar Aluve + Ketheric's Shield** exactly as 2026-09-10 §1 and §4 describe; the Knife
+then goes to Charles as his Psychic-immune fallback. Sentinel Shield stays recorded as the
+optional +3-initiative alternative for the off-hand, not a core pick.
+
+### 2. Safeguard Shield goes to Bonbon; Charles holds a plain shield until the Forge
+
+**Charles, Act 1, off-hand.** Only one Safeguard Shield exists and Bonbon's off-hand is
+empty from the Grove, so it is hers. Charles fights behind a plain +2 AC Shield from any
+vendor from the Grove until the second Mithral ore becomes the Adamantine Shield at
+Grymforge; the rest of 2026-09-10 §2 (Duelling, Alert, Savage Attacker at the respec,
+never GWM or Dual Wielder, Viconia's Walking Fortress in Act 3) is unchanged. The +1 to
+saving throws he loses is a few Act 1 fights' worth.
+
+### 3. Boots of Stormy Clamour move from Gale to Charles
+
+**Gale → Charles, all acts, feet.** Gale's Reverberation payload does not exist in Act 1:
+Gloves of Belligerent Skies need Thunder, Lightning or Radiant damage and he casts fire,
+and Coruscation, Callous Glow and Spineshudder are all Act 2 pickups. By Act 2 Spineshudder
+plus Belligerent Skies deliver roughly 28 turns of Reverberation from one Scorching Ray
+against a threshold of 5, so the boots were adding nothing he was not already three times
+over. Charles converts them: Luminous Armour's Radiant Shockwave is a CreateExplosion
+event, which resets the boots' hidden OncePerAttack limit, so every Inquisitor's Might
+Radiant hit applies Reverberation, and the Holy Lance Helm's retaliation does it on enemy
+turns. They are a **flex** against the Prone-immunity boot: Stormy Clamour is the default
+until char 7, Boots of Striding once Hold Person is his Concentration (Prone ends
+Concentration with no save), Helldusk Boots in Act 3. Gale's Act 1 boot slot is left open
+— The Speedy Lightfeet, Boots of Striding, Boots of Elemental Momentum and Vital Conduit
+Boots all need Medium Armour proficiency — and **Evasive Shoes** (Mattis, Last Light) hold
+the slot from Act 2 to the end, with Acrobat Shoes (Barcus Wroot) as the Dexterity-save
+swap. `party.md` and `loot.md` follow.
+
+### 4. Drakethroat Glaive is Gale's backpack buff
+
+**Gale, Acts 2–3, carried.** Bought from Roah Moonglow and never equipped in combat. Once
+per long rest he equips it, Twins Draconic Elemental Weapon (3 sorcery points; the wiki
+confirms a Sorcerer of level 3+ can target two weapons this way) onto **Bonbon's
+Titanstring Bow**, dropped on the ground beside Charles, and **Charles's main hand** —
+one-handed Phalar Aluve behind the shield until the Stone, the Shadow Blade after it,
+summoned first — then swaps the staves back. +1 Attack Rolls and +1d4 of a chosen element
+per hit until long rest, stacking with Magic Weapon. A Shadow Blade re-summoned after a
+short rest comes back plain.
+
+### 5. Corrections
+
+- Helldusk Boots: Infernal Evasion is once per long rest per the wiki, not once per turn.
+  It is an emergency button; the Amulet of Greater Health is what answers the Risky Ring.
+  Prone immunity is what decides the boot for Charles.
+- Spineshudder Amulet on Charles was recorded as an on-hit debuff. Crackling Resonance
+  fires on the wearer's own ranged spell attacks; his only one is Eldritch Blast, cast to
+  Repel escapers out of Hunger of Hadar. It is Gale's.
+- Two Shadow Blades is not an option: the wiki's only route is a hireling soul-recall
+  exploit whose copies use base damage and misbehave with Battlemage's Power.
+- Bloodthirst goes to nobody. Charles's off-hand is a shield and Bonbon's is Ketheric's.
+- Rhapsody is recorded as contested with Bonbon (+3 spell save DC as a stat stick); Gale
+  keeps it because only he multiplies the +3 damage across every ray.
+- Bonbon's `at_a_glance` elixir chip now reads Giant Strength all game.
+
+---
 ## 2026-09-10 — Phalar to Bonbon, shields for Charles, Titanstring all game, Helldusk to Bonbon, Gontr Mael to Asterion
 
 An iterative review of the itemization now that the research is separated from the

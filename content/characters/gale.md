@@ -64,7 +64,7 @@ builds:
     note: 'Unusual for a caster, but this build wields two staves as stat sticks: Spellsparkler + Melf''s in Act 1, then Markoheshkir + Rhapsody in Act 3. Neither pair is Light, so Dual Wielder is mandatory to hold both. COST: both hands are full for the whole run, so Gale can never carry a shield — Spidersilk Armour in Act 1 and Armour of Landfall in Act 3 supply the Constitution-save advantage that protects Twinned Haste instead.'
   - at: Sorc 8 (char 9)
     feat: 'Elemental Adept: Fire'
-    note: 'Effectively mandatory in THIS party, though the tier lists rate the feat only B in general — worth knowing you are spending one of two feats on a B-tier pick while Alert (S+) goes unbought. The published guide says to skip Elemental Adept if you have a bow archer who can mass-apply Arsonist''s Oil with Arrows of Many Targets or Volley; Bonbon moves to dual hand crossbows in Act 2 and has no such option, so she can only strip fire resistance one target at a time, and Act 3 is dense with fire-resistant enemies. ⚠ READ THE WIKI TEXT, NOT THE TABLETOP RULE: in BG3 you "CANNOT ROLL A 1" on Fire damage dice rather than treating 1s as 2s — still excellent here because Scorching Ray rolls so many dice. And the resistance-piercing covers "spells you cast AND attacks you make," not spells alone; only the no-1 clause is spell-only.'
+    note: 'Effectively mandatory in THIS party, though the tier lists rate the feat only B in general — worth knowing you are spending one of two feats on a B-tier pick while Alert (S+) goes unbought. The published guide says to skip Elemental Adept if you have a bow archer who can mass-apply Arsonist''s Oil with Arrows of Many Targets or Volley; Bonbon shoots Titanstring all game but Swords Bard has no Volley, so the mass-apply would hang on a scarce stock of Arrows of Many Targets and in practice she strips fire resistance one target at a time, and Act 3 is dense with fire-resistant enemies. ⚠ READ THE WIKI TEXT, NOT THE TABLETOP RULE: in BG3 you "CANNOT ROLL A 1" on Fire damage dice rather than treating 1s as 2s — still excellent here because Scorching Ray rolls so many dice. And the resistance-piercing covers "spells you cast AND attacks you make," not spells alone; only the no-1 clause is spell-only.'
   feats_note: 'ONLY TWO FEATS. Sorcerer grants them at Sorc 4 and Sorc 8 = character levels 4 and 9; the Warlock level grants none and Sorc 12 is never reached. Dual Wielder and Elemental Adept consume both, so there is no room for Alert, War Caster, or an ASI — initiative and concentration are gear problems on this build.'
   key_spells:
   - Scorching Ray (the core damage engine — every rider applies per ray)
@@ -97,7 +97,7 @@ builds:
       school: Evocation
       save: Ranged spell attack (one roll per ray)
       when: Sorc 3 (char 3)
-      why: 'THE build — though note the tier lists rate the spell itself only A, precisely because its value is "multi-hit riders, not efficiency," which is exactly how this build uses it. 3 rays at level 2, +1 ray per slot level above 2nd (a level 6 slot fires 7). Each ray is a separate attack roll AND a separate damage instance, so every flat rider applies to EVERY ray. ⚠ CONFIRMED per-ray by name on the wiki: Elemental Affinity: Damage and the Callous Glow Ring. INFERRED but not individually stated: Rhapsody and Markoheshkir''s +proficiency, which are covered only by the general rule that bonus damage from passives and conditions applies per instance. Spellmight''s +1d8 is NOT addressed anywhere — see the traps. That means +5 CHA, +2 Callous Glow, +3 Rhapsody, +4 Markoheshkir, +1d8 Spellmight, and Charles''s Phalar Shriek 1d4 Thunder all multiply by the ray count. It is also the Hat of Fire Acuity engine: each ray deals Fire damage and grants 2 turns of Arcane Acuity, so one level-4 cast caps Gale at 10 stacks.'
+      why: 'THE build — though note the tier lists rate the spell itself only A, precisely because its value is "multi-hit riders, not efficiency," which is exactly how this build uses it. 3 rays at level 2, +1 ray per slot level above 2nd (a level 6 slot fires 7). Each ray is a separate attack roll AND a separate damage instance, so every flat rider applies to EVERY ray. ⚠ CONFIRMED per-ray by name on the wiki: Elemental Affinity: Damage and the Callous Glow Ring. INFERRED but not individually stated: Rhapsody and Markoheshkir''s +proficiency, which are covered only by the general rule that bonus damage from passives and conditions applies per instance. Spellmight''s +1d8 is NOT addressed anywhere — see the traps. That means +5 CHA, +2 Callous Glow, +3 Rhapsody, +4 Markoheshkir, +1d8 Spellmight, and Phalar Aluve''s Shriek 1d4 Thunder (Charles''s until the Resonance Stone, Bonbon''s from her melee set after) all multiply by the ray count. It is also the Hat of Fire Acuity engine: each ray deals Fire damage and grants 2 turns of Arcane Acuity, so one level-4 cast caps Gale at 10 stacks.'
     - spell: Command
       tier: S
       tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (28:37) — concentration-free turn denial that upcasts to multiple enemies; every higher-level slot competes with it'
@@ -151,7 +151,7 @@ builds:
       school: Evocation
       save: None
       when: Sorc 7 (char 8)
-      why: 'Cast on an ally''s main-hand weapon out of combat; it is bugged to last until long rest, so this is a once-per-rest chore rather than a combat action. 15m radius that travels with the carrier. Its purpose is to keep GALE illuminated so the Coruscation Ring fires — see the illumination chain in the itemization notes. ⚠ Requires the target to hold a main-hand weapon, which rules out Asterion (empty hands for Tavern Brawler); Bonbon''s hand crossbows are the clean carrier. Darkness is only dispelled at the moment of casting, so Charles''s Darkness Arrows fired afterwards are unaffected.'
+      why: 'Cast on an ally''s main-hand weapon out of combat; it is bugged to last until long rest, so this is a once-per-rest chore rather than a combat action. 15m radius that travels with the carrier. Its purpose is to keep GALE illuminated so the Coruscation Ring fires — see the illumination chain in the itemization notes. ⚠ Requires the target to hold a main-hand weapon, which rules out Asterion (empty hands for Tavern Brawler); Bonbon''s melee main hand is the clean carrier — the Knife of the Undermountain King until the Resonance Stone, Phalar Aluve after. Darkness is only dispelled at the moment of casting, so Charles''s Darkness Arrows fired afterwards are unaffected.'
     - spell: Chain Lightning
       tier: A
       tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6 (9:31) — 360 average damage on four wet enemies, but often needs two casts to end a fight'
@@ -486,7 +486,7 @@ builds:
         - category: Feat
           picks: 1
           recommendation: 'Elemental Adept: Fire'
-          note: 'Fire is the most resisted damage type in Act 3 and this party has no bow archer to mass-apply Arsonist''s Oil. Also removes 1s from every Fire damage die.'
+          note: 'Fire is the most resisted damage type in Act 3 and Bonbon''s Titanstring has no Volley to mass-apply Arsonist''s Oil. Also removes 1s from every Fire damage die.'
         - category: Spell
           picks: 1
           recommendation: Dimension Door
@@ -551,15 +551,29 @@ builds:
       tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (41:43) — needs setup to get value, but spell save DC increases are that powerful'
       slot: head
       note: ACT 1 HEAD, from Omeluum after Help Omeluum Investigate the Parasite. +1 Spell Save DC while Gale is obscured. It is replaced permanently by the Hat of Fire Acuity in Act 2, so treat it as an Act 1 rental.
-    - id: boots-of-stormy-clamour
-      item: Boots of Stormy Clamour
-      tier: S
-      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
-      rank: '#7'
-      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
+    - id: act1-feet-gale
+      item: Boot slot
       slot: feet
-      bis: true
-      note: 'SELECTED boots from Omeluum, rated #7 of the 20 best Act 1 items and called "build-defining… later." Inflicting a condition applies 2 turns of Reverberation, and Gale inflicts conditions constantly — Radiating Orb from Coruscation, Mental Fatigue from the Ring of Mental Inhibition, and Command itself.'
+      wiki: false
+      note: 'OPEN, AND HONESTLY SO. The Boots of Stormy Clamour used to sit here and now go to CHARLES, because Gale''s Reverberation payload does not exist yet in Act 1 — Gloves of Belligerent Skies need Thunder, Lightning or Radiant damage and he casts fire, and Coruscation, Callous Glow and Spineshudder are all Act 2 pickups. His only Act 1 condition to convert was Command. ⚠ There is no good replacement: The Speedy Lightfeet, Boots of Striding, Boots of Elemental Momentum and Vital Conduit Boots ALL require Medium Armour proficiency, which Sorcerer/Warlock never grants, and the two best non-armour pairs in the act are already allocated. Evasive Shoes fix the slot properly at Last Light in Act 2.'
+      options:
+      - id: opt-night-walkers-gale
+        item: Disintegrating Night Walkers
+        tier: S
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (19:19) — probably the best boots in the game'
+        rank: '#11'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #11 of 20 — short-rest Misty Step plus immunity to most movement-restricting surfaces'
+        note: 'THE REALLOCATION WORTH CONSIDERING, currently Asterion''s from Nere in Grymforge. Rated the best boots in the game and #11 of the Act 1 top 20, and the relevant half is IMMUNITY TO BEING KNOCKED PRONE — Prone ends Concentration outright, and Gale carries Twinned Haste permanently while Asterion''s Bless is the one Concentration in the party nobody minds losing. Asterion also already has bonus-action Dash and Disengage from Step of the Wind, so the Misty Step is the smaller half of the item for him. Not taken by default because it re-cuts his kit, not just this slot.'
+      - id: opt-watersparkers-gale
+        item: The Watersparkers
+        tier: A
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (35:24) — core item for lightning-charge builds; needs water and the Sparkswall ring'
+        note: 'Non-armour, so legal on him, and in a gilded chest in Minthara''s area of the Shattered Sanctum — the same stop as Charles''s Boots of Striding. Electrifies water he stands in and pays 3 Lightning Charges a turn for doing it. Situational to the point of being a swap-in, and it wants The Sparkswall to stop him being electrocuted by his own puddle.'
+      - id: opt-boots-of-aid-and-comfort-gale
+        item: Boots of Aid and Comfort
+        tier: S
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (4:11) — 3 temp HP on every heal; combines with Hellrider''s Pride and Whispering Promise'
+        note: 'Sold by Grat the Trader at the Goblin Camp. 3 temporary hit points to anyone he heals — rated S on the strength of the healing set, and worth nothing here, because Gale heals nobody. Listed only so the slot''s whole field is visible.'
     - id: gloves-of-belligerent-skies
       item: Gloves of Belligerent Skies
       tier: A
@@ -585,7 +599,7 @@ builds:
       tier: S
       tier_note: '9BcQXb37Bik (57:59) — rated S+ ABOVE THE SCALE: a free Alert feat, and +5 on a d4 initiative roll means going first'
       slot: consumables
-      note: 'SELECTED standing elixir — drink one every long rest, exactly as Asterion drinks Giant Strength. +5 Initiative AND immunity to Surprise, lasting until long rest, for about 25g from Danthelon''s, Kith in Grymforge, or Popper at the Circus. THIS IS WHAT REPLACES THE ALERT FEAT Gale cannot afford: BG3 rolls initiative on a d4 + DEX, not a d20, so +5 is larger than the entire die. Gale is the only party member with no competing elixir — Asterion needs Giant Strength and Bonbon wants Bloodlust — so the one-elixir-per-rest slot is free for him.'
+      note: 'SELECTED standing elixir — drink one every long rest, exactly as Asterion drinks Giant Strength. +5 Initiative AND immunity to Surprise, lasting until long rest, for about 25g from Danthelon''s, Kith in Grymforge, or Popper at the Circus. THIS IS WHAT REPLACES THE ALERT FEAT Gale cannot afford: BG3 rolls initiative on a d4 + DEX, not a d20, so +5 is larger than the entire die. Gale is the only party member with no competing elixir — Asterion and Bonbon need Giant Strength and Charles wants Bloodlust — so the one-elixir-per-rest slot is free for him.'
     - id: bow-of-awareness
       item: Bow of Awareness
       tier: S
@@ -653,7 +667,7 @@ builds:
       tier: S
       tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:42) — busted on multi-hit spells'
       slot: amulets
-      note: 'CORE neck, in the Mimic in Isobel''s bedroom on the upper floor of Moonrise. It applies Reverberation on ranged SPELL-ATTACK hits only — which is exactly what Gale makes, 3–7 times a cast. Combined with Boots of Stormy Clamour it reliably knocks single targets Prone: five stacks of Reverberation force a Constitution save that the same condition''s own penalty makes effectively DC 15.'
+      note: 'CORE neck, in the Mimic in Isobel''s bedroom on the upper floor of Moonrise. It applies Reverberation on ranged SPELL-ATTACK hits only — which is exactly what Gale makes, 3–7 times a cast. Paired with the Gloves of Belligerent Skies, which fire on the Callous Glow radiant of every ray, that is roughly 28 turns of Reverberation from one Scorching Ray against a threshold of 5, so single targets go Prone repeatedly: five stacks force a Constitution save that the same condition''s own penalty makes effectively DC 15. This pair is the whole engine, which is why the Boots of Stormy Clamour could leave for Charles without costing him anything.'
     - id: cloak-of-protection-gale
       item: Cloak of Protection
       tier: S
@@ -665,7 +679,7 @@ builds:
       tier: D
       tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (19:42) — needs a reverberation build and a fixed DC13 Constitution save; will practically never trigger'
       slot: cloaks
-      note: 'HIS ACT 2 CLOAK, sold by Araj Oblodra at Moonrise. When a creature with Reverberation damages the wearer, it must make a DC 13 Constitution save or be Dazed — no Reactions, disadvantage on Wisdom saves, and it loses its Dexterity bonus to AC. The synergy is real rather than incidental: Gale is the party''s largest source of Reverberation (Spineshudder, Stormy Clamour and Belligerent Skies all stack it), so essentially anything that reaches him is already Reverberating, and the Dazed WIS-save penalty then feeds his own Command.'
+      note: 'HIS ACT 2 CLOAK, sold by Araj Oblodra at Moonrise. When a creature with Reverberation damages the wearer, it must make a DC 13 Constitution save or be Dazed — no Reactions, disadvantage on Wisdom saves, and it loses its Dexterity bonus to AC. The synergy is real rather than incidental: Gale is the party''s largest source of Reverberation (Spineshudder and Belligerent Skies each fire per ray), so essentially anything that reaches him is already Reverberating, and the Dazed WIS-save penalty then feeds his own Command.'
     - id: act2-armour-gale
       item: Spidersilk Armour
       tier: S
@@ -683,15 +697,18 @@ builds:
       bis: true
       note: 'CARRIED OVER. Thunder, Lightning or Radiant damage applies Reverberation — and a multi-ray cast applies it 3-7 times, which is why these live on him rather than on Charles.'
     - id: act2-feet-gale
-      item: Boots of Stormy Clamour
+      item: Evasive Shoes
       tier: S
-      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
-      rank: '#7'
-      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
-      held: 1
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (46:17) — a lot of parties will simply use them'
       slot: feet
       bis: true
-      note: 'CARRIED OVER. Inflicting any condition applies 2 turns of Reverberation, and he inflicts conditions constantly — the other half of the Reverberation engine. Charles wanted these and does not get them.'
+      note: 'HIS SLOT IS FIXED HERE, sold by Mattis at Last Light Inn. +1 Armour Class and +1 Acrobatics, rated S by the boots list, no proficiency requirement, and contested by nobody. A flat AC point is concentration protection on a caster whose only job is keeping Twinned Haste up — the fewer hits, the fewer saves. ⚠ Modest, and forced: Boots of Persistence, Vital Conduit Boots and The Speedy Lightfeet all require Medium Armour proficiency, which Sorcerer 11 / Warlock 1 never grants, and Helldusk goes to Charles. ⚠ Boots of Stormy Clamour are no longer his — by Act 2 he applies roughly 28 turns of Reverberation per Scorching Ray from Belligerent Skies and Spineshudder alone, against a threshold of 5, so the boots were adding nothing he was not already three times over.'
+      options:
+      - id: opt-acrobat-shoes-gale
+        item: Acrobat Shoes
+        tier: D
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (36:55) — advantage on Dex saves is available elsewhere; not worth the boot slot'
+        note: 'THE ALTERNATIVE, and arguably the better one, sold by Barcus Wroot at his Last Light workshop. ADVANTAGE ON DEXTERITY SAVING THROWS, which is the exact save Gale has no cover for — Armour of Landfall and Spidersilk both hand him Constitution-save advantage, and nothing in the kit touches Dexterity. Fireballs and breath weapons are what actually take Twinned Haste off him. Rated D by the boots list on the grounds that the effect is available elsewhere; it is not available elsewhere on this character.'
     - id: act2-weapons-gale
       item: The Spellsparkler
       tier: A
@@ -713,6 +730,13 @@ builds:
       held: 1
       slot: ranged weapons
       note: 'CARRIED OVER, and purely for the passive initiative. He never fires it.'
+    - id: drakethroat-glaive
+      item: Drakethroat Glaive
+      tier: S
+      tier_note: 'GunWjIpdxb0 (39:52) — free daily Elemental Weapon cast onto any weapon without spending your own slot'
+      wiki: Drakethroat Glaive
+      slot: other
+      note: 'BACKPACK ITEM — bought from Roah Moonglow at Moonrise for 960 gp and NEVER EQUIPPED IN COMBAT, because both hands belong to the staves. It is carried for one action per long rest: Draconic Elemental Weapon, a free level 3 cast off the item. Human Civil Militia gives Gale the glaive proficiency, and Twinned Spell (3 sorcery points) doubles the cast, so out of combat he equips the glaive, Twins the enchant onto BONBON''S TITANSTRING BOW and CHARLES''S MAIN HAND, and swaps the staves back. Titanstring is her ranged weapon all game, so the bow half never changes; Charles''s half is the one-handed Phalar Aluve behind his shield until the Resonance Stone and the 3d8 Shadow Blade after it, so from the Stone on he summons the blade first. Each target gets +1 Attack Rolls and +1d4 of one chosen element until long rest, stacking with Magic Weapon. ⚠ It only takes a weapon on the ground or an ally''s MAIN-HAND weapon, so Titanstring has to be dropped at his feet and re-equipped afterwards; Charles is targeted directly. ⚠ Both targets must be inside the 1.5m melee range, so drop the bow next to Charles. ⚠ Pick a damage type the fight ahead is not resistant to — Gale''s Elemental Adept: Fire does nothing for an ally''s weapon.'
     act3:
     - id: markoheshkir
       item: Markoheshkir
@@ -757,38 +781,40 @@ builds:
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (53:35) — +3 initiative from an unused slot; he would put it in S+ if it existed'
       wiki: Hellrider Longbow
       slot: ranged weapons
-      note: 'HIS — the contest with Bonbon is settled by the item itself. Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 to Initiative and advantage on Perception, and it upgrades the Bow of Awareness he has been carrying since Act 1. ⚠ THE DECIDER: it is TWO-HANDED, so Bonbon physically cannot equip it alongside the dual hand crossbows that are her entire Arcane Acuity engine — she has no free ranged slot, and Gale has one he never otherwise uses. He holds it purely as a stat stick and never fires it; on top of the standing Elixir of Vigilance that is +8 initiative without a feat. ⚠ Ferg Drogher sells nothing if Shadowheart is nearby, unless she killed the Nightsong in Act 2.'
+      note: 'HIS — the contest with Bonbon is settled by the item itself. Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 to Initiative and advantage on Perception, and it upgrades the Bow of Awareness he has been carrying since Act 1. ⚠ THE DECIDER: Bonbon''s ranged slot belongs to Titanstring for the whole game, and a bow cannot share it — she has no free ranged slot, and Gale has one he never otherwise uses. He holds it purely as a stat stick and never fires it; on top of the standing Elixir of Vigilance that is +8 initiative without a feat. ⚠ Ferg Drogher sells nothing if Shadowheart is nearby, unless she killed the Nightsong in Act 2.'
     - id: helldusk-boots-gale
       item: Helldusk Boots
       tier: S
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (1:00:13) — the saving throw makes the wearer extremely safe in almost every circumstance'
       slot: feet
-      note: 'NOT HIS, and the call is close. Infernal Evasion — spend a reaction to turn a failed saving throw into a success — is the best concentration insurance in the game and Gale holds the party''s most important concentration. Charles wins it because he is the one carrying permanent save DISADVANTAGE from the Risky Ring, and because Gale already has Constitution-save advantage from Armour of Landfall. Recorded so the trade is visible.'
+      note: 'NOT HIS, and less close than it used to read. Infernal Evasion — spend a Reaction to turn a failed saving throw into a success — is ONCE PER LONG REST per the wiki, not once per turn, so it is an emergency button rather than standing concentration insurance. What actually decides the slot is the immunity to Prone, since Prone ends Concentration outright, and Charles is the frontliner who gets knocked down. Gale already has Constitution-save advantage from Armour of Landfall. Recorded so the trade is visible.'
     - id: act3-feet-gale
-      item: Boot slot
+      item: Evasive Shoes
+      tier: S
+      tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (46:17) — a lot of parties will simply use them'
+      held: 2
       slot: feet
-      wiki: false
-      note: 'NO BEST-IN-SLOT LEFT. Boots of Stormy Clamour carried him through Acts 1-2, and the Act 3 boots he would actually want are spoken for — Helldusk Boots go to Charles, who is the one with save disadvantage. Any of these is fine.'
+      bis: true
+      note: 'CARRIED OVER from Last Light and never replaced. +1 Armour Class and +1 Acrobatics. ⚠ NO BEST-IN-SLOT EXISTS FOR HIM: the Act 3 boots he would actually want are all locked out or spoken for — Boots of Persistence and Vital Conduit Boots require Medium Armour proficiency he never gets, Helldusk goes to Charles on the Prone immunity, and Boots of Uninhibited Kushigo are Asterion''s. Any of the below is a fine substitution.'
       options:
-      - id: opt-boots-of-stormy-clamour-a3
-        item: Boots of Stormy Clamour
-        tier: S
-        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (12:32) — the best way to apply Reverberation, and many builds are based on it'
-        rank: '#7'
-        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #7 of 20 — any condition also applies Reverberation; build-defining later'
-        note: 'The honest default. The Reverberation engine still works in Act 3 and nothing below clearly beats it.'
-      - id: opt-evasive-shoes
-        item: Evasive Shoes
-        tier: S
-        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (46:17) — a lot of parties will simply use them'
-        note: '+1 AC and advantage on Dexterity saving throws — the defensive pick for a caster standing near his own fire.'
+      - id: opt-acrobat-shoes-gale-a3
+        item: Acrobat Shoes
+        tier: D
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (36:55) — advantage on Dex saves is available elsewhere; not worth the boot slot'
+        held: 2
+        note: 'Same trade as Act 2 and it does not change: swap +1 AC for ADVANTAGE ON DEXTERITY SAVING THROWS. Dexterity is the one save nothing else in his kit covers, and it is the one Twinned Haste usually dies to.'
+      - id: opt-boots-of-psionic-movement
+        item: Boots of Psionic Movement
+        tier: A
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (54:03) — bonus-action Fly once per long rest; strong for parties skipping illithid powers'
+        note: 'Bonus-action Fly once per long rest, plus +1 to Dexterity saving throws. Real value on a backline caster who occasionally has to leave a melee lane, and the party is skipping illithid powers, so nothing else supplies flight.'
       - id: opt-boots-of-speed-gale
         item: Boots of Speed
         tier: A
         tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (11:29) — bonus-action double move; some party member almost always wants it (captions garble the letter)'
         rank: '#14'
         rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #14 of 20 — bonus-action Dash gives anyone Rogue-grade mobility'
-        note: 'Doubling movement as a bonus action is never wasted on a caster who wants to leave a melee lane.'
+        note: 'Free once Bonbon moves to Boots of Brilliance in Act 2. Doubling movement as a bonus action is never wasted on a caster who wants distance from his own Heat aura.'
     - id: act3-amulet-gale
       item: Spineshudder Amulet
       tier: S
@@ -824,6 +850,14 @@ builds:
       tier_note: 'Is EVERY Act 3 Helmet Awesome? - BG3 Helmets Tier List and Guide - Act 3 (4:42) — +2 Charisma is powerful, but narrowly beaten by the other Act 3 options'
       slot: head
       note: 'Would give +2 Charisma to a maximum of 22, but the head slot belongs permanently to the Hat of Fire Acuity and without Acuity the build stops working. ⚠ It does not go to Bonbon either — her head is locked to the Helmet of Arcane Acuity for the same reason, and +2 Charisma is +1 spell save DC against Acuity''s +10. Keep it bagged as an out-of-combat Charisma swap for dialogue checks on whichever of them is the face.'
+    - id: act3-drakethroat-glaive
+      item: Drakethroat Glaive
+      tier: S
+      tier_note: 'GunWjIpdxb0 (39:52) — free daily Elemental Weapon cast onto any weapon without spending your own slot'
+      wiki: Drakethroat Glaive
+      held: 2
+      slot: other
+      note: 'CARRIED OVER in the backpack, still never equipped in combat. The daily Twinned enchant runs to the end of the game. Targets in Act 3 are Charles''s 3d8 Shadow Blade, summoned before the cast, and Bonbon''s Titanstring Bow, still her ranged weapon and still dropped on the ground next to Charles.'
     progression:
     - id: prog-head
       item: 'Head: The Shadespell Circlet → Hat of Fire Acuity'
@@ -838,9 +872,9 @@ builds:
       slot: hands
       note: Act 1–2 Belligerent Skies (Crèche) for the Reverberation engine → Act 3 Spellmight (Circus, Find Dribbles the Clown). Spellmight's −5 to hit needs Arcane Acuity to cover it, so cast the first Scorching Ray with them off.
     - id: prog-feet
-      item: 'Boots: Boots of Stormy Clamour all game (Evasive Shoes as the defensive swap)'
+      item: 'Boots: open → Evasive Shoes'
       slot: feet
-      note: Stormy Clamour (Omeluum) all game — inflicting any condition adds Reverberation, and that engine still runs in Act 3, where nothing clearly beats it. Evasive Shoes are the defensive swap. Boots of Persistence and Vital Conduit Boots both require Medium Armour proficiency, which Sorcerer/Warlock never grants, and the Helldusk Boots go to Charles.
+      note: 'Empty through Act 1, because his Reverberation payload does not come online until Act 2 and the Boots of Stormy Clamour therefore go to Charles → Evasive Shoes (Mattis, Last Light) from Act 2 onward, with Acrobat Shoes (Barcus Wroot) the swap if Dexterity-save advantage is wanted over the AC point. A modest slot forced by a hard rule — Boots of Persistence, Vital Conduit Boots and The Speedy Lightfeet all require Medium Armour proficiency, which Sorcerer/Warlock never grants.'
     - id: prog-cloaks
       item: 'Cloak: none available → Thunderskin Cloak → Cloak of the Weave'
       slot: cloaks
@@ -864,17 +898,18 @@ builds:
     - id: prog-offhand
       item: 'Off hand: Melf''s First Staff → Rhapsody'
       slot: weapons
-      note: Dual Wielder at character level 4 is what makes either pair legal, since none of these staves are Light. Melf's First Staff carries Acts 1–2 for its +1 spell save DC and +1 spell attack rolls → Rhapsody takes over in Act 3, where its +3 to everything applies to every ray.
+      note: Dual Wielder at character level 4 is what makes either pair legal, since none of these staves are Light. Melf's First Staff carries Acts 1–2 for its +1 spell save DC and +1 spell attack rolls → Rhapsody takes over in Act 3, where its +3 to everything applies to every ray. Melf's goes in the bag once Rhapsody arrives. Staff of Spellpower covers the off hand until Rhapsody has its three living kills.
     - id: prog-ranged
       item: 'Ranged: Bow of Awareness → Hellrider Longbow'
       slot: ranged weapons
-      note: A pure stat-stick slot he never fires. +1 Initiative in Act 1 becomes +3 in Act 3. He wins the Hellrider contest by default because it is Two-Handed and Bonbon's ranged slot is occupied by the hand crossbows that are her whole engine.
+      note: A pure stat-stick slot he never fires. +1 Initiative in Act 1 becomes +3 in Act 3. He wins the Hellrider contest by default because Bonbon's ranged slot is Titanstring's for the whole game.
     - id: prog-consumables
       item: 'Elixir: Elixir of Vigilance, every long rest, all game'
       slot: consumables
       note: +5 Initiative and Surprise immunity, and the substitute for the Alert feat this build cannot afford. Initiative in BG3 is d4 + DEX, so +5 is larger than the whole die. He is the only party member with no competing elixir.
   playstyle: |-
-    - **Once per long rest:** cast Daylight (Enchant Item) on Bonbon's main-hand weapon. It lasts until the next rest and keeps Gale lit for the Coruscation chain.
+    - **Once per long rest:** cast Daylight (Enchant Item) on Bonbon's melee main hand — the Knife of the Undermountain King until the Resonance Stone, Phalar Aluve after. It lasts until the next rest and keeps Gale lit for the Coruscation chain.
+    - **Once per long rest, from Act 2:** take the Drakethroat Glaive out of the backpack, equip it, and cast Draconic Elemental Weapon with Twinned Spell (3 sorcery points) — one charge onto Charles's main hand (the one-handed Phalar Aluve behind his shield until the Resonance Stone, the 3d8 Shadow Blade after) and one onto Bonbon's Titanstring lying on the ground next to him — all game, since Titanstring is never replaced. Re-equip the staves; hand the bow back. From the Stone on, do this *after* Charles summons his Shadow Blade, not before.
     - **Turn 1:** Twinned Haste (Action) if nobody else supplies it, then a Quickened Scorching Ray (bonus action) into a high-HP target with Spellmight Gloves OFF. A level-4 slot fires 5 rays and takes Arcane Acuity to its 10 cap.
     - **Turn 1 onward:** switch Spellmight Gloves ON. Acuity now covers the −5.
     - **Then pick a job each turn:** more Scorching Ray at a single target, Fireball at a cluster of 4+, or Extended Command at everything you want disabled. Command is not Concentration, so it never costs you Haste.

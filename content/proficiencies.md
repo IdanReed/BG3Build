@@ -63,10 +63,10 @@ characters:
     proficient:
     - Deception
     - Acrobatics
-    - Insight
+    - Athletics
     - Perception
     - Investigation
-    source: 'Charlatan (Deception, Sleight of Hand) + High Elf (Perception) + 4 Rogue picks (Stealth, Investigation, Acrobatics, Insight). Rogue 1 Expertise only — no second pair (Rogue 6), no Reliable Talent (Rogue 11).'
+    source: 'Charlatan (Deception, Sleight of Hand) + High Elf (Perception) + 4 Rogue picks (Stealth, Investigation, Acrobatics, Athletics). Athletics over Insight: on the daily Giant Strength elixir he is the party''s best Shove, and Gale and Bonbon both cover Insight. Rogue 1 Expertise only — no second pair (Rogue 6), no Reliable Talent (Rogue 11).'
   Gale:
     saves:
     - CON

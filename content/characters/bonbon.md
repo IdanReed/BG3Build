@@ -6,47 +6,47 @@ builds:
   role: Ranged acuity control + damage + party face
   class: Swords Bard 11 / Fighter 1
   at_a_glance:
-    armour: All armour + shields (Fighter first) — the party's only heavy wearer
-    elixir: Giant Strength every long rest from Act 1 (Hill 21, then Cloud 27 in Act 3) — the Club is skipped, so Titanstring's rider runs on the elixir
-    concentration: Hold Monster, or Hold Person on humanoids Charles is not holding — Fear or Slow only when paralysis is invalid
-  build_order: Fighter 1 at character creation → Swords Bard 1–11. No respec at any point.
-  race: Half-Elf or Human (early shield)
-  background: Guild Artisan (Insight, Persuasion) — proficiencies.md assumes this one
+    armour: All armour + shields (Fighter first); the party's only Heavy wearer
+    elixir: Hill Giant Strength every long rest in Acts 1–2 (Titanstring rider); Elixir of Vigilance every long rest in Act 3 (The Dead Shot needs no Strength)
+    concentration: Hold Monster, or Hold Person on humanoids Charles is not holding; Hypnotic Pattern or Slow when paralysis is invalid; Silence over Charles's Hunger of Hadar on non-Holdable fights
+  build_order: Fighter 1 at character creation → Swords Bard. One respec, at the Crèche once the Gloves of Dexterity are on (Fighter 1 re-taken first, then Bard 1–11).
+  race: Wood Half-Elf
+  background: Guild Artisan (Insight, Persuasion); proficiencies.md assumes this one
   starting_stats:
-    STR: 8
+    STR: 10
     DEX:
-      base: 16
+      base: 8
       final: 18
-      via: Gloves of Dexterity — sets DEX to 18 (Crèche, Act 1) until Helldusk Gloves replace them in Act 3 and it returns to 16
-    CON: 14
+      via: Gloves of Dexterity set DEX to 18 (Crèche, Act 1) and stay on all game
+    CON: 16
     INT: 8
-    WIS: 10
+    WIS: 14
     CHA: 17
-  stats_note: 'Point-buy 8/15/14/8/10/15 = all 27 (DEX 15 + CHA 15 cost 9 each). +2 → CHA 17, +1 → DEX 16; Gloves of Dexterity then set DEX to 18 (Crèche, Act 1). INT stays at 8 — nothing in the build uses it.'
-  ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss). Birthright reaches CHA 22 in Act 3 if Gale is not using it.'
+  stats_note: 'Creation: 8/15/14/8/10/15, +2 CHA, +1 DEX. Respec at the Crèche with the Gloves of Dexterity on: STR 10, DEX 8, CON 15 + 1 = 16, INT 8, WIS 14, CHA 15 + 2 = 17; Fighter 1 first, then Bard. The Gloves hold DEX at 18 all game.'
+  ability_targets: 'MODDED Hair: CHA 17 → 18 (Hag''s Hair) → 20 (Mirror of Loss: DC 25 Religion check + 60% roll; Enhance Ability, Guidance, quicksave first). Birthright reaches CHA 22 in Act 3 if Gale is not using it.'
   ability_scores:
   - ability: STR
     steps:
     - score: 8
-      source: 'point-buy'
+      source: 'point-buy at creation'
+    - score: 10
+      source: 'Crèche respec'
     - score: 21
-      source: 'Elixir of Hill Giant Strength every long rest from Act 1 — the Club of Hill Giant Strength is skipped'
-    - score: 27
-      source: 'Elixir of Cloud Giant Strength, from level-9 vendors in Act 3'
+      source: 'Elixir of Hill Giant Strength every long rest through Act 2; Act 3 drinks Vigilance instead, so STR sits at 10'
   - ability: DEX
     steps:
     - score: 15
-      source: 'point-buy'
+      source: 'point-buy at creation'
     - score: 16
       source: '+1 Racial'
     - score: 18
-      source: 'SET by Gloves of Dexterity, Act 1'
-    - score: 16
-      source: 'Act 3: Helldusk Gloves replace the Gloves of Dexterity, so DEX drops back to its natural 16'
+      source: 'SET by Gloves of Dexterity (Crèche, Act 1), worn all game; the respec puts base DEX at 8 under them'
   - ability: CON
     steps:
     - score: 14
-      source: 'point-buy'
+      source: 'point-buy at creation'
+    - score: 16
+      source: 'Crèche respec (15 + 1 Racial)'
   - ability: INT
     steps:
     - score: 8
@@ -54,7 +54,9 @@ builds:
   - ability: WIS
     steps:
     - score: 10
-      source: 'point-buy'
+      source: 'point-buy at creation'
+    - score: 14
+      source: 'Crèche respec'
   - ability: CHA
     steps:
     - score: 15
@@ -64,13 +66,13 @@ builds:
     - score: 18
       source: '+1 Hag''s Hair'
     - score: 20
-      source: '+2 Mirror of Loss, Act 3'
+      source: '+2 Mirror of Loss, Act 3 (DC 25 Religion check + 60% roll: Enhance Ability, Guidance, quicksave first)'
   feats:
   - at: Bard 4 (char 5)
     feat: Sharpshooter
   - at: Bard 8 (char 9)
-    feat: War Caster
-    note: Advantage on CON saves to hold Hold Monster — the party's melee auto-crit engine — plus opportunity-spell casting. Taken over Dual Wielder, which would only matter for pairing Phalar Aluve with a second weapon; a shield does that job with no feat.
+    feat: Alert
+    note: +5 initiative and Surprise immunity, so Hold Monster lands before the enemy's first turn. Taken over War Caster; Splint crit immunity, Helldusk damage reduction, the shield and Charles's aura carry the concentration save.
   fighting_styles:
   - Archery (Fighter)
   - Dueling (Bard)
@@ -78,28 +80,28 @@ builds:
   - Glyph of Warding
   - Hold Monster
   - Confusion
-  - Fear
+  - Plant Growth
   - Magical Secrets → Command + Conjure Elemental
   creation:
-    level1_class: Fighter 1 (taken at character creation)
-    level1_gains: 'Archery fighting style (+2 ranged), Second Wind, and — because Fighter is taken FIRST — STR + CON saves, all armour (incl. Heavy) + shields + martial weapons, and 2 Fighter skills.'
+    level1_class: Fighter 1 (taken at character creation, and re-taken first at the Crèche respec)
+    level1_gains: 'Archery (+2 ranged), Second Wind, STR + CON saves, all armour incl. Heavy, shields, martial weapons, and 2 Fighter skills (Fighter first).'
     subclass_choice: College of Swords (Bard 3)
     proficiencies:
-      armor_weapons: All armour, shields, martial weapons and Archery (Fighter 1); Medium + Scimitars (College of Swords).
-      saving_throws: STR + CON (Fighter-first) — CON guards Hold Monster concentration.
-      skills: Fighter 2 + Bard skills; Expertise ×4 (Bard 3 + 10) + Jack of All Trades — the party face.
-    starting_cantrips: '2 at Bard 1 (Vicious Mockery, Friends) → 4 by Bard 10.'
-    starting_spells: '4 known at Bard 1, +1 every Bard level → 14 by Bard 11, plus the 2 Magical Secrets at Bard 10 that sit on top of the class table (16 in all). She has no Shield reaction — lean on range, positioning and the Fighter dip''s armour proficiency instead.'
-    notes: 'Half-Elf/Human. Fighter 1 at creation → Swords Bard ×11, no respec. Bard 11 = caster level 11 → one L6 slot, so Command hits up to 6 targets on Bard levels alone; the only things a Wizard dip would have added are the Shield reaction and scroll scribing. Feats/ASIs at Bard 4 (char 5) and Bard 8 (char 9). ⚠ WHY NOT FIGHTER 2 (Action Surge)? The multiclass guides list Fighter 2 as a near-universal package and their own party build runs a Swords Bard 6 / Fighter 2 core. Action Surge would give a second Attack action to saturate Arcane Acuity and fire control a full turn earlier — but it costs Bard 11, and with it the LEVEL 6 SLOT that upcasts Command to six targets and unlocks Otto''s Irresistible Dance. Since the six-target Command is this build''s stated payoff and the Acuity engine is gear-gated to Act 2–3 anyway, Fighter 1 wins here. Revisit only if the control loop feels a turn too slow in play.'
+      armor_weapons: All armour, shields, martial weapons and Archery (Fighter 1); Medium armour + Scimitars (College of Swords).
+      saving_throws: STR + CON (Fighter first); CON guards Hold Monster concentration.
+      skills: Fighter 2 + Bard 1; Expertise ×4 (Bard 3 + Bard 10) + Jack of All Trades. The party face.
+    starting_cantrips: '2 at Bard 1 (Minor Illusion, Friends), a 3rd at Bard 4 (Vicious Mockery), a 4th at Bard 10 (Mage Hand).'
+    starting_spells: '4 known at Bard 1, +1 per Bard level (14 at Bard 11), plus the 2 Magical Secrets at Bard 10 on top: 16 known. One optional swap per level from Bard 2. No Shield reaction: stay at range.'
+    notes: 'Wood Half-Elf. Fighter 1 at creation → Swords Bard 11, one respec at the Crèche (Fighter 1 first again). Bard 11 gives the L6 slot for a six-target Command. Feats at Bard 4 (char 5) and Bard 8 (char 9).'
   spells:
-    note: Bard is a known caster (Always Prepared, replace 1 per level-up). Mandatory = the acuity-control engine; Recommended = the wider control/utility toolbox.
+    note: Known caster, one optional swap per level from Bard 2. Mandatory = the Acuity-control engine; Recommended = the rest of the final list. 16 known at Bard 11 (14 Bard + 2 Magical Secrets).
     mandatory:
     - spell: 'Fighting Style: Archery'
       level: Feature (Fighter 1)
       school: N/A (passive)
       save: None
       when: char 1 (Fighter 1)
-      why: +2 ranged attack — offsets Sharpshooter's −5 on every Titanstring shot, from the Act 1 nova to the Arcane-Acuity engine later.
+      why: +2 ranged attack; offsets Sharpshooter's −5 on every shot.
     - spell: Hold Monster
       tier: A
       tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (30:07) — paralysis is devastating but costs a level 5 slot and caps at two targets'
@@ -107,8 +109,8 @@ builds:
       guide_level: 10
       school: Enchantment
       save: WIS save
-      when: Bard 9
-      why: Paralyse — attacks within 3m auto-crit, the melee auto-crit engine for Charles's smites. Upcast adds +1 target per slot above 5th. Concentration.
+      when: Bard 9 (char 10)
+      why: Paralyse; attacks within 3 m auto-crit, the set-up for Charles's smite nova. Upcast adds a target per slot above 5th. Concentration.
     - spell: Command
       tier: S
       tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (28:37) — concentration-free turn denial that upcasts to multiple enemies; every higher-level slot competes with it'
@@ -116,8 +118,8 @@ builds:
       guide_level: 11
       school: Enchantment
       save: WIS save
-      when: Bard 10 (Magical Secrets)
-      why: The bonus-action loop via the Band of the Mystic Scoundrel. +1 target per slot above 1st, so the Bard-11 L6 slot hits up to 6. DC uses CHA + Arcane Acuity.
+      when: Bard 10 (Magical Secrets, char 11)
+      why: Bonus action through the Band of the Mystic Scoundrel. +1 target per slot above 1st; the L6 slot hits six. DC uses CHA + Arcane Acuity.
     - spell: Glyph of Warding
       tier: S
       tier_note: 'Level 3 spells tier list, part 1 (A-G) (45:04) — cast it directly on an enemy like a Fireball; non-concentration, six damage types, plus an AoE Dex-save sleep'
@@ -125,18 +127,17 @@ builds:
       guide_level: 6
       school: Abjuration
       save: DEX save
-      when: Bard 5
-      why: Pre-placed AoE burst (5d8, choose element) set as a ground trap before a fight.
+      when: Bard 5 (char 6)
+      why: 5d8 burst, element of choice; set as a ground trap before a fight or cast straight onto an enemy. No concentration.
     recommended:
-    - spell: Fear
-      tier: A
-      tier_note: 'Level 3 spells tier list, part 1 (A-G) (35:36) — strongest of the three encounter-ending control spells, but a 30ft cone, so hardest to land'
+    - spell: Plant Growth
+      tier: B
+      tier_note: 'Level 3 spells tier list, part 2 (H-W) (20:19) — quarter movement, non-concentration, same footprint as Hunger of Hadar; but FLAMMABLE and useless versus ranged enemies'
       level: '3'
-      guide_level: 9
-      school: Illusion
-      save: WIS save
-      when: Bard 5
-      why: 9m cone — frightened enemies drop weapons and cannot act or approach; scales with CHA + Arcane Acuity. Concentration.
+      school: Transmutation
+      save: None
+      when: Bard 8 (char 9)
+      why: No concentration, no save; quarter movement in a 6 m circle. Cast between the pack and the back line, never on the melee cluster; layer it under Charles's Hunger of Hadar. ⚠ Fire burns it away.
     - spell: Confusion
       tier: B
       tier_note: 'Spells tier list, level 4, part 1 (Banishment through Fire Shield) (13:24) — hits enemies only, not allies; unreliable, but shut a door and the encounter kills itself'
@@ -144,8 +145,8 @@ builds:
       guide_level: 8
       school: Enchantment
       save: WIS save
-      when: Bard 7
-      why: 6m scramble — enemies attack randomly or skip turns. Concentration.
+      when: Bard 7 (char 8)
+      why: 6 m scramble; enemies attack at random or skip turns. Enemies only. Concentration.
     - spell: Hypnotic Pattern
       tier: A
       tier_note: 'Level 3 spells tier list, part 2 (H-W) (10:24) — best when it catches the whole encounter; A only because it shares a role with Fear and Sleet Storm, and he would accept S'
@@ -153,8 +154,8 @@ builds:
       guide_level: 6
       school: Illusion
       save: WIS save
-      when: Bard 5
-      why: 'Strong 9m AoE incapacitate and a superb Acuity payoff. ⚠ The tier lists rate it only A, not S — the duration is short and ANY damage wakes the targets, so it does not survive a party that is already firing into the pack. Treat it as a way to buy one clean turn, not as a lockdown. Concentration.'
+      when: Bard 5 (char 6, swap for Dissonant Whispers)
+      why: 9 m AoE incapacitate at her Acuity DC. Any damage wakes a target, so it buys one clean turn, not a lockdown. Concentration.
     - spell: Conjure Elemental
       tier: S
       tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (15:03) — an all-day summon as strong as an extra party member; all eight modes viable'
@@ -162,8 +163,8 @@ builds:
       guide_level: 11
       school: Conjuration
       save: None
-      when: Bard 10 (Magical Secrets)
-      why: 'The second Magical Secret. S tier — "a day-long, concentration-free elemental or myrmidon is comparable to adding another character to the party." The concentration-free part is what makes it fit HER specifically: she can field it and still hold Hold Monster, which no other summon of this weight allows. The Water Myrmidon also mass-applies Wet, the party''s only reliable way to strip fire resistance ahead of Gale.'
+      when: Bard 10 (Magical Secrets, char 11)
+      why: 'Second Secret. No concentration, lasts until long rest: cast the L6 version before the first fight and refund the slot with Spellcrux. Air Myrmidon (default): its flail Stuns on a failed DC 13 CON save, Raging Vortex is a no-save Silence. Earth Myrmidon tanks. Never Water or Fire.'
     - spell: Globe of Invulnerability
       tier: S
       tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6 (26:18) — total damage immunity wins most boss fights outright; get one cast into every Honour party'
@@ -172,7 +173,7 @@ builds:
       school: Abjuration
       save: None (Concentration)
       when: Scroll only — NOT selectable as a Magical Secret
-      why: 'Rated the #9 spell in the game and worth carrying, but she cannot learn it: Magical Secrets at Bard 10 selects from spells up to LEVEL 5 only, and Globe is 6th-level. With no Wizard dip there is no scribing route either, so buy scrolls and cast them for the Act 3 caster gauntlets and the Netherbrain''s area attacks. ⚠ Concentration, so a scroll cast still costs her Hold Monster that turn. Counterspell stays off her list because Gale and Charles already cover that lane, and three carriers is one more than the guides advise.'
+      why: 'Not learnable (Magical Secrets stop at level 5; no Wizard dip to scribe). Buy scrolls for the Act 3 caster gauntlets and the Netherbrain. ⚠ Concentration: a scroll cast drops Hold Monster. Counterspell stays off her list; Gale and Charles carry it.'
     - spell: Hold Person
       tier: S
       tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (55:42) — paralysis costs turns and gives automatic crits within 10 ft; humanoids only, best with high save DC'
@@ -180,17 +181,8 @@ builds:
       guide_level: 4
       school: Enchantment
       save: WIS save
-      when: Bard 3
-      why: Cheaper single-target paralyse (auto-crit within 3m), far earlier than Hold Monster — the early-game stand-in. Concentration.
-    - spell: Dominate Person
-      tier: D
-      tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 5 (25:19) — one unreliable temporary ally for a level 5 slot; AoE control is better'
-      level: '5'
-      guide_level: 10
-      school: Enchantment
-      save: WIS save
-      when: Bard 9
-      why: Turn a humanoid against its allies — a flex 5th-level pick alongside Hold Monster. Concentration.
+      when: Bard 3 (char 4)
+      why: Single-humanoid paralyse from char 4 (auto-crit within 3 m); upcast adds targets. Concentration.
     - spell: Vicious Mockery
       tier: C
       tier_note: 'Cantrips tier list, [Updated] Patch 8 (1:04:16) — too little damage to beat firing a bow; a late-game bard filler action only'
@@ -198,8 +190,8 @@ builds:
       guide_level: 2
       school: Enchantment
       save: WIS save
-      when: Bard 1
-      why: Psychic damage plus disadvantage on the target's next attack — free ranged control that feeds acuity.
+      when: Bard 4 (char 5)
+      why: Ranged fallback when the bow cannot fire; disadvantage on the target's next attack.
     - spell: Friends
       tier: A
       tier_note: 'Cantrips tier list, [Updated] Patch 8 (26:48) — advantage on Charisma checks; COUNTS AS A CRIME ON TACTICIAN AND HONOUR MODE, so hide or fast-travel afterwards'
@@ -207,8 +199,16 @@ builds:
       guide_level: 2
       school: Enchantment
       save: None (Concentration)
-      when: Bard 1
-      why: Advantage on Charisma checks against a non-hostile creature — the face enabler. Never cast it on companions (approval loss when it ends).
+      when: Bard 1 (char 2)
+      why: Advantage on Charisma checks against a non-hostile. Never on companions (approval loss when it ends); leave the area afterwards.
+    - spell: Minor Illusion
+      tier: S
+      tier_note: 'Cantrips tier list, [Updated] Patch 8 (35:56) — moves NPCs with no save or roll; clusters enemies for AoE, sets ambushes, pulls enemies one at a time'
+      level: Cantrip
+      school: Illusion
+      save: None
+      when: Bard 1 (char 2)
+      why: Moves creatures toward a point with no save; groups enemies for Gale's Fireball and relocates NPCs for Asterion's theft routes.
     - spell: Slow
       tier: B
       tier_note: 'Level 3 spells tier list, part 2 (H-W) (33:15) — targets six creatures so it spares allies, and bypasses incapacitation immunity; the reliable second-choice control spell'
@@ -216,8 +216,8 @@ builds:
       guide_level: 7
       school: Transmutation
       save: WIS save
-      when: Bard 5
-      why: UNDEAD-PROOF control, unlike Hold Monster/Command — half speed, −2 AC and DEX saves, one action only, ~50% chance to fizzle a cast. Bank it for the Act-2 undead and construct fights where paralysis fails. Concentration.
+      when: Bard 6 (char 7)
+      why: Undead- and construct-proof control; half speed, −2 AC and DEX saves, one action, casts can fail. For the fights where paralysis is invalid. Concentration.
     - spell: Healing Word
       tier: S
       tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (10:48) — ranged bonus-action revive, and the delivery system for Whispering Promise and Hellrider''s Pride buffs'
@@ -225,8 +225,8 @@ builds:
       guide_level: 2
       school: Evocation
       save: None
-      when: Bard 1
-      why: The no-healer party's emergency pickup — a bonus-action ranged revive so a downed ally does not cost a full turn. Cheap to keep known; pairs with stocked Revivify scrolls.
+      when: Bard 1 (char 2)
+      why: Bonus-action ranged revive for the no-healer party. Triggers the Whispering Promise and Broodmother's Revenge in Act 1.
     - spell: Longstrider
       tier: S
       tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (27:03) — free all-day +10 movement on everyone including summons; he would put it in S+ if that existed'
@@ -234,8 +234,16 @@ builds:
       guide_level: 2
       school: Transmutation
       save: None (ritual)
-      when: Bard 1
-      why: Free out-of-combat party movement buff lasting until long rest, with no Concentration.
+      when: Bard 1 (char 2)
+      why: Ritual +3 m movement on the whole party until long rest, no concentration. She is the party's only copy; never swap it out.
+    - spell: Heroism
+      tier: C
+      tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (16:32) — 5 temp HP per turn plus fear immunity, but needs long fights and no other temp HP source; he admits it is a pet spell'
+      level: '1'
+      school: Enchantment
+      save: None (Concentration)
+      when: Bard 1 (char 2) → swapped for Enhance Ability at Bard 4
+      why: The concentration spell until Hold Person; one ally is immune to Frightened and gains 5 temporary HP each turn.
     - spell: Enhance Ability
       tier: B
       tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (36:31) — cast a couple of times a run; worth preparing for the few unavoidable skill checks'
@@ -243,17 +251,8 @@ builds:
       guide_level: 5
       school: Transmutation
       save: None (Concentration)
-      when: Bard 4
-      why: 'Advantage on checks with one chosen ability. At char 5, replace the redundant Faerie Fire with it for dialogue, theft and exploration — an out-of-combat mode, never held alongside Hold Person. ⚠ Rated only B: "significant checks are less frequent than players expect," and Bonbon already has Expertise ×4 plus Jack of All Trades. Low stakes either way.'
-    - spell: Greater Invisibility
-      tier: A
-      tier_note: 'Spells tier list, level 4, part 2 (Freedom of Movement through Wall of Fire) (13:18) — A for ordinary parties: free attacks then a surprise round; broken if built around stealth checks'
-      level: '4'
-      guide_level: 8
-      school: Illusion
-      save: None (Concentration)
-      when: Bard 7+ — optional pick
-      why: 'A-tier, and the tier lists note it "anchors an entire party strategy" — the target stays invisible while attacking, giving permanent advantage and imposing disadvantage on attacks against it. Concentration, so it directly competes with Hold Monster: take it as the survivability alternative for fights where nothing worth Holding exists, or on a run where you want the stealth loop.'
+      when: Bard 4 (char 5, swap for Heroism)
+      why: Advantage on checks with one ability. Dialogue, theft, and the Mirror of Loss Religion check in Act 3. Out of combat only.
     - spell: Silence
       tier: A
       tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (43:29) — free as a ritual, shuts down enemy casters and noisy legendary actions; needs something holding them inside'
@@ -261,8 +260,8 @@ builds:
       guide_level: 5
       school: Illusion
       save: None (Concentration)
-      when: Bard 3+ — optional pick
-      why: 'A-tier. A zone that hard-disables enemy spellcasting with no save at all — the answer to the Act 3 caster packs that Counterspell can only handle one at a time, and the reason leaving Counterspell off her list costs less than it looks. Concentration.'
+      when: Bard 10 (char 11, the regular pick beside the Secrets)
+      why: No-save zone; no spellcasting and no verbal escapes (Misty Step, Dimension Door) inside it. Cast over Charles's Hunger of Hadar on fights with nothing to Hold. Concentration.
     - spell: Dissonant Whispers
       tier: S
       tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (42:35) — concentration-free damage plus two turns of Frightened on a WIS save; effectively stuns melee enemies'
@@ -270,17 +269,8 @@ builds:
       guide_level: 2
       school: Enchantment
       save: WIS save
-      when: Bard 1
-      why: Early psychic damage plus Frightened — useful single-target control before the Acuity engine.
-    - spell: Faerie Fire
-      tier: C
-      tier_note: 'Level 1 spells tier list, [Updated] part 1 (Animal Friendship to Goodberry) (57:53) — huge radius, but other spells grant advantage and do more; outclassed at its own job'
-      level: '1'
-      guide_level: 2
-      school: Evocation
-      save: DEX save
-      when: Bard 1
-      why: Early area advantage and anti-invisibility. Concentration, so replace it once stronger control arrives.
+      when: Bard 1 (char 2) → swapped for Hypnotic Pattern at Bard 5
+      why: Early psychic damage plus Frightened on a WIS save, no concentration. Gone at char 6.
     - spell: Tasha's Hideous Laughter
       tier: A
       tier_note: 'Level 1 spells tier list, [Updated] part 2 (Grease to Wrathful Smite) (52:09) — weak early because damage grants extra saves; late, a 10-turn disable that bypasses boss incapacitation immunities'
@@ -288,8 +278,8 @@ builds:
       guide_level: 3
       school: Enchantment
       save: WIS save
-      when: Bard 2
-      why: Cheap early single-target incapacitation — a bridge to Hold Person that can be replaced later.
+      when: Bard 2 (char 3)
+      why: Single-target incapacitate on a WIS save. Kept all game; through the Band it is a bonus action at her Acuity DC, and it bypasses boss incapacitation immunities.
     - spell: Invisibility
       tier: A
       tier_note: 'Spells tier list, level 2, part 1 (Aid through Invisibility) (58:48) — wins no fights alone but invaluable for scouting and as a panic button; potions compete'
@@ -298,8 +288,8 @@ builds:
       wiki: Invisibility (spell)
       school: Illusion
       save: None
-      when: Bard 4
-      why: Scouting, theft setup and an emergency escape — strong out-of-combat utility.
+      when: Bard 4 (char 5)
+      why: Scouting, theft setup and an escape. Kept all game; potions are the backup.
     - spell: Otto's Irresistible Dance
       tier: A
       tier_note: 'ULTIMATE SPELLS GUIDE - [Updated] BG3 Spells Tier List - Level 6 (41:05) — no-save lockdown that bypasses legendary resistance; only for fights with one main enemy'
@@ -307,8 +297,8 @@ builds:
       guide_level: 12
       school: Enchantment
       save: WIS save after the effect begins
-      when: Bard 11
-      why: Immediate single-target shutdown when the level 6 slot is not reserved for an upcast Command.
+      when: Bard 11 (char 12)
+      why: Single-target shutdown when the L6 slot is not reserved for a six-target Command.
     - spell: Mage Hand
       tier: A
       tier_note: 'Cantrips tier list, [Updated] Patch 8 (33:23) — costs a short-rest charge, but scouts, triggers traps, throws potions and soaks one enemy attack'
@@ -316,17 +306,8 @@ builds:
       guide_level: 5
       school: Conjuration
       save: None
-      when: Bard 4
-      why: 'Exploration and object manipulation with no attack roll, save or Concentration. For a no-slot Wet setup, drop a water bottle in reach and use the Hand''s Throw for a 2m splash.'
-    - spell: Light
-      tier: A
-      tier_note: 'Cantrips tier list, [Updated] Patch 8 (30:38) — hands-free, concentration-free light lasting all day; most parties need some light source'
-      level: Cantrip
-      guide_level: 11
-      school: Evocation
-      save: None
-      when: Bard 10
-      why: Long-lasting illumination for dark areas, with no slot or Concentration.
+      when: Bard 10 (char 11), or drop
+      why: Exploration and object use with no roll or concentration. Its Throw splashes a water bottle (2 m) to Wet a target for Gale's Cone of Cold or Chain Lightning.
   leveling:
   - char_level: 1
     class: Fighter 1
@@ -339,13 +320,13 @@ builds:
     - category: Fighting style
       picks: 1
       recommendation: Archery
-      note: +2 to ranged attack rolls offsets Sharpshooter on every Titanstring projectile, all game.
+      note: +2 to ranged attack rolls; offsets Sharpshooter on every projectile.
     - category: Skills
       picks: 2
       recommendation:
       - Intimidation
       - Perception
-      note: 'TWO picks, easy to miss behind the Fighting Style — and only because Fighter is the FIRST class here; a Fighter dip taken later grants no skills at all. Intimidation is load-bearing, not flavour: char 11 spends Expertise on it, Expertise requires existing proficiency, and Intimidation appears on neither the Guild Artisan background nor the Swords package — the Fighter list is its only source. Perception is the most-rolled skill in the game. Do NOT take Athletics on a STR 8 character; Jack of All Trades already covers it at half proficiency.'
+      note: 'Two picks, Fighter-first only. Intimidation must come from here (char 11 spends Expertise on it; no other list offers it). Perception is the most-rolled skill. Not Athletics.'
   - char_level: 2
     class: Bard 1
     gains:
@@ -356,21 +337,21 @@ builds:
     - category: Cantrips
       picks: 2
       recommendation:
-      - Vicious Mockery
+      - Minor Illusion
       - Friends
-      note: Mockery is the ranged fallback; Friends supports the face role but must never be cast on companions.
+      note: Minor Illusion groups enemies and moves NPCs with no save; Friends for dialogue, never on companions.
     - category: Spells
       picks: 4
       recommendation:
       - Healing Word
       - Longstrider
       - Dissonant Whispers
-      - Faerie Fire
-      note: Emergency pickup, ritual party movement, early single-target control, and an early advantage tool.
+      - Heroism
+      note: Bonus-action revive, ritual party movement, early Frightened control, and Heroism as the concentration spell until Hold Person.
     - category: Skill
       picks: 1
       recommendation: Deception
-      note: 'ONE pick, not three — multiclassing into Bard grants a single skill, where a first-class Bard would grant three. It must be Deception: char 4 spends Expertise on it, and Deception appears on neither the Guild Artisan background nor the Fighter list, so this is its only source. Taking it here also makes the build legal on the Half-Elf option, which grants no free skill in BG3 — on Human you could instead put Deception on the racial free skill and spend this pick on Performance.'
+      note: 'One pick (multiclass Bard). It must be Deception: char 4 spends Expertise on it and no other list offers it. Wood Half-Elf grants no free skill.'
   - char_level: 3
     class: Bard 2
     gains:
@@ -381,7 +362,7 @@ builds:
     - category: Spell
       picks: 1
       recommendation: Tasha's Hideous Laughter
-      note: Cheap early control until Hold Person and the Acuity package arrive.
+      note: Cheap single-target incapacitate now; a bonus action at her Acuity DC through the Band in Act 3. Kept all game.
   - char_level: 4
     class: Swords Bard 3
     gains:
@@ -393,21 +374,21 @@ builds:
     - category: Subclass
       picks: 1
       recommendation: College of Swords
-      note: Ranged Slashing Flourish supplies the multi-hit engine.
+      note: Ranged Slashing Flourish is the multi-hit engine.
     - category: Fighting style
       picks: 1
       recommendation: Dueling
-      note: A formality — neither Swords style touches a bow. Duelling wants a lone melee weapon and Two-Weapon Fighting an off-hand attack, and she makes neither. Pick Duelling and move on.
+      note: A formality; neither Swords style touches a bow.
     - category: Expertise
       picks: 2
       recommendation:
       - Persuasion
       - Deception
-      note: Establishes Bonbon as the party face.
+      note: The party face.
     - category: Spell
       picks: 1
       recommendation: Hold Person
-      note: The early paralyse option before Hold Monster.
+      note: The paralyse before Hold Monster; Charles's melee auto-crits within 3 m.
   - char_level: 5
     class: Swords Bard 4
     gains:
@@ -418,20 +399,20 @@ builds:
     - category: Feat
       picks: 1
       recommendation: Sharpshooter
-      note: The +10 damage mode is the Act 1 ranged spike; Archery and advantage offset the attack penalty.
+      note: +10 damage mode for the Act 1 spike. Toggle off below ~40% displayed hit chance.
     - category: Cantrip
       picks: 1
-      recommendation: Mage Hand
-      note: 'Exploration utility with no concentration cost. For a no-slot Wet setup, drop a water bottle for the Hand and use its Throw on the Hand''s turn.'
+      recommendation: Vicious Mockery
+      note: Ranged fallback when the bow cannot fire.
     - category: Spell
       picks: 1
       recommendation: Invisibility
-      note: 'ONE new spell known at Bard 4 (7 total), not two — the second name below comes out of the free replacement, not a second pick. Both spells concentrate, so they are exploration tools once Hold Person is online.'
+      note: 'One new spell (7 known). Scouting, theft setup and an escape; kept all game.'
     - category: Replacement
       picks: 1
       optional: true
-      recommendation: Faerie Fire → Enhance Ability
-      note: 'The optional swap every Bard level from 2 onward offers. Faerie Fire has done its job by now, and Enhance Ability is the better out-of-combat concentration spell.'
+      recommendation: Heroism → Enhance Ability
+      note: 'Hold Person now owns the concentration lane. Enhance Ability covers dialogue, theft and the Act 3 Mirror of Loss check.'
   - char_level: 6
     class: Swords Bard 5
     gains:
@@ -442,12 +423,12 @@ builds:
     - category: Spell
       picks: 1
       recommendation: Glyph of Warding
-      note: 'ONE new spell known at Bard 5 (8 total). Glyph of Warding is the priority burst pick; take it with the pick and bring Hypnotic Pattern in on the swap below.'
+      note: 'One new spell (8 known). The pre-placed 5d8 burst.'
     - category: Replacement
       picks: 1
       optional: true
-      recommendation: An early flex spell → Hypnotic Pattern
-      note: 'Hypnotic Pattern is the level-3 control card and it does not need a second pick — trade one of the char-2 level-1 spells for it. Longstrider is the safest to drop; it is a ritual you can re-cast off a scroll.'
+      recommendation: Dissonant Whispers → Hypnotic Pattern
+      note: 'Keep Longstrider (the party''s only copy). Hypnotic Pattern buys one clean turn; any damage wakes the targets.'
   - char_level: 7
     class: Swords Bard 6
     gains:
@@ -458,7 +439,7 @@ builds:
     - category: Spell
       picks: 1
       recommendation: Slow
-      note: The undead- and construct-safe control choice when paralysis is invalid.
+      note: Undead- and construct-proof control when paralysis is invalid.
   - char_level: 8
     class: Swords Bard 7
     gains:
@@ -468,12 +449,12 @@ builds:
     - category: Spell
       picks: 1
       recommendation: Confusion
-      note: Wide-area control that scales extremely well with Arcane Acuity.
+      note: Wide-area control that scales with Arcane Acuity.
     - category: Replacement
       picks: 1
       optional: true
-      recommendation: Healing Word or Dissonant Whispers → Greater Invisibility
-      note: 'The free replacement slot every Bard level from 2 onward offers, unused until now. Greater Invisibility is endorsed elsewhere in this build but never actually learned in any row — A tier, "enables repeated attacks or casts while hidden" and "can anchor an entire party strategy." By char 8 the level-1 picks from char 2 are dead weight, so this costs nothing.'
+      recommendation: No swap
+      note: 'Every known spell still earns its place. Greater Invisibility was weighed and dropped (Concentration; competes with Hold Monster).'
   - char_level: 9
     class: Swords Bard 8
     gains:
@@ -482,12 +463,12 @@ builds:
     recommendations:
     - category: Feat
       picks: 1
-      recommendation: War Caster
-      note: Advantage on concentration saves protects the later Hold Monster engine.
+      recommendation: Alert
+      note: +5 initiative and Surprise immunity so Hold Monster lands before enemies act. Splint crit immunity, Helldusk damage reduction and the shield cover the concentration save War Caster would have.
     - category: Spell
       picks: 1
-      recommendation: Hold Person
-      note: 'MORE HOLD, NOT MORE FEAR. A held humanoid takes automatic critical hits from melee within 3m, which is exactly what Charles converts into a doubled-smite nova, so a second Hold is worth more to this party than a cone of Frightened. Upcast Hold Person hits an extra target per slot level, and her Arcane Acuity DC makes it stick. Keep Fear only as a scroll or a swap for a crowd of non-humanoids that Hold Person cannot touch.'
+      recommendation: Plant Growth
+      note: 'No concentration, no save; quarter movement in 6 m. Cast between the pack and the back line, never on the melee cluster; layer it under Charles''s Hunger of Hadar.'
   - char_level: 10
     class: Swords Bard 9
     gains:
@@ -497,12 +478,12 @@ builds:
     - category: Spell
       picks: 1
       recommendation: Hold Monster
-      note: 'ONE new spell known at Bard 9 (12 total) and the level-5 list opens. Hold Monster is the pick — it extends the auto-crit setup to everything Hold Person cannot touch.'
+      note: 'One new spell (12 known); the level-5 list opens. Paralyse anything Hold Person cannot touch.'
     - category: Replacement
       picks: 1
       optional: true
-      recommendation: A lower-level flex spell → Dominate Person
-      note: 'Only if both are wanted immediately. Dominate Person costs no extra pick if it replaces a dead level-1 or level-2 spell; otherwise leave it and take it with the char-12 pick instead.'
+      recommendation: No swap
+      note: 'Every known spell still earns its place; Invisibility stays. Dominate Person (D tier) is not taken; Silence arrives as the regular Bard 10 pick next level.'
   - char_level: 11
     class: Swords Bard 10
     gains:
@@ -510,14 +491,14 @@ builds:
     - Expertise selections ×2
     - Improved Bardic Inspiration d10
     - Fourth Bard cantrip
-    - One additional Bard spell known (13th)
+    - Spells known 12 → 13 (a regular Bard pick), plus the two Magical Secrets on top
     recommendations:
     - category: Magical Secrets
       picks: 2
       recommendation:
       - Command
       - Conjure Elemental
-      note: '⚠ MAGICAL SECRETS STOP AT LEVEL 5, so Globe of Invulnerability is NOT selectable here. bg3.wiki: "At level 10, all Bards can learn two spells up to level 5," and the list is Banishing Smite, Cone of Cold, Conjure Elemental, Contagion, Wall of Stone. Globe and Heroes'' Feast are both 6th-level and neither is on it, and with no Wizard dip there is no scroll-scribing route either — buy Globe scrolls and cast them, that is all. Command takes the first pick: the Band of the Mystic Scoundrel makes hers a BONUS ACTION at the party''s highest Acuity DC and the level 6 slot upcasts it to six targets, neither of which Gale can replicate. Conjure Elemental takes the second — S tier, "a day-long, concentration-free elemental or myrmidon is comparable to adding another character to the party," and because it needs no Concentration she stays free to hold Hold Monster. The Water Myrmidon also mass-applies Wet, which is the party''s only reliable way to strip enemy fire resistance for Gale. Counterspell is the runner-up if you would rather have the interrupt.'
+      note: 'Secrets stop at level 5 (no Globe of Invulnerability). Command: a bonus action through the Band, six targets from the L6 slot. Conjure Elemental: Air Myrmidon (Stun flail, no-save Silence vortex) or Earth Myrmidon (tank); never Water or Fire. Counterspell is the runner-up.'
     - category: Expertise
       picks: 2
       recommendation:
@@ -527,11 +508,11 @@ builds:
     - category: Spell
       picks: 1
       recommendation: Silence
-      note: 'The FOURTH pick on this level and the easiest of all to miss: Bard 10 grants a normal 13th Bard spell known ON TOP of the two Magical Secrets, which the level-up UI presents as a separate step. Silence is A tier for "caster lockdown" and "since dangerous casters appear throughout the game, Silence has frequent opportunities." It is also load-bearing here — the Magical Secrets note above justifies dropping Counterspell partly by pointing at Silence, yet no row ever learned it.'
+      note: 'The regular Bard 10 pick, a separate level-up step from the Secrets. Silence over Charles''s Hunger of Hadar on non-Holdable fights: no save, no casting, no Misty Step or Dimension Door out.'
     - category: Cantrip
       picks: 1
-      recommendation: Minor Illusion
-      note: 'S tier — "moves creatures toward a point without a saving throw," which groups enemies for Gale''s Fireball and relocates NPCs for Asterion''s theft routes. Both published Swords Bard guides name it for the face specifically: "Minor Illusion can distract/relocate entire rooms of NPCs to open up some unique thievery options." Light is the A-tier alternative if the party needs another illumination carrier, but Gale already learns Light at char 4 and Daylight at char 8.'
+      recommendation: Mage Hand
+      note: 'Fourth cantrip. Exploration and object use; its Throw can Wet a target with a water bottle for Gale''s Cone of Cold or Chain Lightning. Drop it if unused.'
   - char_level: 12
     class: Swords Bard 11
     gains:
@@ -542,7 +523,7 @@ builds:
     - category: Spell
       picks: 1
       recommendation: Otto's Irresistible Dance
-      note: Best-in-class single-target shutdown when the level 6 slot is not reserved for mass Command.
+      note: Single-target shutdown when the L6 slot is not reserved for a six-target Command.
   itemization:
     act1:
     - id: titanstring-bow
@@ -551,31 +532,37 @@ builds:
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (32:39) — adds your strength modifier; best in slot Act 1 damage with a giant strength elixir'
       slot: weapons
       bis: true
-      note: 'Brem, after Find the Missing Shipment. Archery + Sharpshooter + ranged Slashing Flourish apply its STR rider to large, accurate nova shots, and it is HER BOW FOR THE WHOLE RUN. The Strength comes from an Elixir of Hill Giant Strength (STR 21) every long rest from day one — the Club of Hill Giant Strength is deliberately skipped on the Arcane Tower stool, and nothing competes for the elixir slot because she never drinks Bloodlust.'
+      note: 'Brem, Zhentarim hideout, after Find the Missing Shipment. Her bow for Acts 1–2. Drink an Elixir of Hill Giant Strength every long rest for the +5 rider on every projectile; skip the Club of Hill Giant Strength.'
     - id: act1-offhand-bonbon
       item: Safeguard Shield
       tier: A
       tier_note: '5wATdII3wmI (13:55) — +1 saving throws with no story requirement; usually the earliest upgrade over a plain shield'
       slot: weapons
-      note: 'THE MELEE OFF HAND, from the Grove. Sold by Dammon. A shield parked in the inactive melee set still gives its AC while she fights from the ranged set — the wiki states that outright — so +2 AC and +1 to all saving throws cost her nothing at all, on the character whose Arcane Acuity is stripped 2 turns every time she is hit. ⚠ Requires shield proficiency, which Fighter 1 supplies; no Dual Wielder needed. ⚠ THE CLUB OF HILL GIANT STRENGTH IS SKIPPED: this run takes Strength from the elixir, which sets 21 against the Club''s 19 and leaves the main hand free for the Knife. Ketheric''s Shield takes this slot from the Resonance Stone.'
+      note: 'Dammon, the Grove. Sits in the inactive melee set: +2 AC and +1 to all saves while she shoots. Fighter 1 gives shield proficiency. Replaced by the Sentinel Shield at Moonrise.'
     - id: knife-of-the-undermountain-king-offhand
       item: Knife of the Undermountain King
       tier: S
       tier_note: 'jeSeVkmqmuc (21:07) — +2 shortsword; wider crit range, damage-dice rerolls, advantage in darkness; stat stick for anyone'
       slot: weapons
-      note: 'Crèche stat stick, MAIN HAND from here until the Resonance Stone, with the Safeguard Shield in the off hand — a shield needs no Light partner and no Dual Wielder feat, which two weapons would. Organ Rearranger lowers the crit threshold globally if the holder passive pays out from the inactive set, but this party''s crits come from Hold, not from threshold, so treat it as a harmless filler rather than a reason. From the Stone Phalar Aluve takes the hand and the Knife goes to CHARLES as his bagged Psychic-immune fallback blade.'
+      note: 'Crèche stat stick; main hand until the Resonance Stone, shield in the off hand. Organ Rearranger lowers the crit threshold on ranged and spell attacks too. ⚠ Whether it fires from the inactive set is unverified. Goes to Charles at the Stone.'
     - id: elixir-of-hill-giant-strength
       item: Elixir of Hill Giant Strength
       tier: S
       tier_note: '9BcQXb37Bik (30:26) — sets Strength to 21; S used normally, and S+ ABOVE THE SCALE if drunk daily to skip strength investment'
       slot: consumables
-      note: 'HER STANDING ELIXIR FROM DAY ONE — one every long rest, like Asterion. STR 21 puts +5 on every Titanstring projectile, Flourish projectiles included, and it is why the Club of Hill Giant Strength is skipped: the elixir sets 21 to the Club''s 19 and leaves her melee hands free for the Knife and a shield. Nothing competes for the slot — she never drinks Bloodlust. Keep a big stock, because Asterion drinks one daily too; Cloud Giant (STR 27) takes over once level-9 vendors stock it in Act 3.'
+      note: 'One every long rest through Act 2; STR 21 puts +5 on every Titanstring projectile. Skip the Club. Stock heavily; Asterion drinks one daily too.'
+    - id: arrows-of-many-targets-bonbon-a1
+      item: Arrow of Many Targets
+      tier: S
+      tier_note: 'ZMCimWeIxCk (42:03) — PLACED IN S+ TIER: near quadruple damage, four attack rolls, fastest Arcane Acuity stacking, plus a crit bug'
+      slot: consumables
+      note: 'Buy from every arrow vendor (Roah Moonglow, Dammon). One attack roll hits up to four targets and riders apply in full. The Act 1 opener for a spread pack.'
     - id: gloves-of-archery
       item: Gloves of Archery
       tier: S
       tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (15:11) — best in slot for any ranged attacker; flat +2 damage plus bow proficiency'
       slot: hands
-      note: Grat at the Goblin Camp. Longbow proficiency is redundant, but +2 damage applies to every ranged weapon hit — the clean early Titanstring glove, worn until the Crèche.
+      note: Grat, Goblin Camp. +2 damage on every ranged hit; worn until the Crèche.
     - id: gloves-of-dexterity
       item: Gloves of Dexterity
       tier: S
@@ -584,13 +571,13 @@ builds:
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #1 of 20 — sets Dexterity to 18 and adds +1 attacks, freeing ability points and feats'
       slot: hands
       bis: true
-      note: 'LATE-ACT-1 DEFAULT, from the Crèche, and rated the #1 item of the 20 best in Act 1 — "the most impactful equipable item in Act 1, and in the narrator''s view the entire game." DEX 18 plus +1 Attack Rolls is a net +2 ranged accuracy over natural DEX 16, plus initiative, AC, DEX saves and skills. ⚠ The video pitches these at a Sorcerer who respecs DEX to 8 and reclaims the points; that does not work here, because the gloves are a Crèche pickup and the character would spend all of early Act 1 at DEX 8. On Bonbon the +1 Attack Rolls also applies to every projectile of a Slashing Flourish — four or more attack rolls a turn.'
+      note: 'A''jak''nir Jeera, Crèche Y''llek. DEX set to 18 and +1 to attack rolls, on every Flourish projectile. Worn all game: respec to DEX 8 (STR 10, CON 16, WIS 14) as soon as they are on.'
     - id: wondrous-gloves
       item: Wondrous Gloves
       tier: S
       tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (49:02) — best in slot for many bards and good enough on other characters too'
       slot: hands
-      note: Grymforge Mimic loot. +1 AC and one extra Bardic Inspiration supply another Slashing Flourish — take them for a nova-focused rest cycle when accuracy is already comfortable.
+      note: Grymforge Mimic loot. +1 AC and one extra Bardic Inspiration; a swap for a nova rest cycle when accuracy is already comfortable.
     - id: the-protecty-sparkswall
       item: The Protecty Sparkswall
       tier: S
@@ -598,7 +585,7 @@ builds:
       rank: '#8'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #8 of 20 — +1 spell save DC on clothing makes it the caster default well into Act 2'
       slot: armour
-      note: 'ACT 1 CHEST, from the gilded chest at the end of the trapped Grymforge bridge, and rated #8 of 20 as "the caster default through much of Act 2." +1 Spell Save DC improves Hold Person, Hypnotic Pattern, Fear, Slow and Glyph. ⚠ Its second effect, +1 AC and saves while carrying Lightning Charges, is dead here — she has no charge generator, since The Spellsparkler is Gale''s. Take it purely for the flat +1 DC, and understand the low clothing AC is the price of control DC at range until the Adamantine Forge.'
+      note: 'Gilded chest at the end of the trapped Grymforge bridge. +1 spell save DC for Hold Person and Hypnotic Pattern until the Adamantine Splint is poured. The Lightning Charge rider is dead on her.'
     - id: adamantine-scale-mail
       item: Adamantine Splint Armour
       tier: S
@@ -607,12 +594,12 @@ builds:
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #15 of 20 — stronger damage reduction than the scale mail, and fewer serious alternatives'
       slot: armour
       bis: true
-      note: 'THE FIRST MITHRAL ORE, and the chest she finishes Act 1 in. Fighter-first grants Heavy proficiency and she is the party''s ONLY legal wearer. AC 18 flat, ATTACKERS CANNOT LAND CRITICAL HITS, all incoming damage reduced by 2, and melee attackers sent Reeling. Crit immunity is what protects Hold Monster: a concentration save is DC = half the damage taken or 10, whichever is higher, so a critical hit roughly doubles that DC. Swap off Protecty once she has it and accept losing +1 spell DC for 6 AC and crit immunity. (The ID keeps an older name so existing checkoffs survive.)'
+      note: 'First Mithral ore at the Adamantine Forge; she is the only Heavy wearer. AC 18, no critical hits against her, −2 to all incoming damage. Wear it over Protecty once poured; crit immunity protects concentration. (The id keeps an older name so checkoffs survive.)'
     - id: act1-ring2-bonbon
       item: Second ring
       slot: ring 2
       wiki: false
-      note: 'OPEN, and it changes hands mid-act. The Whispering Promise is the only Bless the party can get before the Underdark, so it starts here and comes off the moment Asterion picks up the Staff of Arcane Blessing — after that its Bless is the same non-stacking condition and it is pure waste.'
+      note: 'Open slot. The Whispering Promise until Asterion has the Staff of Arcane Blessing (its Bless is the same non-stacking condition), then pick per stretch.'
       options:
       - id: opt-whispering-promise
         item: The Whispering Promise
@@ -620,24 +607,24 @@ builds:
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (49:20) — a mainstay through Acts 1 and 2; very few parties would not benefit strongly'
         rank: '#10'
         rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #10 of 20 — healing grants two turns of Bless, with no concentration or dedicated action'
-        note: 'Volo, or Grat at the Goblin Camp, ~40g. Healing a creature gives it +1d4 to attacks and saves for 2 turns with NO Concentration, and her Healing Word is a bonus action so it costs her nothing. Take it off once Asterion is casting real Bless.'
+        note: 'Volo, or Grat at the Goblin Camp, ~40 gp. Healing gives the target Bless for 2 turns with no concentration; her bonus-action Healing Word triggers it. Off once Asterion casts Bless.'
       - id: opt-crushers-ring
         item: Crusher's Ring
         tier: S
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (9:50) — movement speed is universally applicable; an extremely rare party leaves it on the table'
-        note: 'Crusher at the Goblin Camp. +3m movement, stacks with Longstrider. Not build-defining for anyone, but good on ANY character who needs to close distance without spending a bonus action.'
+        note: 'Crusher, Goblin Camp. +3 m movement; stacks with Longstrider.'
       - id: opt-ring-of-protection
         item: Ring of Protection
         tier: S
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (34:55) — raises the party''s average AC; give it to the easiest-to-hit member'
         rank: '#20'
         rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #20 of 20 — +1 AC and all saves fits almost anyone, for the whole game'
-        note: "Mol's reward for Steal the Sacred Idol. +1 AC and +1 to ALL saving throws — the generically best defensive ring in Act 1, and the item guides say to put it on the lowest-AC body."
+        note: "Mol's reward for Steal the Sacred Idol. +1 AC and +1 to all saving throws."
       - id: opt-bracing-band
         item: Bracing Band
         tier: A
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (6:13) — good for a lot of characters, though there are often better options'
-        note: "Sergeant Thrinn at Grymforge, for Find the Missing Boots. A free permanent +1 AC after shoving — almost nobody takes it, and it is fine on anyone."
+        note: "Sergeant Thrinn, Grymforge, for Find the Missing Boots. +1 AC after a Shove."
     - id: caustic-band
       item: Caustic Band
       tier: S
@@ -645,23 +632,28 @@ builds:
       rank: '#12'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #12 of 20 — a passive 2 acid on every weapon attack, which adds up on multiattackers'
       slot: ring 1
-      note: 'Derryth, Underdark, rated #12 of 20 and explicitly for characters making several attacks per turn. +2 Acid per weapon hit, applied to every Slashing-Flourish projectile. ⚠ Per the wiki it covers melee, ranged and Thrown attacks but NOT Unarmed Strike, which is why it can never move to Asterion despite his higher hit count. She wears it alongside the Whispering Promise — she has two ring slots and the two do not conflict.'
+      note: 'Derryth, Myconid Colony (Underdark). +2 Acid on every weapon hit, Flourish projectiles included. Weapon attacks only, not Unarmed, so never Asterion''s.'
     - id: act1-head-bonbon
       item: Head slot
       slot: head
       wiki: false
-      note: 'A REAL COIN-FLIP FOR ACT 1, which is why it is not a single pick: one of these is damage and the other is what keeps Hold Monster from breaking. Both get replaced by the Helmet of Arcane Acuity in Act 2 regardless.'
+      note: 'Pick one: Diadem for damage, Grymskull for crit immunity. Both leave for the Helmet of Arcane Acuity in Act 2. The Warped Headband is a dialogue swap only.'
       options:
       - id: diadem-of-arcane-synergy
         item: Diadem of Arcane Synergy
         tier: S
         tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (21:57) — a huge damage boost even for characters outside the builds designed around it'
-        note: 'Ardent Jhe''rezath, Crèche. Once she lands a condition — Hold Person, Fear, Dissonant Whispers — Arcane Synergy adds her Charisma to every subsequent ranged weapon hit. The damage pick.'
+        note: 'Ardent Jhe''rezath, Crèche. After she lands a condition, every ranged hit adds her CHA modifier. The damage pick.'
       - id: grymskull-helm
         item: Grymskull Helm
         tier: S
         tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (25:05) — features in most parties and makes a playthrough much safer'
-        note: 'Free from Grym at the Adamantine Forge. Attackers cannot land critical hits, plus Fire resistance. She is the party''s ONLY character with Heavy Armour proficiency, so she is the only one who can legally wear it — and crit immunity blunts the worst concentration-save spikes on her Hold Monster. The safety pick.'
+        note: 'Grym, Adamantine Forge. No critical hits against her and Fire resistance; Heavy, so only she can wear it. The safety pick.'
+      - id: opt-warped-headband-of-intellect-bonbon
+        item: Warped Headband of Intellect
+        tier: A
+        tier_note: 'The MOST BROKEN Item Slot in Baldur''s Gate 3 - Helmets Tier List and Guide - Act 1 (47:26) — sets Intelligence to 17 for wizard dips, Eldritch Knights and dialogue checks'
+        note: 'Lump the Enlightened, Blighted Village barn (loot him). Dialogue swap: INT set to 17 for Arcana, History, Investigation and Religion checks, including the Mirror of Loss Religion check. Never in combat.'
     - id: broodmother-s-revenge
       item: Broodmother's Revenge
       tier: S
@@ -669,7 +661,7 @@ builds:
       rank: '#17'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #17 of 20 — the largest early per-hit damage die, but it needs a healing trigger'
       slot: amulets
-      note: 'After saving the Grove — talk Kagha down, then knock the isolated friendly Kagha out non-lethally and loot it. Rated #17 of 20. Any healing, even a potion at full HP, coats Titanstring for +1d6 Poison per projectile for 2 turns, and her bonus-action Healing Word is what triggers it. Skip against poison-resistant or immune enemies.'
+      note: 'Kagha, after the Grove is saved (knock her out non-lethally, loot it). Any heal, even a potion at full HP, adds +1d6 Poison to every projectile for 2 turns; Healing Word triggers it. Skip against poison-immune enemies.'
     - id: boots-of-speed
       item: Boots of Speed
       tier: A
@@ -677,11 +669,11 @@ builds:
       rank: '#14'
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #14 of 20 — bonus-action Dash gives anyone Rogue-grade mobility'
       slot: feet
-      note: 'HERS, and rated #14 of 20. Bonus-action Dash for a character with no innate mobility, which is exactly what the video means by giving it to "the character most likely to waste a turn out of position." ⚠ It is NOT Asterion''s: Step of the Wind already gives him bonus-action Dash and Disengage from Monk 2, so the boots would buy him nothing while displacing the Night Walkers. ⚠ The video flags the opportunity-attack rider as bugged — take these for the Dash, not the defensive text.'
+      note: 'Thulla, Ebonlake Grotto (Underdark). Bonus-action Dash for a character with no innate mobility. Not Asterion''s: Step of the Wind covers him. ⚠ The opportunity-attack rider is bugged; take them for the Dash.'
     - id: act1-cloak-bonbon
       item: No cloak exists yet
       slot: cloaks
-      note: Deliberately empty. The Deathstalker Mantle is the only magical cloak obtainable in Act 1 and it is a Dark Urge reward that goes to Asterion; every other cloak in the game first appears in Act 2 or later. Her slot opens at Last Light.
+      note: Empty by design. The only Act 1 magical cloak (Deathstalker Mantle) is Asterion's; her first cloak is at Last Light Inn.
     act2:
     - id: helmet-of-arcane-acuity
       item: Helmet of Arcane Acuity
@@ -689,7 +681,7 @@ builds:
       tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (35:18) — broken like all the Arcane Acuity items, and one of the easiest to use'
       slot: head
       bis: true
-      note: 'Mason''s Guild in Reithwin Town — an Act 2 pickup, not an Act 3 one. Every weapon hit grants 2 turns of Arcane Acuity; each remaining turn is +1 spell attack AND +1 spell save DC, capped at 10 turns. TITANSTRING STAYS: a ranged Slashing Flourish fires two projectiles and each one that damages is a separate trigger, so Extra Attack''s two Flourishes are four hits and +8 in one Action, and any Hasted turn caps her at +10. ⚠ Dual hand crossbows were the old plan; their only edge is a fifth hit from the bonus-action off-hand shot, and her bonus action belongs to Healing Word now and the Band of the Mystic Scoundrel later. ⚠ Damage taken strips 2 turns of Acuity, which is why her defensive gear matters more than it looks.'
+      note: 'Mason''s Guild, Reithwin Town. Every weapon hit gives 2 turns of Arcane Acuity (+1 spell attack and +1 spell save DC per turn, cap 10). Two Flourishes are four hits, +8; a Hasted turn caps it. ⚠ Damage taken strips 2 turns.'
     - id: act2-ranged-bonbon
       item: Titanstring Bow
       tier: S
@@ -697,40 +689,40 @@ builds:
       held: 1
       slot: ranged weapons
       bis: true
-      note: 'CARRIED OVER for the whole run. Its Strength rider lands on every projectile, Flourish projectiles and special-arrow riders included, and with Sharpshooter that is 23–28 a hit against 18.5 from a hand crossbow. A daily Elixir of Hill Giant Strength (21) has supplied the Strength since Act 1 — the Club was skipped — and Cloud Giant (27) takes over once level-9 vendors stock it. ⚠ Ne''er Misser and the Hellfire Hand Crossbow are no longer part of the plan: they only pulled ahead through the bonus-action off-hand shot, and her bonus action is spoken for.'
+      note: 'Carried over. STR rider on every projectile with the daily Hill Giant elixir; Gale''s Drakethroat Glaive enchants it Cold each long rest, which feeds the Snowburst Ring. Replaced by The Dead Shot in Act 3.'
     - id: act2-melee-bonbon
       item: Knife of the Undermountain King
       tier: S
       tier_note: 'jeSeVkmqmuc (21:07) — +2 shortsword; wider crit range, damage-dice rerolls, advantage in darkness; stat stick for anyone'
       held: 1
       slot: weapons
-      note: 'MAIN HAND UNTIL THE STONE, carried over from the Crèche. The melee set stays equipped even though she fights from the ranged set — it is a rack of holder passives, never swung. At the Resonance Stone Phalar Aluve takes the hand and the Knife goes to Charles as his bagged Psychic-immune fallback.'
+      note: 'Main hand until the Stone. The melee set is never swung; it is a rack of holder passives. At the Resonance Stone Phalar Aluve takes the hand and the Knife goes to Charles.'
     - id: act2-safeguard-bonbon
       item: Safeguard Shield
       tier: A
       tier_note: '5wATdII3wmI (13:55) — +1 saving throws with no story requirement; usually the earliest upgrade over a plain shield'
       held: 1
       slot: weapons
-      note: 'OFF HAND UNTIL THE STONE, carried over from the Grove. +2 AC and +1 to all saving throws from the inactive melee set, until Ketheric''s Shield drops in the Mind Flayer Colony.'
+      note: 'Off hand until Moonrise. +2 AC and +1 to all saves from the inactive set, until the Sentinel Shield.'
     - id: phalar-aluve-bonbon
       item: Phalar Aluve
       tier: S
       tier_note: 'The BEST WEAPON TYPE in BG3 - Versatile Weapons Honor Mode Tier List and Guide - Act 1 (30:10) — one of the best weapons in the game even ignoring the strongest thing it does'
       slot: weapons
       bis: true
-      note: 'FROM THE STONE, and for the rest of the run. Charles hands over PHALAR ALUVE at his respec and it takes the main hand from the Knife. Phalar is Versatile, not Light, so without Dual Wielder no weapon can share her hands with it — a shield is the only legal partner, which is exactly why Ketheric''s Shield sits beside it. SHE IS THE SHRIEK CARRIER NOW. Shriek is a 6 m aura on the WIELDER that ends if the sword is unequipped and costs an ACTION: spend her Haste action on it on turn 1 (or pre-cast from stealth), then play 3–6 m from the enemies she wants debuffed — outside the 3 m ranged-disadvantage band, inside the aura. −1d4 to their saves and attack rolls, and +1d4 Thunder every time anyone damages them.'
+      note: 'From Charles at the Stone respec; main hand for the rest of the run, shield beside it. Shriek is an action (Haste action on turn 1, or pre-cast from stealth): 6 m aura on her, ends if unequipped. Always Shriek, never Sing. Stand 3–6 m from the targets.'
     - id: act2-offhand-bonbon
-      item: Ketheric's Shield
+      item: Sentinel Shield
       tier: S
-      tier_note: '5wATdII3wmI (30:04) — +1 spell save DC and spell attack in a slot that never gets it; also boosts Shield Bash'
+      tier_note: '5wATdII3wmI (31:06) — +3 initiative replaces Alert entirely; only downside is that ONLY ONE EXISTS'
       slot: weapons
-      note: 'THE OFF HAND FROM THE STONE, beside Phalar Aluve; the Safeguard Shield holds the slot until then. Carried by Ketheric in the Mind Flayer Colony (his second fight), or pickpocketed off him earlier by disarming him first. +2 AC, ADVANTAGE ON DEXTERITY SAVING THROWS, and Arcane Enchantment: +1 spell save DC and +1 spell attack, in a slot that normally gets neither. ⚠ VERIFY IN GAME. The wiki confirms only that the AC of a shield in the inactive melee set carries over while the ranged set is live; it says nothing about the shield''s other passives. Check her spell save DC on the character sheet with the bow drawn before counting the +1. The +2 AC is safe either way. ⚠ NOT THE ADAMANTINE SHIELD: its crit immunity is exactly the passive the wiki does not confirm, the second Mithral ore is Charles''s Adamantine Shield, and the Splint gives her crit immunity outright.'
+      note: 'Lann Tarv, Moonrise main floor, ~580 gp. Default off hand from Act 2 to the end: +2 AC and +3 initiative from the inactive melee set. ⚠ Only the AC carry is wiki-confirmed; check initiative on the sheet with the bow drawn.'
       options:
       - id: opt-sentinel-shield-bonbon
-        item: Sentinel Shield
+        item: Ketheric's Shield
         tier: S
-        tier_note: '5wATdII3wmI (31:06) — +3 initiative replaces Alert entirely; only downside is that ONLY ONE EXISTS'
-        note: 'THE OPTIONAL +3-INITIATIVE ALTERNATIVE, sold by Lann Tarv on the main floor of Moonrise for about 580 gp: +2 AC and +3 Initiative, which on a d4 initiative roll is enormous for the character who wants to Hold before anything moves. Not core — Ketheric''s wins by default because spell save DC is the stat the whole build sells, and Gale already carries the party''s initiative.'
+        tier_note: '5wATdII3wmI (30:04) — +1 spell save DC and spell attack in a slot that never gets it; also boosts Shield Bash'
+        note: 'Ketheric Thorm, Mind Flayer Colony (his second fight), or pickpocketed after disarming him. +2 AC, advantage on DEX saves, +1 spell save DC and spell attack. Swap in for fights where +1 DC matters more than +3 initiative.'
     - id: act2-chest-bonbon
       item: Adamantine Splint Armour
       tier: S
@@ -740,7 +732,7 @@ builds:
       held: true
       slot: armour
       bis: true
-      note: AC 18, crit immunity and −2 to every incoming damage instance carry her through Act 2 unchanged, and a shield in the melee set adds 2 more, as it has since the Grove. Crit immunity does double duty here — it protects Hold Monster concentration and it stops Arcane Acuity being stripped two turns at a time by big hits.
+      note: Carried over. AC 18, crit immunity and −2 on every hit; the shield adds 2 more. Crit immunity protects Hold concentration and stops Acuity being stripped by big hits.
     - id: act2-hands-bonbon
       item: Gloves of Dexterity
       tier: S
@@ -750,20 +742,26 @@ builds:
       held: true
       slot: hands
       bis: true
-      note: DEX 18 and +1 Attack Rolls remain the best glove effect available to her, and every hit is now an Acuity stack rather than just damage. Nothing in Act 2 beats it.
+      note: Carried over. DEX 18 and +1 attack rolls; every hit is an Acuity stack. Nothing in Act 2 beats it.
     - id: act2-elixir-bonbon
       item: Elixir of Hill Giant Strength
       tier: S
       tier_note: '9BcQXb37Bik (30:26) — sets Strength to 21; S used normally, and S+ ABOVE THE SCALE if drunk daily to skip strength investment'
       held: 1
       slot: consumables
-      note: 'CARRIED OVER FROM ACT 1 — one every long rest, like Asterion. STR 21 puts +5 on every Titanstring projectile unconditionally, and she never drinks Bloodlust, so nothing competes for the slot. Cloud Giant (STR 27, +8) replaces it as soon as a level-9 vendor stocks one — Araj, Talli, Mattis and Roah all can.'
+      note: 'Carried over: one every long rest for the Titanstring rider (+5 per projectile). The last act she drinks it.'
+    - id: arrows-of-many-targets-bonbon-a2
+      item: Arrow of Many Targets
+      tier: S
+      tier_note: 'ZMCimWeIxCk (42:03) — PLACED IN S+ TIER: near quadruple damage, four attack rolls, fastest Arcane Acuity stacking, plus a crit bug'
+      slot: consumables
+      note: 'Restock at Roah Moonglow (Moonrise) and Dammon (Last Light). One roll, up to four targets, riders in full: two arrows cap Arcane Acuity on turn 1 without Haste, and with Cold each target gets Snowburst ice.'
     - id: spellcrux-amulet
       item: Spellcrux Amulet
       tier: S
       tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (33:07) — plainly incredible'
       slot: amulets
-      note: 'ACT 2 NECK, worn by the Warden in the Moonrise Towers Prison. Replenish an expended spell slot of ANY level as a BONUS ACTION, once per long rest. On a Bard 11 with a single level-6 slot that is literally a second six-target Command or a second Hold Monster, recovered mid-fight without spending her action. It replaces Broodmother''s Revenge, whose poison coating needs a per-turn heal she no longer has time for once the Acuity loop starts.'
+      note: 'The Warden, Moonrise Towers prison. Bonus action: restore one expended slot of any level, once per long rest. In Act 3, cast the L6 Myrmidon before the first fight, then refund the L6 slot. Replaces Broodmother''s.'
     - id: act2-rings-bonbon
       item: Caustic Band
       tier: S
@@ -772,12 +770,14 @@ builds:
       rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #12 of 20 — a passive 2 acid on every weapon attack, which adds up on multiattackers'
       slot: ring 1
       bis: true
-      note: 'Caustic Band keeps adding +2 Acid to every arrow and never comes off. Per the wiki it covers melee, ranged and Thrown attacks but NOT Unarmed Strike, which is why it can never move to Asterion despite his higher hit count.'
+      note: 'Carried over. +2 Acid on every arrow and Flourish projectile. Ring 1 until the Band of the Mystic Scoundrel in Act 3.'
     - id: act2-ring2-bonbon
-      item: Second ring
+      item: Snowburst Ring
+      tier: S
+      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (42:08) — free ice surfaces on any cold damage; best in slot for a cold dealer'
       slot: ring 2
-      wiki: false
-      note: 'GENUINELY OPEN until Act 3. The Whispering Promise came off the moment Asterion started casting real Bless off the Staff of Arcane Blessing, because both apply the same condition and do not stack. Nothing in the Act 2 pool is clearly best-in-slot for her, so pick per stretch. WARNING the Risky Ring is NOT a candidate: disadvantage on saving throws lands directly on the Constitution saves protecting Hold Monster.'
+      wiki: Snowburst Ring
+      note: 'Last Light Inn, loose plank in the bedroom north of the bar (DC 10 Perception). Every Cold hit drops a 4.5 m ice circle for 2 turns (DEX save or Prone); needs Gale''s Drakethroat set to Cold. ⚠ Shoot the back line first; ice under Charles can end his Hold.'
       options:
       - id: opt-whispering-promise-hold
         item: The Whispering Promise
@@ -785,29 +785,29 @@ builds:
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (49:20) — a mainstay through Acts 1 and 2; very few parties would not benefit strongly'
         rank: '#10'
         rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #10 of 20 — healing grants two turns of Bless, with no concentration or dedicated action'
-        note: 'Keep it on ONLY until Asterion reaches the Arcane Tower basement. After that it is pure waste, because its Bless is the same non-stacking condition and it never gets Mystra''s Blessing.'
+        note: 'Only until Asterion has the Staff of Arcane Blessing; after that its Bless is the same non-stacking condition and it does nothing.'
       - id: opt-ring-of-mental-inhibition
         item: Ring of Mental Inhibition
         tier: B
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (24:59) — powerful if the party is carefully built around it, but it needs very specific builds'
-        note: 'House in Deep Shadows. Applies Mental Fatigue when an enemy fails a save against her — it compounds with her Acuity-inflated DC, so the next control lands more easily.'
+        note: 'House in Deep Shadows. Mental Fatigue on any enemy that fails a save against her; the next control lands more easily.'
       - id: opt-callous-glow-ring
         item: Callous Glow Ring
         tier: S
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (4:45) — the number of uses is absurd once the wearer is lit'
-        note: '+2 Radiant against ILLUMINATED targets on every projectile. Strong on a multi-hit ranged build, but it is currently Gale''s and it fights Charles''s darkness.'
+        note: '+2 Radiant per projectile against illuminated targets. Gale''s, and it fights Charles''s Darkness.'
     - id: cloak-of-cunning-brume
       item: Cloak of Cunning Brume
       tier: A
       tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (9:53) — best for certain strategies rather than universally good'
       slot: cloaks
-      note: 'Sold by Mattis at Last Light Inn for about 70g. Disengaging also creates a 2m fog cloud for a turn, which obscures and blinds everything inside it — a genuine backline escape button for the moment something closes on her. ⚠ An honest cheap fill: the Act 2 cloak pool is built for melee characters (Fleshmelter and Thunderskin both trigger on being hit), and the one unconditional cloak, Cloak of Protection, goes to Charles, who has permanent disadvantage on saves. She upgrades properly in Act 3.'
+      note: 'Mattis, Last Light Inn, ~70 gp. Disengaging leaves a 2 m fog cloud for a turn; the backline escape button. Upgraded in Act 3.'
     - id: act2-feet-bonbon
       item: Boots of Brilliance
       tier: B
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (42:08) — regains one Bardic Inspiration but needs fiddly swapping (captions garble the letter)'
       slot: feet
-      note: Heavy chest in the room just north of Yurgir, Gauntlet of Shar. Restores one Bardic Inspiration charge per long rest. Slashing Flourish consumes an Inspiration on every multi-target turn and she is Inspiration-starved rather than AC-starved, so this beats keeping Boots of Speed once the Acuity loop replaces raw repositioning.
+      note: 'Heavy chest in the room north of Yurgir, Gauntlet of Shar. Restores one Bardic Inspiration per long rest. Flourish spends Inspiration only on a hit, so this is a small edge; Boots of Speed stay bagged.'
     act3:
     - id: band-of-the-mystic-scoundrel
       item: Band of the Mystic Scoundrel
@@ -815,24 +815,36 @@ builds:
       tier_note: 'ULTIMATE Guide to Rings - BG3 Honor Mode Tier List and Guide - Act 3 (8:21) — tons of builds are built around maximising it; locks enemies down'
       slot: ring 1
       bis: true
-      note: 'THE ACT 3 ENGINE, in a backpack in the Chult jungle reached through Akabi''s wheel at the Circus — one party member only, so send her. After a weapon hit, Enchantment and Illusion spells become BONUS ACTIONS, so she builds Arcane Acuity with her action and fires Hold Monster or a six-target Command in the same turn. ⚠ Read the wiki caveat before playing it: once Quickening Incantation is active she can no longer cast those spells as an ACTION that turn — only as the bonus action. ⚠ Useful trick: any weapon attack triggers it, even against a world object, so she can prime the loop off a barrel before combat starts.'
+      note: 'Backpack in the Chult jungle through Akabi''s wheel at the Circus (one party member goes; send her). After a weapon hit, Enchantment and Illusion spells become bonus actions: Flourish, then Hold Monster or six-target Command the same turn. ⚠ Those spells cannot be cast as an action that turn.'
     - id: act3-ring2-bonbon
-      item: Caustic Band
+      item: Ring of Feywild Sparks
       tier: S
-      tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (7:16) — for almost every party; goes on whoever makes the most attacks in a round'
-      rank: '#12'
-      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #12 of 20 — a passive 2 acid on every weapon attack, which adds up on multiattackers'
-      held: true
+      tier_note: 'ULTIMATE Guide to Rings - BG3 Honor Mode Tier List and Guide - Act 3 (23:24) — an UNLISTED plus one spell save DC on any caster, the only ring that grants it'
+      held: false
       slot: ring 2
-      note: +2 Acid on every arrow and every Flourish projectile is still the cleanest flat rider available to her, and it needs no setup. Swap it for the Ring of Free Action in any fight with webs, paralysis or Black Tentacles, since being Paralysed both ends Hold Monster and hands out automatic critical hits.
+      note: 'Auntie Ethel, Blushing Mermaid. Hidden +1 spell save DC (not on the tooltip) on every Hold Monster, Command and Confusion. Ring 2 for Act 3.'
+      options:
+      - id: opt-caustic-band-bonbon-a3
+        item: Caustic Band
+        tier: S
+        tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 1 (7:16) — for almost every party; goes on whoever makes the most attacks in a round'
+        rank: '#12'
+        rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #12 of 20 — a passive 2 acid on every weapon attack, which adds up on multiattackers'
+        note: 'Carried over from Acts 1–2. Swap in when +2 Acid on 4–8 projectiles beats +1 DC: trash packs with nothing worth Holding.'
     - id: act3-ranged-bonbon
-      item: Titanstring Bow
+      item: The Dead Shot
       tier: S
-      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (32:39) — adds your strength modifier; best in slot Act 1 damage with a giant strength elixir'
-      held: true
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (55:41) — improved crit and double proficiency to hit; his pick for endgame two-handed bow'
+      held: false
       slot: ranged weapons
       bis: true
-      note: 'The standing set, unchanged: Titanstring with a daily Elixir of Cloud Giant Strength for +8 on every projectile. ⚠ Gontr Mael is ASTERION''S: its Celestial Haste is a self-only Concentration spell, and she is already Hasted by Gale and concentrating on Hold Monster, so on her it did nothing. ⚠ Hellrider''s Longbow is Gale''s; he has the idle ranged slot.'
+      note: 'Fytz the Firecracker, Stormshore Armoury. +2 longbow; Keen Attack doubles proficiency on its ranged attacks (+5 to hit over Titanstring at char 9+) and it crits on 19. ⚠ Keen Attack switches off under disadvantage: never shoot into Charles''s Darkness.'
+      options:
+      - id: opt-titanstring-bow-bonbon-a3
+        item: Titanstring Bow
+        tier: S
+        tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (32:39) — adds your strength modifier; best in slot Act 1 damage with a giant strength elixir'
+        note: 'Bagged. Swap in when hit chance is already ≥ 75% (Bless, a Held target); its STR rider needs a Giant Strength elixir that day instead of Vigilance.'
     - id: act3-melee-bonbon
       item: Phalar Aluve
       tier: S
@@ -840,59 +852,79 @@ builds:
       held: 2
       slot: weapons
       bis: true
-      note: 'CARRIED OVER, the main hand for the rest of the run. She still carries Shriek for the party from 3–6 m of the cluster, and the set is still a rack she never swings. Viconia''s Walking Fortress goes to Charles.'
+      note: 'Carried over; main hand for the run. Shriek every fight from 3–6 m of the cluster; the set is still never swung. Viconia''s Walking Fortress is Charles''s.'
     - id: act3-offhand-bonbon
-      item: Ketheric's Shield
+      item: Sentinel Shield
       tier: S
-      tier_note: '5wATdII3wmI (30:04) — +1 spell save DC and spell attack in a slot that never gets it; also boosts Shield Bash'
+      tier_note: '5wATdII3wmI (31:06) — +3 initiative replaces Alert entirely; only downside is that ONLY ONE EXISTS'
       held: 2
       slot: weapons
-      note: 'CARRIED OVER from Act 2 and unchanged. +2 AC, advantage on Dexterity saving throws, and +1 spell save DC and +1 spell attack that sit on top of the Acuity cap. ⚠ Same verification as Act 2: the AC carry from an inactive melee set is wiki-confirmed, the rest of the shield is not.'
+      note: 'Carried over from Moonrise. +2 AC and +3 initiative from the inactive melee set. ⚠ Only the AC carry is wiki-confirmed; check initiative on the sheet with the bow drawn.'
+      options:
+      - id: opt-ketherics-shield-bonbon-a3
+        item: Ketheric's Shield
+        tier: S
+        tier_note: '5wATdII3wmI (30:04) — +1 spell save DC and spell attack in a slot that never gets it; also boosts Shield Bash'
+        note: 'Bagged. Swap in for the fight where +1 spell save DC matters more than +3 initiative: a single-boss Hold Monster.'
     - id: act3-elixir-bonbon
-      item: Elixir of Cloud Giant Strength
+      item: Elixir of Vigilance
       tier: S
-      tier_note: '9BcQXb37Bik (32:28) — sets Strength to 27; S used normally, S+ ABOVE THE SCALE if drunk daily; also enormous jump distance'
+      tier_note: '9BcQXb37Bik (57:59) — rated S+ ABOVE THE SCALE: a free Alert feat, and +5 on a d4 initiative roll means going first'
       slot: consumables
-      note: 'STR 27 — +8 on every projectile, so a four-hit Action carries +32 from the elixir alone. Sold by level-9 vendors across Acts 2 and 3 with semi-random stock (Araj, Talli, Roah, Mattis, Danthelon, Helsik, Popper and more); Asterion drinks the same, so buy every one you see and fall back on Hill Giant on a short day.'
+      note: 'One every long rest in Act 3: +5 initiative and Surprise immunity, ~25 gp (Danthelon, Popper). The Dead Shot needs no Strength, so Giant Strength stops; Asterion keeps drinking it.'
+    - id: arrows-of-many-targets-bonbon-a3
+      item: Arrow of Many Targets
+      tier: S
+      tier_note: 'ZMCimWeIxCk (42:03) — PLACED IN S+ TIER: near quadruple damage, four attack rolls, fastest Arcane Acuity stacking, plus a crit bug'
+      slot: consumables
+      note: 'Restock at Dammon (Forge of the Nine) and the Lower City arrow vendors. One roll, up to four targets: the turn-1 Acuity filler before the bonus-action Hold Monster or Command. ⚠ Whether the Cold or Titan rider reaches the secondary targets is unverified.'
     - id: amulet-of-greater-health
       item: Amulet of Greater Health
       tier: S
       tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 3 (13:32) — the only real decision left is who to put it on'
       slot: amulets
-      note: 'NOT HERS, on reflection. Setting Constitution to 23 and granting advantage on CON saves is superb, but she already has War Caster''s advantage on those saves, AC 21 in Helldusk Armour, and a cloak that refreshes +2 AC every turn — so the amulet''s advantage half is redundant on her. Charles has a permanent DISADVANTAGE from the Risky Ring for it to cancel, which nothing else in the game does as cleanly. She keeps the Spellcrux Amulet instead, and a free level-6 slot per long rest is worth more to a controller than +6 to saves she is already winning.'
+      note: 'Not hers. CON 23 and advantage on CON saves; Charles has the Risky Ring disadvantage it cancels. She keeps the Spellcrux Amulet.'
     - id: act3-amulet-bonbon
       item: Spellcrux Amulet
       tier: S
       tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (33:07) — plainly incredible'
       held: true
       slot: amulets
-      note: A bonus-action level-6 spell slot once per long rest is a second six-target Command or a second Hold Monster in the fight that needs it. On a Bard 11 with exactly one slot at that level, this is the highest-leverage neck she can wear.
+      note: Carried over. Bonus-action refund of one slot per long rest; cast the L6 Myrmidon before the first fight, refund the slot, and the six-target Command is still there.
     - id: helldusk-armour-bonbon
       item: Helldusk Armour
       tier: S
       tier_note: 'VjmWkRCoDWE (57:31) — 21 AC, 3 damage reduction, anyone can wear it; ALSO S IF GRABBED IN ACT 1 BY EXPLOIT'
       slot: armour
       bis: true
-      note: 'ACT 3 CHEST, carried by Raphael in the House of Hope. AC 21 flat, ALL INCOMING DAMAGE REDUCED BY 3, Fire resistance and immunity to Burning, Infernal Retribution (a caster whose spell she saves against starts Burning) and a non-concentration Fly once per long rest. It grants its own proficiency, so anyone can wear it — it went to nobody while Charles was locked to Luminous Armour. The damage reduction is the point for a concentrator: chip damage becomes zero, which means no concentration save and no Arcane Acuity stripped. ⚠ Heavy, so Stealth at disadvantage; Asterion sneaks, she does not.'
+      note: 'Raphael, House of Hope. AC 21, −3 on every hit, Fire resistance, Burning immunity, Fly once per long rest; no proficiency needed. Chip damage becomes zero: no concentration save, no Acuity lost. ⚠ Heavy, so Stealth at disadvantage.'
       options:
       - id: opt-armour-of-agility
         item: Armour of Agility
         tier: S
         tier_note: 'BG3''S BEST ARMOR - Medium Armor Tier List - Honour Mode Guide - Part 3 (1:00:01) — 17 AC uncapped by Dex and +2 saves; the highest AC setup in the game'
-        note: 'THE SAVE-FOCUSED ALTERNATIVE, sold by Gloomy Fentonson at the Stormshore Armoury: medium armour with her FULL Dexterity modifier and +2 to ALL saving throws, no Stealth penalty. At DEX 16 under Helldusk Gloves that is AC 20, one behind Helldusk''s flat 21; take it if +2 saves matter more than 3 damage reduction. ⚠ Do not take Medium Armour Master or Magic Initiate: Cleric on her — the wiki notes either feat breaks the full-Dexterity passive.'
+        note: 'Gloomy Fentonson, Stormshore Armoury. Medium: AC 17 + full DEX (21 at DEX 18), +2 to all saves, no Stealth penalty. Take it when +2 saves beat −3 damage reduction. ⚠ No Medium Armour Master or Magic Initiate: Cleric; either breaks the passive.'
+      - id: opt-bhaalist-armour-bonbon
+        item: Bhaalist Armour
+        tier: S
+        tier_note: 'ARMOR TIER LIST - Light Armour - Baldur''s Gate 3 Honour Mode Guide - Part 2 (42:20) — piercing vulnerability aura breaks the game; LOCKED BEHIND A STORY EVENT, SOME RUNS ONLY'
+        note: 'Bhaal path only (Echo of Abazigal, after the Murder Tribunal). Nova swap for a single-boss Hold fight: stand within 3 m of the Held target, every projectile crits and Piercing is doubled. AC 17; the aura helps nobody else.'
     - id: wavemother-s-cloak
       item: Wavemother's Cloak
       tier: D
       tier_note: 'The COOLEST ITEMS in BG3 - Complete Cloak Tier List and Guide (38:55) — a worse duplicate of another cloak''s effect, and combat-only'
       slot: cloaks
-      note: 'ACT 3 CLOAK, in an opulent chest behind Allandra Grey''s desk on the upper floor of the Water Queen''s House. Once per turn in combat it grants Water Layer Protection until she takes damage: +2 AC, +2 to saving throws, Fire resistance and immunity to Burning. On a backline controller who is rarely hit, that refreshes every turn and effectively never falls off — strictly better than the flat +1/+1 of a Cloak of Protection for her, and it leaves Cloak of Displacement free for Asterion, who has no armour at all.'
+      note: 'Opulent chest behind Allandra Grey''s desk, Water Queen''s House upper floor. Once per turn in combat: +2 AC, +2 saves, Fire resistance until she takes damage. On a backline shooter it rarely falls off.'
     - id: act3-hands-bonbon
-      item: Helldusk Gloves
+      item: Gloves of Dexterity
       tier: S
-      tier_note: 'The BEST GLOVES In BG3 COMPLETE - Honor Mode Tier List and Guide - Act 3 (24:29) — best in slot for almost anyone; +1d6 damage, +1 attack rolls and +1 spell save DC'
+      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (25:38) — called the best item in the game for what it enables'
+      rank: '#1'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #1 of 20 — sets Dexterity to 18 and adds +1 attacks, freeing ability points and feats'
+      held: 1
       slot: hands
       bis: true
-      note: 'ACT 3 HANDS, worn by Haarlep in the House of Hope boudoir; no armour tag. Infernal Acuity is +1 spell save DC and, per the wiki, +1 to ALL attack rolls; Infernal Touch adds 1d6 Fire to every weapon hit — every Titanstring projectile. Against the Gloves of Dexterity that trades DEX 18 for her natural 16 (−1 attack, −1 damage, −1 AC, −1 initiative) for +1 Hold Monster DC and about +10 damage a turn. Keep the Gloves of Dexterity bagged; they are not wrong, just second. ⚠ Craterflesh Gloves want a crit-focused build she is not.'
+      note: 'Worn all game. DEX 18 and +1 to attack rolls over a base DEX of 8; nothing in Act 3 replaces them.'
     - id: act3-head-bonbon
       item: Helmet of Arcane Acuity
       tier: S
@@ -900,65 +932,78 @@ builds:
       held: true
       slot: head
       bis: true
-      note: 'It stays, and it is not close. Three or four weapon hits a turn take her to the +10 Arcane Acuity cap inside one round, which is +10 to spell save DC. ⚠ BIRTHRIGHT IS REJECTED FOR EXACTLY THIS REASON: +2 Charisma is +1 spell save DC. Ten against one. Keep Birthright bagged as an out-of-combat swap for Persuasion, Deception and Intimidation, where the wiki notes it stacks with the Mirror of Loss for Charisma 24.'
+      note: 'Carried over. Three or four hits a turn reach the +10 Acuity cap. Birthright stays bagged as the dialogue swap (+2 CHA; stacks with the Mirror for 24).'
     - id: act3-feet-bonbon
       item: Boots of Persistence
       tier: B
       tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (51:25) — reasonable, though Freedom of Movement on one character is not a tremendous effect'
       slot: feet
-      note: 'Sold by Dammon at the Forge of the Nine in the Lower City. Permanent Freedom of Movement and Longstrider — Freedom of Movement makes a Ring of Free Action unnecessary and frees her second ring slot for Caustic Band. Medium armour proficiency is required and Fighter 1 supplies it. ⚠ Helldusk Boots are the better item in the abstract but go to Charles, who has save disadvantage to undo; Gale cannot wear Persistence at all, so this is the allocation that leaves nobody stranded.'
+      note: 'Dammon, Forge of the Nine (Lower City). Permanent Freedom of Movement and Longstrider; Fighter 1 supplies the Medium proficiency. Helldusk Boots are Charles''s.'
+      options:
+      - id: opt-boots-of-striding-bonbon
+        item: Boots of Striding
+        tier: A
+        tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (16:09) — always worth looking at for the characters they suit'
+        note: 'Per-fight swap once Charles wears Helldusk Boots. Focused Stride on casting a concentration spell blocks Prone and forced movement; Persistence covers Paralysed and Restrained. Wear Striding against Shove and knockdown fights.'
     progression:
     - id: prog-head
       item: 'Head: Grymskull Helm → Diadem of Arcane Synergy → Helmet of Arcane Acuity'
       slot: head
-      note: Free Grymskull crit immunity as a stopgap → Diadem (Crèche) for CHA on ranged hits → Helmet of Arcane Acuity (Mason's Guild, Act 2) for the rest of the run. The Helmet never comes off again — Birthright's +2 Charisma is +1 spell DC against Acuity's +10.
+      note: Grymskull (free, Adamantine Forge) → Diadem (Crèche) → Helmet of Arcane Acuity (Mason's Guild, Act 2) for the rest of the run. Warped Headband of Intellect and Birthright are dialogue swaps only.
     - id: prog-armour
       item: 'Chest: The Protecty Sparkswall → Adamantine Splint Armour → Helldusk Armour'
       slot: armour
-      note: Act 1 early Protecty (Grymforge) for +1 spell DC → Act 1 late and Act 2 Adamantine Splint (first Mithral ore) for AC 18 and crit immunity → Act 3 Helldusk Armour (Raphael) for AC 21 and 3 damage reduction on every hit. Armour of Agility is the +2-saves alternative; keep the Splint bagged for fights where crit immunity beats everything.
+      note: Protecty (Grymforge) → Splint (first Mithral ore) → Helldusk (Raphael, House of Hope). Armour of Agility is the +2-saves option; Bhaalist Armour the Bhaal-path nova swap.
     - id: prog-hands
-      item: 'Hands: Gloves of Archery → Gloves of Dexterity → Helldusk Gloves'
+      item: 'Hands: Gloves of Archery → Gloves of Dexterity (all game)'
       slot: hands
-      note: Act 1 early Archery gloves (Grat) → Gloves of Dexterity from the Crèche through Act 2 → Helldusk Gloves (Haarlep, House of Hope) in Act 3 for +1 spell save DC, +1 to all attack rolls and 1d6 Fire on every projectile.
+      note: Gloves of Archery (Grat) until the Crèche → Gloves of Dexterity (A'jak'nir Jeera) from the Crèche to the end; respec to DEX 8 once they are on.
     - id: prog-feet
       item: 'Boots: Boots of Speed → Boots of Brilliance → Boots of Persistence'
       slot: feet
-      note: Act 1 Boots of Speed for a character with no innate mobility → Act 2 Boots of Brilliance (Gauntlet of Shar) once Bardic Inspiration becomes the bottleneck → Act 3 Boots of Persistence (Dammon) for permanent Freedom of Movement, which frees a ring slot.
+      note: Boots of Speed (Thulla) → Boots of Brilliance (Gauntlet of Shar) → Boots of Persistence (Dammon, Lower City); Boots of Striding per fight once Charles is in Helldusk Boots.
     - id: prog-cloaks
       item: 'Cloak: none available → Cloak of Cunning Brume → Wavemother''s Cloak'
       slot: cloaks
-      note: Empty in Act 1 because no magical cloak exists then → cheap Cunning Brume (Mattis) as a backline escape → Wavemother's Cloak (Water Queen's House) in Act 3, whose +2 AC and +2 saves refresh every turn she is not hit, which for her is most of them.
+      note: Empty in Act 1 → Cloak of Cunning Brume (Mattis, Last Light) as the backline escape → Wavemother's Cloak (Water Queen's House) in Act 3, +2 AC and +2 saves every turn she is not hit.
     - id: prog-amulets
       item: 'Amulet: Broodmother''s Revenge → Spellcrux Amulet'
       slot: amulets
-      note: Act 1 Broodmother's (Kagha) while her bonus action is free for Healing Word → Act 2–3 Spellcrux (Moonrise Prison Warden), which returns a level-6 slot as a bonus action once per long rest — a second six-target Command.
+      note: Broodmother's Revenge (Kagha) in Act 1 → Spellcrux Amulet (Moonrise prison Warden) from Act 2 on; in Act 3 it refunds the morning Myrmidon's L6 slot.
     - id: prog-ring1
       item: 'Ring 1: Caustic Band → Band of the Mystic Scoundrel'
       slot: ring 1
-      note: Caustic Band holds this hand through Acts 1 and 2 — a flat 2 acid on every attack, which is worth most on the character making the most attacks → Band of the Mystic Scoundrel in Act 3, which turns her Command into a bonus action at the party's highest Arcane Acuity DC.
+      note: Caustic Band (Derryth) through Acts 1–2 → Band of the Mystic Scoundrel (Chult backpack, Circus) in Act 3.
     - id: prog-ring2
-      item: 'Ring 2: The Whispering Promise → flex → Caustic Band'
+      item: 'Ring 2: The Whispering Promise → Snowburst Ring → Ring of Feywild Sparks'
       slot: ring 2
-      note: The Whispering Promise until Asterion's Staff of Arcane Blessing takes over Bless duty, then a flex slot per fight, then Caustic Band moves across to this hand once the Band of the Mystic Scoundrel claims ring 1.
+      note: The Whispering Promise until Asterion casts Bless → Snowburst Ring (Last Light Inn) in Act 2 with Drakethroat set to Cold → Ring of Feywild Sparks (Blushing Mermaid) in Act 3; Caustic Band is the Act 3 option.
     - id: prog-weapons
-      item: 'Melee: Knife + Safeguard Shield → Phalar Aluve + Ketheric''s Shield (from the Stone)'
+      item: 'Melee: Knife + Safeguard Shield → Phalar Aluve + Sentinel Shield (Moonrise / the Stone)'
       slot: weapons
-      note: 'A stat-stick set she never swings, and its holder passives apply while she shoots — the wiki confirms the shield''s AC, verify the rest in game. Knife of the Undermountain King main hand + Safeguard Shield (Dammon, Grove) off hand from Act 1 until the Resonance Stone: the Club of Hill Giant Strength is skipped, so the main hand is free and a shield takes the off hand, which a second weapon could never occupy without Dual Wielder → from the Stone, Phalar Aluve (from Charles) + Ketheric''s Shield (Colony) for +2 AC and +1 spell save DC, and she carries Shriek for the party from 3–6 m. Sentinel Shield (Lann Tarv, Moonrise) is the optional +3-initiative off hand.'
+      note: 'A rack she never swings. Knife of the Undermountain King (Crèche) + Safeguard Shield (Dammon) → Sentinel Shield (Lann Tarv, Moonrise) → Phalar Aluve (from Charles at the Stone). Ketheric''s Shield is the +1 DC option. Shield AC carries from the inactive set; verify the rest in game.'
     - id: prog-ranged
-      item: 'Ranged: Titanstring Bow, all game'
+      item: 'Ranged: Titanstring Bow → The Dead Shot (Act 3)'
       slot: ranged weapons
-      note: Two Flourishes an Action are four Acuity triggers, and any Hasted turn caps Acuity on its own, so the hand-crossbow pivot was never needed. Titanstring's Strength rider stays on every projectile through a daily Giant Strength elixir from Act 1 — the Club is skipped. Gontr Mael goes to Asterion.
+      note: Titanstring (Brem) with a daily Hill Giant elixir through Act 2 → The Dead Shot (Fytz, Stormshore Armoury) in Act 3; Titanstring stays bagged for fights already at ≥ 75% hit chance.
     - id: prog-consumables
-      item: 'Elixir: Giant Strength every long rest, all game (Hill 21 → Cloud 27)'
+      item: 'Elixir: Hill Giant Strength (Acts 1–2) → Vigilance (Act 3); Arrows of Many Targets every act'
       slot: consumables
-      note: 'Elixir of Hill Giant Strength from Act 1 — STR 21 for the Titanstring rider, with the Club of Hill Giant Strength skipped — then Cloud Giant (STR 27) once level-9 vendors carry it in Act 3. Never Bloodlust: nothing competes for the slot. Stock heavily — Asterion drinks the same.'
+      note: 'Elixir of Hill Giant Strength every long rest for Titanstring → Elixir of Vigilance every long rest once The Dead Shot is in hand. Keep Arrows of Many Targets stocked in every act.'
   playstyle: |-
-    - **Act 1 default:** equip Titanstring in the ranged set and Knife of the Undermountain King plus the Safeguard Shield in the melee set, drink an Elixir of Hill Giant Strength every long rest for the Titanstring rider, and use Protecty Sparkswall to raise Hold Person/control DC. Use ranged Slashing Flourish for nova damage and trigger Broodmother's Revenge with healing before a multi-projectile turn.
-    - **Act 1 alternatives:** swap Protecty Sparkswall for Adamantine Splint once the first Mithral ore is poured, for AC 18 and crit immunity.
-    - **Act 2+:** keep Titanstring; two ranged Flourishes a turn are four Acuity triggers and a Hasted turn caps it. From the Stone she carries Phalar Aluve: Shriek with the Haste action on turn 1, standing 3–6 m from the melee cluster, then Flourish. In Act 3, spend Acuity on a same-turn bonus-action Hold Monster or Command.
-    - **Protect concentration:** stay at range. Against undead, use Hypnotic Pattern or Slow instead of Hold Monster/Command.
-    - **Hand Titanstring over at every long rest (Act 2 on):** Gale carries the Drakethroat Glaive in his backpack and Twins Draconic Elemental Weapon onto two weapons per day, and Titanstring is one of the two, ALL GAME. The spell can only reach a weapon on the ground or a MAIN-HAND weapon, and her melee main hand holds the Daylight-enchanted Knife of the Undermountain King (Phalar Aluve from the Stone) — so drop the bow on the ground next to Charles, let Gale enchant both in one Twinned cast, then pick it up and re-equip. It is worth +1 to Attack Rolls and +1d4 elemental *per projectile*, which is a Slashing Flourish multiplier, and it lasts until the next long rest.
-    - **Carry the party's Daylight:** Gale casts Daylight (Enchant Item) on Bonbon's main-hand weapon — the Knife of the Undermountain King before the Stone, Phalar Aluve after — once per long rest; it is bugged to last until the next rest and travels with her, keeping Gale lit for his Coruscation → Callous Glow chain. She is the carrier because the spell requires a main-hand weapon, which rules out Asterion's empty Tavern Brawler hands, and because her mid-range position keeps the 15m radius over the fight. ⚠ Do not swap her main-hand weapon afterwards, and let Gale cast it *before* any Darkness Arrow goes out.
-    - **The melee set is a passive rack, never a weapon.** She fights entirely from the ranged set, so both melee hands exist only to carry holder-scoped passives — the shield's AC is wiki-confirmed to pay out from the inactive set; verify the rest on the character sheet. The one thing she ever does with it is Shriek: from the Stone she spends an action to activate it off Phalar Aluve, which still never swings. Two weapons would need the Dual Wielder feat she has no room for; a weapon plus a shield needs nothing.
-    - **Division of control with Gale:** Bonbon owns the *Concentration* lane (Hold Person/Hold Monster — the auto-crit setup for Charles); Gale owns the *non-concentration* lane (Extended Command). They stack rather than compete, so do not both spend a turn on the same target.
+    - **Act 1 default:** Titanstring in the ranged set, Knife + Safeguard Shield in the melee set, an Elixir of Hill Giant Strength every long rest, Protecty for DC until the Splint is poured. Healing Word before a Flourish turn coats the arrows with Broodmother's poison.
+    - **Sharpshooter toggle (Acts 1–2):** off below ~40% displayed hit chance (about 30% with advantage). Moot in Act 3 with The Dead Shot.
+    - **Flourish every attack:** the Inspiration is spent only on a hit; a miss refunds it.
+    - **Arrows of Many Targets:** open with one or two. One roll, up to four targets, riders in full; two arrows cap Arcane Acuity on turn 1 without Haste.
+    - **Act 2 on:** two Flourishes are four Acuity triggers (+8); a Hasted turn caps at +10. Shoot the back line first so Snowburst ice lands away from Charles and Asterion; Gale's fire melts it.
+    - **Act 3 turn:** Flourish (Acuity and the Band trigger), then bonus-action Hold Monster or six-target Command. Keen Attack switches off under disadvantage: never shoot into Charles's Darkness.
+    - **Act 3 morning:** Elixir of Vigilance; cast Conjure Elemental (Air Myrmidon) from the L6 slot before the first fight; Spellcrux refunds the slot as a bonus action.
+    - **Shriek, always:** from the Stone, activate Shriek off Phalar Aluve (action; the Haste action on turn 1, or pre-cast from stealth) and stand 3–6 m from the targets. Never Sing.
+    - **Plant Growth:** between the pack and the back line, never on the melee cluster; layer it under Charles's Hunger of Hadar. No fire into the zone.
+    - **Nothing to Hold:** Silence over Charles's Hunger of Hadar (no casting, no Misty Step out). Hypnotic Pattern or Slow against undead and constructs instead of Hold or Command.
+    - **Arrow of Darkness:** the last attack of her turn, aimed at the ground so the cloud edge sits between Charles and the target. Nothing under the cloud is targetable afterwards.
+    - **Drakethroat (Act 2 on):** at each long rest drop her bow beside Charles; Gale Twins Draconic Elemental Weapon (Cold) onto both (+1 attack, +1d4 Cold per projectile, until the next long rest). Pick it back up.
+    - **Daylight carrier:** Gale casts Daylight on her main-hand melee weapon (Knife, then Phalar Aluve) once per long rest; it travels with her. Do not swap the main hand afterwards, and cast it before any Darkness Arrow.
+    - **The melee set is a rack:** she never swings it. Shield AC pays out from the inactive set (wiki-confirmed); check the Knife crit, Sentinel initiative and Ketheric's DC on the sheet with the bow drawn.
+    - **Lanes with Gale:** Bonbon holds the Concentration lane (Hold Person, Hold Monster); Gale runs non-concentration control (Extended Command). Never both on one target.
 ---

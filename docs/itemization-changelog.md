@@ -34,18 +34,18 @@ the source material, not an unexplained deviation.
 
 | Rank | Item | Assigned to | Status |
 |---|---|---|---|
-| #1 | Gloves of Dexterity | Bonbon | Taken through Act 2 — see D1; Helldusk Gloves replace them in Act 3 |
+| #1 | Gloves of Dexterity | Bonbon | Taken all game — respec to DEX 8 at the Crèche once they are in hand (2026-09-11 §2); Helldusk Gloves go to nobody |
 | #2 | Luminous Armour | Charles | Taken |
 | #3 | The Graceful Cloth | Asterion | Taken |
 | #4 | Deathstalker Mantle | Asterion | Taken (Dark Urge reward, via Charles) |
 | #5 | Strange Conduit Ring | Charles | Taken |
 | #6 | Hellrider's Pride | — | **Skipped — see D2** |
-| #7 | Boots of Stormy Clamour | Charles | Taken — moved from Gale, see 2026-09-11 §3 |
+| #7 | Boots of Stormy Clamour | Charles | Taken — moved from Gale (2026-09-11 §3); Asterion borrows them in fights where he is the condition-inflicter |
 | #8 | The Protecty Sparkswall | Bonbon | Taken |
 | #9 | Shapeshifter's Boon Ring | — | **Skipped — see D3** |
 | #10 | The Whispering Promise | Bonbon | Taken |
-| #11 | Disintegrating Night Walkers | Asterion | Taken |
-| #12 | Caustic Band | Bonbon | Taken |
+| #11 | Disintegrating Night Walkers | Asterion → Gale | Taken — Asterion Acts 1–2, Gale in Act 3 once Asterion moves to the Kushigo boots |
+| #12 | Caustic Band | Bonbon | Taken Acts 1–2; Act 3 option behind the Ring of Feywild Sparks (+1 spell save DC) |
 | #13 | Adamantine Shield | Charles | Taken — forged from the second ore, see D5 |
 | #14 | Boots of Speed | Bonbon | Taken — see D4 |
 | #15 | Adamantine Splint Armour | Bonbon | Taken |
@@ -209,10 +209,158 @@ Club only occupies the melee main hand that lets a shield into her off-hand — 
 of the Undermountain King is a stat stick with no Light partner requirement once the
 other hand holds a shield rather than a second weapon. Skipping it is what makes the
 Safeguard Shield hers from the Grove. Asterion already drinks one Giant Strength a day,
-so the cost is stocking two.
+so the cost is stocking two. (Revised 2026-09-11: Bonbon drinks Giant Strength in Acts 1–2 only; The Dead Shot
+replaces Titanstring in Act 3 and her elixir becomes Vigilance, so the second daily drinker ends there.)
 
 ---
 
+**D18 — Gale keeps the Fiend dip; the fire-sorcerer guide (iVOxw7TWYa0) takes Hexblade.**
+Hexblade's Curse is +4 per ray from char 9 and a 19–20 crit range, but Hexblade's expanded
+list is Shield and Wrathful Smite. Command is the party's non-concentration control lane and
+only Fiend puts it on Gale; without it Command exists only on Charles's Paladin list in
+Acts 1–2 and on Bonbon from Bard 10. The curse's bonus action also collides with Quickened
+Scorching Ray every turn. Player asked whether both were possible: they are not on one
+character.
+
+**D19 — Charles keeps Savage Attacker; the paladin/warlock guides take Great Weapon Master.**
+The videos want GWM for its bonus-action attack after a crit or kill, and the wiki confirms
+that half needs no two-hander. On a Held target it is one more auto-crit swing a turn
+(~+110 on the standard nova); Savage Attacker's reroll is ~+50 there but +120–150 on the
+nine-swing ceiling, and GWM does nothing on a turn with no crit or kill. The feat note now
+records the bonus attack as weighed, not "never applies".
+
+**D20 — Charles re-picks Hexblade at the Stone respec; the darkness-party guide (m2F7dNXEwNc) takes Great Old One.**
+Mortal Reminder frightens the target and nearby enemies on every crit, and every nova swing
+crits. It costs Hexblade's Curse, the heal on kill and the Shield spell, and the Held target
+does not need frightening. Recorded for the case where Hexblade's Curse turns out to be per
+swing rather than per damage roll (in-game check).
+
+---
+
+## 2026-09-11 — Cephalopocalypse review applied: Thief at 9, Dead Shot in Act 3, Warlock 6, Alert on Bonbon, cheat-sheet restyle
+
+Thirty-three Cephalopocalypse build and mechanics videos were transcribed, summarised
+(`resources/videos/summaries/`) and compared against the four builds; the tiered candidate
+list with the player's y/n is `docs/cephalopocalypse-build-review-2026-09-11.md`. Every
+change below was accepted there. The WHY for each entry now lives in
+`docs/build-notes-<nickname>.md` and `docs/build-notes-party.md` (see §8). Version 1.19.0.
+
+### 1. Asterion: Rogue 2–3 at character 8–9, Monk 7–9 after (T1-1)
+
+**Asterion, level order.** Rogue 1 (creation) → Monk 1–6 (char 2–7) → Rogue 2 (char 8) →
+Thief 3 (char 9) → Monk 7–9 (char 10–12). Same final split, no respec. Fast Hands arrives at
+char 9 instead of 12; Alert moves to char 11, Evasion to 10, Ki Resonation to 12. Six
+videos with this chassis order it this way. Also: the free +2 and the Hag's Hair go on WIS
+(DEX 16 → 18 under the Cloth, WIS 17 → 18 → 20), same AC, +1–2 per punch from Manifestation
+and the Kushigo boots; **Astarion is Ascended** (+1d10 Necrotic on every unarmed hit,
+Ascendant Bite); Athletics replaces Insight at Rogue 1; Boots of Stormy Clamour are a
+per-fight borrow from Charles when Asterion is the condition-inflicter.
+
+### 2. Bonbon: The Dead Shot in Act 3, Alert, Sentinel Shield, the Crèche respec (T1-2, T2-1..T2-10)
+
+**Bonbon, Act 3 ranged.** Titanstring stays for Acts 1–2; in Act 3 The Dead Shot (Fytz,
+Stormshore Armoury) replaces it: +2 with Keen Attack doubling proficiency, +5 to hit over
+Titanstring, which cancels Sharpshooter, and a 19 crit threshold. The Acuity and Band loops
+count hits. Titanstring stays as the option when hit chance is already high. Her Act 3 elixir
+becomes Vigilance (+5 initiative); Cloud Giant is Asterion's alone.
+
+**Feat.** Alert instead of War Caster at Bard 8. She was the slowest body in the party by
+3–8 and owns the Hold Monster lane; six videos make the same call.
+
+**Off-hand.** Sentinel Shield (Lann Tarv, Moonrise; +3 initiative) is the default from Act 2
+through Act 3; Ketheric's Shield is the option for fights where +1 DC matters more. The
+AC-only-verified caveat for passives from the inactive melee set stands.
+
+**Stats.** One respec, at the Crèche once the Gloves of Dexterity are in hand: STR 10 / DEX 8 /
+CON 16 / INT 8 / WIS 14 / CHA 17, Fighter 1 first again. The gloves set DEX 18 and stay on all
+game, so Helldusk Gloves leave her file (nobody wears them). Race line is Wood Half-Elf.
+
+**Rings and chest.** Act 2 ring 2 is the Snowburst Ring (Last Light Inn) with Gale's Drakethroat
+enchant set to Cold every day: an ice circle under every hit. Act 3 ring 2 is the Ring of
+Feywild Sparks (Auntie Ethel, Blushing Mermaid; hidden +1 spell save DC), Caustic Band as the
+option. Bhaalist Armour is recorded as a bagged nova swap for single-boss Hold fights inside 3 m
+(Bhaal path), Helldusk Armour stays the default. Boots of Striding are her Act 3 per-fight
+alternative once Charles moves to Helldusk Boots. Warped Headband of Intellect is the dialogue
+head swap. Arrows of Many Targets are stocked every act.
+
+**Spells.** Minor Illusion at Bard 1 (Vicious Mockery deferred), Heroism instead of Faerie Fire,
+Longstrider kept (Dissonant Whispers dropped at char 6), Tasha's kept for the Band, Plant Growth
+fills the char 9 pick that used to re-learn Hold Person, Silence stays as the regular Bard 10
+pick beside the two Magical Secrets (bg3.wiki: Bard 10 is "Spells Known: 13" plus "Learn 2
+non-Bard Spells"), no Dominate Person. Conjure Elemental summons the Air or Earth Myrmidon,
+never Water: Wet grants fire resistance. The L6 Myrmidon is cast before the first fight and the
+slot refunded with Spellcrux. Sharpshooter goes off below ~40% displayed hit chance in Act 1.
+
+### 3. Charles: Paladin 6 / Hexblade Warlock 6 (T1-3, T2-11, T2-12)
+
+**Charles, character 12.** Warlock 6 (Accursed Spectre, a seventh spell known) instead of
+Paladin 7 (Relentless Avenger). Costs one L2 Paladin slot (4/2 instead of 4/3). Every nova
+kill on a cursed target raises a 10-turn spectre. Hold Person from an L3 pact slot Holds two
+humanoids. Elixir: Bloodlust on Hold days, Elixir of Heroism on days with nothing to Hold.
+Divine Sense before Inquisitor's Might against undead and fiends. Aura of Protection must be
+cast to activate, at char 8 and again at char 11. Hexblade's Curse is once per short rest with
+a 20% free proc and a heal on kill; curse the nova target on the set-up turn.
+
+### 4. Gale: spell path and boots (T2-17..T2-19, T3-G1..G8)
+
+**Gale, spells.** Sorc 3 replaces Chromatic Orb with Cloud of Daggers, Sorc 5 replaces it with
+Counterspell (one level earlier), Magic Missile is kept, Ice Storm replaces Dimension Door at
+Sorc 8, Cone of Cold replaces Telekinesis at Sorc 10. Twinned Haste is pre-cast before initiative
+where the fight can be seen coming. Markoheshkir's attunements each grant two free spells per
+short rest (Fireball + Wall of Fire, or Chain Lightning + Lightning Bolt); Heat is discharged into
+Fireball. Act 3 boots are the Disintegrating Night Walkers (from Asterion), Evasive Shoes the
+option. Drakethroat Glaive enchants Cold every day for the Snowburst ring. The dip stays Fiend
+(D18).
+
+### 5. Party rules added to party.md
+
+Open fights from Stealth. Gale's Armour of Landfall Plant Growth under Charles's Hunger of Hadar,
+and no fire into that zone. Arsonist's Oil fire-vulnerability setup (thrown Elixir of Fire
+Resistance, oil hit, second thrown elixir). Paralysed targets take auto-crits from any attack
+within 3 m, Scorching Ray included. Radiant Shockwave never orbs allies. The Mirror of Loss is a
+DC 25 Religion check then a 60% roll: Enhance Ability, Guidance, quicksave. Counterspell against
+a higher-level spell rolls INT. Phalar Aluve is always Shriek.
+
+### 6. Corrections
+
+- Wet grants fire resistance and Healing Vapours no longer applies it; the Water Myrmidon
+  sentence in bonbon.md was backwards.
+- Darkness gives Charles advantage only against enemies without darkvision; the cloud's value
+  is the ranged block and the Blind. "Advantage in, disadvantage out" is gone.
+- Command casts from any Sorcerer slot; the gale.md trap is deleted.
+- Disintegrating Night Walkers grant no Prone immunity (found while applying; the review had
+  claimed it). They are taken for the ice footing and the Misty Step.
+- loot.md's reason for skipping the Amulet of the Devout was wrong; +2 DC works on anyone. Still
+  skipped: Spellcrux is her Act 3 neck.
+- The Helldusk Helmet does cancel critical hits (full wiki page); it stays on the pre-nova list.
+- tadpole.md: Charles's illithid DC runs on Battlemage's Power Acuity (17 → 27); Asterion's is
+  DC 18 at WIS 20.
+
+### 7. Declined
+
+Pure Sorcerer 12 and Sorc 9 / Fiend 3 for Gale, the Hexblade dip (D18), the dip at char 2,
+Great Weapon Master (D19), Great Old One (D20), Warlock 3 Shadow Blade in Act 1, Boots of Arcane
+Bolstering, Alert over Elemental Adept, Pyroquickness Hat, reaction baiting, Banishment, Amulet
+of the Devout, Phalar Sing, Luminous Gloves on Asterion. The full Tier 5 list is in the review.
+
+### 8. Cheat-sheet restyle
+
+Every free-text value in the character files, loot.md and party.md now says what the pick is,
+where and when, and at most one gotcha. The removed rationale (numbers, comparisons, wiki facts,
+rejected alternatives) is in `docs/build-notes-{charles,asterion,gale,bonbon,party}.md`, keyed
+by entry id. Word counts: charles 16.7k → 11.2k, gale 12.8k → 9.7k, bonbon 11.9k → 8.9k,
+asterion 7.9k → 6.4k, loot 12.1k → 8.0k. No YAML key, id or list shape changed.
+
+### Known open questions
+
+- Hexblade's Curse per damage roll or per swing (two combat logs say per roll).
+- Spellmight Gloves per ray.
+- Whether a shield's or weapon's passive applies from the inactive melee set (Sentinel +3,
+  Ketheric's +1 DC, Knife crit threshold).
+- Whether a reaction interrupting the first Scorching Ray projectile drops the rest.
+- Whether ranged spell attacks inside 3 m take the Threatened penalty against a Paralysed target.
+
+---
 ## 2026-09-11 — Club skipped, Bonbon shield rack from Act 1, Stormy Clamour to Charles, Gale's boots, Drakethroat Glaive
 
 A reconciliation of two edit sets made after the 2026-09-10 review: one kept the Club and

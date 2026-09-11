@@ -14,12 +14,12 @@ loot_guide:
     - name: Silver Pendant
       for: Shared utility swap
       core: true
-      note: 'On a skeleton at the Harper outpost southwest of the Grove (X: 152 Y: 366). Grants Guidance at will. MANDATORY PICKUP: there is no Cleric level anywhere in the party, so this pendant is the ONLY source of Guidance for the whole run. Grab it before the Grove and keep it as a shared exploration swap. Do not feed it to Gale''s orb.'
+      note: 'Skeleton at the Harper outpost southwest of the Grove (X: 152 Y: 366). Guidance at will, and the party''s ONLY Guidance. Keep it as a shared swap for checks and the Mirror of Loss. Not orb food for Gale.'
     - name: Deathstalker Mantle
       wiki: The Deathstalker Mantle
       for: Asterion
       core: true
-      note: DARK URGE ONLY — Sceleritas Fel, at camp. Kill → Invisible 2 turns, once per turn. Charles receives it and hands it to Asterion.
+      note: 'DARK URGE ONLY: Sceleritas Fel hands it to Charles at camp; pass it to Asterion. A kill makes him Invisible for 2 turns, once per turn.'
     events:
     - name: Withers — recruit + RESPEC
       note: Dank Crypt sarcophagus (Overgrown Ruins). Respec 100g, revive, hirelings — required for every respec in this plan.
@@ -30,40 +30,44 @@ loot_guide:
     - name: Ring of Protection
       for: Gale
       core: true
-      note: 'Mol''s reward for Steal the Sacred Idol, after the Grove resolves (not pickpocketed). +1 AC and +1 to all saving throws, and the item guides say to put it on the party''s lowest AC — that is Gale, at AC 15 in Spidersilk Armour against Asterion''s 21 unarmoured. The save bonus is also concentration insurance for Twinned Haste, which the whole party plan rests on. Asterion takes the Bracing Band at Grymforge instead and loses nothing.'
+      note: 'Mol''s reward for Steal the Sacred Idol, after the Grove resolves (not pickpocketed). +1 AC, +1 all saves. Gale''s Act 1 ring: lowest AC in the party, and the save bonus guards Twinned Haste.'
     - name: Corellon's Grace
       for: Asterion
       core: true
-      note: 'Auntie Ethel. LEVELS 2–4 ONLY: +1 to Flurry/bonus punches, +2 saves unarmoured. ⚠ Unequip at char 5 — main-action attacks otherwise swing the staff and lose Tavern Brawler.'
+      note: 'Auntie Ethel. Levels 2–4 only: +1 to Flurry punches, +2 saves while unarmoured. ⚠ Unequip at char 5, or main-action attacks swing the staff and lose Tavern Brawler.'
     - name: Safeguard Shield
       for: Bonbon
       core: true
-      note: 'Sold by Dammon at the Grove. +2 AC and +1 to all saving throws. BONBON''S: it rides in the off hand of her inactive melee set, beside the Knife of the Undermountain King, from Act 1 until Ketheric''s Shield replaces it at the Mind Flayer Colony. The wiki states that a shield equipped in the MELEE set still gives its AC while the ranged set is actively wielded, so the +2 AC is live while she shoots; only the AC carry is confirmed, not the +1 saves. Fighter 1 gives her shield proficiency and a shield needs no Dual Wielder — skipping the Club of Hill Giant Strength is what leaves the hand free. NOT GALE''S — Dual Wielder at character level 4 fills both his hands with staves. Charles takes a PLAIN +2 SHIELD from any vendor instead and holds it until the Adamantine Shield is poured at Grymforge.'
+      note: 'Dammon at the Grove. +2 AC, +1 all saves. Rides in the off hand of her never-swung melee set beside the Knife until the Sentinel Shield at Moonrise. ⚠ Only the AC is confirmed to carry while she shoots.'
     - name: Broodmother's Revenge
       for: Bonbon
       core: true
-      note: Save the Grove, talk Kagha down, then knock her out non-lethally while isolated. Any healing coats Titanstring for +1d6 Poison per projectile, 2 turns — potion up before a Flourish nova. Skip vs poison immunity.
+      note: Save the Grove, talk Kagha down, then knock her out non-lethally while isolated. Any heal coats her bow with +1d6 Poison per projectile for 2 turns; potion up before a Flourish nova. Skip vs poison immunity.
     - name: The Whispering Promise
       wiki: The Whispering Promise
       for: Bonbon
       core: true
-      note: 'THE LEVEL 1–3 BLESS FIX. Volo (or Grat at the Goblin Camp), ~40g. Healing a creature gives it +1d4 to attacks and saves for 2 turns, no Concentration. ⚠ It applies the SAME condition as the Bless spell, so it does NOT stack with Charles''s Bless and is NOT enhanced by the Staff of Arcane Blessing — its job is the char 1–3 window before Charles has Bless at all, and later any turn Charles concentrates on Hex or Darkness instead. Best trigger is a THROWN Potion of Healing, which blesses every creature it splashes; Bonbon''s bonus-action Healing Word covers one, and it also fires Broodmother''s Revenge. Works even on a target at full HP. ⚠ Consumable by Gale — do not feed it to the orb.'
+      note: 'Volo (or Grat at the Goblin Camp), ~40g. Healing a creature gives it +1d4 attacks and saves for 2 turns, no concentration: the char 1–3 Bless. Throw a Potion of Healing to bless the whole splash. ⚠ Same condition as Bless; they do not stack. Gale''s orb eats it.'
     - name: Hellrider's Pride
       wiki: Hellrider's Pride
       for: any
       core: false
-      note: 'Zevlor (loot, steal, or the Kagha quest reward). Healing another creature gives it resistance to weapon Bludgeoning/Piercing/Slashing for 2 turns. Rated #6 of 20 Act 1 items, and still not a standing pick: the glove slot is spoken for on every member — Bonbon wears Gloves of Dexterity (the #1 item), Charles Gloves of Baneful Striking, Asterion Bracers of Defence, Gale Gloves of Belligerent Skies. Bag it and swap it in for a stretch of heavy physical damage, which is when Blade Ward is worth more than any of those.'
+      note: Zevlor (loot, steal, or the Kagha quest reward). Healing another creature gives it resistance to weapon damage for 2 turns. Bag it and swap in for a stretch of heavy physical damage; every glove slot is spoken for.
     - name: Gloves of Power
       for: any
       core: false
-      note: 'Za''krug at the Grove gate. +1 Sleight of Hand; a branded wearer''s hits inflict Absolute''s Bane (−1d4 attacks and saves). Pickpocket helper, not a +attack/DC item.'
+      note: 'Za''krug at the Grove gate. +1 Sleight of Hand; a branded wearer''s hits inflict Absolute''s Bane (−1d4 attacks and saves). Pickpocket helper, not a combat glove.'
     - name: Sorrow
       for: any
       core: false
       note: Hidden Vault at the Wolf altar (Enclave Library puzzle). +1 reach glaive with Sorrowful Lash — decent early reach weapon.
+    - name: Elixir of Heroism
+      for: Charles
+      core: true
+      note: 'Mol in the Tiefling Hideout, Talli at Moonrise, or craft it (Sublimate of Pegasus Feathers + any Ashes), 30 gp. Charles drinks it on days with nothing to Hold: +1d4 attacks and saves, stacks with Bless. Skip Armour of Agathys that day (one temp-HP source).'
     events:
     - name: ⚠ Strange Ox — DO NOT KILL IT HERE
-      note: 'The wandering Strange Ox in the Grove carries the Hat of Fire Acuity ONLY from Act 2 onward — kill it here and you get just the Shapeshifter''s Boon Ring, and Gale''s entire build loses the item it depends on. Leave it alone; kill it at Dammon''s blacksmith in Last Light Inn in Act 2. If you miss it there, it reappears in Rivington on a hill west of the requisitioned barn in Act 3.'
+      note: 'It carries the Hat of Fire Acuity only from Act 2. Kill it at Dammon''s blacksmith in Last Light Inn; missed there, it reappears in Rivington (Act 3) on a hill west of the requisitioned barn.'
     - name: Save the Grove
       note: Central Act 1 hub — good (kill the goblin leaders) vs evil (raid with Minthara).
     - name: Recruit Wyll
@@ -77,10 +81,10 @@ loot_guide:
     - name: Auntie Ethel's Hair
       for: any
       core: true
-      note: 'Vanilla: one permanent +1, uncapped. Modded run: one per member — Charles/Bonbon/Gale CHA 17→18, Asterion DEX 17→18.'
+      note: 'Modded run: one Hair per member. Charles, Bonbon and Gale CHA 17→18; Asterion WIS 17→18. The Act 3 Mirror of Loss then takes each to 20 (DC 25 Religion check + 60% roll: Enhance Ability, Guidance, quicksave first).'
     events:
     - name: Get the Hag's Hair
-      note: Fight Ethel below 20% HP, then let her take a turn to offer the bargain. Accept → Hair, she escapes; killing her gives nothing. Letting her go can break non-Devotion oaths — fine for Charles's Oathbreaker path.
+      note: 'Fight Ethel below 20% HP, then let her take a turn to offer the bargain. Accept → Hair, she escapes; killing her gives nothing. ⚠ Letting her go breaks a non-Devotion Paladin''s oath: a companion, not Charles, speaks to her (Patch 8), and quicksave first.'
     - name: Rescue Mayrina
       note: Bitter Divorce questline.
   - area: Blighted Village & Whispering Depths
@@ -88,11 +92,15 @@ loot_guide:
     - name: Haste Helm
       for: Charles
       core: true
-      note: 'Moss-Covered Chest in the Blighted Village. Three turns of opening Momentum, and Charles keeps it: he has the party''s worst base initiative (Alert at char 6 fixes that) and the longest distance to close, while the Ring of Arcane Synergy supplies his damage rider without consuming the head slot. ⚠ It does not go to Asterion — he has Unarmoured Movement plus Step of the Wind, and his head takes the Circlet of Psionic Revenge. ⚠ Gale has no repositioning of his own until Draconic Fly at character level 12, but his head slot is committed to the Shadespell Circlet and then the Hat of Fire Acuity, so this is never his.'
+      note: 'Moss-Covered Chest in the Blighted Village. Three turns of Momentum when combat starts. Charles''s Act 1 head: the worst base initiative and the longest distance to close. Not Asterion''s (Step of the Wind) and never Gale''s.'
     - name: Bracers of Defence
       for: Asterion
       core: true
       note: Apothecary's secret cellar. +2 AC unarmoured and shieldless — Asterion's AC.
+    - name: Warped Headband of Intellect
+      for: Bonbon
+      core: false
+      note: 'Carried by Lump the Enlightened, the ogre in the barn (loot him, or call him in later and loot him). Sets INT 17. Bonbon''s out-of-combat head swap for Arcana, History, Investigation and Religion checks; never worn in combat.'
     - name: Sussur weapons (Dagger/Greatsword)
       wiki:
       - Sussur Dagger
@@ -122,28 +130,28 @@ loot_guide:
     - name: Bow of Awareness
       for: Gale
       core: true
-      note: Roah Moonglow, Shattered Sanctum. Fills Gale's unused ranged slot purely for +1 Initiative, to land Haste or Wet first.
+      note: Roah Moonglow, Shattered Sanctum. Fills Gale's empty ranged slot for +1 Initiative until the Hellrider Longbow in Act 3.
     - name: Hand Crossbow +1
       for: Charles + Asterion
       core: true
-      note: Farm four copies — Dammon, Roah Moonglow, Derryth Bonecloak, A'jak'nir Jeera. A pair each for Charles and Asterion as ranged fallback.
+      note: 'Farm four copies: Dammon, Roah Moonglow, Derryth Bonecloak, A''jak''nir Jeera. A pair each as ranged fallback; Asterion''s Sneak Attack fires off any ranged weapon.'
     - name: Arrows of Darkness
       wiki: Arrow of Darkness
       for: Charles
       core: true
-      note: 'Restock from arrow vendors after rests and level-ups. 3m cloud, 3 turns, no Concentration: Bonbon places it, Shriek goes up (Charles until the Stone, Bonbon after), and Devil''s Sight gives Charles advantage from inside the cloud while Hold Person is up.'
+      note: 'Restock at arrow vendors after rests. Bonbon fires it LAST in her turn, at the ground, so the cloud edge sits between Charles and the target. The 3 m cloud blocks ranged attacks both ways and Blinds enemies inside; advantage only vs enemies without darkvision.'
     - name: Boots of Striding
       for: Charles
       core: true
-      note: 'Minthara. Start a concentration buff before entering the cloud → Momentum, plus immunity to Prone and forced movement while concentrating, and Prone ends Concentration outright. ⚠ FLEX SLOT: through Act 1 his Concentration is only Hex, so default to the Boots of Stormy Clamour and switch to these at char 7, when Hold Person takes the slot permanently. After the Resonance respec, self-cast Darkness supplies the Momentum trigger.'
+      note: 'Minthara. Prone and forced-movement immunity while concentrating, plus Momentum when a concentration buff starts. Charles from char 7 (Hold Person); Stormy Clamour before that. Act 3: Bonbon''s per-fight option once Charles wears Helldusk Boots.'
     - name: Gloves of the Growling Underdog
       for: Charles
       core: false
-      note: Dror Ragzlin's treasure room. Advantage on melee attacks with 2+ enemies within 3m of the target — for when Darkness Arrows run short; redundant once Risky Ring lands.
+      note: 'Dror Ragzlin''s treasure room. Advantage on melee attacks when 2+ enemies stand within 3 m of the target: Charles''s Act 1 advantage source, since most Act 1 enemies see through Darkness. Redundant once the Risky Ring lands.'
     - name: Spidersilk Armour
       for: Gale
       core: true
-      note: 'Gale''s Act 1 chest, and the answer to his concentration problem. Worn by Minthara in the Shattered Sanctum — the same kill that yields Charles''s Boots of Striding, so it costs nothing extra. AC 12 + DEX and +1 Stealth, but the reason is ADVANTAGE ON CONSTITUTION SAVING THROWS, which protects Twinned Haste from Act 1 instead of waiting for Armour of Landfall in Act 3. Gale has light armour from Human Civil Militia, and this is his only chest item. ⚠ Costs exactly 1 AC versus going unarmoured (Draconic Resilience is 13 + DEX); Gale has no War Caster and no feat left for one, so the advantage is his only concentration protection for two whole acts.'
+      note: 'Worn by Minthara in the Shattered Sanctum (same kill as the Boots of Striding). AC 12 + DEX, +1 Stealth, and ADVANTAGE ON CON SAVES: Twinned Haste''s only protection until Armour of Landfall. Gale''s Act 1 chest.'
     - name: Goblin-leader loot (Gut / Ragzlin / Minthara)
       wiki: false
       for: any
@@ -167,12 +175,12 @@ loot_guide:
     - name: Titanstring Bow
       for: Bonbon
       core: true
-      note: 'Brem. Bonbon''s ranged weapon FOR THE WHOLE RUN. The melee set behind it is a passive rack she never swings: Knife of the Undermountain King plus the Safeguard Shield from Act 1, Phalar Aluve plus Ketheric''s Shield from the Resonance Stone. The Strength rider runs on an Elixir of Hill Giant Strength (STR 21) every long rest from day one — the Club of Hill Giant Strength is skipped — and the Elixir of Cloud Giant Strength (STR 27) takes over in Act 3.'
+      note: 'Brem. Bonbon''s bow for Acts 1–2 only; The Dead Shot takes over in Act 3. An Elixir of Hill Giant Strength every long rest from day one feeds the Strength rider (the Club is skipped). Sharpshooter off below ~40% displayed hit chance.'
     - name: Zhentarim vendor stock (Brem / Sparkle)
       wiki: false
       for: any
       core: false
-      note: Smokepowder Bombs and Barrels, scrolls, misc gear. The one-stop Act 1 shop, and steal-friendly.
+      note: Smokepowder Bombs and Barrels, scrolls, misc gear, and Bonbon's Arrows of Many Targets when stocked. The one-stop Act 1 shop, and steal-friendly.
     events:
     - name: Rescue the Grand Duke (Waukeen's Rest fire)
       note: Save Florrick → The Spellsparkler + the Flaming Fist plotline.
@@ -183,12 +191,12 @@ loot_guide:
     - name: Boots of Stormy Clamour
       for: Charles
       core: true
-      note: 'Omeluum (Ebonlake Grotto), after his parasite quest. Inflicting a condition on a hostile → 2 turns of Reverberation. ⚠ CHARLES''S, NOT GALE''S. Gale has no Reverberation payload until Act 2 and is three times over the 5-stack threshold once he does. Charles converts them properly: Luminous Armour''s Radiant Shockwave is a CreateExplosion event, which resets the boots'' hidden OncePerAttack limit, so Inquisitor''s Might Radiant procs Reverberation on every swing. He flexes them against Boots of Striding and later Helldusk Boots, which are what keep him immune to Prone.'
+      note: 'Omeluum (Ebonlake Grotto), after his parasite quest. Inflicting a condition on a hostile → 2 turns of Reverberation. Charles''s through char 6, then his flex against Striding and Helldusk Boots. Shared with Asterion: whoever inflicts more conditions that fight wears them.'
     - name: Boots of Speed
       wiki: Boots of Speed
       for: Bonbon
       core: true
-      note: 'Worn by Thulla in the Ebonlake Grotto — the same Underdark stop as Omeluum, so it costs no detour. A bonus-action Dash, ranked #14 of the Act 1 top 20 for handing any character Rogue-grade mobility, and Bonbon is the fit: she has no innate movement of her own and an otherwise-empty Act 1 boot slot, so this is the item that stops her wasting turns out of position. ⚠ NOT ASTERION''S — Step of the Wind already gives him bonus-action Dash and Disengage from Monk 2, so the boots would buy him nothing while displacing the Night Walkers. ⚠ Charles flexes BOOTS OF STRIDING against the Boots of Stormy Clamour; Striding''s immunity to Prone is load-bearing for him once Hold Person is his Concentration at char 7. ⚠ The item guide flags the opportunity-attack rider as bugged, reportedly applying to the WEARER — take these for the Dash, not the defensive text. Boots of Brilliance take the slot in Act 2.'
+      note: 'Worn by Thulla in the Ebonlake Grotto (same stop as Omeluum). Bonus-action Dash for the one character with no movement of her own. Boots of Brilliance replace them in Act 2. ⚠ The opportunity-attack rider is reported bugged; take them for the Dash.'
     - name: Pearl of Power Amulet
       for: Gale
       core: true
@@ -196,7 +204,7 @@ loot_guide:
     - name: Melf's First Staff
       for: Gale
       core: true
-      note: 'Sold by Blurg. +1 Spell Save DC and +1 spell attacks. Gale holds it OFF-HAND alongside Spellsparkler permanently from character level 4, once Dual Wielder makes the pair legal — neither staff is Light — and the +1 spell attack applies to every individual Scorching Ray ray. In Act 3 Rhapsody takes the off hand and this goes in his bag; it does not move to Bonbon, whose melee set is Phalar Aluve and Ketheric''s Shield.'
+      note: 'Sold by Blurg. +1 spell save DC and +1 spell attacks (per ray). Gale''s off hand beside Spellsparkler from char 4, when Dual Wielder makes the pair legal. Rhapsody replaces it in Act 3.'
     - name: The Shadespell Circlet + The Lifebringer
       wiki:
       - The Shadespell Circlet
@@ -207,57 +215,57 @@ loot_guide:
     - name: Luminous Armour
       for: Charles
       core: true
-      note: Selûnite Outpost, trapped chest behind a hidden door. AC 15 + up to 2 DEX; Radiant Smites emit Radiating Shockwaves that penalise nearby enemy attacks.
+      note: 'Selûnite Outpost, trapped chest behind a hidden door. AC 15 + up to 2 DEX. Radiant damage fires a Radiant Shockwave that Orbs every non-ally in range (neutrals included, allies never). Locked on Charles all game.'
     - name: Phalar Aluve
       for: Charles
       core: true
-      note: 'Longsword in stone near the Selûnite Outpost. CHARLES''S until the Resonance Stone: bind it, one-hand it behind a shield (a plain +2 Shield from any vendor, then the Adamantine Shield), Duelling from char 4, Darkness Arrows for advantage. AT THE STONE it moves to BONBON''S melee set beside Ketheric''s Shield and she carries Shriek from 3–6 m of the fight — the aura sits on the wielder, ends if the sword is unequipped, and costs an Action.'
+      note: 'Longsword in stone near the Selûnite Outpost. Charles one-hands it behind a shield (Duelling from char 4) until the Resonance Stone, then it moves to Bonbon''s melee set. ALWAYS Shriek, never Sing: 6 m around the wielder, ends if unequipped, costs an Action.'
     - name: Staff of Arcane Blessing
       wiki: Staff of Arcane Blessing
       for: Asterion
       core: true
-      note: 'ASTERION''S, not Charles''s. Arcane Tower BASEMENT, leaning against a table; the elevator buttons only appear if someone carries Bernard''s Guiding Light ring. It GRANTS Bless as a level 1 spell once per long rest, so the holder needs no Paladin or Cleric level to cast it, and every Bless its wielder casts also applies Mystra''s Blessing, a second +1d4 that lands only on SPELL attack rolls. Asterion holds it, casts Bless out of combat, then unequips it and fights with empty hands - he is the only member with no other use for Concentration. Charles cannot be the Bless caster because his Concentration is permanently Hold Person, and Gale cannot because his is permanently Twinned Haste. WARNING the free cast is 1/long rest and Bless at level 1 covers only THREE creatures. WARNING do not let Gale consume it.'
+      note: 'Arcane Tower BASEMENT, leaning against a table; the elevator buttons need Bernard''s Guiding Light ring. Grants Bless (L1, three targets) once per long rest. Asterion casts it before combat on the other three, then unequips it. ⚠ Not orb food.'
     - name: Caustic Band
       for: Bonbon
       core: true
-      note: 'Derryth — +2 Acid per weapon hit, scaling with Flourish projectiles. ⚠ THE CLUB OF HILL GIANT STRENGTH IS NO LONGER TAKEN. It sits on the broken Arcane Tower stool and sets STR 19 to free the elixir slot, but this run takes Strength from potions and Elixir of Hill Giant Strength sets 21. Leaving it frees Bonbon''s melee main hand, which is what lets a shield into her off hand for the rest of the game. She drinks Giant Strength every long rest like Asterion — Hill Giant now, Cloud Giant in Act 3.'
+      note: 'Derryth. +2 Acid per weapon hit, per Flourish projectile. Bonbon''s ring for Acts 1–2. In Act 3 the Ring of Feywild Sparks takes the slot and this becomes the option.'
     - name: Elixirs of Bloodlust
       wiki: Elixir of Bloodlust
       for: Charles
       core: true
-      note: 'Craft from Worg Fangs; check Cyrel, Derryth, Stonemason Kith. Non-Honour, a kill grants an extra Action that benefits from Extra Attack. CHARLES''S STANDING ELIXIR, every long rest, all game: three attacks a turn into Held targets kill something most rounds, and the extra Action is another swing or the Hold Person itself. Bonbon never drinks it — she runs Giant Strength every long rest for the Titanstring rider from Act 1 to the end.'
+      note: 'Craft from Worg Fangs; check Cyrel, Derryth, Stonemason Kith. A kill grants an extra Action (with Extra Attack outside Honour). Charles''s elixir on Hold days; Elixir of Heroism on days with nothing to Hold. Bonbon never drinks it.'
     - name: Ring of Mind-Shielding
       for: Gale
       core: true
-      note: Omeluum's parasite-quest reward in the Ebonlake Grotto (persuade, intimidate, pay, trade a story or pickpocket). Advantage on saves against Charmed, and the wearer cannot be possessed or read. Gale's second Act 1 ring beside the Ring of Protection — a charmed Gale is a dropped Haste and a Fireball pointed at his own party, so this is concentration insurance as much as a saving throw.
+      note: 'Omeluum''s parasite-quest reward (persuade, intimidate, pay, trade a story or pickpocket). Advantage on saves vs Charmed; cannot be possessed or read. Gale''s second Act 1 ring: a charmed Gale is a dropped Haste and a Fireball into his own party.'
     events:
     - name: Help Omeluum
       note: Myconid Colony. Reward includes the Amulet of Misty Step or a ring, and opens his shop.
     - name: Arcane Tower
-      note: 'Reactivate the tower; take the Staff of Arcane Blessing in the basement and the scrolls. The Club of Hill Giant Strength is here on the broken stool and is deliberately SKIPPED — see the Caustic Band note.'
+      note: 'Reactivate the tower; take the Staff of Arcane Blessing in the basement and the scrolls. Leave the Club of Hill Giant Strength on the broken stool: Bonbon''s Strength comes from elixirs.'
   - area: Grymforge
     items:
     - name: Disintegrating Night Walkers
-      for: Asterion
+      for: Asterion (Acts 1–2) → Gale (Act 3)
       core: true
-      note: True Soul Nere. Bonus-action Misty Step 1/short rest + immunity to Web, Entangle and grease-slip.
+      note: 'True Soul Nere. Bonus-action Misty Step once per short rest; no Web, Entangle or Ensnare, and no slipping on Grease or Ice. Asterion''s boots for Acts 1–2. In Act 3 he moves to Kushigo and Gale wears these (Snowburst ice never trips him).'
     - name: Adamantine Splint Armour
       for: Bonbon
       core: true
-      note: 'FIRST MITHRAL ORE, poured with the Splint mould. AC 18 flat, ATTACKERS CANNOT LAND CRITICAL HITS, all incoming damage reduced by 2, and melee attackers are sent Reeling. Bonbon is the party''s only Heavy-armour wearer — Fighter 1 taken first grants it, Charles has medium only, Asterion must stay unarmoured and Gale is light-armour-only. Crit immunity is what protects Hold Monster: a concentration save is "DC equal to half the damage taken, or 10, whichever is higher," so a crit roughly doubles the DC, and it also stops Hold Person and Sleeping from handing attackers automatic crits against her. ⚠ The second ore goes to CHARLES''S ADAMANTINE SHIELD — his melee set is the active one, so its crit immunity is live on him, unlike a shield parked behind her bow, where the wiki confirms only the AC carries over. The Splint gives her crit immunity outright. Protecty Sparkswall stays the swap-in for fights where +1 spell save DC beats 6 AC.'
+      note: 'First Mithral ore, Splint mould. AC 18, attackers cannot crit, −2 all incoming damage, melee attackers Reel. Bonbon''s chest from here to Helldusk Armour; only she has Heavy Armour (Fighter 1). Bag the Sparkswall for fights where +1 DC beats 6 AC.'
     - name: Adamantine Shield
       for: Charles
       core: true
-      note: 'SECOND MITHRAL ORE, poured with the Shield mould. +2 AC, ATTACKERS CANNOT LAND CRITICAL HITS, and a melee miss sends the attacker Reeling. Charles is locked to Luminous Armour, so this is the only crit immunity he can carry before the Helm of Balduran — and a crit roughly doubles the concentration DC on the Hold Person he holds in every fight. It replaces the plain +2 Shield he has carried since the Grove and stays until the Walking Fortress in Act 3. The Scale Mail this ore used to buy went unworn once Luminous Armour was locked.'
+      note: 'Second Mithral ore, Shield mould. +2 AC, attackers cannot crit, melee misses Reel. Charles''s off hand from here to the Walking Fortress: his only crit immunity before the Helm of Balduran, guarding Hold Person.'
     - name: Grymskull Helm
       wiki: Grymskull Helm
       for: Bonbon
       core: true
-      note: 'FREE CRIT IMMUNITY — dropped by Grym, the boss you must kill to use the forge anyway, requiring only heavy armour proficiency, which Bonbon has from Fighter 1. Grants "attackers can''t land Critical Hits on the wearer" plus Fire resistance, for zero ore. HER EARLY STOPGAP HEAD: wear it on the way to the Crèche and retire it the moment the Diadem of Arcane Synergy lands, then the Helmet of Arcane Acuity takes the slot permanently from Act 2.'
+      note: 'Dropped by Grym. Crit immunity and Fire resistance for zero ore; needs heavy armour proficiency (Fighter 1). Bonbon''s stopgap head until the Diadem of Arcane Synergy at the Crèche.'
     - name: The Protecty Sparkswall
       for: Bonbon
       core: true
-      note: Trapped bridge chest at the end of the Grymforge bridge. +1 Spell Save DC for Hold Person, Hypnotic Pattern, Fear, Slow and Glyph — Bonbon's early-Act-1 chest, and the price is low clothing AC at range until the forge. The Adamantine Splint becomes her default the moment it is poured; keep Sparkswall bagged for the fights where +1 spell save DC beats 6 AC.
+      note: 'Trapped chest at the end of the Grymforge bridge. +1 spell save DC. Bonbon''s chest until the Splint is poured, then bagged for fights where +1 DC beats 6 AC.'
     - name: Wondrous Gloves
       for: Bonbon
       core: false
@@ -265,11 +273,11 @@ loot_guide:
     - name: Bracing Band
       for: Asterion
       core: true
-      note: 'Sergeant Thrinn''s reward for Find the Missing Boots — a free permanent +1 AC almost nobody takes. "After shoving an enemy, the wearer gains a +1 to their Armour Class until their next turn," and per the wiki the trigger is not just Shove: FLURRY OF BLOWS: PUSH is named explicitly. Asterion throws Push as one of his three Open Hand Flurry variants, so on any turn he pushes something the bonus is simply always up — on the party member with no armour to fall back on. ⚠ Thrinn gives ONE of two rewards; take this over the Armour of Uninhibited Kushigo.'
+      note: 'Sergeant Thrinn''s reward for Find the Missing Boots. +1 AC until his next turn after a shove, and Flurry of Blows: Push counts. ⚠ Thrinn gives ONE reward; take this over the Armour of Uninhibited Kushigo.'
     - name: Armour of Uninhibited Kushigo
       for: Asterion
       core: false
-      note: Sergeant Thrinn, for returning her boots — the OTHER half of the choice above, so taking it costs the Bracing Band. Patient Defence gains a reaction unarmed counterattack on a miss. Graceful Cloth is his standing chest anyway, so the Band wins.
+      note: Sergeant Thrinn, for returning her boots — the OTHER half of the choice above, so it costs the Bracing Band. Graceful Cloth is his chest anyway; the Band wins.
     - name: Sentient Amulet
       for: Asterion
       core: true
@@ -284,12 +292,12 @@ loot_guide:
     - name: Holy Lance Helm
       for: Charles
       core: true
-      note: 'Painted chest on the top level of Rosymorn Monastery. CHARLES''S ACT 2 HEAD, replacing the Covert Cowl. Ignore the printed damage — Smite the Graceless is 1d4 on a fixed DC 14 Dexterity save. Take it for what the Radiant tick plugs into: Radiant damage fires a Luminous Armour shockwave, so it spreads Radiating Orb ON ENEMY TURNS, and the Gloves of Battlemage''s Power research confirms it as a trigger, so it refills Arcane Acuity between his turns — the direct answer to Acuity decaying by 2 every time he is hit. Self-reinforcing, because it only fires when an attack MISSES and Radiating Orb at −10 makes enemies miss constantly. Requires Medium Armour proficiency, which Hexblade grants.'
+      note: 'Painted chest, top level of Rosymorn Monastery. Charles''s Act 2 head. When an attack misses him, Smite the Graceless deals Radiant: that fires a Luminous shockwave and refills Arcane Acuity on enemy turns. Needs Medium Armour (Hexblade).'
     - name: Graceful Cloth
       wiki: The Graceful Cloth
       for: Asterion
       core: true
-      note: Lady Esther, Rosymorn trail. +2 DEX (cap 20) + Cat's Grace (advantage on DEX checks, helps stealing). Asterion's all-game chest.
+      note: 'Lady Esther, Rosymorn trail. +2 DEX (cap 20) and Cat''s Grace (advantage on DEX checks). Asterion''s chest until the Vest of Soul Rejuvenation; keep it bagged for theft afterwards.'
     - name: Gloves of Cinder and Sizzle
       for: Asterion
       core: true
@@ -297,11 +305,11 @@ loot_guide:
     - name: Knife of the Undermountain King
       for: Bonbon
       core: true
-      note: 'A''jak''nir Jeera. Bonbon''s melee MAIN HAND beside the Safeguard Shield from Act 1 until the Resonance Stone — a stat stick she never swings, because this party''s crits come from Hold, not from threshold. Organ Rearranger lowers the crit threshold for Titanstring and spell attacks; the low-die reroll is melee-only. From the Stone, Phalar Aluve takes her main hand and the Knife becomes CHARLES''S bagged Psychic-immune fallback: bind it main hand when Shadow Blade cannot hurt the target.'
+      note: 'A''jak''nir Jeera. Bonbon''s melee main hand (never swung) beside the Safeguard Shield until the Resonance Stone. Organ Rearranger lowers the crit threshold on her ranged and spell attacks. After the Stone: Charles''s bagged Psychic-immune fallback. ⚠ Inactive-set carry unverified.'
     - name: Gloves of Dexterity
       for: Bonbon
       core: true
-      note: A'jak'nir Jeera (Crèche). DEX 18 and +1 to attack rolls — Bonbon's hands through Act 2, until the Helldusk Gloves in Act 3.
+      note: 'A''jak''nir Jeera (Crèche). Sets DEX 18, +1 attack rolls. Bonbon''s hands ALL GAME. Once bought, respec at Withers: STR 10, DEX 8, CON 16, INT 8, WIS 14, CHA 17, Fighter 1 re-taken first.'
     - name: Gloves of Baneful Striking
       for: Charles
       core: true
@@ -309,11 +317,11 @@ loot_guide:
     - name: Circlet of Psionic Revenge
       for: Asterion
       core: true
-      note: 'Carried by Githyanki Inquisitor Ch''r''ai W''wargaz in the Crèche Inquisitor''s Chamber. Succeed on a saving throw and the creature that forced it takes 1d4 Psychic — doubled from Act 2 by the Resonance Stone he carries. HIS ONLY LEGAL HEAD: per the wiki, "Helmets and Gloves marked as Light, Medium or Heavy Armour count as armour, and prevent Unarmoured Defence from working," which rules out the Covert Cowl and the Dark Justiciar Helmet for him permanently; this circlet carries no proficiency requirement. ⚠ The +1 to mental saves printed on it is Githyanki-only and he does not get it. Mask of Soul Perception finally replaces it in Act 3.'
+      note: 'Githyanki Inquisitor Ch''r''ai W''wargaz, Inquisitor''s Chamber. Succeed on a save → 1d4 Psychic to the source (doubled by the Stone). His only legal head: armour-tagged helmets break Unarmoured Defence. ⚠ The printed +1 mental saves is Githyanki-only.'
     - name: Diadem of Arcane Synergy
       for: Bonbon
       core: true
-      note: Ardent Jhe'rezath, Inquisitor's Chamber. Once a spell condition lands, +CHA to each subsequent ranged weapon attack for 2 turns — Titanstring Flourishes exploit it best. Replaced by the Helmet of Arcane Acuity in Act 2.
+      note: Ardent Jhe'rezath, Inquisitor's Chamber. Once a spell condition lands, +CHA to each ranged weapon attack for 2 turns — Flourishes exploit it best. Replaced by the Helmet of Arcane Acuity in Act 2.
     - name: Ring of Arcane Synergy
       for: Charles
       core: true
@@ -325,7 +333,7 @@ loot_guide:
     - name: Gloves of Belligerent Skies
       for: Gale
       core: true
-      note: 'Elegant chest in the Inquisitor''s Chamber. Thunder, Lightning or RADIANT damage applies 2 turns of Reverberation, and once the Callous Glow Ring is online in Act 2 every Scorching Ray ray deals 2 radiant, so these proc per ray. ⚠ Charles has a real claim — Divine Smite is Radiant, and the wiki notes Phalar Aluve''s Shriek Thunder triggers them correctly in Honour Mode specifically — but they stay with Gale, who applies the rider 5–7 times per cast against Charles''s two swings. ⚠ Triggers once per attack, so an AoE hits only its first logged target.'
+      note: 'Elegant chest in the Inquisitor''s Chamber. Thunder, Lightning or Radiant damage applies 2 turns of Reverberation; with the Callous Glow Ring every Scorching Ray ray procs it. Gale''s hands all game. ⚠ Once per attack, so an AoE hits only its first target.'
     - name: Necklace of Elemental Augmentation
       for: Gale
       core: false
@@ -338,7 +346,7 @@ loot_guide:
       wiki: false
       for: any
       core: false
-      note: Githyanki weapons, medium armour, whetstones, and the core Gloves of Dexterity / Knife. Clear it (buy or steal) before the Crèche locks.
+      note: Githyanki weapons, medium armour, whetstones, Arrows of Darkness, and the core Gloves of Dexterity / Knife. Clear it (buy or steal) before the Crèche locks.
     - name: Rosymorn / Crèche side-loot
       wiki: false
       for: any
@@ -361,15 +369,15 @@ loot_guide:
     - name: Shadow of Menzoberranzan
       for: any
       core: false
-      note: Head slot, dropped by Kar'niss (the drider carrying the Moonlantern). Cast Invisibility 1/short rest while in shadow/darkness — excellent for any stealth or scout character (a strong alternative escape/ambush tool alongside Asterion's kit).
+      note: Head slot, dropped by Kar'niss (the drider carrying the Moonlantern). Invisibility 1/short rest while in shadow or darkness — a spare escape tool for any scout.
     - name: Shadow-Cloaked Ring
       for: Asterion
       core: true
-      note: 'THE ACT 2 DAMAGE RING. Carried by the Shadow Mastiff Alpha at the Ruined Battlefield — destroy the everburning torches nearby to make it appear. +1d4 against Lightly or Heavily Obscured creatures and creatures made of shadow, and the wiki names weapon AND UNARMED attacks explicitly, which most riders do not. Nearly everything in the Shadow-Cursed Lands qualifies, so it is roughly +12 across a full Flurry turn. It stays on into Act 3 for obscured interiors and Charles''s Darkness.'
+      note: 'Shadow Mastiff Alpha at the Ruined Battlefield; destroy the everburning torches nearby to make it appear. +1d4 vs Lightly or Heavily Obscured or shadow creatures, on unarmed attacks too. Asterion''s Act 2 damage ring; it stays on for Charles''s Darkness in Act 3.'
     - name: Ring of Mental Inhibition
       for: Gale
       core: true
-      note: 'In a locked chest in the House in Deep Shadows, just east of the Shadowed Battlefield waypoint. When a foe fails a saving throw against Gale''s spells they gain Mental Fatigue for 2 turns, stacking the odds for the next Command. ⚠ Per the wiki it does NOT trigger on the saves a creature makes to shake off an existing effect, so it will not extend Hold Person. Swap it in over Coruscation for control-focused fights.'
+      note: 'Locked chest in the House in Deep Shadows, east of the Shadowed Battlefield waypoint. A foe failing a save vs Gale''s spells gains Mental Fatigue for 2 turns. Swap in over Coruscation for control fights. ⚠ Does not fire on saves to shake off an existing effect.'
     events:
     - name: Free the pixie (Dolly Dolly Dolly)
       note: Freeing the pixie grants permanent Pixie's Blessing — curse immunity without the lantern. Missable.
@@ -378,45 +386,49 @@ loot_guide:
     - name: Cloak of Protection
       for: Charles
       core: true
-      note: 'Quartermaster Talli at Last Light Inn. +1 Armour Class and +1 to Saving Throws. THE ARBITRATION: exactly one exists, and it is the ONLY cloak in the entire Act 2 pool that touches saving throws at all. Charles is the one party member carrying a permanent, self-inflicted DISADVANTAGE on every save from the Risky Ring while holding concentration in melee, and he is the one standing in every area attack. Gale can be positioned out of danger and already has Constitution-save advantage from Spidersilk Armour; Bonbon has War Caster and AC 18. He keeps it through Act 3.'
+      note: 'Quartermaster Talli. +1 AC, +1 saves. Charles''s cloak from here through Act 3: the only Act 2 cloak that touches saves, on the one member carrying Risky Ring disadvantage while concentrating in melee.'
     - name: Amulet of the Harpers
       for: Asterion
       core: true
-      note: 'Quartermaster Talli, Last Light Inn. ADVANTAGE ON WISDOM SAVING THROWS plus Shield 1/long rest. It replaces the Sentient Amulet, and the timing is set by the Resonance Stone: the Stone''s aura hands the whole party disadvantage on mental saves, and advantage cancels that back to a straight roll for the member carrying it. It is also the Act 2 answer to Hold Person, Fear and Dominate.'
+      note: 'Quartermaster Talli. Advantage on WIS saves plus Shield once per long rest. Replaces the Sentient Amulet when the Resonance Stone arrives: the Stone gives allies disadvantage on mental saves, and this cancels it back to a straight roll.'
     - name: Flawed Helldusk Gloves
       for: Asterion
       core: true
-      note: 'Crafted by Dammon at Last Light Inn once he has been given the THIRD piece of Infernal Iron. Unarmed attacks deal an extra 1d4 Necrotic and can inflict Bleeding, plus +1 to Strength saves, and there is no armour tag so Unarmoured Defence survives. Across five strikes a turn that is roughly +12 damage against the +2 AC the Bracers of Defence were giving — take the damage while Act 2 enemies are still soft. ⚠ Budget the Infernal Iron deliberately; the same pieces upgrade Karlach''s engine.'
+      note: 'Dammon crafts them from the THIRD piece of Infernal Iron. +1d4 Necrotic and Bleeding on unarmed hits, +1 STR saves, no armour tag. Replaces the Bracers of Defence for Act 2. ⚠ The same iron upgrades Karlach''s engine; budget it.'
     - name: Cloak of Cunning Brume
       for: Bonbon
       core: true
-      note: 'Sold by Mattis at Last Light Inn for about 70g. Disengaging also creates a 2m fog cloud for a turn, obscuring and blinding everything inside it — a genuine backline escape button for the moment something closes on her. An honest cheap fill: the Act 2 cloak pool is built for melee (Fleshmelter and Thunderskin both trigger on being hit) and the one unconditional cloak goes to Charles. She upgrades to Wavemother''s Cloak in Act 3.'
+      note: 'Mattis, ~70g. Disengage also drops a 2 m fog cloud for a turn: her escape button when something closes. Wavemother''s Cloak replaces it in Act 3.'
     - name: Shadow Blade Ring
       wiki: Shadow Blade Ring
       for: Charles
       core: true
-      note: Arabella's reward for Find Arabella's Parents, delivered at camp. Bonus-action Shadow Blade, short-rest recharge, no concentration — Charles's backup blade.
+      note: 'Arabella''s reward for Find Arabella''s Parents, delivered at camp. Bonus-action Shadow Blade, short-rest recharge, no concentration: Charles''s main hand from the Stone respec. Its own passive gives advantage vs Obscured targets.'
     - name: Coruscation Ring
       for: Gale
       core: true
-      note: 'Trapped chest in a hidden cellar room. THE ILLUMINATION ENGINE: it applies Radiating Orb when the WEARER is illuminated — the target does not need to be lit. Radiating Orb then makes the target Illuminated, which switches on Callous Glow''s +2 radiant, which procs Gloves of Belligerent Skies'' Reverberation. Since only GALE needs light, this never conflicts with Charles standing in a Darkness cloud. Keep Gale lit with the Light cantrip early, then Daylight (Enchant Item) on Bonbon''s weapon from character level 8.'
+      note: 'Trapped chest in a hidden cellar room. While the WEARER is illuminated his hits apply Radiating Orb, which Illuminates the target, which switches on Callous Glow and Belligerent Skies. Keep Gale lit: Light cantrip early, Daylight on Bonbon''s weapon from char 8.'
     - name: Covert Cowl
       wiki: Covert Cowl
       for: Charles
       core: true
-      note: 'Cellar, on a Meenlock. NOW THE ALTERNATE ACT 2 HEAD, behind the Holy Lance Helm: −1 crit threshold while Obscured, and standing inside his own Darkness is Heavily Obscured. ⚠ Same redundancy that demoted Risky Ring and Killer''s Sweetheart — you cannot improve on a guaranteed crit, so a lowered crit threshold is worth nothing on any turn the target is Held. Keep it bagged for fights with nothing Holdable. It requires Light Armour proficiency, which medium-armour characters inherit. ⚠ Illegal on Asterion, whose Unarmoured Defence breaks on any helmet tagged as armour, so there is no contest for it.'
+      note: 'Cellar, on a Meenlock. −1 crit threshold while Obscured (his own Darkness counts). Charles''s alternate Act 2 head behind the Holy Lance Helm: bag it for fights with nothing Holdable, since a Held target already crits.'
     - name: Hat of Fire Acuity
       for: Gale
       core: true
-      note: '⚠⚠ THE build-defining item — carried by the Strange Ox at Dammon''s blacksmith. Kill it HERE (not in the Act 1 Grove, where it does not yet carry the hat). Dealing Fire damage grants 2 turns of Arcane Acuity: +1 spell attack AND +1 spell save DC per remaining turn, capped at 10, losing 1 per turn and 2 per hit taken. Each Scorching Ray ray deals Fire damage separately, so one level-4 cast (5 rays) takes Gale from 0 to the cap. Missed it? The Ox reappears in Rivington in Act 3.'
+      note: '⚠ Build-defining. Kill the Strange Ox at Dammon''s blacksmith HERE (not in the Act 1 Grove). Each instance of Fire damage grants 2 turns of Arcane Acuity: +1 spell attack and DC per stack, cap 10, −2 per hit taken. One Scorching Ray caps it. Missed? Rivington, Act 3.'
+    - name: Snowburst Ring
+      for: Bonbon
+      core: true
+      note: 'Loose plank in the bedroom north of the bar (DC 10 Perception). Every Cold-damage hit drops a 4.5 m ice circle (DEX save or Prone), which is why Drakethroat is set to Cold. Bonbon''s Act 2 ring 2. Shoot the back line first; never ice under Charles or Asterion.'
     - name: Evasive Shoes
       for: Gale
       core: true
-      note: 'Sold by Mattis at Last Light. GALE''S BOOTS FROM HERE TO THE END — equip on pickup, not in Act 3. +1 Armour Class and +1 Acrobatics. His Act 1 boot slot is empty because the Boots of Stormy Clamour go to Charles, so this is the first real item the slot gets. A modest pick forced by a hard constraint: Boots of Persistence, Vital Conduit Boots and The Speedy Lightfeet ALL require Medium Armour proficiency, which Sorcerer 11 / Warlock 1 never grants, and the Helldusk Boots go to Charles. ⚠ Barcus Wroot sells ACROBAT SHOES in the same building — advantage on Dexterity saving throws, the one save nothing else in Gale''s kit covers. Buy both and pick per fight.'
+      note: 'Mattis. +1 AC, +1 Acrobatics. Gale''s Act 2 boots, equipped on pickup. In Act 3 the Disintegrating Night Walkers (from Asterion) become his default and these the option. ⚠ Barcus Wroot sells Acrobat Shoes (advantage on DEX saves) in the same building; buy both.'
     - name: Potent Robe
       for: Gale
       core: false
-      note: 'Alfira hands it over at Last Light in ACT 2 — ONLY if she survived Act 1 (as the Dark Urge, Charles must knock her out before camp, not kill her). NOT WORN: its whole effect is adding CHA to CANTRIP damage, and this build stops casting cantrips in combat after character level 3, so wearing it would trade away Spidersilk Armour''s Constitution-save advantage — the only thing protecting Twinned Haste — for nothing. Sell it or keep it as a generic robe.'
+      note: 'Alfira at Last Light, only if she survived Act 1 (Charles knocks her out before camp, not kills). NOT WORN: it adds CHA to cantrip damage, which this build stops casting after char 3, and it would displace Spidersilk''s CON-save advantage. Sell it.'
     events:
     - name: Protect Isobel — DON'T let the inn fall
       note: Stop the assassin Marcus. If she dies the moonshield drops and the inn — vendors and quests — is lost. Missable.
@@ -427,37 +439,37 @@ loot_guide:
     - name: Risky Ring
       for: Charles
       core: true
-      note: Araj Oblodra. Advantage on all attacks, disadvantage on saves — Charles's crit enabler. Re-sold in Act 3 if missed.
+      note: 'Araj Oblodra. Advantage on all attacks, disadvantage on saves: Charles''s accuracy plan from Act 2 onward. Re-sold in Act 3 if missed.'
     - name: Ne'er Misser
       for: any
       core: false
-      note: Roah Moonglow. Force-damage hand crossbow. NO LONGER BONBON'S — she keeps Titanstring all game, because the hand-crossbow pair only pulled ahead through a bonus-action off-hand shot and her bonus action is spoken for. A spare ranged weapon at most.
+      note: 'Roah Moonglow. Force-damage hand crossbow. Not Bonbon''s: she runs Titanstring, then The Dead Shot. A spare ranged weapon at most.'
     - name: Spineshudder Amulet
       for: Gale
       core: true
-      note: 'In a Mimic in Isobel''s bedroom (upper floor, Moonrise). CORE. It applies Reverberation on ranged SPELL-ATTACK hits only — not weapon hits, not save spells — which is exactly what Gale makes, 3–7 times per Scorching Ray. Together with the Gloves of Belligerent Skies firing on each ray''s Callous Glow radiant, that is roughly 28 turns of Reverberation from one cast against a threshold of 5, so targets go Prone repeatedly: five stacks force a Constitution save that the condition''s own penalty makes effectively DC 15. This pair IS the engine, which is why the Boots of Stormy Clamour are free to go to Charles. Nothing in Act 3 replaces it.'
+      note: 'Mimic in Isobel''s bedroom (upper floor, Moonrise). Reverberation on ranged spell-attack hits: every Scorching Ray ray. With Belligerent Skies this is the Reverberation engine; nothing in Act 3 replaces it.'
     - name: Sentinel Shield
       for: Bonbon
-      core: false
-      note: 'Sold by Lann Tarv on the Moonrise main floor, 580 gp. +2 AC, +3 INITIATIVE and advantage on Perception. THE INITIATIVE ALTERNATIVE to Ketheric''s Shield for Bonbon''s melee off hand: BG3 rolls initiative on a d4, so +3 is close to a guaranteed first turn for the character who wants Hold Monster down before anything moves. Ketheric''s wins by default because spell save DC is the stat her whole build sells, and only one Sentinel Shield exists. ⚠ Same caveat as Ketheric''s — the wiki confirms only that a shield''s AC carries over from the inactive melee set, not its other passives. Buy it, test both, keep the one whose number actually moves.'
+      core: true
+      note: 'Lann Tarv, Moonrise main floor, 580 gp. +2 AC, +3 Initiative. Bonbon''s DEFAULT melee-set off hand from here to the end, replacing the Safeguard Shield; Ketheric''s Shield is the +1 DC option. ⚠ Only the AC carry from the inactive set is wiki-confirmed; check initiative with the bow drawn.'
     - name: Spellcrux Amulet
       for: Bonbon
       core: true
-      note: 'ACT 2 NECK, worn by the Warden in the Moonrise Towers Prison. Replenish an expended spell slot of ANY level as a BONUS ACTION, once per long rest. On a Bard 11 with a single level-6 slot that is literally a second six-target Command or a second Hold Monster, recovered mid-fight without spending her action. It replaces Broodmother''s Revenge, whose poison coating needs a per-turn heal she no longer has time for once the Acuity loop starts.'
+      note: 'Worn by the Warden in the Moonrise Towers Prison. Bonus action: refund one expended slot of any level, once per long rest. Bonbon''s neck from here to the end. Cast the L6 Air Myrmidon before the first fight, then refund the slot for the six-target Command.'
     - name: Thunderskin Cloak
       for: Gale
       core: true
-      note: 'HIS ACT 2 CLOAK, sold by Araj Oblodra at Moonrise. When a creature with Reverberation damages the wearer it must make a DC 13 Constitution save or be Dazed — no Reactions, disadvantage on Wisdom saves, and it loses its Dexterity bonus to AC. The synergy is structural rather than incidental: Gale is the party''s largest source of Reverberation (Spineshudder and Belligerent Skies each fire per ray), so anything that reaches him is already Reverberating, and the Dazed WIS penalty then feeds his own Command. Cloak of the Weave replaces it in Act 3.'
+      note: 'Araj Oblodra. A Reverberating creature that damages the wearer must pass DC 13 CON or be Dazed (no reactions, disadvantage on WIS saves). Gale''s Act 2 cloak; Cloak of the Weave replaces it in Act 3.'
     - name: Drakethroat Glaive
       wiki: Drakethroat Glaive
       for: Gale
       core: true
-      note: 'Roah Moonglow, Moonrise Towers main floor, 960 gp. NOT A WEAPON FOR THIS PARTY AND NEVER EQUIPPED IN COMBAT — it rides in GALE''S BACKPACK and both his hands stay on the staves. It is bought for one thing: Draconic Elemental Weapon, cast as a level 3 spell, recharging on long rest, which gives a weapon +1 Attack Rolls and +1d4 of a chosen element (Acid, Cold, Fire, Lightning or Thunder) UNTIL LONG REST. Gale has glaive proficiency from Human Civil Militia, and the wiki confirms "a Sorcerer of level 3 and higher can target TWO weapons using Metamagic: Twinned Spell" — so once per long rest he equips the glaive, Twins the cast (3 sorcery points), and swaps the staves back. THE TWO TARGETS ARE BONBON''S TITANSTRING BOW, ALL GAME, AND CHARLES''S MAIN HAND: one-handed Phalar Aluve behind the shield until the Resonance Stone respec, the 3d8 Shadow Blade after it. HOW TO TARGET: the spell hits either a weapon lying on the ground or an ally''s MAIN-HAND weapon. Charles can be targeted directly. Titanstring sits in Bonbon''s ranged slot and her melee main hand holds the Daylight-enchanted stat stick (the Knife of the Undermountain King before the Stone, Phalar Aluve after), so drop the bow at Gale''s feet, enchant it on the ground, then pick it up and re-equip. Both targets must be within the spell''s 1.5m melee range, so set the drop point next to Charles. Stacks with Magic Weapon; does not stack with any other Elemental Weapon variant. ⚠ Summon the Shadow Blade BEFORE enchanting it. Patch 8 made it non-Concentration and last until long rest, so blade and enchant now expire together — but a blade re-summoned off the ring after a short rest comes back plain. ⚠ Patch 8 changed the effect from a +1 enchantment (attack AND damage) to +1 attack rolls only, and the tooltip and the condition still disagree about Concentration — confirm on the first cast.'
+      note: 'Roah Moonglow, Moonrise main floor, 960 gp. Bag item, never fought with. Once per long rest Gale equips it and Twins Draconic Elemental Weapon, COLD every day, onto Charles''s main hand and Bonbon''s bow (dropped at his feet, enchanted, re-equipped). ⚠ Summon Shadow Blade first; both targets within 1.5 m.'
     - name: Moonrise Towers vendor & prison loot
       wiki: false
       for: any
       core: false
-      note: Talli and the traders sell heavy armour, martial weapons and scrolls; the prison and temple levels hide gear and story items. ⚠ Clear it before the assault — point of no return.
+      note: 'Talli and the traders sell heavy armour, martial weapons, scrolls and arrows (Bonbon''s Arrows of Many Targets when stocked); the prison and temple levels hide gear. ⚠ Clear it before the assault: point of no return.'
     events:
     - name: Araj Oblodra — permanent +2 STR
       note: Astarion bites her on request → Potion of Everlasting Vigour, a PERMANENT +2 Strength drinkable by any PC. Astarion disapproves.
@@ -466,19 +478,19 @@ loot_guide:
     - name: Killer's Sweetheart
       for: Charles
       core: true
-      note: 'Self-Same Trial. After a kill, your next attack is a GUARANTEED crit; refreshes on long rest. Charles banks it for the largest Divine Smite, since a crit doubles every smite die. WARNING it applies to WEAPON attack rolls only, so it can never move to a caster. The old Oathbreaker caveat about Control Undead on the clone no longer applies - Charles keeps the Vengeance oath and never becomes an Oathbreaker.'
+      note: Self-Same Trial. After a kill, the next attack is a guaranteed crit; refreshes on long rest. Bank it for the largest Divine Smite on a target that is NOT Held. Weapon attacks only.
     - name: Callous Glow Ring
       for: Gale
       core: true
-      note: 'Opulent chest in the vault room near Balthazar. +2 Radiant damage against ILLUMINATED creatures — the wiki names Scorching Ray among the multi-instance spells that apply it per instance, so up to +14 on a level-6 cast, and the radiant damage also procs Gloves of Belligerent Skies. ⚠ It stays with Gale rather than moving to Asterion or Bonbon because his ray count is the highest in the party and his own Coruscation Ring is what illuminates the target in the first place, so wear the pair together. ⚠ Take it off against Shar worshippers and Justiciars.'
+      note: 'Opulent chest in the vault room near Balthazar. +2 Radiant vs Illuminated creatures, per Scorching Ray ray, and the Radiant procs Belligerent Skies. Wear it with Coruscation. ⚠ Off against Shar worshippers and Justiciars.'
     - name: Hellfire Hand Crossbow
       for: any
       core: false
-      note: 'Yurgir. A +1 hand crossbow with Scorching Ray once per long rest. No longer part of Bonbon''s plan (Titanstring all game), so breaking Yurgir''s contract via Raphael costs nothing here.'
+      note: 'Yurgir. +1 hand crossbow with Scorching Ray once per long rest. Not in Bonbon''s plan, so breaking Yurgir''s contract via Raphael costs nothing here.'
     - name: Boots of Brilliance
       for: Bonbon
       core: true
-      note: Heavy chest in the room just north of Yurgir. Restores one Bardic Inspiration charge per long rest. Slashing Flourish consumes an Inspiration on every multi-target turn, and once the Acuity loop replaces raw repositioning she is Inspiration-starved rather than mobility-starved — so these take the slot from the Boots of Speed.
+      note: Heavy chest in the room north of Yurgir. Restores one Bardic Inspiration per long rest. Her boots from here, replacing the Boots of Speed. Flourish spends the Inspiration only on a hit, so Flourish every attack.
     - name: Dark Justiciar Half-Plate & Spear of Night
       wiki:
       - Dark Justiciar Half-Plate
@@ -512,11 +524,11 @@ loot_guide:
     - name: Resonance Stone
       for: Asterion
       core: true
-      note: Near the Mind-Archive Interface (Necrotic Laboratory), late Act 2. Triggers Charles's respec — char 9 to Warlock 5 / Paladin 4 with Alert and Savage Attacker, Phalar → 3d8 Shadow Blade main hand behind the Adamantine Shield, and Phalar Aluve passes to Bonbon. Asterion carries the 9m aura, doubling his psychic riders and Charles's Shadow Blade/Strange Conduit. Holster it vs psychic damage or dangerous mental saves.
+      note: 'Near the Mind-Archive Interface (Necrotic Laboratory), late Act 2. Triggers Charles''s respec (Warlock 5 / Paladin 4, Alert + Savage Attacker, Shadow Blade main hand) and Phalar Aluve moves to Bonbon. Asterion carries the 9 m aura; holster it vs Psychic attackers and mental-save effects.'
     - name: Ketheric's Shield
       for: Bonbon
-      core: true
-      note: 'Carried by Ketheric Thorm in his SECOND fight here, or pickpocketed off him earlier by dropping a two-handed weapon near him, waiting for him to equip it, then lifting the shield. +2 AC, ADVANTAGE ON DEXTERITY SAVING THROWS, and Arcane Enchantment: +1 spell save DC and +1 spell attack, which no other off-hand item in the game gives. It sits in Bonbon''s never-swung melee set beside Phalar Aluve from the Resonance Stone and pays out while she shoots, replacing the Safeguard Shield she carried from the Grove. It goes to Bonbon rather than Charles because his Adamantine Shield''s crit immunity is worth more to him than +1 on a DC that Acuity already caps. ⚠ The wiki confirms only the AC carry from an inactive shield, not its other passives; check her spell save DC on the character sheet with Titanstring drawn before counting the +1. ⚠ Sentinel Shield at Moonrise is the +3-initiative alternative for the same slot.'
+      core: false
+      note: 'Ketheric Thorm''s second fight, or pickpocketed earlier (drop a two-hander near him, wait for him to equip it, lift the shield). +2 AC, advantage on DEX saves, +1 spell save DC and spell attack. Bonbon''s OPTION over the Sentinel Shield when +1 DC matters. ⚠ Inactive-set passives unverified.'
     - name: Staff of Cherished Necromancy
       for: any
       core: false
@@ -532,7 +544,7 @@ loot_guide:
       wiki: Gloves of Battlemage's Power
       for: Charles
       core: true
-      note: 'REITHWIN TOLLHOUSE, not the Mason''s Guild - a locked opulent chest on the SECOND FLOOR, in the room with two locked doors. THE ITEM CHARLES''S WHOLE BUILD RUNS ON, and it is locked into his hands slot from here to the end of the run. Hitting a target with a spell or cantrip that uses a weapon grants ARCANE ACUITY: +1 spell attack roll and +1 SPELL SAVE DC per remaining turn, up to +10. Confirmed triggers are every Shadow Blade weapon attack, Booming Blade, and any smite spell. WARNING reaction Divine Smite triggers nothing on its own - it inherits the attack it rides on: +0 off a plain weapon swing, +4 when it chains off an attack that already triggered, and +2 only if cast straight from the action bar. Charles is covered because every Shadow Blade swing is itself a trigger, but binding Phalar main hand against Psychic-immune targets removes that, leaving only the Booming Blade lead and smite spells to build Acuity. That DC is what makes HOLD PERSON land, and Hold Person is what makes every swing an automatic critical hit. It also gives him the party''s best save DC before Bonbon''s Helmet of Arcane Acuity arrives. WARNING Acuity duration drops by 2 every time he takes damage, so build stacks and cast Hold Person before the enemy turn. WARNING taking this forgoes Gloves of Baneful Striking, Helldusk Gloves and Craterflesh Gloves for the rest of the run.'
+      note: 'Reithwin TOLLHOUSE, not the Mason''s Guild: opulent chest, second floor. Shadow Blade swings, Booming Blade and smite spells grant Arcane Acuity (+1 spell attack and DC per stack, cap 10): Charles''s Hold Person DC, locked all game. ⚠ −2 stacks per hit taken; Hold before the enemy turn.'
     - name: Helmet of Arcane Acuity
       for: Bonbon
       core: true
@@ -546,14 +558,14 @@ loot_guide:
     - name: Thorm Mausoleum puzzle
       note: Press the family plaques in mural order → the way to the Gauntlet of Shar.
     - name: Oathbreaker Knight (Charles)
-      note: 'NO LONGER RELEVANT - kept only so the old plan is not silently dropped. Charles keeps the Oath of Vengeance permanently and never breaks it, because Inquisitor''s Might is the only non-concentration per-hit Radiant source that feeds Luminous Armour. There is nothing to pay and nothing to restore before Withers will respec him at the Resonance Stone.'
+      note: 'NOT USED. Charles keeps the Oath of Vengeance all game; Inquisitor''s Might is the per-hit Radiant that feeds Luminous Armour. Kept so the old plan is not silently dropped.'
   - area: House of Healing (Reithwin) — MISSABLE
     items:
     - name: Eversight Ring
       wiki: Eversight Ring
       for: Asterion
       core: true
-      note: 'ACT 2 — locked opulent chest, morgue lab. Immunity to Blinded lets Asterion fight beside Charles inside Darkness. ⚠ MISSABLE: take it BEFORE defeating Ketheric or clearing the Colony, or the Shadow-Cursed Lands lock forever.'
+      note: 'Locked opulent chest, morgue lab. Immunity to Blinded: Asterion fights unblinded inside Charles''s Darkness (nobody shoots into or out of the cloud). ⚠ MISSABLE: take it before Ketheric falls or the Colony is cleared.'
     - name: House of Healing alchemy & surgeon loot
       wiki: false
       for: any
@@ -570,17 +582,17 @@ loot_guide:
       wiki: Hellrider Longbow
       for: Gale
       core: true
-      note: 'RESOLVED — IT IS GALE''S. Charles takes the Vicious Shortbow instead, whose Dolor Amarus is worth about +28 a nova turn to an auto-crit build, so he no longer needs this and Gale keeps +3 Initiative on top of Elixir of Vigilance. The original arbitration is kept below in case the Bhaal path is not taken, in which case this comes back to Charles. FORMERLY CHARLES''S: Sold by Ferg Drogher in Rivington. Heightened Awareness gives +3 Initiative and advantage on Perception. Charles has the party''s worst base initiative and his ranged slot is otherwise dead, because a Darkness cloud blocks ranged attacks into and out of itself - so this converts a wasted slot into the fix for his one structural weakness, and going first is what lets him stack Arcane Acuity and land Hold Person before the enemy acts. WARNING THE COST: this was Gale''s, and Gale acting earlier is what puts Twinned Haste up sooner - which is itself what gives Charles the extra action to build Acuity and Hold in the same turn. If Haste is landing too late in practice, give the bow back to Gale and cover Charles with the Fistbreaker Helm instead.'
+      note: 'Ferg Drogher, Rivington. +3 Initiative and advantage on Perception. Gale''s ranged slot: earlier Haste. ⚠ If Charles skips the Bhaal path (no Vicious Shortbow), this is his ranged fallback and Gale gives it up.'
     - name: Boots of Uninhibited Kushigo
       wiki: Boots of Uninhibited Kushigo
       for: Asterion
       core: true
-      note: 'MISSABLE, and easy to walk past — carried by Prelate Lir''i''c in the ASTRAL PLANE as you enter Act 3, not in Rivington itself. Adds Asterion''s Wisdom modifier to every Unarmed Strike''s damage, so it is flat damage on all 4–6 hits per turn. With the Mirror of Loss taking him to WIS 18 that is +4 a hit. Grab it during the Astral Prism sequence before the act moves on.'
+      note: 'MISSABLE: carried by Prelate Lir''i''c in the ASTRAL PLANE as Act 3 opens, not in Rivington. Adds his WIS modifier to every unarmed hit. Asterion''s Act 3 boots; the Night Walkers go to Gale.'
     - name: Strange Ox (second chance)
       wiki: false
       for: Gale
       core: false
-      note: 'If the Hat of Fire Acuity was missed at Last Light in Act 2, the Strange Ox reappears here on a hill west of the requisitioned barn. This is the last chance at the item Gale''s build depends on.'
+      note: 'If the Hat of Fire Acuity was missed at Last Light in Act 2, the Strange Ox reappears here on a hill west of the requisitioned barn. Last chance at the item Gale''s build depends on.'
     - name: Nyrulna
       for: any
       core: false
@@ -592,12 +604,12 @@ loot_guide:
     - name: Spellmight Gloves
       for: Gale
       core: true
-      note: 'Lucretious''s reward for Find Dribbles the Clown at the Circus (also pickpocketable). CORE. −5 to spell attack rolls for +1d8 damage, which is excellent precisely because Scorching Ray is an attack roll firing 3–7 times. MANAGE THEM: first cast of a fight with the gloves OFF to build Arcane Acuity, then switch them ON once Acuity covers the −5. ⚠ VERIFY ON THE FIRST CAST whether the +1d8 applies per ray or once per spell — on a 7-ray cast the two readings are +7d8 (best in slot) versus +1d8 for a −5 penalty on all seven rolls (actively harmful).'
+      note: 'Lucretious''s reward for Find Dribbles the Clown at the Circus (or pickpocket her). −5 spell attack for +1d8 per hit. First cast of a fight with them OFF to build Acuity, then ON. ⚠ Probably per ray (one build video); confirm on the first cast.'
     - name: Rivington vendors & Requisitioned Barn
       wiki: false
       for: any
       core: false
-      note: Ferg Drogher, the Circus traders and the Open Hand temple — early Act 3 gear, arrows and scrolls; the barn has a hidden cellar.
+      note: Ferg Drogher, Exxvikyap at Rivington General (Arrows of Many Targets), the Circus traders and the Open Hand temple — early Act 3 gear, arrows and scrolls; the barn has a hidden cellar.
     events:
     - name: Circus of the Last Days
       note: Side content and vendors, a few unique items and story hooks.
@@ -606,11 +618,11 @@ loot_guide:
     - name: Helldusk Boots
       for: Charles
       core: true
-      note: 'ACT 3 BOOTS, in a locked Gilded Chest on the TOP FLOOR of Wyrm''s Rock Fortress — not in the House of Hope with the rest of the set. Steadfast stops all forced movement and difficult terrain, replacing what the Boots of Striding were doing, and they also grant IMMUNITY TO PRONE, which is the half that matters on a Concentration holder, and Hellcrawler is a bonus-action teleport for 2d8 Fire. Infernal Evasion turns one failed saving throw into a success for a Reaction — ⚠ ONCE PER LONG REST per the wiki, not once per turn, so it is an emergency button and the Amulet of Greater Health is what actually answers the Risky Ring. ⚠ Gale would love them too, but Charles is the frontliner who gets knocked down. He flexes them against the Boots of Stormy Clamour fight by fight.'
+      note: 'Locked Gilded Chest on the TOP FLOOR of Wyrm''s Rock Fortress, not the House of Hope. Immunity to Prone, forced movement and difficult terrain; Hellcrawler bonus-action teleport. Charles''s Act 3 default, flexed against Stormy Clamour fight by fight. ⚠ Infernal Evasion is once per long rest.'
     - name: Cloak of Displacement
       for: Asterion
       core: true
-      note: 'Sold by Entharl Danthelon at Danthelon''s Dancing Axe, Wyrm''s Crossing. At the start of his turn, enemies take DISADVANTAGE on attack rolls against him until he takes damage. He is the only party member with neither armour nor damage reduction, so it is worth more here than on Charles behind AC 21 and −3 damage. Useful wiki quirk: Displaced is not stripped by anything the game does not count as a hit, including a successful save against a damage-dealing spell.'
+      note: 'Entharl Danthelon at Danthelon''s Dancing Axe, Wyrm''s Crossing. From the start of his turn enemies attack him at disadvantage until he takes damage. Asterion''s Act 3 cloak: no armour, no damage reduction. A successful save vs a damage spell does not strip it.'
     events:
     - name: Wyrm's Rock is a one-way gate
       note: The fortress is the route from Rivington into the Lower City. Sweep the top floor and the Gilded Chest on the way through.
@@ -619,15 +631,15 @@ loot_guide:
     - name: Markoheshkir
       for: Gale
       core: true
-      note: 'Ramazith''s Tower, inside a Globe of Invulnerability (See Invisibility to spot the lever, then DC 20 Arcana to disable the globe). +1 spell attack and DC, plus Arcane Battery for one free spell of any level. Attune Kereska''s Favour to FLAME OF WRATH: Fire resistance, +proficiency bonus to Fire spell damage applied per ray, and Heat generation. ⚠ Heat deals unavoidable self-damage each turn and threatens Twinned Haste — do not attune Flame of Wrath until Armour of Landfall is equipped.'
+      note: 'Ramazith''s Tower (See Invisibility for the lever, DC 20 Arcana to drop the globe). +1 spell attack and DC. Attune Flame of Wrath: +proficiency Fire per ray, free Fireball and Wall of Fire each short rest (Bolts of Doom: Chain Lightning, Lightning Bolt). ⚠ Heat self-damages: Armour of Landfall first.'
     - name: Armour of Landfall
       for: Gale
       core: true
-      note: 'Sold by Lorroakan''s Projection or Rolan on the SUNDRIES GROUND FLOOR (1700g). AC 13 + DEX light armour, +1 Spell Save DC, and — the real reason — ADVANTAGE ON CONSTITUTION SAVING THROWS. That advantage replaces the Halfling Luck and the War Caster feat this build cannot have, and it is what makes Markoheshkir''s Heat safe to carry while concentrating on Twinned Haste. Gale''s Human Civil Militia already grants light-armour proficiency, so the Warlock dip is not needed to wear it.'
+      note: 'Lorroakan''s Projection or Rolan, Sundries ground floor, 1700g. AC 13 + DEX, +1 spell save DC, ADVANTAGE ON CON SAVES, and Plant Growth once per short rest: cast it under Charles''s Hunger of Hadar, and keep fire out of that zone.'
     - name: Vest of Soul Rejuvenation
       for: Asterion
       core: true
-      note: 'ACT 3 CHEST, and the piece that finally beats Graceful Cloth. Sold by Rolan at Sorcerous Sundries, or by Lorroakan''s Projection if Rolan is dead. +2 Armour Class on an unarmoured build, 1d4 healing on a successful save against a spell, and Greater Kushigo Counter — a REACTION unarmed strike against any attacker that misses, carrying every one of his riders. It also completes the Soul set beside Gloves of Soul Catching and the Mask of Soul Perception. ⚠ Losing the Cloth costs advantage on Sleight of Hand; keep it bagged and swap back for theft.'
+      note: 'Rolan at Sorcerous Sundries (or Lorroakan''s Projection). +2 AC unarmoured, 1d4 heal on a successful spell save, and a reaction unarmed counter on every miss. Asterion''s Act 3 chest. Keep the Graceful Cloth bagged for theft.'
     - name: Stolen scrolls (Chain Lightning, Freezing Sphere, Cone of Cold)
       wiki:
       - Scroll of Chain Lightning
@@ -652,20 +664,24 @@ loot_guide:
     - name: Viconia's Walking Fortress
       for: Charles
       core: true
-      note: 'Carried by Viconia DeVir. Reachable without Shadowheart: pass the House of Grief investigation into the cloister, refuse to hand anyone over, and the fight starts. +3 AC, ADVANTAGE ON SAVES AGAINST SPELLS, spell attacks against the wearer at DISADVANTAGE, Bulwark Rebuke, Reflective Shell and Warding Bond. CHARLES''S ACT 3 OFF-HAND once the Helm of Balduran covers crit immunity and the Adamantine Shield can retire.'
+      note: 'Carried by Viconia DeVir. Without Shadowheart: pass the House of Grief investigation into the cloister, refuse to hand anyone over, and fight. +3 AC, advantage on saves vs spells, spell attacks against him at disadvantage. Charles''s Act 3 off hand once the Helm of Balduran covers crits.'
     events:
     - name: Mirror of Loss — permanent +2 ability (the REAL one)
-      note: The working Mirror. Religion DC20 / Arcana DC25 (or read the note), then pray to Shar (DC25) for a permanent +2, cap 24. The whole plan assumes it — every PC should visit.
+      note: 'The working Mirror. Per character: ONE DC 25 Religion check to pray (fail = locked out forever), then a 60% roll for the permanent +2. Enhance Ability from Bonbon, Guidance from the Silver Pendant, quicksave before each prayer. Every PC visits.'
   - area: Stormshore Tabernacle
     items:
     - name: Amulet of the Devout
       for: nobody — sell it
       core: false
-      note: 'Main offering chest in the basement. +2 spell save DC and an extra Channel Divinity charge. NOBODY IN THIS PARTY WEARS IT: the wiki says it "only works with Channel Divinity, and is thus less helpful to Paladins" — BG3 renamed the Paladin resource to Channel OATH, so Charles gets nothing from the recharge, and there is no Cleric anywhere in the party. Gale''s neck belongs to Spineshudder, Bonbon''s to Spellcrux and Charles''s to the Amulet of Greater Health. ⚠️ Looting it from the offering chest inflicts the Castigated By Divinity curse on the looter UNLESS Jaheira takes it while wearing Khalid''s Gift. Sell it, or leave it in the chest.'
+      note: 'Main offering chest in the basement. +2 spell save DC (works on anyone) and an extra Channel Divinity charge. Skipped: Spellcrux is Bonbon''s Act 3 neck, Spineshudder Gale''s, Greater Health Charles''s. ⚠ Looting it curses the looter unless Jaheira in Khalid''s Gift takes it.'
+    - name: The Dead Shot
+      for: Bonbon
+      core: true
+      note: 'Fytz the Firecracker, Stormshore Armoury, by the Lower City Central Wall waypoint (770 gp). +2 longbow; Keen Attack doubles her proficiency on its shots, and it crits on 19. Bonbon''s Act 3 bow, replacing Titanstring. ⚠ Keen Attack switches off under disadvantage: never into Charles''s Darkness.'
     - name: Armour of Agility
       for: Bonbon
       core: false
-      note: 'Sold by Gloomy Fentonson at the Stormshore Armoury beside the Tabernacle. THE ALTERNATIVE to Helldusk Armour: medium armour with her FULL Dexterity modifier and +2 to ALL saving throws, no Stealth penalty — AC 20 at DEX 16 once Helldusk Gloves replace the Gloves of Dexterity, one behind Helldusk''s flat 21. Take it if +2 saves matter more than 3 damage reduction. ⚠ Do not take Medium Armour Master or Magic Initiate: Cleric on her — the wiki notes either feat breaks the full-Dexterity passive.'
+      note: 'Gloomy Fentonson, Stormshore Armoury beside the Tabernacle. Medium armour with full DEX to AC and +2 to ALL saves, no Stealth penalty. Her alternative to Helldusk Armour when +2 saves beats 3 damage reduction. ⚠ Medium Armour Master or Magic Initiate: Cleric breaks the passive.'
     events:
     - name: The curse trap
       note: Don't brick the amulet — Jaheira + Khalid's Gift loots the chest cleanly.
@@ -678,7 +694,7 @@ loot_guide:
     - name: Bloodthirst
       for: any
       core: false
-      note: 'Orin. Legendary dagger, and its Improved Critical is holder-scoped, so it would lower the crit threshold on anyone''s attacks from a dead slot. Nobody has a hand for it: Charles''s off hand is a shield and Bonbon''s is Ketheric''s Shield, and a lower crit threshold is worth nothing against a Held target anyway. Sell or bank it.'
+      note: 'Orin. Legendary dagger with holder-scoped Improved Critical. Nobody has a hand for it: Charles''s off hand is a shield, Bonbon''s the Sentinel Shield, and a Held target already crits. Sell or bank it.'
     - name: Crimson Mischief
       for: any
       core: false
@@ -693,7 +709,7 @@ loot_guide:
     - name: Vicious Shortbow
       for: Charles
       core: true
-      note: 'GATED — BHAAL PATH ONLY, sold by the Echo of Abazigal, and he never fires it. Dolor Amarus is listed on THE HOLDER rather than the main hand, and the wiki states it applies to ALL weapon attacks while a weapon carrying the feature is equipped: +7 flat on every critical hit. Every swing against a Held target crits, so that is about +21 on the standard nova and +63 on the Terazul turn, out of a ranged slot that was dead anyway because a Darkness cloud blocks ranged attacks both ways. Ranged and melee weapon sets are separate, so it costs nothing off Shadow Blade or the shield. ⚠ Taking this hands the Hellrider Longbow back to Gale. ⚠ No Bhaal path means no bow — fall back to the Hellrider Longbow in Rivington.'
+      note: 'BHAAL PATH ONLY, Echo of Abazigal; never fired. Dolor Amarus is holder-scoped: +7 on every crit from a ranged slot Darkness already blocks. Bhaal''s chosen also earns A Most Bloody Inheritance at High Hall (party crit threshold −2, Stunning Gaze). ⚠ No Bhaal path: Hellrider Longbow back from Gale.'
     - name: Echo of Abazigal stock (GATED — Bhaal path only)
       wiki:
       - Craterflesh Gloves
@@ -701,7 +717,11 @@ loot_guide:
       - Assassin of Bhaal Cowl
       for: Charles
       core: false
-      note: 'GATED BONUS, not a plan dependency — these unlock only if Charles completes Impress the Murder Tribunal and becomes an Unholy Assassin of Bhaal (the VICIOUS SHORTBOW above is the same vendor behind the same gate, and is the one item here the plan now actually commits to), and they arrive late enough in Act 3 that the Shadow Blade + Resonance Stone package carries the build either way. Documented so the cost of resisting the Urge is visible. CRATERFLESH GLOVES are the real prize: +1d6 Force on a critical hit, which the wiki notes actually lands as 2d6 because the crit doubles it — on a Held target where all seven swings auto-crit that is roughly +49 a turn, against about +17 from Helldusk Gloves. BHAALIST ARMOUR gives +2 Initiative and Aura of Murder (enemies within 3m become Vulnerable to Piercing, radius raised from 2m in Patch 8) — worth nothing to Charles''s Psychic Shadow Blade, but it doubles Bonbon''s Piercing Titanstring damage against anything engaging him; costs Luminous Armour''s Radiating Shockwaves. ASSASSIN OF BHAAL COWL is +2 Initiative, which matters more than it looks because BG3 rolls initiative on a d4.'
+      note: 'Same gate: Charles completes Impress the Murder Tribunal and becomes the Unholy Assassin of Bhaal. Craterflesh Gloves (+1d6 Force on crits, doubled) lose to the locked Battlemage''s Power; the Cowl is +2 Initiative. Bhaalist Armour has its own row below (Bonbon). The build carries either way.'
+    - name: Bhaalist Armour
+      for: Bonbon
+      core: false
+      note: 'Echo of Abazigal, Bhaal path. Bonbon''s bagged nova swap for a single-boss Hold fight: stand within 3 m of the Held target, every projectile crits and Piercing is doubled. AC 17 against Helldusk''s 21, and the aura helps nobody else. Otherwise Helldusk Armour.'
     events:
     - name: Murder questline (Dark Urge)
       note: Charles IS the Dark Urge — this arc and its embrace-or-resist choice are his story climax.
@@ -710,20 +730,20 @@ loot_guide:
     - name: Amulet of Greater Health
       for: Charles
       core: true
-      note: 'Leftmost pedestal in the Archive. Sets Constitution to 23 and grants ADVANTAGE ON CONSTITUTION SAVING THROWS. Both halves land on Charles and nowhere else: +6 to concentration checks, and the advantage cancels the Risky Ring''s permanent disadvantage outright, returning those rolls to a straight d20. ⚠ It is redundant on the other two — Bonbon has War Caster and Gale has Armour of Landfall, so only Charles has a disadvantage for it to cancel. Steal tip: it can be taken without the fight on a DC 20 Sleight of Hand if the Orphic Hammer, the Soul-Sworn Contract and Hope are left alone — an Asterion job.'
+      note: 'Leftmost pedestal in the Archive. CON 23 and ADVANTAGE ON CON SAVES, which cancels the Risky Ring''s disadvantage on concentration. Charles only: Gale has Armour of Landfall, Bonbon has crit immunity. Asterion can steal it (DC 20 Sleight of Hand) if the Hammer, Contract and Hope are left alone.'
     - name: Gloves of Soul Catching
       wiki: Gloves of Soul Catching
       for: Asterion
       core: true
-      note: 'BEST-IN-SLOT MONK GLOVES — Hope hands these over when freed. +1d10 Force on EVERY unarmed strike, which at 4–6 hits a turn is one of the largest single damage sources in the party, plus Constitution +2 (to 20). Soul Catching also gives, once per turn on an unarmed hit, a free choice of 10 HP of healing OR +5 to one attack roll or saving throw. Replaces Bracers of Defence. ⚠ Per the wiki the tooltip is wrong in several ways: it is a granted free action rather than automatic healing, and it is a flat +5 rather than Advantage. It is also stripped if he takes damage with no temporary HP.'
+      note: 'Hope hands them over when freed. +1d10 Force on every unarmed strike, CON +2, and once per turn on a hit a free 10 HP heal or +5 to one attack roll or save. Asterion''s Act 3 hands. ⚠ The +5 is lost if he takes damage without temp HP.'
     - name: Helldusk Gloves
-      for: Bonbon
-      core: true
-      note: 'Worn by Haarlep in the boudoir. BONBON''S ACT 3 HANDS: +1 spell save DC, +1 to ALL attack rolls (per the wiki), and +1d6 Fire on every weapon hit — every Titanstring projectile — with no armour tag. Charles cannot take them (Battlemage''s Power is locked) and Asterion has the Gloves of Soul Catching.'
+      for: nobody
+      core: false
+      note: 'Worn by Haarlep in the boudoir. +1 spell save DC, +1 attack rolls, +1d6 Fire on weapon hits. Nobody''s: Charles is locked to Battlemage''s Power, Bonbon keeps the Gloves of Dexterity (they set her DEX 18), Asterion has Soul Catching. Sell or bag.'
     - name: Helldusk Armour
       for: Bonbon
       core: true
-      note: 'Carried by Raphael. BONBON''S ACT 3 CHEST — it went to nobody while Charles was locked to Luminous Armour. AC 21 flat, Fire resistance, cannot be Burned, ALL INCOMING DAMAGE REDUCED BY 3, Infernal Retribution and a 1/long-rest Fly, and the wiki is explicit that it carries its own proficiency: "You are considered Proficient with this armour while wearing it." On the Hold Monster carrier the damage reduction turns chip damage into no concentration save and no Acuity strip. Armour of Agility is the +2-saves alternative. ⚠ Heavy, so Stealth at disadvantage.'
+      note: 'Carried by Raphael. AC 21, Fire resistance, −3 all incoming damage, Infernal Retribution, Fly once per long rest, proficiency included. Bonbon''s Act 3 chest: chip damage no longer strips Acuity or forces saves. Options: Armour of Agility (+2 saves), Bhaalist Armour (Bhaal-path nova swap). ⚠ Heavy: Stealth at disadvantage.'
     - name: Orphic Hammer + Infernal Rapier
       wiki:
       - Orphic Hammer
@@ -744,7 +764,7 @@ loot_guide:
     - name: Rhapsody
       for: Gale
       core: true
-      note: 'Carried by Cazador Szarr. CORE off-hand: Scarlet Remittance stacks +1 attack roll, +1 damage, AND +1 spell save DC per kill (max 3), and this build is the rare one that uses all three — the damage applying per Scorching Ray ray. Gale wields it off-hand behind Markoheshkir, which requires Dual Wielder. ⚠ Per the wiki, since Patch 5 it only builds stacks on killing living hostile targets. Asterion''s unarmed Monk still cannot use it. ⚠ CONTESTED WITH BONBON, and it is close — the weapons tier list calls it best in slot as a stat stick even for characters not swinging it, and +3 spell save DC is exactly what her Hold Monster wants. Gale keeps it because only he multiplies the +3 damage across three to seven rays, where she would collect it once per bolt. If control ever matters more than Gale''s damage, this is the item to move.'
+      note: 'Carried by Cazador Szarr. Gale''s off hand behind Markoheshkir (Dual Wielder): +1 attack, +1 damage (per ray) and +1 spell save DC per kill of a living hostile, max 3. Gale''s, not Bonbon''s: only he multiplies the damage across rays. Melf''s goes to the bag.'
     - name: Cazador's palace loot (ritual chamber & kennels)
       wiki: false
       for: any
@@ -752,46 +772,54 @@ loot_guide:
       note: Gold hoard, potions of Vampirism, the Ritual Dagger, trapped ritual-chamber gear. Sweep it during Astarion's questline — it does not reopen.
     events:
     - name: Astarion's Ascension choice
-      note: 'MAJOR — ascend Astarion (power boost, darker) vs stay a Spawn (Vampire weaknesses, the ''good'' arc). Affects Asterion directly.'
+      note: 'ASCEND. Vampire Ascendant gives Asterion +1d10 Necrotic on every unarmed hit, Ascendant Bite (6d6 heal, 6d6 Necrotic, grants Happy) and Misty Escape. Staying a Spawn forfeits all of it.'
   - area: Steel Watch Foundry
     items:
     - name: Gontr Mael
       for: Asterion
       core: true
-      note: 'Steel Watcher Titan, Control Centre. Legendary +3 longbow whose CELESTIAL HASTE is a self-only Concentration Haste, once per long rest, with no Lethargic. ASTERION''S: he is the one member Gale never Hastes and his ranged slot was a fallback pair. It shares the day with the staff''s once-per-long-rest Bless. ⚠ On Bonbon, where it was filed before, it did nothing — she is already Hasted by Gale and concentrating on Hold Monster. ⚠ It does not drop if the Titan is killed by the Atrophied condition.'
+      note: 'Steel Watcher Titan, Control Centre. Legendary +3 longbow; Celestial Haste is a self-only concentration Haste, once per long rest, no Lethargic. Asterion''s Act 3 ranged slot: he is the one member Gale never Hastes. ⚠ No drop if the Titan dies to Atrophied.'
     events:
     - name: Disable the Steel Watch
       note: Destroy the Foundry to weaken the endgame assault; loot the Titan first.
   - area: Lower City (Zhentarim / vendors)
     items:
     - name: Elixir of Cloud Giant Strength
-      for: Bonbon + Asterion
+      for: Asterion
       core: true
-      note: Level-9 vendors carry 0–2 each with semi-random stock — Araj, Talli, Roah, Mattis, Danthelon, Helsik, Popper, Griska, Horst and the Bonecloaks. STR 27 is +8 on every Titanstring projectile for Bonbon and the Tavern Brawler ceiling for Asterion. Buy every one you see; Hill Giant covers the days you run short.
+      note: 'Level-9 vendors carry 0–2 each (Araj, Talli, Roah, Mattis, Danthelon, Helsik, Popper, Griska, Horst, the Bonecloaks). STR 27: Asterion''s Act 3 elixir every long rest, the Tavern Brawler ceiling. Buy every one; Hill Giant covers short days. Bonbon no longer drinks it.'
+    - name: Elixir of Vigilance
+      for: Gale + Bonbon
+      core: true
+      note: 'Danthelon (Wyrm''s Crossing), Popper (Circus), Kith at Grymforge, or craft it (Sublimate of Bloodstained Hook + any Ashes), 25 gp. +5 Initiative and Surprise immunity until long rest. Gale''s every day; Bonbon''s from Act 3, once The Dead Shot retires the Strength rider.'
+    - name: Ring of Feywild Sparks
+      for: Bonbon
+      core: true
+      note: 'Carried by Auntie Ethel at the Blushing Mermaid. Hidden +1 spell save DC (not on the tooltip). Bonbon''s Act 3 ring 2 beside the Band of the Mystic Scoundrel; the Caustic Band becomes the option. The Wild Magic clause needs Tides of Chaos, which she lacks.'
     - name: Ne'er Misser
       for: any
       core: false
-      note: Roah Moonglow — Moonrise in Act 2, here if missed. A spare hand crossbow; no longer part of Bonbon's plan.
+      note: Roah Moonglow — Moonrise in Act 2, here if missed. A spare hand crossbow; not part of Bonbon's plan.
     - name: Birthright
       for: nobody — bagged as a dialogue swap
       core: false
-      note: 'Sold at Sorcerous Sundries by Rolan / Lorroakan''s projection (ground floor). +2 Charisma helm (cap 22). NOBODY WEARS IT IN COMBAT: both Charisma characters have their heads locked to Acuity hats — Gale to the Hat of Fire Acuity, Bonbon to the Helmet of Arcane Acuity — and +2 Charisma is +1 spell save DC against Acuity''s +10. Keep it bagged and swap it on out of combat for Persuasion, Deception and Intimidation checks on whichever of them is the face; the wiki notes it stacks with the Mirror of Loss for Charisma 24.'
+      note: 'Rolan / Lorroakan''s projection, Sundries ground floor. +2 CHA (cap 22). Nobody wears it in combat: both CHA heads are Acuity hats. Bag it for Persuasion, Deception and Intimidation checks; it stacks with the Mirror of Loss.'
     - name: Cloak of the Weave
       for: Gale
       core: true
-      note: 'Sold by Helsik at the Devil''s Fee, but ONLY once her special stock is unlocked through dialogue. +1 Spell Save DC and +1 spell attack rolls — Gale''s best-in-slot cloak, and the spell attack applies per ray. ⚠ Per the wiki its Absorb Elements ability is bugged and non-functional; buy it for the flat +1/+1.'
+      note: 'Helsik at the Devil''s Fee, only once her special stock unlocks through dialogue. +1 spell save DC, +1 spell attack (per ray). Gale''s Act 3 cloak. ⚠ Its Absorb Elements is bugged; buy it for the +1/+1.'
     - name: Ring of Free Action
       for: Asterion
       core: true
-      note: Araj Oblodra at Crimson Draughts in the Lower City, or from her at Moonrise back in Act 2. Ignore difficult terrain and CANNOT BE PARALYSED OR RESTRAINED. His Night Walkers already cover Web, Entangle and Grease but not those two, and Paralysed is what turns a dived monk into a pile of free critical hits. It takes the ring slot the Eversight Ring held, which goes back in the bag for fights inside Charles's Darkness.
+      note: 'Araj Oblodra at Crimson Draughts (or at Moonrise in Act 2). Ignore difficult terrain; cannot be Paralysed or Restrained. Asterion''s Act 3 ring in the Eversight slot; Eversight goes back in the bag for Darkness fights.'
     - name: Boots of Persistence
       for: Bonbon
       core: true
-      note: Sold by Dammon at the Forge of the Nine in the Lower City. Permanent Freedom of Movement and Longstrider — Freedom of Movement makes a Ring of Free Action unnecessary for her and keeps the second ring slot on the Caustic Band. Medium armour proficiency is required and Fighter 1 supplies it. ⚠ Gale cannot wear these at all (Sorcerer/Warlock never grants medium armour) and the Helldusk Boots go to Charles, so this is the allocation that leaves nobody stranded.
+      note: 'Dammon at the Forge of the Nine. Permanent Freedom of Movement and Longstrider (medium armour proficiency, Fighter 1). Bonbon''s Act 3 boots; the Boots of Striding are her per-fight option once Charles moves to Helldusk Boots.'
     - name: Wavemother's Cloak
       for: Bonbon
       core: true
-      note: 'ACT 3 CLOAK, in an opulent chest behind Allandra Grey''s desk on the upper floor of the Water Queen''s House. Once per turn in combat it grants Water Layer Protection until she takes damage: +2 AC, +2 to saving throws, Fire resistance and immunity to Burning. On a backline controller who is rarely hit, that refreshes every turn and effectively never falls off — worth more to her than a flat +1/+1, and it leaves the Cloak of Displacement free for Asterion, who has no armour at all.'
+      note: 'Opulent chest behind Allandra Grey''s desk, upper floor of the Water Queen''s House. Once per turn: +2 AC, +2 saves, Fire resistance and Burning immunity until she takes damage. Bonbon''s Act 3 cloak; on a backliner it refreshes every turn.'
     - name: Helm of Balduran + Wyrmway loot (Ansur)
       wiki:
       - Helm of Balduran

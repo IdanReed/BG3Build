@@ -8,7 +8,7 @@ mechanics:
 - k: The refund = why there are two phases
   v: 'Communing REFUNDS any tadpoles a character already spent on the FIVE inner powers (Psionic Overload, Favourable Beginnings, Force Tunnel, Concentrated Blast, Transfuse Health). It does NOT refund the ten middle-ring powers. Inner powers are eventually free but still tie up specimens until Act 3, so buy only the ones that materially help during Acts 1–2; middle/elite powers remain real spends.'
 - k: Save DC = NEWEST class''s casting stat + Arcane Acuity
-  v: '✅ CONFIRMED on the wiki that gear applies: "All bonuses to spell save DC such as Arcane Acuity or Arcane Enchantment will also apply to illithid powers." That is what puts Bonbon and Gale at DC 27 and makes save-based powers worth buying for both. Illithid save DCs use the spellcasting-ability modifier of the class you most recently reached LEVEL 1 in — but Fighter and Rogue are IGNORED (no casting stat unless Eldritch Knight / Arcane Trickster). Spell-save-DC bonuses also apply. At level 12: Bonbon = CHA 20 → DC 17 base, then +2 per Helmet-of-Arcane-Acuity weapon hit up to DC 27; Charles = CHA 20 → DC 17, or 18 in Helldusk Gloves; Asterion = WIS 18 because Monk is his newest countable class → DC 17, with nearby enemies disadvantaged by his Resonance Stone; Gale = CHA 20 → DC 17, because Fiend Warlock at character level 7 is now his newest level-1 class — and his Hat of Fire Acuity pushes that to DC 27, the same ceiling as Bonbon.'
+  v: '✅ CONFIRMED on the wiki that gear applies: "All bonuses to spell save DC such as Arcane Acuity or Arcane Enchantment will also apply to illithid powers." That is what puts Bonbon and Gale at DC 27 and makes save-based powers worth buying for both. Illithid save DCs use the spellcasting-ability modifier of the class you most recently reached LEVEL 1 in — but Fighter and Rogue are IGNORED (no casting stat unless Eldritch Knight / Arcane Trickster). Spell-save-DC bonuses also apply. At level 12: Bonbon = CHA 20 → DC 17 base, then +2 per Helmet-of-Arcane-Acuity weapon hit up to DC 27; Charles = CHA 20 → DC 17, rising to 27 on Gloves of Battlemage''s Power Acuity (no Helldusk Gloves); Asterion = WIS 20 because Monk is his newest countable class → DC 18, with nearby enemies disadvantaged by his Resonance Stone; Gale = CHA 20 → DC 17, because Fiend Warlock at character level 7 is now his newest level-1 class — and his Hat of Fire Acuity pushes that to DC 27, the same ceiling as Bonbon.'
 - k: Awakened (Zaith''isk, Act 1) → give to BONBON
   v: 'The Crèche Zaith''isk grants ONE character the permanent Awakened passive: all Illithid powers cost a BONUS ACTION instead of an Action (mandatory — you can no longer use them as an Action). Give it to Bonbon: weapon attacks stack Arcane Acuity, then his Bonus Action fires Perilous Stakes or Mind Blast at the party''s best DC. Those powers compete with the Band-of-the-Mystic-Scoundrel Command loop, so choose the right control package for the encounter; Mind Sanctuary is the team-scale release valve. NOT Asterion (his bonus actions are Flurries/Step). Grab it in Act 1 (missable): sit in the Zaith''isk, pass INT DC 12 → WIS DC 15 → CON DC 18 (save-scum in non-Honour; a failed save is −2 to that stat but is cured by consuming any tadpole).'
 - k: Eligibility
@@ -70,7 +70,7 @@ order:
   act: Act 3
   who: Asterion
   power: Displace → Black Hole + Psionic Overload + Cull the Weak (Luck optional)
-  why: Alert lets him open first. Black Hole pulls a huge pack with NO save and still leaves both Bonus Actions for Flurries while Gale and Bonbon exploit the cluster. His DC 17 governs only the secondary Slow, rolled at disadvantage inside the Stone aura. When grouping is unnecessary, pre-cast Psionic Overload and spend the Action on two attacks. Cull executes weakened mobs — off when Deathstalker must get the kill.
+  why: Alert lets him open first. Black Hole pulls a huge pack with NO save and still leaves both Bonus Actions for Flurries while Gale and Bonbon exploit the cluster. His DC 18 governs only the secondary Slow, rolled at disadvantage inside the Stone aura. When grouping is unnecessary, pre-cast Psionic Overload and spend the Action on two attacks. Cull executes weakened mobs — off when Deathstalker must get the kill.
 - step: 10
   act: Act 3
   who: Gale
@@ -79,7 +79,7 @@ order:
 characters:
 - name: Charles
   short: Crit-smite amplifier + pre-cast psychic rider
-  dc: CHA 20 (Paladin is newest) → DC 17, or 18 in Helldusk Gloves. Active save powers still cost too many weapon attacks.
+  dc: CHA 20 → DC 17 base; Gloves of Battlemage's Power Arcane Acuity adds +1 per stack up to DC 27, the same ceiling as Bonbon and Gale. Active save powers still cost too many weapon attacks.
   note: Transforms with everyone. Pre-cast Psionic Overload, then stay on weapon attacks and Divine Smites. Luck is the emergency crit when Hold fails, not part of an already-Held sequence. Perilous Stakes doubles radiant smites and unmatched riders but never stacks with the Stone's psychic.
   powers:
   - power: Favourable Beginnings
@@ -114,7 +114,7 @@ characters:
     why: Free on transform — vertical repositioning to reach a Held target.
 - name: Asterion
   short: First-turn Black Hole setup + psychic-flurry engine
-  dc: WIS 18 → DC 17 (8 + prof 4 + WIS 4); the Stone gives nearby enemies disadvantage on mental saves.
+  dc: WIS 20 → DC 18 (8 + prof 4 + WIS 5); the Stone gives nearby enemies disadvantage on mental saves.
   note: Alert makes him the reliable first actor. Use Black Hole when grouping a pack beats his two-attack Action — the pull has no save and he keeps both Flurries. Otherwise pre-cast Psionic Overload and land 4–6 unarmed hits carrying doubled psychic riders. Bonbon keeps the save-dependent Mind Blast. NOT Awakened — his bonus actions are Flurries/Step.
   powers:
   - power: Psionic Overload
@@ -141,7 +141,7 @@ characters:
     tier: Elite
     prereq: Displace
     when: POST (Act 3)
-    why: 'First-turn Action — auto-pulls enemies 6m across a 9m radius, then tests DC 17 only for Slow, at disadvantage inside the Stone aura. Recasts five more times per short rest.'
+    why: 'First-turn Action — auto-pulls enemies 6m across a 9m radius, then tests DC 18 only for Slow, at disadvantage inside the Stone aura. Recasts five more times per short rest.'
   - power: Ability Drain
     tier: Middle
     prereq: Psionic Overload (refunded)

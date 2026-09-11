@@ -218,7 +218,7 @@ Missed items, free upgrades, stale sentences. Low risk. Suggest accepting as a b
 
 ### Gale
 - **T3-G1 Pre-cast Twinned Haste before initiative** — Hastened lasts 10 turns; casting just before engaging frees Gale's turn 1 Action for a second Scorching Ray. Ambushes keep the current line.
-- **T3-G2 Disintegrating Night Walkers to Gale in Act 3** — free once Asterion moves to Kushigo boots; Prone immunity on the party's most important concentration plus short-rest Misty Step, against Evasive Shoes' +1 AC. Same slot as T2-16.
+- **T3-G2 Disintegrating Night Walkers to Gale in Act 3** — free once Asterion moves to Kushigo boots. Correction after applying: the wiki gives them a short-rest Misty Step, immunity to Web / Entangle / Ensnare and no slipping on grease or ice, NOT Prone immunity as the reviewer wrote. Still taken: the ice-footing matters once Snowburst and Ice Storm are in the plan, and the Misty Step is concentration insurance of a different kind. Against Evasive Shoes' +1 AC. Same slot as T2-16.
 - **T3-G3 Record Markoheshkir's free spells** — Flame of Wrath: Fireball and Wall of Fire once each per short rest; Bolts of Doom: Chain Lightning and Lightning Bolt. The fire-immune playstyle line reads as if Chain Lightning costs the L6 slot.
 - **T3-G4 Heat Convergence into Fireball, never Scorching Ray** — wiki: multi-hit spells consume Heat on the first hit only; area spells add it to every target. Use the free Flame of Wrath Fireball.
 - **T3-G5 Ice Storm note: his own fire melts the ice** — fire first, Ice Storm last; Ray of Frost re-freezes.
@@ -264,7 +264,7 @@ Our text states a rule the corpus contradicts. **Verified** ones are wiki-confir
 - **T4-U2 Spellmight Gloves per ray.** iVOxw7TWYa0 30:37 asserts +1d8 on every ray from a build that has played it; wiki silent. Moves our "untested" flag to "probably, confirm".
 - **T4-U3 Inactive melee-set passives.** Four videos assert the Knife's crit reduction fires while the bow is out (nrTSroBA4eI 26:56, G_ShgMOS7zg 54:39, 5UFoWD3Uwis 29:32, JDPCUMrtdZs 34:23); wiki confirms only the shield AC carry-over. Decides Ketheric's +1 DC, Sentinel's +3 initiative and the Knife. Check the character sheet with the bow drawn.
 - **T4-U4 Reaction-interrupted multi-projectile spells** (T2-23).
-- **T4-U5 Helldusk Helmet as crit-immune gear.** `charles.md` `nova.caveats` lists it beside the Adamantine armours, Grymskull and Balduran as cancelling Hold Person's guaranteed crits. The wiki summary shows Infernal Sight, +2 saves against spells and Immolating Gaze, no critical-hit immunity. Confirm on the full page, then drop it from the pre-nova check list.
+- **T4-U5 Helldusk Helmet as crit-immune gear — resolved, our text stands.** `charles.md` `nova.caveats` lists it beside the Adamantine armours, Grymskull and Balduran as cancelling Hold Person's guaranteed crits. The reviewer's wiki summary showed no such line, but the full page reads "Attackers can't land Critical Hits on the wearer" (bg3.wiki/wiki/Helldusk_Helmet). It stays on the pre-nova check list.
 
 ---
 

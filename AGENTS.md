@@ -30,6 +30,11 @@ unless the task explicitly requests that scope.
   generated pipeline outputs even though many are tracked.
 - `research/`, `wiki_extractions/`, and `ideas.md`: research
   and planning inputs; they are not loaded by the web application.
+- `tools/`: standalone Python scripts that fetch the video corpus and generate
+  the rating datasets and the Ratings page. They are run by hand, never by the
+  server.
+- `video_transcripts/` and `video_summaries/`: the fetched guide corpus and the
+  summaries written from it. Both are inputs to the rating datasets.
 
 ## Web application behavior
 
@@ -159,6 +164,46 @@ Entries that the spell series does not rate (class features such as Extra Attack
 share the `- spell:` shape) stay unbadged; the applier reports any entry with a real
 spell level that it could not match.
 
+## Transcripts
+
+`video_transcripts/<videoId>.md` is the guide corpus every rating is read out of:
+one Markdown file per video, auto-captions grouped into ~30s timestamped blocks
+under a provenance header naming the video, channel, playlist index and duration.
+`tools/fetch_transcripts.py` writes them; `video_summaries/` holds the prose
+summaries written from them, keyed by title rather than video id.
+
+The script shells out to `yt-dlp`, which must be on PATH and is not a declared
+dependency of either tool in this repository:
+
+```sh
+pip3 install yt-dlp certifi
+```
+
+`certifi` is not optional on a python.org Python build. Those ship without root
+certificates, so every fetch fails with `CERTIFICATE_VERIFY_FAILED` until it is
+installed; yt-dlp then finds the bundle on its own, and there is no
+`SSL_CERT_FILE` to export. Homebrew's `yt-dlp` works equally well and brings its
+own certificates.
+
+Then, from the repository root:
+
+```sh
+python tools/fetch_transcripts.py <playlist> --list   # manifest only; * = already local
+python tools/fetch_transcripts.py <playlist>          # fetch everything missing
+python tools/fetch_transcripts.py <playlist> --only EoRrJ5kI2yk,xWeMvBJ6tl4
+```
+
+`<playlist>` takes a full URL or a bare list id. Files that already exist are
+skipped, so a re-run costs one playlist query and nothing else, and `--force` is
+what refetches over them. A video with no auto-captions is reported and skipped
+rather than failing the run.
+
+Fetching prefers the untranslated `en-orig` caption track when YouTube offers
+both, and the json3 parser drops the `aAppend` rollup events, so the text is not
+tripled the way a few older hand-fetched transcripts here are. Refetch rather
+than hand-editing a transcript — the extraction brief limits a reader to writing
+its own `research/slots/<videoid>.json` and nothing else.
+
 ## Guide ratings
 
 `research/item_tiers.json` and `research/spell_tiers.json` hold every rating read out
@@ -167,7 +212,7 @@ of the tier-list corpus — 823 item ratings across 35 lists and 212 spell ratin
 regenerated, not hand-edited:
 
 ```sh
-python tools/fetch_transcripts.py <playlist>     # transcripts
+python tools/fetch_transcripts.py <playlist>     # transcripts (needs yt-dlp)
 python tools/dump_tier_verdicts.py --source <id> # verdicts, in order, with context
 python tools/merge_slot_tiers.py                 # research/slots/*.json  -> item_tiers
 python tools/merge_spell_tiers.py                # research/spells/*.json -> spell_tiers

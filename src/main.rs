@@ -39,10 +39,17 @@ async fn main() -> Result<()> {
         progress,
     };
 
+    // Static roots are explicit and narrow. The repository root is deliberately
+    // NOT served: `docs/` and `resources/` are mounted read-only because the
+    // header's companion-doc chips link into them, and everything else
+    // (progress.json, bg3kb/, dotfiles) stays off the HTTP surface.
+    let ui_dir = root.join("src").join("ui");
     let app = Router::new()
         .route("/api/plan", get(get_plan))
         .route("/api/progress", get(get_progress).post(post_progress))
-        .fallback_service(ServeDir::new(root.clone()).append_index_html_on_directories(true))
+        .nest_service("/docs", ServeDir::new(root.join("docs")))
+        .nest_service("/resources", ServeDir::new(root.join("resources")))
+        .fallback_service(ServeDir::new(ui_dir).append_index_html_on_directories(true))
         // Single-user local tool whose content is edited live: never let the
         // browser serve a stale index.html or plan from its cache.
         .layer(SetResponseHeaderLayer::overriding(
@@ -60,7 +67,7 @@ async fn main() -> Result<()> {
         .await
         .with_context(|| format!("binding {addr} (is it already in use?)"))?;
 
-    println!("BG3 party guide serving from content/*.md");
+    println!("BG3 party guide serving from content/*.md (UI: src/ui/index.html)");
     println!("  →  http://{addr}");
     println!("Press Ctrl-C to stop.");
 

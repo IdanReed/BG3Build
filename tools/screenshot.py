@@ -23,8 +23,8 @@ import sys
 import urllib.parse
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-INDEX = pathlib.Path("index.html")
-SHOT = pathlib.Path("_shot.html")
+INDEX = pathlib.Path("src/ui/index.html")
+SHOT = pathlib.Path("src/ui/_shot.html")
 
 HARNESS = """
 <script>

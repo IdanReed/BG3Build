@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fold the per-video tables in `research/spells/*.json` into `research/spell_tiers.json`.
+"""Fold the per-video tables in `resources/tiers/spells/*.json` into `resources/tiers/spell_tiers.json`.
 
 Sibling to `tools/merge_slot_tiers.py`, kept separate because spells and gear are
 consumed differently: gear ratings badge the itemization tabs, spell ratings badge the
@@ -19,8 +19,8 @@ import json
 import pathlib
 import sys
 
-DATA = pathlib.Path("research/spell_tiers.json")
-SPELLS = pathlib.Path("research/spells")
+DATA = pathlib.Path("resources/tiers/spell_tiers.json")
+SPELLS = pathlib.Path("resources/tiers/spells")
 LETTERS = {"S+", "S", "A", "B", "C", "D", "F"}
 
 

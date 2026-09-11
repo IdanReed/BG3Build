@@ -33,7 +33,7 @@ import sys
 import yaml
 
 CHARACTERS = pathlib.Path("content/characters")
-TRANSCRIPTS = pathlib.Path("video_transcripts")
+TRANSCRIPTS = pathlib.Path("resources/videos/transcripts")
 
 LETTERS = ("s", "a", "b", "c", "d", "f")
 NOT_GEAR = re.compile(

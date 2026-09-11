@@ -6,7 +6,7 @@ about Baldur's Gate 3. The full BG3 manifest, with an `in_corpus` flag, is
 `cephalopocalypse_channel.tsv`. Titles were matched against the roster in
 `content/party.md`; where a title does not name the build ("The BEST ARCHER"),
 the video description was checked. "In corpus" means a transcript already exists
-in `video_transcripts/` or a summary in `video_summaries/`. 94 of the 336 BG3
+in `resources/videos/transcripts/` or a summary in `resources/videos/summaries/`. 94 of the 336 BG3
 videos are already in corpus, almost all of them tier lists.
 
 The party: Charles (Oath of Vengeance Paladin 7 / Hexblade Warlock 5), Asterion

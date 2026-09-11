@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build `research/item_vocab.json`: every bg3.wiki equipment page, grouped by slot.
+"""Build `resources/tiers/item_vocab.json`: every bg3.wiki equipment page, grouped by slot.
 
 The tier-list scanner needs to know about ALL items in a slot, not just the party's.
 The narrator walks a slot's items in order and delivers a verdict after each one, so a
@@ -18,7 +18,7 @@ import pathlib
 import sys
 
 CHUNKS = pathlib.Path("bg3kb/data/chunks.jsonl")
-OUT = pathlib.Path("research/item_vocab.json")
+OUT = pathlib.Path("resources/tiers/item_vocab.json")
 
 # Canonical slot -> the bg3.wiki categories that populate it.
 SLOT_CATEGORIES = {

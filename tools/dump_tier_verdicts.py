@@ -13,7 +13,7 @@ and print the run-up to it. Naming the item is left to a reader, which is reliab
 because the narrator states the item immediately before or after the verdict.
 
     python tools/dump_tier_verdicts.py --source seZJlJ9tvag
-    python tools/dump_tier_verdicts.py --slot Rings --out research/verdicts-rings.txt
+    python tools/dump_tier_verdicts.py --slot Rings --out resources/tiers/verdicts-rings.txt
     python tools/dump_tier_verdicts.py --list
 
 Pair it with `tools/scan_item_tiers.py --party-only` for a hint of which of the party's
@@ -26,7 +26,7 @@ import pathlib
 import re
 import sys
 
-TRANSCRIPTS = pathlib.Path("video_transcripts")
+TRANSCRIPTS = pathlib.Path("resources/videos/transcripts")
 
 ALL = ("act1", "act2", "act3")
 

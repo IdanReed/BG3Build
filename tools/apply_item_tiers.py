@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write the ratings in `research/item_tiers.json` into `content/characters/*.md`.
+"""Write the ratings in `resources/tiers/item_tiers.json` into `content/characters/*.md`.
 
 Two independent fields, because an item can hold both kinds of rating at once:
 
@@ -27,7 +27,7 @@ import pathlib
 import re
 import sys
 
-DATA = pathlib.Path("research/item_tiers.json")
+DATA = pathlib.Path("resources/tiers/item_tiers.json")
 CHARACTERS = pathlib.Path("content/characters")
 MANAGED = ("tier", "tier_note", "rank", "rank_note")
 

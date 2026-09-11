@@ -6,7 +6,7 @@ gear" for Markoheshkir, "Mel's first staff" for Melf's First Staff) and verdicts
 spoken rather than tabulated. The narrator's structure is consistent, though: discuss
 one item, deliver its tier, move to the next. So this scanner:
 
-1. loads the full slot vocabulary from `research/item_vocab.json` (every bg3.wiki item
+1. loads the full slot vocabulary from `resources/tiers/item_vocab.json` (every bg3.wiki item
    in the slot, not just the party's -- otherwise a verdict lands on the wrong item
    whenever an unowned item is discussed in between),
 2. fuzzy-locates every vocabulary name in the transcript,
@@ -15,11 +15,11 @@ one item, deliver its tier, move to the next. So this scanner:
 
 Output is CANDIDATES. Attribution is a heuristic and it cannot tell "I'd rate this A"
 from "this is worse than the A tier items", so ratings must be confirmed against the
-quoted context before they land in `research/item_tiers.json`.
+quoted context before they land in `resources/tiers/item_tiers.json`.
 
     python tools/scan_item_tiers.py --source seZJlJ9tvag
-    python tools/scan_item_tiers.py --party-only --out research/tier_candidates.txt
-    python tools/scan_item_tiers.py --json --out research/tier_candidates.json
+    python tools/scan_item_tiers.py --party-only --out resources/tiers/tier_candidates.txt
+    python tools/scan_item_tiers.py --json --out resources/tiers/tier_candidates.json
 """
 from __future__ import annotations
 
@@ -33,8 +33,8 @@ import sys
 import yaml
 
 CHARACTERS = pathlib.Path("content/characters")
-TRANSCRIPTS = pathlib.Path("video_transcripts")
-VOCAB = pathlib.Path("research/item_vocab.json")
+TRANSCRIPTS = pathlib.Path("resources/videos/transcripts")
+VOCAB = pathlib.Path("resources/tiers/item_vocab.json")
 
 ALL = ("act1", "act2", "act3")
 

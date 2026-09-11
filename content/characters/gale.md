@@ -5,6 +5,10 @@ builds:
   is_primary: true
   role: Fire striker + non-concentration Command control + party Haste engine
   class: Sorcerer 11 (Draconic Bloodline — Red) / Fiend Warlock 1
+  at_a_glance:
+    armour: Light armour + shields (Human Civil Militia, Warlock 1) — never a shield in practice, both hands hold staves
+    elixir: Vigilance every long rest — +5 Initiative and Surprise immunity, the Alert feat he cannot afford
+    concentration: Twinned Haste on Charles and Bonbon — Command is his control because it needs none
   race: Gale (Human)
   race_notes: 'Human (BG3): a freely-assigned +2/+1 ability bonus like every race (the CHA 17 in starting_stats is 15 point-buy + the +2 racial), ''Civil Militia'' proficiency with Shields + Light armour + spear/pike/halberd/glaive (no trident), one extra skill, and +25% carry weight — stat-neutral vs any other race, so it costs nothing. IMPORTANT FOR THIS BUILD: Civil Militia already grants LIGHT ARMOUR, so Gale does not need the Warlock dip to wear Armour of Landfall — the dip is justified by Command alone. The published guide recommends Halfling for Luck (no nat-1s on the many Scorching Ray attack rolls and on Heat CON saves); Gale is a fixed origin Human, so that safety net is unavailable and Armour of Landfall''s Constitution-save advantage becomes the replacement. NETHERESE ORB: only an EARLY-Act-1 issue — the 3-item ''The Wizard of Waterdeep'' quest; feed Gale 3 magic items and the hunger resolves (Elminster later quells it entirely). Ignoring it stacks escalating Arcane Hunger debuffs (disadvantage on saves → attacks → half move) and only the final ignored stage is fatal — it is NOT an Act 1–2 resource drain. Recruited as a Wizard; respec via Withers into this Draconic-Red Sorcerer / Fiend Warlock build.'
   background: Sage (Arcana, History) — Gale's default
@@ -722,13 +726,13 @@ builds:
       tier: S
       tier_note: 'The BEST ROGUE WEAPONS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Part 2 (43:01) — +3 to everything, and best in slot as a stat stick even for characters not swinging it'
       slot: weapons
-      note: 'CORE off hand, carried by Cazador Szarr. Scarlet Remittance stacks +1 attack, damage AND spell save DC per kill, up to 3. This build uses all three, and the damage applies per ray. Requires Dual Wielder to hold alongside Markoheshkir. ⚠ Per the wiki, as of Patch 5 it only builds stacks on killing living hostile targets.'
+      note: 'CORE off hand, carried by Cazador Szarr. Scarlet Remittance stacks +1 attack, damage AND spell save DC per kill, up to 3. This build uses all three, and the damage applies per ray. Requires Dual Wielder to hold alongside Markoheshkir. ⚠ Per the wiki, as of Patch 5 it only builds stacks on killing living hostile targets, and the stacks are lost when the dagger is unequipped — so once he is at +3, it stays in his hand; verify in play whether the stacks survive a long rest.'
     - id: staff-of-spellpower
       item: Staff of Spellpower
       tier: S
       tier_note: 'The BEST STAVES in Baldur''s Gate 3 - Honor Mode Tier List and Guide (48:32) — a mainstay; refreshing a spell slot on any slot for any purpose is that good'
       slot: weapons
-      note: 'CARRY BOTH, SWAP PER FIGHT. Rated S. Gives +1 spell save DC and +1 spell attack IMMEDIATELY, plus its own Arcane Battery — a second free spell of any level per long rest, stacking with Markoheshkir''s. Rhapsody is better in long, adds-heavy fights that actually generate kills; Spellpower is better in short boss fights and against undead or constructs, where Rhapsody may never build a single stack. Two free high-level spells per rest is a large swing for a build this slot-hungry.'
+      note: 'CARRY BOTH. Rated S. Gives +1 spell save DC and +1 spell attack IMMEDIATELY, plus its own Arcane Battery — a second free spell of any level per long rest, stacking with Markoheshkir''s. It is the off-hand until Rhapsody has its three living kills, and on any day that starts against undead or constructs, where Rhapsody cannot build a stack; once Rhapsody sits at +3 it stays, because unequipping it drops the stacks. Two free high-level spells per rest is a large swing for a build this slot-hungry.'
     - id: spellmight-gloves
       item: Spellmight Gloves
       tier: B
@@ -834,9 +838,9 @@ builds:
       slot: hands
       note: Act 1–2 Belligerent Skies (Crèche) for the Reverberation engine → Act 3 Spellmight (Circus, Find Dribbles the Clown). Spellmight's −5 to hit needs Arcane Acuity to cover it, so cast the first Scorching Ray with them off.
     - id: prog-feet
-      item: 'Boots: Boots of Stormy Clamour → Evasive Shoes'
+      item: 'Boots: Boots of Stormy Clamour all game (Evasive Shoes as the defensive swap)'
       slot: feet
-      note: Stormy Clamour (Omeluum) for Acts 1–2, where inflicting any condition adds Reverberation → Evasive Shoes in Act 3. A modest ending forced by a hard rule — Boots of Persistence and Vital Conduit Boots both require Medium Armour proficiency, which Sorcerer/Warlock never grants.
+      note: Stormy Clamour (Omeluum) all game — inflicting any condition adds Reverberation, and that engine still runs in Act 3, where nothing clearly beats it. Evasive Shoes are the defensive swap. Boots of Persistence and Vital Conduit Boots both require Medium Armour proficiency, which Sorcerer/Warlock never grants, and the Helldusk Boots go to Charles.
     - id: prog-cloaks
       item: 'Cloak: none available → Thunderskin Cloak → Cloak of the Weave'
       slot: cloaks
@@ -852,9 +856,7 @@ builds:
     - id: prog-ring2
       item: 'Ring 2: Ring of Mind-Shielding → Coruscation Ring'
       slot: ring 2
-      note: Ring of Mind-Shielding from Omeluum in Act 1 as concentration insurance on the Twinned Haste carrier → Coruscation Ring from Act 2, which pairs with Callous Glow because it lights the target that Callous Glow then punishes.
-      slot: rings
-      note: Act 1 Protection (Mol) and Mind-Shielding (Omeluum), both pure concentration insurance → Act 2–3 Callous Glow and Coruscation, which feed each other because Coruscation lights the target that Callous Glow then punishes. Ring of Mental Inhibition is the swap for Command-spam fights.
+      note: Ring of Mind-Shielding from Omeluum in Act 1 as concentration insurance on the Twinned Haste carrier → Coruscation Ring from Act 2, which pairs with Callous Glow because it lights the target that Callous Glow then punishes. Ring of Mental Inhibition is the swap for Command-spam fights.
     - id: prog-weapons
       item: 'Main hand: The Spellsparkler → Markoheshkir'
       slot: weapons

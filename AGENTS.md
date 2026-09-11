@@ -81,6 +81,13 @@ roster sort afterward by nickname. Preserve the existing schema and copy the
 shape of a neighboring entry when adding data, because the frontend is the
 schema consumer and there is no separate schema file.
 
+A build may carry an `at_a_glance` object with three string fields — `armour`,
+`elixir` and `concentration` — which `index.html` renders as a chip row at the
+top of the build, ahead of the Playstyle card. It states the armour proficiency
+the build actually has, the elixir it drinks every long rest, and what its
+concentration is spent on. Keep each to one line and keep exactly those three
+keys; the frontend renders nothing else from it.
+
 For character itemization, prefer objects with stable `id`, display `item`,
 `slot`, and explanatory `note`, `effect`, or `why`. Keep `id` stable when
 renaming display text. The UI recognizes `act1`, `act2`, and `act3` specially

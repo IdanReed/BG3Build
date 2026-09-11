@@ -112,6 +112,8 @@
   }
   .chip.accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
   .chip .chip-k { color: var(--text-muted); font-weight: 500; opacity: .8; }
+  .chips.glance { margin: 0 0 14px; }
+  .chips.glance .chip { font-size: .82rem; }
   a.chip { text-decoration: none; color: var(--text-muted); }
   a.chip:hover { border-color: var(--accent); color: var(--accent); }
   a.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -2457,6 +2459,22 @@ function addPageOutline(wrap, keyRoot) {
 function renderBuild(b, charName) {
   const wrap = h("div", { class: "build" });
   const keyRoot = buildKeyRoot(charName, b);
+
+  // At-a-glance badges — the three table-side facts a player needs before
+  // anything else: what armour the build can wear, which elixir it drinks every
+  // long rest, and what its concentration is spent on.
+  if (has(b.at_a_glance)) {
+    const g = b.at_a_glance;
+    const row = h("div", { class: "chips glance", role: "list", "aria-label": "At a glance" });
+    const add = (label, value) => {
+      if (!has(value)) return;
+      row.appendChild(h("span", { class: "chip accent", role: "listitem" }, h("span", { class: "chip-k" }, label), String(value)));
+    };
+    add("Armour", g.armour);
+    add("Elixir", g.elixir);
+    add("Concentration", g.concentration);
+    if (row.children.length) wrap.appendChild(row);
+  }
 
   // Put the at-a-glance combat loop first so a character page opens with the
   // decisions the player needs at the table.

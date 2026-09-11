@@ -5,6 +5,10 @@ builds:
   is_primary: true
   role: Ranged acuity control + damage + party face
   class: Swords Bard 11 / Fighter 1
+  at_a_glance:
+    armour: All armour + shields (Fighter first) — the party's only heavy wearer
+    elixir: Bloodlust in Act 1 while the Club supplies Strength → Giant Strength (Hill 21, then Cloud 27) from the Stone, for Titanstring
+    concentration: Hold Monster, or Hold Person on humanoids Charles is not holding — Fear or Slow only when paralysis is invalid
   build_order: Fighter 1 at character creation → Swords Bard 1–11. No respec at any point.
   race: Half-Elf or Human (early shield)
   background: Guild Artisan (Insight, Persuasion) — proficiencies.md assumes this one
@@ -13,7 +17,7 @@ builds:
     DEX:
       base: 16
       final: 18
-      via: Gloves of Dexterity — sets DEX to 18 (Crèche, Act 1)
+      via: Gloves of Dexterity — sets DEX to 18 (Crèche, Act 1) until Helldusk Gloves replace them in Act 3 and it returns to 16
     CON: 14
     INT: 8
     WIS: 10
@@ -26,7 +30,11 @@ builds:
     - score: 8
       source: 'point-buy'
     - score: 19
-      source: 'SET by Club of Hill Giant Strength'
+      source: 'SET by Club of Hill Giant Strength (Act 1 until the Stone)'
+    - score: 21
+      source: 'Elixir of Hill Giant Strength every long rest from the Stone, once Phalar Aluve displaces the Club'
+    - score: 27
+      source: 'Elixir of Cloud Giant Strength, from level-9 vendors'
   - ability: DEX
     steps:
     - score: 15
@@ -35,6 +43,8 @@ builds:
       source: '+1 Racial'
     - score: 18
       source: 'SET by Gloves of Dexterity, Act 1'
+    - score: 16
+      source: 'Act 3: Helldusk Gloves replace the Gloves of Dexterity, so DEX drops back to its natural 16'
   - ability: CON
     steps:
     - score: 14
@@ -62,7 +72,7 @@ builds:
     feat: Sharpshooter
   - at: Bard 8 (char 9)
     feat: War Caster
-    note: Advantage on CON saves to hold Hold Monster — the party's melee auto-crit engine — plus opportunity-spell casting. Taken over Dual Wielder because hand crossbows are Light and dual-wield without it.
+    note: Advantage on CON saves to hold Hold Monster — the party's melee auto-crit engine — plus opportunity-spell casting. Taken over Dual Wielder, which would only matter for pairing Phalar Aluve with a second weapon; a shield does that job with no feat.
   fighting_styles:
   - Archery (Fighter)
   - Dueling (Bard)
@@ -389,7 +399,7 @@ builds:
     - category: Fighting style
       picks: 1
       recommendation: Dueling
-      note: Archery already covers the ranged plan; Dueling is the melee fallback.
+      note: A formality — neither Swords style touches a bow. Duelling wants a lone melee weapon and Two-Weapon Fighting an off-hand attack, and she makes neither. Pick Duelling and move on.
     - category: Expertise
       picks: 2
       recommendation:
@@ -543,7 +553,7 @@ builds:
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (32:39) — adds your strength modifier; best in slot Act 1 damage with a giant strength elixir'
       slot: weapons
       bis: true
-      note: Brem, after Find the Missing Shipment. Archery + Sharpshooter + ranged Slashing Flourish apply its STR rider to large, accurate nova shots. Default to the STR 19 Club + Knife + Bloodlust package; Hill Giant elixir for a boss where Bloodlust cannot trigger.
+      note: Brem, after Find the Missing Shipment. Archery + Sharpshooter + ranged Slashing Flourish apply its STR rider to large, accurate nova shots, and it is HER BOW FOR THE WHOLE RUN. Act 1 default is the STR 19 Club + Knife + Bloodlust package; Hill Giant elixir for a boss where Bloodlust cannot trigger. From the Stone the Club leaves her hands and the elixir supplies the Strength every day.
     - id: club-of-hill-giant-strength
       item: Club of Hill Giant Strength
       tier: A
@@ -555,19 +565,19 @@ builds:
       tier: S
       tier_note: 'jeSeVkmqmuc (21:07) — +2 shortsword; wider crit range, damage-dice rerolls, advantage in darkness; stat stick for anyone'
       slot: weapons
-      note: 'Crèche stat stick beside the Light club, no feat needed. Organ Rearranger lowers the crit threshold globally, which is the reason to carry it — it improves Titanstring and her spell attacks, not just melee. The low-die reroll is melee-only. She keeps it for the whole run; the Adamantine ore goes into armour instead of the shield, so nothing displaces it.'
+      note: 'ACT 1 ONLY. Crèche stat stick beside the Light club, no feat needed. Organ Rearranger lowers the crit threshold globally, but this party''s crits come from Hold, not from threshold, so on a volume-and-control build it is a harmless filler rather than a reason. The Sentinel Shield replaces it at Moonrise, and from the Stone it becomes CHARLES''S bagged Psychic-immune fallback blade.'
     - id: elixir-of-bloodlust
       item: Elixir of Bloodlust
       tier: S
       tier_note: '9BcQXb37Bik (22:44) — extra action per kill; on Honour that action gets no Extra Attack, on Tactician or below it does'
       slot: consumables
-      note: DEFAULT with adds. A kill grants 5 temp HP and another Action once per turn, and outside Honour that Action benefits from Extra Attack. The Club costs only 1 Titanstring damage per projectile versus STR 21 — repaid by one extra Action.
+      note: ACT 1 DEFAULT with adds, until the Stone. A kill grants 5 temp HP and another Action once per turn, and outside Honour that Action benefits from Extra Attack. The Club costs only 1 Titanstring damage per projectile versus STR 21 — repaid by one extra Action. Once Phalar Aluve displaces the Club, a daily Giant Strength elixir takes this slot for good.
     - id: elixir-of-hill-giant-strength
       item: Elixir of Hill Giant Strength
       tier: S
       tier_note: '9BcQXb37Bik (30:26) — sets Strength to 21; S used normally, and S+ ABOVE THE SCALE if drunk daily to skip strength investment'
       slot: consumables
-      note: For a lone boss or any fight with no dependable Bloodlust kill. STR 21 raises the Titanstring rider from +4 to +5. Keep a big stock — Asterion needs one daily too.
+      note: Act 1 — for a lone boss or any fight with no dependable Bloodlust kill; STR 21 raises the Titanstring rider from +4 to +5. FROM THE STONE it is her STANDING elixir, because the Club leaves her melee set and Titanstring's rider needs a Strength score. Keep a big stock — Asterion drinks one daily too.
     - id: gloves-of-archery
       item: Gloves of Archery
       tier: S
@@ -687,23 +697,30 @@ builds:
       tier_note: 'BAN These Items - BG3 Helmets Tier List and Guide - Act 2 (35:18) — broken like all the Arcane Acuity items, and one of the easiest to use'
       slot: head
       bis: true
-      note: 'Mason''s Guild in Reithwin Town — an Act 2 pickup, not an Act 3 one. +2 Arcane Acuity per weapon hit, each remaining turn giving +1 spell attack AND +1 spell save DC, capped at 10. THE PIVOT: switch to dual hand crossbows now, because more hits per turn stack Acuity far faster than Titanstring''s single big shots. Extra Attack plus off-hand plus Slashing Flourish is 3–4 hits a turn at 2 turns each, so she reaches the +10 cap inside one round. ⚠ Damage taken strips 2 turns of Acuity, which is why her defensive gear matters more than it looks.'
-    - id: dual-hand-crossbows
-      item: Ne'er Misser + Hellfire Hand Crossbow
-      wiki:
-      - Ne'er Misser
-      - Hellfire Hand Crossbow
+      note: 'Mason''s Guild in Reithwin Town — an Act 2 pickup, not an Act 3 one. Every weapon hit grants 2 turns of Arcane Acuity; each remaining turn is +1 spell attack AND +1 spell save DC, capped at 10 turns. TITANSTRING STAYS: a ranged Slashing Flourish fires two projectiles and each one that damages is a separate trigger, so Extra Attack''s two Flourishes are four hits and +8 in one Action, and any Hasted turn caps her at +10. ⚠ Dual hand crossbows were the old plan; their only edge is a fifth hit from the bonus-action off-hand shot, and her bonus action belongs to Healing Word now and the Band of the Mystic Scoundrel later. ⚠ Damage taken strips 2 turns of Acuity, which is why her defensive gear matters more than it looks.'
+    - id: act2-ranged-bonbon
+      item: Titanstring Bow
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (32:39) — adds your strength modifier; best in slot Act 1 damage with a giant strength elixir'
+      held: 1
       slot: ranged weapons
       bis: true
-      note: 'Roah at Moonrise plus Yurgir''s corpse in the Gauntlet of Shar. Both Light, so no Dual Wielder feat. Main-hand, off-hand and Flourish hits stack Acuity fast. ⚠ Both are contested on paper and both stay with her: Charles would like Ne''er Misser''s Magic Missile for shooting out of his own Darkness, and Asterion could use the Hellfire, but neither converts hand-crossbow hits into spell save DC. ⚠ Breaking Yurgir''s contract via Raphael forfeits the Hellfire Hand Crossbow.'
+      note: 'CARRIED OVER for the whole run. Its Strength rider lands on every projectile, Flourish projectiles and special-arrow riders included, and with Sharpshooter that is 23–28 a hit against 18.5 from a hand crossbow. Until the Stone the Club supplies STR 19; from the Stone a daily Elixir of Hill Giant Strength (21), then Cloud Giant (27) once level-9 vendors stock it. ⚠ Ne''er Misser and the Hellfire Hand Crossbow are no longer part of the plan: they only pulled ahead through the bonus-action off-hand shot, and her bonus action is spoken for.'
     - id: act2-melee-bonbon
-      item: Club of Hill Giant Strength + Knife of the Undermountain King
-      held: true
+      item: Club of Hill Giant Strength + Sentinel Shield
       wiki:
       - Club of Hill Giant Strength
-      - Knife of the Undermountain King
+      - Sentinel Shield
       slot: weapons
-      note: 'The melee set stays equipped even though she fights from the ranged set, because the Knife''s crit-threshold reduction is global and applies to her bolts and spell attacks. ⚠ NO ADAMANTINE SHIELD HERE. The tempting trick is to park one in the inactive melee set for free crit immunity, but the wiki only confirms that the AC bonus carries over from an unheld shield and says nothing about crit immunity. The gamble is unnecessary anyway: both Mithral ores go to Adamantine Splint Armour for her and Adamantine Scale Mail for Charles, and the Splint gives her crit immunity outright while she keeps the Knife.'
+      note: 'UNTIL THE STONE. The melee set is never swung, so it is two stat sticks — every "holder gains" passive on an equipped weapon applies while she shoots, and so does a shield''s AC. The Club keeps STR 19 on Titanstring; the SENTINEL SHIELD from Lann Tarv on the main floor of Moonrise adds +2 AC and +3 Initiative. The Knife retires here: crit threshold is not what this party is built on.'
+    - id: phalar-aluve-bonbon
+      item: Phalar Aluve + Ketheric's Shield
+      wiki:
+      - Phalar Aluve
+      - Ketheric's Shield
+      slot: weapons
+      bis: true
+      note: 'FROM THE STONE, and for the rest of the run. Charles hands over PHALAR ALUVE at his respec, and KETHERIC''S SHIELD drops from Ketheric''s second fight in the Colony: +2 AC, +1 SPELL SAVE DC on top of the Acuity cap, and advantage on DEX saves, all live from her inactive melee set. Phalar is Versatile, not Light, so without Dual Wielder no weapon can share her hands with it — a shield is the only legal partner, which is exactly why the Club and Knife leave. SHE IS THE SHRIEK CARRIER NOW. Shriek is a 6 m aura on the WIELDER that ends if the sword is unequipped and costs an ACTION: spend her Haste action on it on turn 1 (or pre-cast from stealth), then play 3–6 m from the enemies she wants debuffed — outside the 3 m ranged-disadvantage band, inside the aura. −1d4 to their saves and attack rolls, and +1d4 Thunder every time anyone damages them.'
     - id: act2-chest-bonbon
       item: Adamantine Splint Armour
       tier: S
@@ -713,7 +730,7 @@ builds:
       held: true
       slot: armour
       bis: true
-      note: AC 18, crit immunity and −2 to every incoming damage instance carry her through Act 2 unchanged. Crit immunity does double duty here — it protects Hold Monster concentration and it stops Arcane Acuity being stripped two turns at a time by big hits.
+      note: AC 18, crit immunity and −2 to every incoming damage instance carry her through Act 2 unchanged, and a shield in the melee set adds 2 more from Moonrise. Crit immunity does double duty here — it protects Hold Monster concentration and it stops Arcane Acuity being stripped two turns at a time by big hits.
     - id: act2-hands-bonbon
       item: Gloves of Dexterity
       tier: S
@@ -724,6 +741,12 @@ builds:
       slot: hands
       bis: true
       note: DEX 18 and +1 Attack Rolls remain the best glove effect available to her, and every hit is now an Acuity stack rather than just damage. Nothing in Act 2 beats it.
+    - id: act2-elixir-bonbon
+      item: Elixir of Hill Giant Strength
+      tier: S
+      tier_note: '9BcQXb37Bik (30:26) — sets Strength to 21; S used normally, and S+ ABOVE THE SCALE if drunk daily to skip strength investment'
+      slot: consumables
+      note: 'STANDING ELIXIR FROM THE STONE — one every long rest, like Asterion. STR 21 puts +5 on every Titanstring projectile unconditionally, where Bloodlust needed her to land the kill. Bloodlust stays the pick only while the Club is still in her hands. Cloud Giant (STR 27, +8) replaces it as soon as a level-9 vendor stocks one — Araj, Talli, Mattis and Roah all can.'
     - id: spellcrux-amulet
       item: Spellcrux Amulet
       tier: S
@@ -791,27 +814,35 @@ builds:
       held: true
       slot: ring 2
       note: +2 Acid on every bolt and every Flourish projectile is still the cleanest flat rider available to her, and it needs no setup. Swap it for the Ring of Free Action in any fight with webs, paralysis or Black Tentacles, since being Paralysed both ends Hold Monster and hands out automatic critical hits.
-    - id: bow-alternative
-      item: Gontr Mael
-      tier: A
-      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (50:53) — at-will Celestial Haste is nice, but only the third best two-handed bow for damage'
-      slot: ranged weapons
-      note: 'Carried by the Steel Watcher Titan in the Steel Watch Foundry. A legendary +3 longbow with Celestial Haste once per long rest. ⚠ NOT the default, and the reason is structural: it is Two-Handed, so equipping it cancels the dual-hand-crossbow set that is the entire Arcane Acuity engine — she would trade three or four Acuity-stacking hits a turn for two. Carry it purely for an opening-round Celestial Haste, then swap back. ⚠ It does not drop if the Titan is killed by the Atrophied condition.'
     - id: act3-ranged-bonbon
-      item: Ne'er Misser + Hellfire Hand Crossbow
+      item: Titanstring Bow
+      tier: S
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (32:39) — adds your strength modifier; best in slot Act 1 damage with a giant strength elixir'
       held: true
-      wiki:
-      - Ne'er Misser
-      - Hellfire Hand Crossbow
       slot: ranged weapons
       bis: true
-      note: 'The standing Act 3 ranged set, unchanged. ⚠ Hellrider''s Longbow is NOT hers — it is Two-Handed, so it cannot coexist with the hand crossbows at all, which settles the initiative contest with Gale in his favour permanently. He has the idle ranged slot; she does not.'
+      note: 'The standing set, unchanged: Titanstring with a daily Elixir of Cloud Giant Strength for +8 on every projectile. ⚠ Gontr Mael is ASTERION''S: its Celestial Haste is a self-only Concentration spell, and she is already Hasted by Gale and concentrating on Hold Monster, so on her it did nothing. ⚠ Hellrider''s Longbow is Gale''s; he has the idle ranged slot.'
+    - id: act3-melee-bonbon
+      item: Phalar Aluve + Ketheric's Shield
+      held: 2
+      wiki:
+      - Phalar Aluve
+      - Ketheric's Shield
+      slot: weapons
+      bis: true
+      note: 'CARRIED OVER. She still carries Shriek for the party from 3–6 m of the cluster, and Ketheric''s +1 spell save DC sits on top of the Acuity cap. Viconia''s Walking Fortress goes to Charles.'
+    - id: act3-elixir-bonbon
+      item: Elixir of Cloud Giant Strength
+      tier: S
+      tier_note: '9BcQXb37Bik (32:28) — sets Strength to 27; S used normally, S+ ABOVE THE SCALE if drunk daily; also enormous jump distance'
+      slot: consumables
+      note: 'STR 27 — +8 on every projectile, so a four-hit Action carries +32 from the elixir alone. Sold by level-9 vendors across Acts 2 and 3 with semi-random stock (Araj, Talli, Roah, Mattis, Danthelon, Helsik, Popper and more); Asterion drinks the same, so buy every one you see and fall back on Hill Giant on a short day.'
     - id: amulet-of-greater-health
       item: Amulet of Greater Health
       tier: S
       tier_note: 'The BEST AMULETS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 3 (13:32) — the only real decision left is who to put it on'
       slot: amulets
-      note: 'NOT HERS, on reflection. Setting Constitution to 23 and granting advantage on CON saves is superb, but she already has War Caster''s advantage on those saves, AC 21 in Armour of Agility, and a cloak that gives attackers disadvantage — so the amulet''s advantage half is redundant on her. Charles has a permanent DISADVANTAGE from the Risky Ring for it to cancel, which nothing else in the game does as cleanly. She keeps the Spellcrux Amulet instead, and a free level-6 slot per long rest is worth more to a controller than +6 to saves she is already winning.'
+      note: 'NOT HERS, on reflection. Setting Constitution to 23 and granting advantage on CON saves is superb, but she already has War Caster''s advantage on those saves, AC 21 in Helldusk Armour, and a cloak that refreshes +2 AC every turn — so the amulet''s advantage half is redundant on her. Charles has a permanent DISADVANTAGE from the Risky Ring for it to cancel, which nothing else in the game does as cleanly. She keeps the Spellcrux Amulet instead, and a free level-6 slot per long rest is worth more to a controller than +6 to saves she is already winning.'
     - id: act3-amulet-bonbon
       item: Spellcrux Amulet
       tier: S
@@ -819,12 +850,19 @@ builds:
       held: true
       slot: amulets
       note: A bonus-action level-6 spell slot once per long rest is a second six-target Command or a second Hold Monster in the fight that needs it. On a Bard 11 with exactly one slot at that level, this is the highest-leverage neck she can wear.
-    - id: armour-of-agility
-      item: Armour of Agility
+    - id: helldusk-armour-bonbon
+      item: Helldusk Armour
       tier: S
-      tier_note: 'BG3''S BEST ARMOR - Medium Armor Tier List - Honour Mode Guide - Part 3 (1:00:01) — 17 AC uncapped by Dex and +2 saves; the highest AC setup in the game'
+      tier_note: 'VjmWkRCoDWE (57:31) — 21 AC, 3 damage reduction, anyone can wear it; ALSO S IF GRABBED IN ACT 1 BY EXPLOIT'
       slot: armour
-      note: 'ACT 3 CHEST, sold by Gloomy Fentonson at the Stormshore Armoury. Medium armour that adds her FULL Dexterity modifier — AC 17 + 4 = 21 at DEX 18 — plus +2 to ALL saving throws and no Stealth penalty. It beats the Adamantine Splint by 3 AC and 2 saves; the trade is losing crit immunity, so keep the Splint bagged for any fight where she is being focused and Arcane Acuity keeps getting stripped. ⚠ Do not take Medium Armour Master or Magic Initiate: Cleric on her — the wiki notes either feat breaks the full-Dexterity passive.'
+      bis: true
+      note: 'ACT 3 CHEST, carried by Raphael in the House of Hope. AC 21 flat, ALL INCOMING DAMAGE REDUCED BY 3, Fire resistance and immunity to Burning, Infernal Retribution (a caster whose spell she saves against starts Burning) and a non-concentration Fly once per long rest. It grants its own proficiency, so anyone can wear it — it went to nobody while Charles was locked to Luminous Armour. The damage reduction is the point for a concentrator: chip damage becomes zero, which means no concentration save and no Arcane Acuity stripped. ⚠ Heavy, so Stealth at disadvantage; Asterion sneaks, she does not.'
+      options:
+      - id: opt-armour-of-agility
+        item: Armour of Agility
+        tier: S
+        tier_note: 'BG3''S BEST ARMOR - Medium Armor Tier List - Honour Mode Guide - Part 3 (1:00:01) — 17 AC uncapped by Dex and +2 saves; the highest AC setup in the game'
+        note: 'THE SAVE-FOCUSED ALTERNATIVE, sold by Gloomy Fentonson at the Stormshore Armoury: medium armour with her FULL Dexterity modifier and +2 to ALL saving throws, no Stealth penalty. At DEX 16 under Helldusk Gloves that is AC 20, one behind Helldusk''s flat 21; take it if +2 saves matter more than 3 damage reduction. ⚠ Do not take Medium Armour Master or Magic Initiate: Cleric on her — the wiki notes either feat breaks the full-Dexterity passive.'
     - id: wavemother-s-cloak
       item: Wavemother's Cloak
       tier: D
@@ -832,15 +870,12 @@ builds:
       slot: cloaks
       note: 'ACT 3 CLOAK, in an opulent chest behind Allandra Grey''s desk on the upper floor of the Water Queen''s House. Once per turn in combat it grants Water Layer Protection until she takes damage: +2 AC, +2 to saving throws, Fire resistance and immunity to Burning. On a backline controller who is rarely hit, that refreshes every turn and effectively never falls off — strictly better than the flat +1/+1 of a Cloak of Protection for her, and it leaves Cloak of Displacement free for Asterion, who has no armour at all.'
     - id: act3-hands-bonbon
-      item: Gloves of Dexterity
+      item: Helldusk Gloves
       tier: S
-      tier_note: 'The MOST IMPORTANT ITEMS in BG3 - Gloves Tier List and Guide - Act 1 (25:38) — called the best item in the game for what it enables'
-      rank: '#1'
-      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #1 of 20 — sets Dexterity to 18 and adds +1 attacks, freeing ability points and feats'
-      held: true
+      tier_note: 'The BEST GLOVES In BG3 COMPLETE - Honor Mode Tier List and Guide - Act 3 (24:29) — best in slot for almost anyone; +1d6 damage, +1 attack rolls and +1 spell save DC'
       slot: hands
       bis: true
-      note: 'Nothing in Act 3 beats DEX 18 plus +1 to every attack roll for her. ⚠ Bracers of Defence are dead once she wears Armour of Agility, and Craterflesh Gloves want a crit-focused build she is not — she is a controller whose damage comes from volume, not critical hits.'
+      note: 'ACT 3 HANDS, worn by Haarlep in the House of Hope boudoir; no armour tag. Infernal Acuity is +1 spell save DC and, per the wiki, +1 to ALL attack rolls; Infernal Touch adds 1d6 Fire to every weapon hit — every Titanstring projectile. Against the Gloves of Dexterity that trades DEX 18 for her natural 16 (−1 attack, −1 damage, −1 AC, −1 initiative) for +1 Hold Monster DC and about +10 damage a turn. Keep the Gloves of Dexterity bagged; they are not wrong, just second. ⚠ Craterflesh Gloves want a crit-focused build she is not.'
     - id: act3-head-bonbon
       item: Helmet of Arcane Acuity
       tier: S
@@ -861,13 +896,13 @@ builds:
       slot: head
       note: Free Grymskull crit immunity as a stopgap → Diadem (Crèche) for CHA on ranged hits → Helmet of Arcane Acuity (Mason's Guild, Act 2) for the rest of the run. The Helmet never comes off again — Birthright's +2 Charisma is +1 spell DC against Acuity's +10.
     - id: prog-armour
-      item: 'Chest: The Protecty Sparkswall → Adamantine Splint Armour → Armour of Agility'
+      item: 'Chest: The Protecty Sparkswall → Adamantine Splint Armour → Helldusk Armour'
       slot: armour
-      note: Act 1 early Protecty (Grymforge) for +1 spell DC → Act 1 late and Act 2 Adamantine Splint (first Mithral ore) for AC 18 and crit immunity → Act 3 Armour of Agility (Stormshore Armoury) for AC 21 and +2 saves. Keep the Splint bagged for fights where crit immunity beats raw AC.
+      note: Act 1 early Protecty (Grymforge) for +1 spell DC → Act 1 late and Act 2 Adamantine Splint (first Mithral ore) for AC 18 and crit immunity → Act 3 Helldusk Armour (Raphael) for AC 21 and 3 damage reduction on every hit. Armour of Agility is the +2-saves alternative; keep the Splint bagged for fights where crit immunity beats everything.
     - id: prog-hands
-      item: 'Hands: Gloves of Archery → Gloves of Dexterity'
+      item: 'Hands: Gloves of Archery → Gloves of Dexterity → Helldusk Gloves'
       slot: hands
-      note: Act 1 early Archery gloves (Grat) → Gloves of Dexterity from the Crèche for the rest of the run. Nothing later beats DEX 18 plus +1 to every attack roll on a character making four attack rolls a turn.
+      note: Act 1 early Archery gloves (Grat) → Gloves of Dexterity from the Crèche through Act 2 → Helldusk Gloves (Haarlep, House of Hope) in Act 3 for +1 spell save DC, +1 to all attack rolls and 1d6 Fire on every projectile.
     - id: prog-feet
       item: 'Boots: Boots of Speed → Boots of Brilliance → Boots of Persistence'
       slot: feet
@@ -888,25 +923,23 @@ builds:
       item: 'Ring 2: The Whispering Promise → flex → Caustic Band'
       slot: ring 2
       note: The Whispering Promise until Asterion's Staff of Arcane Blessing takes over Bless duty, then a flex slot per fight, then Caustic Band moves across to this hand once the Band of the Mystic Scoundrel claims ring 1.
-      slot: rings
-      note: 'Caustic Band is the constant. The Whispering Promise covers Bless only until Asterion reaches the Staff of Arcane Blessing in the Underdark, then comes off because the ring and the spell apply the same non-stacking condition. The second slot is a flex pick through Act 2 and becomes the Band of the Mystic Scoundrel in Act 3.'
     - id: prog-weapons
-      item: 'Melee: Club of Hill Giant Strength + Knife of the Undermountain King, all game'
+      item: 'Melee: Club + Knife → Club + Sentinel Shield → Phalar Aluve + Ketheric''s Shield'
       slot: weapons
-      note: A stat-stick set she never actually swings. The Club supplies STR 19 for the Titanstring rider in Act 1, and the Knife's crit-threshold reduction is global — it improves her bolts and spell attacks, which is why it keeps the slot after Titanstring is retired.
+      note: A stat-stick set she never swings, and every holder passive on it applies while she shoots. Act 1 Club (STR 19 for Titanstring) + Knife → Club + Sentinel Shield (Moonrise) for +2 AC and +3 Initiative → from the Stone, Phalar Aluve (from Charles) + Ketheric's Shield (Colony) for +2 AC and +1 spell save DC, and she carries Shriek for the party from 3–6 m.
     - id: prog-ranged
-      item: 'Ranged: Titanstring Bow → Ne''er Misser + Hellfire Hand Crossbow'
+      item: 'Ranged: Titanstring Bow, all game'
       slot: ranged weapons
-      note: THE BUILD'S PIVOT. Titanstring's single big STR-scaled shots carry Act 1; from the Helmet of Arcane Acuity in Act 2 she switches to dual hand crossbows permanently, because three or four smaller hits stack Acuity to its cap far faster than one large one. Gontr Mael is an opening-round swap only, never the default.
+      note: Two Flourishes an Action are four Acuity triggers, and any Hasted turn caps Acuity on its own, so the hand-crossbow pivot was never needed. Titanstring's Strength rider stays on every projectile through a daily Giant Strength elixir once the Club is gone. Gontr Mael goes to Asterion.
     - id: prog-consumables
-      item: 'Elixir: Bloodlust (default) / Hill Giant Strength (boss fights)'
+      item: 'Elixir: Bloodlust (Act 1) → Giant Strength (Hill, then Cloud) from the Stone'
       slot: consumables
-      note: Bloodlust whenever the fight has adds she can kill for the extra Action; Hill Giant Strength for a lone boss where no kill is coming. Stock both heavily — Asterion drinks a Giant Strength every single day.
+      note: Bloodlust while the Club supplies Strength — an extra Action on any kill; Hill Giant for a lone boss. From the Stone the Club is gone, so Giant Strength is the standing elixir every long rest, Cloud Giant (STR 27) once level-9 vendors carry it. Stock heavily — Asterion drinks the same.
   playstyle: |-
     - **Act 1 default:** equip Titanstring plus the Hill Giant club main hand and Knife of the Undermountain King off-hand, drink Bloodlust, and use Protecty Sparkswall to raise Hold Person/control DC. Use ranged Slashing Flourish for nova damage and trigger Broodmother's Revenge with healing before a multi-projectile turn.
     - **Act 1 alternatives:** use a Hill Giant elixir for a boss with no Bloodlust target; use Adamantine Splint for defence.
-    - **Act 2+:** switch to dual hand crossbows and Flourish to stack Arcane Acuity. In Act 3, spend it on a same-turn bonus-action Hold Monster or Command.
+    - **Act 2+:** keep Titanstring; two ranged Flourishes a turn are four Acuity triggers and a Hasted turn caps it. From the Stone she carries Phalar Aluve: Shriek with the Haste action on turn 1, standing 3–6 m from the melee cluster, then Flourish. In Act 3, spend Acuity on a same-turn bonus-action Hold Monster or Command.
     - **Protect concentration:** stay at range. Against undead, use Hypnotic Pattern or Slow instead of Hold Monster/Command.
     - **Carry the party's Daylight:** Gale casts Daylight (Enchant Item) on Bonbon's main-hand weapon once per long rest — it is bugged to last until the next rest and travels with her, keeping Gale lit for his Coruscation → Callous Glow chain. She is the carrier because the spell requires a main-hand weapon, which rules out Asterion's empty Tavern Brawler hands, and because her mid-range position keeps the 15m radius over the fight. ⚠ Do not swap her main-hand weapon afterwards, and let Gale cast it *before* any Darkness Arrow goes out.
-    - **Division of control with Gale:** Bonbon owns the *Concentration* lane (Hold Person/Hold Monster — the auto-crit setup for Charles); Gale owns the *non-concentration* lane (Extended Command). They stack rather than compete, so do not both spend a turn on the same target. Bonbon also keeps Hellrider's Longbow by default, since she needs to land the first weapon hit to open the Band loop.
+    - **Division of control with Gale:** Bonbon owns the *Concentration* lane (Hold Person/Hold Monster — the auto-crit setup for Charles); Gale owns the *non-concentration* lane (Extended Command). They stack rather than compete, so do not both spend a turn on the same target.
 ---

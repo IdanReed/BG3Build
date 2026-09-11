@@ -34,7 +34,7 @@ the source material, not an unexplained deviation.
 
 | Rank | Item | Assigned to | Status |
 |---|---|---|---|
-| #1 | Gloves of Dexterity | Bonbon | Taken — see deviation D1 |
+| #1 | Gloves of Dexterity | Bonbon | Taken through Act 2 — see D1; Helldusk Gloves replace them in Act 3 |
 | #2 | Luminous Armour | Charles | Taken |
 | #3 | The Graceful Cloth | Asterion | Taken |
 | #4 | Deathstalker Mantle | Asterion | Taken (Dark Urge reward, via Charles) |
@@ -46,10 +46,10 @@ the source material, not an unexplained deviation.
 | #10 | The Whispering Promise | Bonbon | Taken |
 | #11 | Disintegrating Night Walkers | Asterion | Taken |
 | #12 | Caustic Band | Bonbon | Taken |
-| #13 | Adamantine Shield | — | **Not forged — see D15** |
+| #13 | Adamantine Shield | Charles | Taken — forged from the second ore, see D5 |
 | #14 | Boots of Speed | Bonbon | Taken — see D4 |
 | #15 | Adamantine Splint Armour | Bonbon | Taken |
-| #16 | Adamantine Scale Mail | Charles | Taken — see D5 |
+| #16 | Adamantine Scale Mail | — | **Not forged — see D5** |
 | #17 | Broodmother's Revenge | Bonbon | Taken |
 | #18 | Ring of Flinging | — | **Skipped — see D6** |
 | #19 | Haste Helm | Charles | Taken |
@@ -119,21 +119,20 @@ character most likely to waste a turn out of position" — because she has no in
 mobility at all and an otherwise-empty Act 1 boot slot. Note the video's own flag
 that the opportunity-attack rider is bugged: take these for the Dash.
 
-**D5 — The two Mithral ores buy Adamantine Splint (#15) and Adamantine Scale Mail
-(#16). The Adamantine Shield (#13) is not forged.**
-Grymforge yields exactly two ores and the guide previously named three Adamantine
-pieces. The Shield loses because its whole case rested on an unverified reading — that
-a shield sitting in an *inactive* melee set still confers crit immunity while its
-wearer fights from the ranged set. The wiki confirms only that the **AC bonus**
-carries over, and says nothing about crit immunity. That gamble is also unnecessary:
-Bonbon is the party's only Heavy-armour wearer (Fighter 1 taken first), so the Splint
-gives her AC 18 and crit immunity outright while she keeps the Knife of the
-Undermountain King in her melee off-hand for its global crit-threshold reduction.
-The second ore goes to Charles as Scale Mail — medium armour, which he is proficient
-with — for AC 18, crit immunity and −1 damage through Act 2. Crit immunity matters on
-both of them for the same reason: a concentration save is DC = half the damage taken
-or 10, whichever is higher, so a critical hit roughly doubles it, and both are holding
-concentration in every fight.
+**D5 — The two Mithral ores buy Adamantine Splint (#15) for Bonbon and the
+Adamantine Shield (#13) for Charles. Adamantine Scale Mail (#16) is not forged.**
+(Revised 2026-09-10.) Grymforge yields exactly two ores. The Splint goes to Bonbon,
+the party's only Heavy-armour wearer (Fighter 1 taken first), for AC 18 and crit
+immunity outright. The Shield was originally rejected because its case rested on an
+unverified reading — that a shield in an *inactive* melee set still confers crit
+immunity while its wearer fights from the ranged set; the wiki confirms only that the
+**AC bonus** carries over. That objection never applied to Charles: his melee set is
+the *active* one, so every passive on the shield is live. Once Luminous Armour was
+locked, the Scale Mail this ore used to buy went unworn, so the ore is a shield for
+him instead — crit immunity on the Hold Person carrier from late Act 1 until the Helm
+of Balduran. Crit immunity matters on both of them for the same reason: a concentration
+save is DC = half the damage taken or 10, whichever is higher, so a critical hit roughly
+doubles it, and both are holding concentration in every fight.
 
 **D6 — Ring of Flinging (#18 of 20) is skipped.**
 The video scopes it to Tavern Brawler *throwers*. Asterion is a Tavern Brawler who
@@ -169,8 +168,9 @@ is Warlock 1, so the staff would restore a single level-1 pact slot per long res
 
 **D12 — Staff of Interruption (A tier) is skipped.**
 The video routes it to "an Archer or other character whose main weapon slot is not
-vital." That does not describe Bonbon — her hand crossbows *are* the engine, because
-every hit stacks Arcane Acuity. Gale already has Counterspell on his own spell list.
+vital." That does not describe Bonbon — Titanstring *is* the engine, because every
+projectile stacks Arcane Acuity, and her melee set is spoken for by Phalar Aluve and a
+shield. Gale already has Counterspell on his own spell list.
 
 **D13 — Staff of the Emperor (A tier) is skipped.**
 It is a defensive off-hand for a durable caster. Gale's off-hand is spoken for in every
@@ -184,11 +184,10 @@ Gale needs for Command and Hold Person — Incandescent only improves ranged spe
 rolls. Swap it in for a fight where fire resistance on Gale is worth more than the DC.
 
 ---
-**D15 — Adamantine Shield (#13 of 20) is not forged at all.**
-Covered in D5: two ores, three candidate pieces, and the Shield is the one whose
-benefit is unconfirmed. If the Splint turns out not to suit Bonbon in play, the
-fallback is to forge the Shield instead and wear the free Grymskull Helm through
-Act 1 — but the default plan spends both ores on body armour.
+**D15 — Adamantine Shield (#13 of 20) is forged, for Charles.**
+Superseded by the revised D5: the "unconfirmed benefit" only concerned a shield parked
+behind Bonbon's bow. On Charles the shield sits in the active set, and it replaces a
+Scale Mail nobody wears.
 
 ---
 
@@ -198,6 +197,137 @@ Armour puts him at AC 15, against Asterion's 21 unarmoured with Bracers of Defen
 The +1 to all saving throws is also concentration insurance for Twinned Haste, which
 the whole party plan depends on. Asterion loses nothing, because the Bracing Band
 gives him +1 AC for free on any turn he uses Flurry of Blows: Push.
+
+---
+
+## 2026-09-10 — Phalar to Bonbon, shields for Charles, Titanstring all game, Helldusk to Bonbon, Gontr Mael to Asterion
+
+An iterative review of the itemization now that the research is separated from the
+decisions. Each change below names the wiki fact it rests on.
+
+### 1. Phalar Aluve moves to Bonbon's melee set at the Resonance Stone
+
+**Charles → Bonbon, late Act 2 onward, melee weapons.** The wiki's Shriek page settles
+what carrying it costs: *Range: Self, AoE 6 m radius*, *Cost: Action*, *Duration: 5
+turns*, and "the sword will stop shrieking if unequipped." So the carrier must stand
+within 6 m of the enemies and keep the sword in hand. Bonbon has martial proficiency
+(Fighter 1), but without Dual Wielder both weapons must be Light and Phalar is Versatile,
+so the only legal partner in her melee set is a **shield** — whose AC the rule-changes
+page confirms carries over to the ranged set. She plays 3–6 m from the cluster (BG3
+gives ranged attacks disadvantage inside 3 m) and spends her Haste action on Shriek on
+turn 1. The Knife of the Undermountain King leaves her set with no loss: this party's
+crits come from Hold, not from threshold, so its global crit reduction was never a
+reason (player direction). The Knife becomes Charles's bagged Psychic-immune fallback.
+
+### 2. Charles: a shield in the off-hand for the whole run
+
+**Charles, all acts, off-hand.** Safeguard Shield (Dammon, Grove) → Adamantine Shield
+(second Mithral ore, Forge) → Viconia's Walking Fortress (Cloister of Sombre Embrace,
+reachable without Shadowheart by refusing Viconia). Consequences:
+
+- Crit immunity on the Hold Person carrier from late Act 1, restoring what locking
+  Luminous Armour gave up. Deviation D5/D15 revised: the inactive-set caveat only ever
+  applied to Bonbon; his melee set is the active one.
+- **Duelling** replaces Defence at Paladin 2 (a shield is not a weapon), +2 on every
+  swing, doubled by the Stone through Shadow Blade.
+- **Great Weapon Master and Dual Wielder are never taken.** The char-6 feat is now
+  **Alert**, permanent and re-picked at the respec: d4+2 becomes d4+7, still behind
+  Gale's d4+11 so his first turn is already Hasted, ahead of nearly every enemy so
+  Hold lands before they act. War Caster was the alternative; it only pays in late
+  Act 2 before the Amulet of Greater Health.
+- Nova tables: the off-hand Phalar line goes, a Duelling line arrives, Dolor Amarus and
+  Hexblade's Curse count nine swings instead of ten. Standard 575 → 512, ceiling
+  1,551 → 1,534.
+
+Off-hand alternatives considered and recorded for later: **Belm** (Elerrathin's
+basement; per the wiki, in the off-hand its bonus-action Perfectly Balanced Strike is
+an extra *main-hand* attack, so a full Shadow Blade swing — the damage pick if the
+bonus action is ever free), **Thorn Blade** (Dammon; +1d4 poison on every melee attack
+while concentrating, global outside Honour), Rhapsody (Gale's), Duke Ravengard's
+Longsword (+2 CHA), Knife, Bloodthirst. The shield won on concentration safety.
+
+### 3. Bonbon keeps Titanstring all game
+
+**Bonbon, Acts 2–3, ranged.** The hand-crossbow pivot rested on hit count, and the
+count does not favour it: the Helmet's Battle Acuity adds 2 turns per damaging weapon
+hit, a ranged Slashing Flourish fires two projectiles with separate attack rolls, so
+Extra Attack's two Flourishes are four triggers (+8) in one Action, and any Hasted turn
+caps at +10 on either weapon. The hand crossbows only reached the cap unhasted through
+the bonus-action off-hand shot, and her bonus action belongs to Healing Word and then
+the Band of the Mystic Scoundrel (player observation). Titanstring's Titan Weapon adds
+her Strength modifier to every projectile, special-arrow riders included, so with
+Sharpshooter each hit is 23–28 against 18.5 from a hand crossbow. Strength source:
+the Club until the Stone; from the Stone a daily Elixir of Hill Giant Strength (21),
+then Cloud Giant (27, level-9 vendors). **Bloodlust retires** — an unconditional +8 a
+projectile beats an Action that needs her to land the kill. The Gauntlets of Hill
+Giant Strength (STR 23) were considered and rejected because they cost the glove slot.
+Ne'er Misser and the Hellfire Hand Crossbow drop to `any`; Yurgir's contract can now
+be broken freely.
+
+### 4. Bonbon's melee set is two stat sticks
+
+**Bonbon, Acts 2–3, melee.** The wiki's list of weapons with global passives plus the
+shield-AC rule mean her never-swung set should carry whatever helps her most: Club +
+**Sentinel Shield** (Lann Tarv, Moonrise: +2 AC, +3 Initiative) until the Stone, then
+**Phalar Aluve + Ketheric's Shield** (Ketheric's second fight: +2 AC, +1 spell save
+DC, advantage on DEX saves). Ketheric's goes to her rather than Charles because his
+Adamantine Shield's crit immunity is worth more than +1 on a DC Acuity already caps.
+
+### 5. Helldusk Gloves and Helldusk Armour go to Bonbon in Act 3
+
+**Bonbon, Act 3, hands and chest.** Both were on nobody — the character files forgo
+them for Charles (Battlemage's Power and Luminous Armour are locked) while `loot.md`
+still assigned them to him. Helldusk Gloves: Infernal Acuity is +1 spell save DC and,
+per the wiki's bug note, +1 to *all* attack rolls; Infernal Touch adds 1d6 Fire to every
+weapon hit; no armour tag. Against the Gloves of Dexterity that is DEX 18 → 16 (−1
+attack, −1 damage, −1 AC, −1 initiative) for +1 Hold Monster DC and about +10 damage a
+turn. Helldusk Armour: AC 21 flat, 3 damage reduction from every source, fire
+resistance, non-concentration Fly, and its own proficiency passive so anyone can wear
+it. Against Armour of Agility (AC 20 at DEX 16, +2 saves) the reduction wins because
+chip damage becomes zero, which means no concentration save and no Acuity strip.
+Armour of Agility stays as the recorded alternative; the Gloves of Dexterity are bagged.
+
+### 6. Gontr Mael goes to Asterion
+
+**Bonbon → Asterion, Act 3, ranged.** The wiki's Celestial Haste page: *Range: Self*,
+*Concentration*, once per long rest, no Lethargic. Bonbon is permanently Hasted by Gale
+and concentrates on Hold Monster, so on her the bow did nothing. Asterion is the one
+member Gale never Hastes, his ranged slot was a fallback pair, and Celestial Haste
+alternates with the staff's once-per-long-rest Bless across a day's fights.
+
+### 7. At-a-glance badges
+
+Every build now carries an `at_a_glance` block — armour proficiency, standing elixir,
+concentration — rendered as a chip row at the top of the character page:
+
+| | Armour | Elixir | Concentration |
+|---|---|---|---|
+| Charles | Medium + shields (Hexblade) | Bloodlust | Hold Person (Hunger of Hadar fallback) |
+| Asterion | None — unarmoured, empty-handed | Giant Strength (Hill → Cloud) | Bless, or Celestial Haste in Act 3 |
+| Gale | Light + shields (Civil Militia) | Vigilance | Twinned Haste on Charles and Bonbon |
+| Bonbon | All armour + shields (Fighter first) | Bloodlust in Act 1 → Giant Strength from the Stone | Hold Monster / Hold Person |
+
+### 8. Stale text corrected in passing
+
+- Charles's head progression said Act 2 was the Covert Cowl; the Act 2 entry is the
+  Holy Lance Helm.
+- `party.md` listed the Potent Robe as Gale's build-defining gear; his own file refuses
+  it. Now the Hat of Fire Acuity and Markoheshkir + Rhapsody.
+- Bonbon's playstyle said she keeps Hellrider's Longbow; the conflict table gives it to
+  Gale.
+- `loot.md` still had Helldusk Armour and Helldusk Gloves on Charles, Sarevok's Horned
+  Helmet as his core head, and Boots of Striding fed by "self-cast Darkness".
+- Bonbon's and Gale's ring-2 progression rows carried duplicate `slot`/`note` keys.
+- Gale's Act 3 boots said Evasive Shoes in one place and Boots of Stormy Clamour in
+  another; Stormy Clamour is the default all game, Evasive Shoes the swap.
+- Rhapsody: the wiki says Scarlet Remittance is lost only when the dagger is
+  unequipped, so the "swap per fight" advice was wrong — once at +3 it stays on.
+
+### Known open questions
+
+- Whether Rhapsody's stacks survive a long rest (they survive between fights while
+  equipped).
+- Whether zero damage after Helldusk Armour's reduction still strips Arcane Acuity.
 
 ---
 

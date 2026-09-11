@@ -5,6 +5,10 @@ builds:
   is_primary: true
   role: Melee crit-smite nova frontline + self-supplied Hold Person
   class: Oath of Vengeance Paladin 7 / Hexblade Warlock 5
+  at_a_glance:
+    armour: Medium armour + shields (Hexblade) — Luminous Armour locked, a shield in the off-hand from the Grove
+    elixir: Bloodlust — a kill buys another Action; he attacks with CHA, so Giant Strength is wasted on him
+    concentration: Hold Person — Hunger of Hadar only when nothing is Holdable
   race: Half-Orc (Dark Urge origin)
   race_notes: Savage Attacks (extra weapon die on melee crits) · Relentless Endurance · origin character, so Hag's Hair priority.
   background: Haunted One (Medicine, Intimidation) — the fixed Dark Urge background
@@ -50,18 +54,18 @@ builds:
       source: '+1 Hag''s Hair'
     - score: 20
       source: '+2 Mirror of Loss, Act 3'
-  locked_decisions: 'FOUR things are fixed for the whole run and everything else is built around them. (1) GLOVES OF BATTLEMAGE''S POWER from Act 2 onward — the Arcane Acuity engine. (2) LUMINOUS ARMOUR in every act — the Radiant Shockwave engine. (3) OATH OF VENGEANCE, never broken — Inquisitor''s Might is the per-hit radiant that feeds the Shockwave. (4) CONCENTRATION IS HOLD PERSON — he sets up his own auto-crit nova and holds nothing else.'
+  locked_decisions: 'FIVE things are fixed for the whole run and everything else is built around them. (1) GLOVES OF BATTLEMAGE''S POWER from Act 2 onward — the Arcane Acuity engine. (2) LUMINOUS ARMOUR in every act — the Radiant Shockwave engine. (3) OATH OF VENGEANCE, never broken — Inquisitor''s Might is the per-hit radiant that feeds the Shockwave. (4) CONCENTRATION IS HOLD PERSON — he sets up his own auto-crit nova and holds nothing else. (5) A SHIELD IN THE OFF-HAND from the Grove onward — Safeguard, then the Adamantine Shield for crit immunity, then Viconia''s Walking Fortress — so he never two-hands or dual-wields and never takes Great Weapon Master or Dual Wielder.'
   feats:
   - at: Act 1 char 6 (Paladin 4)
-    feat: Great Weapon Master (temporary)
-    note: 'Phalar Aluve is Versatile, so two-handed attacks qualify for All In (−5 attack / +10 damage). Darkness-Arrow advantage and Vow of Enmity offset the penalty. Replaced at the Resonance Stone respec.'
+    feat: Alert
+    note: '+5 Initiative and immunity to Surprise, and it is permanent. He is the party''s slowest body at d4+2; Alert makes that d4+7 — still behind Gale''s d4+11, so his first turn is already Hasted, but ahead of nearly every enemy, so Hold Person goes up before they act. Great Weapon Master is never taken: from the Grove he fights one-handed behind a shield, so All In could never apply.'
   - at: Late Act 2 Resonance Stone respec (Warlock 4 feat; usually char 9)
-    feat: Dual Wielder
-    note: Replaces GWM. Required to hold 3d8 Shadow Blade main hand with Versatile Phalar off-hand; also +1 AC.
+    feat: Alert (re-picked)
+    note: The respec re-presents the Warlock-4 feat; take Alert again. Dual Wielder is not needed — Shadow Blade goes in the main hand with the shield in the off-hand, and the shield gives more AC than Dual Wielder's +1 ever did.
   - at: Late Act 2 Resonance Stone respec (Paladin 4 feat; usually char 9)
     feat: Savage Attacker
-    note: Rerolls Shadow Blade, Phalar Aluve and Divine Smite damage dice. The off-hand Phalar swing is the seventh attack when the bonus action is free.
-  weapon_plan: 'ACT 1–mid ACT 2 — two-handed bound Phalar Aluve + GWM, Darkness Arrows for advantage. LATE ACT 2 — respec at char 9 to Warlock 5 / Paladin 4, GWM → Dual Wielder, 3d8 Shadow Blade main hand + Phalar off-hand inside the Stone aura. ⚠ Against Psychic-immune targets, bind Phalar main hand instead — it is already in the off-hand and deals Slashing.'
+    note: Rerolls Shadow Blade, Booming Blade and Divine Smite damage dice on every one of the six auto-crit swings.
+  weapon_plan: 'ACT 1 — bind a one-handed weapon, then Phalar Aluve from the Underdark, always with a SHIELD in the off-hand: the Safeguard Shield from Dammon at the Grove, then the ADAMANTINE SHIELD (second Mithral ore) from the Forge for crit immunity. Duelling from char 4, Darkness Arrows for advantage. LATE ACT 2 — respec at char 9 to Warlock 5 / Paladin 4: 3d8 Shadow Blade main hand, shield unchanged, and Phalar Aluve goes to Bonbon, who carries Shriek from her melee set. ACT 3 — Viconia''s Walking Fortress once the Helm of Balduran covers crit immunity. ⚠ Against Psychic-immune targets, bind the Knife of the Undermountain King (freed from Bonbon) main hand instead of Shadow Blade.'
   creation:
     level1_class: Warlock 1 (Hexblade patron)
     level1_gains: 'Pact Magic (1 × L1 short-rest slot), Hexblade''s Curse (bonus action), Bind Hexed Weapon (attack with CHA). Pact of the Blade waits until Warlock 3.'
@@ -72,7 +76,7 @@ builds:
       skills: 2 Warlock picks + Haunted One (Medicine, Intimidation).
     starting_cantrips: 2 at Warlock 1 — Eldritch Blast + Booming Blade.
     starting_spells: '2 at Warlock 1 — Hex + Armour of Agathys — then a third at Warlock 2 (Shield) and six by Warlock 5. The Hexblade expanded list is NOT free; see the char-1 row.'
-    notes: 'Warlock 1 first is deliberate and stays that way: at STR 8 he needs Bind Hexed Weapon from the first fight, and heavy armour proficiency is worth nothing to a build locked to Luminous Armour. Act 1 stops Warlock at 2 — Hexblade gives CHA weapon binding and Devil''s Sight, then Paladin 1–5 gives Inquisitor''s Might at char 3, Smite at char 4, temporary GWM at 6, and Extra Attack at 7. Paladin 6 for Aura of Protection if char 8 lands before the Stone. Use farmed Darkness Arrows instead of learning Darkness. The oath is NEVER broken, so there is no Oathbreaker Knight to pay and no oath bookkeeping at the respec.'
+    notes: 'Warlock 1 first is deliberate and stays that way: at STR 8 he needs Bind Hexed Weapon from the first fight, and heavy armour proficiency is worth nothing to a build locked to Luminous Armour. Act 1 stops Warlock at 2 — Hexblade gives CHA weapon binding and Devil''s Sight, then Paladin 1–5 gives Inquisitor''s Might at char 3, Smite at char 4, Alert at 6, and Extra Attack at 7. Paladin 6 for Aura of Protection if char 8 lands before the Stone. Use farmed Darkness Arrows instead of learning Darkness. The oath is NEVER broken, so there is no Oathbreaker Knight to pay and no oath bookkeeping at the respec.'
   spells:
     note: 'A smite platform that sets up its own nova. HIS CONCENTRATION IS HOLD PERSON AND NOTHING ELSE — Bless, Divine Favour, Hex, Darkness, Branding Smite and Wrathful Smite are all Concentration and are therefore out of the rotation. Darkness comes from farmed arrows instead, which costs no Concentration; Bless comes from Asterion. Hunger of Hadar is the one deliberate exception, swapped in only for fights where nothing is Holdable.'
     mandatory:
@@ -117,7 +121,7 @@ builds:
       school: Abjuration
       save: None (reaction, +5 AC)
       when: Late Act 2 Resonance Stone respec (Warlock 5)
-      why: 'NEW PICK, and it matters more than it used to. Locking Luminous Armour means he never gets Adamantine Scale Mail''s crit immunity or Helldusk''s AC 21, so he stands at AC 17–18 all game. Shield is a reaction, costs no Concentration, and is the cheapest way to turn a hit that would break Hold Person into a miss.'
+      why: 'NEW PICK, and it matters more than it used to. Locking Luminous Armour caps the chest at AC 17; the off-hand shield lifts him to 19–20, and this reaction''s +5 is still the cheapest way to turn a hit that would break Hold Person into a miss. Costs no Concentration.'
     - spell: Mirror Image
       tier: B
       tier_note: 'Spells tier list, level 2, part 2 (Knock through Web) (12:14) — +9 AC without concentration makes the AI stop targeting you, but costly every fight'
@@ -350,8 +354,8 @@ builds:
     recommendations:
     - category: Fighting style
       picks: 1
-      recommendation: Defence
-      note: '⚠ NOT Duelling — it cannot coexist with Great Weapon Master. Duelling needs a non-Two-Handed melee weapon in ONE hand and nothing in the other; GWM: All In needs a weapon wielded in BOTH hands with the off-hand empty. They can never be active on the same attack. Great Weapon Fighting is worded for "a Two-Handed melee weapon" and Phalar Aluve is VERSATILE, so it may not apply at all. Defence''s always-on +1 AC is the pick, and it matters more on a build locked to AC 17.'
+      recommendation: Duelling
+      note: 'DUELLING, because he fights one-handed behind a shield from the Grove onward: +2 damage on every Phalar swing now and every Shadow Blade swing later, and a shield is not a weapon, so the style''s "nothing in the other hand" clause is satisfied. Great Weapon Master is never taken, so nothing rules it out. Defence''s +1 AC is the alternative if you would rather have AC than damage — the shield already supplies +2.'
     - category: Prepared spells
       picks: 5
       recommendation:
@@ -375,7 +379,7 @@ builds:
       note: 'FREE AND ALWAYS PREPARED, straight from Oath of Vengeance at Paladin 3 — no Warlock spell-known pick and no prepared slot, and neither spell is on the general Paladin list, so the oath is his only route to them. Bane is the one with a use (−1d4 to enemy attacks and saves), but it is Concentration, so in practice it sits idle once Hold Person owns the slot from char 7.'
     - category: Channel Oath budget
       recommendation: Inquisitor's Might by default; Vow of Enmity only in Act 1 boss fights
-      note: 'Paladin 3 adds Vow of Enmity (Bonus Action, 3m, advantage on attacks against one enemy for 10 turns) and it draws on the SAME single short-rest charge as Inquisitor''s Might, so each short rest buys one or the other. Rough guide: Vow of Enmity for a long Act 1 boss fight, where 10 turns of advantage offsets GWM''s −5 and doubles the crit rate — the wiki also notes a self-cast bug extending the advantage to all targets. Inquisitor''s Might everywhere else, and ALWAYS from Act 2 onward, because the Risky Ring supplies advantage on every attack by then and the radiant rider becomes the scarcer resource.'
+      note: 'Paladin 3 adds Vow of Enmity (Bonus Action, 3m, advantage on attacks against one enemy for 10 turns) and it draws on the SAME single short-rest charge as Inquisitor''s Might, so each short rest buys one or the other. Rough guide: Vow of Enmity for a long Act 1 boss fight, where 10 turns of advantage doubles the crit rate before Hold Person exists — the wiki also notes a self-cast bug extending the advantage to all targets. Inquisitor''s Might everywhere else, and ALWAYS from Act 2 onward, because the Risky Ring supplies advantage on every attack by then and the radiant rider becomes the scarcer resource.'
     - category: Prepared spells
       picks: 6
       recommendation:
@@ -392,8 +396,8 @@ builds:
     recommendations:
     - category: Feat
       picks: 1
-      recommendation: Great Weapon Master
-      note: 'Versatile Phalar qualifies for All In, but ONLY wielded in both hands with the OFF-HAND EMPTY. Arrow-darkness advantage and Vow of Enmity offset the −5; the +10 damage is the Act-1 spike. GWM is what rules out Duelling and any shield variant.'
+      recommendation: Alert
+      note: 'THE PERMANENT FEAT. +5 Initiative and Surprise immunity on the party''s slowest body: d4+2 becomes d4+7, behind Gale''s d4+11 (so his first turn is already Hasted) and ahead of nearly every enemy, so Hold Person lands before they act. Great Weapon Master is not taken — All In needs both hands on the weapon and his off-hand holds a shield from the Grove onward.'
     - category: Prepared spells
       picks: 8
       recommendation:
@@ -439,7 +443,7 @@ builds:
     - Aura of Protection
     recommendations:
     - category: Timing
-      recommendation: Keep the Act-1 Phalar/GWM package until the Resonance Stone
+      recommendation: Keep the Phalar + Adamantine Shield package until the Resonance Stone
       note: 'The Stone normally arrives late enough that char 8 comes first. Aura of Protection is the best interim Paladin level, it adds his CHA modifier to the party''s saves, and it is the first line of defence for the Hold Person concentration he is about to start carrying under the Risky Ring.'
     - category: Prepared spells
       picks: 10
@@ -459,7 +463,7 @@ builds:
     gains:
     - Pact of the Blade and Deepened Pact
     - Level 3 Pact slots and 3d8 Shadow Blade
-    - Dual Wielder replaces Great Weapon Master
+    - Alert re-picked (Warlock 4 feat)
     - Paladin 4 Savage Attacker
     recommendations:
     - category: Patron and skills
@@ -481,12 +485,12 @@ builds:
       note: 'WHAT THE RESPEC COSTS HIM. Coming back at Paladin 4 he only re-earns the Paladin-3 oath grant, so Bane and Hunter''s Mark are free again but HOLD PERSON AND MISTY STEP ARE NOT — those need Paladin 5 and do not return until char 10. Bridge the gap with Hunger of Hadar or Bonbon''s Hold; do NOT spend one of the six Warlock picks to paper over two levels.'
     - category: Warlock feat
       picks: 1
-      recommendation: Dual Wielder
-      note: Required for Shadow Blade main hand + Phalar off-hand; GWM no longer applies and the respec removes it.
+      recommendation: Alert
+      note: Re-picked. Dual Wielder is never needed — Shadow Blade is one-handed and the off-hand holds the Adamantine Shield.
     - category: Paladin feat
       picks: 1
       recommendation: Savage Attacker
-      note: The usual char-9 respec has levels for both feats. If the Stone lands at level 8, take Warlock 5 / Paladin 3 for Dual Wielder and add Paladin 4 / Savage Attacker next level.
+      note: The usual char-9 respec has levels for both feats. If the Stone lands at level 8, take Warlock 5 / Paladin 3 for Alert and add Paladin 4 / Savage Attacker next level.
     - category: Pact Boon
       picks: 1
       recommendation: Pact of the Blade
@@ -500,8 +504,8 @@ builds:
       note: 'THREE, not two — 2 at Warlock 2 plus 1 at Warlock 5. ⚠ Invocations cannot be swapped on level-up, so this respec is the only chance to set all three. Devil''s Sight is mandatory; the arrow-cloud plan runs on it. Repelling Blast turns Eldritch Blast into ledge control and shoves escapers back into Hunger of Hadar. AVOID Fiendish Vigour — its at-will False Life clashes with Armour of Agathys, because temp-HP sources never stack.'
     - category: Fighting style
       picks: 1
-      recommendation: Defence (again)
-      note: Re-chosen at Paladin 2 during the respec. Duelling still needs an empty off-hand and he now dual-wields; Great Weapon Fighting still needs a Two-Handed weapon and Shadow Blade is one-handed. Defence's +1 AC is the only style that functions.
+      recommendation: Duelling (again)
+      note: Re-chosen at Paladin 2 during the respec. Shadow Blade is one-handed and the off-hand holds a shield, which is not a weapon, so Duelling's +2 rides every swing — psychic through Shadow Blade, and therefore doubled by the Stone.
     - category: Warlock cantrips
       picks: 3
       recommendation:
@@ -596,7 +600,7 @@ builds:
     assumptions: |
       Level 12 (Paladin 7 / Warlock 5), CHA 20, proficiency +4, **non-Honour rules**. Every number assumes the target is a HELD humanoid and Charles is within 3m, so every melee attack auto-hits and is an automatic critical hit.
       - **Resonance Stone** within 9m — the target is Steeped in Bliss and therefore Vulnerable to Psychic, which doubles Shadow Blade, the pact-weapon CHA modifier and the Strange Conduit Ring. Worth about 156 damage a turn. ⚠ The wiki notes the Stone often stops working once Act 2 ends, and level 12 is Act 3 — confirm it still fires before planning around it. Without it the standard nova drops from 547 to 348.
-      - **Phalar Aluve: Shriek** pre-cast — 1d4 Thunder per damage instance plus −1d4 to the target's saving throws AND attack rolls. Modelled at one proc per attack, which is the conservative reading; it may fire again off each smite. ⚠ Shriek lasts only 5 turns and recharges on short rest, so casting it too early out of combat burns duration.
+      - **Phalar Aluve: Shriek** up, cast by **Bonbon** from her melee set within 6 m of the target — 1d4 Thunder per damage instance plus −1d4 to the target's saving throws AND attack rolls. Modelled at one proc per attack, which is the conservative reading; it may fire again off each smite. ⚠ Shriek lasts only 5 turns, recharges on short rest, costs Bonbon an Action (her Haste action on turn 1) and ends if she unequips the sword.
       - **Savage Attacker** rerolls every damage die and the wiki confirms it covers damage riders, so Shadow Blade, Booming Blade's Thunder, Strange Conduit and Divine Smite all roll twice. **Half-Orc Savage Attacks** adds an extra weapon die AND a second extra die to Divine Smite on every crit — that second die is disabled in Honour mode only.
       - **Divine Smite (reaction) costs no Reaction resource** and can fire on every melee hit, limited only by spell slots. Set the L2 Critical Hit entry to auto-confirm and leave L1/L3 on Ask, so auto-confirm cannot quietly eat a pact slot mid-nova.
       - Smite fuel is the SEVEN Paladin slots (4 × L1, 3 × L2). ⚠ Leave both L3 pact slots alone — they are also Counterspell and Shield. Upgrading three L2 smites to L3 buys only +23 damage and costs both.
@@ -618,19 +622,19 @@ builds:
         count: 2
         each: 152
         total: 304
-      - line: 'Off-hand Phalar Aluve (bonus action, Dual Wielder) + L1 Divine Smite'
-        count: 1
-        each: 68
-        total: 68
+      - line: 'Duelling — +2 on every one-handed swing, Psychic through Shadow Blade and so doubled by the Stone'
+        count: 3
+        each: 4
+        total: 12
       - line: 'Dolor Amarus (Vicious Shortbow held in the ranged slot) — +7 flat on every critical hit, and every swing crits'
-        count: 4
+        count: 3
         each: 7
-        total: 28
-      - line: 'Haste action — Hold Person at DC 27, or Command, or Hunger of Hadar. No damage, but it sets up the next nova.'
+        total: 21
+      - line: 'Haste action — Hold Person at DC 27, or Command, or Hunger of Hadar. No damage, but it sets up the next nova. The bonus action is free for Hexblade''s Curse or Misty Step now that no off-hand swing wants it.'
         count: 1
         each: 0
         total: 0
-      turn_total: 575
+      turn_total: 512
     - name: 'Ceiling — Haste + Terazul + Elixir of Bloodlust'
       lines:
       - line: 'PREP — Hexblade''s Curse and Inquisitor''s Might on the two prior turns (one bonus action each); Elixir of Bloodlust drunk out of combat. Terazul needs NO bonus action to swallow and stacks with Hastened.'
@@ -645,29 +649,29 @@ builds:
         count: 6
         each: 111
         total: 668
-      - line: 'Off-hand Phalar Aluve (bonus action)'
-        count: 1
-        each: 38
-        total: 38
-      - line: 'Divine Smite on 8 of the 10 attacks — literally every slot he owns (1 × L3 pact, 3 × L2, 4 × L1)'
+      - line: 'Duelling — +2 per swing, doubled by the Stone, across all nine swings'
+        count: 9
+        each: 4
+        total: 36
+      - line: 'Divine Smite on 8 of the 9 attacks — literally every slot he owns (1 × L3 pact, 3 × L2, 4 × L1)'
         count: 8
         each: '29–52'
         total: 291
       - line: 'Hexblade''s Curse — +proficiency per damage roll, weapon-typed and so doubled by the Stone'
-        count: 10
+        count: 9
         each: 8
-        total: 80
-      - line: 'Dolor Amarus (Vicious Shortbow held in the ranged slot) — +7 flat per critical hit across all ten swings'
-        count: 10
+        total: 72
+      - line: 'Dolor Amarus (Vicious Shortbow held in the ranged slot) — +7 flat per critical hit across all nine swings'
+        count: 9
         each: 7
-        total: 70
+        total: 63
       - line: 'Fourth action, granted by Bloodlust on the kill — Hold Person / Command'
         count: 1
         each: 0
         total: 0
-      turn_total: 1551
+      turn_total: 1534
     caveats: |
-      - **The spread is tight, not swingy.** The standard nova runs 366–429 across the 5th–95th percentile, with an absolute floor of 146 and a ceiling of 731. The Terazul build averages 1,481 (floor 462, ceiling 1,949). With roughly 25 dice all rolled twice, σ is only about 20 — treat the averages as what actually happens.
+      - **The spread is tight, not swingy.** The standard nova runs 366–429 across the 5th–95th percentile, with an absolute floor of 146 and a ceiling of 731. The Terazul build averages 1,481 (floor 462, ceiling 1,949). With roughly 25 dice all rolled twice, σ is only about 20 — treat the averages as what actually happens. Those simulations predate the shield rework; dropping the off-hand Phalar swing and adding Duelling moves each total by under 20.
       - ⚠ **VERIFY THIS IN YOUR INSTALL: do extra actions get Extra Attack?** The wiki's Extra Attack page says plainly that Hastened and Elixir of Bloodlust actions do, outside Honour, with a worked Tactician example. The Hastened and Terazul Jitters condition pages both carry a flat note saying the opposite. If the condition pages win, every extra action is a SINGLE attack, the ceiling turn collapses to roughly 700, and spending the Haste action on Hold Person costs nothing instead of costing a whole attack chain. Nothing else here swings this hard on one unknown.
       - ⚠ **Bloodlust's extra action needs a kill that turn**, and if the thing that dies is the Held target then everything after it lands on something un-Held — no auto-crit, roughly half value. The clean version is a Held add dying to the first chain while the boss stays Held.
       - ⚠ **Enemy crit immunity deletes the entire plan.** Adamantine Scale Mail, Adamantine Splint Armour, the Grymskull Helm, the Helldusk Helmet and the Helm of Balduran all cancel Hold Person's guaranteed critical hits. Check the target before committing eight spell slots.
@@ -681,14 +685,29 @@ builds:
       item: Early pact-bound weapon (temporary)
       wiki: false
       slot: weapons
-      note: Before Phalar, bind the best main-hand weapon so it attacks with CHA. Hexblade can bind Two-Handed or Versatile — keep the off-hand empty so Versatile weapons use the larger die and later qualify for GWM.
+      note: Before Phalar, bind the best one-handed weapon so it attacks with CHA, and put the Safeguard Shield in the other hand as soon as Dammon sells it. Hexblade can bind anything; a shield's +2 AC is worth more than a Versatile weapon's larger die.
     - id: phalar-aluve-two-handed
       item: Phalar Aluve
       tier: S
       tier_note: 'The BEST WEAPON TYPE in BG3 - Versatile Weapons Honor Mode Tier List and Guide - Act 1 (30:10) — one of the best weapons in the game even ignoring the strongest thing it does'
       slot: weapons
       bis: true
-      note: ACT-1 DEFAULT from the Underdark. Bind as the Hexed Weapon, off-hand empty, so the Versatile longsword uses 1d10 and GWM All In adds +10 from char 6. Pre-cast Shriek and keep it equipped — the 6m aura covers Charles and Asterion.
+      note: ACT-1 DEFAULT from the Underdark. Bind it as the Hexed Weapon and one-hand it behind the shield — the d8 instead of the Versatile d10 costs one point of average damage, and Duelling gives two back from char 4. Pre-cast Shriek and keep it equipped — the 6m aura covers Charles and Asterion. At the Resonance Stone it goes to Bonbon's melee set for good, and she carries Shriek from then on.
+    - id: safeguard-shield
+      item: Safeguard Shield
+      tier: A
+      tier_note: '5wATdII3wmI (13:55) — +1 saving throws with no story requirement; usually the earliest upgrade over a plain shield'
+      slot: off-hand
+      note: 'HIS FIRST SHIELD, sold by Dammon at the Grove: +2 AC and +1 to all saving throws, and Hexblade grants shield proficiency. One-handing the bound weapon costs a point of average damage and buys +2 AC and +1 saves from level 1 on the body that will carry Hold Person. Retired the moment the Adamantine Shield is poured.'
+    - id: adamantine-shield
+      item: Adamantine Shield
+      tier: S
+      tier_note: '5wATdII3wmI (11:49) — best defensive shield all game: Shield Bash, Reeling on misses, no critical hits against you'
+      rank: '#13'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #13 of 20 — critical-hit immunity without needing medium or heavy armour proficiency'
+      slot: off-hand
+      bis: true
+      note: 'THE SECOND MITHRAL ORE, poured with the Shield mould at the Forge — it used to buy an Adamantine Scale Mail that nobody wears now that Luminous Armour is locked. +2 AC, ATTACKERS CANNOT LAND CRITICAL HITS, and a melee miss sends the attacker Reeling. This is the crit immunity the guide gave up by locking Luminous Armour, back on the body that needs it most: a critical hit roughly doubles a concentration save DC, and from char 7 he is concentrating on Hold Person in every fight. His melee set is the ACTIVE set, so the shield''s crit immunity is live — the inactive-set caveat that stopped Bonbon parking one behind her bow does not apply to him. Worn until the Helm of Balduran covers crits in Act 3.'
     - id: haste-helm
       item: Haste Helm
       tier: S
@@ -762,13 +781,13 @@ builds:
       wiki: Arrow of Darkness
       slot: consumables
       bis: true
-      note: 'THE DARKNESS SOURCE FOR THE ENTIRE RUN, not just Act 1. 3m cloud, 3 turns, NO Concentration — which is the whole point, because Hold Person owns his Concentration permanently and the Darkness spell was therefore dropped from his Warlock picks. Devil''s Sight does not care what made the cloud. Prefer Bonbon placing it; if Charles fires it, do so before switching to Phalar and activating Shriek. Keep restocking from arrow vendors in every act.'
+      note: 'THE DARKNESS SOURCE FOR THE ENTIRE RUN, not just Act 1. 3m cloud, 3 turns, NO Concentration — which is the whole point, because Hold Person owns his Concentration permanently and the Darkness spell was therefore dropped from his Warlock picks. Devil''s Sight does not care what made the cloud. Prefer Bonbon placing it — from the Stone she also carries Phalar and Shriek. Keep restocking from arrow vendors in every act.'
     - id: dual-hand-crossbows-plus-one
       item: Hand Crossbow +1
       tier: S
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (13:57) — best Act 1 hand crossbow; a pair is the highest damage archer setup'
       slot: ranged weapons
-      note: 'ACT 1–2 RANGED, a pair, and mainly a Darkness-Arrow launcher. Farm Dammon, Roah, Derryth and Jeera for +1 copies; the ranged set does not interfere with two-handed Phalar. ⚠ Keep expectations low — once he stands inside his own cloud it blocks ranged attacks into and out of itself. Hellrider''s Longbow replaces these in Act 3.'
+      note: 'ACT 1–2 RANGED, a pair, and mainly a Darkness-Arrow launcher. Farm Dammon, Roah, Derryth and Jeera for +1 copies; the ranged set does not touch the melee set. ⚠ Keep expectations low — once he stands inside his own cloud it blocks ranged attacks into and out of itself. Hellrider''s Longbow replaces these in Act 3.'
     - id: auntie-ethel-s-hair-cha-17-18
       item: Auntie Ethel's Hair
       slot: consumables
@@ -783,21 +802,24 @@ builds:
       wiki: Shadow Blade (weapon)
       slot: weapons
       bis: true
-      note: 'POST-RESONANCE DEFAULT. Keep two-handed Phalar/GWM until the late-Act-2 Stone pickup. Warlock 5 brings level-3 pact slots — summon a 3d8 Shadow Blade and bind THIS main hand to CHA so Deepened Pact applies, leaving Phalar unbound off-hand. Costs no Concentration, which is why it suits a build whose Concentration is committed. ⚠ Against Psychic-immune targets, bind Phalar main hand instead.'
-    - id: phalar-aluve-offhand
-      item: Phalar Aluve
+      note: 'POST-RESONANCE DEFAULT. Keep Phalar + Adamantine Shield until the late-Act-2 Stone pickup. Warlock 5 brings level-3 pact slots — summon a 3d8 Shadow Blade and bind THIS main hand to CHA so Deepened Pact applies; the shield stays in the off-hand and Phalar Aluve goes to Bonbon. Costs no Concentration, which is why it suits a build whose Concentration is committed. ⚠ Against Psychic-immune targets, bind the Knife of the Undermountain King main hand instead.'
+    - id: act2-offhand-charles
+      item: Adamantine Shield
       tier: S
-      tier_note: 'The BEST WEAPON TYPE in BG3 - Versatile Weapons Honor Mode Tier List and Guide - Act 1 (30:10) — one of the best weapons in the game even ignoring the strongest thing it does'
-      slot: weapons
+      tier_note: '5wATdII3wmI (11:49) — best defensive shield all game: Shield Bash, Reeling on misses, no critical hits against you'
+      rank: '#13'
+      rank_note: 'The 20 BEST ITEMS in Act 1 - Baldur''s Gate 3 Honour Mode Guide, #13 of 20 — critical-hit immunity without needing medium or heavy armour proficiency'
+      held: 1
+      slot: off-hand
       bis: true
-      note: 'PARTY-DAMAGE DEFAULT after the Stone. Dual Wielder replaces GWM so Phalar sits beside the Light Shadow Blade, +1 AC. Pre-cast Shriek and keep Charles and Asterion inside its 6m aura (the Stone reaches 9m). Shriek fires 1d4 Thunder per qualifying party damage instance and −1d4 to enemy attacks and all saves, with no save and no Concentration — worth more than a personal-DPR off-hand. Phalar is unbound and he lacks Two-Weapon Fighting, so its bonus-action swing is last priority.'
+      note: 'CARRIED OVER, and the off-hand for good: Shadow Blade is one-handed, so the shield stays. +2 AC and crit immunity while he holds Hold Person, and Duelling''s +2 rides every swing. Ketheric''s Shield (+1 spell save DC) drops at the Colony and goes to BONBON — crit immunity is worth more to Charles than +1 on a DC that Acuity already caps. ⚠ Phalar Aluve moves to Bonbon here; the Shriek aura now sits on her, so keep the melee cluster within 6 m of her.'
     - id: gloves-of-battlemage-s-power
       item: Gloves of Battlemage's Power
       tier: A
       tier_note: 'The BEST GLOVES In Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (18:12) — A on the list''s own terms: he says A tier if the Arcane Acuity effect worked, and placed it in D only because it was bugged when he recorded. This run treats the effect as working, so the A stands'
       slot: hands
       bis: true
-      note: 'THE ACUITY ENGINE, and a locked slot from the moment it is found: Reithwin Tollhouse, locked opulent chest on the second floor, in the room with two locked doors. Hitting with a spell or cantrip that uses a weapon grants ARCANE ACUITY — +1 spell attack roll and +1 SPELL SAVE DC per remaining turn, up to +10. The confirmed triggers are every Shadow Blade weapon attack, Booming Blade, and any smite spell. ⚠ REACTION DIVINE SMITE TRIGGERS NOTHING ON ITS OWN — it inherits the attack it rides on: +0 off a plain weapon swing, +4 when it chains off an attack that already triggered, and +2 only if Divine Smite is cast straight from the action bar. That caveat costs him nothing as written, because he always leads with Booming Blade or a smite and every Shadow Blade swing is itself a trigger, so each attack-plus-reaction-smite is +4 — the Luminous Armour shockwave is what resets the once-per-attack limit between them. ⚠ IT BREAKS THE MOMENT HE BINDS PHALAR MAIN HAND against Psychic-immune targets: plain Phalar swings are not spells, so in those fights only the Booming Blade lead and smite spells feed Acuity, and the reaction smites hanging off ordinary swings give nothing. This is what makes HOLD PERSON land, and Command with it, and it is why Charles has the party''s best save DC before Bonbon''s Helmet of Arcane Acuity arrives. ⚠ Acuity duration drops by 2 every time he takes damage, so build stacks and cast Hold Person before the enemy''s turn. ⚠ The accepted cost is the whole rest of the glove progression: Baneful Striking, Helldusk Gloves and Craterflesh Gloves (roughly +49 on a full nova, Bhaal path) are all forgone.'
+      note: 'THE ACUITY ENGINE, and a locked slot from the moment it is found: Reithwin Tollhouse, locked opulent chest on the second floor, in the room with two locked doors. Hitting with a spell or cantrip that uses a weapon grants ARCANE ACUITY — +1 spell attack roll and +1 SPELL SAVE DC per remaining turn, up to +10. The confirmed triggers are every Shadow Blade weapon attack, Booming Blade, and any smite spell. ⚠ REACTION DIVINE SMITE TRIGGERS NOTHING ON ITS OWN — it inherits the attack it rides on: +0 off a plain weapon swing, +4 when it chains off an attack that already triggered, and +2 only if Divine Smite is cast straight from the action bar. That caveat costs him nothing as written, because he always leads with Booming Blade or a smite and every Shadow Blade swing is itself a trigger, so each attack-plus-reaction-smite is +4 — the Luminous Armour shockwave is what resets the once-per-attack limit between them. ⚠ IT BREAKS THE MOMENT HE BINDS THE KNIFE OF THE UNDERMOUNTAIN KING MAIN HAND against Psychic-immune targets: plain weapon swings are not spells, so in those fights only the Booming Blade lead and smite spells feed Acuity, and the reaction smites hanging off ordinary swings give nothing. This is what makes HOLD PERSON land, and Command with it, and it is why Charles has the party''s best save DC before Bonbon''s Helmet of Arcane Acuity arrives. ⚠ Acuity duration drops by 2 every time he takes damage, so build stacks and cast Hold Person before the enemy''s turn. ⚠ The accepted cost is the whole rest of the glove progression: Baneful Striking, Helldusk Gloves and Craterflesh Gloves (roughly +49 on a full nova, Bhaal path) are all forgone.'
     - id: act2-armour-charles
       item: Luminous Armour
       tier: S
@@ -807,7 +829,7 @@ builds:
       held: 1
       slot: armour
       bis: true
-      note: 'CARRIED OVER — locked. Adamantine Scale Mail is the item this displaces, and its crit immunity was protecting concentration, so the Helm of Balduran becomes the plan for getting that back in Act 3. The Splint mould and both Mithral ores now go elsewhere.'
+      note: 'CARRIED OVER — locked. Crit immunity comes from the Adamantine Shield in his off-hand instead of a chest, which is where the second Mithral ore goes rather than into a Scale Mail he would never wear.'
     - id: act2-head-charles
       item: Holy Lance Helm
       tier: S
@@ -870,7 +892,7 @@ builds:
         item: Risky Ring
         tier: S
         tier_note: 'The BEST RINGS in Baldur''s Gate 3 - Honor Mode Tier List and Guide - Act 2 (34:21) — too good to leave at home, given a way to cover the saving-throw downside'
-        note: 'THE DEFAULT UNTIL HOLD PERSON IS RELIABLE. Moonrise, from Araj Oblodra. Advantage on ALL attacks, disadvantage on saves. It makes Vow of Enmity redundant, which is what frees the Channel Oath charge for Inquisitor''s Might every fight. ⚠ Two costs, not one: disadvantage on saves roughly squares his concentration-failure rate while he permanently holds Hold Person, and the advantage itself is dead weight on any turn the target is already Held. Mitigate in order — Aura of Protection at Paladin 6, the Cloak of Protection, Helm of Balduran''s crit immunity and the Amulet of Greater Health.'
+        note: 'THE DEFAULT UNTIL HOLD PERSON IS RELIABLE. Moonrise, from Araj Oblodra. Advantage on ALL attacks, disadvantage on saves. It makes Vow of Enmity redundant, which is what frees the Channel Oath charge for Inquisitor''s Might every fight. ⚠ Two costs, not one: disadvantage on saves roughly squares his concentration-failure rate while he permanently holds Hold Person, and the advantage itself is dead weight on any turn the target is already Held. Mitigate in order — the Adamantine Shield''s crit immunity, Aura of Protection at Paladin 6, the Cloak of Protection and the Amulet of Greater Health.'
       - id: ring-of-arcane-synergy-act2
         item: Ring of Arcane Synergy
         tier: A
@@ -912,14 +934,21 @@ builds:
       wiki: Shadow Blade (weapon)
       slot: weapons
       bis: true
-      note: 'CARRIED OVER unchanged — a 3d8 Shadow Blade in the main hand, bound for CHA and Deepened Pact, with Phalar Aluve off-hand for pre-cast Shriek, bonus-action swing only when free. Beats Render of Mind and Body or the Knife of the Undermountain King because the party generates so many Shriek triggers. ⚠ Against Psychic-immune targets, bind Phalar main hand. ⚠ Confirm the Stone aura still works after Act 2, and holster it when the Psychic and mental-save downside is unsafe.'
+      note: 'CARRIED OVER unchanged — a 3d8 Shadow Blade in the main hand, bound for CHA and Deepened Pact, with a shield in the off-hand. ⚠ Against Psychic-immune targets, bind the Knife of the Undermountain King main hand. ⚠ Confirm the Stone aura still works after Act 2, and holster it when the Psychic and mental-save downside is unsafe.'
+    - id: viconias-walking-fortress
+      item: Viconia's Walking Fortress
+      tier: S
+      tier_note: '5wATdII3wmI (47:46) — +3 AC, upgraded Shield Bash, spell defences and Reflective Shell; the legendary shield earns it'
+      slot: off-hand
+      bis: true
+      note: 'ACT-3 OFF-HAND, carried by Viconia DeVir in the Cloister of Sombre Embrace under the House of Grief — reachable without Shadowheart by passing the House of Grief investigation into the cloister and refusing Viconia''s demand, which starts the fight. +3 AC, ADVANTAGE ON SAVING THROWS AGAINST SPELLS, spell attacks against him at DISADVANTAGE, Bulwark Rebuke (2d4 Force and possible Prone when a melee attack hits him), Reflective Shell once per short rest and Warding Bond once per long rest. It replaces the Adamantine Shield only once the Helm of Balduran supplies crit immunity; until then keep the Adamantine Shield on.'
     - id: act3-head-charles
       item: Helm of Balduran
       tier: S
       tier_note: 'Is EVERY Act 3 Helmet Awesome? - BG3 Helmets Tier List and Guide - Act 3 (17:36) — purely defensive, yet any character wanting a defensive option wants this'
       slot: head
       bis: true
-      note: 'SELECTED ACT-3 HEAD, from the Wyrmway (Ansur). Attackers cannot land critical hits, +1 AC, +1 to SAVING THROWS, 2 HP per turn and Stun immunity. Requires Medium armour proficiency, which he has. ⚠ This is now the ONLY crit-immunity source left to him, because locking Luminous Armour gave up Adamantine Scale Mail — and a critical hit roughly doubles the concentration save DC on the Hold Person he carries under the Risky Ring. That is why it beats Sarevok''s Horned Helmet, which offers more crits but no protection for the concentration the whole nova depends on.'
+      note: 'SELECTED ACT-3 HEAD, from the Wyrmway (Ansur). Attackers cannot land critical hits, +1 AC, +1 to SAVING THROWS, 2 HP per turn and Stun immunity. Requires Medium armour proficiency, which he has. ⚠ It takes over crit immunity from the Adamantine Shield, which is what frees the off-hand for Viconia''s Walking Fortress — a critical hit roughly doubles the concentration save DC on the Hold Person he carries. That is why it beats Sarevok''s Horned Helmet, which offers more crits but no protection for the concentration the whole nova depends on.'
     - id: act3-armour-charles
       item: Luminous Armour
       tier: S
@@ -929,7 +958,7 @@ builds:
       held: 1
       slot: armour
       bis: true
-      note: 'CARRIED OVER — locked for the whole run. This is where the cost is largest: Helldusk Armour would have given AC 21 flat and −3 to all incoming damage, and he gives that up to keep the Radiant Shockwave engine. Helm of Balduran, Shield, Mirror Image and Aura of Protection carry the defensive load instead.'
+      note: 'CARRIED OVER — locked for the whole run. This is where the cost is largest: Helldusk Armour would have given AC 21 flat and −3 to all incoming damage, and he gives that up to keep the Radiant Shockwave engine. Helm of Balduran, the Walking Fortress, Shield, Mirror Image and Aura of Protection carry the defensive load instead.'
     - id: act3-hands-charles
       item: Gloves of Battlemage's Power
       tier: A
@@ -937,7 +966,7 @@ builds:
       held: 2
       slot: hands
       bis: true
-      note: 'CARRIED OVER — locked. This is the other place the lock costs real damage: Helldusk Gloves (+1d6 Fire per hit, roughly +17 a nova, plus a wiki-confirmed +1 to all attack rolls) and Craterflesh Gloves (+2d6 Force on a crit, roughly +49 on a full auto-crit nova, Bhaal path only) are both forgone. Accepted, because Arcane Acuity is what makes Hold Person land and Hold Person is what makes every swing a crit.'
+      note: 'CARRIED OVER — locked. This is the other place the lock costs real damage: Helldusk Gloves (+1d6 Fire per hit, roughly +17 a nova, plus a wiki-confirmed +1 to all attack rolls — they go to Bonbon) and Craterflesh Gloves (+2d6 Force on a crit, roughly +49 on a full auto-crit nova, Bhaal path only) are both forgone. Accepted, because Arcane Acuity is what makes Hold Person land and Hold Person is what makes every swing a crit.'
     - id: act3-feet-charles
       item: Helldusk Boots
       tier: S
@@ -1003,13 +1032,13 @@ builds:
       tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (57:48) — +7 on crits works passively, so any melee crit build gets it free'
       slot: ranged weapons
       bis: true
-      note: 'ACT-3 RANGED, and he never fires it — it is a melee damage stick. Dolor Amarus is listed on THE HOLDER, not the main hand, and the wiki states it applies to ALL weapon attacks while a weapon carrying the feature is equipped: +7 flat on every critical hit. Every swing against a Held target crits, so that is +28 on the standard nova and +70 on the Terazul turn, out of a slot that was otherwise dead — a Darkness cloud blocks ranged attacks both ways, so he could never shoot from it anyway. Ranged and melee weapon sets are separate, so it does not touch Shadow Blade or Phalar. ⚠ BHAAL PATH ONLY: the Echo of Abazigal at the Murder Tribunal will only sell it to a player character who accepts becoming an Unholy Assassin of Bhaal. On any other route take the Hellrider Longbow below. ⚠ Taking this also settles the Hellrider Longbow, which GALE and Charles both used to claim — Gale keeps it, and his Elixir of Vigilance stacks it to +8 initiative.'
+      note: 'ACT-3 RANGED, and he never fires it — it is a melee damage stick. Dolor Amarus is listed on THE HOLDER, not the main hand, and the wiki states it applies to ALL weapon attacks while a weapon carrying the feature is equipped: +7 flat on every critical hit. Every swing against a Held target crits, so that is +21 on the standard nova and +63 on the Terazul turn, out of a slot that was otherwise dead — a Darkness cloud blocks ranged attacks both ways, so he could never shoot from it anyway. Ranged and melee weapon sets are separate, so it does not touch Shadow Blade or the shield. ⚠ BHAAL PATH ONLY: the Echo of Abazigal at the Murder Tribunal will only sell it to a player character who accepts becoming an Unholy Assassin of Bhaal. On any other route take the Hellrider Longbow below. ⚠ Taking this also settles the Hellrider Longbow, which GALE and Charles both used to claim — Gale keeps it, and his Elixir of Vigilance stacks it to +8 initiative.'
       options:
       - id: opt-hellriders-longbow-charles
         item: Hellrider Longbow
         tier: S
         tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (53:35) — +3 initiative from an unused slot; he would put it in S+ if it existed'
-        note: 'THE NON-BHAAL FALLBACK, from Ferg Drogher in Rivington. Passive +3 INITIATIVE from the same dead slot, and he has the party''s worst initiative at d4+2. ⚠ It is GALE''S by default — he holds it purely as a stat stick on top of Elixir of Vigilance — so only take it here on a run where the Vicious Shortbow is unavailable and Gale can spare it.'
+        note: 'THE NON-BHAAL FALLBACK, from Ferg Drogher in Rivington. Passive +3 INITIATIVE from the same dead slot; even with Alert he is only d4+7. ⚠ It is GALE''S by default — he holds it purely as a stat stick on top of Elixir of Vigilance — so only take it here on a run where the Vicious Shortbow is unavailable and Gale can spare it.'
     - id: bhaalist-armour-unlock
       item: Bhaalist Armour
       tier: S
@@ -1020,15 +1049,15 @@ builds:
     - id: prog-head
       item: 'Head: Haste Helm → Holy Lance Helm → Helm of Balduran'
       slot: head
-      note: 'Act 1 Haste Helm (Blighted Village) → Act 2 Covert Cowl (Last Light) → Act 3 Helm of Balduran (Ansur). Momentum while he is slow and far away, then crit-threshold reduction once he lives inside a cloud, then crit IMMUNITY — which is the only way back to the protection Adamantine Scale Mail would have given. ⚠ Grymskull Helm is illegal all run: Heavy Armour proficiency.'
+      note: 'Act 1 Haste Helm (Blighted Village) → Act 2 Holy Lance Helm (Rosymorn Monastery) → Act 3 Helm of Balduran (Ansur). Momentum while he is slow and far away, then Radiant retaliation that refills Arcane Acuity between his turns, then crit IMMUNITY — which lets the Adamantine Shield retire for the Walking Fortress. ⚠ Grymskull Helm is illegal all run: Heavy Armour proficiency.'
     - id: prog-armour
       item: 'Chest: Luminous Armour, all three acts (LOCKED)'
       slot: armour
-      note: One chest for the whole run. Radiant Shockwave is the engine, fed by Inquisitor's Might on every hit and by Divine Smite. Forgoes Adamantine Scale Mail's crit immunity and Helldusk Armour's AC 21 and −3 damage.
+      note: One chest for the whole run. Radiant Shockwave is the engine, fed by Inquisitor's Might on every hit and by Divine Smite. Forgoes Helldusk Armour's AC 21 and −3 damage, which go to Bonbon; crit immunity comes from the Adamantine Shield in the off-hand instead.
     - id: prog-hands
       item: 'Hands: Gloves of the Growling Underdog → Gloves of Battlemage''s Power (LOCKED from Act 2)'
       slot: hands
-      note: Act 1 Growling Underdog (Dror Ragzlin) as a pure stopgap advantage source → Act 2 and Act 3 Gloves of Battlemage's Power (Reithwin Tollhouse), which never come off. Forgoes Baneful Striking, Helldusk Gloves and Craterflesh Gloves.
+      note: Act 1 Growling Underdog (Dror Ragzlin) as a pure stopgap advantage source → Act 2 and Act 3 Gloves of Battlemage's Power (Reithwin Tollhouse), which never come off. Forgoes Baneful Striking, Helldusk Gloves (Bonbon's now) and Craterflesh Gloves.
     - id: prog-feet
       item: 'Boots: Boots of Striding → Helldusk Boots'
       slot: feet
@@ -1050,9 +1079,13 @@ builds:
       slot: ring 2
       note: Strange Conduit Ring in Act 1 → a genuine flex slot from Act 2, decided by whether the target can be Held. Held means Ring of Arcane Synergy, because advantage and banked crits are worth nothing against something that is already auto-hit and auto-crit; un-Holdable means Risky Ring. The Shadow Blade Ring needs no slot at all — summon, then unequip.
     - id: prog-weapons
-      item: 'Melee: bound weapon → two-handed Phalar Aluve + GWM → 3d8 Shadow Blade + Phalar off-hand'
+      item: 'Melee: bound weapon → Phalar Aluve one-handed → 3d8 Shadow Blade'
       slot: weapons
-      note: The build's one real respec. Two-handed Phalar with Great Weapon Master carries Act 1 through most of Act 2; the late-Act-2 Resonance Stone triggers the swap to Dual Wielder, Shadow Blade main hand and Phalar off-hand for Shriek.
+      note: One respec, at the Stone. Phalar Aluve behind a shield carries Act 1 through most of Act 2 with Duelling; the late-Act-2 Resonance Stone triggers the swap to a 3d8 Shadow Blade in the main hand, and Phalar leaves for Bonbon's melee set, where she carries Shriek.
+    - id: prog-offhand
+      item: 'Off-hand: Safeguard Shield → Adamantine Shield → Viconia''s Walking Fortress'
+      slot: off-hand
+      note: Dammon's Safeguard Shield (+2 AC, +1 saves) from the Grove → the Adamantine Shield (second Mithral ore) from the Forge for crit immunity on the Hold Person carrier → Viconia's Walking Fortress in Act 3 once the Helm of Balduran covers crits. He never two-hands or dual-wields after the Grove, which is why neither Great Weapon Master nor Dual Wielder is ever taken.
     - id: prog-ranged
       item: 'Ranged: Dual Hand Crossbows +1 → Vicious Shortbow'
       slot: ranged weapons
@@ -1064,14 +1097,14 @@ builds:
   playstyle: |-
     - **The one-line version:** stand in an arrow cloud, spend the Channel Oath charge on Inquisitor's Might, build Arcane Acuity with a Booming Blade, Hold Person the priority target, then dump smites into a body that auto-crits.
     - **Concentration is Hold Person and nothing else.** Bless, Hex, Divine Favour, Darkness, Wrathful Smite and Branding Smite are all Concentration and all out. Asterion supplies Bless off the Staff of Arcane Blessing; darkness comes from farmed arrows, which cost nothing to hold. The only time he concentrates on something else is a non-humanoid fight, where Hunger of Hadar replaces Hold Person and Bonbon attempts Hold Monster.
-    - **Act 1 turn structure:** pre-cast Shriek from stealth → open with **Inquisitor's Might** as the bonus action (+CHA radiant on every weapon hit for 2 turns, plus a no-save Daze) → Booming Blade or a Phalar swing → smite only on crits. Hexblade's Curse goes on turn 2, since it competes with Inquisitor's Might for the bonus action.
+    - **Act 1 turn structure:** pre-cast Shriek from stealth (his job until the Stone, Bonbon's after) → open with **Inquisitor's Might** as the bonus action (+CHA radiant on every weapon hit for 2 turns, plus a no-save Daze) → Booming Blade or a Phalar swing → smite only on crits. Hexblade's Curse goes on turn 2, since it competes with Inquisitor's Might for the bonus action.
     - **One Channel Oath charge per short rest.** In Act 1 that is a real choice: Vow of Enmity for a long boss fight, Inquisitor's Might otherwise. From Act 2 the Risky Ring supplies advantage on every attack, so Inquisitor's Might becomes the automatic answer and stays that way.
     - **Radiant is the debuff engine, not just damage.** Every point of Radiant he deals fires Luminous Armour's Radiant Shockwave, stacking Radiating Orb on everything within 3m at −1 attack per remaining turn, up to −10. Inquisitor's Might on every hit plus Divine Smite is the whole supply, which is why the oath is never broken.
     - **Acuity sequencing matters.** Arcane Acuity builds off hits and decays by 2 every time he takes damage, so land a Booming Blade or a smite BEFORE casting Hold Person, and cast it before the enemy's turn. **Gale always Hastes Charles and Bonbon**, and the extra action is what lets him build stacks and Hold in the same turn.
     - **Darkness placement:** put the cloud so **Charles is inside it and his target is not**. He is an unseen attacker — advantage in, disadvantage out — while the enemy stays visible for Gale. A cloud blocks ranged attacks *into and out of* itself, so an enemy standing inside it is one Gale cannot touch.
-    - **Pre-cast Shriek for Gale, not just yourself:** Shriek adds 1d4 Thunder every time an affected enemy takes damage, and Scorching Ray damages 3–7 separate times per cast. Activating it before Gale's turn is worth roughly 7d4 on a single level-6 cast.
-    - **Late Act 2+ — Shadow + Stone:** on acquiring the Resonance Stone, respec at character level 9 to Warlock 5 / Paladin 4, replace GWM with Dual Wielder, summon 3d8 Shadow Blade main hand and off-hand Phalar. Asterion carries the Stone within 9m. Re-select Oath of Vengeance; do not break it.
+    - **Shriek is for Gale, not just the melee:** it adds 1d4 Thunder every time an affected enemy takes damage, and Scorching Ray damages 3–7 separate times per cast. Activating it before Gale's turn is worth roughly 7d4 on a single level-6 cast — from the Stone onward that is Bonbon's call to make, from 3–6 m of the cluster.
+    - **Late Act 2+ — Shadow + Stone:** on acquiring the Resonance Stone, respec at character level 9 to Warlock 5 / Paladin 4 (Alert and Savage Attacker), summon a 3d8 Shadow Blade main hand and keep the Adamantine Shield. Hand Phalar Aluve to Bonbon, who carries Shriek from her melee set. Asterion carries the Stone within 9m. Re-select Oath of Vengeance; do not break it.
     - **Once per long rest, out of combat:** cast **Aid** (upcast as high as you can spare) for a permanent party-wide max-HP buff that costs no concentration. Charles is the party's only Aid source.
-    - **Nova:** Hold a humanoid, then spend the largest Divine Smites first into guaranteed crits. At Paladin 5 after the respec, two three-attack Actions under Haste plus one Phalar off-hand swing reach seven auto-crit attacks when the bonus action is free.
-    - **Defensive reads:** he is AC 17–18 for the whole run with no crit immunity until Act 3. Pre-cast Mirror Image in fights where he expects to be focused, keep Shield for the reaction that would otherwise break Hold Person, and stay inside Aura of Protection range of the party rather than running ahead.
+    - **Nova:** Hold a humanoid, then spend the largest Divine Smites first into guaranteed crits. At Paladin 5 after the respec, two three-attack Actions under Haste are six auto-crit swings, each carrying Duelling's +2.
+    - **Defensive reads:** he is AC 19–20 behind a shield, crit-immune from the Forge (Adamantine Shield) and again from the Helm of Balduran. Pre-cast Mirror Image in fights where he expects to be focused, keep Shield for the reaction that would otherwise break Hold Person, and stay inside Aura of Protection range of the party rather than running ahead.
 ---

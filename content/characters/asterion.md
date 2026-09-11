@@ -5,6 +5,10 @@ builds:
   is_primary: true
   role: Mobile Open-Hand monk — stun-lock striker, psychic flurry, party thief
   class: Open Hand Monk 9 / Thief Rogue 3
+  at_a_glance:
+    armour: None — unarmoured, shieldless and empty-handed; any armour-tagged helmet or glove breaks Unarmoured Defence
+    elixir: Giant Strength every long rest (Hill 21 → Cloud 27) — Tavern Brawler runs on it
+    concentration: Bless from the Staff of Arcane Blessing, or Celestial Haste from Gontr Mael in Act 3 — each once per long rest, never both at once
   build_order: Rogue 1 (creation, Expertise) → Monk 1–9 → Rogue 2 → Thief 3. No respec after the initial rebuild.
   race: Astarion (High Elf / Vampire Spawn)
   race_notes: 'Fey Ancestry (advantage vs Charm, no magical Sleep), Darkvision, one High Elf wizard cantrip, bonus-action Vampire Bite. ⚠ Must stay unarmoured and shieldless; after Tavern Brawler both melee hands stay empty so Attack/Extra Attack are unarmed. Graceful Cloth is Clothing, not armour, and Bracers of Defence work unarmoured and shieldless.'
@@ -127,6 +131,12 @@ builds:
       save: None
       when: char 1 (High Elf racial cantrip — fixed, not selectable)
       why: 'Would be the ideal pick — S tier for pulling creatures toward a distraction with no save, redirecting sightlines for stealth and theft without touching his low INT — but a recruited companion''s racial cantrip is locked at creation and the respec does not re-present it. Listed here as the thing to hope for, not a pick to make; check the save for what he actually has.'
+    - spell: Celestial Haste
+      level: Item action (Gontr Mael)
+      school: Transmutation — self only
+      save: None (Concentration)
+      when: Act 3, once per long rest
+      why: 'Gontr Mael''s once-per-long-rest self-Haste: an extra Action every turn for 5 turns, +2 AC, and NO Lethargic when it ends. He is the one party member Gale never Hastes, so this is his only Haste. It is Concentration, so it shares the day with the staff''s Bless — one fight gets Bless, another gets Haste, never both at once — and the Action it costs to cast is paid back by the Hasted extra Action the same turn.'
     - spell: Ki Resonation (Punch → Blast)
       level: Feature (Open Hand, Monk 9)
       school: Ki — detonate
@@ -535,11 +545,12 @@ builds:
       slot: ring 2
       note: 'Act 3 still has plenty of obscured interiors and Charles generates his own Darkness, so the +1d4 stays live on most turns. Swap it for the Eversight Ring whenever the plan is to fight inside Charles''s cloud. ⚠ The Callous Glow Ring is NOT his: it needs illuminated targets, which fights both the Shadow-Cursed Lands and Charles''s Darkness, and Gale''s Coruscation chain already lights targets for his own copy.'
     - id: act3-ranged-asterion
-      item: Hand Crossbow +2
+      item: Gontr Mael
       tier: A
-      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (43:35) — the pick over Ne''er Misser only when Ballistic Armour doubles your piercing damage'
+      tier_note: 'The BEST BOWS in Baldur''s Gate 3 - Honor Mode Tier List and Guide (50:53) — at-will Celestial Haste is nice, but only the third best two-handed bow for damage'
       slot: ranged weapons
-      note: 'Any +2 pair from an Act 3 vendor. Monk 9 Deft Strikes upgrades hand crossbows he is proficient with to 1d8, so the slot is not wasted, but it stays a fallback for targets he cannot reach. ⚠ The Hellfire Hand Crossbow and Ne''er Misser both go to Bonbon, whose entire engine is hand-crossbow hits.'
+      bis: true
+      note: 'Steel Watcher Titan in the Steel Watch Foundry (it does not drop if the Titan dies to Atrophied). He never fires it — it is here for CELESTIAL HASTE, a "holder gains" action that needs no proficiency: a self-only Haste for 5 turns, once per long rest, with no Lethargic when it ends. He is the one member Gale never Hastes, so this is his only Haste; it is Concentration, so it shares the day with the staff''s once-per-long-rest Bless — one fight gets Bless, another gets Haste. ⚠ It was filed under Bonbon, where it did nothing: she is already Hasted by Gale and concentrating on Hold Monster.'
     progression:
     - id: prog-head
       item: 'Head: Circlet of Psionic Revenge → Mask of Soul Perception'
@@ -578,15 +589,15 @@ builds:
       slot: weapons
       note: The only slot that ends the game deliberately empty. From character level 5 a held weapon makes Attack and Extra Attack swing it instead of punching, which loses Tavern Brawler and every unarmed rider.
     - id: prog-ranged
-      item: 'Ranged: Hand Crossbows +1 → Hand Crossbows +2'
+      item: 'Ranged: Hand Crossbows +1 → Gontr Mael'
       slot: ranged weapons
-      note: A fallback slot only, for targets he cannot reach. Monk 9 Deft Strikes upgrades hand crossbows he is proficient with to 1d8, so it is not wasted, but Ne'er Misser and the Hellfire Hand Crossbow both go to Bonbon.
+      note: Hand crossbows through Acts 1–2 for targets he cannot reach → Gontr Mael from the Steel Watch Foundry in Act 3, held for its once-per-long-rest Celestial Haste rather than fired. He is the only member Gale never Hastes, and the slot was otherwise a fallback.
     - id: prog-elixirs
       item: 'Elixir: Hill Giant Strength → Cloud Giant Strength'
       slot: consumables
       note: One every long rest, all game. It drives attack rolls, damage and the Stunning-Strike DC, and it occupies the one-elixir-per-rest slot so no Bloodlust alongside it.
   playstyle: |-
-    - **Prep:** drink Giant Strength, enable Manifestation of Mind, and carry the Resonance Stone from Act 2 onward.
+    - **Prep:** drink Giant Strength, enable Manifestation of Mind, and carry the Resonance Stone from Act 2 onward. Pick the fight's concentration: Bless off the staff, or Celestial Haste off Gontr Mael in Act 3 — one of each per long rest.
     - **Turn:** Stunning Strike the priority target, then Flurry: Topple (or Stagger against casters). Thief 3 adds a second Flurry.
     - **If Stun fails:** raw Flurries + Topple; switch Manifestation to Soul against psychic resistance.
   pickpocket:

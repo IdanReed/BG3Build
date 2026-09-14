@@ -46,7 +46,7 @@ surface to worry about.
 | `progress.json` | Your checkoffs (`{ "checked": { key: true } }`). **Git-tracked** — your playthrough progress shows up as a clean diff. |
 | `src/` | All application source: the Rust server (`main.rs`, `content.rs`, `progress.rs`) and the UI at `src/ui/index.html`. |
 | `resources/` | Raw source material — `videos/{transcripts,summaries}/`, `reddit/`, `wiki/`, and the extracted `tiers/` datasets the tools read. |
-| `docs/` | Reasoning and decisions. Never displayed by the app. `itemization-changelog.md` defends every gear choice and every departure from the ranked video guides; `goals.md` holds the party goals; `extraction-brief.md` explains how a transcript becomes a tier table. |
+| `docs/` | Reasoning and decisions. Never displayed by the app. `itemization-changelog.md` defends every gear choice and every departure from the ranked video guides; `goals.md` holds the party goals; `extraction-brief.md` explains how a transcript becomes a tier table; `act2-route.md` is the Act 2 quest order, linked from the header chip. |
 | `tools/check_itemization.py` | Slot-coverage check for `content/characters/*.md`. |
 | `tools/build_ratings_page.py` | Rebuilds `content/ratings.md` from `resources/tiers/item_tiers.json`. |
 | `tools/apply_spell_tiers.py` | Writes `resources/tiers/spell_tiers.json` into the `spells` blocks of `content/characters/*.md`. |

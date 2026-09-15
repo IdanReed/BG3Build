@@ -416,6 +416,13 @@ navigation, focus management after view changes, hover/focus item tooltips, and
 light/dark theme persistence. Preserve those behaviors when changing
 navigation or rendering.
 
+`docs/ui-style-guide.md` is the visual specification: monospace throughout,
+paper and ink with one accent, no cards, no shadows, no emoji, bracketed text
+tokens for badges and checkboxes. Every CSS rule and every render function that
+emits a visual element follows it; read its banned list before adding a style.
+The only font is JetBrains Mono, shipped under `src/ui/fonts/` with its OFL
+licence.
+
 Switching sub-views rebuilds the whole page, so each view key remembers its
 scroll offset and the selected tab in each of its tab groups, and restores them
 on return. That state lives in `sessionStorage` under `bg3-view-state-v1` and is

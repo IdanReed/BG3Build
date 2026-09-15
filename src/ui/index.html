@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BG3 Party Plan</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%8E%B2%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a1a1a'/%3E%3Ctext x='8' y='46' font-family='monospace' font-size='34' font-weight='700' fill='%23f7f6f2'%3Eb3%3C/text%3E%3C/svg%3E">
 <script>
   /* Set theme before first paint to avoid a flash of the wrong theme. */
   (function () {
@@ -19,729 +19,477 @@
   })();
 </script>
 <style>
+  /* See docs/ui-style-guide.md. Every colour, size and space below is a token from
+     section 1; a literal value anywhere else is a defect. */
+
+  /* ---- Tokens ---- */
   :root {
-    --bg: #f5f6fb;
-    --surface: #ffffff;
-    --surface-2: #eceef6;
-    --surface-3: #e2e5f0;
-    --text: #191b22;
-    --text-muted: #565b6e;
-    --border: #d5d9e6;
-    --accent: #6a35e0;
-    --accent-soft: #efe9ff;
-    --accent-text: #ffffff;
-    --good: #1f8a4c;
+    --font: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+    --fs: 16px;
+    --fs-sm: 13px;
+    --fs-lg: 20px;
+    --lh: 1.5rem;
+    --lh-half: .75rem;
+    --measure: 110ch;
+    --prose: 80ch;
+    --nav-w: 26ch;
+    --gutter: 4ch;
+    --page-w: calc(var(--nav-w) + var(--gutter) * 2 + var(--measure) + 1px);
+
+    --bg: #f7f6f2;
+    --ink: #1a1a1a;
+    --muted: #5c5c5c;
+    --rule: #c8c6c0;
+    --accent: #1f4e9c;
     --warn: #a04b00;
-    --shadow: 0 1px 3px rgba(20,22,40,.08), 0 4px 16px rgba(20,22,40,.06);
-    --radius: 12px;
-    --header-h: 76px;
+    --tier-s: #8a6400;
+    --tier-a: #1f7a3c;
+    --tier-b: #2f5fb3;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0e1016;
-      --surface: #171a22;
-      --surface-2: #1e222d;
-      --surface-3: #262b38;
-      --text: #e8eaf1;
-      --text-muted: #a5aaba;
-      --border: #2c3242;
-      --accent: #a488ff;
-      --accent-soft: #241f3a;
-      --accent-text: #14121f;
-      --good: #57cd87;
-      --warn: #f0a860;
-      --shadow: 0 1px 3px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
+      --bg: #151514; --ink: #e8e6e0; --muted: #9c9a93; --rule: #3b3a37;
+      --accent: #8ab0ea; --warn: #f0a860; --tier-s: #e0b04a; --tier-a: #6cc48a; --tier-b: #86aaf0;
     }
   }
   html[data-theme="light"] {
-    --bg: #f5f6fb; --surface: #ffffff; --surface-2: #eceef6; --surface-3: #e2e5f0;
-    --text: #191b22; --text-muted: #565b6e; --border: #d5d9e6; --accent: #6a35e0;
-    --accent-soft: #efe9ff; --accent-text: #ffffff; --good: #1f8a4c; --warn: #a04b00;
-    --shadow: 0 1px 3px rgba(20,22,40,.08), 0 4px 16px rgba(20,22,40,.06);
+    --bg: #f7f6f2; --ink: #1a1a1a; --muted: #5c5c5c; --rule: #c8c6c0;
+    --accent: #1f4e9c; --warn: #a04b00; --tier-s: #8a6400; --tier-a: #1f7a3c; --tier-b: #2f5fb3;
   }
   html[data-theme="dark"] {
-    --bg: #0e1016; --surface: #171a22; --surface-2: #1e222d; --surface-3: #262b38;
-    --text: #e8eaf1; --text-muted: #a5aaba; --border: #2c3242; --accent: #a488ff;
-    --accent-soft: #241f3a; --accent-text: #14121f; --good: #57cd87; --warn: #f0a860;
-    --shadow: 0 1px 3px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
+    --bg: #151514; --ink: #e8e6e0; --muted: #9c9a93; --rule: #3b3a37;
+    --accent: #8ab0ea; --warn: #f0a860; --tier-s: #e0b04a; --tier-a: #6cc48a; --tier-b: #86aaf0;
   }
 
+  /* ---- Font ---- */
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("fonts/JetBrainsMono-Bold.woff2") format("woff2");
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+
+  /* ---- Base ---- */
   * { box-sizing: border-box; }
+  html { font-size: var(--fs); }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.5;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--font); font-size: var(--fs); line-height: var(--lh);
+    background: var(--bg); color: var(--ink);
+    font-variant-numeric: tabular-nums;
   }
-  a { color: var(--accent); }
-  a.wiki-item {
-    color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent);
-    text-decoration-thickness: 1px; text-underline-offset: 2px;
-  }
-  a.wiki-item:hover { color: var(--accent); text-decoration-color: currentColor; }
-  a.wiki-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
-  a.wiki-item::after { content: "\2197"; margin-left: .22em; color: var(--accent); font-size: .72em; }
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--ink); }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-align: left; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  h1, h2, h3, h4 { margin: 0; font-size: inherit; font-weight: 700; line-height: inherit; }
+  em { font-style: normal; font-weight: 700; }
+  code { font: inherit; }
+  p { margin: 0 0 var(--lh-half); max-width: var(--prose); }
+  .muted { color: var(--muted); }
+  .note { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin: 0 0 var(--lh-half); max-width: var(--prose); }
+  .pre { white-space: pre-wrap; }
+  a.wiki-item, a.rate-at { color: inherit; text-decoration-color: var(--rule); }
+  a.wiki-item:hover, a.rate-at:hover { color: var(--accent); text-decoration-color: currentColor; }
+  a.wiki-item::after, a.rate-at::after { content: "\2197"; margin-left: .25ch; color: var(--accent); }
   .wiki-item-group { display: inline; }
+  .skip-link {
+    position: absolute; left: -999px; top: 0; z-index: 100;
+    background: var(--bg); color: var(--accent); border: 1px solid var(--ink); padding: 0 1ch;
+  }
+  .skip-link:focus { left: 1ch; }
 
-  /* ---- Header ---- */
-  header.app {
-    position: sticky; top: 0; z-index: 30;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow);
-  }
-  .header-inner {
-    max-width: 1800px; margin: 0 auto; padding: 14px 20px;
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  }
-  .header-titles { flex: 1 1 340px; min-width: 0; }
-  .header-titles h1 {
-    margin: 0 0 8px; font-size: 1.25rem; line-height: 1.25; font-weight: 700;
-    letter-spacing: -.01em;
-  }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--surface-2); color: var(--text-muted);
-    border: 1px solid var(--border); border-radius: 999px;
-    padding: 3px 10px; font-size: .78rem; font-weight: 600;
-    white-space: normal; overflow-wrap: anywhere; max-width: 100%;
-  }
-  .chip.accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
-  .chip .chip-k { color: var(--text-muted); font-weight: 500; opacity: .8; }
-  .chips.glance { margin: 0 0 14px; }
-  .chips.glance .chip { font-size: .82rem; }
-  a.chip { text-decoration: none; color: var(--text-muted); }
-  a.chip:hover { border-color: var(--accent); color: var(--accent); }
-  a.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  a.chip .chip-doc-icon { opacity: .7; }
-  details.assumptions { flex-basis: 100%; margin-top: 4px; }
-  details.assumptions summary {
-    cursor: pointer; font-size: .8rem; color: var(--accent); font-weight: 600;
-    list-style: none; display: inline-block; padding: 2px 0;
-  }
+  /* ---- Header and top tabs ---- */
+  header.app { border-bottom: 1px solid var(--rule); }
+  .header-inner, .toptabs-bar { max-width: var(--page-w); margin: 0 auto; padding: 0 var(--gutter); }
+  .header-inner { padding-top: var(--lh); }
+  .masthead { display: flex; align-items: baseline; gap: 0 2ch; flex-wrap: wrap; }
+  .masthead h1 { font-size: var(--fs-lg); }
+  .app-version { color: var(--muted); }
+  .meta-run { color: var(--muted); font-size: var(--fs-sm); flex: 1 1 auto; }
+  .meta-run a { color: var(--accent); }
+  .meta-run a:hover { color: var(--ink); }
+  .theme-toggle { color: var(--muted); margin-left: auto; }
+  .theme-toggle:hover { color: var(--ink); }
+  details.assumptions { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin-top: .25rem; }
+  details.assumptions summary { cursor: pointer; list-style: none; display: inline-block; }
   details.assumptions summary::-webkit-details-marker { display: none; }
-  details.assumptions summary::before { content: "\25B8  "; }
-  details.assumptions[open] summary::before { content: "\25BE  "; }
-  details.assumptions .assume-body { font-size: .85rem; color: var(--text-muted); margin-top: 6px; }
-  details.assumptions .assume-body p { margin: 6px 0; }
-  details.assumptions summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
-  [role="tabpanel"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
-
-  .theme-toggle {
-    flex: 0 0 auto;
-    background: var(--surface-2); color: var(--text);
-    border: 1px solid var(--border); border-radius: 999px;
-    padding: 8px 14px; font-size: .82rem; font-weight: 600; cursor: pointer;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
-  .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-  /* ---- Top-level section tabs ---- */
-  .toptabs-bar { max-width: 1800px; margin: 0 auto; padding: 0 20px; }
-  .toptabs { display: flex; gap: 4px; }
-  .toptab {
-    background: var(--surface-2); border: none; border-bottom: 2px solid transparent;
-    padding: 10px 18px; font: inherit; font-size: .95rem; font-weight: 700; cursor: pointer;
-    color: var(--text-muted); margin-bottom: -1px; border-radius: 8px 8px 0 0;
-    letter-spacing: -.01em;
-  }
-  .toptab:hover { color: var(--text); background: var(--surface-3); }
-  .toptab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); background: var(--surface); }
-  .toptab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-
-  /* ---- Sidebar sub-group heading ---- */
-  .nav-group-h {
-    font-size: .7rem; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--text-muted); margin: 12px 10px 4px; font-weight: 700;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .nav-group-h::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-  /* Grafted from candidate B: indent the grouped Characters so Overview +
-     Proficiencies read as the parent/top of the Party area. */
-  .nav-item.nav-item-sub { padding-left: 20px; }
+  details.assumptions summary::before { content: "+ "; }
+  details.assumptions[open] summary::before { content: "- "; }
+  details.assumptions summary:hover { color: var(--ink); }
+  details.assumptions .assume-body { max-width: var(--prose); }
+  details.assumptions .assume-body p { margin: .25rem 0 0; max-width: none; }
+  .toptabs { display: flex; gap: 0 3ch; flex-wrap: wrap; margin-top: var(--lh-half); }
+  .toptab { color: var(--muted); font-weight: 700; padding-bottom: calc(var(--lh-half) - 2px); border-bottom: 2px solid transparent; }
+  .toptab:hover { color: var(--ink); }
+  .toptab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* ---- Layout ---- */
   .layout {
-    max-width: 1800px; margin: 0 auto; padding: 20px;
-    display: grid; grid-template-columns: 250px 1fr; gap: 20px; align-items: start;
+    max-width: var(--page-w); margin: 0 auto; padding: 0 var(--gutter);
+    display: grid; grid-template-columns: var(--nav-w) minmax(0, 1fr); align-items: start;
   }
   .sidebar {
-    position: sticky; top: calc(var(--header-h, 76px) + 8px);
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 8px; box-shadow: var(--shadow);
+    position: sticky; top: 0; max-height: 100vh; overflow-y: auto;
+    padding: var(--lh) var(--gutter) var(--lh) 0;
   }
-  .sidebar h2 {
-    font-size: .7rem; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--text-muted); margin: 8px 10px; font-weight: 700;
+  .sidebar h2 { font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); }
+  .nav-list { list-style: none; margin: 0; padding: 0; }
+  .nav-group-h {
+    font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase;
+    color: var(--muted); font-weight: 700; margin-top: var(--lh-half);
   }
-  .nav-list { list-style: none; margin: 0 0 6px; padding: 0; }
-  .nav-item {
-    display: flex; align-items: center; gap: 10px; width: 100%;
-    background: none; border: none; text-align: left; cursor: pointer;
-    color: var(--text); font: inherit; font-size: .92rem; font-weight: 500;
-    padding: 9px 12px; border-radius: 8px; margin-bottom: 2px;
+  .nav-item { display: block; width: 100%; position: relative; padding-left: 2ch; color: var(--ink); }
+  .nav-item:hover .nav-name { color: var(--accent); }
+  .nav-item[aria-current="page"] { color: var(--accent); font-weight: 700; }
+  .nav-item[aria-current="page"]::before { content: ">"; position: absolute; left: 0; }
+  .nav-label { display: block; min-width: 0; }
+  .nav-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nav-sub {
+    display: block; font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); font-weight: 400;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
-  .nav-item:hover { background: var(--surface-2); }
-  .nav-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-  .nav-item[aria-current="page"] {
-    background: var(--accent-soft); color: var(--accent); font-weight: 700;
+  main.content {
+    min-width: 0; border-left: 1px solid var(--rule);
+    padding: var(--lh) 0 calc(var(--lh) * 2) var(--gutter);
   }
-  .nav-item .nav-dot {
-    width: 8px; height: 8px; border-radius: 50%; background: var(--border); flex: 0 0 auto;
-  }
-  .nav-item[aria-current="page"] .nav-dot { background: var(--accent); }
-  .nav-item .nav-sub { display: block; font-size: .72rem; color: var(--text-muted); font-weight: 500; }
-  .nav-item[aria-current="page"] .nav-sub { color: var(--accent); opacity: .85; }
-  .nav-item .nav-label { display: flex; flex-direction: column; min-width: 0; }
-  .nav-item .nav-label .nav-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-  main.content { min-width: 0; }
-
-  /* ---- In-page outline ---- */
-  .page-outline {
-    position: sticky; top: calc(var(--header-h, 76px) + 8px); z-index: 20;
-    display: flex; align-items: center; gap: 10px; min-width: 0;
-    margin: 0 0 18px; padding: 8px 10px;
-    background: color-mix(in srgb, var(--surface) 92%, transparent);
-    border: 1px solid var(--border); border-radius: 11px; box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-  }
-  .page-outline-label {
-    flex: 0 0 auto; padding: 0 4px; color: var(--text-muted);
-    font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em;
-  }
-  .page-outline-links {
-    display: flex; gap: 4px; min-width: 0; overflow-x: auto;
-    scrollbar-width: thin; overscroll-behavior-inline: contain;
-  }
-  .page-outline-link {
-    flex: 0 0 auto; padding: 5px 9px; border: 1px solid transparent;
-    border-radius: 7px; color: var(--text-muted); font-size: .76rem;
-    font-weight: 650; line-height: 1.25; text-decoration: none; white-space: nowrap;
-    transition: color .12s ease, background-color .12s ease, border-color .12s ease;
-  }
-  .page-outline-link:hover { color: var(--text); background: var(--surface-2); }
-  .page-outline-link:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
-  .page-outline-link[aria-current="location"] {
-    color: var(--accent); background: var(--accent-soft);
-    border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
-  }
-  .page-section { scroll-margin-top: calc(var(--header-h, 76px) + 64px); }
-
-  /* ---- Cards / sections ---- */
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); box-shadow: var(--shadow);
-    padding: 18px 20px; margin-bottom: 18px;
-  }
-  .view-title { margin: 0 0 4px; font-size: 1.5rem; font-weight: 700; letter-spacing: -.01em; }
-  .view-title:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
-  .view-sub { color: var(--text-muted); margin: 0 0 4px; font-size: .95rem; }
-
-  .section-title {
-    font-size: .74rem; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--accent); font-weight: 700; margin: 0 0 10px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-
-  .prose { margin: 0; color: var(--text); }
-  .muted { color: var(--text-muted); }
+  /* ---- Page head, sections, prose ---- */
+  .page-head { margin-bottom: var(--lh); }
+  .page-head .view-sub { margin-bottom: 0; }
+  .view-title { font-size: var(--fs-lg); }
+  .view-title + .sec, .view-title + .subhead { margin-top: var(--lh); }
+  .view-sub { color: var(--muted); margin: 0 0 var(--lh); }
+  .subgrid { display: grid; gap: 0 var(--gutter); }
+  .contents { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin: 0 0 var(--lh); max-width: none; }
+  .contents a { color: var(--accent); text-decoration: none; }
+  .contents a:hover { text-decoration: underline; }
+  .sec { margin: 0 0 var(--lh); }
+  .sec-h { text-transform: uppercase; border-bottom: 1px solid var(--rule); margin-bottom: var(--lh-half); }
+  .subhead { margin: var(--lh) 0 var(--lh-half); }
+  .sec-h + .subhead, .subhead:first-child { margin-top: 0; }
+  .section-hint { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin: 0 0 var(--lh-half); max-width: var(--prose); }
+  .prose { margin: 0 0 var(--lh-half); max-width: var(--prose); }
+  .prose:last-child { margin-bottom: 0; }
+  ul.prose-list, ul.clean { list-style: none; margin: 0 0 var(--lh-half); padding: 0; max-width: var(--prose); }
+  ul.prose-list:last-child, ul.clean:last-child { margin-bottom: 0; }
+  ul.prose-list > li, ul.clean > li { position: relative; padding-left: 2ch; }
+  ul.prose-list > li::before, ul.clean > li::before { content: "-"; position: absolute; left: 0; color: var(--muted); }
+  .li-strong { font-weight: 700; }
+  .li-meta { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); }
+  .li-meta .prose, .li-meta ul.prose-list { font-size: inherit; margin: 0; }
+  .glance { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0 2ch; margin: 0 0 var(--lh); padding: 0; list-style: none; max-width: var(--prose); }
+  .glance-item { display: contents; }
+  .glance-k { font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .tag-list { max-width: var(--prose); }
+  .tag { font-weight: 700; }
+  .callout { border-left: 2px solid var(--rule); padding-left: 2ch; margin: 0 0 var(--lh-half); max-width: var(--prose); }
+  .callout-k { display: block; font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .callout.warn .callout-k { color: var(--warn); }
+  .callout .prose:last-child, .callout ul.prose-list:last-child { margin-bottom: 0; }
+  .verify { color: var(--warn); font-size: var(--fs-sm); white-space: nowrap; }
 
   /* ---- Tables ---- */
-  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; border: 1px solid var(--border); }
-  table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 420px; }
+  .table-wrap { overflow-x: auto; margin: 0 0 var(--lh-half); }
+  .table-wrap:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; }
   thead th {
-    background: var(--surface-2); text-align: left; padding: 9px 12px;
-    font-weight: 700; font-size: .72rem; text-transform: uppercase; letter-spacing: .04em;
-    color: var(--text-muted); white-space: nowrap; border-bottom: 1px solid var(--border);
+    text-align: left; vertical-align: bottom; white-space: nowrap;
+    font-size: var(--fs-sm); line-height: 1.5; text-transform: uppercase; color: var(--muted);
+    padding: 0 1ch .25rem; border-bottom: 1px solid var(--rule);
   }
-  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  tbody tr:last-child td { border-bottom: none; }
-  tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 45%, transparent); }
-  td .cell-strong { font-weight: 600; }
-  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tbody td, tbody th { padding: .25rem 1ch; border-bottom: 1px solid var(--rule); vertical-align: top; text-align: left; }
+  tbody th[scope="row"] { font-weight: 700; white-space: nowrap; }
+  thead th:first-child, tbody td:first-child, tbody th:first-child { padding-left: 0; }
+  thead th:last-child, tbody td:last-child { padding-right: 0; }
+  .num { text-align: right; white-space: nowrap; }
+  .cell-strong { font-weight: 700; }
+  tr.total-row td { font-weight: 700; border-top: 1px solid var(--ink); border-bottom: 0; }
+  th.ck-col, td.ck-col { width: 3ch; white-space: nowrap; }
+  .who-chip { white-space: nowrap; }
 
-  /* ---- Leveling guide ---- */
-  .level-table { min-width: 900px; }
-  .level-table thead th { position: sticky; top: 0; z-index: 2; }
-  .level-table tbody tr { transition: background-color .14s ease; }
-  .level-table tbody tr:hover td {
-    background: color-mix(in srgb, var(--accent-soft) 40%, var(--surface));
-  }
-  .level-number {
-    display: inline-grid; place-items: center; width: 28px; height: 28px;
-    border-radius: 999px; background: var(--accent); color: var(--accent-text);
-    font-size: .76rem; line-height: 1; font-weight: 800;
-  }
-  .level-gain-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
-  .level-gain-list li { position: relative; margin: 0; padding-left: 14px; line-height: 1.35; }
-  .level-gain-list li::before {
-    content: ""; position: absolute; left: 1px; top: .52em; width: 5px; height: 5px;
-    border-radius: 50%; background: var(--text-muted);
-  }
-  .level-class {
-    display: flex; align-items: center; gap: 7px; min-width: 118px;
-  }
-  .level-choice-list {
-    display: grid; gap: 6px; min-width: 300px;
-  }
-  .level-choice {
-    position: relative; display: grid;
-    grid-template-columns: minmax(112px, 134px) minmax(0, 1fr) 24px;
-    min-height: 38px; border: 1px solid var(--border); border-radius: 8px;
-    background: var(--surface); transition: border-color .14s ease, box-shadow .14s ease;
-  }
-  .level-choice:hover, .level-choice:focus-visible, .level-choice:focus-within {
-    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
-    box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 12%, transparent);
-  }
-  .level-choice:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .level-choice:not(.has-detail) {
-    grid-template-columns: minmax(112px, 134px) minmax(0, 1fr);
-  }
-  .level-choice-category {
-    display: flex; align-items: center; gap: 6px;
-    border-radius: 7px 0 0 7px;
-    padding: 6px 8px; background: var(--surface-2); color: var(--accent);
-    font-size: .66rem; line-height: 1.3; font-weight: 700;
-    text-transform: uppercase; letter-spacing: .05em;
-  }
-  .level-choice-body { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; min-width: 0; padding: 5px 8px; }
-  .level-choice-recommendation { font-weight: 600; overflow-wrap: anywhere; }
-  /* A level's picks and its free class grants read differently, so they are
-     badged differently: the pick badge counts the selections the level opens,
-     including any the guide has not filled yet; the grant badge marks what the
-     class or subclass hands over for free. */
-  .pick-badge {
-    display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;
-    padding: 1px 7px; border-radius: 999px; white-space: nowrap;
-    border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
-    background: var(--accent-soft); color: var(--accent);
-    font-size: .62rem; line-height: 1.5; font-weight: 800;
-    text-transform: uppercase; letter-spacing: .04em;
-  }
-  .pick-badge.is-grant {
-    border-color: color-mix(in srgb, var(--good) 45%, var(--border));
-    background: color-mix(in srgb, var(--good) 15%, var(--surface));
-    color: color-mix(in srgb, var(--good) 78%, var(--text));
-  }
-  .open-pick {
-    display: inline-flex; align-items: center; padding: 1px 7px; border-radius: 999px;
-    border: 1px dashed color-mix(in srgb, var(--accent) 50%, var(--border));
-    color: var(--text-muted); font-size: .7rem; font-weight: 700; white-space: nowrap;
-  }
-  .level-choice.is-grant { background: color-mix(in srgb, var(--good) 8%, var(--surface)); }
-  .level-choice.is-grant .level-choice-category { color: color-mix(in srgb, var(--good) 78%, var(--text)); }
-  .level-legend {
-    display: flex; align-items: center; flex-wrap: wrap; gap: 7px 14px;
-    margin: -4px 0 13px; color: var(--text-muted); font-size: .78rem;
-  }
-  .level-legend-item { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
-  .detail-cue {
-    align-self: center; display: inline-grid; place-items: center; width: 18px; height: 18px;
-    border: 1px solid var(--border); border-radius: 999px; color: var(--accent);
-    background: var(--accent-soft); font-size: .68rem; line-height: 1; font-weight: 800;
-  }
-  .level-choice > .detail-cue { margin-right: 6px; }
-  .section-hint {
-    margin: -3px 0 12px; color: var(--text-muted); font-size: .8rem; line-height: 1.4;
-  }
+  /* ---- Checklist and checkbox ---- */
+  .ck-wrap { position: relative; display: inline-block; flex: 0 0 auto; cursor: pointer; white-space: nowrap; }
+  .ck-wrap .ck { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ck-box::before { content: "[ ]"; color: var(--muted); }
+  .ck-wrap:hover .ck-box::before { color: var(--ink); }
+  .ck:checked + .ck-box::before { content: "[x]"; color: var(--accent); font-weight: 700; }
+  .ck:focus-visible + .ck-box { outline: 2px solid var(--accent); outline-offset: 2px; }
+  li.ck-li:has(> .ck-wrap .ck:checked), tr:has(> .ck-col .ck:checked) { color: var(--muted); }
+  ul.checklist { max-width: none; }
+  ul.checklist > li.ck-li { display: flex; align-items: baseline; gap: 1ch; padding-left: 0; }
+  ul.checklist > li.ck-li::before { display: none; }
+  .ck-spacer { display: inline-block; width: 3ch; flex: 0 0 auto; }
 
-  /* ---- Definition grid ---- */
-  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 20px; margin: 0; }
-  .fact { min-width: 0; }
-  .fact dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }
-  .fact dd { margin: 0; font-size: .92rem; }
-  .fact dd .note { display: block; font-size: .8rem; color: var(--text-muted); margin-top: 2px; }
+  /* ---- Badges and tokens ---- */
+  .pick-badge, .open-pick, .spell-plan-badge, .item-chip, .badge, .card-count {
+    font-size: var(--fs-sm); color: var(--muted); font-weight: 400; white-space: nowrap;
+  }
+  .item-tier { font-size: var(--fs-sm); font-weight: 700; white-space: nowrap; cursor: help; color: var(--muted); }
+  .item-tier.tier-s { color: var(--tier-s); }
+  .item-tier.tier-a { color: var(--tier-a); }
+  .item-tier.tier-b { color: var(--tier-b); }
+  .item-tier.tier-c { color: var(--muted); }
+  .item-tier.tier-d { color: var(--warn); }
+  .item-tier.tier-rank { color: var(--accent); }
+  .item-bis-star { color: var(--accent); font-weight: 700; }
 
-  /* ---- Stat block ---- */
-  .statblock { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
-  .stat {
-    background: var(--surface-2); border: 1px solid var(--border);
-    border-radius: 10px; padding: 8px 4px; text-align: center;
-  }
-  .stat .stat-k { font-size: .66rem; font-weight: 700; letter-spacing: .05em; color: var(--text-muted); }
-  .stat .stat-v { font-size: 1.35rem; font-weight: 700; line-height: 1.1; }
-  @media (max-width: 560px) { .statblock { grid-template-columns: repeat(3, 1fr); } }
-
-  /* ---- Lists ---- */
-  ul.clean { list-style: none; margin: 0; padding: 0; }
-  ul.clean li { position: relative; padding: 5px 0 5px 20px; font-size: .9rem; border-bottom: 1px solid var(--border); }
-  ul.clean li:last-child { border-bottom: none; }
-  ul.clean li::before { content: ""; position: absolute; left: 4px; top: 13px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-  ul.clean li .li-strong { font-weight: 600; }
-  ul.clean li .li-meta { color: var(--text-muted); font-size: .82rem; }
-
-  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag {
-    background: var(--surface-2); border: 1px solid var(--border);
-    border-radius: 8px; padding: 4px 10px; font-size: .84rem; font-weight: 500;
-  }
-
-  /* ---- Itemization guide ---- */
-  .itemization-tabs > .tabs { margin-bottom: 14px; }
-  .itemization-note { margin: -2px 0 12px; font-size: .8rem; }
-  .item-slot-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px; align-items: start;
-  }
-  /* Three side-by-side columns; each column stacks its slot cards vertically. */
-  .item-rows {
-    display: grid; gap: 18px;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start;
-  }
-  .item-row .item-slot-grid { grid-template-columns: minmax(0, 1fr); }
-  .item-row-label {
-    display: flex; align-items: center; gap: 10px; margin: 0 0 9px;
-    color: var(--text-muted); font-size: .68rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: .08em;
-  }
-  .item-row-label::after {
-    content: ""; flex: 1; height: 1px; background: var(--border);
-  }
-  .item-slot {
-    min-width: 0; background: var(--surface-2); border: 1px solid var(--border);
-    border-radius: 10px; padding: 12px 14px;
-    transition: border-color .14s ease, box-shadow .14s ease;
-  }
-  /* An item name row plus its badges. */
-  /* Six abilities is a known, fixed count, so pin the columns instead of letting
-     auto-fit drop the last card onto a row of its own. */
-  .ability-grid {
-    display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 10px; align-items: start;
-  }
-  @media (max-width: 1180px) { .ability-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 620px) { .ability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  .ability-card {
-    min-width: 0; background: var(--surface-2); border: 1px solid var(--border);
-    border-radius: 10px; padding: 9px 11px;
-  }
-  .ability-head {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 8px; margin-bottom: 5px;
-  }
-  .ability-k {
-    font-size: .68rem; font-weight: 800; letter-spacing: .09em;
-    text-transform: uppercase; color: var(--text-muted);
-  }
-  .ability-final { font-size: .95rem; font-weight: 800; color: var(--accent); }
-  ul.ability-steps { list-style: none; padding-left: 0; margin: 0; }
-  .ability-step {
-    display: flex; align-items: baseline; gap: 6px;
-    font-variant-numeric: tabular-nums; font-size: .8rem;
-    color: var(--text-muted); margin: 2px 0;
-  }
-  .ability-step.ability-latest { color: var(--text); font-weight: 700; }
-  .ability-mod { min-width: 2.1em; text-align: right; font-weight: 700; }
-  .ability-arrow { opacity: .55; }
-  .ability-score { min-width: 1.6em; }
-  .ability-src { font-size: .72rem; opacity: .85; }
-  .title-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-  .app-version {
-    font-size: .64rem; font-weight: 800; letter-spacing: .07em; padding: 2px 7px;
-    border-radius: 999px; color: var(--text-muted);
-    background: var(--surface-2); border: 1px solid var(--border);
-  }
-  /* A slot with nothing in it yet reads as an explicit empty state, not a missing row. */
-  li.ck-li.item-empty .item-name, li.ck-li.item-empty .flex-label { color: var(--text-muted); font-style: italic; }
-  .item-empty-icon { flex: 0 0 auto; width: 16px; text-align: center; color: var(--text-muted); opacity: .8; }
-  /* A slot that progresses: earliest at the top, best at the bottom. */
-  .slot-arrow { color: var(--accent); opacity: .7; font-size: .7rem; line-height: 1; margin: 1px 0 1px 3px; list-style: none; }
-  .flex-head { margin-bottom: 2px; }
-  .item-head { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; min-width: 0; }
-  .item-body { min-width: 0; flex: 1; }
-  .ck-spacer { flex: 0 0 auto; width: 16px; }
-  /* "(held over from Act 1)" renders as a badge rather than prose. */
-  .item-chip {
-    flex: 0 0 auto; font-size: .58rem; font-weight: 800; letter-spacing: .06em;
-    text-transform: uppercase; padding: 1px 6px; border-radius: 999px;
-    color: var(--text-muted); background: var(--surface); border: 1px solid var(--border);
-  }
-  /* Build-defining gear is meant to pop, in every act it appears. */
-  li.ck-li.item-bis { border-left: 3px solid var(--accent); padding-left: 7px; }
-  li.ck-li.item-bis .item-name { font-weight: 700; color: var(--text); }
-  .item-bis-star { flex: 0 0 auto; color: var(--accent); font-size: .72rem; line-height: 1; }
-  .item-chip.flex-chip { border-style: dashed; }
-  /* A published tier-list rating for an item or a spell: a letter tier, or "#N" from a
-     ranked best-items list. Hues are mixed against the theme so they read in light and
-     dark. */
-  .item-tier {
-    flex: 0 0 auto; font-size: .58rem; font-weight: 800; letter-spacing: .06em;
-    padding: 1px 6px; border-radius: 999px; cursor: help;
-    color: var(--text-muted); background: var(--surface); border: 1px solid var(--border);
-  }
-  .item-tier.tier-s {
-    color: color-mix(in srgb, #e0a020 62%, var(--text));
-    background: color-mix(in srgb, #e0a020 18%, var(--surface));
-    border-color: color-mix(in srgb, #e0a020 50%, var(--border));
-  }
-  .item-tier.tier-a {
-    color: color-mix(in srgb, var(--good) 78%, var(--text));
-    background: color-mix(in srgb, var(--good) 15%, var(--surface));
-    border-color: color-mix(in srgb, var(--good) 45%, var(--border));
-  }
-  .item-tier.tier-b {
-    color: color-mix(in srgb, #3f7fd0 68%, var(--text));
-    background: color-mix(in srgb, #3f7fd0 15%, var(--surface));
-    border-color: color-mix(in srgb, #3f7fd0 45%, var(--border));
-  }
-  .item-tier.tier-c { color: var(--text-muted); background: var(--surface-2); }
-  .item-tier.tier-d {
-    color: color-mix(in srgb, var(--warn) 78%, var(--text));
-    background: color-mix(in srgb, var(--warn) 14%, var(--surface));
-    border-color: color-mix(in srgb, var(--warn) 45%, var(--border));
-  }
-  /* A rank, not a letter: same weight, deliberately a different shape of badge. */
-  .item-tier.tier-rank {
-    color: color-mix(in srgb, var(--accent) 72%, var(--text));
-    background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-  }
-  /* A flex slot is a heading with small checkable candidates underneath. */
-  .flex-label { font-size: .82rem; font-weight: 700; color: var(--text-muted); }
-  ul.flex-options { list-style: none; padding-left: 10px; margin: 4px 0 0; border-left: 1px dashed var(--border); }
-  ul.flex-options li.ck-li.flex-option { margin: 3px 0; }
-  ul.flex-options .item-name { font-size: .78rem; }
-  ul.flex-options .item-tier { margin-top: 2px; }
-  /* Slot progression, newest on top. */
-  .prog-steps { margin-top: 3px; }
-  .prog-step {
-    font-size: .8rem; color: var(--text-muted);
-    display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
-  }
-  .prog-step .item-tier { font-size: .54rem; }
-  .prog-step.prog-latest { font-size: .86rem; font-weight: 700; color: var(--text); }
-  .prog-arrow { font-size: .66rem; line-height: 1.1; color: var(--accent); opacity: .75; }
-  .item-slot:hover {
-    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
-    box-shadow: 0 7px 20px rgba(28, 24, 44, .08);
-  }
-  .item-slot h4 {
-    margin: 0 0 8px; font-size: .72rem; color: var(--accent);
-    text-transform: uppercase; letter-spacing: .07em;
-  }
-  .card-heading {
-    display: flex; align-items: center; gap: 8px;
-  }
-  .card-count {
-    display: inline-grid; place-items: center; min-width: 20px; height: 20px;
-    margin-left: auto; padding: 0 6px; border-radius: 999px;
-    background: var(--surface); border: 1px solid var(--border); color: var(--text-muted);
-    font-size: .62rem; font-weight: 800; letter-spacing: 0; font-variant-numeric: tabular-nums;
-  }
-  .card-icon {
-    display: inline-grid; place-items: center; flex: 0 0 27px;
-    width: 27px; height: 27px; border: 1px solid var(--border);
-    border-radius: 8px; background: var(--accent-soft); color: var(--accent);
-    font-family: "Segoe UI Symbol", "Segoe UI Emoji", "Noto Sans Symbols 2", sans-serif;
-    font-size: .92rem; line-height: 1; letter-spacing: 0; text-transform: none;
-  }
-  .level-class .card-icon {
-    flex-basis: 25px; width: 25px; height: 25px; font-size: .82rem;
-  }
-  .level-choice-category .card-icon {
-    flex-basis: 23px; width: 23px; height: 23px;
-    border-radius: 7px; background: var(--surface); font-size: .76rem;
-  }
-  .item-slot ul.checklist li.ck-li {
-    align-items: center; overflow: visible; padding: 7px 4px; border-radius: 7px;
-    transition: background-color .12s ease;
-  }
-  .item-slot ul.checklist li.ck-li:hover {
-    background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
-  }
-  .item-slot ul.checklist li.ck-li::before { display: none; }
-  .slot-part + .slot-part { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); }
-  .slot-part-label {
-    margin: 0 0 4px; color: var(--text-muted); font-size: .64rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: .07em;
-  }
+  /* ---- Tooltip ---- */
   .item-tip-wrap { position: relative; display: inline-flex; align-items: baseline; min-width: 0; max-width: 100%; }
-  .item-details {
-    display: inline-grid; place-items: center; width: 18px; height: 18px;
-    margin-left: 4px; padding: 0; border: 1px solid var(--border); border-radius: 999px;
-    color: var(--accent); background: var(--surface); font: inherit; font-size: .62rem;
-    line-height: 1; font-weight: 800; cursor: help; flex: 0 0 auto;
-  }
-  .item-details:hover { border-color: var(--accent); background: var(--accent-soft); }
-  .item-details:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .item-details { font-size: var(--fs-sm); color: var(--muted); margin-left: .5ch; cursor: help; flex: 0 0 auto; }
+  .item-details:hover { color: var(--ink); }
   .item-name {
-    appearance: none; background: none; border: 0; border-bottom: 1px dotted var(--accent);
-    color: var(--text); padding: 1px 0; max-width: 100%; overflow-wrap: anywhere;
-    font: inherit; font-weight: 600; text-align: left;
-    cursor: help;
+    color: inherit; font-weight: 700; border-bottom: 1px dotted var(--rule);
+    max-width: 100%; overflow-wrap: anywhere; cursor: help;
   }
   a.item-name { display: inline; text-decoration: none; cursor: pointer; }
   .item-name.wiki-item-group { display: inline-block; }
   .item-name .wiki-item { text-decoration: none; }
-  .item-name:hover { color: var(--accent); }
-  .item-name:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .item-name:hover { color: var(--accent); border-bottom-color: var(--accent); }
   .item-tip {
     position: fixed; z-index: 1000; left: 16px; top: 16px;
-    width: min(390px, calc(100vw - 32px)); padding: 12px 14px;
-    color: var(--text); background: var(--surface); border: 1px solid var(--border);
-    border-radius: 9px; box-shadow: 0 12px 32px rgba(0,0,0,.32);
-    font-size: .82rem; line-height: 1.45; font-weight: 400;
-    opacity: 0; visibility: hidden; pointer-events: none;
-    transform: translateY(4px); transition: opacity .12s ease, transform .12s ease, visibility .12s;
+    width: min(390px, calc(100vw - 32px)); padding: var(--lh-half) 1.5ch;
+    color: var(--ink); background: var(--bg); border: 1px solid var(--ink);
+    font-size: var(--fs-sm); line-height: 1.5; font-weight: 400; text-transform: none; text-align: left;
+    visibility: hidden; pointer-events: none;
   }
-  .item-tip-k {
-    display: block; margin-bottom: 7px; color: var(--accent); font-size: .65rem;
-    font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
-  }
-  .tip-content { display: grid; gap: 7px; }
-  .tip-summary { display: block; color: var(--text); }
-  .tip-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 9px; }
+  .item-tip-k { display: block; margin-bottom: .25rem; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+  .tip-content { display: grid; gap: .25rem; }
+  .tip-summary { display: block; }
+  .tip-facts { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0 2ch; }
   .tip-fact { display: contents; }
-  .tip-fact-k {
-    color: var(--text-muted); font-size: .65rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: .04em; white-space: nowrap;
-  }
-  .tip-fact-v { min-width: 0; color: var(--text); }
+  .tip-fact-k { color: var(--muted); text-transform: uppercase; white-space: nowrap; }
+  .tip-fact-v { min-width: 0; }
   .item-tip-wrap:hover .item-tip,
   .item-tip-wrap:focus-within .item-tip,
   .item-tip-wrap.tip-pinned .item-tip,
   .level-choice:hover > .item-tip,
   .level-choice:focus-within > .item-tip,
-  .level-choice:focus-visible > .item-tip {
-    opacity: 1; visibility: visible; transform: translateY(0);
-  }
+  .level-choice:focus-visible > .item-tip { visibility: visible; }
   .item-tip-wrap.tip-dismissed .item-tip,
-  .level-choice.tip-dismissed > .item-tip {
-    opacity: 0 !important; visibility: hidden !important; transform: translateY(4px) !important;
-  }
+  .level-choice.tip-dismissed > .item-tip { visibility: hidden !important; }
+  .has-hover { border-bottom: 1px dotted var(--rule); cursor: help; }
 
-  /* ---- Meters ---- */
-  .meters { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
-  .meter .meter-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
-  .meter .meter-k { font-size: .8rem; font-weight: 700; text-transform: capitalize; }
-  .meter .meter-v { font-size: .8rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
-  .meter .meter-track { height: 8px; background: var(--surface-3); border-radius: 999px; overflow: hidden; }
-  .meter .meter-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+  /* ---- Leveling ---- */
+  .level-table { min-width: 90ch; }
+  .level-number { font-weight: 700; }
+  /* Column hints, so one long class string cannot starve the gains and picks columns. */
+  .level-number-cell { width: 4ch; }
+  .level-class-cell { width: 18ch; }
+  .level-gains-cell { width: 28ch; }
+  .level-gain-list { list-style: none; margin: 0; padding: 0; }
+  .level-gain-list li { position: relative; padding-left: 2ch; }
+  .level-gain-list li::before { content: "-"; position: absolute; left: 0; color: var(--muted); }
+  .level-choice-list { display: grid; gap: .25rem; min-width: 36ch; }
+  .level-choice { display: grid; grid-template-columns: 13ch minmax(0, 1fr) auto; column-gap: 1ch; align-items: baseline; }
+  .level-choice-category { font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); overflow-wrap: anywhere; }
+  .level-choice-body { display: flex; flex-wrap: wrap; gap: 0 1ch; align-items: baseline; min-width: 0; }
+  .level-choice-recommendation { font-weight: 700; overflow-wrap: anywhere; }
+  .detail-cue { font-size: var(--fs-sm); color: var(--muted); }
+  .level-choice:hover .detail-cue, .level-choice:focus-visible .detail-cue { color: var(--ink); }
+  .level-legend { display: flex; flex-wrap: wrap; gap: 0 3ch; font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin: 0 0 var(--lh-half); }
+  .level-legend-item { display: inline-flex; gap: 1ch; }
 
-  /* ---- Nova ---- */
-  .nova-config { border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 14px; background: var(--surface-2); }
-  .nova-config h4 { margin: 0 0 10px; font-size: 1rem; }
-  tr.total-row td { background: var(--accent-soft) !important; font-weight: 700; color: var(--accent); border-top: 2px solid var(--accent); }
+  /* ---- Itemization ---- */
+  .itemization-note { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin: 0 0 var(--lh-half); max-width: var(--prose); }
+  .item-rows { display: grid; grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr)); gap: var(--lh) var(--gutter); align-items: start; }
+  .item-row { min-width: 0; }
+  .item-row-label { text-transform: uppercase; margin: 0 0 var(--lh-half); }
+  .item-slot { min-width: 0; margin: 0 0 var(--lh-half); }
+  .card-heading { display: flex; gap: 1ch; align-items: baseline; font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); }
+  .slot-part + .slot-part { margin-top: .25rem; }
+  .slot-part-label { font-size: var(--fs-sm); line-height: 1.5; text-transform: uppercase; color: var(--muted); }
+  .item-body { min-width: 0; flex: 1; }
+  .item-head { display: flex; align-items: baseline; gap: 0 1ch; flex-wrap: wrap; min-width: 0; }
+  li.ck-li.item-empty .item-name { color: var(--muted); font-weight: 400; border-bottom: 0; cursor: default; }
+  .item-empty-icon { color: var(--muted); flex: 0 0 auto; }
+  .slot-arrow, .prog-arrow { color: var(--muted); }
+  .slot-arrow { padding-left: 4ch; }
+  .flex-label { font-weight: 700; color: var(--muted); cursor: help; }
+  ul.flex-options { margin: 0; padding-left: 1ch; border-left: 1px solid var(--rule); max-width: none; }
+  ul.flex-options > li.ck-li.flex-option { display: flex; flex-wrap: wrap; gap: 0 1ch; align-items: baseline; padding-left: 0; }
+  ul.flex-options > li::before { display: none; }
+  .prog-step { display: flex; gap: 0 1ch; flex-wrap: wrap; align-items: baseline; color: var(--muted); }
+  .prog-step.prog-latest { color: var(--ink); font-weight: 700; }
 
-  .callout {
-    background: var(--surface-2); border-left: 3px solid var(--accent);
-    border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: .86rem; color: var(--text-muted);
-    margin-top: 12px;
-  }
-  .callout .callout-k { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); font-weight: 700; margin-bottom: 3px; }
-  .callout.warn { border-left-color: var(--warn); }
-  .callout.warn .callout-k { color: var(--warn); }
+  /* ---- Ability scores ---- */
+  .ability-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--lh-half) 2ch; align-items: start; margin: 0 0 var(--lh-half); }
+  .ability-grid:last-child, .statblock:last-child { margin-bottom: 0; }
+  .ability-card { min-width: 0; }
+  .ability-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1ch; border-bottom: 1px solid var(--rule); }
+  .ability-k { font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .ability-final { font-weight: 700; }
+  ul.ability-steps { margin: 0; padding: 0; max-width: none; }
+  ul.ability-steps > li { padding-left: 0; }
+  ul.ability-steps > li::before { display: none; }
+  .ability-step { display: flex; gap: 0 .5ch; flex-wrap: wrap; align-items: baseline; font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); }
+  .ability-step.ability-latest { color: var(--ink); font-weight: 700; }
+  .ability-mod { min-width: 3ch; text-align: right; }
+  .statblock { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 2ch; margin: 0 0 var(--lh-half); }
+  .stat { border-top: 1px solid var(--rule); }
+  .stat-k { font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .stat-v { font-weight: 700; }
+  .stat-base { text-decoration: line-through; color: var(--muted); font-weight: 400; margin-right: .5ch; }
 
-  /* ---- Tabs ---- */
-  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px; flex-wrap: wrap; }
-  .tab {
-    background: none; border: none; border-bottom: 2px solid transparent;
-    padding: 9px 14px; font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer;
-    color: var(--text-muted); margin-bottom: -1px; display: inline-flex; align-items: center; gap: 8px;
-    border-radius: 8px 8px 0 0;
-  }
-  .tab:hover { color: var(--text); background: var(--surface-2); }
-  .tab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
-  .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-  .badge {
-    background: var(--accent); color: var(--accent-text); font-size: .62rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: .04em; padding: 2px 6px; border-radius: 999px;
-  }
+  /* ---- Facts ---- */
+  .facts { display: grid; grid-template-columns: fit-content(24ch) minmax(0, 1fr); gap: 0 2ch; margin: 0 0 var(--lh-half); }
+  .facts:last-child { margin-bottom: 0; }
+  .fact { display: contents; }
+  .fact dt { font-size: var(--fs-sm); line-height: var(--lh); text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .fact dd { margin: 0; min-width: 0; }
+  .fact dd .note { display: block; margin: 0; }
 
-  .subgrid { display: grid; gap: 18px; }
-  @media (min-width: 780px) { .subgrid.two { grid-template-columns: 1fr 1fr; align-items: start; } }
-  ul.priority { list-style: none; padding-left: 0; margin: 4px 0 0; }
-  ul.priority li { padding: 3px 0; line-height: 1.35; }
-  .spell-list-note { margin: -2px 0 12px; font-size: .8rem; }
-  .spell-plan-legend {
-    display: flex; align-items: center; flex-wrap: wrap; gap: 7px;
-    margin: -4px 0 14px; color: var(--text-muted); font-size: .78rem;
-  }
-  .spell-plan-legend + .spell-plan-legend { margin-top: -8px; }
+  /* ---- Spells ---- */
+  .spell-list-note { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin: 0 0 var(--lh-half); max-width: var(--prose); }
+  .spell-plan-legend { display: flex; flex-wrap: wrap; gap: 0 1ch; align-items: baseline; font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); }
+  .spell-plan-legend + .spell-plan-legend { margin-top: 0; }
+  .spell-plan-legend:last-of-type { margin-bottom: var(--lh-half); }
   .spell-plan-legend .item-tier { cursor: default; }
-  .spell-entry-main { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px; min-width: 0; }
-  .spell-plan-badge {
-    display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;
-    padding: 2px 6px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
-    border-radius: 999px; background: var(--accent-soft); color: var(--accent);
-    font-size: .64rem; line-height: 1.2; font-weight: 700; white-space: nowrap;
-  }
-  .spell-plan-badge.is-grant {
-    border-color: color-mix(in srgb, var(--good) 45%, var(--border));
-    background: color-mix(in srgb, var(--good) 15%, var(--surface));
-    color: color-mix(in srgb, var(--good) 78%, var(--text));
-  }
-  .spell-level-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-  .spell-level .item-name { font-weight: 600; }
-  .spell-checklist .spell-planned {
-    box-shadow: inset 2px 0 0 color-mix(in srgb, var(--accent) 55%, transparent);
-  }
-  .spell-checklist .spell-alternative .item-name { color: color-mix(in srgb, var(--text) 78%, var(--text-muted)); }
-  .spell-checklist .spell-alternative:hover .item-name { color: var(--text); }
-  .has-hover { border-bottom: 1px dotted var(--text-muted); cursor: help; }
-  .prio-key { font-weight: 700; color: var(--text); border-bottom-color: var(--accent); }
-  .stat-base { text-decoration: line-through; color: var(--text-muted); font-size: .7em; margin-right: 5px; opacity: .75; }
-  .stat-final.has-hover { border-bottom: 1px dotted var(--accent); cursor: help; }
+  .spell-level-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr)); gap: var(--lh-half) var(--gutter); align-items: start; }
+  .spell-entry-main { display: inline-flex; flex-wrap: wrap; gap: 0 1ch; align-items: baseline; min-width: 0; }
+  .spell-checklist .spell-alternative .item-name { font-weight: 400; }
 
-  /* ---- Mobile ---- */
-  @media (max-width: 820px) {
-    .layout { grid-template-columns: 1fr; padding: 14px; gap: 14px; }
-    .sidebar { position: static; top: auto; }
-    .nav-list { display: flex; flex-wrap: wrap; gap: 6px; }
-    .nav-item { width: auto; margin-bottom: 0; }
-    .sidebar h2 { width: 100%; margin: 6px 6px 2px; }
-    .nav-group-h { width: 100%; margin: 6px 6px 2px; }
-    .nav-item.nav-item-sub { padding-left: 12px; }
-    .nav-item .nav-sub { display: none; }
-    .page-outline { margin-inline: 0; }
-    .page-outline-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-    .level-table-wrap { border: 0; overflow: visible; background: transparent; }
+  /* ---- Meters and nova ---- */
+  .meters { display: grid; gap: 0; }
+  .meter { display: flex; gap: 0 1ch; align-items: baseline; flex-wrap: wrap; }
+  .meter-k { min-width: 14ch; text-transform: capitalize; }
+  .meter-bar { white-space: pre; }
+  .meter-fill { color: var(--ink); }
+  .meter-rest { color: var(--rule); }
+  .meter-v { font-size: var(--fs-sm); color: var(--muted); }
+  .nova-config { margin: 0 0 var(--lh-half); }
+  .nova-config h4 { margin-bottom: .25rem; }
+
+  /* ---- Sub-tabs ---- */
+  .tabs { display: flex; flex-wrap: wrap; align-items: baseline; margin: 0 0 var(--lh-half); }
+  .tab { color: var(--muted); }
+  .tab + .tab::before { content: "\00B7"; display: inline-block; margin: 0 1ch; color: var(--muted); font-weight: 400; text-decoration: none; }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .tab .badge { margin-left: .5ch; }
+
+  /* ---- Loot ---- */
+  .loot-table td, .loot-table th { vertical-align: top; }
+  .loot-events-h { margin: var(--lh) 0 var(--lh-half); }
+
+  /* ---- Proficiencies ---- */
+  .prof-table th[scope="col"] { text-align: center; }
+  .prof-table th[scope="col"]:first-child { text-align: left; }
+  .prof-table td.prof-abil { text-align: center; color: var(--muted); font-size: var(--fs-sm); }
+  .prof-table td.prof-cell { text-align: center; font-weight: 700; min-width: 5ch; }
+  .prof-table td.prof-exp { color: var(--accent); }
+  .prof-table td.prof-yes { color: var(--ink); }
+  .prof-table td.prof-half { color: var(--muted); font-weight: 400; }
+  .prof-table td.prof-no { color: var(--rule); font-weight: 400; }
+  .prof-table tr.prof-saves td.prof-savecell { text-align: center; font-size: var(--fs-sm); }
+  .prof-table tr.prof-saves td, .prof-table tr.prof-saves th { border-bottom: 1px solid var(--ink); }
+
+  /* ---- Ratings ---- */
+  .rate-tier { margin: 0 0 var(--lh); }
+  .rate-tier:last-child { margin-bottom: 0; }
+  .rate-tier-h { display: flex; align-items: baseline; gap: 0 1ch; border-bottom: 1px solid var(--rule); margin: 0 0 var(--lh-half); }
+  .rate-tier-h .item-tier { font-size: inherit; cursor: default; }
+  .rate-tier-what { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); flex: 1; min-width: 0; }
+  ul.rate-list { list-style: none; margin: 0; padding: 0; }
+  li.rate-row { margin: 0 0 var(--lh-half); }
+  li.rate-row:last-child { margin-bottom: 0; }
+  .rate-head { display: flex; align-items: baseline; gap: 0 1ch; flex-wrap: wrap; }
+  .rate-name { font-weight: 700; }
+  .rate-verdict { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); max-width: var(--prose); }
+  .rate-at { white-space: nowrap; margin-left: 1ch; }
+  .rate-lists { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); margin: 0 0 var(--lh-half); }
+  .rate-lists a { color: inherit; }
+
+  /* ---- Locations and route ---- */
+  .loc-wiki { margin-left: 1ch; font-size: var(--fs-sm); font-weight: 400; }
+  .loc-sub { display: flex; align-items: baseline; gap: 0 2ch; flex-wrap: wrap; }
+  .curse-chip { color: var(--muted); }
+  .curse-chip.curse-deep { color: var(--warn); }
+  .loc-summary { margin: var(--lh-half) 0; }
+  ol.route-steps { list-style: none; margin: 0 0 var(--lh-half); padding: 0; }
+  li.route-step { display: grid; grid-template-columns: 4ch minmax(0, 1fr); column-gap: 1ch; margin: 0 0 var(--lh-half); }
+  li.route-step:last-child { margin-bottom: 0; }
+  .route-step-n { grid-column: 1; text-align: right; color: var(--muted); font-weight: 700; }
+  .route-step-head { grid-column: 2; display: flex; align-items: baseline; gap: 0 1ch; flex-wrap: wrap; }
+  .route-step-title { font-weight: 700; }
+  .route-step-do, .route-warn, .route-leave, .route-neighbours { grid-column: 2; }
+  .route-step-do .prose, .route-step-do ul.prose-list { margin-bottom: 0; }
+  .route-warn { color: var(--warn); }
+  .route-warn-k, .route-leave-k { font-size: var(--fs-sm); text-transform: uppercase; font-weight: 700; color: var(--muted); }
+  .route-warn-k { color: var(--warn); }
+  .route-leave, .route-neighbours { font-size: var(--fs-sm); line-height: 1.5; color: var(--muted); }
+  .route-neighbours { display: flex; gap: 0 3ch; flex-wrap: wrap; }
+  .route-cutoffs { display: grid; gap: var(--lh-half); margin: 0 0 var(--lh-half); }
+  .route-cutoffs .callout { margin: 0; }
+  button.loc-link { color: var(--accent); font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  button.loc-link:hover { color: var(--ink); }
+  ul.loc-quests > li.loc-quest { margin: 0 0 var(--lh-half); }
+  ul.loc-quests > li.loc-quest:last-child { margin-bottom: 0; }
+  .loc-route-open { margin: var(--lh-half) 0 0; }
+  .pc-block { margin: 0 0 var(--lh-half); }
+  .pc-part { margin: .25rem 0 0; }
+  .pc-label { font-size: var(--fs-sm); line-height: 1.5; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .pc-part .prose, .pc-part ul.prose-list { margin: 0; }
+
+  /* ---- Responsive ---- */
+  @media (min-width: 60rem) {
+    .subgrid.two { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+  @media (max-width: 60rem) {
+    .layout { grid-template-columns: 1fr; padding: 0 2ch; }
+    .header-inner, .toptabs-bar { padding-left: 2ch; padding-right: 2ch; }
+    .sidebar { position: static; max-height: none; overflow: visible; padding: var(--lh) 0 var(--lh-half); border-bottom: 1px solid var(--rule); }
+    .nav-list { display: flex; flex-wrap: wrap; gap: 0 2ch; }
+    .nav-item { width: auto; }
+    .sidebar h2, .nav-group-h { width: 100%; margin-top: 0; }
+    .nav-sub { display: none; }
+    main.content { border-left: 0; padding-left: 0; }
+    .ability-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .level-table-wrap { overflow: visible; }
     .level-table, .level-table tbody { display: block; min-width: 0; }
     .level-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-    .level-table tbody { display: grid; gap: 12px; }
-    .level-table tbody tr {
-      position: relative; display: grid; grid-template-columns: 46px minmax(0, 1fr);
-      border: 1px solid var(--border); border-radius: 11px; overflow: visible;
-      background: var(--surface);
-    }
-    .level-table tbody td { display: block; border: 0; background: transparent !important; }
-    .level-table .level-check-cell {
-      position: absolute; top: 13px; right: 12px; width: auto; padding: 0;
-    }
-    .level-table .level-number-cell { padding: 10px 6px 8px 10px; }
-    .level-table .level-class-cell { padding: 11px 42px 8px 2px; }
-    .level-table .level-gains-cell, .level-table .level-recommendations-cell {
-      grid-column: 1 / -1; padding: 10px 12px;
-      border-top: 1px solid var(--border);
-    }
+    .level-table tbody { display: grid; gap: var(--lh-half); }
+    .level-table tbody tr { display: grid; grid-template-columns: 3ch 4ch minmax(0, 1fr); column-gap: 1ch; border-bottom: 1px solid var(--rule); padding-bottom: var(--lh-half); }
+    .level-table tbody td { display: block; border: 0; padding: 0; }
+    .level-table .level-gains-cell, .level-table .level-recommendations-cell { grid-column: 1 / -1; margin-top: .25rem; }
     .level-table .level-gains-cell::before, .level-table .level-recommendations-cell::before {
-      content: attr(data-label); display: block; margin-bottom: 7px; color: var(--text-muted);
-      font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
+      content: attr(data-label); display: block; font-size: var(--fs-sm); line-height: 1.5;
+      text-transform: uppercase; color: var(--muted); font-weight: 700;
     }
     .level-choice-list { min-width: 0; }
   }
-  @media (max-width: 480px) {
-    .item-slot-grid, .item-row .item-slot-grid { grid-template-columns: 1fr; }
-    .item-rows { grid-template-columns: 1fr; }
-    .level-choice { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr) 24px; }
-    .level-choice:not(.has-detail) { grid-template-columns: minmax(92px, 112px) minmax(0, 1fr); }
-    .header-inner { padding: 12px 14px; }
-    .toptabs-bar { padding: 0 14px; }
-    .card { padding: 14px; }
-    .view-title { font-size: 1.25rem; }
+  @media (max-width: 40rem) {
+    .ability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .statblock { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .facts { grid-template-columns: minmax(0, 1fr); }
+    .fact dt { margin-top: .25rem; }
+    .level-choice { grid-template-columns: minmax(0, 1fr) auto; }
+    .level-choice-category { grid-column: 1 / -1; }
+    .view-title { font-size: var(--fs); }
   }
-  .skip-link {
-    position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--accent-text);
-    padding: 8px 14px; border-radius: 8px; z-index: 100; font-weight: 600;
+
+  /* ---- Print ---- */
+  @media print {
+    :root, html[data-theme="light"], html[data-theme="dark"] {
+      --bg: #ffffff; --ink: #000000; --muted: #444444; --rule: #999999;
+    }
+    .skip-link, .theme-toggle, .sidebar, .toptabs-bar, .tabs, .detail-cue, .item-details,
+    .contents, .item-tip, a.wiki-item::after, a.rate-at::after { display: none !important; }
+    header.app { border-bottom: 1px solid var(--ink); }
+    .layout { display: block; padding: 0; max-width: none; }
+    main.content { border-left: 0; padding-left: 0; }
+    .table-wrap { overflow: visible; }
+    [role="tabpanel"][hidden] { display: block !important; }
+    [role="tabpanel"][data-tab-label]::before {
+      content: attr(data-tab-label); display: block; margin: var(--lh-half) 0 .25rem;
+      font-size: var(--fs-sm); line-height: 1.5; text-transform: uppercase; font-weight: 700; color: var(--muted);
+    }
+    .sec, li.route-step, .item-slot, .ability-card, li.rate-row { break-inside: avoid; }
   }
-  .skip-link:focus { left: 8px; }
 </style>
 </head>
 <body>
@@ -1024,7 +772,10 @@ function checkbox(key, label) {
     if (!ok) cb.checked = isChecked(key);
   });
   registerCheckbox(key, cb);
-  return cb;
+  /* The native input stays for keyboard and screen readers; the visible mark is the
+     text "[ ]" / "[x]" drawn by .ck-box, so it prints and reads like Markdown. */
+  return h("label", { class: "ck-wrap", title: places.length ? "Shared checkoff — also ticks " + places.join(", ") : null },
+    cb, h("span", { class: "ck-box", "aria-hidden": "true" }));
 }
 
 /* ---------------- Per-view UI state (scroll offset + open tabs) ----------------
@@ -1088,7 +839,7 @@ function rememberTab(idBase, index) {
 
 /* Reusable components */
 function section(title, ...content) {
-  return h("section", { class: "card" }, h("h3", { class: "section-title" }, title), ...content);
+  return h("section", { class: "sec" }, h("h3", { class: "sec-h" }, title), ...content);
 }
 function tableWrap(node) {
   return h("div", { class: "table-wrap" }, node);
@@ -1233,59 +984,27 @@ function renderFeats(feats) {
   );
 }
 
+/* Comma-separated inline text, each tag bold. */
 function renderTags(items) {
-  return h(
-    "div",
-    { class: "tag-list" },
-    arr(items).map((t) => h("span", { class: "tag" }, t))
-  );
+  const out = [];
+  arr(items).forEach((t, i) => {
+    if (i) out.push(", ");
+    out.push(h("span", { class: "tag" }, t));
+  });
+  return h("p", { class: "tag-list" }, out);
 }
 
-function cardIcon(symbol) {
-  return h("span", { class: "card-icon", "aria-hidden": "true" }, symbol);
-}
-
-function cardHeading(label, symbol, count) {
+/* A slot or level-group label: the name, then "(n)" for the count. No icon; the
+   style guide names things instead of drawing them. */
+function cardHeading(label, count) {
   return h("h4", { class: "card-heading" },
-    cardIcon(symbol),
     h("span", null, label),
-    count != null ? h("span", { class: "card-count", "aria-label": count + " entries" }, String(count)) : null
+    count != null ? h("span", { class: "card-count", "aria-label": count + " entries" }, "(" + count + ")") : null
   );
-}
-
-function levelCategoryIcon(category) {
-  const value = String(category).toLowerCase();
-  if (value.includes("cantrip")) return "✧";
-  if (value.includes("feat")) return "★";
-  if (value.includes("spell") || value.includes("magical secrets")) return "✦";
-  if (value.includes("subclass") || value.includes("patron") || value.includes("pact")) return "◆";
-  if (value.includes("metamagic")) return "↻";
-  if (value.includes("expertise")) return "◎";
-  if (value.includes("invocation")) return "◇";
-  if (value.includes("fighting style")) return "⚔";
-  if (value.includes("multiclass")) return "⇄";
-  return "•";
-}
-
-function classIcon(className) {
-  const value = String(className).toLowerCase();
-  if (value.includes("bard")) return "♫";
-  if (value.includes("cleric")) return "✚";
-  if (value.includes("fighter")) return "⚔";
-  if (value.includes("monk")) return "✊";
-  if (value.includes("paladin")) return "🛡";
-  if (value.includes("rogue")) return "🗡";
-  if (value.includes("sorcerer")) return "✦";
-  if (value.includes("warlock")) return "◉";
-  if (value.includes("wizard")) return "⌁";
-  return "◆";
 }
 
 function renderClass(className) {
-  return h("span", { class: "level-class" },
-    cardIcon(classIcon(className)),
-    h("span", null, className)
-  );
+  return h("span", { class: "level-class" }, className);
 }
 
 function renderLevelGains(gains) {
@@ -1313,7 +1032,7 @@ function pickBadge(rec, namedCount) {
         title: fixed
           ? "Fixed by the class, subclass or race — not a selection you make"
           : "Granted by the class, subclass or race — costs no pick and no prepared slot",
-      }, h("span", { "aria-hidden": "true" }, "✦"), fixed ? "Fixed" : "Free · no pick"),
+      }, fixed ? "[fixed]" : "[free]"),
     };
   }
   const raw = Number(rec.picks);
@@ -1321,7 +1040,7 @@ function pickBadge(rec, namedCount) {
   const picks = Math.trunc(raw);
   const open = Math.max(0, picks - namedCount);
   const parts = [picks === 1 ? "1 pick" : picks + " picks"];
-  if (rec.optional === true) parts.push("optional");
+  if (rec.optional === true) parts.push("swap");
   if (namedCount > picks) parts.push(namedCount + " listed");
   else if (open) parts.push(open + " open");
   return {
@@ -1332,7 +1051,7 @@ function pickBadge(rec, namedCount) {
       title: picks === 1
         ? "This level grants one selection in this category"
         : "This level grants " + picks + " selections in this category",
-    }, parts.join(" · ")),
+    }, "[" + parts.join(" · ") + "]"),
   };
 }
 
@@ -1365,7 +1084,7 @@ function renderLevelRecommendation(rec) {
     recommendation.push(h("span", {
       class: "open-pick",
       title: "A selection this level grants that the guide has not assigned — pick it in play",
-    }, "open pick"));
+    }, "[ open ]"));
   }
   const hasNote = has(rec.note);
   const tipId = hasNote ? "level-tip-" + (++LEVEL_TIP_SERIAL) : null;
@@ -1378,15 +1097,12 @@ function renderLevelRecommendation(rec) {
     tabindex: hasNote ? "0" : null,
     "aria-describedby": tipId,
   },
-    h("div", { class: "level-choice-category" },
-      cardIcon(levelCategoryIcon(category)),
-      h("span", null, category)
-    ),
+    h("div", { class: "level-choice-category" }, category),
     h("div", { class: "level-choice-body" },
-      badge.node,
-      h("div", { class: "level-choice-recommendation" }, recommendation.length ? recommendation : "—")
+      h("div", { class: "level-choice-recommendation" }, recommendation.length ? recommendation : "—"),
+      badge.node
     ),
-    hasNote ? h("span", { class: "detail-cue", "aria-hidden": "true" }, "i") : null,
+    hasNote ? h("span", { class: "detail-cue", "aria-hidden": "true" }, "[?]") : null,
     tipNode
   );
   if (tipNode) attachHoverTip(choice, choice, tipNode);
@@ -1407,7 +1123,7 @@ function renderLevelingTable(rows, keyPrefix) {
       "table",
       { class: "level-table" },
       h("thead", null, h("tr", null,
-        keyPrefix ? h("th", { scope: "col", class: "ck-col" }, "✓") : null,
+        keyPrefix ? h("th", { scope: "col", class: "ck-col", "aria-label": "Done" }, "") : null,
         h("th", { scope: "col" }, "Lvl"),
         h("th", { scope: "col" }, "Class"),
         h("th", { scope: "col" }, "Automatic gains"),
@@ -1447,7 +1163,7 @@ function renderLeveling(lv, idHint, keyRoot) {
         content: h(
           "div",
           null,
-          has(seg.note) ? h("p", { class: "prose muted", style: "margin-top:0;font-size:.85rem" }, seg.note) : null,
+          has(seg.note) ? h("p", { class: "note" }, seg.note) : null,
           renderLevelingTable(arr(seg.rows), keyRoot ? "lvl:" + keyRoot + "/" + slug(seg.label || "segment") : null)
         ),
       }))
@@ -1478,26 +1194,6 @@ function itemSlotCard(slot) {
 /* Short label for a part inside a shared card. */
 const ITEM_SLOT_PART_LABELS = { "Melee Weapons": "Weapon", "Off-hand & Shields": "Off-hand" };
 
-const ITEM_SLOT_ICONS = {
-  Head: "⛑",
-  Armour: "🛡",
-  Hands: "🧤",
-  Rings: "◉",
-  "Ring 1": "◉",
-  "Ring 2": "◎",
-  Boots: "🥾",
-  Amulets: "♦",
-  Cloaks: "🧥",
-  "Melee & Shield": "⚔",
-  "Ranged Weapons": "🏹",
-  // The Ratings tab still names the two underlying slots, so they keep their icons.
-  "Melee Weapons": "⚔",
-  "Off-hand & Shields": "⛨",
-  Elixirs: "⚗",
-  "Potions & Oils": "🧪",
-  Other: "✦",
-};
-
 /* Content writes slots freely ("feet", "off-hand", "consumables", …); map the
    spellings that exist onto the card names above. */
 const ITEM_SLOT_ALIASES = {
@@ -1522,10 +1218,6 @@ const ITEM_SLOT_ALIASES = {
 };
 
 const RANGED_WEAPON_WORDS = ["bow", "crossbow", "sling", "dart", "javelin", "ranged"];
-
-function itemSlotIcon(slot) {
-  return ITEM_SLOT_ICONS[slot] || ITEM_SLOT_ICONS.Other;
-}
 
 /* Keyword fallback for entries whose slot is missing or unrecognised. */
 function classifyItemText(text) {
@@ -1606,7 +1298,9 @@ function itemTier(entry) {
   const raw = String(entry.tier).trim();
   const letter = /^[SABCDF]\+?$/i.test(raw) ? raw.toUpperCase() : null;
   /* A rank used to live in `tier`; tolerate that shape so old content still renders. */
-  const label = letter || (/^#?\d+$/.test(raw) ? raw.replace(/^#?/, "#") : raw.toUpperCase());
+  const label = letter
+    ? "[" + letter + "]"
+    : (/^#?\d+$/.test(raw) ? raw.replace(/^#?/, "#") : "[" + raw.toUpperCase() + "]");
   const note = has(entry.tier_note) ? String(entry.tier_note) : null;
   const named = letter ? "Tier " + letter : label;
   /* A rank note already names its list and repeats the rank, so it stands alone; a
@@ -1775,7 +1469,7 @@ function linkedNameTip(label, linkedNode, tip, tipId, heading) {
     "aria-label": "Show details for " + label,
     "aria-describedby": tipId,
     "aria-expanded": "false",
-  }, "i") : null;
+  }, "[?]") : null;
   const tipWrap = h("span", { class: "item-tip-wrap" + (tipNode ? " has-tip" : "") },
     nameControl, detailsControl, tipNode);
   if (tipNode) {
@@ -1809,10 +1503,10 @@ function linkedNameTip(label, linkedNode, tip, tipId, heading) {
 const ITEM_HELD_RE = /\s*\(\s*(?:held|carried)\s+over(?:\s+from\s+act\s*([123]))?\s*\)\s*/i;
 function itemHeldChip(entry) {
   const held = entry && typeof entry === "object" ? entry.held : null;
-  if (has(held) && held !== false) return /^[123]$/.test(String(held)) ? "Act " + held : "Held";
+  if (has(held) && held !== false) return /^[123]$/.test(String(held)) ? "(Act " + held + ")" : "(held)";
   const m = itemLabel(entry).match(ITEM_HELD_RE);
   if (!m) return null;
-  return m[1] ? "Act " + m[1] : "Held";
+  return m[1] ? "(Act " + m[1] + ")" : "(held)";
 }
 /* A shallow clone whose visible name has the held-over parenthetical removed. The
    `wiki` field is untouched, so wiki linking is unaffected. */
@@ -1936,9 +1630,9 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
           key ? checkbox(key, "Mark " + label + " acquired") : null,
           h("div", { class: "item-body" },
             h("div", { class: "item-head" },
+              bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "*") : null,
               linkedNameTip(heading, plain, tip, tipId, "How the slot progresses"),
-              badges,
-              bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "\u2605") : null
+              badges
             ),
             parts.steps.length > 1 ? progressionSteps(parts.steps, rated) : null
           )
@@ -1976,10 +1670,10 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
               });
               return h("li", { class: "ck-li flex-option" + (oBis ? " item-bis" : "") },
                 oKey ? checkbox(oKey, "Mark " + oLabel + " acquired") : null,
+                oBis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "*") : null,
                 linkedNameTip(oLabel, oName, oTip, oTipId, "What it does & why it fits"),
                 itemBadges(opt),
-                oBis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "★") : null,
-                isDefault ? h("span", { class: "item-chip flex-chip", title: "The usual pick; the rows below are its alternates" }, "Default") : null,
+                isDefault ? h("span", { class: "item-chip flex-chip", title: "The usual pick; the rows below are its alternates" }, "(default)") : null,
                 oChip ? h("span", { class: "item-chip" }, oChip) : null
               );
             }))
@@ -1993,7 +1687,7 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
           "aria-describedby": tip ? tipId : null,
         }, itemLabel(shown));
         return h("li", { class: cls },
-          h("span", { class: "item-empty-icon", "aria-hidden": "true" }, "\u2298"),
+          h("span", { class: "item-empty-icon", "aria-hidden": "true" }, "[-]"),
           h("div", { class: "item-body" },
             h("div", { class: "item-head" },
               linkedNameTip(itemLabel(shown), emptyName, tip, tipId, "Why this slot is empty")
@@ -2010,9 +1704,9 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
         key ? checkbox(key, "Mark " + label + " acquired") : null,
         h("div", { class: "item-body" },
           h("div", { class: "item-head" },
+            bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "*") : null,
             linkedNameTip(itemLabel(shown), nameLink, tip, tipId, "What it does & why it fits"),
             badges,
-            bis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "\u2605") : null,
             chip ? h("span", { class: "item-chip" }, chip) : null
           )
         )
@@ -2068,7 +1762,7 @@ function itemActPanel(entries, act, keyRoot, rated) {
           const parts = groups.get(card);
           const count = Array.from(parts.values()).reduce((n, list) => n + list.length, 0);
           return h("section", { class: "item-slot" },
-            cardHeading(card, itemSlotIcon(card), count),
+            cardHeading(card, count),
             itemSlotCardBody(card, parts, act, keyRoot, rated)
           );
         })
@@ -2096,27 +1790,26 @@ function renderItemization(it, keyRoot) {
   );
 }
 
+/* A score out of five as a text bar of block characters, so it prints as drawn. */
 function renderScores(scores) {
+  const cells = 10;
   return h(
     "div",
     { class: "meters" },
     Object.keys(scores).map((k) => {
       const val = Number(scores[k]);
-      const pct = Math.max(0, Math.min(100, (val / 5) * 100));
+      const filled = Math.max(0, Math.min(cells, Math.round((val / 5) * cells)));
       return h(
         "div",
         { class: "meter" },
+        h("span", { class: "meter-k" }, k),
         h(
-          "div",
-          { class: "meter-head" },
-          h("span", { class: "meter-k" }, k),
-          h("span", { class: "meter-v" }, val + " / 5")
+          "span",
+          { class: "meter-bar", role: "meter", "aria-valuenow": val, "aria-valuemin": 0, "aria-valuemax": 5, "aria-label": k + " score " + val + " of 5" },
+          h("span", { class: "meter-fill" }, "█".repeat(filled)),
+          h("span", { class: "meter-rest" }, "░".repeat(cells - filled))
         ),
-        h(
-          "div",
-          { class: "meter-track", role: "meter", "aria-valuenow": val, "aria-valuemin": 0, "aria-valuemax": 5, "aria-label": k + " score " + val + " of 5" },
-          h("div", { class: "meter-fill", style: "width:" + pct + "%" })
-        )
+        h("span", { class: "meter-v" }, val + " / 5")
       );
     })
   );
@@ -2177,7 +1870,7 @@ function renderNova(nova) {
 /* ---------------- Build renderer ---------------- */
 /* small sub-heading used inside multi-part sections */
 function subhead(text) {
-  return h("h4", { class: "section-title", style: "font-size:1rem;margin:18px 0 8px" }, text);
+  return h("h4", { class: "subhead" }, text);
 }
 
 /* ---------------- Character creation (Level 1) ---------------- */
@@ -2256,14 +1949,14 @@ function spellChecklist(entries) {
                 class: "spell-plan-badge",
                 title: "Included in the leveling guide at character level " + planLevel,
                 "aria-label": "Leveling-guide pick at character level " + planLevel,
-              }, h("span", { "aria-hidden": "true" }, "◆"), "Lv " + planLevel)
+              }, "[Lv " + planLevel + "]")
             : null,
           isGrantedSpell(s)
             ? h("span", {
                 class: "spell-plan-badge is-grant",
                 title: "Granted by the class, subclass or race — costs no spell pick and no prepared slot",
                 "aria-label": "Free class grant, costs no pick",
-              }, h("span", { "aria-hidden": "true" }, "✦"), "Free")
+              }, "[free]")
             : null
         )
       );
@@ -2283,7 +1976,7 @@ function spellLevelPanel(entries) {
   return h("div", { class: "item-slot-grid spell-level-grid" },
     groups.map(([label, levelEntries]) =>
       h("section", { class: "item-slot spell-level" },
-        cardHeading(label, label === "Cantrips" ? "✧" : "✦", levelEntries.length),
+        cardHeading(label, levelEntries.length),
         spellChecklist(levelEntries)
       )
     )
@@ -2310,13 +2003,13 @@ function renderSpellsByLevel(sp) {
   return h("div", { class: "spell-list-ui" },
     has(sp.note) ? h("p", { class: "muted spell-list-note" }, sp.note) : null,
     h("div", { class: "spell-plan-legend" },
-      h("span", { class: "spell-plan-badge", "aria-hidden": "true" }, "◆", "Lv N"),
+      h("span", { class: "spell-plan-badge", "aria-hidden": "true" }, "[Lv N]"),
       h("span", null, "Included in the leveling guide at that character level; unmarked entries are other good choices. Use the info button for details.")
     ),
     /* Only builds that actually own a free grant get its legend line. */
     entries.some(isGrantedSpell)
       ? h("div", { class: "spell-plan-legend" },
-          h("span", { class: "spell-plan-badge is-grant", "aria-hidden": "true" }, "✦", "Free"),
+          h("span", { class: "spell-plan-badge is-grant", "aria-hidden": "true" }, "[free]"),
           h("span", null, "Handed over by the class, subclass or race — it spends no spell pick and no prepared slot.")
         )
       : null,
@@ -2324,7 +2017,7 @@ function renderSpellsByLevel(sp) {
        about tiers rather than advertising a legend for badges it never shows. */
     entries.some(itemTier)
       ? h("div", { class: "spell-plan-legend" },
-          h("span", { class: "item-tier tier-s", "aria-hidden": "true" }, "S"),
+          h("span", { class: "item-tier tier-s", "aria-hidden": "true" }, "[S]"),
           h("span", null, "The guide videos' tier for the spell inside its own spell-level list. Hover the badge, or the info button, for the source and verdict.")
         )
       : null,
@@ -2380,7 +2073,7 @@ function renderPickpocket(pp) {
 
   if (has(pp.setup_by_act) && has(pp.setup_by_act.acts)) {
     wrap.appendChild(subhead("Setup by act — kit swaps & buffs"));
-    if (has(pp.setup_by_act.note)) wrap.appendChild(h("p", { class: "prose muted", style: "margin-top:0;font-size:.85rem" }, pp.setup_by_act.note));
+    if (has(pp.setup_by_act.note)) wrap.appendChild(h("p", { class: "note" }, pp.setup_by_act.note));
     wrap.appendChild(
       tableWrap(
         h(
@@ -2412,7 +2105,7 @@ function renderPickpocket(pp) {
 
   if (has(pp.procedure)) {
     wrap.appendChild(subhead("Step-by-step procedure"));
-    wrap.appendChild(h("div", { class: "prose", style: "white-space:pre-wrap" }, pp.procedure));
+    wrap.appendChild(h("div", { class: "prose pre" }, pp.procedure));
   }
   return wrap;
 }
@@ -2458,76 +2151,30 @@ function renderGameplan(gp) {
   return wrap;
 }
 
-const PAGE_OUTLINE_OBSERVERS = [];
-
-function clearPageOutlineObservers() {
-  PAGE_OUTLINE_OBSERVERS.splice(0).forEach((observer) => observer.disconnect());
-}
-
-function addPageOutline(wrap, keyRoot) {
+/* A static "Contents:" line at the top of a long page, one anchor per section. It
+   stands in for the sticky outline bar the guide used to have, so the page reads the
+   same printed as on screen. */
+function addContentsLine(wrap, keyRoot) {
   const sections = Array.from(wrap.children).filter((node) =>
-    node.matches && node.matches("section.card") && node.querySelector(".section-title")
+    node.matches && node.matches("section.sec") && node.querySelector(".sec-h")
   );
   if (sections.length < 2) return;
-
   const links = [];
   sections.forEach((node, index) => {
-    const title = node.querySelector(".section-title");
-    const label = title.textContent.trim();
-    node.classList.add("page-section");
+    const label = node.querySelector(".sec-h").textContent.trim();
     node.id = "section-" + slug(keyRoot) + "-" + slug(label) + "-" + index;
-    const link = h("a", {
-      class: "page-outline-link",
-      href: "#" + node.id,
-    }, label);
+    if (index) links.push(" · ");
+    const link = h("a", { href: "#" + node.id }, label);
     link.addEventListener("click", (ev) => {
       ev.preventDefault();
       node.scrollIntoView({ block: "start", behavior: "auto" });
       if (window.history && window.history.replaceState) {
         window.history.replaceState(null, "", "#" + node.id);
       }
-      setActive(node.id);
     });
-    links.push({ link, node });
+    links.push(link);
   });
-
-  const setActive = (id) => {
-    links.forEach(({ link, node }) => {
-      if (node.id === id) link.setAttribute("aria-current", "location");
-      else link.removeAttribute("aria-current");
-    });
-  };
-
-  const nav = h("nav", { class: "page-outline", "aria-label": "On this page" },
-    h("span", { class: "page-outline-label" }, "On this page"),
-    h("span", { class: "page-outline-links" }, links.map(({ link }) => link))
-  );
-  wrap.insertBefore(nav, wrap.firstChild);
-  setActive(sections[0].id);
-
-  if ("IntersectionObserver" in window) {
-    const visible = new Map();
-    const header = document.querySelector("header.app");
-    const headerBottom = header ? Math.round(header.getBoundingClientRect().bottom) : 0;
-    const marker = headerBottom + 58;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => visible.set(entry.target, entry.isIntersecting));
-      const candidates = sections.filter((node) => visible.get(node));
-      if (!candidates.length) return;
-      const passed = candidates
-        .filter((node) => node.getBoundingClientRect().top <= marker + 2)
-        .sort((a, b) => b.getBoundingClientRect().top - a.getBoundingClientRect().top);
-      const current = passed[0] || candidates.sort((a, b) =>
-        a.getBoundingClientRect().top - b.getBoundingClientRect().top
-      )[0];
-      if (current) setActive(current.id);
-    }, {
-      rootMargin: "-" + marker + "px 0px -65% 0px",
-      threshold: [0, 0.01],
-    });
-    sections.forEach((node) => observer.observe(node));
-    PAGE_OUTLINE_OBSERVERS.push(observer);
-  }
+  wrap.insertBefore(h("p", { class: "contents" }, "Contents: ", links), wrap.firstChild);
 }
 
 function renderBuild(b, charName) {
@@ -2539,10 +2186,10 @@ function renderBuild(b, charName) {
   // long rest, and what its concentration is spent on.
   if (has(b.at_a_glance)) {
     const g = b.at_a_glance;
-    const row = h("div", { class: "chips glance", role: "list", "aria-label": "At a glance" });
+    const row = h("div", { class: "glance", role: "list", "aria-label": "At a glance" });
     const add = (label, value) => {
       if (!has(value)) return;
-      row.appendChild(h("span", { class: "chip accent", role: "listitem" }, h("span", { class: "chip-k" }, label), String(value)));
+      row.appendChild(h("span", { class: "glance-item", role: "listitem" }, h("span", { class: "glance-k" }, label), h("span", null, String(value))));
     };
     add("Armour", g.armour);
     add("Elixir", g.elixir);
@@ -2556,8 +2203,8 @@ function renderBuild(b, charName) {
 
   // Overview — role + a couple of identity facts (no build_order / ability_targets;
   // ability boosts moved under Ability scores, level order into Leveling).
-  const head = h("section", { class: "card" }, h("h3", { class: "section-title" }, "Overview"));
-  if (has(b.role)) head.appendChild(h("p", { class: "view-sub", style: "font-size:1rem;margin-bottom:12px" }, b.role));
+  const head = h("section", { class: "sec" }, h("h3", { class: "sec-h" }, "Overview"));
+  if (has(b.role)) head.appendChild(h("p", { class: "prose muted" }, b.role));
   const facts = h("dl", { class: "facts" });
   const addFact = (label, valNode) => facts.appendChild(h("div", { class: "fact" }, h("dt", null, label), h("dd", null, valNode)));
   if (has(b.class)) addFact("Class", b.class);
@@ -2584,8 +2231,8 @@ function renderBuild(b, charName) {
     const sc = section("Ability scores");
     if (has(b.ability_scores)) sc.appendChild(renderAbilityChains(b.ability_scores));
     else sc.appendChild(renderStatblock(b.starting_stats));
-    if (has(b.ability_targets)) sc.appendChild(h("p", { class: "prose muted", style: "margin-top:10px;font-size:.85rem" }, h("span", { class: "li-strong" }, "Boosts: "), b.ability_targets));
-    if (has(b.stats_note)) sc.appendChild(h("p", { class: "prose muted", style: "margin-top:6px;font-size:.85rem" }, b.stats_note));
+    if (has(b.ability_targets)) sc.appendChild(h("p", { class: "note" }, h("span", { class: "li-strong" }, "Boosts: "), b.ability_targets));
+    if (has(b.stats_note)) sc.appendChild(h("p", { class: "note" }, b.stats_note));
     wrap.appendChild(sc);
   }
 
@@ -2600,17 +2247,17 @@ function renderBuild(b, charName) {
   // older content usable, while migrated builds separate automatic gains from
   // recommendations directly in every row.
   const levelMain = h("div", { class: "lvl-main" },
-    h("h3", { class: "section-title" }, "Leveling"),
+    h("h3", { class: "sec-h" }, "Leveling"),
     h("p", { class: "section-hint" }, "Automatic gains are fixed; the third column is what you actually choose. Hover or focus a row to see why it fits."),
     h("div", { class: "level-legend" },
       h("span", { class: "level-legend-item" },
-        h("span", { class: "pick-badge" }, "2 picks"),
-        h("span", null, "selections this level grants")),
+        h("span", { class: "pick-badge" }, "[2 picks]"),
+        h("span", null, "selections this level opens")),
       h("span", { class: "level-legend-item" },
-        h("span", { class: "open-pick" }, "open pick"),
+        h("span", { class: "open-pick" }, "[ open ]"),
         h("span", null, "granted but not yet assigned")),
       h("span", { class: "level-legend-item" },
-        h("span", { class: "pick-badge is-grant" }, h("span", { "aria-hidden": "true" }, "✦"), "Free · no pick"),
+        h("span", { class: "pick-badge is-grant" }, "[free]"),
         h("span", null, "handed over by the class or subclass"))
     )
   );
@@ -2621,7 +2268,7 @@ function renderBuild(b, charName) {
     }
     levelMain.appendChild(renderLeveling(lv, b.name, keyRoot));
   }
-  wrap.appendChild(h("section", { class: "card" }, levelMain));
+  wrap.appendChild(h("section", { class: "sec" }, levelMain));
 
   if (has(b.spells)) {
     const spells = renderSpellsByLevel(b.spells);
@@ -2632,19 +2279,14 @@ function renderBuild(b, charName) {
   if (has(b.pickpocket)) wrap.appendChild(section("Pickpocketing", renderPickpocket(b.pickpocket)));
   if (has(b.nova)) wrap.appendChild(section("Nova turn", renderNova(b.nova)));
 
-  addPageOutline(wrap, keyRoot);
+  addContentsLine(wrap, keyRoot);
   return wrap;
 }
 
 /* ---------------- Character view (with build tabs) ---------------- */
 function renderCharacter(name, builds) {
   const container = h("div", null);
-  const header = h(
-    "div",
-    { class: "card" },
-    h("h2", { class: "view-title" }, name)
-  );
-  container.appendChild(header);
+  container.appendChild(h("div", { class: "page-head" }, h("h2", { class: "view-title" }, name)));
 
   if (builds.length === 1) {
     container.appendChild(renderBuild(builds[0], name));
@@ -2674,11 +2316,14 @@ function renderCharacter(name, builds) {
         type: "button",
       },
       b.name || "Build " + (i + 1),
-      b.is_primary ? h("span", { class: "badge" }, "Primary") : null
+      b.is_primary ? h("span", { class: "badge" }, "(primary)") : null
     );
     const panel = h(
       "div",
-      { role: "tabpanel", id: panelId, "aria-labelledby": tabId, tabindex: "0", hidden: selected ? null : "hidden" },
+      {
+        role: "tabpanel", id: panelId, "aria-labelledby": tabId, tabindex: "0",
+        hidden: selected ? null : "hidden", "data-tab-label": b.name || "Build " + (i + 1),
+      },
       renderBuild(b, name)
     );
     if (!selected) panel.setAttribute("hidden", "hidden");
@@ -2885,7 +2530,7 @@ function renderCoreItems(core) {
 
 function renderOverview(party) {
   const c = h("div", null);
-  c.appendChild(h("div", { class: "card" }, h("h2", { class: "view-title" }, "Party overview"), h("p", { class: "view-sub" }, "Act 1 coverage, concentration ownership, core items, synergies, and progression at a glance.")));
+  c.appendChild(h("div", { class: "page-head" }, h("h2", { class: "view-title" }, "Party overview"), h("p", { class: "view-sub" }, "Act 1 coverage, concentration ownership, core items, synergies, and progression at a glance.")));
 
   if (has(party.roster)) c.appendChild(section("Roster", renderRoster(party.roster)));
   if (has(party.act1_coverage)) c.appendChild(section("Act 1 must-have coverage", renderAct1Coverage(party.act1_coverage)));
@@ -2906,25 +2551,25 @@ function renderHeader(meta) {
   const host = document.getElementById("app-header");
   host.innerHTML = "";
 
-  const titles = h("div", { class: "header-titles" });
-  titles.appendChild(h("div", { class: "title-row" },
+  // One masthead line: title, version, then mode / patch / companion docs as a
+  // dot-separated run, then the theme toggle at the right edge.
+  const run = [];
+  const addRun = (node) => { if (run.length) run.push(" · "); run.push(node); };
+  if (has(meta.mode)) addRun("Mode: " + meta.mode);
+  if (has(meta.patch)) addRun(String(meta.patch));
+  arr(meta.companion_docs).forEach((d) => {
+    // Friendly label: strip directory + trailing extension so a raw path like
+    // "resources/reddit/research.md" reads as "research", and link to the document.
+    const label = String(d).split(/[\\/]/).pop().replace(/\.[^.]+$/, "");
+    addRun(h("a", { href: d }, label));
+  });
+  host.appendChild(h("div", { class: "masthead" },
     h("h1", null, meta.title || "BG3 Party Plan"),
-    has(meta.version) ? h("span", { class: "app-version", title: "Plan version" }, "v" + meta.version) : null
+    has(meta.version) ? h("span", { class: "app-version", title: "Plan version" }, "v" + meta.version) : null,
+    run.length ? h("span", { class: "meta-run" }, run) : null,
+    buildThemeToggle()
   ));
 
-  const chips = h("div", { class: "chips" });
-  if (has(meta.mode)) chips.appendChild(h("span", { class: "chip accent" }, h("span", { class: "chip-k" }, "Mode"), meta.mode));
-  if (has(meta.patch)) chips.appendChild(h("span", { class: "chip" }, h("span", { class: "chip-k" }, "Patch"), meta.patch));
-  arr(meta.companion_docs).forEach((d) => {
-    // Friendly label: strip directory + trailing extension so a raw path
-    // like "resources/reddit/research.md" reads as "research", and make it a real
-    // link to the document instead of dead chip noise.
-    const label = String(d).split(/[\\/]/).pop().replace(/\.[^.]+$/, "");
-    chips.appendChild(h("a", { class: "chip", href: d }, h("span", { class: "chip-doc-icon", "aria-hidden": "true" }, "📄"), label));
-  });
-  titles.appendChild(chips);
-
-  // Assumptions details (keeps header compact)
   if (has(meta.stat_assumption) || has(meta.mode_note)) {
     const det = h("details", { class: "assumptions" });
     det.appendChild(h("summary", null, "Assumptions & mode notes"));
@@ -2932,11 +2577,8 @@ function renderHeader(meta) {
     if (has(meta.stat_assumption)) body.appendChild(h("p", null, h("strong", null, "Stats: "), meta.stat_assumption));
     if (has(meta.mode_note)) body.appendChild(h("p", null, h("strong", null, "Mode: "), meta.mode_note));
     det.appendChild(body);
-    titles.appendChild(det);
+    host.appendChild(det);
   }
-
-  host.appendChild(titles);
-  host.appendChild(buildThemeToggle());
 }
 
 /* ---------------- Theme ---------------- */
@@ -2963,7 +2605,7 @@ function buildThemeToggle() {
     const t = document.documentElement.getAttribute("data-theme");
     const dark = t === "dark";
     // Visible text becomes the accessible name (WCAG 2.5.3 Label in Name).
-    btn.textContent = dark ? "☀  Light" : "☽  Dark";
+    btn.textContent = dark ? "[light]" : "[dark]";
     btn.setAttribute("aria-pressed", String(dark));
   };
   btn.addEventListener("click", () => {
@@ -2998,14 +2640,14 @@ function buildThemeToggle() {
 function lootTable(items, keyPrefix) {
   return tableWrap(h("table", { class: "loot-table" },
     h("thead", null, h("tr", null,
-      keyPrefix ? h("th", { scope: "col", class: "ck-col" }, "✓") : null,
+      keyPrefix ? h("th", { scope: "col", class: "ck-col", "aria-label": "Done" }, "") : null,
       h("th", { scope: "col" }, "Item"), h("th", { scope: "col" }, "For"), h("th", { scope: "col" }, "Notes"))),
     h("tbody", null, items.map((it) =>
       h("tr", { class: it.core ? "loot-core" : null },
         keyPrefix ? h("td", { class: "ck-col" }, checkbox(lootItemKey(keyPrefix, it.name), "Mark " + it.name + " acquired")) : null,
-        h("td", { class: "cell-strong" }, it.core ? "★ " : null, wikiItemNode(it) || it.name),
+        h("td", { class: "cell-strong" }, it.core ? h("span", { class: "item-bis-star", title: "Core build item" }, "* ") : null, wikiItemNode(it) || it.name),
         h("td", null, it.for && it.for !== "any" ? h("span", { class: "who-chip" }, it.for) : h("span", { class: "muted" }, "any")),
-        h("td", null, (it.note || "") + (it.verify ? "  ⚠ verify" : ""))
+        h("td", null, it.note || "", it.verify ? h("span", { class: "verify" }, " (verify)") : null)
       )
     ))
   ));
@@ -3025,8 +2667,8 @@ function miniTabs(idBase, entries, ariaLabel) {
     const tab = h("button", {
       class: "tab", role: "tab", id: tabId, "aria-controls": panelId,
       "aria-selected": String(selected), tabindex: selected ? "0" : "-1", type: "button",
-    }, entry.label, entry.count != null ? h("span", { class: "badge" }, String(entry.count)) : null);
-    const panel = h("div", { role: "tabpanel", id: panelId, "aria-labelledby": tabId, tabindex: "0" }, entry.content);
+    }, entry.label, entry.count != null ? h("span", { class: "badge" }, "(" + entry.count + ")") : null);
+    const panel = h("div", { role: "tabpanel", id: panelId, "aria-labelledby": tabId, tabindex: "0", "data-tab-label": entry.label }, entry.content);
     if (!selected) panel.setAttribute("hidden", "hidden");
     const activate = (focus) => {
       tabs.forEach((t, j) => {
@@ -3062,7 +2704,7 @@ function renderLoot(a) {
   frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" }, a ? "Loot — Act " + a.act : "Loot"));
   if (!a) { frag.appendChild(h("p", { class: "muted" }, "No data for this act.")); return frag; }
   const total = a.areas.reduce((s, ar) => s + arr(ar.items).length, 0);
-  frag.appendChild(h("p", { class: "view-sub" }, a.areas.length + " areas · " + total + " items · ★ = core build item · Mandatory = plan-critical, FYI = good but off-plan"));
+  frag.appendChild(h("p", { class: "view-sub" }, a.areas.length + " areas · " + total + " items · * = core build item · Mandatory = plan-critical, FYI = good but off-plan"));
   a.areas.forEach((area, ai) => {
     const kids = [];
     const items = arr(area.items);
@@ -3096,10 +2738,10 @@ function renderProficiencies(pr) {
 
   const mark = (c, skill) => {
     const p = pr.characters[c] || {};
-    if (arr(p.expertise).indexOf(skill) >= 0) return { t: "★", cls: "prof-exp", title: "Expertise" };
-    if (arr(p.proficient).indexOf(skill) >= 0) return { t: "●", cls: "prof-yes", title: "Proficient" };
-    if (p.jack_of_all_trades) return { t: "½", cls: "prof-half", title: "Jack of All Trades (half)" };
-    return { t: "·", cls: "prof-no", title: "Not proficient" };
+    if (arr(p.expertise).indexOf(skill) >= 0) return { t: "E", cls: "prof-exp", title: "Expertise" };
+    if (arr(p.proficient).indexOf(skill) >= 0) return { t: "P", cls: "prof-yes", title: "Proficient" };
+    if (p.jack_of_all_trades) return { t: "H", cls: "prof-half", title: "Jack of All Trades (half)" };
+    return { t: "-", cls: "prof-no", title: "Not proficient" };
   };
 
   const head = h("tr", null,
@@ -3126,7 +2768,7 @@ function renderProficiencies(pr) {
   ));
 
   if (pr.legend) {
-    frag.appendChild(h("p", { class: "muted", style: "font-size:.82rem;margin-top:4px" },
+    frag.appendChild(h("p", { class: "note" },
       [pr.legend.expertise, pr.legend.proficient, pr.legend.jack].filter(Boolean).join("   ·   ")));
   }
 
@@ -3290,7 +2932,7 @@ function ratingRow(row, sources, party) {
       h("span", { class: "rate-name" }, wikiItemNode(entry) || row.item),
       itemBadges(entry),
       who && who.length
-        ? h("span", { class: "item-chip rate-party", title: "In the plan for " + who.join(", ") }, who.join(" · "))
+        ? h("span", { class: "item-chip rate-party", title: "In the plan for " + who.join(", ") }, "(" + who.join(" · ") + ")")
         : null),
     has(row.verdict) || url
       ? h("div", { class: "rate-verdict" },
@@ -3299,7 +2941,7 @@ function ratingRow(row, sources, party) {
             class: "rate-at", href: url, target: "_blank", rel: "noopener noreferrer",
             title: (src ? src.title : row.source) + " — open at " + row.at,
             "aria-label": "Watch the verdict on " + row.item + " at " + row.at,
-          }, "▸ " + row.at) : null)
+          }, row.at) : null)
       : null);
 }
 
@@ -3318,12 +2960,12 @@ function ratingTierGroups(rows, scale, sources, party) {
   return out.map((g) => h("div", { class: "rate-tier" },
     h("div", { class: "rate-tier-h" },
       h("span", { class: "item-tier " + (g.letter ? itemTierClass(g.letter) : "tier-rank") },
-        g.letter || "no letter"),
+        g.letter ? "[" + g.letter + "]" : "no letter"),
       h("span", { class: "rate-tier-what" },
         g.letter
           ? (scale[g.letter] || scale[g.letter.charAt(0)] || "")
           : "on a top-20 countdown, but its own slot's list has not been read yet"),
-      h("span", { class: "badge" }, String(g.rows.length))),
+      h("span", { class: "badge" }, "(" + g.rows.length + ")")),
     h("ul", { class: "rate-list" }, g.rows.map((row) => ratingRow(row, sources, party)))));
 }
 
@@ -3342,8 +2984,7 @@ function ratingListLinks(ids, sources) {
 function renderRatingsSlot(r, slotName, data) {
   const frag = document.createDocumentFragment();
   const slot = arr(r.slots).find((s) => s.slot === slotName);
-  frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" },
-    itemSlotIcon(slotName) + " " + slotName + " — ratings"));
+  frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" }, slotName + " — ratings"));
   if (!slot) {
     frag.appendChild(h("p", { class: "muted" }, "Nothing rated in this slot yet."));
     return frag;
@@ -3383,8 +3024,8 @@ function renderRatingsOverview(r) {
   if (has(r.tier_scale)) {
     frag.appendChild(section("What the letters mean",
       bulletList(arr(r.tier_scale).map((row) => h("li", null,
-        h("span", { class: "item-tier " + itemTierClass(row.tier) }, row.tier),
-        h("span", { class: "li-meta", style: "display:inline;margin-left:8px" }, row.what))))));
+        h("span", { class: "item-tier " + itemTierClass(row.tier) }, "[" + row.tier + "]"),
+        h("span", { class: "muted" }, " " + row.what))))));
   }
   if (has(r.slots)) {
     frag.appendChild(section("Coverage by item type",
@@ -3394,7 +3035,7 @@ function renderRatingsOverview(r) {
           h("th", { class: "num", scope: "col" }, "Ratings"),
           h("th", { scope: "col" }, "Lists it came from"))),
         h("tbody", null, arr(r.slots).map((slot) => h("tr", null,
-          h("td", { class: "cell-strong" }, itemSlotIcon(slot.slot) + " " + slot.slot),
+          h("td", { class: "cell-strong" }, slot.slot),
           h("td", { class: "num" }, String(slot.count)),
           h("td", null, arr(slot.acts).map((act) => act.label + " (" + act.count + ")").join(" · ")))))))));
   }
@@ -3474,7 +3115,7 @@ function locationLink(data, slugName, label) {
 function curseChip(level) {
   if (!has(level)) return null;
   const v = String(level).toLowerCase();
-  const text = v === "none" ? "No curse" : v === "deep" ? "Deep curse" : v === "light" ? "Curse: torchlight is enough" : String(level);
+  const text = v === "none" ? "(no curse)" : v === "deep" ? "(deep curse)" : v === "light" ? "(curse: torchlight is enough)" : "(" + String(level) + ")";
   return h("span", { class: "curse-chip curse-" + v }, text);
 }
 
@@ -3489,7 +3130,7 @@ function routeStepNode(data, entry, index, opts) {
       has(step.title) ? h("span", { class: "route-step-title" }, step.title) : null
     ),
     has(step.do) ? h("div", { class: "route-step-do" }, richText(step.do)) : null,
-    has(step.warn) ? h("div", { class: "route-warn" }, "⚠ " + step.warn) : null,
+    has(step.warn) ? h("div", { class: "route-warn" }, h("span", { class: "route-warn-k" }, "Warn"), " " + step.warn) : null,
     has(step.leave) ? h("div", { class: "route-leave" }, h("span", { class: "route-leave-k" }, "Then"), " " + step.leave) : null
   );
 }
@@ -3537,7 +3178,7 @@ function renderRoute(data) {
           h("td", null, g.who && g.who !== "any" ? h("span", { class: "who-chip" }, g.who) : h("span", { class: "muted" }, "party")),
           h("td", null, g.note || "")
         ))))));
-      if (sum) kids.push(h("p", { class: "muted", style: "font-size:.82rem;margin-top:4px" }, "About " + sum.toLocaleString() + " gp in total."));
+      if (sum) kids.push(h("p", { class: "note" }, "About " + sum.toLocaleString() + " gp in total."));
     }
     const title = (has(block.act) ? "Act " + block.act : "Route") + (has(block.title) ? " — " + block.title : "");
     frag.appendChild(section(title, ...kids));
@@ -3548,16 +3189,16 @@ function renderRoute(data) {
 function locationItemsTable(loc, items) {
   return tableWrap(h("table", { class: "loot-table loc-table" },
     h("thead", null, h("tr", null,
-      h("th", { scope: "col", class: "ck-col" }, "✓"),
+      h("th", { scope: "col", class: "ck-col", "aria-label": "Done" }, ""),
       h("th", { scope: "col" }, "Item"), h("th", { scope: "col" }, "For"),
       h("th", { scope: "col" }, "Where"), h("th", { scope: "col" }, "How"), h("th", { scope: "col" }, "Notes"))),
     h("tbody", null, items.map((it, i) => h("tr", { class: it.core ? "loot-core" : null },
       h("td", { class: "ck-col" }, checkbox(placeItemKey(loc.slug, it, i), "Mark " + it.name + " acquired")),
-      h("td", { class: "cell-strong" }, it.core ? "★ " : null, wikiItemNode(it) || it.name),
+      h("td", { class: "cell-strong" }, it.core ? h("span", { class: "item-bis-star", title: "Plan gear" }, "* ") : null, wikiItemNode(it) || it.name),
       h("td", null, it.for && it.for !== "any" ? h("span", { class: "who-chip" }, it.for) : h("span", { class: "muted" }, "any")),
       h("td", null, it.where || ""),
       h("td", null, it.how || ""),
-      h("td", null, (it.note || "") + (it.verify ? "  ⚠ verify" : ""))
+      h("td", null, it.note || "", it.verify ? h("span", { class: "verify" }, " (verify)") : null)
     )))
   ));
 }
@@ -3611,7 +3252,7 @@ function renderLocation(data, slugName) {
     const core = items.filter((it) => it.core);
     const rest = items.filter((it) => !it.core);
     frag.appendChild(section("Items",
-      h("p", { class: "muted itemization-note" }, items.length + " listed · ★ = plan gear · ticks are shared with the Loot tab and the character pages"),
+      h("p", { class: "muted itemization-note" }, items.length + " listed · * = plan gear · ticks are shared with the Loot tab and the character pages"),
       locationItemsTable(loc, core.concat(rest))));
   }
   if (has(loc.quests)) {
@@ -3619,7 +3260,7 @@ function renderLocation(data, slugName) {
       h("div", null, has(q.wiki) ? wikiPageLink(String(q.wiki), { class: "li-strong" }, q.name) : h("span", { class: "li-strong" }, q.name)),
       has(q.steps) ? h("div", { class: "li-meta" }, richText(q.steps)) : null,
       has(q.outcome) ? h("div", { class: "li-meta" }, h("span", { class: "li-strong" }, "Outcome: "), q.outcome) : null,
-      has(q.lockout) ? h("div", { class: "route-warn" }, "⚠ " + q.lockout) : null
+      has(q.lockout) ? h("div", { class: "route-warn" }, h("span", { class: "route-warn-k" }, "Lockout"), " " + q.lockout) : null
     )))));
   }
   if (has(loc.lockouts)) {
@@ -3628,7 +3269,7 @@ function renderLocation(data, slugName) {
   if (has(loc.npcs)) {
     frag.appendChild(section("People", bulletList(arr(loc.npcs).map((n) => h("li", null,
       h("span", { class: "li-strong" }, n.name),
-      has(n.role) ? h("span", { class: "who-chip", style: "margin-left:8px" }, n.role) : null,
+      has(n.role) ? h("span", { class: "muted" }, " · " + n.role) : null,
       has(n.note) ? h("div", { class: "li-meta" }, n.note) : null)))));
   }
   if (has(loc.checks)) {
@@ -3730,7 +3371,6 @@ function buildNav(onSelect) {
         const btn = h(
           "button",
           { class: "nav-item" + (entry.group ? " nav-item-sub" : ""), type: "button", "data-key": entry.key, tabindex: "-1" },
-          h("span", { class: "nav-dot", "aria-hidden": "true" }),
           h(
             "span",
             { class: "nav-label" },
@@ -3825,7 +3465,7 @@ function buildTopTabs(onActivate, defs) {
     const c = document.getElementById("main-content");
     if (c)
       c.innerHTML =
-        '<div class="card"><h3>Can’t reach the guide server</h3>' +
+        '<div class="sec"><h3 class="sec-h">Can’t reach the guide server</h3>' +
         "<p>This page is served by the local <code>bg3</code> server. Start it with " +
         '<code>cargo run</code>, then open <a href="/">http://127.0.0.1:8787</a>.</p></div>';
     return;
@@ -3835,18 +3475,6 @@ function buildTopTabs(onActivate, defs) {
   reconcileLinkedProgress();
   renderHeader(data.meta || {});
 
-  // Keep the sticky-sidebar offset in sync with the real (wrapping) header height.
-  const headerEl = document.querySelector("header.app");
-  if (headerEl) {
-    const syncHeaderH = () => {
-      const hgt = Math.round(headerEl.getBoundingClientRect().height);
-      if (hgt) document.documentElement.style.setProperty("--header-h", hgt + "px");
-    };
-    syncHeaderH();
-    if (window.ResizeObserver) new ResizeObserver(syncHeaderH).observe(headerEl);
-    else window.addEventListener("resize", syncHeaderH);
-  }
-
   const content = document.getElementById("main-content");
   let nav, topTabs;
   let booted = false;
@@ -3855,7 +3483,6 @@ function buildTopTabs(onActivate, defs) {
   const lastKey = { party: "__overview__", tadpole: "__tad__", loot: null, locations: LOC_PREFIX, ratings: RATE_PREFIX };
 
   function renderContent(key, focusContent) {
-    clearPageOutlineObservers();
     // The teardown and rebuild below scroll the window around on their own; park
     // the recorder until the new view is in place so it can't clobber an offset.
     CURRENT_VIEW = null;
@@ -3941,111 +3568,5 @@ function buildTopTabs(onActivate, defs) {
   activateTab("party", false);
 })();
 </script>
-<style>
-  /* Loot pages */
-  .loot-table td, .loot-table th { vertical-align: top; }
-  tr.loot-core td { background: var(--accent-soft); }
-  tr.loot-core td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
-  .who-chip { display: inline-block; font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--surface-3); color: var(--text); white-space: nowrap; }
-  .loot-events-h { margin: 16px 0 6px; font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); font-weight: 700; }
-  /* Proficiency matrix */
-  .prof-table th[scope="col"] { text-align: center; }
-  .prof-table th[scope="row"] { text-align: left; white-space: nowrap; }
-  .prof-table td.prof-abil { text-align: center; color: var(--muted); font-size: .78rem; letter-spacing: .04em; }
-  .prof-table td.prof-cell { text-align: center; font-weight: 700; min-width: 54px; }
-  .prof-table td.prof-exp { color: var(--accent); }
-  .prof-table td.prof-yes { color: var(--text); }
-  .prof-table td.prof-half { color: var(--muted); font-weight: 500; }
-  .prof-table td.prof-no { color: color-mix(in srgb, var(--muted) 45%, transparent); font-weight: 400; }
-  .prof-table tr.prof-saves td.prof-savecell { text-align: center; font-size: .8rem; color: var(--text); font-weight: 600; }
-  .prof-table tr.prof-saves { border-bottom: 2px solid var(--border, rgba(255,255,255,.12)); }
-  /* Checkoffs */
-  .ck { width: 16px; height: 16px; cursor: pointer; accent-color: var(--accent); }
-  th.ck-col, td.ck-col { width: 34px; text-align: center; white-space: nowrap; }
-  td.ck-col { vertical-align: top; }
-  ul.checklist { list-style: none; padding-left: 0; margin: 0; }
-  ul.checklist li.ck-li { display: flex; align-items: flex-start; gap: 8px; margin: 7px 0; }
-  ul.checklist li.ck-li .ck { margin-top: 3px; flex: 0 0 auto; }
-  /* Rich-text prose (bullets / bold from the formatter) */
-  ul.prose-list { margin: 8px 0 12px; padding-left: 20px; }
-  ul.prose-list li { margin: 5px 0; line-height: 1.5; }
-  .li-meta .prose, .li-meta ul.prose-list { font-size: inherit; }
-  .li-meta .prose { margin: 5px 0; }
-  .li-meta ul.prose-list { margin: 5px 0; }
-  .callout .prose:first-of-type { margin-top: 6px; }
-  .callout .prose:last-child, .callout ul.prose-list:last-child { margin-bottom: 0; }
-  /* Locations & route */
-  .loc-wiki { margin-left: 10px; font-size: .8rem; font-weight: 500; vertical-align: middle; }
-  .loc-sub { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .curse-chip {
-    display: inline-block; font-size: .7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;
-    border: 1px solid var(--border); background: var(--surface-2); color: var(--text-muted);
-  }
-  .curse-chip.curse-deep { color: var(--warn); border-color: var(--warn); }
-  .loc-summary { font-size: 1rem; margin: 6px 0 12px; }
-  ol.route-steps { list-style: none; margin: 0; padding: 0; }
-  ol.route-steps > li.route-step { position: relative; padding: 0 0 16px 44px; }
-  ol.route-steps > li.route-step::before {
-    content: ""; position: absolute; left: 15px; top: 34px; bottom: 0; width: 2px; background: var(--border);
-  }
-  ol.route-steps > li.route-step:last-child::before { display: none; }
-  ol.route-steps > li.route-step:last-child { padding-bottom: 0; }
-  .route-step-n {
-    position: absolute; left: 0; top: 0; display: inline-grid; place-items: center; width: 32px; height: 32px;
-    border-radius: 50%; background: var(--accent-soft); border: 1px solid var(--border); color: var(--accent);
-    font-weight: 800; font-size: .8rem; font-variant-numeric: tabular-nums;
-  }
-  .route-step-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; min-height: 32px; padding-top: 6px; }
-  .route-step-title { font-weight: 700; }
-  .route-step-plain .route-step-title { color: var(--warn); }
-  .route-step-do .prose, .route-step-do ul.prose-list { font-size: .9rem; }
-  .route-step-do ul.prose-list { margin: 6px 0 4px; }
-  .route-leave, .route-warn, .route-neighbours { font-size: .84rem; margin-top: 6px; color: var(--text-muted); }
-  .route-warn { color: var(--warn); }
-  .route-leave-k { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-right: 2px; }
-  .route-neighbours { display: flex; gap: 18px; flex-wrap: wrap; }
-  .route-cutoffs { display: grid; gap: 10px; }
-  .route-cutoffs .callout { margin: 0; }
-  button.loc-link {
-    background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--accent);
-    cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
-    text-underline-offset: 3px;
-  }
-  button.loc-link:hover, button.loc-link:focus-visible { text-decoration-color: var(--accent); }
-  ul.loc-quests li.loc-quest { margin: 0 0 12px; padding-left: 10px; border-left: 2px solid var(--border); }
-  ul.loc-quests li.loc-quest::before { display: none; }
-  ul.loc-quests li.loc-quest:last-child { margin-bottom: 0; }
-  .loc-table td:nth-child(4), .loc-table td:nth-child(5) { font-size: .86rem; }
-  .loc-route-open { margin: 10px 0 0; }
-  /* Ratings pages: one block per letter, best first, each row a rated item. */
-  .rate-tier { margin: 0 0 16px; }
-  .rate-tier:last-child { margin-bottom: 0; }
-  .rate-tier-h {
-    display: flex; align-items: baseline; gap: 9px; margin: 0 0 7px;
-    padding-bottom: 4px; border-bottom: 1px solid var(--border);
-  }
-  .rate-tier-h .item-tier { font-size: .7rem; padding: 2px 9px; cursor: default; }
-  .rate-tier-what { font-size: .78rem; color: var(--text-muted); flex: 1; min-width: 0; }
-  ul.rate-list { list-style: none; margin: 0; padding: 0; }
-  li.rate-row { margin: 0 0 10px; padding-left: 10px; border-left: 2px solid var(--border); }
-  li.rate-row:last-child { margin-bottom: 0; }
-  li.rate-row:hover { border-left-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
-  .rate-head { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
-  .rate-name { font-size: .9rem; font-weight: 700; }
-  .rate-verdict { font-size: .82rem; color: var(--text-muted); line-height: 1.45; margin-top: 1px; }
-  .rate-at { font-size: .72rem; font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; margin-left: 6px; }
-  .rate-at:hover, .rate-at:focus-visible { text-decoration: underline; }
-  /* The party already plans this item, so say who. */
-  .item-chip.rate-party {
-    color: color-mix(in srgb, var(--accent) 75%, var(--text)); background: var(--accent-soft);
-    border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); text-transform: none; letter-spacing: .02em;
-  }
-  .rate-lists { font-size: .76rem; color: var(--text-muted); margin: 10px 0 14px; line-height: 1.5; }
-  .rate-lists a { color: inherit; }
-  .pc-block { margin: 0 0 20px; }
-  .pc-part { margin: 8px 0 0; }
-  .pc-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; margin-bottom: 2px; }
-  .pc-part .prose, .pc-part ul.prose-list { margin-top: 2px; }
-</style>
 </body>
 </html>

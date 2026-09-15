@@ -1,9 +1,9 @@
 ---
-note: Who covers each skill. ★ Expertise (doubled bonus) · ● Proficient · ½ Jack of All Trades (half proficiency on non-proficient checks). Saves, background and racial proficiencies are fixed; class skill picks are the plan's recommendation. The party is CHA-heavy, so Asterion carries DEX/INT/WIS while three characters can face.
+note: Who covers each skill. E = Expertise (doubled bonus) · P = Proficient · H = Jack of All Trades (half proficiency on non-proficient checks). Saves, background and racial proficiencies are fixed; class skill picks are the plan's recommendation. The party is CHA-heavy, so Asterion carries DEX/INT/WIS while three characters can face.
 legend:
-  expertise: ★ Expertise (double proficiency bonus)
-  proficient: ● Proficient
-  jack: ½ Jack of All Trades (half proficiency on non-proficient ability checks)
+  expertise: E = Expertise (double proficiency bonus)
+  proficient: P = Proficient
+  jack: H = Jack of All Trades (half proficiency on non-proficient ability checks)
 skills:
 - skill: Athletics
   ability: STR

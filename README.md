@@ -41,6 +41,8 @@ surface to worry about.
 | `content/proficiencies.md` | Skill/save coverage matrix. |
 | `content/loot.md` | The act-by-act loot guide (`loot_guide`). |
 | `content/tadpole.md` | Illithid-powers plan. |
+| `content/locations/*.md` | One file per place the party visits: items with where/how, quests, lockouts, people. Behind the Locations tab. |
+| `content/route.md` | The order the party visits those places, with cutoffs and a gold table. The Route page at the top of the Locations tab; each location page lists its own stops. |
 | `content/ratings.md` | **Generated.** Every item rating read out of the guide corpus, behind the Ratings tab. Rebuilt by `tools/build_ratings_page.py`; delete it and the tab disappears. |
 | `content/characters/*.md` | One file per character (`charles`, `asterion`, `gale`, `bonbon`). Each holds `nickname` + a `builds` array. |
 | `progress.json` | Your checkoffs (`{ "checked": { key: true } }`). **Git-tracked** — your playthrough progress shows up as a clean diff. |
@@ -120,6 +122,17 @@ The two appliers own different regions of the same files — `apply_spell_tiers.
 only touches lines inside a build's `spells:` block and `apply_item_tiers.py` only
 touches lines outside it — so either can be re-run alone without dropping the
 other's ratings.
+
+## The Locations tab
+
+`content/locations/*.md` is one page per place (the Crèche and every Act 2
+location so far), and `content/route.md` is the order the party visits them. The
+Route page lists every stop with its cutoffs; a location page shows its own stops
+with the place before and after each, so a place the route leaves and comes back
+to reads as two visits. Item ticks on a location page use `place:<slug>/<id>` keys
+and are linked to the Loot tab and the character pages by item name. Delete the
+directory and the tab disappears. Schema: the "Location guides" section of
+`AGENTS.md`.
 
 ## The Ratings tab
 

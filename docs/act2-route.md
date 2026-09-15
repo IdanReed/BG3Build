@@ -35,7 +35,7 @@ No long rest until Rolan is rescued in step 4.
 - **Dammon.** Karlach's upgrade first if she is in camp. Spare Infernal Iron becomes Flawed Helldusk Armour, then Helmet, then Gloves, in that fixed order. Asterion's Gloves need the third spare piece. Act 2 iron: Mason's Guild backyard, Balthazar's vault chest in the Gauntlet, Yurgir. Crafting closes at the Shadowfell.
 - **Shop.** See the gold table below. Talk Mattis out of the Tower-Shaped Key (DC 14 then DC 6) instead of paying 1,000 gp. It opens the Mason's Guild basement.
 - **Loot.** Snowburst Ring: bedroom north of the bar, loose plank, Perception 10, for Bonbon. Cellar: the Meenlock carries the Covert Cowl for Charles. Past the cracked wall, a trapped heavy chest (disarm DC 10, lock DC 14) holds the Coruscation Ring for Gale.
-- **Talk.** Rolan at the bar. Arabella outside: agree to help her. Art Cullagh in the infirmary, then Halsin. Florrick, before any long rest. Barcus about Wulbren. Raphael and Mol upstairs.
+- **Talk.** Rolan at the bar. Art Cullagh in the infirmary, then Halsin. Florrick, before any long rest. Barcus about Wulbren. Raphael and Mol upstairs. (Correction 2026-09-14: Arabella is not at the inn. She waits at the Reithwin graveyard gate, X -153 Y 15, west of the Mason's Guild; meet her in step 5.)
 - **Branthos's Harpers.** Accept the convoy ambush. This only appears once Isobel is saved.
 
 ### 3. Moonlantern and Pixie Blessing
@@ -56,7 +56,7 @@ Deep curse everywhere here; the blessing holds.
 - **Mason's Guild.** Enter by the Ornate Hatch (X -127, Y 26) or the control-wheel lift. In the basement a Perception 10 check reveals the Keyholed Herald: Tower-Shaped Key, or Sleight of Hand 18. Leave the first reinforced gilded chest alone or open it with the party parked back; a failed disarm drops portcullises and wakes three gargoyles. Halfway to the table five Shadows and a Wraith attack. The gilded chest behind the altar holds the Helmet of Arcane Acuity: Perception 15 to see the trap, disarm DC 21, lock DC 14. Picking before disarming fires a level 4 Guiding Bolt, DC 15 save. Bonbon wears it for the rest of Act 2. Infernal Iron is in the backyard. A Perception 10 button on the eastern gallery opens two chests with a Potion of Speed and Scroll of Knock.
 - **House of Healing.** Malus Thorm can be talked into operating on himself. Morgue lab, locked opulent chest: Eversight Ring for Asterion. Take the Battered Lute from Malus for Art. Arabella's parents are here.
 - **Waning Moon.** Thisobald is optional. No plan gear.
-- **Back at the inn.** Play the lute for Art. He sends Halsin to the lakeshore portal: hold it four turns. If it breaks, Halsin is gone forever. Thaniel comes through. Tell Arabella about her parents (pass the check; a failure sends her into the curse to die). Her reward at camp is the Shadow Blade Ring for Charles. Then find Oliver at his cottage and reunite him with Thaniel through the summons; do not attack the Nightdome directly.
+- **Back at the inn.** Play the lute for Art. He sends Halsin to the lakeshore portal: hold it four turns. If it breaks, Halsin is gone forever. Thaniel comes through. Tell Arabella about her parents at camp, where no check is needed (told in the field it is DC 14 Persuasion or she runs into the curse and dies). After the next long rest her reward is the Shadow Blade Ring for Charles. Then find Oliver at his cottage and reunite him with Thaniel through the summons; do not attack the Nightdome directly.
 
 ### 6. Crèche Y'llek, if not done
 

@@ -58,7 +58,8 @@ pub fn load_plan(root: &Path) -> Result<Value> {
 }
 
 /// Assemble the top-level `{meta, party, proficiencies, characters, loot_guide,
-/// tadpole}` object from the split Markdown files.
+/// tadpole}` object from the split Markdown files, plus the optional `ratings`,
+/// `locations` and `route` fields when their content exists.
 pub fn assemble_from_content(dir: &Path) -> Result<Value> {
     let meta = read_doc(&dir.join("meta.md"))?.data;
     let party = read_doc(&dir.join("party.md"))?.data;
@@ -150,6 +151,26 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
         characters.insert(nick, builds);
     }
 
+    // Location guides are optional: no content/locations/ directory means no
+    // `locations` field and no Locations tab. A file that exists must parse and
+    // carry a unique `slug` and a `name`, because the frontend keys the nav and the
+    // checkoffs on the slug. Sorted by act, then `order`, then name.
+    let locations = load_locations(&dir.join("locations"))?;
+
+    // route.md orders the locations; it is optional in the same way.
+    let route_path = dir.join("route.md");
+    let route = if route_path.exists() {
+        Some(
+            read_doc(&route_path)?
+                .data
+                .get("route")
+                .cloned()
+                .ok_or_else(|| anyhow!("route.md front matter is missing `route`"))?,
+        )
+    } else {
+        None
+    };
+
     let mut root = Map::new();
     root.insert("meta".into(), meta);
     root.insert("party".into(), party);
@@ -160,12 +181,180 @@ pub fn assemble_from_content(dir: &Path) -> Result<Value> {
     if let Some(ratings) = ratings {
         root.insert("ratings".into(), ratings);
     }
+    if !locations.is_empty() {
+        root.insert("locations".into(), Value::Array(locations));
+    }
+    if let Some(route) = route {
+        root.insert("route".into(), route);
+    }
     Ok(Value::Object(root))
+}
+
+/// Read every `content/locations/*.md`, returning an empty list when the
+/// directory is absent.
+fn load_locations(ldir: &Path) -> Result<Vec<Value>> {
+    let mut locations: Vec<Value> = Vec::new();
+    if !ldir.is_dir() {
+        return Ok(locations);
+    }
+    let mut slugs = HashSet::new();
+    for entry in std::fs::read_dir(ldir).with_context(|| format!("reading {}", ldir.display()))? {
+        let path = entry?.path();
+        if path.extension().and_then(|e| e.to_str()) != Some("md") {
+            continue;
+        }
+        let doc = read_doc(&path)?;
+        let slug = doc
+            .data
+            .get("slug")
+            .and_then(|v| v.as_str())
+            .ok_or_else(|| anyhow!("{}: missing `slug`", path.display()))?
+            .to_string();
+        if !slugs.insert(slug.clone()) {
+            return Err(anyhow!(
+                "{}: duplicate location slug `{slug}`",
+                path.display()
+            ));
+        }
+        if doc.data.get("name").and_then(|v| v.as_str()).is_none() {
+            return Err(anyhow!("{}: missing `name`", path.display()));
+        }
+        locations.push(doc.data);
+    }
+    let sort_key = |v: &Value| {
+        (
+            v.get("act").and_then(|x| x.as_i64()).unwrap_or(i64::MAX),
+            v.get("order").and_then(|x| x.as_i64()).unwrap_or(i64::MAX),
+            v.get("name")
+                .and_then(|x| x.as_str())
+                .unwrap_or("")
+                .to_lowercase(),
+        )
+    };
+    locations.sort_by(|a, b| sort_key(a).cmp(&sort_key(b)));
+    Ok(locations)
 }
 
 #[cfg(test)]
 mod tests {
-    use super::parse_frontmatter;
+    use super::{assemble_from_content, parse_frontmatter};
+    use std::path::{Path, PathBuf};
+
+    /// A throwaway content tree with the required files, so the optional ones can
+    /// be exercised on their own.
+    fn scratch_content(tag: &str) -> PathBuf {
+        let dir = std::env::temp_dir().join(format!("bg3-content-{tag}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(dir.join("characters")).unwrap();
+        for (name, body) in [
+            ("meta.md", "version: 0.0.0"),
+            (
+                "party.md",
+                "roster:
+- nickname: Charles",
+            ),
+            ("proficiencies.md", "skills: []"),
+            ("tadpole.md", "characters: []"),
+            ("loot.md", "loot_guide: []"),
+        ] {
+            write_md(&dir.join(name), body);
+        }
+        write_md(
+            &dir.join("characters/charles.md"),
+            "nickname: Charles
+builds: []",
+        );
+        dir
+    }
+
+    fn write_md(path: &Path, frontmatter: &str) {
+        std::fs::write(
+            path,
+            format!(
+                "---
+{frontmatter}
+---
+"
+            ),
+        )
+        .unwrap();
+    }
+
+    #[test]
+    fn locations_and_route_are_optional() {
+        let dir = scratch_content("none");
+        let plan = assemble_from_content(&dir).unwrap();
+        assert!(plan.get("locations").is_none());
+        assert!(plan.get("route").is_none());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn locations_sort_by_act_then_order_and_route_passes_through() {
+        let dir = scratch_content("sorted");
+        std::fs::create_dir_all(dir.join("locations")).unwrap();
+        write_md(
+            &dir.join("locations/b.md"),
+            "slug: moonrise-towers
+name: Moonrise Towers
+act: 2
+order: 20",
+        );
+        write_md(
+            &dir.join("locations/a.md"),
+            "slug: last-light-inn
+name: Last Light Inn
+act: 2
+order: 10",
+        );
+        write_md(
+            &dir.join("locations/c.md"),
+            "slug: creche-yllek
+name: Creche
+act: 1
+order: 99",
+        );
+        write_md(
+            &dir.join("route.md"),
+            "route:
+- act: 2
+  steps: []",
+        );
+
+        let plan = assemble_from_content(&dir).unwrap();
+        let slugs: Vec<&str> = plan["locations"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|l| l["slug"].as_str().unwrap())
+            .collect();
+        assert_eq!(slugs, ["creche-yllek", "last-light-inn", "moonrise-towers"]);
+        assert_eq!(plan["route"][0]["act"], 2);
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn duplicate_location_slugs_are_rejected() {
+        let dir = scratch_content("dupe");
+        std::fs::create_dir_all(dir.join("locations")).unwrap();
+        write_md(
+            &dir.join("locations/a.md"),
+            "slug: same
+name: A
+act: 2
+order: 1",
+        );
+        write_md(
+            &dir.join("locations/b.md"),
+            "slug: same
+name: B
+act: 2
+order: 2",
+        );
+        let err = assemble_from_content(&dir).err().unwrap();
+        assert!(err.to_string().contains("duplicate location slug"));
+        let _ = std::fs::remove_dir_all(&dir);
+    }
 
     #[test]
     fn frontmatter_accepts_bom_and_windows_line_endings() {

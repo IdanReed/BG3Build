@@ -557,6 +557,11 @@
     background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
   }
   .item-slot ul.checklist li.ck-li::before { display: none; }
+  .slot-part + .slot-part { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); }
+  .slot-part-label {
+    margin: 0 0 4px; color: var(--text-muted); font-size: .64rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .07em;
+  }
   .item-tip-wrap { position: relative; display: inline-flex; align-items: baseline; min-width: 0; max-width: 100%; }
   .item-details {
     display: inline-grid; place-items: center; width: 18px; height: 18px;
@@ -875,10 +880,19 @@ function buildItemLinks(data) {
     });
   });
 
+  arr(data && data.locations).forEach((loc) => {
+    arr(loc && loc.items).forEach((item, i) => {
+      if (!item) return;
+      add(canonicalItem(item.name), placeItemKey(loc.slug, item, i), loc.name, "place");
+    });
+  });
+
   Object.keys(ITEM_LINK_GROUPS).forEach((canon) => {
     const group = ITEM_LINK_GROUPS[canon];
-    const bridges = group.some((m) => m.kind === "char") && group.some((m) => m.kind === "loot");
-    if (!bridges) { delete ITEM_LINK_GROUPS[canon]; return; }
+    // Only a group that spans two or more views has anything to keep in step.
+    const kinds = {};
+    group.forEach((m) => { kinds[m.kind] = true; });
+    if (Object.keys(kinds).length < 2) { delete ITEM_LINK_GROUPS[canon]; return; }
     group.forEach((m) => { ITEM_LINK_OF[m.key] = canon; });
   });
 }
@@ -1448,10 +1462,22 @@ function renderLeveling(lv, idHint, keyRoot) {
 /* Three vertical columns that mirror how the gear actually reads: what he swings,
    what he wears, what hangs off him. Each column stacks its slot cards. */
 const ITEM_SLOT_ROWS = [
-  { label: "Weapons & consumables", slots: ["Melee Weapons", "Ranged Weapons", "Off-hand & Shields", "Potions & Oils", "Elixirs", "Other"] },
+  { label: "Weapons & consumables", slots: ["Melee & Shield", "Ranged Weapons", "Potions & Oils", "Elixirs", "Other"] },
   { label: "Worn", slots: ["Head", "Armour", "Hands", "Boots"] },
   { label: "Accessories", slots: ["Amulets", "Cloaks", "Ring 1", "Ring 2", "Rings"] },
 ];
+/* The main hand and the off-hand read as one loadout, so both slots share a card.
+   The finer slot names survive underneath: classification, the ranged split and the
+   sequential arrows all still key off them, and the card lists its parts in this order. */
+const ITEM_SLOT_CARDS = { "Melee & Shield": ["Melee Weapons", "Off-hand & Shields"] };
+const ITEM_SLOT_TO_CARD = {};
+Object.keys(ITEM_SLOT_CARDS).forEach((card) => ITEM_SLOT_CARDS[card].forEach((slot) => { ITEM_SLOT_TO_CARD[slot] = card; }));
+function itemSlotCard(slot) {
+  return ITEM_SLOT_TO_CARD[slot] || slot;
+}
+/* Short label for a part inside a shared card. */
+const ITEM_SLOT_PART_LABELS = { "Melee Weapons": "Weapon", "Off-hand & Shields": "Off-hand" };
+
 const ITEM_SLOT_ICONS = {
   Head: "⛑",
   Armour: "🛡",
@@ -1462,8 +1488,10 @@ const ITEM_SLOT_ICONS = {
   Boots: "🥾",
   Amulets: "♦",
   Cloaks: "🧥",
-  "Melee Weapons": "⚔",
+  "Melee & Shield": "⚔",
   "Ranged Weapons": "🏹",
+  // The Ratings tab still names the two underlying slots, so they keep their icons.
+  "Melee Weapons": "⚔",
   "Off-hand & Shields": "⛨",
   Elixirs: "⚗",
   "Potions & Oils": "🧪",
@@ -1810,12 +1838,27 @@ function itemIsEmpty(entry) {
   if (entry && typeof entry === "object" && entry.empty === true) return true;
   return /^\s*(?:no\b[^.]*\b(?:exists|available|option)|none\b|nothing\b|empty\b)/i.test(itemLabel(entry));
 }
-/* A flex slot: no checkbox of its own, just small checkable candidates. */
+/* An entry with `options` is a flex slot, and its parent takes one of two shapes. A
+   bare placeholder ("Glove slot", "Second ring") is only a heading, and the options
+   are the whole field. A real item ("Elixir of Bloodlust", tier S) is the default
+   pick, and the options are its alternates. A rated parent is always a real item. */
+const ITEM_PLACEHOLDER_RE = /\b(?:slot|alternatives?|options?|flex|choices?|candidates?)\b|^(?:first|second)\s+ring\b/i;
+function itemIsPlaceholder(entry) {
+  if (!entry || typeof entry !== "object") return false;
+  if (has(entry.tier) || has(entry.rank)) return false;
+  return ITEM_PLACEHOLDER_RE.test(itemLabel(entry));
+}
+/* A flex slot: no checkbox of its own, just small checkable candidates. A real-item
+   parent joins the list as the first candidate, so it keeps its name, badges and the
+   checkoff saved under its own id from before it grew alternates. */
 function itemFlexOptions(entry) {
   if (!entry || typeof entry !== "object") return null;
   const opts = arr(entry.options);
   if (!opts.length) return null;
-  return opts;
+  if (itemIsPlaceholder(entry)) return opts;
+  const self = Object.assign({}, entry);
+  delete self.options;
+  return [self].concat(opts);
 }
 /* "Head: Haste Helm -> Covert Cowl -> Helm of Balduran" becomes a vertical list with
    the latest pick on top, which is the one you actually want to read first. */
@@ -1879,7 +1922,10 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
       const id = itemEntryId(entry, i);
       const key = charItemKey(keyRoot, act, entry, i);
       const tipId = "item-tip-" + slug(keyRoot || "build") + "-" + slug(act) + "-" + slug(id) + "-" + i;
-      const cls = ["ck-li", bis ? "item-bis" : null, flex ? "flex-parent" : null,
+      /* A real-item flex parent is rendered as its own option row, which is where its
+         build-defining border belongs; only a placeholder parent styles the block. */
+      const placeholder = flex ? itemIsPlaceholder(entry) : false;
+      const cls = ["ck-li", bis && (!flex || placeholder) ? "item-bis" : null, flex ? "flex-parent" : null,
         empty ? "item-empty" : null].filter(Boolean).join(" ");
 
       if (isProgression) {
@@ -1900,22 +1946,27 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
       }
 
       if (flex) {
+        /* The label explains how to pick only when the parent is a placeholder. A
+           real-item parent's note, tier and held chip describe that item, and they
+           render on its own option row below. */
+        const flexTip = placeholder ? tip : null;
         const flexLabel = h("span", {
-          class: "flex-label", tabindex: tip ? "0" : null,
-          "aria-describedby": tip ? tipId : null,
+          class: "flex-label", tabindex: flexTip ? "0" : null,
+          "aria-describedby": flexTip ? tipId : null,
         }, "flex");
         return h("li", { class: cls },
           h("span", { class: "ck-spacer", "aria-hidden": "true" }),
           h("div", { class: "item-body" },
             h("div", { class: "item-head flex-head" },
-              linkedNameTip("flex", flexLabel, tip, tipId, "How to pick this slot"),
-              badges,
-              chip ? h("span", { class: "item-chip" }, chip) : null
+              linkedNameTip("flex", flexLabel, flexTip, tipId, "How to pick this slot")
             ),
             h("ul", { class: "clean flex-options" }, flex.map((opt, j) => {
               const oLabel = itemLabel(opt);
               const oTip = itemTip(opt);
               const oTipId = tipId + "-opt-" + j;
+              const oChip = itemHeldChip(opt);
+              const oBis = itemIsBis(opt);
+              const isDefault = !placeholder && j === 0;
               /* Flat key, deliberately NOT nested under the parent id: an option is often a
                  slot's former top-level entry, and nesting would orphan its saved checkoff. */
               const oKey = charItemKey(keyRoot, act, opt, j);
@@ -1923,10 +1974,13 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
                 class: "item-name", type: "button",
                 "aria-describedby": oTip ? oTipId : null,
               });
-              return h("li", { class: "ck-li flex-option" },
+              return h("li", { class: "ck-li flex-option" + (oBis ? " item-bis" : "") },
                 oKey ? checkbox(oKey, "Mark " + oLabel + " acquired") : null,
                 linkedNameTip(oLabel, oName, oTip, oTipId, "What it does & why it fits"),
-                itemBadges(opt)
+                itemBadges(opt),
+                oBis ? h("span", { class: "item-bis-star", title: "Build-defining" }, "★") : null,
+                isDefault ? h("span", { class: "item-chip flex-chip", title: "The usual pick; the rows below are its alternates" }, "Default") : null,
+                oChip ? h("span", { class: "item-chip" }, oChip) : null
               );
             }))
           )
@@ -1971,22 +2025,38 @@ function itemChecklist(entries, act, keyRoot, slotName, rated) {
   return h("ul", { class: "clean checklist" }, rows);
 }
 
+/* One card, one or more slots inside it. A card that holds two slots (main hand and
+   off-hand) lists them in ITEM_SLOT_CARDS order, each as its own checklist so the
+   sequential arrows never run from a weapon into a shield. */
+function itemSlotCardBody(card, parts, act, keyRoot, rated) {
+  const order = ITEM_SLOT_CARDS[card] || [];
+  const slots = Array.from(parts.keys()).sort((a, b) => order.indexOf(a) - order.indexOf(b));
+  return slots.map((slot, i) => h("div", { class: "slot-part" },
+    i ? h("div", { class: "slot-part-label" }, ITEM_SLOT_PART_LABELS[slot] || slot) : null,
+    itemChecklist(parts.get(slot), act, keyRoot, slot, rated)
+  ));
+}
+
 function itemActPanel(entries, act, keyRoot, rated) {
+  // card -> Map(slot -> entries)
   const groups = new Map();
   arr(entries).forEach((entry) => {
     const slot = itemSlot(entry);
-    if (!groups.has(slot)) groups.set(slot, []);
-    groups.get(slot).push(entry);
+    const card = itemSlotCard(slot);
+    if (!groups.has(card)) groups.set(card, new Map());
+    const parts = groups.get(card);
+    if (!parts.has(slot)) parts.set(slot, []);
+    parts.get(slot).push(entry);
   });
   const placed = new Set();
   const rows = ITEM_SLOT_ROWS.map((row) => {
-    const slots = row.slots.filter((slot) => groups.has(slot));
-    slots.forEach((slot) => placed.add(slot));
+    const slots = row.slots.filter((card) => groups.has(card));
+    slots.forEach((card) => placed.add(card));
     return { label: row.label, slots };
   });
-  // A slot name the rows don't know about still has to render, so it trails the
+  // A card name the rows don't know about still has to render, so it trails the
   // last row rather than disappearing.
-  const extra = Array.from(groups.keys()).filter((slot) => !placed.has(slot)).sort();
+  const extra = Array.from(groups.keys()).filter((card) => !placed.has(card)).sort();
   rows[rows.length - 1].slots = rows[rows.length - 1].slots.concat(extra);
   return h(
     "div",
@@ -1994,10 +2064,14 @@ function itemActPanel(entries, act, keyRoot, rated) {
     rows.filter((row) => row.slots.length).map((row) => h("section", { class: "item-row" },
       h("h4", { class: "item-row-label" }, row.label),
       h("div", { class: "item-slot-grid" },
-        row.slots.map((slot) => h("section", { class: "item-slot" },
-          cardHeading(slot, itemSlotIcon(slot), groups.get(slot).length),
-          itemChecklist(groups.get(slot), act, keyRoot, slot, rated)
-        ))
+        row.slots.map((card) => {
+          const parts = groups.get(card);
+          const count = Array.from(parts.values()).reduce((n, list) => n + list.length, 0);
+          return h("section", { class: "item-slot" },
+            cardHeading(card, itemSlotIcon(card), count),
+            itemSlotCardBody(card, parts, act, keyRoot, rated)
+          );
+        })
       )
     ))
   );
@@ -3361,6 +3435,211 @@ function ratingActLabel(act) {
 }
 
 /* Sub-nav entries for a given top-level tab. */
+/* ---------------- Locations & route ----------------
+   content/locations/*.md is one page per place; content/route.md is the order the
+   party visits them. A location page lists every visit the route makes to it, so
+   a place the route leaves and comes back to reads as two stops, not one. */
+const LOC_PREFIX = "__loc__";
+let NAVIGATE = null; // (tab, key) => void, assigned at boot
+
+function locationBySlug(data, slugName) {
+  return arr(data && data.locations).find((loc) => loc && loc.slug === slugName) || null;
+}
+/* Checkoff key for an item on a location page: place:<slug>/<item-id>. */
+function placeItemKey(locSlug, entry, i) {
+  const isObj = entry && typeof entry === "object";
+  const id = isObj && has(entry.id) ? String(entry.id) : String((isObj && entry.name) || entry || i);
+  return "place:" + locSlug + "/" + slug(id);
+}
+/* Every route step, flattened across acts, in list order. */
+function routeSteps(data) {
+  const out = [];
+  arr(data && data.route).forEach((block) => {
+    arr(block && block.steps).forEach((step) => { if (step) out.push({ act: block.act, step: step }); });
+  });
+  return out;
+}
+function stepLabel(step, fallback) {
+  return has(step.step) ? String(step.step) : String(fallback);
+}
+/* A button that opens another location page, or plain text when the slug is unknown. */
+function locationLink(data, slugName, label) {
+  const loc = locationBySlug(data, slugName);
+  const text = label || (loc ? loc.name : slugName);
+  if (!loc) return h("span", { class: "li-strong" }, text);
+  const btn = h("button", { class: "loc-link", type: "button", title: "Open " + loc.name }, text);
+  btn.addEventListener("click", () => { if (NAVIGATE) NAVIGATE("locations", LOC_PREFIX + loc.slug); });
+  return btn;
+}
+function curseChip(level) {
+  if (!has(level)) return null;
+  const v = String(level).toLowerCase();
+  const text = v === "none" ? "No curse" : v === "deep" ? "Deep curse" : v === "light" ? "Curse: torchlight is enough" : String(level);
+  return h("span", { class: "curse-chip curse-" + v }, text);
+}
+
+/* One stop. `entry` is { act, step } from routeSteps(); `index` is its position. */
+function routeStepNode(data, entry, index, opts) {
+  const step = entry.step;
+  const showLocation = !(opts && opts.hideLocation);
+  return h("li", { class: "route-step" + (has(step.location) ? "" : " route-step-plain") },
+    h("div", { class: "route-step-head" },
+      h("span", { class: "route-step-n" }, stepLabel(step, index + 1)),
+      showLocation && has(step.location) ? locationLink(data, step.location) : null,
+      has(step.title) ? h("span", { class: "route-step-title" }, step.title) : null
+    ),
+    has(step.do) ? h("div", { class: "route-step-do" }, richText(step.do)) : null,
+    has(step.warn) ? h("div", { class: "route-warn" }, "⚠ " + step.warn) : null,
+    has(step.leave) ? h("div", { class: "route-leave" }, h("span", { class: "route-leave-k" }, "Then"), " " + step.leave) : null
+  );
+}
+
+function routeCutoffs(rows) {
+  return h("div", { class: "route-cutoffs" }, arr(rows).map((c) => h("div", { class: "callout warn" },
+    h("span", { class: "callout-k" }, c.name || c.what || "Cutoff"),
+    has(c.closes) ? h("div", null, h("span", { class: "li-strong" }, "Closes: "), c.closes) : null,
+    has(c.note) ? h("div", { class: "li-meta" }, c.note) : null,
+    has(c.avoid) ? h("div", { class: "li-meta" }, richText(c.avoid)) : null
+  )));
+}
+
+function renderRoute(data) {
+  const frag = document.createDocumentFragment();
+  frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" }, "Route"));
+  const blocks = arr(data.route);
+  const total = blocks.reduce((n, b) => n + arr(b.steps).length, 0);
+  frag.appendChild(h("p", { class: "view-sub" },
+    total + " stops in order · a place the route leaves and comes back to appears more than once · click a name to open its page"));
+  let index = 0;
+  blocks.forEach((block) => {
+    const kids = [];
+    if (has(block.intro)) kids.push(richText(block.intro));
+    if (has(block.cutoffs)) {
+      kids.push(subhead("Cutoffs"));
+      kids.push(routeCutoffs(block.cutoffs));
+    }
+    if (has(block.steps)) {
+      kids.push(subhead("Stops"));
+      kids.push(h("ol", { class: "route-steps" },
+        arr(block.steps).map((step) => routeStepNode(data, { act: block.act, step: step }, index++))));
+    }
+    if (has(block.gold)) {
+      kids.push(subhead("Gold"));
+      const sum = arr(block.gold).reduce((n, g) => n + (Number(g.gp) || 0), 0);
+      kids.push(tableWrap(h("table", { class: "loot-table" },
+        h("thead", null, h("tr", null,
+          h("th", { scope: "col" }, "Item"), h("th", { scope: "col" }, "Vendor"),
+          h("th", { class: "num", scope: "col" }, "gp"), h("th", { scope: "col" }, "Who"), h("th", { scope: "col" }, "Notes"))),
+        h("tbody", null, arr(block.gold).map((g) => h("tr", null,
+          h("td", { class: "cell-strong" }, wikiItemNode({ name: g.item, wiki: g.wiki }) || g.item),
+          h("td", null, g.vendor || ""),
+          h("td", { class: "num" }, has(g.gp) ? Number(g.gp).toLocaleString() : ""),
+          h("td", null, g.who && g.who !== "any" ? h("span", { class: "who-chip" }, g.who) : h("span", { class: "muted" }, "party")),
+          h("td", null, g.note || "")
+        ))))));
+      if (sum) kids.push(h("p", { class: "muted", style: "font-size:.82rem;margin-top:4px" }, "About " + sum.toLocaleString() + " gp in total."));
+    }
+    const title = (has(block.act) ? "Act " + block.act : "Route") + (has(block.title) ? " — " + block.title : "");
+    frag.appendChild(section(title, ...kids));
+  });
+  return frag;
+}
+
+function locationItemsTable(loc, items) {
+  return tableWrap(h("table", { class: "loot-table loc-table" },
+    h("thead", null, h("tr", null,
+      h("th", { scope: "col", class: "ck-col" }, "✓"),
+      h("th", { scope: "col" }, "Item"), h("th", { scope: "col" }, "For"),
+      h("th", { scope: "col" }, "Where"), h("th", { scope: "col" }, "How"), h("th", { scope: "col" }, "Notes"))),
+    h("tbody", null, items.map((it, i) => h("tr", { class: it.core ? "loot-core" : null },
+      h("td", { class: "ck-col" }, checkbox(placeItemKey(loc.slug, it, i), "Mark " + it.name + " acquired")),
+      h("td", { class: "cell-strong" }, it.core ? "★ " : null, wikiItemNode(it) || it.name),
+      h("td", null, it.for && it.for !== "any" ? h("span", { class: "who-chip" }, it.for) : h("span", { class: "muted" }, "any")),
+      h("td", null, it.where || ""),
+      h("td", null, it.how || ""),
+      h("td", null, (it.note || "") + (it.verify ? "  ⚠ verify" : ""))
+    )))
+  ));
+}
+
+function renderLocation(data, slugName) {
+  const frag = document.createDocumentFragment();
+  const loc = locationBySlug(data, slugName);
+  if (!loc) {
+    frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" }, "Location"));
+    frag.appendChild(h("p", { class: "muted" }, "No location guide called " + slugName + "."));
+    return frag;
+  }
+  frag.appendChild(h("h2", { class: "view-title", tabindex: "-1" }, loc.name,
+    loc.wiki === false ? null : h("span", { class: "loc-wiki" }, wikiPageLink(has(loc.wiki) ? String(loc.wiki) : loc.name, null, "bg3.wiki"))));
+  const subBits = [];
+  if (has(loc.region)) subBits.push(loc.region);
+  if (has(loc.act)) subBits.push("Act " + loc.act);
+  frag.appendChild(h("p", { class: "view-sub loc-sub" }, h("span", null, subBits.join(" · ")), curseChip(loc.curse)));
+  if (has(loc.summary)) frag.appendChild(h("p", { class: "prose loc-summary" }, loc.summary));
+  if (has(loc.arrive)) frag.appendChild(h("div", { class: "callout" }, h("span", { class: "callout-k" }, "Getting there"), richText(loc.arrive)));
+
+  // On the route: every visit to this place, each with the stop before and after.
+  const steps = routeSteps(data);
+  const visits = [];
+  steps.forEach((entry, i) => { if (entry.step.location === loc.slug) visits.push(i); });
+  if (visits.length) {
+    const neighbour = (entry) => entry
+      ? (has(entry.step.location) ? locationLink(data, entry.step.location) : h("span", null, entry.step.title || ""))
+      : null;
+    const kids = [];
+    kids.push(h("p", { class: "muted loc-visits" },
+      visits.length === 1 ? "One visit on the route." : visits.length + " visits on the route: the party leaves and comes back."));
+    kids.push(h("ol", { class: "route-steps" }, visits.map((i) => {
+      const node = routeStepNode(data, steps[i], i, { hideLocation: true });
+      const prev = i > 0 ? steps[i - 1] : null;
+      const next = i + 1 < steps.length ? steps[i + 1] : null;
+      node.appendChild(h("div", { class: "route-neighbours" },
+        prev ? h("span", null, h("span", { class: "route-leave-k" }, "Before"), " ", neighbour(prev)) : null,
+        next ? h("span", null, h("span", { class: "route-leave-k" }, "After"), " ", neighbour(next)) : null
+      ));
+      return node;
+    })));
+    const routeBtn = h("button", { class: "loc-link", type: "button" }, "Open the full route");
+    routeBtn.addEventListener("click", () => { if (NAVIGATE) NAVIGATE("locations", LOC_PREFIX); });
+    kids.push(h("p", { class: "loc-route-open" }, routeBtn));
+    frag.appendChild(section("On the route", ...kids));
+  }
+
+  const items = arr(loc.items).filter(Boolean);
+  if (items.length) {
+    const core = items.filter((it) => it.core);
+    const rest = items.filter((it) => !it.core);
+    frag.appendChild(section("Items",
+      h("p", { class: "muted itemization-note" }, items.length + " listed · ★ = plan gear · ticks are shared with the Loot tab and the character pages"),
+      locationItemsTable(loc, core.concat(rest))));
+  }
+  if (has(loc.quests)) {
+    frag.appendChild(section("Quests", h("ul", { class: "clean loc-quests" }, arr(loc.quests).map((q) => h("li", { class: "loc-quest" },
+      h("div", null, has(q.wiki) ? wikiPageLink(String(q.wiki), { class: "li-strong" }, q.name) : h("span", { class: "li-strong" }, q.name)),
+      has(q.steps) ? h("div", { class: "li-meta" }, richText(q.steps)) : null,
+      has(q.outcome) ? h("div", { class: "li-meta" }, h("span", { class: "li-strong" }, "Outcome: "), q.outcome) : null,
+      has(q.lockout) ? h("div", { class: "route-warn" }, "⚠ " + q.lockout) : null
+    )))));
+  }
+  if (has(loc.lockouts)) {
+    frag.appendChild(section("Don’t lock yourself out", routeCutoffs(loc.lockouts)));
+  }
+  if (has(loc.npcs)) {
+    frag.appendChild(section("People", bulletList(arr(loc.npcs).map((n) => h("li", null,
+      h("span", { class: "li-strong" }, n.name),
+      has(n.role) ? h("span", { class: "who-chip", style: "margin-left:8px" }, n.role) : null,
+      has(n.note) ? h("div", { class: "li-meta" }, n.note) : null)))));
+  }
+  if (has(loc.checks)) {
+    frag.appendChild(section("Worth a roll", bulletList(arr(loc.checks).map((c) => h("li", null,
+      h("span", { class: "li-strong" }, c.what),
+      has(c.note) ? h("div", { class: "li-meta" }, c.note) : null)))));
+  }
+  if (has(loc.tips)) frag.appendChild(section("Tips", richText(loc.tips)));
+  return frag;
+}
+
 function navEntries(data, tab) {
   if (tab === "loot") {
     return (Array.isArray(data.loot_guide) ? data.loot_guide : []).map((a) => ({
@@ -3378,6 +3657,22 @@ function navEntries(data, tab) {
       sub: slot.count + " rated",
       group: "By item type",
     }));
+    return entries;
+  }
+  if (tab === "locations") {
+    const entries = [];
+    if (arr(data.route).length) entries.push({ key: LOC_PREFIX, label: "Route", sub: "Every stop in order · cutoffs · gold" });
+    const steps = routeSteps(data);
+    arr(data.locations).forEach((loc) => {
+      const stops = [];
+      steps.forEach((entry, i) => { if (entry.step.location === loc.slug) stops.push(stepLabel(entry.step, i + 1)); });
+      entries.push({
+        key: LOC_PREFIX + loc.slug,
+        label: loc.name,
+        sub: stops.length ? "Stop " + stops.join(" · ") : (loc.region || ""),
+        group: has(loc.act) ? "Act " + loc.act : "Locations",
+      });
+    });
     return entries;
   }
   if (tab === "tadpole") {
@@ -3468,7 +3763,7 @@ function buildNav(onSelect) {
 /* ---------------- Top-level tabs (Party / Tadpole / Loot / Ratings) ----------------
    `defs` comes from the caller because Ratings only exists once
    tools/build_ratings_page.py has written content/ratings.md. */
-const TAB_LABELS = { party: "Party", tadpole: "Tadpole", loot: "Loot", ratings: "Ratings" };
+const TAB_LABELS = { party: "Party", tadpole: "Tadpole", loot: "Loot", locations: "Locations", ratings: "Ratings" };
 function buildTopTabs(onActivate, defs) {
   const host = document.getElementById("top-tabs");
   const tabs = [];
@@ -3557,7 +3852,7 @@ function buildTopTabs(onActivate, defs) {
   let booted = false;
   let activeTab = "party";
   // Remember the last sub-view visited within each top tab.
-  const lastKey = { party: "__overview__", tadpole: "__tad__", loot: null, ratings: RATE_PREFIX };
+  const lastKey = { party: "__overview__", tadpole: "__tad__", loot: null, locations: LOC_PREFIX, ratings: RATE_PREFIX };
 
   function renderContent(key, focusContent) {
     clearPageOutlineObservers();
@@ -3573,6 +3868,8 @@ function buildTopTabs(onActivate, defs) {
       const act = parseInt(key.replace(/[^0-9]/g, ""), 10);
       content.appendChild(renderLoot((data.loot_guide || []).find((x) => x.act === act)));
     }
+    else if (key === LOC_PREFIX) content.appendChild(renderRoute(data));
+    else if (key.indexOf(LOC_PREFIX) === 0) content.appendChild(renderLocation(data, key.slice(LOC_PREFIX.length)));
     else if (key === RATE_PREFIX) content.appendChild(renderRatingsOverview(data.ratings || {}));
     else if (key.indexOf(RATE_PREFIX) === 0) content.appendChild(renderRatingsSlot(data.ratings || {}, key.slice(RATE_PREFIX.length), data));
     else content.appendChild(renderCharacter(key, data.characters[key]));
@@ -3600,6 +3897,18 @@ function buildTopTabs(onActivate, defs) {
     nav.setActive(key);
   }
 
+  // In-page links between views (a route stop to its location page) land here.
+  // Swapping the top tab by hand avoids activateTab's render of the remembered
+  // sub-view, which select() would immediately replace.
+  NAVIGATE = (tab, key) => {
+    if (activeTab !== tab) {
+      activeTab = tab;
+      topTabs.setActive(tab);
+      nav.render(navEntries(data, tab), TAB_LABELS[tab] || "Party");
+    }
+    select(key, true);
+  };
+
   // Activate a top tab: swap the sidebar sub-nav and show the remembered
   // (or default) sub-view for that tab.
   function activateTab(tab, focusTab) {
@@ -3622,7 +3931,9 @@ function buildTopTabs(onActivate, defs) {
     { id: "tadpole", label: TAB_LABELS.tadpole },
     { id: "loot", label: TAB_LABELS.loot },
   ];
-  // No generated ratings file, no Ratings tab — the rest of the guide is unaffected.
+  // No location files, no Locations tab; likewise no generated ratings file, no
+  // Ratings tab — the rest of the guide is unaffected either way.
+  if (arr(data.locations).length) tabDefs.push({ id: "locations", label: TAB_LABELS.locations });
   if (data.ratings && arr(data.ratings.slots).length) tabDefs.push({ id: "ratings", label: TAB_LABELS.ratings });
 
   nav = buildNav(select);
@@ -3663,6 +3974,49 @@ function buildTopTabs(onActivate, defs) {
   .li-meta ul.prose-list { margin: 5px 0; }
   .callout .prose:first-of-type { margin-top: 6px; }
   .callout .prose:last-child, .callout ul.prose-list:last-child { margin-bottom: 0; }
+  /* Locations & route */
+  .loc-wiki { margin-left: 10px; font-size: .8rem; font-weight: 500; vertical-align: middle; }
+  .loc-sub { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .curse-chip {
+    display: inline-block; font-size: .7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text-muted);
+  }
+  .curse-chip.curse-deep { color: var(--warn); border-color: var(--warn); }
+  .loc-summary { font-size: 1rem; margin: 6px 0 12px; }
+  ol.route-steps { list-style: none; margin: 0; padding: 0; }
+  ol.route-steps > li.route-step { position: relative; padding: 0 0 16px 44px; }
+  ol.route-steps > li.route-step::before {
+    content: ""; position: absolute; left: 15px; top: 34px; bottom: 0; width: 2px; background: var(--border);
+  }
+  ol.route-steps > li.route-step:last-child::before { display: none; }
+  ol.route-steps > li.route-step:last-child { padding-bottom: 0; }
+  .route-step-n {
+    position: absolute; left: 0; top: 0; display: inline-grid; place-items: center; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--accent-soft); border: 1px solid var(--border); color: var(--accent);
+    font-weight: 800; font-size: .8rem; font-variant-numeric: tabular-nums;
+  }
+  .route-step-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; min-height: 32px; padding-top: 6px; }
+  .route-step-title { font-weight: 700; }
+  .route-step-plain .route-step-title { color: var(--warn); }
+  .route-step-do .prose, .route-step-do ul.prose-list { font-size: .9rem; }
+  .route-step-do ul.prose-list { margin: 6px 0 4px; }
+  .route-leave, .route-warn, .route-neighbours { font-size: .84rem; margin-top: 6px; color: var(--text-muted); }
+  .route-warn { color: var(--warn); }
+  .route-leave-k { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-right: 2px; }
+  .route-neighbours { display: flex; gap: 18px; flex-wrap: wrap; }
+  .route-cutoffs { display: grid; gap: 10px; }
+  .route-cutoffs .callout { margin: 0; }
+  button.loc-link {
+    background: none; border: 0; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--accent);
+    cursor: pointer; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    text-underline-offset: 3px;
+  }
+  button.loc-link:hover, button.loc-link:focus-visible { text-decoration-color: var(--accent); }
+  ul.loc-quests li.loc-quest { margin: 0 0 12px; padding-left: 10px; border-left: 2px solid var(--border); }
+  ul.loc-quests li.loc-quest::before { display: none; }
+  ul.loc-quests li.loc-quest:last-child { margin-bottom: 0; }
+  .loc-table td:nth-child(4), .loc-table td:nth-child(5) { font-size: .86rem; }
+  .loc-route-open { margin: 10px 0 0; }
   /* Ratings pages: one block per letter, best first, each row a rated item. */
   .rate-tier { margin: 0 0 16px; }
   .rate-tier:last-child { margin-bottom: 0; }

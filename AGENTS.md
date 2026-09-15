@@ -100,6 +100,9 @@ never claims a state the guide has moved past.
 - `ratings` from the `ratings` field in `content/ratings.md`, and only when that
   file exists — it is generated, so a checkout that has not run the generator
   simply serves no `ratings` and the frontend hides the Ratings tab
+- `locations` from every Markdown file in `content/locations/`, sorted by `act`,
+  `order`, then `name`, and only when the directory holds at least one file
+- `route` from the `route` field in `content/route.md`, only when that file exists
 
 Each character file requires a unique string `nickname` and a `builds` value.
 Characters are ordered by `party.roster[].nickname`; characters absent from the
@@ -129,6 +132,15 @@ row wants to say belongs in the `note`, or in a field of its own:
   ("Deathstalker Mantle" -> `The Deathstalker Mantle`), takes a list for a row
   that names two items, and takes `false` for a slot placeholder or a vendor
   rollup that is not an item at all.
+- `options:` turns the entry into a flex slot, rendered as a "flex" heading with
+  each candidate as its own checkable row. The parent takes one of two shapes.
+  A placeholder (`Glove slot`, `Second ring`, unrated) is only the heading, and
+  the options are the whole field. A real item (`Elixir of Bloodlust`, `tier: S`)
+  is the default pick, rendered as the first row with a "Default" chip, and the
+  options are its alternates. The frontend tells them apart by the rating and
+  by placeholder words (`slot`, `alternatives`, `Second ring`), so name a
+  placeholder that way. Option ids are flat, so an item promoted or demoted
+  between top level and `options` keeps its saved checkoff.
 
 Place `held` after `rank_note` and before `wiki`, which is where
 `apply_item_tiers.py` leaves it; anywhere earlier and every regen reshuffles the
@@ -191,6 +203,97 @@ wholesale before rewriting, so a widened region silently deletes the other's rat
 Entries that the spell series does not rate (class features such as Extra Attack, which
 share the `- spell:` shape) stay unbadged; the applier reports any entry with a real
 spell level that it could not match.
+
+## Location guides
+
+`content/locations/*.md` is one file per place the party visits, and
+`content/route.md` is the order in which the party visits them. Together they
+feed the Locations tab: a Route page at the top of the tab, then one page per
+location. Both are optional in the assembler -- no `content/locations/` directory
+means no `locations` field and no tab -- but a file that exists must parse.
+
+Each location file carries this frontmatter, and nothing outside it is rendered:
+
+```yaml
+slug: last-light-inn          # stable; the filename, the nav key and the checkoff key
+name: Last Light Inn
+act: 2
+order: 40                     # nav sort inside the act
+region: Shadow-Cursed Lands
+wiki: Last Light Inn          # bg3.wiki page title for the header link; false for none
+summary: 'One sentence on what this place is for the party.'
+arrive: 'How to get there: waypoint, entrances, coordinates.'
+curse: none                   # none | light | deep -- what protection the party needs
+items:
+- id: snowburst-ring          # stable slug; the checkoff key is place:<slug>/<id>
+  name: Snowburst Ring        # the item name only -- it doubles as the wiki title
+  for: Bonbon                 # Charles | Asterion | Gale | Bonbon | any
+  core: true                  # true only for gear the plan assigns in content/loot.md
+  where: 'Bedroom north of the bar, under a loose plank.'
+  how: 'Perception 10.'
+  note: 'What it does for the party. Copy the loot.md note for core gear.'
+  wiki: false                 # optional: override title, list of titles, or false
+  verify: true                # optional: the source was unclear, check in game
+quests:
+- name: Protect Isobel
+  wiki: Resolve the Abduction # optional page title
+  steps: |-
+    - Bullet lines render as a list; **bold** is allowed.
+  outcome: 'What you get, what changes.'
+  lockout: 'One line on what closes the quest.'   # optional
+lockouts:
+- what: 'Isobel dies during Marcus''s attack'
+  closes: 'Every vendor and quest at the inn'
+  avoid: |-
+    How to prevent it. Bullets allowed.
+npcs:
+- name: Quartermaster Talli
+  role: Vendor
+  note: 'What they sell or do, and the checks that matter.'
+checks:                       # optional: hidden things worth a roll
+- what: 'Loose plank in the north bedroom'
+  note: 'Perception 10; Snowburst Ring.'
+tips: |-                      # optional closing prose
+  Anything that does not fit above.
+```
+
+`items[].for` and `items[].core` come from `content/loot.md`: an item the plan
+assigns there is `core: true` with the same `for`; everything else is `core: false`
+and `for: any`. Keep `name` to the item name so the checkoff links to the Loot tab
+and the character pages (see Progress compatibility), and use `wiki` for a page
+title that differs. `steps`, `avoid` and `tips` are rendered through the prose
+formatter, so blank lines make paragraphs and `- ` lines make bullets.
+
+`content/route.md` holds `route:`, a list of acts:
+
+```yaml
+route:
+- act: 2
+  title: 'Acuity gear first, nothing locked out'
+  intro: |-
+    Prose. Assumptions, what the order optimises for.
+  cutoffs:
+  - name: Entering the Shadowfell
+    closes: 'What it closes.'
+    note: 'Optional extra line.'
+  steps:
+  - step: 1
+    location: last-light-inn  # a location slug; the page links both ways
+    title: 'First visit'
+    do: |-
+      - What to do here on this visit.
+    leave: 'When to leave and where to go next.'   # optional
+    warn: 'One line the player must not miss.'      # optional
+  gold:                        # optional shopping table
+  - item: Cloak of Protection
+    vendor: Talli, Last Light
+    gp: 200
+    who: Charles
+```
+
+A location may appear in several steps; its page lists every visit in order, so
+a place the route leaves and comes back to reads as two visits rather than one
+long stay. Steps are shown in list order, and `step` is a label, not a sort key.
 
 ## Transcripts
 
@@ -289,16 +392,17 @@ Preserve `version` and existing keys. Checklist keys are minted in
 - `lvl:<character>/<build>/<segment>/<level>`
 - `item:<character>/<build>/<act>/<item-id>`
 - `loot:<act>/<area>/<item-name>`
+- `place:<location-slug>/<item-id>`
 
 Changing a character nickname, build name, leveling segment label, loot area,
 or loot item name can orphan existing checkoffs. Itemization display names may
 change safely when their explicit `id` remains unchanged.
 
-A character page and the Loot tab list the same gear, so their two keys are
-linked and a single tick writes both. `index.html` builds the link groups at
+A character page, the Loot tab and a location page can list the same gear, so
+their keys are linked and a single tick writes all of them. `index.html` builds the link groups at
 boot by normalising item names — parentheticals, a leading "The", possessive
 `'s`, and everything after the first item of a combined row are all dropped —
-and only links a group that has a member on each side. The key shapes above are
+and only links a group that spans at least two of the three views. The key shapes above are
 unchanged; linking is a runtime map, not a stored field, so it needs no
 migration and a name that matches nothing simply stays independent. Groups
 inherited from before linking are completed in memory at boot and are not
@@ -325,7 +429,11 @@ but new content should use the current structured shapes. Keep progress writes
 optimistic with rollback on failed POSTs.
 
 Top-level tabs are built from a list passed into `buildTopTabs`, so a tab whose
-data is absent is never rendered; Ratings is the one that works this way. The
+data is absent is never rendered; Ratings and Locations both work this way.
+Cross-view links (a route stop opening its location page) go through the
+module-level `NAVIGATE` hook, which boot assigns once `select` exists; it swaps
+the top tab by hand rather than through `activateTab`, so the remembered sub-view
+is not rendered and immediately replaced. The
 Ratings views are pure reference — no checkboxes, no progress keys — and the
 generator has already sorted each act's items, so `ratingTierGroups` only breaks
 the run where the letter changes rather than re-deriving an order of its own.

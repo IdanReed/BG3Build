@@ -1,7 +1,9 @@
 # Illithid / Zaith'isk rework plan — 2026-09-14 (for review)
 
-Status: proposal. Nothing in `content/` has been changed. Approve, amend, or reject per
-section; §9 lists the edits that implement it.
+Status: APPLIED 2026-09-18. `content/tadpole.md`, `content/party.md`, `content/loot.md`,
+`content/route.md`, `content/locations/creche-yllek.md`, `content/characters/gale.md` and
+`content/characters/asterion.md` carry the plan (guide version 1.25.0). §8's six in-game
+checks are still open and gate the optional rows.
 
 Basis: `docs/zaithisk-awakened-review-2026-09-14.md` (placement decision and the
 power-by-power audit), the Cephalopocalypse illithid tier lists Part 1 (`9af1gYSpXK4`)

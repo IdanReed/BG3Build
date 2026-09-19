@@ -63,11 +63,11 @@ combat_gameplan:
   - character: Gale — the engine
     role: Fire striker, non-concentration control, party Haste
     priority_actions: |-
-      - **Build-defining gear:** Gloves of Belligerent Skies + Spineshudder Amulet (Reverberation per ray) · Hat of Fire Acuity · Markoheshkir + Rhapsody · Armour of Landfall (Plant Growth, CON-save advantage). Boots: Evasive Shoes Act 2, Night Walkers Act 3.
+      - **Build-defining gear:** Gloves of Belligerent Skies + Spineshudder Amulet (Reverberation per ray) · Hat of Fire Acuity · Markoheshkir + Rhapsody · Armour of Landfall (Plant Growth, CON-save advantage). Boots: Evasive Shoes Act 2, Night Walkers Act 3. · AWAKENED from the Crèche Zaith'isk (Act 1): every illithid power is a bonus action.
       - **Drakethroat Glaive:** once per long rest, Twinned Draconic Elemental Weapon, COLD every day, on Bonbon's bow and Charles's blade.
       - **Build-defining spell:** Twinned Haste, online at char 5. Scorching Ray is the damage; Command is the control that costs no concentration.
       - **Concentration:** Twinned Haste on **Charles and Bonbon**, pre-cast before initiative whenever the fight is visible.
-      - **Each round:** keep Haste up, then Scorching Ray into Shriek's aura, standing within 3 m of a Held target for crits; Command when control beats damage. Fire never into the Plant Growth zone; Heat goes into Fireball, not Scorching Ray.
+      - **Each round:** keep Haste up, then Scorching Ray into Shriek's aura, standing within 3 m of a Held target for crits; Command when control beats damage. Fire never into the Plant Growth zone; Heat goes into Fireball, not Scorching Ray. **Bonus action (Awakened):** Black Hole to the Held target's feet every turn from Act 3; Perilous Stakes on the boss on turn 2 once Scorching Ray has capped Acuity; Stage Fright when a mob threatens Haste; Force Tunnel when melee reaches him.
   - character: Bonbon — the controller and face
     role: Ranged Acuity control, damage, all social checks
     priority_actions: |-

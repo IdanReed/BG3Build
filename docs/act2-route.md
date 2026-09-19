@@ -60,7 +60,7 @@ Deep curse everywhere here; the blessing holds.
 
 ### 6. Crèche Y'llek, if not done
 
-The Rosymorn Monastery Trail exit is next to Reithwin, and the Shadowfell is the hard cutoff for it. Bonbon's Gloves of Dexterity trigger her Withers respec; Charles takes the Knife of the Undermountain King, Strange Conduit Ring and Ring of Arcane Synergy; Gale the Gloves of Belligerent Skies; Asterion the Circlet of Psionic Revenge. The Holy Lance Helm for Charles is a painted chest on the top level of Rosymorn Monastery. Take Awakened from the Zaith'isk while Ghustil is alive.
+The Rosymorn Monastery Trail exit is next to Reithwin, and the Shadowfell is the hard cutoff for it. Bonbon's Gloves of Dexterity trigger her Withers respec; Charles takes the Knife of the Undermountain King, Strange Conduit Ring and Ring of Arcane Synergy; Gale the Gloves of Belligerent Skies; Asterion the Circlet of Psionic Revenge. The Holy Lance Helm for Charles is a painted chest on the top level of Rosymorn Monastery. Take Awakened from the Zaith'isk while Ghustil is alive: Gale sits, Lae'zel stays in camp, and Charles and Bonbon stand out of range so Gale is the speaker when the dialogue opens.
 
 ### 7. Moonrise Towers, friendly visit
 

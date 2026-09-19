@@ -817,7 +817,7 @@ builds:
         item: Boots of Psionic Movement
         tier: A
         tier_note: 'The BEST BOOTS in Baldur''s Gate 3 - Complete Tier List and Guide (54:03) — bonus-action Fly once per long rest; strong for parties skipping illithid powers'
-        note: Bonus-action Fly once per long rest, plus +1 to Dexterity saving throws. The party skips illithid powers, so nothing else supplies flight.
+        note: Bonus-action Fly once per long rest, plus +1 to Dexterity saving throws. Everyone communes at the start of Act 3 and gets Fly, so only the Dexterity-save bonus is left to argue for.
       - id: opt-boots-of-speed-gale
         item: Boots of Speed
         tier: A

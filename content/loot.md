@@ -357,7 +357,7 @@ loot_guide:
       wiki: The Blood of Lathander
       note: Rosymorn puzzle, Dawnmaster's Crest. +3 mace with Sunbeam and a party self-revive-at-0-HP aura — don't miss it.
     - name: Zaith'isk → 'Awakened' permanent buff
-      note: Crèche infirmary machine. Pass DC 12/15/18 → permanent Awakened (Illithid powers as bonus actions). A failure is a permanent −2 stat.
+      note: 'Crèche infirmary machine. GALE sits: Lae''zel out of the party, Charles and Bonbon parked out of range so he is the speaker, Helmet of Autonomy on, Elixir of Heroism drunk. Pass DC 12/15/18 → permanent Awakened (Illithid powers as bonus actions). A failure is a permanent −2 stat; quicksave and reload.'
 - act: 2
   areas:
   - area: Shadow-Cursed Lands

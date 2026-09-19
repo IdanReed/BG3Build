@@ -5,7 +5,7 @@ act: 1
 order: 20
 region: Mountain Pass
 wiki: 'Crèche Y''llek'
-summary: 'Githyanki base under Rosymorn Monastery. Eight pieces of plan gear, Bonbon''s Awakened buff, the egg, the Vlaakith audience that turns the whole place hostile, and the Blood of Lathander vault door.'
+summary: 'Githyanki base under Rosymorn Monastery. Eight pieces of plan gear, Gale''s Awakened buff, the egg, the Vlaakith audience that turns the whole place hostile, and the Blood of Lathander vault door.'
 arrive: |-
   Main entrance: the spiral stairs west of the Lathander statue in the monastery hall lead to the Monastery Basement (X: 74 Y: 80), which opens into the crèche antechamber at X: 1357 Y: -854. Gish Far'aag stops you there.
 
@@ -82,11 +82,11 @@ items:
   core: false
   where: 'Doctor''s Office at the far end of the Infirmary, X: 1289 Y: -809. Ghustil Stornugoss stands beside it.'
   how: |-
-    - Bonbon sits. Lae'zel stays in camp so she cannot claim the chair.
-    - Three rolls: Intelligence DC 12, Wisdom DC 15, then DC 18 (Constitution, or the [BARD] Charisma line for Bonbon; verify in game whether that line is a check or a save). Save-scum in non-Honour.
+    - Gale sits. Lae'zel stays in camp so she cannot claim the chair; Charles and Bonbon stand out of range so Gale is the speaker when the dialogue opens (a companion sits only when the avatars are away; verify). Helmet of Autonomy on, Elixir of Heroism drunk, Bonbon's Safeguard Shield borrowed.
+    - Three rolls: Intelligence DC 12, Wisdom DC 15, then DC 18 (Constitution for most; verify which stat the Sorcerer line uses). Save-scum in non-Honour.
     - Pass all three: permanent Awakened. Each failure is a permanent −2 to that stat, cured by eating any Mind Flayer Parasite Specimen.
     - The device explodes either way. Then Deception DC 15 (Performance DC 15 if the sitter talks) to make Stornugoss let you go; otherwise she locks the door (Sleight of Hand DC 10) and the infirmary attacks. The rest of the crèche stays friendly.
-  note: 'Crèche infirmary machine. Pass DC 12/15/18 → permanent Awakened (Illithid powers as bonus actions). A failure is a permanent −2 stat. Awakened is mandatory once taken: powers can no longer be used as an Action. The tadpole plan gives it to Bonbon.'
+  note: 'Crèche infirmary machine. Pass DC 12/15/18 → permanent Awakened (Illithid powers as bonus actions). A failure is a permanent −2 stat. Awakened is mandatory once taken: powers can no longer be used as an Action. The tadpole plan gives it to Gale: his bonus action is the party''s only empty one.'
   verify: true
 - id: mind-flayer-parasite-specimen
   name: Mind Flayer Parasite Specimen
@@ -211,9 +211,9 @@ quests:
   steps: |-
     - Get past Far'aag at the antechamber: say you seek a cure for the tadpole and she sends you to the infirmary with no roll. With Lae'zel talking it is the same.
     - Infirmary (X: 1319 Y: -806), through to the Doctor's Office. Speak to Ghustil Stornugoss and agree to the Zaith'isk. Investigation DC 15 on the chair is flavour.
-    - Bonbon sits. INT 12, WIS 15, DC 18. Details in the Zaith'isk item.
+    - Gale sits. INT 12, WIS 15, DC 18. Details in the Zaith'isk item.
     - The Dream Visitor smashes the device. Deception DC 15 to walk out clean.
-  outcome: 'Quest ends. Awakened for Bonbon. Three parasite jars in the room.'
+  outcome: 'Quest ends. Awakened for Gale. Three parasite jars in the room.'
   lockout: 'Killing Stornugoss after talking to her but before sitting bricks the chair. The crèche blowing up destroys it too.'
 - name: The Githyanki Warrior
   wiki: The Githyanki Warrior
@@ -270,8 +270,8 @@ lockouts:
   closes: 'The Zaith''isk, Awakened'
   avoid: 'Use the chair in the same conversation. Or touch the chair before ever talking to her; it works without her. If the crèche is already hostile the scene still runs, minus her.'
 - what: 'Lae''zel in the active party at the Zaith''isk'
-  closes: 'Bonbon''s Awakened, because Lae''zel insists on the single-use chair. If Lae''zel is not the avatar, her sequence has no checks and she auto-fails all three −2s'
-  avoid: 'Leave Lae''zel at camp for this visit. If she is present, Persuasion DC 10 (waived at high approval) puts Bonbon in first; insisting without the roll turns Lae''zel and the ghustil hostile.'
+  closes: 'Gale''s Awakened, because Lae''zel insists on the single-use chair. If Lae''zel is not the avatar, her sequence has no checks and she auto-fails all three −2s'
+  avoid: 'Leave Lae''zel at camp for this visit. If she is present, Persuasion DC 10 (waived at high approval) puts Gale in first; insisting without the roll turns Lae''zel and the ghustil hostile.'
 - what: 'Taking the Blood of Lathander without the Dawnmaster''s Crest'
   closes: 'The crèche and everything in it: Jeera, the Zaith''isk, the egg, the Inquisitor''s loot, anyone left inside when the Lance fires. The crèche turns hostile the moment the trap trips'
   avoid: |-
@@ -344,7 +344,7 @@ checks:
 - what: 'Wooden chest and barrels at the bridge to the Inquisitor''s Chamber'
   note: 'Alchemy ingredients and minor loot before the bridge.'
 tips: |-
-  **Order.** Antechamber talk (cure line). Jeera: Gloves of Dexterity and Knife, then Bonbon's Withers respec can wait for camp. Infirmary: Zaith'isk with Bonbon, Lae'zel in camp. Hatchery: egg and boots. Classroom for the Orpheus book. Captain's Quarters: show the artefact. Inquisitor's Chamber: turn the statues first and run the vault with the crest in hand, walk back up, then talk to W'wargaz, kneel, enter the prism, spare, come back and fight. Loot the two elegant chests, the two display cases and the halberd. Fight out through the corridor; Far'aag and Umr'a'ac carry rings. Voss comes to camp on the next long rest.
+  **Order.** Antechamber talk (cure line). Jeera: Gloves of Dexterity and Knife, then Bonbon's Withers respec can wait for camp. Infirmary: Zaith'isk with Gale, Lae'zel in camp, avatars parked back. Hatchery: egg and boots. Classroom for the Orpheus book. Captain's Quarters: show the artefact. Inquisitor's Chamber: turn the statues first and run the vault with the crest in hand, walk back up, then talk to W'wargaz, kneel, enter the prism, spare, come back and fight. Loot the two elegant chests, the two display cases and the halberd. Fight out through the corridor; Far'aag and Umr'a'ac carry rings. Voss comes to camp on the next long rest.
 
   **The Inquisitor fight** is the hardest room in Act 1. Gale's Twinned Haste on Charles and Bonbon, Charles Holds W'wargaz's Ardents (they are humanoids), Asterion stuns the Inquisitor. Fight on the stairs of the sunken floor so the Mindsteal Tempest catches fewer people. Solve the monastery altar puzzle the same day: Morninglord's Radiance adds 1d4 Radiant per weapon hit and lights the Gloves of Belligerent Skies.
 

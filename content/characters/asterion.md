@@ -658,5 +658,5 @@ builds:
   - 'Keep the DUAL-WIELD toggle OFF. With it on, a hand-crossbow shot spends a Flurry on an off-hand shot.'
   - 'Only 2 feats (char 5 and char 11), both spent. Monk 8 / Thief 4 buys a third at the cost of Ki Resonation and the d8 Martial Arts die — not this plan.'
   illithid:
-    note: 'Ability Drain — his alone: once per turn an attack drops the target''s matching ability by 1, and it counts as inflicting a condition. Add Luck of the Far Realms. Alert at char 11 makes him the first-turn Black Hole carrier. ⚠ Cull the Weak off before a non-lethal knockout.'
+    note: 'Psionic Overload every fight — cast in combat with his Action unless it proves castable out of combat. Ability Drain, shared with Charles and Bonbon: once per turn an attack drops the target''s matching ability by 1, and it counts as inflicting a condition. Add Luck of the Far Realms, then Cull the Weak and Psionic Backlash in Act 2. Alert at char 11 makes him the first-turn Black Hole carrier; Gale''s bonus-action recasts cover later turns. Not Awakened. ⚠ Cull the Weak off before a non-lethal knockout.'
 ---

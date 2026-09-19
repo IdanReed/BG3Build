@@ -19,7 +19,7 @@ route:
     title: 'Crèche Y''llek, all of it'
     do: |-
       - **A'jak'nir Jeera**: Gloves of Dexterity and the Knife of the Undermountain King for Bonbon. Buy or steal the rest of her stock; she is gone once the crèche turns hostile. The Gloves trigger Bonbon's Withers respec.
-      - **Zaith'isk**: a player character sits in it while Ghustil Stornugoss is alive; pass the saves for permanent Awakened.
+      - **Zaith'isk**: Gale sits in it while Ghustil Stornugoss is alive, with Lae'zel in camp and Charles and Bonbon parked out of range so he is the speaker; pass the saves for permanent Awakened.
       - **Inquisitor's Chamber**: Circlet of Psionic Revenge for Asterion, Diadem of Arcane Synergy for Bonbon, Gloves of Belligerent Skies for Gale (elegant chest), Necklace of Elemental Augmentation (display case).
       - **Gish Far'aag**: Ring of Arcane Synergy for Charles. The Strange Conduit Ring is Charles's too.
       - **Vlaakith**: the audience turns the crèche hostile. Fight out, then back to the monastery for the Blood of Lathander with the crest.
